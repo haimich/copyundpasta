@@ -6,8 +6,8 @@
   "private": true,
   "scripts": {
     "dev": "nuxt",
-    "build": "BASE_URL=https://copyundpasta.de; nuxt build",
-    "start": "BASE_URL=https://copyundpasta.de; nuxt start --hostname 0.0.0.0 --port 9000",
+    "build": "nuxt build",
+    "start": "nuxt start --hostname 0.0.0.0 --port 3000",
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "precommit": "npm run lint",
