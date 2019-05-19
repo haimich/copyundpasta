@@ -9,8 +9,12 @@ module.exports = {
       password: 'haimich'
     },
     migrations: {
-      tableName: 'knex_migrations'
-    }
+      tableName: 'knex_migrations',
+      directory: 'knex_migrations',
+    },
+    seeds: {
+      directory: 'knex_seeds',
+    },
   },
 
 };
