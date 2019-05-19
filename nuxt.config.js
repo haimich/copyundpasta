@@ -6,8 +6,7 @@ export default {
   debug: false,
 
   env: {
-    // baseUrl: process.env.BASE_URL || 'http://localhost:3000'
-    baseUrl: 'https://copyundpasta.de'
+    baseUrl: process.env.BASE_URL || 'http://localhost:3000'
   },
 
   /*

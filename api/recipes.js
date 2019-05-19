@@ -4,6 +4,18 @@ const app = express()
 app.get('/getRecipe', (req, res) => {
     console.log("Get recipe");
 
+    var knex = require('knex')({
+        client: 'mysql',
+        connection: {
+          host : '127.0.0.1',
+          user : 'haimich',
+          password : 'xxx',
+          database : 'haimich'
+        }
+    });
+
+    knex('recipes').insert({a: 'b'}).returning('*').toString();
+
     let recipe = {
         title: "Spinnennetztorte vom Backend 2",
         ingredients: [
