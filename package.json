@@ -16,10 +16,12 @@
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.4.2",
+    "@nuxtjs/markdownit": "^1.2.4",
     "cross-env": "^5.2.0",
     "element-ui": "2.4.11",
     "knex": "^0.17.0-next4",
     "mysql": "^2.17.1",
+    "normalize.css": "^8.0.1",
     "nuxt": "^2.7.1"
   },
   "devDependencies": {

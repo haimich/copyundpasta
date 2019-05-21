@@ -9,10 +9,10 @@ exports.up = function(knex, Promise) {
         .createTable("recipes", function (table) {
             table.increments("id").primary();
             table.foreign("category_id").references("recipe_categories.id");
-            table.string("title", 1000).notNullable();
+            table.string("title", 1000).notNullable().index();
             table.text("description").nullable();
             table.text("directions").notNullable();
-            table.text("notest").nullable();
+            table.text("notes").nullable();
             table.timestamps(true, true);
         })
 };

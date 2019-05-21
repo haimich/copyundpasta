@@ -24,6 +24,10 @@
       <nuxt-link to="/muttertags-toertchen-mit-baiser-rosen-und-erdbeersahne">
         Tolles Muttertagsrezept
       </nuxt-link>
+
+      <nuxt-link to="/about">
+        About
+      </nuxt-link>
     </div>
   </section>
 </template>

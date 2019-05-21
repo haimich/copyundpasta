@@ -39,7 +39,8 @@ export default {
   ** Global CSS
   */
   css: [
-    "element-ui/lib/theme-chalk/index.css"
+    "normalize.css",
+    "element-ui/lib/theme-chalk/index.css",
   ],
 
   /*
@@ -53,14 +54,28 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
-    // Doc: https://axios.nuxtjs.org/usage
-    "@nuxtjs/axios"
+    "@nuxtjs/axios",
+    "@nuxtjs/markdownit",
   ],
+
   /*
   ** Axios module configuration
   */
   axios: {
-    // See https://github.com/nuxt-community/axios-module#options
+    // Doc: https://axios.nuxtjs.org/usage
+  },
+
+  /*
+  ** Markdownit module configuration
+  */
+  markdownit: {
+    // preset: 'default',
+    // linkify: true,
+    // breaks: true,
+    // use: [
+    //   ['markdown-it-container', 'containerName'],
+    //   'markdown-it-attrs'
+    // ]
   },
 
   /*
