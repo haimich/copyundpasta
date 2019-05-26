@@ -11,6 +11,11 @@ $ npm install
 # serve with hot reload at localhost:3000
 $ npm run dev
 
+# debug from VS Code (@see https://code.visualstudio.com/docs/nodejs/nodejs-debugging#_attaching-to-nodejs)
+# this command needs to be executed from the VS terminal!
+$ npm run debug
+```
+
 # build for production and launch server
 $ npm run build
 $ npm start

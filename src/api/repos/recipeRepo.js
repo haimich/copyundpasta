@@ -1,15 +1,20 @@
 
-export function getRecipes() {
-    var knex = require('knex')({
-        client: 'mysql',
-        connection: {
-          host : '127.0.0.1',
-          user : 'haimich',
-          password : 'haimich',
-          database : 'haimich'
-        }
-      });
+export async function getRecipe(knex, id) {
+  const recipe = await knex
+    .table("recipes")
+    .select("*")
+    .where({
+      id: id,
+    })
+    .first();
 
-    return knex.from('recipes')
-        .select('a');
+  if (recipe != null) {
+    recipe.servings = JSON.parse(recipe.servings);
+    recipe.ingredients = JSON.parse(recipe.ingredients);
+    recipe.directions = JSON.parse(recipe.directions);
+    recipe.notes = JSON.parse(recipe.notes);
+    recipe.ratings = JSON.parse(recipe.ratings);
+  }
+
+  return recipe;
 }
