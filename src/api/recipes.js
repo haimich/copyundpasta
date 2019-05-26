@@ -1,5 +1,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+require('express-async-errors');
 const app = express();
 
 import {getRecipe} from "./repos/recipeRepo";

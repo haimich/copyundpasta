@@ -21,6 +21,7 @@
     "body-parser": "^1.19.0",
     "cross-env": "^5.2.0",
     "element-ui": "2.4.11",
+    "express-async-errors": "^3.1.1",
     "knex": "^0.17.0-next4",
     "mysql": "^2.17.1",
     "normalize.css": "^8.0.1",
