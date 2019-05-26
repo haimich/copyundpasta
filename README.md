@@ -22,9 +22,11 @@ $ npm run generate
 ## pm2
 pm2 start npm --name "cup" -- start
 
-## Database
+## Database local
+If you have never started the docker container execute this:
+
 ```bash
 docker run --name mariadb -e MYSQL_ROOT_PASSWORD=password -e MYSQL_DATABASE=haimich -e MYSQL_USER=haimich -e MYSQL_PASSWORD=haimich -p 3306:3306 mariadb:10.3
 ```
 
-For detailed explanation on how things work, checkout [Nuxt.js docs](https://nuxtjs.org).
+Afterwards to start or stop it just use `docker start mariadb` and `docker stop mariadb`

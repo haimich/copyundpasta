@@ -2,18 +2,24 @@
 exports.up = function(knex, Promise) {
     return knex.schema
         .createTable("recipe_categories", function (table) {
-            table.increments("id").primary();
-            table.integer("parent_category");
-            table.string("name", 1000);
+            table.string("id", 400).primary();
+            table.string("parentCategory", 400);
+            table.string("name", 1000).notNullable().index();
+
+            table.foreign("parentCategory").references("recipe_categories.id");
         })
         .createTable("recipes", function (table) {
             table.increments("id").primary();
-            table.foreign("category_id").references("recipe_categories.id");
             table.string("title", 1000).notNullable().index();
-            table.text("description").nullable();
+            table.string("categoryId", 400);
+            table.text("description");
+            table.text("ingredients").notNullable();
             table.text("directions").notNullable();
-            table.text("notes").nullable();
+            table.text("notes");
+            table.text("ratings");
             table.timestamps(true, true);
+
+            table.foreign("categoryId").references("recipe_categories.id");
         })
 };
 
