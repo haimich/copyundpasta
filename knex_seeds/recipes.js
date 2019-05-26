@@ -1,26 +1,55 @@
 
 exports.seed = async function(knex, Promise) {
-  console.log("Deleting ALL existing entries");
+  await deleteAllEntries(knex);
 
-  // recipes
+  await createAllEntries(knex);
+};
+
+async function deleteAllEntries(knex) {
+  console.log("Deleting recipes recipe tags");
+  await knex("recipes_recipe_tags").del();
+
+  console.log("Deleting recipes");
   await knex("recipes").del();
 
-  // child categories
+  console.log("Deleting recipes tags");
+  await knex("recipe_tags").del();
+
+  console.log("Deleting child categories");
   await knex("recipe_categories")
     .whereNotNull("parentCategory")
     .del();
 
-  // remaining categories
+  console.log("Deleting remaining categories");
   await knex("recipe_categories").del();
+}
 
+async function createAllEntries(knex) {
   console.log("Inserting recipe categories");
   const recipeCategories = getRecipeCategories();
   await knex("recipe_categories").insert(recipeCategories);
 
+  console.log("Inserting recipe tags");
+  const recipeTags = getRecipeTags();
+  await knex("recipe_tags").insert(recipeTags);
+
   console.log("Inserting recipes");
   const recipes = getRecipes();
   await knex("recipes").insert(recipes);
-};
+
+  console.log("Inserting tags for recipes");
+  // get id of first recipe
+  const firstRecipes = await knex.table("recipes").first("id")
+
+  const recipesRecipeTags = [
+    {
+      recipeId: firstRecipes.id,
+      tagId: "resteverwertung",
+    },
+  ];
+
+  await knex("recipes_recipe_tags").insert(recipesRecipeTags);
+}
 
 function getRecipeCategories() {
   return [
@@ -48,7 +77,25 @@ function getRecipeCategories() {
   ]
 }
 
+function getRecipeTags() {
+  return [
+    {
+      id: "resteverwertung",
+      name: "Resteverwertung",
+    },
+    {
+      id: "quicky",
+      name: "Quick & Yummy",
+    },
+  ];
+}
+
 function getRecipes() {
+  const servings = JSON.stringify({
+    unit: "quantity",
+    amount: 10,
+  });
+
   const ingredients = JSON.stringify([
     {
       unit: "gram",
@@ -87,13 +134,34 @@ function getRecipes() {
 
   const directions = JSON.stringify({
     steps: [
-      "Hefeteig zubereiten und gehen lassen.",
-      "Dampfnudeln mit Mamas Bäckerknettechnik formen",
-      "auf einem bemehlten Blech abermals gehen lassen",
-      "Schmalz (oder Margarine) in einer gut verschließbaren Pfanne erhitzen",
-      "nicht zu wenig Salz auf dem Pfannenboden verteilen",
-      "Dampfnudeln hineinsetzen, eine Tasse heißes Wasser vorsichtig seitlich reinlaufen lassen",
-      "ca. 10 min. auf kleiner Flamme garen lassen"
+      {
+        type: "step",
+        content: "Hefeteig zubereiten und gehen lassen.",
+      },
+      {
+        type: "step",
+        content: "Dampfnudeln mit Mamas Bäckerknettechnik formen.",
+      },
+      {
+        type: "step",
+        content: "auf einem bemehlten Blech abermals gehen lassen.",
+      },
+      {
+        type: "step",
+        content: "Schmalz (oder Margarine) in einer gut verschließbaren Pfanne erhitzen.",
+      },
+      {
+        type: "step",
+        content: "nicht zu wenig Salz auf dem Pfannenboden verteilen.",
+      },
+      {
+        type: "step",
+        content: "Dampfnudeln hineinsetzen, eine Tasse heißes Wasser vorsichtig seitlich reinlaufen lassen.",
+      },
+      {
+        type: "step",
+        content: "Ca. 10 min. auf kleiner Flamme garen lassen."
+      },
     ]
   });
 
@@ -115,8 +183,11 @@ function getRecipes() {
   return [
     {
       title: "Oma Hilda's Dampfnudeln",
-      description: "Das Originalrezept meiner Uroma Hilda, das definitiv Eindruck bei euren Gästen macht!",
+      slug: "oma-hilds-dampfnudeln",
       categoryId: "herzhaft",
+      previewImageUrl: "https://recipecontent.fooby.ch/14006_3-2_480-320.jpg",
+      description: "Das Originalrezept meiner Uroma Hilda, das definitiv Eindruck bei euren Gästen macht!",
+      servings,
       ingredients,
       directions,
       notes,
