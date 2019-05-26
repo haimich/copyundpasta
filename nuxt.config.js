@@ -26,8 +26,14 @@ export default {
     ]
   },
 
+  /*
+  ** REST api endpoints
+  */
   serverMiddleware: [
-    "~/api/recipes.js"
+    {
+      path: "/api/recipes",
+      handler: "~/api/recipes.js",
+    },
   ],
 
   /*
@@ -89,14 +95,14 @@ export default {
     */
     extend(config, ctx) {
       // Run ESLint on save
-      // if (ctx.isDev && ctx.isClient) {
-      //   config.module.rules.push({
-      //     enforce: "pre",
-      //     test: /\.(js|vue)$/,
-      //     loader: "eslint-loader",
-      //     exclude: /(node_modules)/
-      //   })
-      // }
+      if (ctx.isDev && ctx.isClient) {
+        config.module.rules.push({
+          enforce: "pre",
+          test: /\.(js|vue)$/,
+          loader: "eslint-loader",
+          exclude: /(node_modules)/
+        })
+      }
     }
   }
 }

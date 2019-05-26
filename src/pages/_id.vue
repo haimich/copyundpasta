@@ -4,10 +4,12 @@
 
     <p>{{ post.content }}</p>
 
-    
     Counter: {{ counter }}
 
-    <el-button @click="increment()">Increment</el-button>
+    <el-button
+      @click="increment()"
+    >Increment
+    </el-button>
 
     <h2>Rezept:</h2>
 
@@ -38,15 +40,17 @@ export default {
       return this.$store.state.counter
     }
   },
+  async asyncData({ params, $axios }) {
+    const response = await $axios.post(`/api/recipes/getRecipe`, {
+      id: 1,
+    });
+
+    return { recipe: response.data };
+  },
   methods: {
     increment() {
       this.$store.commit("increment");
     }
-  },
-  async asyncData({ params, $axios }) {
-    let response = await $axios.get(`/recipes/getRecipe?slug=${params.id}`);
-
-    return { recipe: response.data }
   },
   head: {
     title: 'Fancy recipe'

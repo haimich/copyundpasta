@@ -13,6 +13,11 @@ module.exports = {
   ],
   // add your custom rules here
   rules: {
+    "semi": "off",
     "no-console": "off",
+    "quotes": ["off", "double"],
+    "comma-dangle": "off",
+    "no-trailing-spaces": "off",
+    "vue/multiline-html-element-content-newline": "off",
   }
 }

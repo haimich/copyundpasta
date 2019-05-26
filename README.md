@@ -22,6 +22,9 @@ $ npm run dev
 $ npm run debug
 ```
 
+## debug api
+`npm run api`
+
 # build for production and launch server
 $ npm run build
 $ npm start

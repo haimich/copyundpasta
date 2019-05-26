@@ -5,18 +5,22 @@ const app = express();
 import {getRecipe} from "./repos/recipeRepo";
 import {validateId} from "./utils/validatorUtil";
 
-// setup app
-app.use(bodyParser.json())
+// setup express
+app.use(bodyParser.json());
+
+app.use(function (err, req, res, next) {
+  console.error(err.stack)
+  return res.status(500).send('Something broke!')
+});
+
+/**
+ * Configure routes
+ * - prefix is "/api/recipes/"
+ */
 
 app.post("/getRecipe", async (req, res) => {
-    console.log("getRecipe");
-
     // validate params
-    try {
-        const id = validateId(req.body);
-    } catch (err) {
-        return res.status(500).send(err);
-    }
+    const id = validateId(req.body);
 
     const knex = require("knex")({
         client: "mysql",
@@ -35,9 +39,6 @@ app.post("/getRecipe", async (req, res) => {
     } else {
         return res.json(recipe);
     }
-})
+});
 
-module.exports = {
-   path: '/recipes',
-   handler: app
-}
+export default app;
