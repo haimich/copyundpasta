@@ -5,6 +5,8 @@
 ## Libraries
 * ExpressJS
 * Jest
+* knex with mysql
+* element ui css framework
 
 ## Build Setup
 
