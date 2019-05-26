@@ -2,6 +2,10 @@
 
 > My little foodblog
 
+## Libraries
+* ExpressJS
+* Jest
+
 ## Build Setup
 
 ``` bash

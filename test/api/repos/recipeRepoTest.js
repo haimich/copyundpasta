@@ -1,9 +1,19 @@
-import {getRecipes} from "@/api/repos/recipeRepo";
+import {getRecipe} from "@/api/repos/recipeRepo";
 
 describe('getRecipes', () => {
     test('should return newest recipes', async () => {
-        let recipes = await getRecipes();
+        const knex = require("knex")({
+            client: "mysql",
+            connection: {
+              host : "127.0.0.1",
+              user : "haimich",
+              password : "haimich",
+              database : "haimich"
+            }
+        });
 
-        console.log(recipes[0].a);
+        let recipe = await getRecipe(knex, 1);
+
+        expect(recipe.id).toBe(1);
     })
 })
