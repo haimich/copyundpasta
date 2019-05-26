@@ -6,33 +6,14 @@ exports.seed = async function(knex, Promise) {
 };
 
 async function deleteAllEntries(knex) {
-  console.log("Deleting recipes recipe tags");
+  console.log("Deleting recipes_recipe_tags");
   await knex("recipes_recipe_tags").del();
 
   console.log("Deleting recipes");
   await knex("recipes").del();
-
-  console.log("Deleting recipes tags");
-  await knex("recipe_tags").del();
-
-  console.log("Deleting child categories");
-  await knex("recipe_categories")
-    .whereNotNull("parentCategory")
-    .del();
-
-  console.log("Deleting remaining categories");
-  await knex("recipe_categories").del();
 }
 
 async function createAllEntries(knex) {
-  console.log("Inserting recipe categories");
-  const recipeCategories = getRecipeCategories();
-  await knex("recipe_categories").insert(recipeCategories);
-
-  console.log("Inserting recipe tags");
-  const recipeTags = getRecipeTags();
-  await knex("recipe_tags").insert(recipeTags);
-
   console.log("Inserting recipes");
   const recipes = getRecipes();
   await knex("recipes").insert(recipes);
@@ -49,45 +30,6 @@ async function createAllEntries(knex) {
   ];
 
   await knex("recipes_recipe_tags").insert(recipesRecipeTags);
-}
-
-function getRecipeCategories() {
-  return [
-    {
-      id: "herzhaft",
-      name: "Herzhaft",
-    },
-    {
-      id: "pizza",
-      name: "Pizza",
-    },
-    {
-      id: "flammkuchen",
-      name: "Flammkuchen",
-      parentCategory: "pizza",
-    },
-    {
-      id: "pasta",
-      name: "Pasta",
-    },
-    {
-      id: "brot",
-      name: "Brot",
-    },
-  ]
-}
-
-function getRecipeTags() {
-  return [
-    {
-      id: "resteverwertung",
-      name: "Resteverwertung",
-    },
-    {
-      id: "quicky",
-      name: "Quick & Yummy",
-    },
-  ];
 }
 
 function getRecipes() {
