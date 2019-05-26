@@ -4,7 +4,6 @@ exports.up = async function(knex, Promise) {
         .createTable("recipes", function (table) {
             table.increments("id").primary();
             table.string("title", 1000).notNullable().index();
-            table.string("slug", 1000).notNullable().unique();
             table.string("categoryId", 400);
             table.text("previewImageUrl");
             table.text("servings");

@@ -14,30 +14,30 @@ exports.up = async function(knex, Promise) {
 };
 
 function getRecipeCategories() {
-    return [
-      {
-        id: "herzhaft",
-        name: "Herzhaft",
-      },
-      {
-        id: "pizza",
-        name: "Pizza",
-      },
-      {
-        id: "flammkuchen",
-        name: "Flammkuchen",
-        parentCategory: "pizza",
-      },
-      {
-        id: "pasta",
-        name: "Pasta",
-      },
-      {
-        id: "brot",
-        name: "Brot",
-      },
-    ]
-  }
+  return [
+    {
+      id: "herzhaft",
+      name: "Herzhaft",
+    },
+    {
+      id: "pizza",
+      name: "Pizza",
+    },
+    {
+      id: "flammkuchen",
+      name: "Flammkuchen",
+      parentCategory: "pizza",
+    },
+    {
+      id: "pasta",
+      name: "Pasta",
+    },
+    {
+      id: "brot",
+      name: "Brot",
+    },
+  ];
+}
 
 exports.down = async function(knex, Promise) {
     await knex.schema

@@ -20,16 +20,14 @@ async function createAllEntries(knex) {
 
   console.log("Inserting tags for recipes");
   // get id of first recipe
-  const firstRecipes = await knex.table("recipes").first("id")
+  const firstRecipe = await knex.table("recipes").first("id");
 
   const recipesRecipeTags = [
     {
-      recipeId: firstRecipes.id,
+      recipeId: firstRecipe.id,
       tagId: "resteverwertung",
     },
   ];
-
-  await knex("recipes_recipe_tags").insert(recipesRecipeTags);
 }
 
 function getRecipes() {
@@ -125,7 +123,6 @@ function getRecipes() {
   return [
     {
       title: "Oma Hilda's Dampfnudeln",
-      slug: "oma-hilds-dampfnudeln",
       categoryId: "herzhaft",
       previewImageUrl: "https://recipecontent.fooby.ch/14006_3-2_480-320.jpg",
       description: "Das Originalrezept meiner Uroma Hilda, das definitiv Eindruck bei euren Gästen macht!",
