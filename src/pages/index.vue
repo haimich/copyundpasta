@@ -21,8 +21,8 @@
         >GitHub</a>
       </div>
 
-      <nuxt-link to="/muttertags-toertchen-mit-baiser-rosen-und-erdbeersahne">
-        Tolles Muttertagsrezept
+      <nuxt-link to="/oma-hildas-dampfnudeln">
+        Oma Hilda's Dampfnudeln
       </nuxt-link>
 
       <nuxt-link to="/about">
@@ -33,7 +33,7 @@
 </template>
 
 <script>
-import Logo from "~/components/Logo.vue";
+import Logo from "~/components/Recipe.vue";
 
 export default {
   components: {

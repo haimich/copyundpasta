@@ -5,10 +5,6 @@ export default {
 
   debug: false,
 
-  env: {
-    baseUrl: process.env.BASE_URL || "http://localhost:3000"
-  },
-
   srcDir: "src/",
 
   /*
