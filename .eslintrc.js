@@ -4,8 +4,9 @@ module.exports = {
     browser: true,
     node: true
   },
+  plugins: ['@typescript-eslint'],
   parserOptions: {
-    parser: 'babel-eslint'
+    parser: '@typescript-eslint/parser'
   },
   extends: [
     '@nuxtjs',
@@ -20,6 +21,7 @@ module.exports = {
     "no-trailing-spaces": "off",
     "vue/multiline-html-element-content-newline": "off",
     "vue/order-in-components": "off",
-    "vue/require-default-prop": "off"
+    "vue/require-default-prop": "off",
+    '@typescript-eslint/no-unused-vars': 'error'
   }
 }

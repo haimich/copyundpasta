@@ -2,7 +2,7 @@
     <recipe-component :recipeData="recipe" />
 </template>
 
-<script>
+<script lang="ts">
 import RecipeComponent from "~/components/RecipeComponent.vue";
 
 export default {
@@ -12,7 +12,7 @@ export default {
   data() {
     return { recipe: null }
   },
-  async asyncData({ params, $axios }) {
+  async asyncData({ $axios }) {
     const response = await $axios.post(`/api/recipes/getRecipe`, {
       id: 1,
     });

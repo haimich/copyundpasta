@@ -33,9 +33,16 @@
 
 <script>
 
+import Recipe from "~/api/interfaces/Recipe";
+
 export default {
   components: {
   },
+  data: () => {
+    return {
+      foo: Recipe
+    }
+  }
 }
 </script>
 

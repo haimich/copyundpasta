@@ -40,7 +40,7 @@ export default {
       return this.$store.state.counter
     }
   },
-  async asyncData({ params, $axios }) {
+  async asyncData({ $axios }) {
     const response = await $axios.post(`/api/recipes/getRecipe`, {
       id: 1,
     });
