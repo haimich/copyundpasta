@@ -1,7 +1,6 @@
 <template>
   <section class="container">
     <div>
-      <logo />
       <h1 class="title">
         copy & pasta
       </h1>
@@ -33,11 +32,9 @@
 </template>
 
 <script>
-import Logo from "~/components/Recipe.vue";
 
 export default {
   components: {
-    Logo,
   },
 }
 </script>

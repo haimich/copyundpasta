@@ -1,13 +1,13 @@
 <template lang="md">
-    <recipe :recipeData="recipe" />
+    <recipe-component :recipeData="recipe" />
 </template>
 
 <script>
-import Recipe from "~/components/Recipe.vue";
+import RecipeComponent from "~/components/RecipeComponent.vue";
 
 export default {
   components: {
-    Recipe,
+    RecipeComponent,
   },
   data() {
     return { recipe: null }

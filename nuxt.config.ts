@@ -1,6 +1,7 @@
-import pkg from "./package"
+import NuxtConfiguration from '@nuxt/config';
+import pkg from "./package.json";
 
-export default {
+const config: NuxtConfiguration = {
   mode: "universal",
 
   debug: false,
@@ -107,3 +108,5 @@ export default {
     }
   }
 }
+
+export default config;

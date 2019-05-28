@@ -26,9 +26,11 @@
     "knex": "^0.17.0-next4",
     "mysql": "^2.17.1",
     "normalize.css": "^8.0.1",
-    "nuxt": "^2.7.1"
+    "nuxt": "^2.7.1",
+    "ts-node": "^8.2.0"
   },
   "devDependencies": {
+    "@nuxt/typescript": "^2.7.1",
     "@nuxtjs/eslint-config": "^0.0.1",
     "@vue/test-utils": "^1.0.0-beta.27",
     "babel-core": "7.0.0-bridge.0",

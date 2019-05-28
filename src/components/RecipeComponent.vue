@@ -10,7 +10,6 @@
       <el-col>
         <el-rate
           v-model="rating"
-          disabled
           show-score
           text-color="#ff9900"
           score-template="{value} points"
