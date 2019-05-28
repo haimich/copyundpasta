@@ -22,6 +22,11 @@ $ npm run dev
 $ npm run debug
 ```
 
+Custom hostname:
+```
+HOST=hostname ./node_modules/.bin/nuxt --hostname hostname
+```
+
 ## debug api
 `npm run api`
 
@@ -30,6 +35,7 @@ $ npm run build
 $ npm start
 
 # generate static project
+```
 $ npm run generate
 ```
 
@@ -43,4 +49,8 @@ If you have never started the docker container execute this:
 docker run --name mariadb -e MYSQL_ROOT_PASSWORD=password -e MYSQL_DATABASE=haimich -e MYSQL_USER=haimich -e MYSQL_PASSWORD=haimich -p 3306:3306 mariadb:10.3
 ```
 
-Afterwards to start or stop it just use `docker start mariadb` and `docker stop mariadb`
+Afterwards to start or stop it just use 
+
+`docker start mariadb` and 
+
+`docker stop mariadb`

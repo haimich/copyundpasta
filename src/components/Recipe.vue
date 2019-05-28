@@ -9,12 +9,12 @@
     <el-row>
       <el-col>
         <el-rate
-                v-model="rating"
-                disabled
-                show-score
-                text-color="#ff9900"
-                score-template="{value} points">
-        </el-rate>
+          v-model="rating"
+          disabled
+          show-score
+          text-color="#ff9900"
+          score-template="{value} points"
+        />
       </el-col>
     </el-row>
     <el-row>
@@ -47,7 +47,19 @@
 
 <script>
 export default {
-  props: ['recipeData'],
+  props: {
+    recipeData: Object,
+  },
+  data() {
+    return {
+      rating: 0
+    }
+  },
+  watch: {
+    recipeData: () => {
+      this.calculateRating()
+    }
+  },
   methods: {
     formatIngredient(ingredient) {
       let unit;
@@ -64,7 +76,11 @@ export default {
       }
       return `${amount} ${unit} ${ingredient.name}`
     },
-    callculateRating() {
+    calculateRating() {
+      if (this.recipeData == null) {
+        return;
+      }
+
       let ratingCount = 0;
       for (const rating of this.recipeData.ratings) {
         ratingCount += rating.value;
@@ -72,18 +88,8 @@ export default {
       this.rating = ratingCount / this.recipeData.ratings.length
     }
   },
-  data() {
-    return {
-      rating: 0
-    }
-  },
-  watch: {
-    recipeData: () => {
-      this.callculateRating()
-    }
-  },
   mounted() {
-    this.callculateRating()
+    this.calculateRating()
   }
 }
 

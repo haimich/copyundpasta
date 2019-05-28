@@ -19,5 +19,7 @@ module.exports = {
     "comma-dangle": "off",
     "no-trailing-spaces": "off",
     "vue/multiline-html-element-content-newline": "off",
+    "vue/order-in-components": "off",
+    "vue/require-default-prop": "off"
   }
 }

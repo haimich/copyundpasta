@@ -5,6 +5,10 @@ export default {
 
   debug: false,
 
+  env: {
+    host: process.env.HOST || "localhost"
+  },
+
   srcDir: "src/",
 
   /*
@@ -65,6 +69,7 @@ export default {
   */
   axios: {
     // Doc: https://axios.nuxtjs.org/usage
+    // host: "mpm-dev.intern.ebroot.de"
   },
 
   /*
