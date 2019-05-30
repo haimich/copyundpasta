@@ -46,21 +46,22 @@
 
 <script lang="ts">
 
-export default {
-  props: {
-    recipeData: Object,
-  },
-  data() {
-    return {
-      rating: 0
+  import { Vue, Component, Prop, Watch } from "vue-property-decorator";
+  import Recipe from "@/api/interfaces/Recipe";
+
+  @Component
+  export default class RecipeComponent extends Vue {
+
+    @Prop()
+    recipeData: Recipe;
+    
+    private rating = 0;
+
+    @Watch("recipeData")
+    recipeDataUpdated() {
+        this.calculateRating()
     }
-  },
-  watch: {
-    recipeData: () => {
-      this.calculateRating()
-    }
-  },
-  methods: {
+    
     formatIngredient(ingredient) {
       let unit;
       const amount = ingredient.amount ? ingredient.amount : "";
@@ -75,7 +76,8 @@ export default {
           unit = "";
       }
       return `${amount} ${unit} ${ingredient.name}`
-    },
+    }
+
     calculateRating() {
       if (this.recipeData == null) {
         return;
@@ -87,16 +89,19 @@ export default {
       }
       this.rating = ratingCount / this.recipeData.ratings.length
     }
-  },
-  mounted() {
-    this.calculateRating()
+
+    mounted() {
+      this.calculateRating()
+    }
+
   }
-}
 
 </script>
 
 <style scoped>
-.ingredients-list {
-  list-style: none;
-}
+
+  .ingredients-list {
+    list-style: none;
+  }
+
 </style>

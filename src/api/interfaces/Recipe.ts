@@ -1,4 +1,5 @@
 export default interface Recipe {
-  title: "foo",
-  bla,
+  id: number;
+  title: "foo";
+  ratings: any;
 };
