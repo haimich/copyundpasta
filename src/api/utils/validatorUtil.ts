@@ -1,5 +1,5 @@
 
-export function validateId(body) {
+export function validateId(body: any) {
     if (body == null || body.id == null) {
         throw new Error("Missing mandatory field 'id'");
     }

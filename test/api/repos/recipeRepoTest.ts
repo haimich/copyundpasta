@@ -15,5 +15,6 @@ describe('getRecipes', () => {
         let recipe = await getRecipe(knex, 1);
 
         expect(recipe.id).toBe(1);
-    })
+    });
+    
 })
