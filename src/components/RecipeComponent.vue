@@ -47,7 +47,7 @@
 <script lang="ts">
 
   import { Vue, Component, Prop, Watch } from "vue-property-decorator";
-  import Recipe from "@/api/interfaces/Recipe";
+  import { Recipe, RecipeUnit } from "@/api/interfaces/Recipe";
 
   @Component
   export default class RecipeComponent extends Vue {
@@ -63,15 +63,15 @@
     }
     
     formatIngredient(ingredient) {
-      let unit;
       let amount = ingredient.amount != null ? ingredient.amount : "";
       let preparation = ingredient.preparation != null ? ", " + ingredient.preparation : "";
+      let unit;
     
       switch (ingredient.unit) {
-        case "gram":
+        case RecipeUnit.gram:
           unit = "g";
           break;
-        case "liter":
+        case RecipeUnit.liter:
           unit = "l";
           break;
         default:

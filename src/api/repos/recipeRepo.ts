@@ -1,4 +1,4 @@
-import Recipe from "@/api/interfaces/Recipe";
+import {Recipe} from "@/api/interfaces/Recipe";
 
 export async function getRecipe(knex, id): Promise<Recipe> {
   const recipe = await knex

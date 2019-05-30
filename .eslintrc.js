@@ -30,6 +30,7 @@ module.exports = {
     "padded-blocks": "off",
     "no-multiple-empty-lines": "off",
     "spaced-comment": "off",
-    "prefer-const": "off"
+    "prefer-const": "off",
+    "object-curly-spacing": "off"
   }
 }

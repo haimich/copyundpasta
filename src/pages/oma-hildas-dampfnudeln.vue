@@ -1,7 +1,5 @@
 <template lang="md">
   <el-row>
-    Rezept:
-
     <recipe-component :recipeData="recipe" />
   </el-row>
 </template>
