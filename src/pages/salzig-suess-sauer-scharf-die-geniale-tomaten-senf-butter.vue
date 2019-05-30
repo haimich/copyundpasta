@@ -1,8 +1,13 @@
 <template lang="md">
 
-  ## SALZIG-SÜSS-SAUER-SCHARF: DIE GENIALE TOMATEN-SENF-BUTTER
+  <h2 style="text-align: center; margin-bottom: 20px;">
+    SALZIG-SÜSS-SAUER-SCHARF: DIE GENIALE TOMATEN-SENF-BUTTER
+  </h2>
 
-  Was ist die kulinarische DNA jedes guten Gerichts, fragte Ludwig Maurer vor einigen Tagen beim Fleischforum im Augsburg in die Runde der anwesenden Metzger (+ich). Seine simple Antwort: Es enhält salzige, süße, saure und scharfe Aromen. Als ich ein paar Tage später in der Küche stehe und einen meiner liebsten Brotaufstriche anrühre, stelle ich fest, dass ich dem Credo des Meisters ganz ohne Intention gefolgt bin. Besser gesagt: Ich folge ihm schon seit Jahren, denn diese Tomaten-Senf-Butter begleitet mich seit dem Beginn meines Master-Studiums. Ich habe sie auf einer Studentenparty entdeckt und sofort lieb gewonnen.
+  <el-image src="https://schlaraffenwelt.de/wp-content/uploads/2018/03/3I7A1102-800x558.jpg" fit="fill" style="display: flex; justify-content: center;">
+  </el-image>
+
+  <span class="initial">W</span>as ist die kulinarische DNA jedes guten Gerichts, fragte Ludwig Maurer vor einigen Tagen beim Fleischforum im Augsburg in die Runde der anwesenden Metzger (+ich). Seine simple Antwort: Es enhält salzige, süße, saure und scharfe Aromen. Als ich ein paar Tage später in der Küche stehe und einen meiner liebsten Brotaufstriche anrühre, stelle ich fest, dass ich dem Credo des Meisters ganz ohne Intention gefolgt bin. Besser gesagt: Ich folge ihm schon seit Jahren, denn diese Tomaten-Senf-Butter begleitet mich seit dem Beginn meines Master-Studiums. Ich habe sie auf einer Studentenparty entdeckt und sofort lieb gewonnen.
 
   ## So simpel, so gut!
 
@@ -42,3 +47,11 @@
   }
 
 </script>
+
+<style scoped>
+
+  .initial {
+    font-size: 300%;
+  }
+
+</style>

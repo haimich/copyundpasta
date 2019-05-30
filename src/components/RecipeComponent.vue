@@ -3,7 +3,7 @@
 
     <el-row>
       <el-col :span="24">
-        <h1>{{ recipe.title }}</h1>
+        <h2>{{ recipe.title }}</h2>
       </el-col>
     </el-row>
 
@@ -38,6 +38,9 @@
 
       <el-col :span="16">
         <el-card shadow="never">
+          <div slot="header" class="clearfix">
+            <span>Zubereitung</span>
+          </div>
           <ul
             v-for="(step, index) in recipe.directions.steps"
             :key="index"
