@@ -27,7 +27,6 @@
     
     private recipe = null;
   
-
     head: {
       title: "Oma Hildas Dampfnudeln"
     }

@@ -2,7 +2,10 @@ import NuxtConfiguration from '@nuxt/config';
 import pkg from "./package.json";
 
 const config: NuxtConfiguration = {
+
   mode: "universal",
+
+  srcDir: "src/",
 
   debug: false,
 
@@ -10,7 +13,15 @@ const config: NuxtConfiguration = {
     host: process.env.HOST || "localhost"
   },
 
-  srcDir: "src/",
+  /*
+  ** REST api endpoints
+  */
+  serverMiddleware: [
+    {
+      path: "/api/recipes",
+      handler: "~/api/recipes.ts",
+    },
+  ],
 
   /*
   ** Headers of the page
@@ -26,16 +37,6 @@ const config: NuxtConfiguration = {
       { rel: "icon", type: "image/x-icon", href: "/favicon.ico" }
     ]
   },
-
-  /*
-  ** REST api endpoints
-  */
-  serverMiddleware: [
-    {
-      path: "/api/recipes",
-      handler: "~/api/recipes.js",
-    },
-  ],
 
   /*
   ** Customize the progress-bar color
@@ -107,6 +108,7 @@ const config: NuxtConfiguration = {
       }
     }
   }
+
 }
 
 export default config;
