@@ -53,7 +53,7 @@ function getRecipes() {
       name: "Zucker",
     },
     {
-      unit: "quantity",
+      unit: "unit",
       amount: 2,
       name: "Eier",
     },
@@ -69,6 +69,12 @@ function getRecipes() {
       unit: "gram",
       amount: 80,
       name: "Butter",
+    },
+    {
+      unit: "unit",
+      amount: 2,
+      name: "Zwiebeln",
+      preparation: "gewürfelt",
     },
   ]);
 

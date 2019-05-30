@@ -64,7 +64,9 @@
     
     formatIngredient(ingredient) {
       let unit;
-      const amount = ingredient.amount ? ingredient.amount : "";
+      let amount = ingredient.amount != null ? ingredient.amount : "";
+      let preparation = ingredient.preparation != null ? ", " + ingredient.preparation : "";
+    
       switch (ingredient.unit) {
         case "gram":
           unit = "g";
@@ -75,7 +77,7 @@
         default:
           unit = "";
       }
-      return `${amount} ${unit} ${ingredient.name}`
+      return `${amount} ${unit} ${ingredient.name}${preparation}`
     }
 
     calculateRating() {
