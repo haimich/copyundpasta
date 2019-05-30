@@ -3,7 +3,7 @@
 </template>
 
 <script lang="ts">
-import RecipeComponent from "~/components/RecipeComponent.vue";
+import RecipeComponent from "../components/RecipeComponent.vue";
 
 export default {
   components: {

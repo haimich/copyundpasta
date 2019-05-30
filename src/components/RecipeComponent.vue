@@ -45,6 +45,7 @@
 </template>
 
 <script lang="ts">
+
 export default {
   props: {
     recipeData: Object,
