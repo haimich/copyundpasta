@@ -1,5 +1,7 @@
 <template lang="md">
   <el-row>
+    Rezept:
+
     <recipe-component :recipeData="recipe" />
   </el-row>
 </template>
@@ -12,22 +14,24 @@
   @Component({
     components: {
       RecipeComponent
-    }
-  })
-  export default class YourComponent extends Vue {
-    
-    private recipe = null;
-    
+    },
+    // @ts-ignore
     async asyncData({ $axios }) {
       const response = await $axios.post(`/api/recipes/getRecipe`, {
         id: 1,
       });
       return { recipe: response.data };
     }
+  })
+  export default class OmaHildasDampfnudeln extends Vue {
     
+    private recipe = null;
+  
+
     head: {
       title: "Oma Hildas Dampfnudeln"
     }
+
   }
 
 </script>

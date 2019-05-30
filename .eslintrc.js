@@ -27,6 +27,8 @@ module.exports = {
     "indent": "off",
     "@typescript-eslint/no-unused-vars": "off",
     "no-unused-vars": "off",
-    "padded-blocks": "off"
+    "padded-blocks": "off",
+    "no-multiple-empty-lines": "off",
+    "spaced-comment": "off"
   }
 }
