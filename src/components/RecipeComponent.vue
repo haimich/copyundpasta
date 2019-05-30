@@ -6,33 +6,43 @@
         <h1>{{ recipe.title }}</h1>
       </el-col>
     </el-row>
-    <el-row>
+
+    <el-row style="margin-bottom: 10px">
       <el-col>
         <el-rate
           v-model="rating"
           show-score
           text-color="#ff9900"
-          score-template="{value} points"
+          score-template="{value} Sterne"
         />
       </el-col>
     </el-row>
-    <el-row>
+
+    <el-row :gutter="20">
       <el-col :span="8">
-        <el-card>
+        <el-card shadow="never">
           <div slot="header" class="clearfix">
             <span>Zutaten</span>
           </div>
-          <ul v-for="(ingredient, index) in recipe.ingredients" :key="index" class="ingredients-list">
+          <ul
+            v-for="(ingredient, index) in recipe.ingredients"
+            :key="index"
+            class="ingredients-list"
+          >
             <li>
               {{ formatIngredient(ingredient) }}
             </li>
           </ul>
         </el-card>
-
       </el-col>
-      <el-col :span="24" :md="16">
-        <el-card class="box-card">
-          <ul v-for="(step, index) in recipe.directions.steps" :key="index">
+
+      <el-col :span="16">
+        <el-card shadow="never">
+          <ul
+            v-for="(step, index) in recipe.directions.steps"
+            :key="index"
+            class="directions"
+          >
             <li>
               {{ step.content }}
             </li>
@@ -48,6 +58,7 @@
 
   import { Vue, Component, Prop, Watch } from "vue-property-decorator";
   import { Recipe, RecipeUnit } from "@/api/interfaces/Recipe";
+  import { $n } from "@/plugins/filters/formatNumber";
 
   @Component
   export default class RecipeComponent extends Vue {
@@ -63,7 +74,7 @@
     }
     
     formatIngredient(ingredient) {
-      let amount = ingredient.amount != null ? ingredient.amount : "";
+      let amount = ingredient.amount !== null && ingredient.amount !== undefined ? $n(ingredient.amount) + " " : "";
       let preparation = ingredient.preparation != null ? ", " + ingredient.preparation : "";
       let unit;
     
@@ -74,14 +85,25 @@
         case RecipeUnit.liter:
           unit = "l";
           break;
+        case RecipeUnit.el:
+          unit = "EL";
+          break;
+        case RecipeUnit.tl:
+          unit = "TL";
+          break;
+        case RecipeUnit.einige:
+          unit = "einige";
+          break;
         default:
           unit = "";
       }
-      return `${amount} ${unit} ${ingredient.name}${preparation}`
+      return `${amount}${unit} ${ingredient.name}${preparation}`
     }
 
     calculateRating() {
       if (this.recipe == null) {
+        return;
+      } else if (this.recipe.ratings.length === 0) {
         return;
       }
 
@@ -92,7 +114,13 @@
       this.rating = ratingCount / this.recipe.ratings.length
     }
 
+    reset() {
+      this.rating = 0;
+    }
+
     mounted() {
+      this.reset();
+
       this.calculateRating()
     }
 
@@ -102,8 +130,13 @@
 
 <style scoped>
 
-  .ingredients-list {
+  .ingredients-list, .directions {
     list-style: none;
+    padding-left: 0;
+  }
+
+  .ingredients-list li, .directions li {
+    padding: 4px 0;
   }
 
 </style>

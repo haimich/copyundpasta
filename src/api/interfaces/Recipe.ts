@@ -2,6 +2,9 @@ export enum RecipeUnit {
   gram = "gram",
   liter = "liter",
   unit = "unit",
+  el = "el",
+  tl = "tl",
+  einige = "einige",
 }
 
 export interface RecipeIngredient {
@@ -16,8 +19,13 @@ export interface RecipeStep {
 }
 
 export interface RecipeRating {
-  date: string;
+  date: number;
   value: number;
+}
+
+export interface RecipeServings {
+  unit: RecipeUnit;
+  amount: number;
 }
 
 export interface Recipe {

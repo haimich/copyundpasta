@@ -1,6 +1,10 @@
 <template>
   <div class="page-component__scroll el-scrollbar">
-    <nuxt />
+    <el-row>
+      <el-col :offset="4" :span="16">
+        <nuxt />
+      </el-col>
+    </el-row>
 
     <el-backtop target=".page-component__scroll"></el-backtop>
   </div>

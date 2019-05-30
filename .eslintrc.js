@@ -31,6 +31,7 @@ module.exports = {
     "no-multiple-empty-lines": "off",
     "spaced-comment": "off",
     "prefer-const": "off",
-    "object-curly-spacing": "off"
+    "object-curly-spacing": "off",
+    "eol-last": "off"
   }
 }

@@ -10,12 +10,20 @@ export async function getRecipe(knex, id): Promise<Recipe> {
     .first();
 
   if (recipe != null) {
-    recipe.servings = JSON.parse(recipe.servings);
-    recipe.ingredients = JSON.parse(recipe.ingredients);
-    recipe.directions = JSON.parse(recipe.directions);
-    recipe.notes = JSON.parse(recipe.notes);
-    recipe.ratings = JSON.parse(recipe.ratings);
+    recipe.servings = parseJsonString(recipe.servings, null);
+    recipe.ingredients = parseJsonString(recipe.ingredients, []);
+    recipe.directions = parseJsonString(recipe.directions, []);
+    recipe.notes = parseJsonString(recipe.notes, []);
+    recipe.ratings = parseJsonString(recipe.ratings, []);
   }
 
   return recipe;
+}
+
+function parseJsonString(str: string, defaultValue: any): {} {
+  if (str !== null && str !== undefined && str !== "") {
+    return JSON.parse(str);
+  } else {
+    return defaultValue;
+  }
 }
