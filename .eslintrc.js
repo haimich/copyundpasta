@@ -22,6 +22,11 @@ module.exports = {
     "vue/multiline-html-element-content-newline": "off",
     "vue/order-in-components": "off",
     "vue/require-default-prop": "off",
-    '@typescript-eslint/no-unused-vars': 'error'
+    '@typescript-eslint/no-unused-vars': "error",
+    "vue/html-self-closing": "off",
+    "indent": "off",
+    "@typescript-eslint/no-unused-vars": "off",
+    "no-unused-vars": "off",
+    "padded-blocks": "off"
   }
 }

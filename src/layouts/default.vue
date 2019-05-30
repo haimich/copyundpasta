@@ -1,6 +1,8 @@
 <template>
-  <div>
+  <div class="page-component__scroll el-scrollbar">
     <nuxt />
+
+    <el-backtop target=".page-component__scroll"></el-backtop>
   </div>
 </template>
 
@@ -51,5 +53,9 @@ html {
 .button--grey:hover {
   color: #fff;
   background-color: #35495e;
+}
+
+.page-component__scroll {
+    height: 100%;
 }
 </style>
