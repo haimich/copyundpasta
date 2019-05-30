@@ -1,6 +1,6 @@
 <template lang="md">
   <el-row>
-    <recipe-component :recipeData="recipe" />
+    <recipe-component :recipe="recipe" />
   </el-row>
 </template>
 

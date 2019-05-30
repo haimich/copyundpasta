@@ -1,9 +1,9 @@
 <template>
-  <div v-if="recipeData">
+  <div v-if="recipe">
 
     <el-row>
       <el-col :span="24">
-        <h1>{{ recipeData.title }}</h1>
+        <h1>{{ recipe.title }}</h1>
       </el-col>
     </el-row>
     <el-row>
@@ -22,7 +22,7 @@
           <div slot="header" class="clearfix">
             <span>Zutaten</span>
           </div>
-          <ul v-for="(ingredient, index) in recipeData.ingredients" :key="index" class="ingredients-list">
+          <ul v-for="(ingredient, index) in recipe.ingredients" :key="index" class="ingredients-list">
             <li>
               {{ formatIngredient(ingredient) }}
             </li>
@@ -32,7 +32,7 @@
       </el-col>
       <el-col :span="24" :md="16">
         <el-card class="box-card">
-          <ul v-for="(step, index) in recipeData.directions.steps" :key="index">
+          <ul v-for="(step, index) in recipe.directions.steps" :key="index">
             <li>
               {{ step.content }}
             </li>
@@ -53,12 +53,12 @@
   export default class RecipeComponent extends Vue {
 
     @Prop()
-    recipeData: Recipe;
+    recipe: Recipe;
     
     private rating = 0;
 
-    @Watch("recipeData")
-    recipeDataUpdated() {
+    @Watch("recipe")
+    recipeUpdated() {
         this.calculateRating()
     }
     
@@ -81,15 +81,15 @@
     }
 
     calculateRating() {
-      if (this.recipeData == null) {
+      if (this.recipe == null) {
         return;
       }
 
       let ratingCount = 0;
-      for (const rating of this.recipeData.ratings) {
+      for (const rating of this.recipe.ratings) {
         ratingCount += rating.value;
       }
-      this.rating = ratingCount / this.recipeData.ratings.length
+      this.rating = ratingCount / this.recipe.ratings.length
     }
 
     mounted() {
