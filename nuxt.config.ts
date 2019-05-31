@@ -80,7 +80,6 @@ const config: NuxtConfiguration = {
   */
   markdownit: {
     html: true,
-    typography: true,
   },
 
   /*

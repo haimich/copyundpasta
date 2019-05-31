@@ -11,7 +11,7 @@
 
   <span class="initial">W</span>as ist die kulinarische DNA jedes guten Gerichts, fragte Ludwig Maurer vor einigen Tagen beim Fleischforum im Augsburg in die Runde der anwesenden Metzger (+ich). Seine simple Antwort: Es enhält salzige, süße, saure und scharfe Aromen. Als ich ein paar Tage später in der Küche stehe und einen meiner liebsten Brotaufstriche anrühre, stelle ich fest, dass ich dem Credo des Meisters ganz ohne Intention gefolgt bin. Besser gesagt: Ich folge ihm schon seit Jahren, denn diese Tomaten-Senf-Butter begleitet mich seit dem Beginn meines Master-Studiums. Ich habe sie auf einer Studentenparty entdeckt und sofort lieb gewonnen.
 
-  ## So simpel, so gut!
+  ## “So simpel, so gut!”
 
   Es war schon weit nach Mitternacht und meine Sinne sicherlich promillegetränkt, als ich zwischen den Resten des Buffets diese rote Creme entdeckte. Butter, die bereits seit einigen Stunden bei Zimmertemperatur steht, hat die allerbeste Konsistenz. Wenn dann noch ein paar Scheiben guten Baguettes direkt daneben liegen, kann ich nicht widerstehen – schon gar nicht spät nachts. Diese Mundfülle! Ich konnte nicht mehr aufhören. Nachdem ich bereits kurz davor war, die Schüssel auszulecken, erbarmte sich die Köchin und verriet mir das Rezept, das mich ziemlich überrascht zurückließ. Butter, Tomatenmark, Senf, Salz, Zucker. That’s it. In dieser Version habe ich mit ein paar Spezialzutaten gearbeitet, die ihr aber gar nicht dringend braucht.
 
