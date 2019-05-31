@@ -61,7 +61,7 @@
 
   import { Vue, Component, Prop, Watch } from "vue-property-decorator";
   import { Recipe, RecipeUnit } from "@/api/interfaces/Recipe";
-  import { $n } from "@/plugins/filters/formatNumber";
+  import { $n } from "@/filters/formatNumber";
 
   @Component
   export default class RecipeComponent extends Vue {
@@ -77,7 +77,7 @@
     }
     
     formatIngredient(ingredient) {
-      let amount = ingredient.amount !== null && ingredient.amount !== undefined ? $n(ingredient.amount) + " " : "";
+      let amount = this.formatAmount(ingredient.amount);
       let preparation = ingredient.preparation != null ? ", " + ingredient.preparation : "";
       let unit;
     
@@ -100,7 +100,29 @@
         default:
           unit = "";
       }
+
+      if (amount != null && amount !== "") {
+        amount += " "; // we need a space here
+      }
+
       return `${amount}${unit} ${ingredient.name}${preparation}`
+    }
+
+    formatAmount(amount: number): string {
+      if (amount !== null && amount !== undefined) {
+        if (amount === 0.25) {
+          return "1/4";
+        } else if (amount === 0.5) {
+          return "1/2";
+        } else if (amount === 0.75) {
+          return "3/4";
+        } else {
+          // just format the number nicely
+          return $n(amount);
+        }
+      } else {
+        return "";
+      }
     }
 
     calculateRating() {
