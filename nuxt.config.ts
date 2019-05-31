@@ -79,6 +79,7 @@ const config: NuxtConfiguration = {
   ** Markdownit module configuration
   */
   markdownit: {
+    html: true,
     // preset: 'default',
     // linkify: true,
     // breaks: true,
