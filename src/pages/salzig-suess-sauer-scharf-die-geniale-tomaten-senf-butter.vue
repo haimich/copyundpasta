@@ -1,4 +1,5 @@
 <template lang="md">
+
   <el-page-header title="Zurück" content="Herzhafte Speisen" v-on:back="$router.push('/')"></el-page-header>
 
   <h2 style="text-align: center; margin-top: 20px; margin-bottom: 20px;">
