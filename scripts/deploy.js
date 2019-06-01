@@ -8,7 +8,7 @@ if (process.env.DEPLOY_HOST == null) {
 
 async function deploy() {
   try {
-    console.log("Connecting");
+    console.log("Connecting...");
 
     await ssh.connect({
       host: process.env.DEPLOY_HOST,
@@ -16,25 +16,25 @@ async function deploy() {
       password: process.env.DEPLOY_PW,
     });
 
-    console.log("\nUpdating repo\n");
+    console.log("\nUpdating repo...\n");
 
     await executeCommand("git status | grep 'nothing to commit'");
     await executeCommand("git checkout .");
     await executeCommand("git pull --rebase");
 
-    console.log("\nInstalling npm dependencies\n");
+    console.log("\nInstalling npm dependencies...\n");
     await executeCommand("npm install");
 
-    console.log("\nMigrating db\n");
+    console.log("\nMigrating db...\n");
     await executeCommand("./node_modules/.bin/knex migrate:latest --env production");
 
-    console.log("\nRebuilding app\n");
-    // await executeCommand("npm run build");
-    await executeCommand("pm2 restart cup");
+    console.log("\nRebuilding app...\n");
+    await executeCommand("npm run build");
     
-    console.log("\nMake sure the app is running\n");
+    console.log("\nRestarting app...\n");
     try {
-      await executeCommand("pm2 show cup | grep online");
+      await executeCommand("~/bin/pm2 restart cup");
+      await executeCommand("~/bin/pm2 show cup | grep online");
     } catch (error) {
       console.error(error);
 

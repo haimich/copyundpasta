@@ -6,7 +6,7 @@
         copy & pasta
       </h1>
       <h2 class="subtitle">
-        My little foodblog
+        My little Copy & Pasta
       </h2>
       <div class="links">
         <a
