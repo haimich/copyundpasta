@@ -1,5 +1,4 @@
-import NuxtConfiguration from '@nuxt/config';
-import pkg from "./package.json";
+import NuxtConfiguration from "@nuxt/config";
 
 const config: NuxtConfiguration = {
 
@@ -27,21 +26,17 @@ const config: NuxtConfiguration = {
   ** Headers of the page
   */
   head: {
-    title: "Herzlich Willkommen bei Copy & Pasta",
+    title: "Copy & Pasta - der Foodblog aus Karlsruhe",
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { hid: "description", name: "description", content: pkg.description }
+      { hid: "description", name: "description", content: "Copy & Pasta wurde 2019 von Michael Müller aus Karlsruhe ins Leben gerufen." }
     ],
     link: [
-      { rel: "icon", type: "image/x-icon", href: "/favicon.ico" }
+      { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
+      { rel: "stylesheet", href: "https://fonts.googleapis.com/css?family=Merriweather+Sans:300,400,400i,700&display=swap" },
     ]
   },
-
-  /*
-  ** Customize the progress-bar color
-  */
-  loading: { color: "#fff" },
 
   /*
   ** Global CSS
@@ -49,7 +44,6 @@ const config: NuxtConfiguration = {
   css: [
     "normalize.css",
     "@/scss/variables.scss",
-    // "element-ui/lib/theme-chalk/index.css",
   ],
 
   /*

@@ -1,7 +1,7 @@
 <template>
 
   <div>
-    <el-button>foo</el-button>
+    Kontakt
   </div>
 
 </template>
@@ -11,7 +11,7 @@
   import { Vue, Component, Prop } from "vue-property-decorator";
 
   @Component
-  export default class IndexPage extends Vue {
+  export default class ContactPage extends Vue {
 
   }
 

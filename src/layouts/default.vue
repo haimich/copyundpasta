@@ -1,22 +1,75 @@
 <template>
-  <div class="page-component__scroll el-scrollbar">
+  <div class="container page-component__scroll el-scrollbar">
 
-    <el-row>
-      <el-col :offset="4" :span="16">
-        <nuxt />
-      </el-col>
-    </el-row>
+    <nav>
+      <el-row>
+        <el-col class="header-nav" :span="22" :offset="1">
+
+          <!-- Logo -->
+          <img src="@/assets/images/logo.png" style="width: 256px;" alt="Logo" />
+
+          <!-- Menu -->
+          <el-menu
+            default-active="home"
+            mode="horizontal"
+          >
+            <el-menu-item index="home">
+              HOME
+            </el-menu-item>
+
+            <el-menu-item index="recipes">
+              <nuxt-link to="/rezepte">REZEPTE</nuxt-link>
+            </el-menu-item>
+
+            <el-menu-item index="about">
+              <nuxt-link to="/about">ÜBER MICH</nuxt-link>
+            </el-menu-item>
+
+            <el-menu-item index="contact">
+              <nuxt-link to="/kontakt">KONTAKT</nuxt-link>
+            </el-menu-item>
+
+            <el-menu-item index="search" @click="openSearch()">
+              <i class="el-icon-search" role="button"></i>
+            </el-menu-item>
+          </el-menu>
+
+        </el-col>
+      </el-row>
+    </nav>
+    
+    <main>
+      <nuxt />
+    </main>
+    
+    <footer>
+      Footer
+    </footer>
 
     <el-backtop target=".page-component__scroll"></el-backtop>
     
   </div>
 </template>
 
-<style>
+<script lang="ts">
+
+  import { Vue, Component, Prop } from "vue-property-decorator";
+
+  @Component
+  export default class DefaultLayoutComponent extends Vue {
+
+    openSearch() {
+      console.log("Search");
+    }
+
+  }
+
+</script>
+
+<style lang="scss">
 
   html {
-    font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-      Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-family: "Merriweather Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 16px;
     word-spacing: 1px;
     -ms-text-size-adjust: 100%;
@@ -33,9 +86,31 @@
     margin: 0;
   }
 
+  .container {
+    background-color: #ffffff;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .header-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    a {
+      text-decoration: none;
+    }
+  }
+
+  footer {
+    background-color: #B3C0D1;
+  }
+  
   /* Element UI marker for button to go to top of page */
   .page-component__scroll {
-      height: 100%;
+    height: 100%;
   }
 
 </style>

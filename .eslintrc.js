@@ -32,6 +32,7 @@ module.exports = {
     "spaced-comment": "off",
     "prefer-const": "off",
     "object-curly-spacing": "off",
-    "eol-last": "off"
+    "eol-last": "off",
+    "vue/singleline-html-element-content-newline": "off"
   }
 }
