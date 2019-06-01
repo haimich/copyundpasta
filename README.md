@@ -32,8 +32,15 @@ HOST=hostname ./node_modules/.bin/nuxt --hostname hostname
 `npm run api`
 
 # build for production and launch server
+```
 $ npm run build
 $ npm start
+```
+
+## deploy
+```
+npm run deploy
+```
 
 # generate static project
 ```

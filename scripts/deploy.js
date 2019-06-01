@@ -23,7 +23,7 @@ async function deploy() {
     await executeCommand("git pull --rebase");
 
     console.log("\nInstalling npm dependencies...\n");
-    await executeCommand("npm install");
+    await executeCommand("npm install --production");
 
     console.log("\nMigrating db...\n");
     await executeCommand("./node_modules/.bin/knex migrate:latest --env production");

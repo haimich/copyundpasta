@@ -1,4 +1,3 @@
-require("dotenv").config();
 const express = require("express");
 const bodyParser = require("body-parser");
 require('express-async-errors');
@@ -21,20 +20,12 @@ app.use(function (err, req, res, next) {
  */
 
 app.post("/getRecipe", async (req, res) => {
+    console.log("getRecipe");
+
     // validate params
     const id = validateId(req.body);
 
-    const knex = require("knex")({
-        client: "mysql",
-        connection: {
-          host : "127.0.0.1",
-          user : "haimich",
-          password : "haimich",
-          database : "haimich"
-        }
-    });
-
-    const recipe = await getRecipe(knex, id);
+    const recipe = await getRecipe(id);
 
     if (recipe == null) {
         res.sendStatus(404);

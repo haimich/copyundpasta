@@ -1,6 +1,9 @@
 import {Recipe} from "@/api/interfaces/Recipe";
+import { getConnection } from "../utils/knexUtil";
 
-export async function getRecipe(knex, id): Promise<Recipe> {
+export async function getRecipe(id): Promise<Recipe> {
+  const knex = getConnection();
+  
   const recipe = await knex
     .table("recipes")
     .select("*")
