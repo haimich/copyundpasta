@@ -1,12 +1,9 @@
-import Article from "@/api/interfaces/Article";
+import { Article } from "@/api/interfaces/Article";
 
-export async function getHeroArticles(knex, id): Promise<Article> {
-  const article = await knex
+export async function getArticles(knex, id): Promise<Article[]> {
+  const articles = await knex
     .table("articles")
-    .select("*")
-    .whereIn("id", [
-      1, 2, 3
-    ]);
+    .select("*");
 
-  return article;
+  return articles;
 }

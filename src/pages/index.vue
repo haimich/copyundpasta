@@ -2,9 +2,12 @@
 
   <el-row>
     <el-col :span="24">
-      <el-carousel height="150px">
-        <el-carousel-item v-for="item in carouselItems" :key="item">
-          <img :src="item" alt="hero image" />
+      <el-carousel height="650px" indicator-position="none">
+        <el-carousel-item
+          v-for="article in heroArticles"
+          :key="article.slug"
+        >
+          <img :src="article.previewImageUrl" alt="hero image" />
         </el-carousel-item>
       </el-carousel>
     </el-col>
@@ -16,12 +19,17 @@
 
   import { Vue, Component, Prop } from "vue-property-decorator";
 
-  @Component
+  @Component({
+    // @ts-ignore
+    async asyncData({ $axios }) {
+      const response = await $axios.post(`/api/articles/getHeroArticles`);
+
+      return { heroArticles: response.data };
+    }
+  })
   export default class IndexPage extends Vue {
 
-    private carouselItems = [
-      "@/assets/images/logo.png",
-    ];
+    private heroArticles = [];
 
   }
 

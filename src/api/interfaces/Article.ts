@@ -1,5 +1,7 @@
-export default interface Article {
-  id: number;
-  title: "foo";
-  ratings: any;
-};
+export interface Article {
+  id?: number;
+  slug: string;
+  title: string;
+  shortDescription?: string;
+  previewImageUrl: string;
+}

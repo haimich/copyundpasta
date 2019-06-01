@@ -1,18 +1,8 @@
-const express = require("express");
-const bodyParser = require("body-parser");
-require('express-async-errors');
-const app = express();
+import { setupExpress } from "./utils/expressUtil";
+import { getRecipe } from "./repos/recipeRepo";
+import { validateId } from "./utils/validatorUtil";
 
-import {getRecipe} from "./repos/recipeRepo";
-import {validateId} from "./utils/validatorUtil";
-
-// setup express
-app.use(bodyParser.json());
-
-app.use(function (err, req, res, next) {
-  console.error(err.stack)
-  return res.status(500).send('Something broke!')
-});
+let app = setupExpress();
 
 /**
  * Configure routes

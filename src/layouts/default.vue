@@ -7,7 +7,7 @@
 
           <!-- Logo -->
           <nuxt-link to="/" title="HOME" @click="activeIndex='home'">
-            <img src="@/assets/images/logo.png" style="width: 256px;" alt="Logo" />
+            <img class="logo" src="@/assets/images/logo.png" alt="Logo" />
           </nuxt-link>
 
           <!-- Menu -->
@@ -76,14 +76,20 @@
 
     menuItemChanged(key) {
       this.activeIndex = key;
+      let routeToNavigate = "";
 
       if (key === "suche") {
         this.openSearch()
       } else if (key === Pages.HOME) {
-        this.$router.push("/");
+        routeToNavigate = "/";
       } else {
         // make sure we navigate to the page even when the use clicked besides the nuxt link
-        this.$router.push("/" + key)
+        routeToNavigate = "/" + key;
+      }
+
+      if (routeToNavigate !== this.$router.currentRoute.path) {
+        // only navigate if not already on the page
+        this.$router.push(routeToNavigate);
       }
     }
 
@@ -153,6 +159,11 @@
     align-items: center;
     flex-direction: column;
 
+    .logo {
+      width: 256px;
+      margin-top: 20px;
+    }
+
     .el-menu-item {
       height: 53px;
     }
@@ -164,6 +175,7 @@
 
   main {
     margin-top: 40px;
+    margin-bottom: 40px;
   }
 
   footer {

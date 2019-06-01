@@ -20,6 +20,10 @@ const config: NuxtConfiguration = {
       path: "/api/recipes",
       handler: "~/api/recipes.ts",
     },
+    {
+      path: "/api/articles",
+      handler: "~/api/articles.ts",
+    },
   ],
 
   /*
@@ -36,6 +40,10 @@ const config: NuxtConfiguration = {
       { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
       { rel: "stylesheet", href: "https://fonts.googleapis.com/css?family=Merriweather+Sans:300,400,400i,700&display=swap" },
     ]
+  },
+
+  loading: {
+    color: "#1eb5da",
   },
 
   /*
