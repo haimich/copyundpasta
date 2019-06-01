@@ -6,18 +6,21 @@
         <el-col class="header-nav" :span="22" :offset="1">
 
           <!-- Logo -->
-          <img src="@/assets/images/logo.png" style="width: 256px;" alt="Logo" />
+          <nuxt-link to="/" title="HOME" @click="activeIndex='home'">
+            <img src="@/assets/images/logo.png" style="width: 256px;" alt="Logo" />
+          </nuxt-link>
 
           <!-- Menu -->
           <el-menu
-            default-active="home"
+            :default-active="activeIndex"
             mode="horizontal"
+            @select="menuItemChanged"
           >
             <el-menu-item index="home">
-              HOME
+              <nuxt-link to="/">HOME</nuxt-link>
             </el-menu-item>
 
-            <el-menu-item index="recipes">
+            <el-menu-item index="rezepte">
               <nuxt-link to="/rezepte">REZEPTE</nuxt-link>
             </el-menu-item>
 
@@ -25,11 +28,11 @@
               <nuxt-link to="/about">ÜBER MICH</nuxt-link>
             </el-menu-item>
 
-            <el-menu-item index="contact">
+            <el-menu-item index="kontakt">
               <nuxt-link to="/kontakt">KONTAKT</nuxt-link>
             </el-menu-item>
 
-            <el-menu-item index="search" @click="openSearch()">
+            <el-menu-item index="suche">
               <i class="el-icon-search" role="button"></i>
             </el-menu-item>
           </el-menu>
@@ -39,7 +42,11 @@
     </nav>
     
     <main>
-      <nuxt />
+      <el-row>
+        <el-col :span="22" :offset="1">
+          <nuxt />
+        </el-col>
+      </el-row>
     </main>
     
     <footer>
@@ -55,11 +62,58 @@
 
   import { Vue, Component, Prop } from "vue-property-decorator";
 
+  enum Pages {
+    HOME = "home",
+    REZEPTE = "rezepte",
+    ABOUT = "about",
+    KONTAKT = "kontakt",
+  }
+
   @Component
   export default class DefaultLayoutComponent extends Vue {
 
+    private activeIndex = Pages.HOME;
+
+    menuItemChanged(key) {
+      this.activeIndex = key;
+
+      if (key === "suche") {
+        this.openSearch()
+      } else if (key === Pages.HOME) {
+        this.$router.push("/");
+      } else {
+        // make sure we navigate to the page even when the use clicked besides the nuxt link
+        this.$router.push("/" + key)
+      }
+    }
+
     openSearch() {
       console.log("Search");
+    }
+
+    created() {
+      // preselect correct menu item
+      switch (this.$route.path) {
+        case "/": {
+          this.activeIndex = Pages.HOME;
+          break;
+        }
+
+        case "/rezepte": {
+          this.activeIndex = Pages.REZEPTE;
+          break;
+        }
+
+        case "/about": {
+          this.activeIndex = Pages.ABOUT;
+          break;
+        }
+
+        case "/kontakt": {
+          this.activeIndex = Pages.KONTAKT;
+          break;
+        }
+      }
     }
 
   }
@@ -99,9 +153,17 @@
     align-items: center;
     flex-direction: column;
 
+    .el-menu-item {
+      height: 53px;
+    }
+
     a {
       text-decoration: none;
     }
+  }
+
+  main {
+    margin-top: 40px;
   }
 
   footer {

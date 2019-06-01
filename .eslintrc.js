@@ -33,6 +33,7 @@ module.exports = {
     "prefer-const": "off",
     "object-curly-spacing": "off",
     "eol-last": "off",
-    "vue/singleline-html-element-content-newline": "off"
+    "vue/singleline-html-element-content-newline": "off",
+    "no-useless-return": "off"
   }
 }
