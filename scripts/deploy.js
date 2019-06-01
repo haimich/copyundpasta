@@ -8,7 +8,7 @@ if (process.env.DEPLOY_HOST == null) {
 
 async function deploy() {
   try {
-    console.log("Connecting\n");
+    console.log("Connecting");
 
     await ssh.connect({
       host: process.env.DEPLOY_HOST,
@@ -26,7 +26,7 @@ async function deploy() {
     await executeCommand("npm install");
 
     console.log("\nMigrating db\n");
-    await executeCommand("npm run db:migrate");
+    await executeCommand("./node_modules/.bin/knex migrate:latest --env production");
 
     console.log("\nRebuilding app\n");
     // await executeCommand("npm run build");
