@@ -22,6 +22,9 @@ async function deploy() {
     await executeCommand("git checkout .");
     await executeCommand("git pull --rebase");
 
+    console.log("\nInstalling npm dependencies\n");
+    await executeCommand("npm install");
+
     console.log("\nMigrating db\n");
     await executeCommand("npm run db:migrate");
 
