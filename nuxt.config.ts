@@ -48,7 +48,8 @@ const config: NuxtConfiguration = {
   */
   css: [
     "normalize.css",
-    "element-ui/lib/theme-chalk/index.css",
+    "@/scss/variables.scss",
+    // "element-ui/lib/theme-chalk/index.css",
   ],
 
   /*
