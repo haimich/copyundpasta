@@ -1,24 +1,27 @@
-let nodeSsh = require('node-ssh');
+require("dotenv").config()
+let nodeSsh = require("node-ssh");
 let ssh = new nodeSsh();
 
-const HOME_DIR = "/home/haimich/copyundpasta.de";
+if (process.env.DEPLOY_HOST == null) {
+  throw new Error("You need to create a .env file with the following variables: DEPLOY_HOST, DEPLOY_USERNAME, DEPLOY_PW and DEPLOY_HOMEDIR");
+}
 
 async function deploy() {
   try {
     console.log("Connecting");
 
     await ssh.connect({
-
+      host: process.env.DEPLOY_HOST,
+      username: process.env.DEPLOY_USERNAME,
+      password: process.env.DEPLOY_PW,
     });
 
-    console.log("git pull");
-
+    await executeCommand("git status | grep 'nothing to commit'");
     await executeCommand("git checkout .");
     await executeCommand("git pull --rebase");
 
-    console.log("Uploading file");
-
-    await ssh.putFile("/Users/CrisMich/Desktop/dev/copyundpasta/README.md", "/home/haimich/README.md");
+    // console.log("Uploading file");
+    // await ssh.putFile("README.md", "/home/haimich/README.md");
 
     process.exit(0);
   } catch (error) {
@@ -27,11 +30,12 @@ async function deploy() {
   }
 }
 
-async function executeCommand(command, homeDir = HOME_DIR) {
+async function executeCommand(command, homeDir = process.env.DEPLOY_HOMEDIR) {
+  console.log("> " + command);
   let result = await ssh.execCommand(command, { cwd: homeDir });
 
   if (result.code !== 0) {
-    console.error(`Invalid result code for command ${command}: ${result.code}`);
+    console.error(`Invalid result code for command "${command}": ${result.code}`);
     console.error(result.stderr);
     process.exit(1);
   }
