@@ -27,13 +27,14 @@ async function deploy() {
 
     console.log("\nMigrating db...\n");
     await executeCommand("./node_modules/.bin/knex migrate:latest --env production");
+    await executeCommand("./node_modules/.bin/knex seed:run --env production");
 
     console.log("\nRebuilding app...\n");
     await executeCommand("npm run build");
     
     console.log("\nRestarting app...\n");
     try {
-      await executeCommand("~/bin/pm2 restart cup");
+      await executeCommand("~/bin/pm2 restart ecosystem.config.js --env production");
       await executeCommand("~/bin/pm2 show cup | grep online");
     } catch (error) {
       console.error(error);
