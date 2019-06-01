@@ -12,6 +12,7 @@ module.exports = {
     ".*\\.(vue)$": "vue-jest",
     "^.+\\.tsx?$": "ts-jest"
   },
+  verbose: false,
   "collectCoverage": false,
   "collectCoverageFrom": [
     "<rootDir>/src/components/**/*.vue",

@@ -1,5 +1,5 @@
 require("dotenv").config();
-const config = require(__dirname + "/../../../knexfile");
+const config = require(__dirname + "/../../../knexfile.js");
 
 let env = "development";
 
