@@ -3,7 +3,8 @@
 > My little foodblog
 
 ## Libraries
-* ExpressJS
+* NuxtJS
+* ExpressJS (included with Nuxt)
 * Jest
 * knex with mysql
 * element ui css framework
