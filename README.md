@@ -31,6 +31,20 @@ HOST=hostname ./node_modules/.bin/nuxt --hostname hostname
 ## debug api
 `npm run api`
 
+# Live setup
+* checkout project
+* add .env file with:
+
+```
+DB_DATABASE=xxx
+DB_USER=xxx
+DB_PW=xxx
+SERVER_HOST=0.0.0.0
+SERVER_PORT=3000
+AXIOS_HOST=copyundpasta.de
+AXIOS_PORT=443
+```
+
 # build for production and launch server
 ```
 $ npm run build

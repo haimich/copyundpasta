@@ -18,8 +18,8 @@ async function deploy() {
 
     console.log("\nUpdating repo...\n");
 
-    await executeCommand("git status | grep 'nothing to commit'");
     await executeCommand("git checkout .");
+    await executeCommand("git status | grep 'nothing to commit'");
     await executeCommand("git pull --rebase");
 
     console.log("\nInstalling npm dependencies...\n");
