@@ -5,11 +5,10 @@
   "author": "Michael Müller",
   "private": true,
   "scripts": {
-    "dev": "nuxt",
+    "dev": "nodemon --watch api --exec \"nuxt\"",
     "debug": "nodemon --inspect node_modules/.bin/nuxt",
     "build": "nuxt build",
     "start": "nuxt start --hostname 0.0.0.0 --port 3000",
-    "api": "nodemon --watch api --exec \"nuxt\"",
     "deploy": "node scripts/deploy.js",
     "db:rebuild": "knex migrate:rollback --all && knex migrate:latest && knex seed:run",
     "generate": "nuxt generate",
