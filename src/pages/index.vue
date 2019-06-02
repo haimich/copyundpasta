@@ -3,7 +3,7 @@
   <div>
 
     <el-row>
-      <el-col :span="24">
+      <el-col :span="24" class="hero-carousel">
         <el-carousel
           height="650px"
           indicator-position="none"
@@ -72,6 +72,14 @@
 </script>
 
 <style lang="scss" scoped>
+
+  .hero-carousel {
+     & /deep/ .el-carousel__container button {
+      font-size: 21px;
+      width: 50px;
+      height: 50px;
+    }
+  }
 
 </style>
 

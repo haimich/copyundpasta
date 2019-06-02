@@ -13,7 +13,7 @@
       <i class="el-icon-s-home" role="button"></i>
       
       <nuxt-link to="/">
-         Zur Startseite
+        Zur Startseite
       </nuxt-link>
     </div>
   </div>
