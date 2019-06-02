@@ -57,7 +57,7 @@
 
   @Component({
     // @ts-ignore
-    async asyncData({ $axios }) {
+    async asyncData({ $axios, error }) {
       const response = await $axios.post(`/api/articles/getHeroArticles`);
 
       return { heroArticles: response.data };
@@ -109,7 +109,7 @@
   .hero-carousel-button {
     margin-top: 40px;
     display: inline-block;
-    padding: 15px;
+    padding: 15px 20px;
     border: 2px solid white;
     border-radius: 2px;
     font-size: 16px;
