@@ -9,7 +9,7 @@ const config: NuxtConfiguration = {
 
   debug: false,
 
-  env: {
+  server: {
     host: process.env.SERVER_HOST || "localhost",
     port: "3000",
   },
