@@ -3,7 +3,7 @@
 
     <nav>
       <el-row>
-        <el-col :span="22" :offset="1">
+        <el-col :span="spanDesktop" :offset="offsetDesktop">
           <span class="header-social-icons">
             <ul>
               <li>
@@ -27,7 +27,7 @@
       </el-row>
 
       <el-row>
-        <el-col class="header-nav" :span="22" :offset="1">
+        <el-col class="header-nav" :span="spanDesktop" :offset="offsetDesktop">
 
           <!-- Logo -->
           <nuxt-link to="/" title="HOME" @click="activeIndex='home'">
@@ -67,7 +67,8 @@
     
     <main>
       <el-row>
-        <el-col :span="22" :offset="1">
+        <el-col :span="spanDesktop" :offset="offsetDesktop">
+          <!-- Main Container -->
           <nuxt />
         </el-col>
       </el-row>
@@ -97,6 +98,9 @@
   export default class DefaultLayoutComponent extends Vue {
 
     private activeIndex = Pages.HOME;
+
+    private spanDesktop = 20;
+    private offsetDesktop = 2;
 
     menuItemChanged(key) {
       this.activeIndex = key;
