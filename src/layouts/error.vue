@@ -9,9 +9,11 @@
       </h2>
     </div>
 
-    <div style="margin-top: 60px;">
+    <div class="link-container">
+      <i class="el-icon-s-home" role="button"></i>
+      
       <nuxt-link to="/">
-        Zur Startseite
+         Zur Startseite
       </nuxt-link>
     </div>
   </div>
@@ -63,12 +65,20 @@
     text-align: center;
   }
 
-  // helper
   .text-container {
     font-family: 'Roboto Mono', monospace;
     color: #fff;
     font-size: 26px;
     margin: 0;
+  }
+
+  .link-container {
+    margin-top: 60px;
+    color: white;
+    
+    a:visited {
+      color: white;
+    }
   }
 
 </style>
