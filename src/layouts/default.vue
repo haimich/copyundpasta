@@ -3,7 +3,7 @@
 
     <nav>
       <el-row>
-        <el-col :span="spanDesktop" :offset="offsetDesktop">
+        <el-col :xl="xl" :lg="lg" :md="md">
           <span class="header-social-icons">
             <ul>
               <li>
@@ -27,7 +27,7 @@
       </el-row>
 
       <el-row>
-        <el-col class="header-nav" :span="spanDesktop" :offset="offsetDesktop">
+        <el-col class="header-nav" :xl="xl" :lg="lg" :md="md">
 
           <!-- Logo -->
           <nuxt-link to="/" title="HOME" @click="activeIndex='home'">
@@ -67,7 +67,7 @@
     
     <main>
       <el-row>
-        <el-col :span="spanDesktop" :offset="offsetDesktop">
+        <el-col :xl="xl" :lg="lg" :md="md">
           <!-- Main Container -->
           <nuxt />
         </el-col>
@@ -99,8 +99,20 @@
 
     private activeIndex = Pages.HOME;
 
-    private spanDesktop = 20;
-    private offsetDesktop = 2;
+    private xl = {
+      span: 20,
+      offset: 2,
+    };
+
+    private lg = {
+      span: 22,
+      offset: 1,
+    };
+
+    private md = {
+      span: 24,
+      offset: 0,
+    };
 
     menuItemChanged(key) {
       this.activeIndex = key;
