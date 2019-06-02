@@ -11,126 +11,20 @@
       alt="Gugelhupfkuchen"
     ></ArticleImage>
     
-    <el-row>
+    <el-row style="margin-top: 20px;">
       <el-col :span="12" :offset="6">
-        <p>
-          Mein Name ist Michael, und ja, ich trage eine Brille. Als Softwareentwickler sitze ich tagsüber am Rechner und tausche abends  die Tastatur gegen den Herd ein. Dann gehe ich meinem liebsten Hobby, dem Kochen und Backen, nach.
+        <p class="entry-paragraph">
+          Mein Name ist Michael, und ja, ich trage eine Brille. Als Softwareentwickler sitze ich tagsüber am Rechner und tausche abends die Tastatur gegen den Herd ein.
+          Dann gehe ich meinem liebsten Hobby, dem Kochen und Backen, nach.
         </p>
+
+        <br>
 
         <p>
           Auch hier bin ich ein Nerd, denn ich lese mich gern tief in Themen ein und versuche, Konzepte zu verstehen und Zusammenhänge zu entdecken. An die 100 Bücher habe ich verschlungen, 12 Kochkurse besucht und über 600 Rezepte ausprobiert, bewertet und in meiner Datenbank gesammelt.
         </p>
       </el-col>
     </el-row>
-
-    <el-row>
-      <el-col :span="12" :offset="6">
-        <p>
-          Mein Name ist Michael, und ja, ich trage eine Brille. Als Softwareentwickler sitze ich tagsüber am Rechner und tausche abends  die Tastatur gegen den Herd ein. Dann gehe ich meinem liebsten Hobby, dem Kochen und Backen, nach.
-        </p>
-
-        <p>
-          Auch hier bin ich ein Nerd, denn ich lese mich gern tief in Themen ein und versuche, Konzepte zu verstehen und Zusammenhänge zu entdecken. An die 100 Bücher habe ich verschlungen, 12 Kochkurse besucht und über 600 Rezepte ausprobiert, bewertet und in meiner Datenbank gesammelt.
-        </p>
-      </el-col>
-    </el-row>
-
-    <el-row>
-      <el-col :span="12" :offset="6">
-        <p>
-          Mein Name ist Michael, und ja, ich trage eine Brille. Als Softwareentwickler sitze ich tagsüber am Rechner und tausche abends  die Tastatur gegen den Herd ein. Dann gehe ich meinem liebsten Hobby, dem Kochen und Backen, nach.
-        </p>
-
-        <p>
-          Auch hier bin ich ein Nerd, denn ich lese mich gern tief in Themen ein und versuche, Konzepte zu verstehen und Zusammenhänge zu entdecken. An die 100 Bücher habe ich verschlungen, 12 Kochkurse besucht und über 600 Rezepte ausprobiert, bewertet und in meiner Datenbank gesammelt.
-        </p>
-      </el-col>
-    </el-row>
-
-    <el-row>
-      <el-col :span="12" :offset="6">
-        <p>
-          Mein Name ist Michael, und ja, ich trage eine Brille. Als Softwareentwickler sitze ich tagsüber am Rechner und tausche abends  die Tastatur gegen den Herd ein. Dann gehe ich meinem liebsten Hobby, dem Kochen und Backen, nach.
-        </p>
-
-        <p>
-          Auch hier bin ich ein Nerd, denn ich lese mich gern tief in Themen ein und versuche, Konzepte zu verstehen und Zusammenhänge zu entdecken. An die 100 Bücher habe ich verschlungen, 12 Kochkurse besucht und über 600 Rezepte ausprobiert, bewertet und in meiner Datenbank gesammelt.
-        </p>
-      </el-col>
-    </el-row>
-
-    <el-row>
-      <el-col :span="12" :offset="6">
-        <p>
-          Mein Name ist Michael, und ja, ich trage eine Brille. Als Softwareentwickler sitze ich tagsüber am Rechner und tausche abends  die Tastatur gegen den Herd ein. Dann gehe ich meinem liebsten Hobby, dem Kochen und Backen, nach.
-        </p>
-
-        <p>
-          Auch hier bin ich ein Nerd, denn ich lese mich gern tief in Themen ein und versuche, Konzepte zu verstehen und Zusammenhänge zu entdecken. An die 100 Bücher habe ich verschlungen, 12 Kochkurse besucht und über 600 Rezepte ausprobiert, bewertet und in meiner Datenbank gesammelt.
-        </p>
-      </el-col>
-    </el-row>
-
-    <el-row>
-      <el-col :span="12" :offset="6">
-        <p>
-          Mein Name ist Michael, und ja, ich trage eine Brille. Als Softwareentwickler sitze ich tagsüber am Rechner und tausche abends  die Tastatur gegen den Herd ein. Dann gehe ich meinem liebsten Hobby, dem Kochen und Backen, nach.
-        </p>
-
-        <p>
-          Auch hier bin ich ein Nerd, denn ich lese mich gern tief in Themen ein und versuche, Konzepte zu verstehen und Zusammenhänge zu entdecken. An die 100 Bücher habe ich verschlungen, 12 Kochkurse besucht und über 600 Rezepte ausprobiert, bewertet und in meiner Datenbank gesammelt.
-        </p>
-      </el-col>
-    </el-row>
-
-    <el-row>
-      <el-col :span="12" :offset="6">
-        <p>
-          Mein Name ist Michael, und ja, ich trage eine Brille. Als Softwareentwickler sitze ich tagsüber am Rechner und tausche abends  die Tastatur gegen den Herd ein. Dann gehe ich meinem liebsten Hobby, dem Kochen und Backen, nach.
-        </p>
-
-        <p>
-          Auch hier bin ich ein Nerd, denn ich lese mich gern tief in Themen ein und versuche, Konzepte zu verstehen und Zusammenhänge zu entdecken. An die 100 Bücher habe ich verschlungen, 12 Kochkurse besucht und über 600 Rezepte ausprobiert, bewertet und in meiner Datenbank gesammelt.
-        </p>
-      </el-col>
-    </el-row>
-
-    <el-row>
-      <el-col :span="12" :offset="6">
-        <p>
-          Mein Name ist Michael, und ja, ich trage eine Brille. Als Softwareentwickler sitze ich tagsüber am Rechner und tausche abends  die Tastatur gegen den Herd ein. Dann gehe ich meinem liebsten Hobby, dem Kochen und Backen, nach.
-        </p>
-
-        <p>
-          Auch hier bin ich ein Nerd, denn ich lese mich gern tief in Themen ein und versuche, Konzepte zu verstehen und Zusammenhänge zu entdecken. An die 100 Bücher habe ich verschlungen, 12 Kochkurse besucht und über 600 Rezepte ausprobiert, bewertet und in meiner Datenbank gesammelt.
-        </p>
-      </el-col>
-    </el-row>
-
-    <el-row>
-      <el-col :span="12" :offset="6">
-        <p>
-          Mein Name ist Michael, und ja, ich trage eine Brille. Als Softwareentwickler sitze ich tagsüber am Rechner und tausche abends  die Tastatur gegen den Herd ein. Dann gehe ich meinem liebsten Hobby, dem Kochen und Backen, nach.
-        </p>
-
-        <p>
-          Auch hier bin ich ein Nerd, denn ich lese mich gern tief in Themen ein und versuche, Konzepte zu verstehen und Zusammenhänge zu entdecken. An die 100 Bücher habe ich verschlungen, 12 Kochkurse besucht und über 600 Rezepte ausprobiert, bewertet und in meiner Datenbank gesammelt.
-        </p>
-      </el-col>
-    </el-row>
-
-    <el-row>
-      <el-col :span="12" :offset="6">
-        <p>
-          Mein Name ist Michael, und ja, ich trage eine Brille. Als Softwareentwickler sitze ich tagsüber am Rechner und tausche abends  die Tastatur gegen den Herd ein. Dann gehe ich meinem liebsten Hobby, dem Kochen und Backen, nach.
-        </p>
-
-        <p>
-          Auch hier bin ich ein Nerd, denn ich lese mich gern tief in Themen ein und versuche, Konzepte zu verstehen und Zusammenhänge zu entdecken. An die 100 Bücher habe ich verschlungen, 12 Kochkurse besucht und über 600 Rezepte ausprobiert, bewertet und in meiner Datenbank gesammelt.
-        </p>
-      </el-col>
-    </el-row>
-
   </div>
 
 </template>

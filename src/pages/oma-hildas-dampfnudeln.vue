@@ -1,7 +1,9 @@
-<template lang="md">
+<template>
+
   <el-row>
-    <recipe :recipe="recipe" />
+    <Recipe :recipe="recipe" />
   </el-row>
+  
 </template>
 
 <script lang="ts">

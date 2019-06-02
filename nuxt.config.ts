@@ -69,22 +69,14 @@ const config: NuxtConfiguration = {
   */
   modules: [
     "@nuxtjs/axios",
-    "@nuxtjs/markdownit",
   ],
 
   /*
   ** Axios module configuration
+  ** Doc: https://axios.nuxtjs.org/usage
   */
   axios: {
-    // Doc: https://axios.nuxtjs.org/usage
-    // host: "mpm-dev.intern.ebroot.de"
-  },
-
-  /*
-  ** Markdownit module configuration
-  */
-  markdownit: {
-    html: true,
+    host: process.env.HOST || "",
   },
 
   /*

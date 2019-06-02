@@ -57,8 +57,8 @@
         </div>
 
         <!-- Recent articles -->
-        <div v-if="recentArticles != null">
-          
+        <div v-if="recentArticles != null" style="margin-top: 50px;">
+          <img src="@/assets/images/pasta.svg" alt="Trennlinie">
         </div>
 
       </el-col>

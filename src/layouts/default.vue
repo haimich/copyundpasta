@@ -309,6 +309,16 @@
     font-family: "Merriweather", "Helvetica Neue", Helvetica, Arial, serif;
   }
 
+  .entry-paragraph::first-letter {
+    float: left;
+    font-size: 3.5rem;
+    font-weight: 900;
+    line-height: .9;
+    margin-top: .1rem;
+    padding-right: .7rem;
+    text-shadow: 0.2rem 0.2rem 2px rgba(68, 68, 68, 0.25);
+  }
+
   img.article-image-full {
     width: 100%;
     margin-top: 15px;
