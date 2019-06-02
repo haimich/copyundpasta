@@ -59,6 +59,7 @@ const config: NuxtConfiguration = {
   */
   plugins: [
     "@/plugins/element-ui",
+    "@/plugins/fontawesome",
     "@/plugins/filters",
   ],
 

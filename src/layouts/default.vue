@@ -5,7 +5,7 @@
       <el-row>
         <el-col :span="22" :offset="1">
           <span class="header-social-icons">
-            Icons
+            <font-awesome-icon icon="user-secret"></font-awesome-icon>
           </span>
         </el-col>
       </el-row>
@@ -15,7 +15,7 @@
 
           <!-- Logo -->
           <nuxt-link to="/" title="HOME" @click="activeIndex='home'">
-            <img class="logo" src="@/assets/images/logo.png" alt="Logo" />
+            <img class="logo" src="@/assets/images/logo.png" alt="Logo"></img>
           </nuxt-link>
 
           <!-- Menu -->

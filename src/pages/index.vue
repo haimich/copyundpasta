@@ -18,7 +18,7 @@
                 :src="article.previewImageUrl"
                 alt="hero image"
                 class="hero-carousel-image"
-              />
+              ></img>
 
               <div class="hero-carousel-title">
                 <h1>{{ article.title }}</h1>
@@ -134,7 +134,7 @@
   }
 
   .hero-carousel-button {
-    margin-top: 40px;
+    margin-top: 6px;
     display: inline-block;
     padding: 15px 20px;
     border: 2px solid white;

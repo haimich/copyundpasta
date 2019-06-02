@@ -16,6 +16,9 @@
     "test:watch": "jest --watch"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.18",
+    "@fortawesome/free-solid-svg-icons": "^5.8.2",
+    "@fortawesome/vue-fontawesome": "^0.1.6",
     "@nuxtjs/axios": "^5.5.3",
     "@nuxtjs/markdownit": "^1.2.5",
     "body-parser": "^1.19.0",

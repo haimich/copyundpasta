@@ -1,7 +1,7 @@
 <template>
 
   <div class="error-container">
-    <img src="@/assets/images/macerror.png" style="margin-top: 100px; margin-bottom: 15px;" />
+    <img src="@/assets/images/macerror.png" style="margin-top: 100px; margin-bottom: 15px;"></img>
 
     <div class="text-container">
       <h2>
