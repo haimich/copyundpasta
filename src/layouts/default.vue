@@ -50,7 +50,7 @@
     </main>
     
     <footer>
-      Footer
+      © 2019 Copy & Pasta · Impressum · Datenschutz
     </footer>
 
     <el-backtop target=".page-component__scroll"></el-backtop>
@@ -179,7 +179,12 @@
   }
 
   footer {
-    background-color: #B3C0D1;
+    padding: 20px 0;
+    background-color: #363838;
+    color: white;
+    text-align: center;
+    font-size: 14px;
+        font-weight: 100;
   }
   
   /* Element UI marker for button to go to top of page */
