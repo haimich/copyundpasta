@@ -31,7 +31,7 @@
 
           <!-- Logo -->
           <nuxt-link to="/" title="HOME" @click="activeIndex='home'">
-            <img class="logo" src="@/assets/images/logo.png" alt="Logo"></img>
+            <img class="logo" src="@/assets/images/logo.png" alt="Logo">
           </nuxt-link>
 
           <!-- Menu -->
@@ -73,19 +73,22 @@
         </el-col>
       </el-row>
     </main>
+
+    <el-backtop
+      target=".page-component__scroll"
+      :visibility-height="200"
+    ></el-backtop>
     
     <footer>
       © 2019 Copy & Pasta · Impressum · Datenschutz
     </footer>
-
-    <el-backtop target=".page-component__scroll"></el-backtop>
     
   </div>
 </template>
 
 <script lang="ts">
 
-  import { Vue, Component, Prop } from "vue-property-decorator";
+  import { Vue, Component, Prop, Watch } from "vue-property-decorator";
 
   enum Pages {
     HOME = "home",
@@ -114,30 +117,8 @@
       offset: 0,
     };
 
-    menuItemChanged(key) {
-      this.activeIndex = key;
-      let routeToNavigate = "";
-
-      if (key === "suche") {
-        this.openSearch()
-      } else if (key === Pages.HOME) {
-        routeToNavigate = "/";
-      } else {
-        // make sure we navigate to the page even when the use clicked besides the nuxt link
-        routeToNavigate = "/" + key;
-      }
-
-      if (routeToNavigate !== this.$router.currentRoute.path) {
-        // only navigate if not already on the page
-        this.$router.push(routeToNavigate);
-      }
-    }
-
-    openSearch() {
-      console.log("Search");
-    }
-
-    created() {
+    @Watch("$route.path")
+    routeChanged() {
       // preselect correct menu item
       switch (this.$route.path) {
         case "/": {
@@ -162,6 +143,29 @@
       }
     }
 
+    menuItemChanged(key) {
+      this.activeIndex = key;
+      let routeToNavigate = "";
+
+      if (key === "suche") {
+        this.openSearch()
+      } else if (key === Pages.HOME) {
+        routeToNavigate = "/";
+      } else {
+        // make sure we navigate to the page even when the use clicked besides the nuxt link
+        routeToNavigate = "/" + key;
+      }
+
+      if (routeToNavigate !== this.$router.currentRoute.path) {
+        // only navigate if not already on the page
+        this.$router.push(routeToNavigate);
+      }
+    }
+
+    openSearch() {
+      console.log("Search");
+    }
+
   }
 
 </script>
@@ -174,10 +178,10 @@
       font-family: 'Happy Fox';
       src: url('/fonts/HappyFox-Condensed.eot');
       src: url('/fonts/HappyFox-Condensed.eot?#iefix') format('embedded-opentype'),
-          url('/fonts/HappyFox-Condensed.woff2') format('woff2'),
-          url('/fonts/HappyFox-Condensed.woff') format('woff'),
-          url('/fonts/HappyFox-Condensed.ttf') format('truetype'),
-          url('/fonts/HappyFox-Condensed.svg#HappyFox-Condensed') format('svg');
+           url('/fonts/HappyFox-Condensed.woff2') format('woff2'),
+           url('/fonts/HappyFox-Condensed.woff') format('woff'),
+           url('/fonts/HappyFox-Condensed.ttf') format('truetype'),
+           url('/fonts/HappyFox-Condensed.svg#HappyFox-Condensed') format('svg');
       font-weight: normal;
       font-style: normal;
   }
@@ -198,6 +202,10 @@
   *:after {
     box-sizing: border-box;
     margin: 0;
+  }
+
+  h1 {
+    font-size: 28px;
   }
 
   .container {
@@ -267,6 +275,7 @@
   }
 
   main {
+    min-height: 600px;
     margin-top: 40px;
     margin-bottom: 40px;
   }
@@ -277,7 +286,32 @@
     color: white;
     text-align: center;
     font-size: 14px;
-        font-weight: 100;
+    font-weight: 100;
+  }
+
+  .article-heading {
+    text-align: center;
+    font-family: "Merriweather", "Helvetica Neue", Helvetica, Arial, serif;
+  }
+
+  img.article-image-full {
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+
+  p {
+    line-height: 23px;
+  }
+
+  .blue-line {
+    background-color: $color-primary;
+    width: 6%;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    height: 3px;
+    border: none;
+    margin-bottom: 10px;
   }
   
   /* Element UI marker for button to go to top of page */

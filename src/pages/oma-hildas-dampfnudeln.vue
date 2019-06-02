@@ -1,17 +1,17 @@
 <template lang="md">
   <el-row>
-    <recipe-component :recipe="recipe" />
+    <recipe :recipe="recipe" />
   </el-row>
 </template>
 
 <script lang="ts">
 
   import { Vue, Component, Prop } from "vue-property-decorator";
-  import RecipeComponent from "@/components/RecipeComponent.vue";
+  import Recipe from "@/components/recipe/Recipe.vue";
 
   @Component({
     components: {
-      RecipeComponent
+      Recipe
     },
     // @ts-ignore
     async asyncData({ $axios }) {

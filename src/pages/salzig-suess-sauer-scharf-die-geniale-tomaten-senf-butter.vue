@@ -17,18 +17,18 @@
 
   Zurück zu Ludwig Maurers Definition der kulinarischen DNA: Diese Butter – so simpel und ordinär sie auch sein mag – trägt in sich eine geschmackliche Komplexität, die man ihr nicht zutraut. Zuerst die Süße der konzentrierten Tomaten, dann die adstringierende Säure des Senfs, getragen von der breiten Würze der Sojasauce und einem sanften Kribbeln auf der Zunge, wenn man sich denn für einen Chili-Hauch entscheidet. Fakt ist: Zu Rind und Huhn ist die Tomaten-Senf-Butter eine Wucht, zu Brot birgt sie heftiges Suchtpotential.
   
-  <recipe-component :recipe="recipe" />
+  <Recipe :recipe="recipe" />
 
 </template>
 
 <script lang="ts">
 
   import { Vue, Component, Prop } from "vue-property-decorator";
-  import RecipeComponent from "@/components/RecipeComponent.vue";
+  import Recipe from "@/components/recipe/Recipe.vue";
 
   @Component({
     components: {
-      RecipeComponent
+      Recipe
     },
     // @ts-ignore
     async asyncData({ $axios }) {

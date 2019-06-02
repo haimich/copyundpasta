@@ -61,6 +61,7 @@ const config: NuxtConfiguration = {
     "@/plugins/element-ui",
     "@/plugins/fontawesome",
     "@/plugins/filters",
+    "@/plugins/globalComponents",
   ],
 
   /*
