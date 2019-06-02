@@ -38,6 +38,7 @@
 
     <el-row style="margin-top: 60px;" :gutter="50">
       <el-col class="last-article" :span="12" :offset="4">
+
         <!-- Last article -->
         <div v-if="lastArticle != null">
           <h2 class="article-heading" style="padding: 0 20px;">
@@ -66,8 +67,44 @@
 
       <!-- Sidebar -->
       <el-col :span="6">
-        <aside style="background-color: green">
-          rechts
+        <aside>
+          <div class="sidebar-container">
+            <el-divider>Über Mich</el-divider>
+
+            <img
+              src="@/assets/images/uebermich.jpg"
+              style="width: 70%; margin-top: 35px;"
+              alt="Über Mich"
+            >
+
+            <h5 style="margin-top: 20px; letter-spacing: .4px;">
+              Hey, ich bin Michael!
+            </h5>
+
+            <hr class="blue-line" style="width: 20%; margin-top: 12px; height: 2px;">
+
+            <p>
+              Als Softwareentwickler und begeisterter Hobbykoch bin ich vielseitig interessiert und tauche gern tief in Themen ein. Mir macht es Freude, Rezepte auszuprobieren, zu variieren und zu optimieren, um den perfekten Geschmack zu treffen. Dabei habe ich den Anspruch, aus wenigen Zutaten leckere Gerichte zu zaubern, die man auch leicht nachkochen kann. 
+            </p>
+
+            <br>
+
+            <p>
+              Ich möchte euch inspirieren und mit meiner Leidenschaft fürs Kochen und Backen anstecken. 
+            </p>
+
+            <br>
+
+            <p>
+              <strong>Also: Ausprobieren, Spaß haben und genießen!</strong>
+            </p>
+
+            <div class="readmore-link" style="margin-top: 20px;">
+              <nuxt-link to="about">
+                Mehr erfahren <i class="el-icon-caret-right"></i>
+              </nuxt-link>
+            </div>
+          </div>
         </aside>
       </el-col>
     </el-row>
@@ -179,6 +216,33 @@
 
   .last-article img {
     width: 100%;
+  }
+
+  .sidebar-container {
+    font-size: 16px;
+    justify-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+
+    .el-divider {
+      margin: 12px 0;
+    }
+
+    .el-divider__text {
+      font-size: 16px;
+    }
+    
+    p, a {
+      font-size: 13px;
+      line-height: 23px;
+
+      strong {
+        font-weight: 900;
+      }
+    }
   }
 
 </style>

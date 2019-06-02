@@ -1,4 +1,5 @@
 require("dotenv").config();
+import { createRssFeed } from "./rssFeed";
 import NuxtConfiguration from "@nuxt/config";
 
 const DEFAULT_HOST = "localhost";
@@ -74,6 +75,7 @@ const config: NuxtConfiguration = {
   */
   modules: [
     "@nuxtjs/axios",
+    "@nuxtjs/feed",
   ],
 
   /*
@@ -84,6 +86,20 @@ const config: NuxtConfiguration = {
     browserBaseURL: process.env.AXIOS_BASE_URL || `http://${DEFAULT_HOST}:${DEFAULT_PORT}`,
     baseUrl: process.env.AXIOS_BASE_URL || `http://${DEFAULT_HOST}:${DEFAULT_PORT}`,
   },
+
+  /*
+  ** Feed module configuration
+  ** Doc: https://github.com/nuxt-community/feed-module
+  */
+  feed: [
+    {
+      path: "/feed.xml", // The route to your feed.
+      create: createRssFeed, // The create function
+      cacheTime: 1000 * 60 * 15, // How long should the feed be cached
+      type: "rss2", // Can be: rss2, atom1, json1
+      data: ["Some additional data"] // Will be passed as 2nd argument to `create` function
+    },
+  ],
 
   /*
   ** Build configuration
