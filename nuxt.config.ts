@@ -1,6 +1,9 @@
 require("dotenv").config();
 import NuxtConfiguration from "@nuxt/config";
 
+const DEFAULT_HOST = "localhost";
+const DEFAULT_PORT = "3000";
+
 const config: NuxtConfiguration = {
 
   mode: "universal",
@@ -10,8 +13,8 @@ const config: NuxtConfiguration = {
   debug: false,
 
   server: {
-    host: process.env.SERVER_HOST || "localhost",
-    port: process.env.SERVER_PORT || "3000",
+    host: process.env.SERVER_HOST || DEFAULT_HOST,
+    port: process.env.SERVER_PORT || DEFAULT_PORT,
   },
 
   /*
@@ -78,8 +81,8 @@ const config: NuxtConfiguration = {
   ** Doc: https://axios.nuxtjs.org/usage
   */
   axios: {
-    browserBaseURL: process.env.AXIOS_BASE_URL || "localhost",
-    baseUrl: process.env.AXIOS_BASE_URL || "localhost",
+    browserBaseURL: process.env.AXIOS_BASE_URL || `http://${DEFAULT_HOST}:${DEFAULT_PORT}`,
+    baseUrl: process.env.AXIOS_BASE_URL || `http://${DEFAULT_HOST}:${DEFAULT_PORT}`,
   },
 
   /*

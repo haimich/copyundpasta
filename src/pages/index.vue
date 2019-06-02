@@ -5,6 +5,7 @@
     <el-row>
       <el-col :span="24" class="hero-carousel">
         <el-carousel
+          v-if="heroArticles != null"
           height="650px"
           indicator-position="none"
           arrow="always"
@@ -150,7 +151,7 @@
     
     h1 {
       font-family: "Happy Fox", "Merriweather", serif;
-      font-size: 86px;
+      font-size: 75px;
       font-weight: 100;
       color: white;
       text-align: center;
