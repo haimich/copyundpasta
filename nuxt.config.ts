@@ -51,7 +51,7 @@ const config: NuxtConfiguration = {
   */
   css: [
     "normalize.css",
-    "@/scss/variables.scss",
+    "@/scss/element-theme/index.css",
   ],
 
   /*

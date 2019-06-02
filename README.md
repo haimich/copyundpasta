@@ -62,3 +62,10 @@ Afterwards to start or stop it just use
 `docker start mariadb` and 
 
 `docker stop mariadb`
+
+# Element UI theme
+For performance reasons the theme has been prebuilt (instead of importing element ui via scss). 
+
+The generated files are stored in src/scss/element-theme
+
+@see https://element.eleme.io/#/en-US/component/custom-theme

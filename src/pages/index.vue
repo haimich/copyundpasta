@@ -77,6 +77,8 @@
 
 <style lang="scss">
 
+  @import "~/scss/variables.scss";
+
   .hero-carousel-container {
     position: relative;
     width: 100%;
@@ -109,6 +111,7 @@
     display: inline-block;
     padding: 15px;
     border: 2px solid white;
+    border-radius: 2px;
     font-size: 16px;
     text-transform: uppercase;
     color: white;
