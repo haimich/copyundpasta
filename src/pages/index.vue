@@ -68,7 +68,7 @@
       <!-- Sidebar -->
       <el-col :span="6">
         <aside>
-          <div class="sidebar-container">
+          <section class="sidebar-container">
             <el-divider>Über Mich</el-divider>
 
             <img
@@ -104,10 +104,9 @@
                 Mehr erfahren <i class="el-icon-caret-right"></i>
               </nuxt-link>
             </div>
+          </section>
 
-          </div>
-
-          <div class="sidebar-container" style="margin-top: 25px;">
+          <section class="sidebar-container" style="margin-top: 25px;">
             <el-divider style="margin-top: 20px;">Newsletter</el-divider>
 
             <p style="margin-top: 20px; width: 75%">
@@ -126,7 +125,7 @@
                 circle
               ></el-button>
             </div>
-          </div>
+          </section>
         </aside>
       </el-col>
     </el-row>
