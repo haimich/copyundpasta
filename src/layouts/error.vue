@@ -4,16 +4,12 @@
     <img src="@/assets/images/macerror.png" style="margin-top: 100px; margin-bottom: 15px;" />
 
     <div class="text-container">
-      <h2 v-if="error.statusCode === 404">
-        404, page not found.
+      <h2>
+        {{ message }}
       </h2>
-      <h2 v-else>
-        Es ist ein Fehler aufgetreten
-      </h2>
-
     </div>
 
-    <div style="margin-top: 25px;">
+    <div style="margin-top: 60px;">
       <nuxt-link to="/">
         Zur Startseite
       </nuxt-link>
@@ -37,7 +33,13 @@
     }
 
     get message() {
-      return (this.error && this.error.message) || "";
+      console.log(this.error);
+
+      if (this.statusCode === 404) {
+        return "404, page not found.";
+      } else {
+        return "Es ist ein Fehler aufgetreten";
+      }
     }
 
     head() {
@@ -65,7 +67,7 @@
   .text-container {
     font-family: 'Roboto Mono', monospace;
     color: #fff;
-    font-size: 28px;
+    font-size: 26px;
     margin: 0;
   }
 
