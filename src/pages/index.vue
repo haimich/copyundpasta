@@ -104,6 +104,28 @@
                 Mehr erfahren <i class="el-icon-caret-right"></i>
               </nuxt-link>
             </div>
+
+          </div>
+
+          <div class="sidebar-container" style="margin-top: 25px;">
+            <el-divider style="margin-top: 20px;">Newsletter</el-divider>
+
+            <p style="margin-top: 20px; width: 75%">
+              Du möchtest über neue Rezepte informiert werden? Dann abonniere einfach meinen Newsletter.
+            </p>
+
+            <div class="newsletter-subscribe">
+              <el-input
+                v-model="userEmail"
+                placeholder="E-Mail-Adresse"
+              ></el-input>
+
+              <el-button
+                type="info"
+                icon="el-icon-message"
+                circle
+              ></el-button>
+            </div>
           </div>
         </aside>
       </el-col>
@@ -142,6 +164,8 @@
     private lastArticle: Article = null;
     
     private recentArticles: Article[] = [];
+
+    private userEmail = "";
 
   }
 
@@ -241,6 +265,22 @@
 
       strong {
         font-weight: 900;
+      }
+    }
+
+    .newsletter-subscribe {
+      margin-top: 20px;
+      display: flex;
+
+      .el-input {
+        margin-right: 10px;
+      }
+
+      .el-button {
+        color: white;
+        background-color: $color-secondary;
+        border: none;
+        font-size: 15px;
       }
     }
   }
