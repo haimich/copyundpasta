@@ -10,7 +10,8 @@ const config: NuxtConfiguration = {
   debug: false,
 
   env: {
-    host: process.env.HOST || "localhost"
+    host: process.env.SERVER_HOST || "localhost",
+    port: process.env.SERVER_PORT || "3000",
   },
 
   /*
@@ -77,7 +78,8 @@ const config: NuxtConfiguration = {
   ** Doc: https://axios.nuxtjs.org/usage
   */
   axios: {
-    host: process.env.HOST || "",
+    host: process.env.AXIOS_HOST || "localhost",
+    port: process.env.AXIOS_PORT || "3000",
   },
 
   /*
