@@ -3,7 +3,7 @@ module.exports = {
     apps : [{
       name: 'cup',
       script: './node_modules/.bin/nuxt',
-      args: 'start --hostname 0.0.0.0 --port 3000',
+      args: 'start',
       instances: 1,
       autorestart: true,
       watch: false,
