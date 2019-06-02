@@ -3,6 +3,14 @@
 
     <nav>
       <el-row>
+        <el-col :span="22" :offset="1">
+          <span class="header-social-icons">
+            Icons
+          </span>
+        </el-col>
+      </el-row>
+
+      <el-row>
         <el-col class="header-nav" :span="22" :offset="1">
 
           <!-- Logo -->
@@ -153,6 +161,11 @@
     margin-left: auto;
   }
 
+  .header-social-icons {
+    display: flex;
+    justify-content: flex-end;
+  }
+
   .header-nav {
     display: flex;
     justify-content: center;
@@ -160,16 +173,27 @@
     flex-direction: column;
 
     .logo {
-      width: 256px;
-      margin-top: 20px;
+      width: 270px;
+      margin-top: 0;
+      margin-bottom: 10px;
     }
 
-    .el-menu-item {
-      height: 53px;
-    }
+    .el-menu {
+      display: flex;
+      justify-content: center;
+      width: 72%;
+      border-top: solid 1px #e6e6e6;
 
-    a {
-      text-decoration: none;
+      .el-menu-item {
+        font-size: 14.5px;
+        margin: 0 1.5rem 0 1.2rem;
+        height: 55px;
+        line-height: 55px;
+
+        a {
+          text-decoration: none;
+        }
+      }
     }
   }
 
