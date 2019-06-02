@@ -34,6 +34,7 @@ module.exports = {
     "object-curly-spacing": "off",
     "eol-last": "off",
     "vue/singleline-html-element-content-newline": "off",
-    "no-useless-return": "off"
+    "no-useless-return": "off",
+    "no-irregular-whitespace": "off"
   }
 }

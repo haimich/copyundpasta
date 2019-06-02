@@ -37,6 +37,7 @@
 
     <el-row style="margin-top: 60px;" :gutter="50">
       <el-col class="last-article" :span="12" :offset="4">
+        <!-- Last article -->
         <div v-if="lastArticle != null">
           <h2 class="article-heading" style="padding: 0 20px;">
             {{ lastArticle.title }}
@@ -47,9 +48,22 @@
           <p style="margin-top: 20px;">
             {{ lastArticle.shortDescription }}
           </p>
+
+          <div class="readmore-link" style="margin-top: 10px;">
+            <nuxt-link :to="'/' + lastArticle.slug" style="font-size: 15px;">
+              Weiterlesen <i class="el-icon-caret-right"></i>
+            </nuxt-link>
+          </div>
         </div>
+
+        <!-- Recent articles -->
+        <div v-if="recentArticles != null">
+          
+        </div>
+
       </el-col>
 
+      <!-- Sidebar -->
       <el-col :span="6">
         <aside style="background-color: green">
           rechts
@@ -133,12 +147,12 @@
     left: 50%;
     width: 70%;
     transform: translate(-50%, -50%);
-    color: white;
     
     h1 {
       font-family: "Happy Fox", "Merriweather", serif;
       font-size: 86px;
       font-weight: 100;
+      color: white;
       text-align: center;
       text-transform: uppercase;
       letter-spacing: 6px;

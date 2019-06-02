@@ -203,6 +203,10 @@
     margin: 0;
   }
 
+  h1, h2, h3, h4, h5 {
+    color: rgba(0,0,0,0.92);
+  }
+
   h1 {
     font-size: 28px;
   }
@@ -217,6 +221,10 @@
     font-weight: 100;
     letter-spacing: 0px;
     word-spacing: 0px;
+  }
+
+  a {
+    text-decoration: none;
   }
 
   .container {
@@ -277,10 +285,6 @@
         margin: 0 1.5rem 0 1.2rem;
         height: 55px;
         line-height: 55px;
-
-        a {
-          text-decoration: none;
-        }
       }
     }
   }
@@ -309,6 +313,14 @@
     width: 100%;
     margin-top: 15px;
     margin-bottom: 15px;
+  }
+
+  .readmore-link {
+    text-align: center;
+
+    a, a:visited {
+      color: $color-primary;
+    }
   }
 
   .blue-line {
