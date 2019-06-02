@@ -1,5 +1,5 @@
 <template>
-  <div class="container page-component__scroll el-scrollbar">
+  <div class="container">
 
     <nav>
       <el-row>
@@ -73,11 +73,6 @@
         </el-col>
       </el-row>
     </main>
-
-    <el-backtop
-      target=".page-component__scroll"
-      :visibility-height="200"
-    ></el-backtop>
     
     <footer>
       © 2019 Copy & Pasta · Impressum · Datenschutz
@@ -119,7 +114,7 @@
 
     @Watch("$route.path")
     routeChanged() {
-      // preselect correct menu item
+      //select correct menu item
       switch (this.$route.path) {
         case "/": {
           this.activeIndex = Pages.HOME;
@@ -164,6 +159,10 @@
 
     openSearch() {
       console.log("Search");
+    }
+
+    created() {
+      this.routeChanged();
     }
 
   }
@@ -312,11 +311,6 @@
     height: 3px;
     border: none;
     margin-bottom: 10px;
-  }
-  
-  /* Element UI marker for button to go to top of page */
-  .page-component__scroll {
-    height: 100%;
   }
 
 </style>

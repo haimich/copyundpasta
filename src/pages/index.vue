@@ -18,7 +18,7 @@
                 :src="article.previewImageUrl"
                 alt="hero image"
                 class="hero-carousel-image"
-              ></img>
+              >
 
               <div class="hero-carousel-title">
                 <h1>{{ article.title }}</h1>
@@ -113,7 +113,7 @@
     
     h1 {
       font-family: "Happy Fox", "Merriweather", serif;
-      font-size: 90px;
+      font-size: 86px;
       font-weight: 100;
       text-align: center;
       text-transform: uppercase;
