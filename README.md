@@ -41,8 +41,7 @@ DB_USER=xxx
 DB_PW=xxx
 SERVER_HOST=0.0.0.0
 SERVER_PORT=3000
-AXIOS_HOST=copyundpasta.de
-AXIOS_PORT=443
+AXIOS_BASE_URL=https://copyundpasta.de/
 ```
 
 # build for production and launch server
