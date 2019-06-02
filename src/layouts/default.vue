@@ -187,7 +187,7 @@
 
   html {
     font-family: "Merriweather Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 16px;
+    font-size: 17px;
     word-spacing: 1px;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
@@ -205,6 +205,18 @@
 
   h1 {
     font-size: 28px;
+  }
+
+  h2 {
+    margin-bottom: 22px;
+  }
+
+  p {
+    line-height: 29px;
+    color: #000000c7;
+    font-weight: 100;
+    letter-spacing: 0px;
+    word-spacing: 0px;
   }
 
   .container {
@@ -297,10 +309,6 @@
     width: 100%;
     margin-top: 15px;
     margin-bottom: 15px;
-  }
-
-  p {
-    line-height: 23px;
   }
 
   .blue-line {

@@ -35,13 +35,23 @@
       </el-col>
     </el-row>
 
-    <el-row style="margin-top: 20px;">
+    <el-row style="margin-top: 60px;" :gutter="50">
       <el-col class="last-article" :span="12" :offset="4">
-        links
+        <div v-if="lastArticle != null">
+          <h2 class="article-heading" style="padding: 0 20px;">
+            {{ lastArticle.title }}
+          </h2>
+
+          <img :src="lastArticle.previewImageUrl" alt="Artikelfoto">
+
+          <p style="margin-top: 20px;">
+            {{ lastArticle.shortDescription }}
+          </p>
+        </div>
       </el-col>
 
       <el-col :span="6">
-        <aside>
+        <aside style="background-color: green">
           rechts
         </aside>
       </el-col>
@@ -54,18 +64,32 @@
 <script lang="ts">
 
   import { Vue, Component, Prop } from "vue-property-decorator";
+  import { Article } from "@/api/interfaces/Article";
 
   @Component({
     // @ts-ignore
     async asyncData({ $axios, error }) {
-      const response = await $axios.post(`/api/articles/getHeroArticles`);
+      const responses = await Promise.all([
+        $axios.post(`/api/articles/getHeroArticles`),
+        $axios.post(`/api/articles/getArticles`),
+      ]);
 
-      return { heroArticles: response.data };
+      let recentArticles = responses[1].data;
+
+      return {
+        heroArticles: responses[0].data,
+        lastArticle: recentArticles.shift(),
+        recentArticles: recentArticles,
+      };
     }
   })
   export default class IndexPage extends Vue {
 
-    private heroArticles = [];
+    private heroArticles: Article[] = [];
+
+    private lastArticle: Article = null;
+    
+    private recentArticles: Article[] = [];
 
   }
 
@@ -136,6 +160,10 @@
       background-color: white;
       color: rgb(75, 75, 75);
     }
+  }
+
+  .last-article img {
+    width: 100%;
   }
 
 </style>
