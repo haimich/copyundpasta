@@ -5,7 +5,23 @@
       <el-row>
         <el-col :span="22" :offset="1">
           <span class="header-social-icons">
-            <font-awesome-icon icon="user-secret"></font-awesome-icon>
+            <ul>
+              <li>
+                <a href="https://www.pinterest.de" target="_blank" title="Copy & Pasta bei Pinterest">
+                  <font-awesome-icon :icon="['fab', 'pinterest-p']"></font-awesome-icon>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.google.de" target="_blank" title="Newsletter abonnieren">
+                  <font-awesome-icon :icon="['far', 'envelope']"></font-awesome-icon>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.google.de" target="_blank" title="RSS-Feed abonnieren">
+                  <font-awesome-icon :icon="['fas', 'rss']"></font-awesome-icon>
+                </a>
+              </li>
+            </ul>
           </span>
         </el-col>
       </el-row>
@@ -136,6 +152,20 @@
 
 <style lang="scss">
 
+  @import "~/scss/variables.scss";
+
+  @font-face {
+      font-family: 'Happy Fox';
+      src: url('/fonts/HappyFox-Condensed.eot');
+      src: url('/fonts/HappyFox-Condensed.eot?#iefix') format('embedded-opentype'),
+          url('/fonts/HappyFox-Condensed.woff2') format('woff2'),
+          url('/fonts/HappyFox-Condensed.woff') format('woff'),
+          url('/fonts/HappyFox-Condensed.ttf') format('truetype'),
+          url('/fonts/HappyFox-Condensed.svg#HappyFox-Condensed') format('svg');
+      font-weight: normal;
+      font-style: normal;
+  }
+
   html {
     font-family: "Merriweather Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 16px;
@@ -164,6 +194,29 @@
   .header-social-icons {
     display: flex;
     justify-content: flex-end;
+    padding-top: 9px;
+
+    a, a:visited {
+      color: rgb(107, 107, 107);
+      transition: color .2s ease;
+    }
+
+    a:hover {
+      color: $color-primary;
+    }
+    
+    ul {
+      list-style: none;
+      
+      li {
+        padding: 0 2px;
+        display: inline-block;
+      }
+
+      li:last-child {
+        padding-right: 0;
+      }
+    }
   }
 
   .header-nav {
@@ -174,8 +227,8 @@
 
     .logo {
       width: 270px;
-      margin-top: 0;
-      margin-bottom: 10px;
+      margin-top: 8px;
+      margin-bottom: 26px;
     }
 
     .el-menu {

@@ -73,18 +73,6 @@
 
 <style lang="scss" scoped>
 
-  @font-face {
-      font-family: 'Happy Fox';
-      src: url('/fonts/HappyFox-Condensed.eot');
-      src: url('/fonts/HappyFox-Condensed.eot?#iefix') format('embedded-opentype'),
-          url('/fonts/HappyFox-Condensed.woff2') format('woff2'),
-          url('/fonts/HappyFox-Condensed.woff') format('woff'),
-          url('/fonts/HappyFox-Condensed.ttf') format('truetype'),
-          url('/fonts/HappyFox-Condensed.svg#HappyFox-Condensed') format('svg');
-      font-weight: normal;
-      font-style: normal;
-  }
-
   .hero-carousel {
      & /deep/ .el-carousel__container button {
       font-size: 21px;
