@@ -131,11 +131,13 @@
 
             <div class="newsletter-subscribe">
               <el-input
+                v-if="false"
                 v-model="userEmail"
                 placeholder="E-Mail-Adresse"
               ></el-input>
 
               <el-button
+                v-if="false"
                 type="info"
                 plain
                 icon="el-icon-message"
@@ -154,15 +156,13 @@
                   novalidate
                 >
                   <div id="mc_embed_signup_scroll">
-                    <label for="mce-EMAIL">Subscribe</label>
                     <input
                       type="email"
                       value=""
                       name="EMAIL"
                       class="email"
                       id="mce-EMAIL"
-                      placeholder="email
-                      address"
+                      placeholder="E-Mail Adresse"
                       required
                     >
                     
