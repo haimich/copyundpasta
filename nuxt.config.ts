@@ -45,6 +45,7 @@ const config: NuxtConfiguration = {
     link: [
       { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
       { rel: "stylesheet", href: "https://fonts.googleapis.com/css?family=Merriweather+Sans:300,400,400i,700&display=swap" },
+      { rel: "stylesheet", href: "//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" },
     ]
   },
 

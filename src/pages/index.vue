@@ -69,6 +69,16 @@
           </el-row>
         </div>
 
+        <!-- Pagination -->
+        <el-row type="flex" justify="center">
+          <el-pagination
+            background
+            layout="prev, pager, next"
+            :page-size="9"
+            :total="10"
+          ></el-pagination>
+        </el-row>
+
       </el-col>
 
       <!-- Sidebar -->
@@ -127,9 +137,54 @@
 
               <el-button
                 type="info"
+                plain
                 icon="el-icon-message"
-                circle
+                title="Abonnieren"
               ></el-button>
+
+              <!-- Begin Mailchimp Signup Form -->
+              <div id="mc_embed_signup">
+                <form
+                  action="https://gmx.us20.list-manage.com/subscribe/post?u=1c249484bbe9d6816f42135ee&amp;id=8d55aeb1b7"
+                  method="post"
+                  id="mc-embedded-subscribe-form"
+                  name="mc-embedded-subscribe-form"
+                  class="validate"
+                  target="_blank"
+                  novalidate
+                >
+                  <div id="mc_embed_signup_scroll">
+                    <label for="mce-EMAIL">Subscribe</label>
+                    <input
+                      type="email"
+                      value=""
+                      name="EMAIL"
+                      class="email"
+                      id="mce-EMAIL"
+                      placeholder="email
+                      address"
+                      required
+                    >
+                    
+                    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                    <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                      <input type="text" name="b_1c249484bbe9d6816f42135ee_8d55aeb1b7" tabindex="-1" value="">
+                    </div>
+
+                    <div class="clear">
+                      <input
+                        type="submit"
+                        value="Subscribe"
+                        name="subscribe"
+                        id="mc-embedded-subscribe"
+                        class="button"
+                      >
+                    </div>
+                  </div>
+                </form>
+              </div>
+
+              <!--End mc_embed_signup-->
             </div>
           </section>
         </aside>
@@ -286,10 +341,11 @@
       }
 
       .el-button {
+        padding: 6px 11px;
         color: white;
-        background-color: $color-secondary;
+        background-color: $color-primary;
         border: none;
-        font-size: 15px;
+        font-size: 23px;
       }
     }
   }
