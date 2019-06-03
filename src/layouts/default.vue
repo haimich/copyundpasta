@@ -204,7 +204,7 @@
   }
 
   h1, h2, h3, h4, h5 {
-    color: rgba(0,0,0,0.92);
+    color: $color-text-primary;
   }
 
   h1 {
@@ -217,7 +217,7 @@
 
   p {
     line-height: 29px;
-    color: #000000c7;
+    color: $color-text-regular;
     font-weight: 100;
     letter-spacing: 0px;
     word-spacing: 0px;

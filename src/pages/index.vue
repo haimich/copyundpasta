@@ -60,7 +60,13 @@
 
         <!-- Recent articles -->
         <div v-if="recentArticles != null" style="margin-top: 50px;">
-          <img src="@/assets/images/pasta.svg" alt="Trennlinie">
+          <img src="@/assets/images/pasta.svg" alt="Trennlinie" style="margin-bottom: 50px;">
+
+          <el-row :gutter="15">
+            <el-col :span="8" v-for="article in recentArticles" :key="article.slug">
+              <ArticleCard :article="article"></ArticleCard>
+            </el-col>
+          </el-row>
         </div>
 
       </el-col>
@@ -138,8 +144,12 @@
 
   import { Vue, Component, Prop } from "vue-property-decorator";
   import { Article } from "@/api/interfaces/Article";
+  import ArticleCard from "@/components/article/ArticleCard.vue";
 
   @Component({
+    components: {
+      ArticleCard,
+    },
     // @ts-ignore
     async asyncData({ $axios, error }) {
       const responses = await Promise.all([

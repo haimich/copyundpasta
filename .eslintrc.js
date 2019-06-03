@@ -35,6 +35,7 @@ module.exports = {
     "eol-last": "off",
     "vue/singleline-html-element-content-newline": "off",
     "no-useless-return": "off",
-    "no-irregular-whitespace": "off"
+    "no-irregular-whitespace": "off",
+    "vue/attributes-order": "off"
   }
 }

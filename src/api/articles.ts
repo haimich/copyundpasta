@@ -47,31 +47,31 @@ app.post("/getArticles", async (req, res) => {
             slug: "reines-dinkel-sauerteigbrot",
             title: "Reines Dinkel-Sauerteigbrot",
             createdAt: "2019-06-01 14:44:22",
-            previewImageUrl: "https://www.eat-this.org/wp-content/uploads/2017/10/reines-dinkel-sauerteigbrot-3.jpg",
+            previewImageUrl: "/images/articleCover.jpg",
         },
         {
             slug: "loaded-hummus-mit-geroestetem-blumenkohl",
             title: "Loaded Hummus mit geröstetem Blumenkohl, Brokkoli & Möhren",
             createdAt: "2019-06-01 14:44:22",
-            previewImageUrl: "https://www.eat-this.org/wp-content/uploads/2019/01/loaded-hummus-mit-geroestetem-blumenkohl-brokkoli-und-moehren.jpg",
+            previewImageUrl: "/images/articleCover.jpg",
         },
         {
             slug: "salzig-suess-sauer-scharf-die-geniale-tomaten-senf-butter",
             title: "Marinierter Tofu vom Blech mit Spargel & Frühkartoffeln",
             createdAt: "2019-06-01 14:44:22",
-            previewImageUrl: "https://www.eat-this.org/wp-content/uploads/2019/04/tofu-vom-blech-mit-spargel-und-kartoffeln-10.jpg",
+            previewImageUrl: "/images/articleCover.jpg",
         },
         {
             slug: "reines-dinkel-sauerteigbrot",
             title: "Reines Dinkel-Sauerteigbrot",
             createdAt: "2019-06-01 14:44:22",
-            previewImageUrl: "https://www.eat-this.org/wp-content/uploads/2017/10/reines-dinkel-sauerteigbrot-3.jpg",
+            previewImageUrl: "/images/articleCover.jpg",
         },
         {
             slug: "loaded-hummus-mit-geroestetem-blumenkohl",
             title: "Loaded Hummus mit geröstetem Blumenkohl, Brokkoli & Möhren",
             createdAt: "2019-06-01 14:44:22",
-            previewImageUrl: "https://www.eat-this.org/wp-content/uploads/2019/01/loaded-hummus-mit-geroestetem-blumenkohl-brokkoli-und-moehren.jpg",
+            previewImageUrl: "/images/articleCover.jpg",
         },
     ];
 
