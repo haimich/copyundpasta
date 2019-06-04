@@ -83,111 +83,7 @@
 
       <!-- Sidebar -->
       <el-col :span="6">
-        <aside>
-          <section class="sidebar-container">
-            <el-divider>Über Mich</el-divider>
-
-            <img
-              src="@/assets/images/uebermich.jpg"
-              style="width: 70%; margin-top: 35px;"
-              alt="Über Mich"
-            >
-
-            <h5 style="margin-top: 20px; letter-spacing: .4px;">
-              Hey, ich bin Michael!
-            </h5>
-
-            <hr class="blue-line" style="width: 20%; margin-top: 12px; height: 2px;">
-
-            <p>
-              Als Softwareentwickler und begeisterter Hobbykoch bin ich vielseitig interessiert und tauche gern tief in Themen ein. Mir macht es Freude, Rezepte auszuprobieren, zu variieren und zu optimieren, um den perfekten Geschmack zu treffen. Dabei habe ich den Anspruch, aus wenigen Zutaten leckere Gerichte zu zaubern, die man auch leicht nachkochen kann. 
-            </p>
-
-            <br>
-
-            <p>
-              Ich möchte euch inspirieren und mit meiner Leidenschaft fürs Kochen und Backen anstecken. 
-            </p>
-
-            <br>
-
-            <p>
-              <strong>Also: Ausprobieren, Spaß haben und genießen!</strong>
-            </p>
-
-            <div class="readmore-link" style="margin-top: 20px;">
-              <nuxt-link to="about">
-                Mehr erfahren <i class="el-icon-caret-right"></i>
-              </nuxt-link>
-            </div>
-          </section>
-
-          <section class="sidebar-container" style="margin-top: 25px;">
-            <el-divider style="margin-top: 20px;">Newsletter</el-divider>
-
-            <p style="margin-top: 20px; width: 75%">
-              Du möchtest über neue Rezepte informiert werden? Dann abonniere einfach meinen Newsletter.
-            </p>
-
-            <div class="newsletter-subscribe">
-              <el-input
-                v-if="false"
-                v-model="userEmail"
-                placeholder="E-Mail-Adresse"
-              ></el-input>
-
-              <el-button
-                v-if="false"
-                type="info"
-                plain
-                icon="el-icon-message"
-                title="Abonnieren"
-              ></el-button>
-
-              <!-- Begin Mailchimp Signup Form -->
-              <div id="mc_embed_signup">
-                <form
-                  action="https://gmx.us20.list-manage.com/subscribe/post?u=1c249484bbe9d6816f42135ee&amp;id=8d55aeb1b7"
-                  method="post"
-                  id="mc-embedded-subscribe-form"
-                  name="mc-embedded-subscribe-form"
-                  class="validate"
-                  target="_blank"
-                  novalidate
-                >
-                  <div id="mc_embed_signup_scroll">
-                    <input
-                      type="email"
-                      value=""
-                      name="EMAIL"
-                      class="email"
-                      id="mce-EMAIL"
-                      placeholder="E-Mail Adresse"
-                      required
-                    >
-                    
-                    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-                    <div style="position: absolute; left: -5000px;" aria-hidden="true">
-                      <input type="text" name="b_1c249484bbe9d6816f42135ee_8d55aeb1b7" tabindex="-1" value="">
-                    </div>
-
-                    <div class="clear">
-                      <input
-                        type="submit"
-                        value="Subscribe"
-                        name="subscribe"
-                        id="mc-embedded-subscribe"
-                        class="button"
-                      >
-                    </div>
-                  </div>
-                </form>
-              </div>
-
-              <!--End mc_embed_signup-->
-            </div>
-          </section>
-        </aside>
+        <Sidebar></Sidebar>
       </el-col>
     </el-row>
 
@@ -200,10 +96,11 @@
   import { Vue, Component, Prop } from "vue-property-decorator";
   import { Article } from "@/api/interfaces/Article";
   import ArticleCard from "@/components/article/ArticleCard.vue";
+  import Sidebar from "@/components/Sidebar.vue";
 
   @Component({
     components: {
-      ArticleCard,
+      ArticleCard, Sidebar,
     },
     // @ts-ignore
     async asyncData({ $axios, error }) {
@@ -228,8 +125,6 @@
     private lastArticle: Article = null;
     
     private recentArticles: Article[] = [];
-
-    private userEmail = "";
 
   }
 
@@ -304,50 +199,6 @@
 
   .last-article img {
     width: 100%;
-  }
-
-  .sidebar-container {
-    font-size: 16px;
-    justify-self: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
-
-    .el-divider {
-      margin: 12px 0;
-    }
-
-    .el-divider__text {
-      font-size: 16px;
-    }
-    
-    p, a {
-      font-size: 13px;
-      line-height: 23px;
-
-      strong {
-        font-weight: 900;
-      }
-    }
-
-    .newsletter-subscribe {
-      margin-top: 20px;
-      display: flex;
-
-      .el-input {
-        margin-right: 10px;
-      }
-
-      .el-button {
-        padding: 6px 11px;
-        color: white;
-        background-color: $color-primary;
-        border: none;
-        font-size: 23px;
-      }
-    }
   }
 
 </style>
