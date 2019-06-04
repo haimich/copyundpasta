@@ -31,7 +31,7 @@
 
           <!-- Logo -->
           <nuxt-link to="/" title="HOME" @click="activeIndex='home'">
-            <img class="logo" src="@/assets/images/logo.png" alt="Logo">
+            <img class="logo" src="/images/logo.png" alt="Logo">
           </nuxt-link>
 
           <!-- Menu -->
