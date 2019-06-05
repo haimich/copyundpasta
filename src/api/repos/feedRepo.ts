@@ -17,7 +17,7 @@ function createFeed(posts) {
       rss: "https://copyundpasta.de/feed/rss.xml",
     },
     author: {
-      name: "Michael Müller",
+      name: "Michael",
       email: "hello@copyundpasta.de",
       link: "https://copyundpasta.de"
     },

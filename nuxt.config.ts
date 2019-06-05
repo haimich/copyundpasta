@@ -50,6 +50,8 @@ const config: NuxtConfiguration = {
       { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
       { rel: "icon", type: "image/png", sizes: "32x32", href: "/favicon-32x32.png" },
       { rel: "icon", type: "image/png", sizes: "16x16", href: "/favicon-16x16.png" },
+      { rel: "alternate", type: "application/rss+xml", title: "RSS Feed für copyundpasta.de", href: "/feed/rss.xml" },
+      { rel: "alternate", type: "application/atom+xml", title: "Atom Feed für copyundpasta.de", href: "/feed/atom.xml" },
       { rel: "stylesheet", href: "https://fonts.googleapis.com/css?family=Merriweather+Sans:300,400,400i,700&display=swap" },
     ]
   },
