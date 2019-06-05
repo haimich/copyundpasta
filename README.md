@@ -51,6 +51,15 @@ $ npm start
 ```
 
 ## deploy
+* add .env file with:
+
+```
+DEPLOY_HOST=xxx
+DEPLOY_USERNAME=xxx
+DEPLOY_PW=xxx
+DEPLOY_HOMEDIR=/home/haimich/copyundpasta.de
+```
+
 ```
 npm run deploy
 ```
