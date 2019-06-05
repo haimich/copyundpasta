@@ -28,7 +28,11 @@ app.get("/rss.xml", async (req, res) => {
     console.log("rss.xml");
     
     const feed = createRssFeed(posts);
+
+    const maxAge = 60 * 60 * 12; // 12 hours
     
+    res.setHeader("Cache-Control", "public, max-age=" + maxAge);
+    res.setHeader("Expires", new Date(Date.now() + maxAge * 1000).toUTCString());
     return res.type("application/rss+xml").send(feed);
 });
 

@@ -1,16 +1,20 @@
+import { Ingredient, IngredientPreparation } from "~/api/interfaces/Ingredients";
+import { Category } from "~/api/interfaces/RecipeCategories";
+
 export enum RecipeUnit {
   gram = "gram",
   liter = "liter",
-  unit = "unit",
+  quantity = "quantity",
   el = "el",
   tl = "tl",
   einige = "einige",
 }
 
 export interface RecipeIngredient {
-  unit: RecipeUnit;
-  amount: number;
-  name: string;
+  unit?: RecipeUnit;
+  amount?: number;
+  ingredient: Ingredient;
+  preparation?: IngredientPreparation;
 }
 
 export interface RecipeStep {
@@ -29,14 +33,14 @@ export interface RecipeServings {
 }
 
 export interface Recipe {
-  id: number;
+  id?: number;
   title: string;
-  categoryId: number;
+  category: Category;
   previewImageUrl: string;
-  servings: string;
+  servings: RecipeServings;
   description: string;
   ingredients: RecipeIngredient[];
   directions: RecipeStep[];
-  notes: string;
-  ratings: RecipeRating[];
+  notes: string[];
+  ratings?: RecipeRating[];
 };

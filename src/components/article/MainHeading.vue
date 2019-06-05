@@ -2,7 +2,7 @@
 
   <div>
 
-    <h1 class="article-heading">
+    <h1 class="article-heading" style="text-transform: uppercase">
       {{ text }}
     </h1>
 

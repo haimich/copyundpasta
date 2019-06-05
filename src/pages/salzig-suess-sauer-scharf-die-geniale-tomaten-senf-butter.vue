@@ -2,10 +2,10 @@
 
   <div>
 
-    <el-page-header title="Zurück" content="Herzhafte Speisen" @back="$router.push('/')"></el-page-header>
+    <el-page-header title="Zurück" :content="category.text" @back="$router.push('/')"></el-page-header>
 
     <MainHeading
-      text="SALZIG-SÜSS-SAUER-SCHARF: DIE GENIALE TOMATEN-SENF-BUTTER"
+      :text="title"
     ></MainHeading>
 
     <ArticleImage
@@ -31,6 +31,7 @@
 
   import { Vue, Component, Prop } from "vue-property-decorator";
   import Recipe from "@/components/recipe/Recipe.vue";
+  import ArticleCategories from "@/api/interfaces/ArticleCategories";
 
   @Component({
     components: {
@@ -42,19 +43,20 @@
         id: 2,
       });
       return { recipe: response.data };
-    }
+    },
+    head() {
+      return {
+        title: this.title,
+      }
+    },
   })
   export default class extends Vue {
     
-    private recipe = null;
-  
-    head: {
-      title: "Salzig-Süss-Sauer-Scharf: Die geniale Tomaten-Senf-Butter"
-    }
+    private title = "Salzig-Süss-Sauer-Scharf: Die geniale Tomaten-Senf-Butter";
 
-    goBack() {
-      console.log("go back");
-    }
+    private category = ArticleCategories.herzhaft;
+
+    private recipe = null;
 
   }
 
