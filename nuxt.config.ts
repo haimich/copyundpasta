@@ -43,7 +43,8 @@ const config: NuxtConfiguration = {
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { hid: "description", name: "description", content: "Copy & Pasta wurde 2019 von Michael Müller aus Karlsruhe ins Leben gerufen." }
+      { hid: "description", name: "description", content: "Copy & Pasta wurde 2019 von Michael Müller aus Karlsruhe ins Leben gerufen." },
+      { name: "p:domain_verify", content: "5f8e964f94d8de2f299a1e19f700c401" } // Pinterest verify
     ],
     link: [
       { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
