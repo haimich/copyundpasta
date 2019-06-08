@@ -34,6 +34,7 @@ export interface RecipeServings {
 
 export interface Recipe {
   id?: number;
+  slug: string;
   title: string;
   category: Category;
   previewImageUrl: string;

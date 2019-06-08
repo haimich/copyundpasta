@@ -42,7 +42,7 @@
             <span>Zubereitung</span>
           </div>
           <ul
-            v-for="(step, index) in recipe.directions.steps"
+            v-for="(step, index) in recipe.directions"
             :key="index"
             class="directions"
           >
@@ -60,7 +60,7 @@
 <script lang="ts">
 
   import { Vue, Component, Prop, Watch } from "vue-property-decorator";
-  import { Recipe, RecipeUnit } from "@/api/interfaces/Recipe";
+  import { Recipe, RecipeStep, RecipeServings, RecipeIngredient, RecipeUnit } from "@/api/interfaces/Recipe";
   import { $n } from "@/filters/formatNumber";
 
   @Component
@@ -76,7 +76,7 @@
         this.calculateRating()
     }
     
-    formatIngredient(ingredient) {
+    formatIngredient(ingredient: RecipeIngredient): string {
       let amount = this.formatAmount(ingredient.amount);
       let preparation = ingredient.preparation != null ? ", " + ingredient.preparation : "";
       let unit;
@@ -105,7 +105,9 @@
         amount += " "; // we need a space here
       }
 
-      return `${amount}${unit} ${ingredient.name}${preparation}`
+      console.log(ingredient)
+
+      return `${amount}${unit} ${ingredient}${preparation}`
     }
 
     formatAmount(amount: number): string {
@@ -128,7 +130,7 @@
     calculateRating() {
       if (this.recipe == null) {
         return;
-      } else if (this.recipe.ratings.length === 0) {
+      } else if (this.recipe.ratings == null || this.recipe.ratings.length === 0) {
         return;
       }
 
@@ -162,6 +164,10 @@
 
   .ingredients-list li, .directions li {
     padding: 4px 0;
+  }
+
+  .directions li {
+    margin: 0 0 10px 0;
   }
 
 </style>

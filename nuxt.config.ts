@@ -56,6 +56,14 @@ const config: NuxtConfiguration = {
     ]
   },
 
+  messages: {
+    loading: "Lädt...",
+    server_error: "Fehler",
+    server_error_details: "Bei der Verarbeitung ist ein Fehler aufgetreten.",
+    client_error: "Fehler",
+    client_error_details: "Bei dere Generierung der Seite ist ein Fehler aufgetreten."
+  },
+
   loading: {
     color: "#1eb5da",
   },

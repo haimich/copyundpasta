@@ -49,7 +49,7 @@ const ingredients: RecipeIngredient[] = [
   },
 ];
 
-let directions: RecipeStep[] = [
+const directions: RecipeStep[] = [
   {
     type: "step",
     content: "Hefeteig zubereiten und gehen lassen.",
@@ -84,7 +84,7 @@ const notes = [
   "Die Dampfnudeln sind fertig, wenn es im Topf knistert (dann ist das gesamte Wasser verdampft)",
 ];
 
-let recipe: Recipe = {
+const recipe: Recipe = {
   title: "Oma Hilda's Dampfnudeln",
   category: RecipeCategories.desserts,
   previewImageUrl: "/images/recipes/oma-hildas-dampfnudeln/cover.jpg",
