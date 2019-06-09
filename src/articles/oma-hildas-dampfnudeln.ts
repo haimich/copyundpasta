@@ -1,5 +1,5 @@
 import ArticleCategories from "@/api/interfaces/ArticleCategories";
-import { Article } from "~/api/interfaces/Article";
+import { Article } from "@/api/interfaces/Article";
 
 const article: Article = {
   slug: "oma-hildas-dampfnudeln",

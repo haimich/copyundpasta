@@ -15,7 +15,8 @@ const defaultConfig = {
     directory: "knex_migrations",
   },
   seeds: {
-    directory: "knex_seeds",
+    // directory: "knex_seeds",
+    directory: "knex_seeds/tsc-compiled/knex_seeds",
   },
 };
 

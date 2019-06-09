@@ -79,3 +79,5 @@ dist
 
 # Service worker
 sw.*
+
+knex_seeds/tsc-compiled
