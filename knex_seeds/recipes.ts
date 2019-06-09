@@ -1,4 +1,4 @@
-import articles from "../src/articles/all";
+import recipes from "../src/recipes/all";
 
 exports.seed = async function(knex, Promise) {
   await deleteAllEntries(knex);
@@ -7,12 +7,12 @@ exports.seed = async function(knex, Promise) {
 };
 
 async function deleteAllEntries(knex) {
-  console.log("Deleting articles");
-  await knex("articles").del();
+  console.log("Deleting recipes");
+  await knex("recipes").del();
 }
 
 async function createAllEntries(knex) {
-  console.log("Inserting articles");
+  console.log("Inserting recipes");
 
-  await knex("articles").insert(articles);
+  await knex("recipes").insert(recipes);
 }
