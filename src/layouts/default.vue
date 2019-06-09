@@ -223,8 +223,9 @@
     word-spacing: 0px;
   }
 
-  a {
+  a, a:active, a:focus {
     text-decoration: none;
+    color: $color-primary;
   }
 
   .container {

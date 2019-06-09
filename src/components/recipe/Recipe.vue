@@ -105,8 +105,6 @@
         amount += " "; // we need a space here
       }
 
-      console.log(ingredient)
-
       return `${amount}${unit} ${ingredient}${preparation}`
     }
 

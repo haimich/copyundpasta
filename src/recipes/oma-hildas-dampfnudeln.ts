@@ -85,6 +85,7 @@ const notes = [
 ];
 
 const recipe: Recipe = {
+  slug: "test",
   title: "Oma Hilda's Dampfnudeln",
   category: RecipeCategories.desserts,
   previewImageUrl: "/images/recipes/oma-hildas-dampfnudeln/cover.jpg",

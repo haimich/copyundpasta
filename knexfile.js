@@ -2,18 +2,20 @@ require("dotenv").config();
 const _ = require("lodash");
 
 const defaultConfig = {
-  client: 'mysql',
+  client:      "mysql",
   connection: {
-    database: 'haimich',
-    user:     'haimich',
-    password: 'haimich'
+    database:  "haimich",
+    user:      "haimich",
+    password:  "haimich",
+    host:      "localhost",
+    port:      3306,
   },
   migrations: {
-    tableName: 'knex_migrations',
-    directory: 'knex_migrations',
+    tableName: "knex_migrations",
+    directory: "knex_migrations",
   },
   seeds: {
-    directory: 'knex_seeds',
+    directory: "knex_seeds",
   },
 };
 

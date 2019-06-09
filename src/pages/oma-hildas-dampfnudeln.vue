@@ -1,6 +1,8 @@
 <template>
 
   <el-row>
+    My title: {{ article.title }}
+
     <Recipe :recipe="recipe" />
   </el-row>
   
@@ -10,6 +12,8 @@
 
   import { Vue, Component, Prop } from "vue-property-decorator";
   import Recipe from "@/components/recipe/Recipe.vue";
+
+  import articleObj from "@/articles/oma-hildas-dampfnudeln";
   import recipeObj from "@/recipes/oma-hildas-dampfnudeln";
 
   @Component({
@@ -26,9 +30,13 @@
     }
   })
   export default class OmaHildasDampfnudeln extends Vue {
-    
+
     private recipe = recipeObj;
-  
+
+    get article() {
+      return articleObj;
+    }
+      
     head: {
       title: "Oma Hildas Dampfnudeln"
     }
