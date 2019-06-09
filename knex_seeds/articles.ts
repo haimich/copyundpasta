@@ -13,7 +13,11 @@ async function deleteAllEntries(knex) {
 
 async function createAllEntries(knex) {
   console.log("Inserting articles");
+  
   const articles = await getArticles();
+
+  console.log(articles);
+
   await knex("articles").insert(articles);
 }
 
@@ -27,8 +31,4 @@ async function getArticles() {
   }
 
   return articles;
-
-  // return [
-  //   articleObj,
-  // ]
 }

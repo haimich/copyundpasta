@@ -16,7 +16,7 @@ const defaultConfig = {
   },
   seeds: {
     // directory: "knex_seeds",
-    directory: "knex_seeds/tsc-compiled/knex_seeds",
+    directory: "knex_seeds/compiled/knex_seeds",
   },
 };
 

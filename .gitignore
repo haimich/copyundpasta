@@ -80,4 +80,4 @@ dist
 # Service worker
 sw.*
 
-knex_seeds/tsc-compiled
+knex_seeds/compiled

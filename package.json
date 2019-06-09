@@ -10,7 +10,9 @@
     "build": "nuxt build",
     "start": "nuxt start",
     "deploy": "node scripts/deploy.js",
-    "db:rebuild": "knex migrate:rollback --all && knex migrate:latest && knex seed:run",
+    "db:rebuild": "knex migrate:rollback --all && knex migrate:latest && npm run db:seed",
+    "db:seed": "cd knex_seeds && tsc && knex seed:run",
+    "clean": "rm -rf .nuxt knex_seeds/compiled",
     "generate": "nuxt generate",
     "test": "jest",
     "test:watch": "jest --watch"

@@ -18,7 +18,7 @@
     "noImplicitAny": false,
     "noEmit": false,
     "baseUrl": ".",
-    "outDir": "tsc-compiled",
+    "outDir": "compiled",
     "paths": {
       "@/*": [
         "../src/*"
