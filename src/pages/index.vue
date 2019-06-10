@@ -3,9 +3,13 @@
   <div>
 
     <el-row>
-      <el-col :span="24" class="hero-carousel">
+      <el-col
+        :span="24"
+        v-if="heroArticles != null && heroArticles.length >= 1"
+        class="hero-carousel"
+        style="margin-bottom: 40px;"
+      >
         <el-carousel
-          v-if="heroArticles != null"
           height="650px"
           indicator-position="none"
           arrow="always"
@@ -36,32 +40,40 @@
       </el-col>
     </el-row>
 
-    <el-row style="margin-top: 60px;" :gutter="50">
-      <el-col class="last-article" :span="12" :offset="4">
+    <el-row style="margin-top: 20px;" :gutter="50">
+      <el-col class="newest-article" :span="12" :offset="4">
 
-        <!-- Last article -->
-        <div v-if="lastArticle != null">
-          <h2 class="article-heading" style="padding: 0 20px;">
-            {{ lastArticle.title }}
+        <!-- Newest article -->
+        <div v-if="newestArticle != null">
+          <h2 class="article-heading" style="padding: 0 20px; margin-bottom: 10px;">
+            {{ newestArticle.title }}
           </h2>
+          <h5 class="newest-subtitle">
+            {{ newestArticle.createdAt | formatAsDate }}
+          </h5>
 
-          <img :src="lastArticle.previewImageUrl" alt="Artikelfoto">
+          <img :src="newestArticle.previewImageUrl" alt="Artikelfoto">
 
           <p style="margin-top: 20px;">
-            {{ lastArticle.shortDescription }}
+            {{ newestArticle.shortDescription }}
           </p>
 
           <div class="readmore-link" style="margin-top: 10px;">
-            <nuxt-link :to="'/' + lastArticle.slug" style="font-size: 15px;">
+            <nuxt-link :to="'/' + newestArticle.slug" style="font-size: 15px;">
               Weiterlesen <i class="el-icon-caret-right"></i>
             </nuxt-link>
           </div>
         </div>
 
+        <el-row>
+          <img src="@/assets/images/pasta.svg" alt="Trennlinie" style="margin-top: 35px;">
+        </el-row>
+            
         <!-- Recent articles -->
-        <div v-if="recentArticles != null" style="margin-top: 50px;">
-          <img src="@/assets/images/pasta.svg" alt="Trennlinie" style="margin-bottom: 50px;">
-
+        <div
+          v-if="recentArticles != null && recentArticles.length >= 1"
+          style="margin-top: 45px;"
+        >
           <el-row :gutter="15">
             <el-col :span="8" v-for="article in recentArticles" :key="article.slug">
               <ArticleCardComponent
@@ -69,17 +81,21 @@
               />
             </el-col>
           </el-row>
-        </div>
 
-        <!-- Pagination -->
-        <el-row type="flex" justify="center">
-          <el-pagination
-            background
-            layout="prev, pager, next"
-            :page-size="9"
-            :total="10"
-          ></el-pagination>
-        </el-row>
+          <!-- Pagination -->
+          <el-row
+            v-if="recentArticles.length > pageSize"
+            type="flex"
+            justify="center"
+          >
+            <el-pagination
+              background
+              layout="prev, pager, next"
+              :page-size="pageSize"
+              :total="totalArticles"
+            ></el-pagination>
+          </el-row>
+        </div>
 
       </el-col>
 
@@ -97,8 +113,11 @@
 
   import { Vue, Component, Prop } from "vue-property-decorator";
   import { Article } from "@/interfaces/Article";
+  import ArticleService from "@/services/ArticleService";
   import ArticleCardComponent from "@/components/article/ArticleCardComponent.vue";
   import SidebarComponent from "@/components/SidebarComponent.vue";
+
+  const PAGE_SIZE = 9;
 
   @Component({
     components: {
@@ -107,15 +126,15 @@
     // @ts-ignore
     async asyncData({ $axios, error }) {
       const responses = await Promise.all([
-        $axios.post(`/api/articles/getHeroArticles`),
-        $axios.post(`/api/articles/getArticles`),
+        ArticleService.getHeroArticles($axios),
+        ArticleService.getArticles($axios, 0, PAGE_SIZE),
       ]);
 
       let recentArticles = responses[1].data;
 
       return {
         heroArticles: responses[0].data,
-        lastArticle: recentArticles.shift(),
+        newestArticle: recentArticles.shift(),
         recentArticles: recentArticles,
       };
     }
@@ -124,9 +143,13 @@
 
     private heroArticles: Article[] = [];
 
-    private lastArticle: Article = null;
+    private newestArticle: Article = null;
     
     private recentArticles: Article[] = [];
+
+    private page = 0;
+
+    private totalArticles = 0;
 
   }
 
@@ -203,8 +226,15 @@
     }
   }
 
-  .last-article img {
+  .newest-article img {
     width: 100%;
+  }
+
+  .newest-subtitle {
+    text-align: center;
+    margin-bottom: 15px;
+    color: #5d5d5d;
+    font-style: italic;
   }
 
 </style>

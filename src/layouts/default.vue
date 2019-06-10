@@ -215,6 +215,10 @@
     margin-bottom: 22px;
   }
 
+  h5 {
+    font-size: 14px;
+  }
+
   p {
     line-height: 29px;
     color: $color-text-regular;
