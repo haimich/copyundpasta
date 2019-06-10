@@ -44,4 +44,6 @@ export interface Recipe {
   directions: RecipeStep[];
   notes: string[];
   ratings?: RecipeRating[];
+  createdAt?: string;
+  modifiedAt?: string;
 };

@@ -9,7 +9,9 @@ exports.up = async function(knex, Promise) {
             table.string("email", 1000);
             table.string("author", 1000).notNullable();
             table.text("avatarUrl");
-            table.timestamps(true, true);
+            
+            table.timestamp("createdAt").defaultTo(knex.fn.now());
+            table.timestamp("modifiedAt").defaultTo(knex.fn.now());
 
             table.foreign("articleId").references("articles.id");
             table.foreign("parentCommentId").references("article_comments.id");

@@ -12,7 +12,9 @@ exports.up = async function(knex, Promise) {
             table.text("directions");
             table.text("notes");
             table.text("ratings");
-            table.timestamps(true, true);
+            
+            table.timestamp("createdAt").defaultTo(knex.fn.now());
+            table.timestamp("modifiedAt").defaultTo(knex.fn.now());
 
             table.foreign("categoryId").references("recipe_categories.id");
         })

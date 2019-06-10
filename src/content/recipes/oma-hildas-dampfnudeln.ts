@@ -84,6 +84,8 @@ const notes = [
   "Die Dampfnudeln sind fertig, wenn es im Topf knistert (dann ist das gesamte Wasser verdampft)",
 ];
 
+const createdAt = "2019-06-10 10:10:28";
+
 const recipe: Recipe = {
   slug: "test",
   title: "Oma Hilda's Dampfnudeln",
@@ -94,6 +96,8 @@ const recipe: Recipe = {
   ingredients,
   directions,
   notes,
+  createdAt,
+  modifiedAt: createdAt,
 };
 
 export default recipe;

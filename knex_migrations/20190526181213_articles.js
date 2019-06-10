@@ -9,7 +9,9 @@ exports.up = async function(knex, Promise) {
             table.text("shortDescription");
             table.text("previewImageUrl");
             table.string("author", 1000);
-            table.timestamps(true, true);
+
+            table.timestamp("createdAt").defaultTo(knex.fn.now());
+            table.timestamp("modifiedAt").defaultTo(knex.fn.now());
 
             table.foreign("categoryId").references("article_categories.id");
         });
