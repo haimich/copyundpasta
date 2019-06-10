@@ -1,6 +1,6 @@
 import { setupExpress } from "./utils/expressUtil";
 import { Article } from "../interfaces/Article";
-import { getArticles } from "./repos/articleRepo";
+import { getHeroArticles, getArticles } from "./repos/articleRepo";
 
 let app = setupExpress();
 
@@ -12,7 +12,13 @@ let app = setupExpress();
 app.post("/getHeroArticles", async (req, res): Promise<Article[]> => {
     console.log("getHeroArticles");
 
-    return res.json([]);
+    const articles = await getHeroArticles();
+
+    if (articles == null) {
+        res.sendStatus(404);
+    } else {
+        return res.json(articles);
+    }
 });
 
 app.post("/getArticles", async (req, res): Promise<Article[]> => {

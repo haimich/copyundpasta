@@ -4,6 +4,7 @@ exports.up = async function(knex, Promise) {
         .createTable("articles", function (table) {
             table.increments("id").primary();
             table.string("slug", 500).notNullable().unique();
+            table.boolean("isHeroArticle").defaultTo(false);
             table.string("categoryId", 400);
             table.string("title", 1000).notNullable().index();
             table.text("shortDescription");
