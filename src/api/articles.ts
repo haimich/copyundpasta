@@ -1,5 +1,5 @@
 import { setupExpress } from "./utils/expressUtil";
-import { DbArticle } from "../interfaces/Article";
+import { Article } from "../interfaces/Article";
 import { getArticles } from "./repos/articleRepo";
 
 let app = setupExpress();
@@ -9,13 +9,13 @@ let app = setupExpress();
  * - prefix is "/api/articles/"
  */
 
-app.post("/getHeroArticles", async (req, res): Promise<DbArticle[]> => {
+app.post("/getHeroArticles", async (req, res): Promise<Article[]> => {
     console.log("getHeroArticles");
 
     return res.json([]);
 });
 
-app.post("/getArticles", async (req, res): Promise<DbArticle[]> => {
+app.post("/getArticles", async (req, res): Promise<Article[]> => {
     console.log("getArticles");
 
     const articles = await getArticles();
@@ -25,8 +25,6 @@ app.post("/getArticles", async (req, res): Promise<DbArticle[]> => {
     } else {
         return res.json(articles);
     }
-
-    return res.json(articles);
 });
 
 export default app;
