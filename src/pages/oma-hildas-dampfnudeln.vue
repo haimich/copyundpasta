@@ -3,7 +3,7 @@
   <el-row>
     My title: {{ article.title }}
 
-    <Recipe :recipe="recipe" />
+    <RecipeComponent :recipe="recipe" />
   </el-row>
   
 </template>
@@ -11,15 +11,11 @@
 <script lang="ts">
 
   import { Vue, Component, Prop } from "vue-property-decorator";
-  import Recipe from "@/components/recipe/Recipe.vue";
 
   import articleObj from "@/articles/oma-hildas-dampfnudeln";
-  import recipeObj from "@/recipes/oma-hildas-dampfnudeln";
+  import recipe from "@/recipes/oma-hildas-dampfnudeln";
 
   @Component({
-    components: {
-      Recipe
-    },
     // @ts-ignore
     async asyncData({ $axios }) {
       // const response = await $axios.post(`/api/recipes/getRecipe`, {
@@ -31,7 +27,9 @@
   })
   export default class OmaHildasDampfnudeln extends Vue {
 
-    private recipe = recipeObj;
+    get recipe() {
+      return recipe;
+    }
 
     get article() {
       return articleObj;

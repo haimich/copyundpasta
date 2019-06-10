@@ -2,14 +2,14 @@
 
   <div>
 
-    <MainHeading
+    <MainHeadingComponent
       text="Der Nerd am Herd: Das bin ich."
-    ></MainHeading>
+    />
 
-    <ArticleImage
+    <ArticleImageComponent
       src="/images/about/presenting-cake.jpg"
       alt="Gugelhupfkuchen"
-    ></ArticleImage>
+    />
     
     <el-row style="margin-top: 20px;">
       <el-col :span="12" :offset="6">

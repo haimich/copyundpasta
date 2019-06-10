@@ -13,7 +13,7 @@ app.post("/getHeroArticles", async (req, res) => {
 
     const articles: Article[] = [
         {
-            slug: "salzig-suess-sauer-scharf-die-geniale-tomaten-senf-butter",
+            slug: "oma-hildas-dampfnudeln",
             title: "Marinierter Tofu vom Blech mit Spargel & Frühkartoffeln",
             previewImageUrl: "https://www.eat-this.org/wp-content/uploads/2019/04/tofu-vom-blech-mit-spargel-und-kartoffeln-10.jpg",
         },

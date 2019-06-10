@@ -1,8 +1,10 @@
 import Vue from "vue";
-import MainHeading from "@/components/article/MainHeading.vue";
-import ArticleImage from "@/components/article/ArticleImage.vue";
+import MainHeadingComponent from "@/components/article/MainHeadingComponent.vue";
+import ArticleImageComponent from "@/components/article/ArticleImageComponent.vue";
+import RecipeComponent from "@/components/recipe/RecipeComponent.vue";
 
 export default () => {
-  Vue.component("MainHeading", MainHeading);
-  Vue.component("ArticleImage", ArticleImage);
+  Vue.component("MainHeadingComponent", MainHeadingComponent);
+  Vue.component("ArticleImageComponent", ArticleImageComponent);
+  Vue.component("RecipeComponent", RecipeComponent);
 }

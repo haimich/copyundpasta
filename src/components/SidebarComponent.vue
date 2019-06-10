@@ -99,7 +99,7 @@
   import { Vue, Component, Prop, Watch } from "vue-property-decorator";
 
   @Component
-  export default class Sidebar extends Vue {
+  export default class SidebarComponent extends Vue {
 
     private userEmail = "";
 

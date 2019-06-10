@@ -32,7 +32,7 @@
   import { Article } from "../../api/interfaces/Article";
 
   @Component
-  export default class ArticleCard extends Vue {
+  export default class ArticleCardComponent extends Vue {
 
       @Prop()
       private article: Article;

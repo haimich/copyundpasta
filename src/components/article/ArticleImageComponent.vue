@@ -13,7 +13,7 @@
   import { Vue, Component, Prop, Watch } from "vue-property-decorator";
 
   @Component
-  export default class ArticleImage extends Vue {
+  export default class ArticleIArticleImageComponentmage extends Vue {
 
       @Prop()
       private src: string;

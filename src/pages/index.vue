@@ -64,7 +64,9 @@
 
           <el-row :gutter="15">
             <el-col :span="8" v-for="article in recentArticles" :key="article.slug">
-              <ArticleCard :article="article"></ArticleCard>
+              <ArticleCardComponent
+                :article="article"
+              />
             </el-col>
           </el-row>
         </div>
@@ -83,7 +85,7 @@
 
       <!-- Sidebar -->
       <el-col :span="6">
-        <Sidebar></Sidebar>
+        <SidebarComponent />
       </el-col>
     </el-row>
 
@@ -95,12 +97,12 @@
 
   import { Vue, Component, Prop } from "vue-property-decorator";
   import { Article } from "@/api/interfaces/Article";
-  import ArticleCard from "@/components/article/ArticleCard.vue";
-  import Sidebar from "@/components/Sidebar.vue";
+  import ArticleCardComponent from "@/components/article/ArticleCardComponent.vue";
+  import SidebarComponent from "@/components/SidebarComponent.vue";
 
   @Component({
     components: {
-      ArticleCard, Sidebar,
+      ArticleCardComponent, SidebarComponent,
     },
     // @ts-ignore
     async asyncData({ $axios, error }) {
@@ -153,6 +155,10 @@
 
     img {
       filter: brightness(85%);
+    }
+
+    a:hover {
+      text-decoration: none;
     }
   }
 

@@ -7,7 +7,7 @@
           <span class="header-social-icons">
             <ul>
               <li>
-                <a href="https://www.pinterest.de" target="_blank" title="Copy & Pasta bei Pinterest">
+                <a href="https://www.pinterest.de/copyundpasta" target="_blank" title="Copy & Pasta bei Pinterest">
                   <font-awesome-icon :icon="['fab', 'pinterest-p']"></font-awesome-icon>
                 </a>
               </li>
@@ -225,6 +225,11 @@
 
   a, a:active, a:focus {
     text-decoration: none;
+    color: $color-primary;
+  }
+
+  a:hover {
+    text-decoration: underline;
     color: $color-primary;
   }
 
