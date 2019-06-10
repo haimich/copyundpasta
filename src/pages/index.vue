@@ -96,7 +96,7 @@
 <script lang="ts">
 
   import { Vue, Component, Prop } from "vue-property-decorator";
-  import { Article } from "@/api/interfaces/Article";
+  import { Article } from "@/interfaces/Article";
   import ArticleCardComponent from "@/components/article/ArticleCardComponent.vue";
   import SidebarComponent from "@/components/SidebarComponent.vue";
 

@@ -1,5 +1,5 @@
 import { setupExpress } from "./utils/expressUtil";
-import { Article } from "./interfaces/Article";
+import { Article } from "../interfaces/Article";
 
 let app = setupExpress();
 

@@ -1,4 +1,4 @@
-import { Article } from "@/api/interfaces/Article";
+import { Article } from "@/interfaces/Article";
 
 export async function getArticles(knex, id): Promise<Article[]> {
   const articles = await knex

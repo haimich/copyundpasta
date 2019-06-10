@@ -29,7 +29,7 @@
 <script lang="ts">
 
   import { Vue, Component, Prop, Watch } from "vue-property-decorator";
-  import { Article } from "../../api/interfaces/Article";
+  import { Article } from "../../interfaces/Article";
 
   @Component
   export default class ArticleCardComponent extends Vue {

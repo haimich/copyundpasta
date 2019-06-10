@@ -1,5 +1,5 @@
-import { Ingredient, IngredientPreparation } from "@/api/interfaces/Ingredients";
-import { Category } from "@/api/interfaces/RecipeCategories";
+import { Ingredient, IngredientPreparation } from "@/interfaces/Ingredients";
+import { Category } from "@/interfaces/RecipeCategories";
 
 export enum RecipeUnit {
   gram = "gram",

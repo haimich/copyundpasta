@@ -1,4 +1,4 @@
-import {Recipe} from "@/api/interfaces/Recipe";
+import {Recipe} from "@/interfaces/Recipe";
 import { getConnection } from "../utils/knexUtil";
 
 export async function getRecipe(id): Promise<Recipe> {

@@ -60,7 +60,7 @@
 <script lang="ts">
 
   import { Vue, Component, Prop, Watch } from "vue-property-decorator";
-  import { Recipe, RecipeStep, RecipeServings, RecipeIngredient, RecipeUnit } from "@/api/interfaces/Recipe";
+  import { Recipe, RecipeStep, RecipeServings, RecipeIngredient, RecipeUnit } from "@/interfaces/Recipe";
   import { $n } from "@/filters/formatNumber";
 
   @Component
