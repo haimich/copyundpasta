@@ -1,4 +1,4 @@
-import articles from "../src/articles/all";
+import articles from "../src/content/articles/all";
 
 exports.seed = async function(knex, Promise) {
   await deleteAllEntries(knex);

@@ -1,4 +1,4 @@
-import recipes from "../src/recipes/all";
+import recipes from "../src/content/recipes/all";
 
 exports.seed = async function(knex, Promise) {
   await deleteAllEntries(knex);
