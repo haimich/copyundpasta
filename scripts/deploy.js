@@ -1,6 +1,7 @@
 require("dotenv").config()
-let nodeSsh = require("node-ssh");
-let ssh = new nodeSsh();
+const consola = require('consola');
+const nodeSsh = require("node-ssh");
+const ssh = new nodeSsh();
 
 if (process.env.DEPLOY_HOST == null) {
   throw new Error("You need to create a .env file with the following variables: DEPLOY_HOST, DEPLOY_USERNAME, DEPLOY_PW and DEPLOY_HOMEDIR");
@@ -8,7 +9,7 @@ if (process.env.DEPLOY_HOST == null) {
 
 async function deploy() {
   try {
-    console.log("Connecting...");
+    console.info("Connecting...");
 
     await ssh.connect({
       host: process.env.DEPLOY_HOST,
@@ -16,26 +17,26 @@ async function deploy() {
       password: process.env.DEPLOY_PW,
     });
 
-    console.log("\nUpdating repo...\n");
+    console.info("\nUpdating repo...\n");
 
     await executeCommand("git checkout .");
     await executeCommand("git status | grep 'nothing to commit'");
     await executeCommand("git pull --rebase");
 
-    console.log("\nInstalling npm dependencies...\n");
+    console.info("\nInstalling npm dependencies...\n");
     await executeCommand("npm install"); // don't use --production because we need dev dependencies fo build
     await executeCommand("git checkout package-lock.json");
 
-    console.log("\nRebuilding app...\n");
+    console.info("\nRebuilding app...\n");
     await executeCommand("npm run build");
 
-    console.log("\nMigrating db...\n");
+    console.info("\nMigrating db...\n");
     await executeCommand("NODE_ENV=production npm run db:migrate");
 
-    console.log("\Generating and inserting seed data db...\n");
+    console.info("\Generating and inserting seed data db...\n");
     await executeCommand("NODE_ENV=production npm run db:seed");
     
-    console.log("\nRestarting app...\n");
+    console.info("\nRestarting app...\n");
     try {
       await executeCommand("~/bin/pm2 restart ecosystem.config.js --env production");
       await executeCommand("~/bin/pm2 show cup | grep online");
@@ -55,7 +56,7 @@ async function deploy() {
 }
 
 async function executeCommand(command, homeDir = process.env.DEPLOY_HOMEDIR) {
-  console.log("> " + command);
+  console.info("> " + command);
   let result = await ssh.execCommand(command, { cwd: homeDir });
 
   if (result.code !== 0) {
