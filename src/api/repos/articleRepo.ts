@@ -18,9 +18,15 @@ export async function getHeroArticles(): Promise<Article[]> {
 export async function getArticles(params: PagingParams): Promise<Article[]> {
   const knex = getConnection();
 
+  const subselect = knex
+    .table("articles")
+    .count("*")
+    .where("isHeroArticle", 0)
+    .as("totalCount");
+
   const articles = await knex
     .table("articles")
-    .select("*")
+    .select("*", subselect)
     .where("isHeroArticle", 0)
     .limit(params.pageSize)
     .offset(calculateOffset(params.page, params.pageSize))

@@ -18,7 +18,7 @@
     "clean:seeds": "rm -rf knex_seeds/compiled",
     "generate": "nuxt generate",
     "test": "jest",
-    "test:watch": "jest --watch"
+    "watch:test": "jest --watch"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.19",

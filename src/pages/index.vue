@@ -84,7 +84,7 @@
 
           <!-- Pagination -->
           <el-row
-            v-if="recentArticles.length > pageSize"
+            v-if="totalArticles > pageSize"
             type="flex"
             justify="center"
           >
@@ -117,7 +117,7 @@
   import ArticleCardComponent from "@/components/article/ArticleCardComponent.vue";
   import SidebarComponent from "@/components/SidebarComponent.vue";
 
-  const PAGE_SIZE = 9;
+  const PAGE_SIZE = 2;
 
   @Component({
     components: {
@@ -132,10 +132,16 @@
 
       let recentArticles = responses[1].data;
 
+      let totalRecentCount = 0;
+      if (recentArticles.length >= 1) {
+        totalRecentCount = recentArticles[0].totalCount - 1;
+      }
+
       return {
         heroArticles: responses[0].data,
         newestArticle: recentArticles.shift(),
         recentArticles: recentArticles,
+        totalArticles: totalRecentCount,
       };
     }
   })

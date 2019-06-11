@@ -7,4 +7,5 @@ export interface Article {
   previewImageUrl: string;
   createdAt: string;
   modifiedAt: string;
+  totalCount?: number;
 }
