@@ -33,6 +33,11 @@ const ingredients: RecipeIngredients = {
     id: "milch",
     name: "Milch",
   },
+  ei: {
+    id: "ei",
+    name: "Ei",
+    namePlural: "Eier",
+  },
   butter: {
     id: "butter",
     name: "Butter",

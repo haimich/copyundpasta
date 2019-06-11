@@ -29,8 +29,7 @@
             :key="index"
             class="ingredients-list"
           >
-            <li>
-              {{ formatIngredient(ingredient) }}
+            <li v-html="formatIngredient(ingredient)">
             </li>
           </ul>
         </el-card>
@@ -79,6 +78,7 @@
     formatIngredient(ingredient: RecipeIngredient): string {
       let amount = this.formatAmount(ingredient.amount);
       let preparation = ingredient.preparation != null ? ", " + ingredient.preparation : "";
+      let ingredientName = this.formatIngredientName(ingredient)
       let unit;
     
       switch (ingredient.unit) {
@@ -105,20 +105,32 @@
         amount += " "; // we need a space here
       }
 
-      return `${amount}${unit} ${ingredient}${preparation}`
+      return `${amount}${unit} ${ingredientName}${preparation}`
     }
 
     formatAmount(amount: number): string {
       if (amount !== null && amount !== undefined) {
         if (amount === 0.25) {
-          return "1/4";
+          return "&frac14;";
         } else if (amount === 0.5) {
-          return "1/2";
+          return "&frac12;";
         } else if (amount === 0.75) {
-          return "3/4";
+          return "&frac34;";
         } else {
           // just format the number nicely
           return $n(amount);
+        }
+      } else {
+        return "";
+      }
+    }
+
+    formatIngredientName(ingredient: RecipeIngredient) {
+      if (ingredient != null && ingredient.ingredient != null) {
+        if (ingredient.amount >= 2 && ingredient.ingredient.namePlural != null) {
+          return ingredient.ingredient.namePlural;
+        } else {
+          return ingredient.ingredient.name;
         }
       } else {
         return "";
