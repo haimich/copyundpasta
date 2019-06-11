@@ -1,5 +1,7 @@
 require("dotenv").config()
-const consola = require('consola');
+
+const consola = require("consola");
+const shell = require("shelljs");
 const nodeSsh = require("node-ssh");
 const ssh = new nodeSsh();
 
@@ -9,7 +11,13 @@ if (process.env.DEPLOY_HOST == null) {
 
 async function deploy() {
   try {
-    console.info("Connecting...");
+    consola.success("Checking for local modifications");
+    if (shell.exec("git status | grep 'nothing to commit'").code !== 0) {
+      consola.error("Check your local repo for modifications!");
+      process.exit(1);
+    }
+
+    consola.success("Connecting...");
 
     await ssh.connect({
       host: process.env.DEPLOY_HOST,
@@ -17,46 +25,46 @@ async function deploy() {
       password: process.env.DEPLOY_PW,
     });
 
-    console.info("\nUpdating repo...\n");
+    consola.success("\nUpdating repo...\n");
 
     await executeCommand("git checkout .");
     await executeCommand("git status | grep 'nothing to commit'");
     await executeCommand("git pull --rebase");
 
-    console.info("\nInstalling npm dependencies...\n");
+    consola.success("\nInstalling npm dependencies...\n");
     await executeCommand("npm install"); // don't use --production because we need dev dependencies fo build
     await executeCommand("git checkout package-lock.json");
 
-    console.info("\nRebuilding app...\n");
+    consola.success("\nRebuilding app...\n");
     await executeCommand("npm run build");
 
-    console.info("\nMigrating db...\n");
+    consola.success("\nMigrating db...\n");
     await executeCommand("NODE_ENV=production npm run db:migrate");
 
-    console.info("\Generating and inserting seed data db...\n");
+    consola.success("\Generating and inserting seed data db...\n");
     await executeCommand("NODE_ENV=production npm run db:seed");
     
-    console.info("\nRestarting app...\n");
+    consola.success("\nRestarting app...\n");
     try {
       await executeCommand("~/bin/pm2 restart ecosystem.config.js --env production");
       await executeCommand("~/bin/pm2 show cup | grep online");
     } catch (error) {
-      console.error(error);
+      consola.error(error);
 
       let result = await executeCommand("pm2 list cup");
-      console.error(result);
+      consola.error(result);
       process.exit(1);
     }
 
     process.exit(0);
   } catch (error) {
-    console.error(error);
+    consola.error(error);
     process.exit(1);
   }
 }
 
 async function executeCommand(command, homeDir = process.env.DEPLOY_HOMEDIR) {
-  console.info("> " + command);
+  consola.success("> " + command);
   let result = await ssh.execCommand(command, { cwd: homeDir });
 
   if (result.code !== 0) {
