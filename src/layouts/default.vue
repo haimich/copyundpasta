@@ -8,17 +8,17 @@
             <ul>
               <li>
                 <a href="https://www.pinterest.de/copyundpasta" target="_blank" title="Copy & Pasta bei Pinterest">
-                  <font-awesome-icon :icon="['fab', 'pinterest-p']"></font-awesome-icon>
+                  <font-awesome-icon :icon="['fab', 'pinterest-p']" />
                 </a>
               </li>
               <li>
                 <a href="https://www.google.de" target="_blank" title="Newsletter abonnieren">
-                  <font-awesome-icon :icon="['far', 'envelope']"></font-awesome-icon>
+                  <font-awesome-icon :icon="['far', 'envelope']" />
                 </a>
               </li>
               <li>
                 <a href="https://www.google.de" target="_blank" title="RSS-Feed abonnieren">
-                  <font-awesome-icon :icon="['fas', 'rss']"></font-awesome-icon>
+                  <font-awesome-icon :icon="['fas', 'rss']" />
                 </a>
               </li>
             </ul>
@@ -57,7 +57,7 @@
             </el-menu-item>
 
             <el-menu-item index="suche">
-              <i class="el-icon-search" role="button"></i>
+              <font-awesome-icon :icon="['fas', 'search']" style="font-size: 15px;" />
             </el-menu-item>
           </el-menu>
 

@@ -151,6 +151,10 @@
 
     private totalArticles = 0;
 
+    get pageSize() {
+      return PAGE_SIZE;
+    }
+
   }
 
 </script>
