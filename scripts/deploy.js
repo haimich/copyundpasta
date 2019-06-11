@@ -25,7 +25,7 @@ async function deploy() {
       password: process.env.DEPLOY_PW,
     });
 
-    consola.success("\nUpdating repo...\n");
+    consola.success("Updating repo...");
 
     await executeCommand("git checkout .");
     await executeCommand("git status | grep 'nothing to commit'");
