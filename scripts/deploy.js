@@ -26,12 +26,14 @@ async function deploy() {
     await executeCommand("npm install"); // don't use --production because we need dev dependencies fo build
     await executeCommand("git checkout package-lock.json");
 
-    console.log("\nMigrating db...\n");
-    await executeCommand("./node_modules/.bin/knex migrate:latest --env production");
-    // await executeCommand("./node_modules/.bin/knex seed:run --env production");
-
     console.log("\nRebuilding app...\n");
     await executeCommand("npm run build");
+
+    console.log("\nMigrating db...\n");
+    await executeCommand("NODE_ENV=production npm run db:migrate");
+
+    console.log("\Generating and inserting seed data db...\n");
+    await executeCommand("NODE_ENV=production npm run db:seed");
     
     console.log("\nRestarting app...\n");
     try {

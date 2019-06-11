@@ -1,9 +1,9 @@
 import recipes from "../src/content/recipes/all";
 
 exports.seed = async function(knex, Promise) {
-  await deleteAllEntries(knex);
+  // await deleteAllEntries(knex);
 
-  await createAllEntries(knex);
+  // await createAllEntries(knex);
 };
 
 async function deleteAllEntries(knex) {
