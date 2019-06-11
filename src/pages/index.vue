@@ -66,7 +66,7 @@
         </div>
 
         <el-row>
-          <img src="@/assets/images/pasta.svg" alt="Trennlinie" style="margin-top: 35px;">
+          <img src="/images/divider/pasta.svg" alt="Trennlinie" style="margin-top: 35px;">
         </el-row>
             
         <!-- Recent articles -->

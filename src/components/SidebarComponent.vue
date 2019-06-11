@@ -2,7 +2,9 @@
 
   <aside>
     <section class="sidebar-container">
-      <el-divider>Über Mich</el-divider>
+      <div class="divider">
+        <span>Über Mich</span>
+      </div>
 
       <img
         src="@/assets/images/uebermich.jpg"
@@ -40,7 +42,9 @@
     </section>
 
     <section class="sidebar-container" style="margin-top: 25px;">
-      <el-divider style="margin-top: 20px;">Newsletter</el-divider>
+      <div class="divider">
+        <span>Newsletter</span>
+      </div>
 
       <p style="margin-top: 20px; width: 75%">
         Du möchtest über neue Rezepte informiert werden? Dann abonniere einfach meinen Newsletter.
@@ -133,6 +137,39 @@
     align-items: center;
     flex-direction: column;
     text-align: center;
+
+    .divider {
+      width: 100%;
+      position: relative;
+      z-index: 2;
+      text-align: center;
+    }
+
+    .divider::before {
+      width: 100%;
+      height: 14px;
+      background-image: url(/images/divider/curve.png);
+      background-position: center center;
+      background-repeat: repeat;
+      position: absolute;
+      top: 4px;
+      left: 0;
+      z-index: 1;
+      content: '';
+    }
+
+    .divider span {
+      position: relative;
+      z-index: 5;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 0;
+      line-height: 1;
+      background-color: #ffffff;
+      padding: 0 14px;
+      display: inline-block;
+    }
 
     .el-divider {
       margin: 12px 0;

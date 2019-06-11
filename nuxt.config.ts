@@ -60,7 +60,7 @@ const config: NuxtConfiguration = {
   },
 
   messages: {
-    loading: "Lädt...",
+    loading: "Wird geladen...",
     server_error: "Fehler",
     server_error_details: "Bei der Verarbeitung ist ein Fehler aufgetreten.",
     client_error: "Fehler",
