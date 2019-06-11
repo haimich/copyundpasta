@@ -16,7 +16,7 @@ async function deploy() {
       process.exit(1);
     }
 
-    console.info("Connecting...");
+    console.info("\nConnecting...");
 
     await ssh.connect({
       host: process.env.DEPLOY_HOST,
@@ -34,8 +34,8 @@ async function deploy() {
     await executeCommand("npm install"); // don't use --production because we need dev dependencies fo build
     await executeCommand("git checkout package-lock.json");
 
-    console.info("\nRebuilding app...\n");
-    await executeCommand("npm run build");
+    // console.info("\nRebuilding app...\n");
+    // await executeCommand("npm run build");
 
     console.info("\nMigrating db...\n");
     await executeCommand("NODE_ENV=production npm run db:migrate");
