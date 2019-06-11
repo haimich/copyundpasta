@@ -6,7 +6,17 @@
       :body-style="{ padding: '0px' }"
       shadow="hover"
     >
-      <img :src="article.previewImageUrl" alt="Artikelbild">
+      <div class="article-image-container">
+        <img :src="article.previewImageUrl" alt="Artikelbild">
+
+        <div class="article-card-title">
+          <nuxt-link :to="'/' + article.slug" class="article-card-link">
+            <span class="article-card-button">
+              Ansehen
+            </span>
+          </nuxt-link>
+        </div>
+      </div>
 
       <div class="article-card-body">
         <div class="article-card-category">
@@ -46,14 +56,66 @@
   @import "~/scss/variables.scss";
 
   .article-card {
-    height: 412px;
+    height: 390px;
     margin-bottom: 27px;
+  }
+
+  .article-image-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
 
     img {
       width: 100%;
+      transition: all .7s ease;
+
+      &:hover {
+        filter: brightness(50%);
+      }
     }
+
+    a:hover {
+      text-decoration: none;
+    }
+
+    .article-card-title {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 70%;
+      transform: translate(-50%, -50%);
+      
+      h1 {
+        font-size: 17px;
+        font-weight: 100;
+        color: white;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 6px;
+      }
+    }
+
+    .article-card-button {
+      margin-top: 6px;
+      display: inline-block;
+      padding: 15px 20px;
+      border: 2px solid white;
+      border-radius: 2px;
+      font-size: 16px;
+      text-transform: uppercase;
+      color: white;
+      font-style: italic;
+    }
+
+    .article-card-link {
+      text-decoration: none;
+      display: flex;
+      justify-content: center;
+    }
+
   }
 
+  
   .article-card-body {
     text-align: center;
     padding: 5px 10px 10px 10px;
@@ -73,6 +135,7 @@
       font-size: 14.5px;
       color: #000000cf;
       font-weight: 600;
+      line-height: 21px;
     }
 
     .article-card-date {
