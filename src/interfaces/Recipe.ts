@@ -7,7 +7,13 @@ export interface Ingredient {
   namePlural?: string;
 }
 
-export interface RecipeIngredient {
+export interface RecipeIngredientGroup extends RecipeIngredientEntry {
+  isGroup: true;
+  title: string;
+  ingredients: RecipeIngredient[];
+}
+
+export interface RecipeIngredient extends RecipeIngredientEntry {
   unit?: RecipeUnit;
   amount?: number;
   amountFrom?: number;
@@ -15,6 +21,8 @@ export interface RecipeIngredient {
   ingredient: Ingredient;
   preparation?: IngredientPreparation;
 }
+
+export interface RecipeIngredientEntry { }
 
 export interface RecipeStep {
   type: "step";
@@ -38,7 +46,7 @@ export interface Recipe {
   previewImageUrl: string;
   servings: RecipeServings;
   description: string;
-  ingredients: RecipeIngredient[];
+  ingredients: (RecipeIngredientGroup|RecipeIngredient)[];
   directions: RecipeStep[];
   notes: string[];
   ratings?: RecipeRating[];

@@ -25,12 +25,11 @@
             <span>Zutaten</span>
           </div>
           <ul
-            v-for="(ingredient, index) in recipe.ingredients"
+            v-for="(ingredient, index) in getIngredientList()"
             :key="index"
             class="ingredients-list"
           >
-            <li v-html="formatIngredient(ingredient)">
-            </li>
+            <li v-html="ingredient"></li>
           </ul>
         </el-card>
       </el-col>
@@ -74,6 +73,30 @@
     @Watch("recipe")
     recipeUpdated() {
         this.calculateRating()
+    }
+
+    getIngredientList(): string[] {
+      if (this.recipe == null) {
+        return [];
+      }
+
+      let ingredientStrings = [];
+
+      for (let entry of this.recipe.ingredients) {
+        if (entry.isGroup) {
+          ingredientStrings.push("<strong>" + entry.title + ":</strong>");
+
+          for (let ingredient of entry.ingredients) {
+            ingredientStrings.push(this.formatIngredient(ingredient));
+          }
+
+          ingredientStrings.push("");
+        } else {
+          ingredientStrings.push(this.formatIngredient(entry));
+        }
+      }
+
+      return ingredientStrings;
     }
     
     formatIngredient(ingredient: RecipeIngredient): string {

@@ -1,5 +1,5 @@
 import RecipeCategories from "../../interfaces/RecipeCategories";
-import { Recipe, RecipeStep, RecipeServings, RecipeIngredient } from "../../interfaces/Recipe";
+import { Recipe, RecipeStep, RecipeServings, RecipeIngredient, RecipeIngredientEntry, RecipeIngredientGroup } from "../../interfaces/Recipe";
 import { Ingredients, IngredientPreparation, RecipeUnit } from "../../interfaces/RecipeIngredients";
 
 const servings: RecipeServings = {
@@ -7,40 +7,46 @@ const servings: RecipeServings = {
   amount: 10,
 };
 
-const ingredients: RecipeIngredient[] = [
+const ingredients: (RecipeIngredientGroup|RecipeIngredient)[] = [
   {
-    unit: RecipeUnit.gram,
-    amount: 500,
-    ingredient: Ingredients.mehl,
-  },
-  {
-    unit: RecipeUnit.gram,
-    amount: 30,
-    ingredient: Ingredients.hefe,
-  },
-  {
-    unit: RecipeUnit.gram,
-    amount: 30,
-    ingredient: Ingredients.zucker,
-  },
-  {
-    unit: RecipeUnit.quantity,
-    amountFrom: 2,
-    amountTo: 3,
-    ingredient: Ingredients.ei,
-  },
-  {
-    unit: RecipeUnit.liter,
-    amount: 0.25,
-    ingredient: Ingredients.milch,
-  },
-  {
-    ingredient: Ingredients.salz,
-  },
-  {
-    unit: RecipeUnit.gram,
-    amount: 80,
-    ingredient: Ingredients.butter,
+    isGroup: true,
+    title: "Teig",
+    ingredients: [
+      {
+        unit: RecipeUnit.gram,
+        amount: 500,
+        ingredient: Ingredients.mehl,
+      },
+      {
+        unit: RecipeUnit.gram,
+        amount: 30,
+        ingredient: Ingredients.hefe,
+      },
+      {
+        unit: RecipeUnit.gram,
+        amount: 30,
+        ingredient: Ingredients.zucker,
+      },
+      {
+        unit: RecipeUnit.quantity,
+        amountFrom: 2,
+        amountTo: 3,
+        ingredient: Ingredients.ei,
+      },
+      {
+        unit: RecipeUnit.liter,
+        amount: 0.25,
+        ingredient: Ingredients.milch,
+      },
+      {
+        ingredient: Ingredients.salz,
+      },
+      {
+        unit: RecipeUnit.gram,
+        amount: 80,
+        ingredient: Ingredients.butter,
+      },
+    ],
   },
   {
     unit: RecipeUnit.quantity,
