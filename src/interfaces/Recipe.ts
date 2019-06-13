@@ -1,13 +1,10 @@
-import { Ingredient, IngredientPreparation } from "@/interfaces/Ingredients";
+import { IngredientPreparation, RecipeUnit } from "@/interfaces/RecipeIngredients";
 import { Category } from "@/interfaces/RecipeCategories";
 
-export enum RecipeUnit {
-  gram = "gram",
-  liter = "liter",
-  quantity = "quantity",
-  el = "el",
-  tl = "tl",
-  einige = "einige",
+export interface Ingredient {
+  id: string;
+  name: string;
+  namePlural?: string;
 }
 
 export interface RecipeIngredient {

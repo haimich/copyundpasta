@@ -1,6 +1,6 @@
 import RecipeCategories from "../../interfaces/RecipeCategories";
-import { Recipe, RecipeStep, RecipeServings, RecipeIngredient, RecipeUnit } from "../../interfaces/Recipe";
-import Ingredients, { IngredientPreparation } from "../../interfaces/Ingredients";
+import { Recipe, RecipeStep, RecipeServings, RecipeIngredient } from "../../interfaces/Recipe";
+import { Ingredients, IngredientPreparation, RecipeUnit } from "../../interfaces/RecipeIngredients";
 
 const servings: RecipeServings = {
   unit: RecipeUnit.quantity,

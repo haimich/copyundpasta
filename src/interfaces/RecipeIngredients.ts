@@ -1,18 +1,23 @@
-export interface Ingredient {
-  id: string;
-  name: string;
-  namePlural?: string;
+import { Ingredient } from "./Recipe";
+
+export interface Ingredients {
+  [key: string]: Ingredient;
+}
+
+export enum RecipeUnit {
+  gram = "gram",
+  liter = "liter",
+  quantity = "quantity",
+  el = "el",
+  tl = "tl",
+  einige = "einige",
 }
 
 export enum IngredientPreparation {
   gewuerfelt = "gewürfelt",
 }
 
-export interface RecipeIngredients {
-  [key: string]: Ingredient;
-}
-
-const ingredients: RecipeIngredients = {
+export const Ingredients: Ingredients = {
   salz: {
     id: "salz",
     name: "Salz",
@@ -48,5 +53,3 @@ const ingredients: RecipeIngredients = {
     namePlural: "Zwiebeln",
   },
 }
-
-export default ingredients;
