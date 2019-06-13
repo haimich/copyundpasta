@@ -25,7 +25,8 @@ const ingredients: RecipeIngredient[] = [
   },
   {
     unit: RecipeUnit.quantity,
-    amount: 2,
+    amountFrom: 2,
+    amountTo: 3,
     ingredient: Ingredients.ei,
   },
   {

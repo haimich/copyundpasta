@@ -13,6 +13,8 @@ export enum RecipeUnit {
 export interface RecipeIngredient {
   unit?: RecipeUnit;
   amount?: number;
+  amountFrom?: number;
+  amountTo?: number;
   ingredient: Ingredient;
   preparation?: IngredientPreparation;
 }

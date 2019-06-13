@@ -76,7 +76,7 @@ pm2 start npm --name "cup" -- start
 If you have never started the docker container execute this:
 
 ```bash
-docker run --name mariadb -e MYSQL_ROOT_PASSWORD=password -e MYSQL_DATABASE=haimich -e MYSQL_USER=haimich -e MYSQL_PASSWORD=haimich -p 3306:3306 mariadb:10.3
+docker run --name mariadb -e MYSQL_ROOT_PASSWORD=password -e MYSQL_DATABASE=haimich -e MYSQL_USER=haimich -e MYSQL_PASSWORD=haimich -p 3306:3306 -d mariadb:10.3
 ```
 
 Afterwards to start or stop it just use 

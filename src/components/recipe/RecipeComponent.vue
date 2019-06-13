@@ -76,7 +76,7 @@
     }
     
     formatIngredient(ingredient: RecipeIngredient): string {
-      let amount = this.formatAmount(ingredient.amount);
+      let amount = this.formatAmount(ingredient);
       let preparation = ingredient.preparation != null ? ", " + ingredient.preparation : "";
       let ingredientName = this.formatIngredientName(ingredient)
       let unit;
@@ -108,18 +108,20 @@
       return `${amount}${unit} ${ingredientName}${preparation}`
     }
 
-    formatAmount(amount: number): string {
-      if (amount !== null && amount !== undefined) {
-        if (amount === 0.25) {
+    formatAmount(ingredient: RecipeIngredient): string {
+      if (this.isNumberDefined(ingredient.amount)) {
+        if (ingredient.amount === 0.25) {
           return "&frac14;";
-        } else if (amount === 0.5) {
+        } else if (ingredient.amount === 0.5) {
           return "&frac12;";
-        } else if (amount === 0.75) {
+        } else if (ingredient.amount === 0.75) {
           return "&frac34;";
         } else {
           // just format the number nicely
-          return $n(amount);
+          return $n(ingredient.amount);
         }
+      } else if (this.isNumberDefined(ingredient.amountFrom) && this.isNumberDefined(ingredient.amountTo)) {
+          return $n(ingredient.amountFrom) + "-" + $n(ingredient.amountTo);
       } else {
         return "";
       }
@@ -127,8 +129,13 @@
 
     formatIngredientName(ingredient: RecipeIngredient) {
       if (ingredient != null && ingredient.ingredient != null) {
-        if (ingredient.amount >= 2 && ingredient.ingredient.namePlural != null) {
-          return ingredient.ingredient.namePlural;
+        if ((this.isNumberDefined(ingredient.amount) && ingredient.amount >= 2) ||
+            (this.isNumberDefined(ingredient.amountFrom) && this.isNumberDefined(ingredient.amountTo))) {
+          if (ingredient.ingredient.namePlural != null) {
+            return ingredient.ingredient.namePlural;
+          } else {
+            return ingredient.ingredient.name;
+          }
         } else {
           return ingredient.ingredient.name;
         }
@@ -149,6 +156,10 @@
         ratingCount += rating.value;
       }
       this.rating = ratingCount / this.recipe.ratings.length
+    }
+
+    isNumberDefined(n: number): boolean {
+      return n !== null && n !== undefined;
     }
 
     reset() {
