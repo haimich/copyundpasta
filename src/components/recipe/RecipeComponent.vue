@@ -40,13 +40,11 @@
             <span>Zubereitung</span>
           </div>
           <ul
-            v-for="(step, index) in recipe.directions"
+            v-for="(step, index) in getStepList()"
             :key="index"
             class="directions"
           >
-            <li>
-              {{ step.content }}
-            </li>
+            <li v-html="step"></li>
           </ul>
         </el-card>
       </el-col>
@@ -58,7 +56,7 @@
 <script lang="ts">
 
   import { Vue, Component, Prop, Watch } from "vue-property-decorator";
-  import { Recipe, RecipeStep, RecipeServings, RecipeIngredient, RecipeIngredientGroup } from "@/interfaces/Recipe";
+  import { Recipe, RecipeStep, RecipeServings, RecipeIngredient, RecipeIngredientGroup, RecipeStepGroup } from "@/interfaces/Recipe";
   import { RecipeUnit } from "@/interfaces/RecipeIngredients";
   import { $n } from "@/filters/formatNumber";
 
@@ -168,6 +166,36 @@
       } else {
         return "";
       }
+    }
+
+    getStepList(): string[] {
+      if (this.recipe == null) {
+        return [];
+      }
+
+      let stepStrings = [];
+
+      for (let entry of this.recipe.steps) {
+        if ('isGroup' in entry) {
+          entry = entry as RecipeStepGroup;
+          stepStrings.push("<strong>" + entry.title + ":</strong>");
+
+          for (let step of entry.steps) {
+            stepStrings.push(this.formatStep(step));
+          }
+
+          stepStrings.push("");
+        } else {
+          entry = entry as RecipeStep;
+          stepStrings.push(this.formatStep(entry));
+        }
+      }
+
+      return stepStrings;
+    }
+
+    formatStep(step: RecipeStep): string {
+      return step.content;
     }
 
     calculateRating() {

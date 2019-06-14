@@ -26,6 +26,7 @@ export interface RecipeIngredientEntry { }
 
 export interface RecipeStepGroup extends RecipeStepEntry {
   isGroup: true;
+  title: string;
   steps: RecipeStep[];
 }
 
@@ -54,7 +55,7 @@ export interface Recipe {
   servings: RecipeServings;
   description: string;
   ingredients: (RecipeIngredientGroup|RecipeIngredient)[];
-  directions: RecipeStep[];
+  steps: (RecipeStepGroup|RecipeStep)[];
   notes: string[];
   ratings?: RecipeRating[];
   createdAt?: string;

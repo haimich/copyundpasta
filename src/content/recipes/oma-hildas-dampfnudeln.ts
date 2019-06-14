@@ -1,5 +1,5 @@
 import RecipeCategories from "../../interfaces/RecipeCategories";
-import { Recipe, RecipeStep, RecipeServings, RecipeIngredient, RecipeIngredientEntry, RecipeIngredientGroup } from "../../interfaces/Recipe";
+import { Recipe, RecipeStep, RecipeServings, RecipeIngredient, RecipeIngredientEntry, RecipeIngredientGroup, RecipeStepGroup } from "../../interfaces/Recipe";
 import { Ingredients, IngredientPreparation, RecipeUnit } from "../../interfaces/RecipeIngredients";
 
 const servings: RecipeServings = {
@@ -56,18 +56,24 @@ const ingredients: (RecipeIngredientGroup|RecipeIngredient)[] = [
   },
 ];
 
-const directions: RecipeStep[] = [
+const steps: (RecipeStepGroup|RecipeStep)[] = [
   {
-    type: "step",
-    content: "Hefeteig zubereiten und gehen lassen.",
-  },
-  {
-    type: "step",
-    content: "Dampfnudeln mit Mamas Bäckerknettechnik formen.",
-  },
-  {
-    type: "step",
-    content: "auf einem bemehlten Blech abermals gehen lassen.",
+    isGroup: true,
+    title: "Teig",
+    steps: [
+      {
+        type: "step",
+        content: "Hefeteig zubereiten und gehen lassen.",
+      },
+      {
+        type: "step",
+        content: "Dampfnudeln mit Mamas Bäckerknettechnik formen.",
+      },
+      {
+        type: "step",
+        content: "auf einem bemehlten Blech abermals gehen lassen.",
+      },
+    ]
   },
   {
     type: "step",
@@ -75,7 +81,7 @@ const directions: RecipeStep[] = [
   },
   {
     type: "step",
-    content: "nicht zu wenig Salz auf dem Pfannenboden verteilen.",
+    content: "Nicht zu wenig Salz auf dem Pfannenboden verteilen.",
   },
   {
     type: "step",
@@ -101,7 +107,7 @@ const recipe: Recipe = {
   description: "Das Originalrezept meiner Uroma Hilda, das definitiv Eindruck bei euren Gästen macht!",
   servings,
   ingredients,
-  directions,
+  steps,
   notes,
   createdAt,
   modifiedAt: createdAt,
