@@ -24,6 +24,10 @@ export interface RecipeIngredient extends RecipeIngredientEntry {
 
 export interface RecipeIngredientEntry { }
 
+function instanceOfA(object: any): object is RecipeIngredientGroup {
+  return 'isGroup' in object;
+}
+
 export interface RecipeStep {
   type: "step";
   content: string;

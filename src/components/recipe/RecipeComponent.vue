@@ -58,7 +58,7 @@
 <script lang="ts">
 
   import { Vue, Component, Prop, Watch } from "vue-property-decorator";
-  import { Recipe, RecipeStep, RecipeServings, RecipeIngredient } from "@/interfaces/Recipe";
+  import { Recipe, RecipeStep, RecipeServings, RecipeIngredient, RecipeIngredientGroup } from "@/interfaces/Recipe";
   import { RecipeUnit } from "@/interfaces/RecipeIngredients";
   import { $n } from "@/filters/formatNumber";
 
@@ -83,7 +83,8 @@
       let ingredientStrings = [];
 
       for (let entry of this.recipe.ingredients) {
-        if (entry.isGroup) {
+        if ('isGroup' in entry) {
+          entry = entry as RecipeIngredientGroup;
           ingredientStrings.push("<strong>" + entry.title + ":</strong>");
 
           for (let ingredient of entry.ingredients) {
@@ -92,6 +93,7 @@
 
           ingredientStrings.push("");
         } else {
+          entry = entry as RecipeIngredient;
           ingredientStrings.push(this.formatIngredient(entry));
         }
       }
