@@ -11,7 +11,7 @@ if (process.env.DEPLOY_HOST == null) {
 
 async function deploy() {
   try {
-    const spinner = ora('Checking for local modifications').start();
+    let spinner = ora("Checking for local modifications").start();
 
     if (shell.exec("git status | grep 'nothing to commit'").code !== 0) {
       console.error("Check your local repo for modifications!");
@@ -26,7 +26,9 @@ async function deploy() {
       password: process.env.DEPLOY_PW,
     });
 
-    spinner.text = "Updating repo...";
+    spinner.stop();
+
+    spinner = ora("Updating repo...").start();
 
     await executeCommand("git checkout .");
     await executeCommand("git status | grep 'nothing to commit'");
