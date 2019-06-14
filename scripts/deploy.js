@@ -1,6 +1,7 @@
 require("dotenv").config()
 
 const shell = require("shelljs");
+const ora = require("ora");
 const nodeSsh = require("node-ssh");
 const ssh = new nodeSsh();
 
@@ -10,13 +11,14 @@ if (process.env.DEPLOY_HOST == null) {
 
 async function deploy() {
   try {
-    console.info("Checking for local modifications");
+    const spinner = ora('Checking for local modifications').start();
+
     if (shell.exec("git status | grep 'nothing to commit'").code !== 0) {
       console.error("Check your local repo for modifications!");
       process.exit(1);
     }
 
-    console.info("\nConnecting...");
+    spinner.text = "Connecting...";
 
     await ssh.connect({
       host: process.env.DEPLOY_HOST,
@@ -24,26 +26,26 @@ async function deploy() {
       password: process.env.DEPLOY_PW,
     });
 
-    console.info("\nUpdating repo...\n");
+    spinner.text = "Updating repo...";
 
     await executeCommand("git checkout .");
     await executeCommand("git status | grep 'nothing to commit'");
     await executeCommand("git pull --rebase");
 
-    console.info("\nInstalling npm dependencies...\n");
+    spinner.text = "Installing npm dependencies...";
     await executeCommand("npm install"); // don't use --production because we need dev dependencies fo build
     await executeCommand("git checkout package-lock.json");
 
-    console.info("\nRebuilding app...\n");
+    spinner.text = "Rebuilding app...";
     await executeCommand("npm run build");
 
-    console.info("\nMigrating db...\n");
+    spinner.text = "Migrating db...";
     await executeCommand("NODE_ENV=production npm run db:migrate");
 
-    console.info("\Generating and inserting seed data db...\n");
+    spinner.text = "Generating and inserting seed data db...";
     await executeCommand("NODE_ENV=production npm run db:seed");
     
-    console.info("\nRestarting app...\n");
+    spinner.text = "Restarting app...";
     try {
       await executeCommand("~/bin/pm2 restart ecosystem.config.js --env production");
       await executeCommand("~/bin/pm2 show cup | grep online");

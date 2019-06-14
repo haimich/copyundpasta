@@ -64,6 +64,7 @@
     "node-sass": "^4.12.0",
     "node-ssh": "^6.0.0",
     "nodemon": "^1.19.1",
+    "ora": "^3.4.0",
     "sass-loader": "^7.1.0",
     "shelljs": "^0.8.3",
     "ts-jest": "^24.0.2",
