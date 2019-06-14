@@ -12,6 +12,10 @@ const categories: RecipeCategory = {
     id: "desserts",
     text: "Desserts",
   },
+  frostings: {
+    id: "frostings",
+    text: "Frostings & Fillings",
+  },
 }
 
 export default categories;
