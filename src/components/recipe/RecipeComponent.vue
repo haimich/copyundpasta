@@ -1,5 +1,6 @@
 <template>
-  <div v-if="recipe">
+
+  <div v-if="recipe" style="margin-top: 20px;">
 
     <el-row>
       <el-col :span="24">

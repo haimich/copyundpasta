@@ -3,8 +3,8 @@ import { Recipe, RecipeStep, RecipeServings, RecipeIngredient, RecipeIngredientE
 import { Ingredients, IngredientPreparation, RecipeUnit } from "../../interfaces/RecipeIngredients";
 
 const servings: RecipeServings = {
-  unit: RecipeUnit.quantity,
   amount: 10,
+  unit: RecipeUnit.quantity,
 };
 
 const ingredients: (RecipeIngredientGroup|RecipeIngredient)[] = [
@@ -13,37 +13,37 @@ const ingredients: (RecipeIngredientGroup|RecipeIngredient)[] = [
     title: "Teig",
     ingredients: [
       {
-        unit: RecipeUnit.gram,
         amount: 500,
+        unit: RecipeUnit.gram,
         ingredient: Ingredients.mehl,
       },
       {
-        unit: RecipeUnit.gram,
         amount: 30,
+        unit: RecipeUnit.gram,
         ingredient: Ingredients.hefe,
       },
       {
-        unit: RecipeUnit.gram,
         amount: 30,
+        unit: RecipeUnit.gram,
         ingredient: Ingredients.zucker,
       },
       {
-        unit: RecipeUnit.quantity,
         amountFrom: 2,
+        unit: RecipeUnit.quantity,
         amountTo: 3,
         ingredient: Ingredients.ei,
       },
       {
-        unit: RecipeUnit.liter,
         amount: 0.25,
+        unit: RecipeUnit.liter,
         ingredient: Ingredients.milch,
       },
       {
         ingredient: Ingredients.salz,
       },
       {
-        unit: RecipeUnit.gram,
         amount: 80,
+        unit: RecipeUnit.gram,
         ingredient: Ingredients.butter,
       },
     ],

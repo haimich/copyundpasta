@@ -8,9 +8,9 @@ export interface ArticleComment {
 }
 
 export interface Article {
+  title: string;
   slug: string;
   isHeroArticle?: boolean;
-  title: string;
   shortDescription: string;
   previewImageUrl: string;
   comments?: ArticleComment[],

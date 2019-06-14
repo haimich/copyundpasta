@@ -3,108 +3,94 @@ import { Recipe, RecipeStep, RecipeServings, RecipeIngredient, RecipeIngredientE
 import { Ingredients, IngredientPreparation, RecipeUnit } from "../../interfaces/RecipeIngredients";
 
 const servings: RecipeServings = {
+  amount: 16,
   unit: RecipeUnit.quantity,
-  amount: 10,
 };
 
 const ingredients: (RecipeIngredientGroup|RecipeIngredient)[] = [
   {
     isGroup: true,
-    title: "Teig",
+    title: "Cupcakes",
     ingredients: [
       {
-        unit: RecipeUnit.gram,
-        amount: 500,
+        amount: 6,
+        unit: RecipeUnit.tl,
+        ingredient: Ingredients.kakaopulver,
+      },
+      {
+        amount: 6,
+        unit: RecipeUnit.tl,
+        ingredient: Ingredients.wasser,
+      },
+      {
+        amount: 1.5,
+        unit: RecipeUnit.el,
         ingredient: Ingredients.mehl,
       },
       {
-        unit: RecipeUnit.gram,
-        amount: 30,
-        ingredient: Ingredients.hefe,
-      },
-      {
-        unit: RecipeUnit.gram,
-        amount: 30,
-        ingredient: Ingredients.zucker,
-      },
-      {
-        unit: RecipeUnit.quantity,
-        amountFrom: 2,
-        amountTo: 3,
-        ingredient: Ingredients.ei,
-      },
-      {
-        unit: RecipeUnit.liter,
-        amount: 0.25,
-        ingredient: Ingredients.milch,
-      },
-      {
-        ingredient: Ingredients.salz,
-      },
-      {
-        unit: RecipeUnit.gram,
-        amount: 80,
-        ingredient: Ingredients.butter,
+        amount: 0.5,
+        unit: RecipeUnit.tl,
+        ingredient: Ingredients.backpulver,
       },
     ],
   },
   {
-    unit: RecipeUnit.quantity,
-    amount: 2,
-    ingredient: Ingredients.zwiebel,
-    preparation: IngredientPreparation.gewuerfelt,
+    isGroup: true,
+    title: "Baileys Buttercreme",
+    ingredients: [
+      {
+        amount: 300,
+        unit: RecipeUnit.gram,
+        ingredient: Ingredients.zucker,
+      },
+      {
+        amount: 50,
+        unit: RecipeUnit.gram,
+        ingredient: Ingredients.butter,
+      },
+    ],
   },
 ];
 
 const steps: (RecipeStepGroup|RecipeStep)[] = [
   {
     isGroup: true,
-    title: "Teig",
+    title: "Cupcakes",
     steps: [
       {
         type: "step",
-        content: "Hefeteig zubereiten und gehen lassen.",
+        content: "Preheat oven to 350F and line muffin tins with cupcake liners.",
       },
       {
         type: "step",
-        content: "Dampfnudeln mit Mamas Bäckerknettechnik formen.",
+        content: "Whisk cocoa and hot water together until smooth, set aside.",
       },
       {
         type: "step",
-        content: "auf einem bemehlten Blech abermals gehen lassen.",
+        content: "In a separate bowl, whisk together flour, baking powder, baking soda, and salt. Melt butter and sugar in a small saucepan over medium heat. Stir to combine.",
+      },
+      {
+        type: "step",
+        content: "Transfer butter to the bowl of a mixer fitted with the paddle attachment. Beat until mixture has cooled, approx 4mins.",
+      },
+      {
+        type: "step",
+        content: "Add eggs one at a time, beating until fully incorporated after each addition. Scrape sides of bowl as needed. Add vanilla and cocoa mixture, beat until combined. Reduce speed to low and alternate adding flour mixture and sour cream in 2 additions. Beat until just combined.",
       },
     ]
   },
-  {
-    type: "step",
-    content: "Schmalz (oder Margarine) in einer gut verschließbaren Pfanne erhitzen.",
-  },
-  {
-    type: "step",
-    content: "Nicht zu wenig Salz auf dem Pfannenboden verteilen.",
-  },
-  {
-    type: "step",
-    content: "Dampfnudeln hineinsetzen, eine Tasse heißes Wasser vorsichtig seitlich reinlaufen lassen.",
-  },
-  {
-    type: "step",
-    content: "Ca. 10 min. auf kleiner Flamme garen lassen."
-  },
 ];
 
-const notes = [
-  "Die Dampfnudeln sind fertig, wenn es im Topf knistert (dann ist das gesamte Wasser verdampft)",
-];
+const notes = [];
 
-const createdAt = "2019-06-10 10:10:28";
+const createdAt = "2019-06-14 14:06:00";
 
 const recipe: Recipe = {
   slug: "baileys-chocolate-cupcakes",
   title: "Baileys Chocolate Cupcakes",
   category: RecipeCategories.frostings,
   previewImageUrl: "/images/recipes/baileys-chocolate-cupcakes/cover.jpg",
-  description: "I couldn’t decide if I wanted to drizzle melted chocolate over top of these guys, so I only did it to half of them. I prefer the plain ones myself, but thought the drizzled ones looked a bit fancier. Interestingly enough, the first ones to be snatched up post-dinner were the plain ones. I thought for sure everyone would go for the chocolate drizzle! Why all the drizzle hate? I’m going to stick to plain and simple from now on.",
+  description: "Delicious chocolate cupcakes with a whipped chocolate Baileys buttercream.",
   servings,
   ingredients,
   steps,

@@ -22,6 +22,10 @@ export const Ingredients: Ingredients = {
     id: "salz",
     name: "Salz",
   },
+  wasser: {
+    id: "wasser",
+    name: "Wasser",
+  },
   mehl: {
     id: "mehl",
     name: "Mehl",
@@ -29,6 +33,10 @@ export const Ingredients: Ingredients = {
   hefe: {
     id: "hefe",
     name: "Hefe",
+  },
+  backpulver: {
+    id: "backpulver",
+    name: "Backpulver",
   },
   zucker: {
     id: "zucker",
@@ -42,6 +50,10 @@ export const Ingredients: Ingredients = {
     id: "ei",
     name: "Ei",
     namePlural: "Eier",
+  },
+  kakaopulver: {
+    id: "kakaopulver",
+    name: "Kakaopulver",
   },
   butter: {
     id: "butter",

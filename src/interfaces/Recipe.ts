@@ -43,8 +43,8 @@ export interface RecipeRating {
 }
 
 export interface RecipeServings {
-  unit: RecipeUnit;
   amount: number;
+  unit: RecipeUnit;
 }
 
 export interface Recipe {
