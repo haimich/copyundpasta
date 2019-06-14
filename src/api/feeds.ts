@@ -38,7 +38,7 @@ app.get("/rss.xml", async (req, res) => {
 
 app.get("/atom.xml", async (req, res) => {
     console.log("atom.xml");
-    
+
     const feed = createAtomFeed(posts);
     
     return res.type("application/rss+xml").send(feed);

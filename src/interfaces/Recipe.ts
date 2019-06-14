@@ -24,14 +24,17 @@ export interface RecipeIngredient extends RecipeIngredientEntry {
 
 export interface RecipeIngredientEntry { }
 
-function instanceOfA(object: any): object is RecipeIngredientGroup {
-  return 'isGroup' in object;
+export interface RecipeStepGroup extends RecipeStepEntry {
+  isGroup: true;
+  steps: RecipeStep[];
 }
 
-export interface RecipeStep {
+export interface RecipeStep extends RecipeStepEntry {
   type: "step";
   content: string;
 }
+
+export interface RecipeStepEntry { }
 
 export interface RecipeRating {
   date: number;

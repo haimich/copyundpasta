@@ -3,6 +3,7 @@ import NuxtConfiguration from "@nuxt/config";
 
 const DEFAULT_HOST = "localhost";
 const DEFAULT_PORT = "3000";
+const CWD = process.cwd();
 
 const config: NuxtConfiguration = {
 
@@ -70,6 +71,14 @@ const config: NuxtConfiguration = {
   loading: {
     color: "#1eb5da",
   },
+
+  watch: [
+    CWD + "/src/api",
+    CWD + "/src/interfaces",
+    CWD + "/src/content",
+    CWD + "/src/filters",
+    CWD + "/src/scss",
+  ],
 
   /*
   ** Global CSS
