@@ -26,7 +26,7 @@ async function deploy() {
       password: process.env.DEPLOY_PW,
     });
 
-    spinner.stop();
+    spinner.succeed();
 
     spinner = ora("Updating repo...").start();
 
