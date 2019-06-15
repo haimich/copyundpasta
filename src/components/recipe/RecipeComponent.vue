@@ -33,7 +33,8 @@
             <el-input-number
               v-model="servingsMultiplier"
               :min="0.5"
-              :max="10"
+              :max="5"
+              :step="0.5"
             ></el-input-number>
           </div>
           <ul
@@ -224,7 +225,7 @@
         return "";
       }
 
-      let amount = this.recipe.servings.amount;
+      let amount = this.recipe.servings.amount * this.servingsMultiplier;
       let unit;
     
       switch (this.recipe.servings.unit) {
