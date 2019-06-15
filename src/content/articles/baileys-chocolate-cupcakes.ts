@@ -4,8 +4,9 @@ import { Article } from "../../interfaces/Article";
 const createdAt = "2019-06-14 19:48:00";
 
 const article: Article = {
-  title: "Baileys Chocolate Cupcakes",
   slug: "baileys-chocolate-cupcakes",
+  title: "Baileys Chocolate Cupcakes",
+  category: ArticleCategories.rezept,
   isHeroArticle: true,
   shortDescription: "I never really need an excuse to bake something, but it’s always nice to have a reason. A recent dinner invite to my good friend Dave’s was the perfect opportunity for me to try out something new.",
   previewImageUrl: "/images/articles/baileys-chocolate-cupcakes/cover.jpg",

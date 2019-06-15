@@ -1,3 +1,5 @@
+import { Category } from "@/interfaces/ArticleCategories";
+
 export interface ArticleComment {
   id: number;
   parentCommentId: number;
@@ -8,8 +10,9 @@ export interface ArticleComment {
 }
 
 export interface Article {
-  title: string;
   slug: string;
+  title: string;
+  category: Category;
   isHeroArticle?: boolean;
   shortDescription: string;
   previewImageUrl: string;

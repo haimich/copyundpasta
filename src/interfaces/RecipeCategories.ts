@@ -1,6 +1,7 @@
 export interface Category {
   id: string;
-  text: string;
+  name: string;
+  parentCategory?: string;
 }
 
 export interface RecipeCategory {
@@ -10,11 +11,16 @@ export interface RecipeCategory {
 const categories: RecipeCategory = {
   desserts: {
     id: "desserts",
-    text: "Desserts",
+    name: "Desserts",
+  },
+  kuchen: {
+    id: "kuchen",
+    name: "Kuchen",
   },
   frostings: {
     id: "frostings",
-    text: "Frostings & Fillings",
+    name: "Frostings & Fillings",
+    parentCategory: "kuchen",
   },
 }
 

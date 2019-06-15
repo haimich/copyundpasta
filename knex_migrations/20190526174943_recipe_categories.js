@@ -3,8 +3,8 @@ exports.up = async function(knex, Promise) {
     await knex.schema
         .createTable("recipe_categories", function (table) {
             table.string("id", 400).primary();
-            table.string("parentCategory", 400);
             table.string("name", 1000).notNullable().index();
+            table.string("parentCategory", 400);
 
             table.foreign("parentCategory").references("recipe_categories.id");
         });
