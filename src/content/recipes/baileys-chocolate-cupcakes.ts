@@ -88,7 +88,7 @@ const createdAt = "2019-06-14 14:06:00";
 const recipe: Recipe = {
   slug: "baileys-chocolate-cupcakes",
   title: "Baileys Chocolate Cupcakes",
-  category: RecipeCategories.frostings,
+  categoryId: RecipeCategories.frostings.id,
   previewImageUrl: "/images/recipes/baileys-chocolate-cupcakes/cover.jpg",
   description: "Delicious chocolate cupcakes with a whipped chocolate Baileys buttercream.",
   servings,

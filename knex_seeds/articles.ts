@@ -1,5 +1,4 @@
 import articles from "../src/content/articles/all";
-import { Article } from "../src/interfaces/Article";
 import ArticleCategories, { Category, ArticleCategory } from "../src/interfaces/ArticleCategories";
 
 exports.seed = async function(knex, Promise) {

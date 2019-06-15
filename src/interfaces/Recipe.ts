@@ -1,5 +1,4 @@
 import { IngredientPreparation, RecipeUnit } from "@/interfaces/RecipeIngredients";
-import { Category } from "@/interfaces/RecipeCategories";
 
 export interface Ingredient {
   id: string;
@@ -50,7 +49,7 @@ export interface RecipeServings {
 export interface Recipe {
   slug: string;
   title: string;
-  category: Category;
+  categoryId: string;
   previewImageUrl: string;
   servings: RecipeServings;
   description: string;
