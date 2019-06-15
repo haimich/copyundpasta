@@ -1,10 +1,10 @@
 import RecipeCategories from "../../interfaces/RecipeCategories";
 import { Recipe, RecipeStep, RecipeServings, RecipeIngredient, RecipeIngredientEntry, RecipeIngredientGroup, RecipeStepGroup } from "../../interfaces/Recipe";
-import { Ingredients, IngredientPreparation, RecipeUnit } from "../../interfaces/RecipeIngredients";
+import { Ingredients, IngredientPreparation, RecipeUnit, RecipeServingsUnit } from "../../interfaces/RecipeIngredients";
 
 const servings: RecipeServings = {
   amount: 16,
-  unit: RecipeUnit.quantity,
+  unit: RecipeServingsUnit.quantity,
 };
 
 const ingredients: (RecipeIngredientGroup|RecipeIngredient)[] = [

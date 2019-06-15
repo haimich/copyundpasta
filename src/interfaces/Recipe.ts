@@ -1,4 +1,4 @@
-import { IngredientPreparation, RecipeUnit } from "@/interfaces/RecipeIngredients";
+import { IngredientPreparation, RecipeUnit, RecipeServingsUnit } from "@/interfaces/RecipeIngredients";
 
 export interface Ingredient {
   id: string;
@@ -43,7 +43,7 @@ export interface RecipeRating {
 
 export interface RecipeServings {
   amount: number;
-  unit: RecipeUnit;
+  unit: RecipeServingsUnit;
 }
 
 export interface Recipe {

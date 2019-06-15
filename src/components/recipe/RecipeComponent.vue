@@ -5,6 +5,10 @@
     <el-row>
       <el-col :span="24">
         <h2>{{ recipe.title }}</h2>
+
+        <div style="margin-bottom: 10px;">
+          {{ getServings() }}
+        </div>
       </el-col>
     </el-row>
 
@@ -23,7 +27,14 @@
       <el-col :span="8">
         <el-card shadow="never">
           <div slot="header" class="clearfix">
-            <span>Zutaten</span>
+            <h3 style="margin-bottom: 20px;">Zutaten</h3>
+
+            <div style="margin-bottom: 8px;">Menge:</div>
+            <el-input-number
+              v-model="servingsMultiplier"
+              :min="0.5"
+              :max="10"
+            ></el-input-number>
           </div>
           <ul
             v-for="(ingredient, index) in getIngredientList()"
@@ -38,7 +49,7 @@
       <el-col :span="16">
         <el-card shadow="never">
           <div slot="header" class="clearfix">
-            <span>Zubereitung</span>
+            <h3>Zubereitung</h3>
           </div>
           <ul
             v-for="(step, index) in getStepList()"
@@ -58,7 +69,7 @@
 
   import { Vue, Component, Prop, Watch } from "vue-property-decorator";
   import { Recipe, RecipeStep, RecipeServings, RecipeIngredient, RecipeIngredientGroup, RecipeStepGroup } from "@/interfaces/Recipe";
-  import { RecipeUnit } from "@/interfaces/RecipeIngredients";
+  import { RecipeUnit, RecipeServingsUnit } from "@/interfaces/RecipeIngredients";
   import { $n } from "@/filters/formatNumber";
 
   @Component
@@ -68,6 +79,8 @@
     recipe: Recipe;
     
     private rating = 0;
+
+    private servingsMultiplier = 1;
 
     @Watch("recipe")
     recipeUpdated() {
@@ -135,18 +148,25 @@
 
     formatAmount(ingredient: RecipeIngredient): string {
       if (this.isNumberDefined(ingredient.amount)) {
-        if (ingredient.amount === 0.25) {
+        let amount = ingredient.amount * this.servingsMultiplier;
+
+        if (amount === 0.25) {
           return "&frac14;";
-        } else if (ingredient.amount === 0.5) {
+        } else if (amount === 0.5) {
           return "&frac12;";
-        } else if (ingredient.amount === 0.75) {
+        } else if (amount === 0.75) {
           return "&frac34;";
+        } else if (amount === 1.5) {
+          return "1 &frac12;";
         } else {
           // just format the number nicely
-          return $n(ingredient.amount);
+          return $n(amount);
         }
       } else if (this.isNumberDefined(ingredient.amountFrom) && this.isNumberDefined(ingredient.amountTo)) {
-          return $n(ingredient.amountFrom) + "-" + $n(ingredient.amountTo);
+        let amountFrom = ingredient.amountFrom * this.servingsMultiplier;
+        let amountTo = ingredient.amountTo * this.servingsMultiplier;
+
+        return $n(amountFrom) + "-" + $n(amountTo);
       } else {
         return "";
       }
@@ -197,6 +217,25 @@
 
     formatStep(step: RecipeStep): string {
       return step.content;
+    }
+
+    getServings(): string {
+      if (this.recipe == null || this.recipe.servings == null) {
+        return "";
+      }
+
+      let amount = this.recipe.servings.amount;
+      let unit;
+    
+      switch (this.recipe.servings.unit) {
+        case RecipeServingsUnit.quantity:
+          unit = "Stück";
+          break;
+        default:
+          unit = "";
+      }
+
+      return amount + " " + unit;
     }
 
     calculateRating() {

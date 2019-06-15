@@ -13,6 +13,10 @@ export enum RecipeUnit {
   einige = "einige",
 }
 
+export enum RecipeServingsUnit {
+  quantity = "quantity",
+}
+
 export enum IngredientPreparation {
   gewuerfelt = "gewürfelt",
 }
