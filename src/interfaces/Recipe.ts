@@ -1,4 +1,5 @@
 import { IngredientPreparation, RecipeUnit, RecipeServingsUnit } from "@/interfaces/RecipeIngredients";
+import { Tag } from "@/interfaces/RecipeTags";
 
 export interface Ingredient {
   id: string;
@@ -57,6 +58,7 @@ export interface Recipe {
   steps: (RecipeStepGroup|RecipeStep)[];
   notes: string[];
   ratings?: RecipeRating[];
+  tags?: Tag[];
   createdAt?: string;
   modifiedAt?: string;
 };

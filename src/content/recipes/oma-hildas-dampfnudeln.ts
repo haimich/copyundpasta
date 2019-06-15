@@ -100,7 +100,7 @@ const notes = [
 const createdAt = "2019-06-10 10:10:28";
 
 const recipe: Recipe = {
-  slug: "test",
+  slug: "oma-hildas-dampfnudeln",
   title: "Oma Hilda's Dampfnudeln",
   categoryId: RecipeCategories.desserts.id,
   previewImageUrl: "/images/recipes/oma-hildas-dampfnudeln/cover.jpg",
@@ -109,6 +109,7 @@ const recipe: Recipe = {
   ingredients,
   steps,
   notes,
+  tags: [],
   createdAt,
   modifiedAt: createdAt,
 };

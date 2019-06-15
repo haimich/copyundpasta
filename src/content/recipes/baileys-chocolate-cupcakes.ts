@@ -1,4 +1,5 @@
 import RecipeCategories from "../../interfaces/RecipeCategories";
+import RecipeTags from "../../interfaces/RecipeTags";
 import { Recipe, RecipeStep, RecipeServings, RecipeIngredient, RecipeIngredientEntry, RecipeIngredientGroup, RecipeStepGroup } from "../../interfaces/Recipe";
 import { Ingredients, IngredientPreparation, RecipeUnit, RecipeServingsUnit } from "../../interfaces/RecipeIngredients";
 
@@ -83,6 +84,10 @@ const steps: (RecipeStepGroup|RecipeStep)[] = [
 
 const notes = [];
 
+const tags = [
+  RecipeTags.resteverwertung,
+];
+
 const createdAt = "2019-06-14 14:06:00";
 
 const recipe: Recipe = {
@@ -95,6 +100,7 @@ const recipe: Recipe = {
   ingredients,
   steps,
   notes,
+  tags,
   createdAt,
   modifiedAt: createdAt,
 };
