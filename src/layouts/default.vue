@@ -220,7 +220,7 @@
   }
 
   p {
-    line-height: 29px;
+    line-height: 27px;
     color: $color-text-regular;
     font-weight: 100;
     letter-spacing: 0px;
