@@ -12,7 +12,7 @@ export interface ArticleComment {
 export interface Article {
   slug: string;
   title: string;
-  category: Category;
+  categoryId: string;
   isHeroArticle?: boolean;
   shortDescription: string;
   previewImageUrl: string;

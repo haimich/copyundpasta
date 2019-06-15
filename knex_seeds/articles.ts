@@ -1,6 +1,6 @@
 import articles from "../src/content/articles/all";
 import { Article } from "../src/interfaces/Article";
-import { Category } from "../src/interfaces/ArticleCategories";
+import ArticleCategories, { Category, ArticleCategory } from "../src/interfaces/ArticleCategories";
 
 exports.seed = async function(knex, Promise) {
   await deleteAllEntries(knex);
@@ -18,7 +18,8 @@ async function deleteAllEntries(knex) {
 
 async function createAllEntries(knex) {
   console.log("Inserting article_cateories");
-  const categories = getAllCategories(articles);
+
+  const categories = getAllCategories(ArticleCategories);
   await knex("article_categories").insert(categories.parentCategories);
   await knex("article_categories").insert(categories.childCategories);
 
@@ -26,15 +27,15 @@ async function createAllEntries(knex) {
   await knex("articles").insert(articles);
 }
 
-function getAllCategories(articles: Article[]) {
+function getAllCategories(categories: ArticleCategory) {
   let parentCategories: Category[] = [];
   let childCategories: Category[] = [];
 
-  for (let article of articles) {
-    if (article.category.parentCategory != null) {
-      childCategories.push(article.category);
+  for (let category of Object.values(categories)) {
+    if (category.parentCategory != null) {
+      childCategories.push(category);
     } else {
-      parentCategories.push(article.category);
+      parentCategories.push(category);
     }
   }
 

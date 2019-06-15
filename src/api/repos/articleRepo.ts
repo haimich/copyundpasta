@@ -7,8 +7,8 @@ export async function getHeroArticles(): Promise<Article[]> {
   const knex = getConnection();
 
   const articles = await knex
-    .table("articles")
     .select("*")
+    .table("articles")
     .where("isHeroArticle", 1)
     .orderBy("createdAt", "desc");
 
@@ -19,14 +19,14 @@ export async function getArticles(params: PagingParams): Promise<Article[]> {
   const knex = getConnection();
 
   const subselect = knex
-    .table("articles")
     .count("*")
+    .table("articles")
     .where("isHeroArticle", 0)
     .as("totalCount");
 
   const articles = await knex
-    .table("articles")
     .select("*", subselect)
+    .table("articles")
     .where("isHeroArticle", 0)
     .limit(params.pageSize)
     .offset(calculateOffset(params.page, params.pageSize))
