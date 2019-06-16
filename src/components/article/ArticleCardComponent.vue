@@ -158,7 +158,7 @@
     align-items: center;
     flex-direction: column;
 
-    .article-card-category .el-breadcrumb__inner, .article-card-category i {
+    .article-card-category .el-breadcrumb__inner, .article-card-category i, .article-card-category .el-breadcrumb__inner:hover {
       font-size: 13px;
       font-weight: 300;
       color: #DB5353;

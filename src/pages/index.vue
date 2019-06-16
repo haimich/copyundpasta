@@ -261,7 +261,6 @@
     font-size: 15px;
     font-weight: 300;
     color: $color-text-regular;
-    font-style: italic;
   }
 
 </style>

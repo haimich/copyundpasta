@@ -250,7 +250,7 @@
 
   p {
     font-size: 22px;
-    line-height: 34px;
+    line-height: 32px;
     color: $color-text-regular;
     font-weight: 300;
     letter-spacing: 1px;
@@ -353,13 +353,14 @@
   .article-heading {
     text-align: center;
     font-family: "Roboto Slab", "Helvetica Neue", Helvetica, Arial, serif;
+    letter-spacing: .5px;
   }
 
   .entry-paragraph::first-letter {
     float: left;
     font-size: 3.5rem;
     font-weight: 900;
-    line-height: .9;
+    line-height: .95;
     margin-top: .1rem;
     padding-right: .7rem;
     text-shadow: 0.2rem 0.2rem 2px rgba(68, 68, 68, 0.25);

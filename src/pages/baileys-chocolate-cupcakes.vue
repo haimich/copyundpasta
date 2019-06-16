@@ -9,6 +9,8 @@
           image="https://livforcake.com/wp-content/uploads/2015/02/IMG_5007-Version-21.jpg"
         />
 
+        <ArticleJumpToRecipeComponent />
+
         <p>
           I never really need an excuse to bake something, but it’s always nice to have a reason. A recent dinner invite to my good friend Dave’s was the perfect opportunity for me to try out something new. I stuck with cupcakes because they are fairly easy, and since I had my first cake order due the same day, I didn’t want to take on too big a project. Plus, let’s face it, who doesn’t like a good cupcake??
         </p>
@@ -45,7 +47,7 @@
           I couldn’t decide if I wanted to drizzle melted chocolate over top of these guys, so I only did it to half of them. I prefer the plain ones myself, but thought the drizzled ones looked a bit fancier. Interestingly enough, the first ones to be snatched up post-dinner were the plain ones. I thought for sure everyone would go for the chocolate drizzle! Why all the drizzle hate? I’m going to stick to plain and simple from now on.
         </p>
 
-        <RecipeComponent :recipe="recipe" />
+        <RecipeComponent :recipe="recipe" style="margin-top: 40px;" />
 
       </el-col>
     </el-row>
