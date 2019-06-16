@@ -248,7 +248,8 @@
   }
 
   p {
-    line-height: 27px;
+    font-size: 20px;
+    line-height: 29px;
     color: $color-text-regular;
     font-weight: 100;
     letter-spacing: 0px;

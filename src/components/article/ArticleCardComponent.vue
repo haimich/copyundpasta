@@ -64,6 +64,10 @@
 
         while (categoryId != null) {
           let category = ArticleCategories[categoryId];
+          
+          if (category == null) {
+            break;
+          }
 
           categories.unshift(category.name);
 
