@@ -2,6 +2,8 @@
 
   <div class="main-heading-container">
 
+    <el-page-header @back="goHome" title="Zurück" style="margin-top: -18px;"></el-page-header>
+
     <h1 class="article-heading" style="text-transform: uppercase">
       {{ text }}
     </h1>
@@ -31,6 +33,12 @@
 
       @Prop()
       private image: string;
+
+      goHome() {
+        this.$router.push({
+          path: "/",
+        })
+      }
 
   }
 

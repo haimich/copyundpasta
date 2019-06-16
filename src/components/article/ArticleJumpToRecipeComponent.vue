@@ -1,9 +1,11 @@
 <template>
 
-  <el-row type="flex" justify="center" style="margin-bottom: 40px;">
-    <el-button @click="jumpToRecipe">
-      Zum Rezept springen
-    </el-button>
+  <el-row type="flex" justify="center" class="jump-to-recipe-button">
+    <el-divider>
+      <a href="#recipe">
+        Zum Rezept springen
+      </a>
+    </el-divider>
   </el-row>
 
 </template>
@@ -21,26 +23,18 @@
       @Prop()
       private alt: string;
 
-      jumpToRecipe() {
-        if (history != null && history.replaceState != null) {
-          let url = location.href;
-          location.href = "#recipe";
-          history.replaceState(null, null, url);
-        } else {
-          location.href = "#recipe";
-        }
-      }
-
   }
 
 </script>
 
-<style>
+<style lang="scss" scoped>
 
-  img.article-image-full {
-    width: 100%;
-    margin-top: 40px;
+  .jump-to-recipe-button {
     margin-bottom: 40px;
+
+    a {
+      font-size: 15px;
+    }
   }
 
 </style>

@@ -9,6 +9,7 @@
           image="https://livforcake.com/wp-content/uploads/2015/02/IMG_5007-Version-21.jpg"
         />
 
+        
         <ArticleJumpToRecipeComponent />
 
         <p>
@@ -51,6 +52,8 @@
 
       </el-col>
     </el-row>
+
+    <ArticleScrollToTopComponent />
   </article>
   
 </template>
