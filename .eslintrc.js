@@ -37,6 +37,7 @@ module.exports = {
     "no-useless-return": "off",
     "no-irregular-whitespace": "off",
     "vue/attributes-order": "off",
-    "vue/no-v-html": "off"
+    "vue/no-v-html": "off",
+    "vue/attribute-hyphenatio": "off"
   }
 }

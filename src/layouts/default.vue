@@ -322,7 +322,7 @@
     flex-direction: column;
 
     .logo {
-      width: 270px;
+      width: 285px;
       margin-top: 8px;
       margin-bottom: 26px;
     }
