@@ -2,7 +2,13 @@
 
   <el-row>
     <el-col :span="18" :offset="3">
-      <img :src="src" class="article-image-full" :alt="alt">
+
+      <img
+        :src="src"
+        class="article-image-full"
+        :alt="alt"
+      >
+
     </el-col>
   </el-row>
 
@@ -25,6 +31,12 @@
 
 </script>
 
-<style scoped>
+<style>
+
+  img.article-image-full {
+    width: 100%;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
 
 </style>

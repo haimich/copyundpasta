@@ -214,7 +214,7 @@
   }
 
   html {
-    font-family: "Merriweather Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 16px;
     word-spacing: 1px;
     -ms-text-size-adjust: 100%;
@@ -240,6 +240,7 @@
   }
 
   h2 {
+    font-size: 25px;
     margin-bottom: 22px;
   }
 
@@ -248,12 +249,18 @@
   }
 
   p {
-    font-size: 20px;
-    line-height: 29px;
+    font-size: 23px;
+    line-height: 34px;
     color: $color-text-regular;
-    font-weight: 100;
-    letter-spacing: 0px;
+    font-weight: 300;
+    letter-spacing: 1px;
     word-spacing: 0px;
+  }
+
+  article p {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
   }
 
   a, a:active, a:focus {
@@ -345,7 +352,7 @@
 
   .article-heading {
     text-align: center;
-    font-family: "Merriweather", "Helvetica Neue", Helvetica, Arial, serif;
+    font-family: "Roboto Slab", "Helvetica Neue", Helvetica, Arial, serif;
   }
 
   .entry-paragraph::first-letter {
@@ -356,12 +363,6 @@
     margin-top: .1rem;
     padding-right: .7rem;
     text-shadow: 0.2rem 0.2rem 2px rgba(68, 68, 68, 0.25);
-  }
-
-  img.article-image-full {
-    width: 100%;
-    margin-top: 15px;
-    margin-bottom: 15px;
   }
 
   .readmore-link {

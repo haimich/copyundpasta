@@ -167,7 +167,7 @@
 
     .article-card-heading {
       margin-top: 10px;
-      font-family: "Merriweather", "Helvetica Neue", Helvetica, Arial, serif;
+      font-family: "Roboto Slab", "Helvetica Neue", Helvetica, Arial, serif;
       font-size: 14.5px;
       color: #000000cf;
       font-weight: 600;

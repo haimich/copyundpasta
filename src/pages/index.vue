@@ -224,7 +224,7 @@
     transform: translate(-50%, -50%);
     
     h1 {
-      font-family: "Happy Fox", "Merriweather", serif;
+      font-family: "Happy Fox", "Roboto", serif;
       font-size: 75px;
       font-weight: 100;
       color: white;
@@ -258,6 +258,8 @@
   .newest-subtitle {
     text-align: center;
     margin-bottom: 15px;
+    font-size: 15px;
+    font-weight: 300;
     color: #5d5d5d;
     font-style: italic;
   }

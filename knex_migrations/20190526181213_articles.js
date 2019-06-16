@@ -6,7 +6,7 @@ exports.up = async function(knex, Promise) {
             table.string("slug", 500).notNullable().unique();
             table.boolean("isHeroArticle").defaultTo(false);
             table.string("categoryId", 400);
-            table.string("title", 1000).notNullable().index();
+            table.string("title", 1000).notNullable();
             table.text("shortDescription");
             table.text("previewImageUrl");
             table.string("author", 1000).defaultTo("Michael");

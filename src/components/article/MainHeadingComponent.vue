@@ -11,7 +11,7 @@
     <img
       v-if="image != null && image !== ''"
       :src="image"
-      style="margin-top: 16px; margin-bottom: 16px;"
+      style="margin-top: 16px; margin-bottom: 60px;"
       alt="Titelbild"
     >
 
