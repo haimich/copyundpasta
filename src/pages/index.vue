@@ -41,7 +41,7 @@
     </el-row>
 
     <el-row style="margin-top: 20px;" :gutter="50">
-      <el-col class="newest-article" :span="12" :offset="4">
+      <el-col class="newest-article" :lg="lg" :md="md" :sm="sm">
 
         <!-- Newest article -->
         <div v-if="newestArticle != null">
@@ -100,7 +100,7 @@
       </el-col>
 
       <!-- Sidebar -->
-      <el-col :span="6">
+      <el-col :lg="6" :md="6" class="hidden-sm-and-down">
         <SidebarComponent />
       </el-col>
     </el-row>
@@ -117,7 +117,7 @@
   import ArticleCardComponent from "@/components/article/ArticleCardComponent.vue";
   import SidebarComponent from "@/components/SidebarComponent.vue";
 
-  const PAGE_SIZE = 2;
+  const PAGE_SIZE = 9;
 
   @Component({
     components: {
@@ -156,6 +156,21 @@
     private page = 0;
 
     private totalArticles = 0;
+
+    private lg = {
+      span: "14",
+      offset: "2",
+    };
+
+    private md = {
+      span: "16",
+      offset: "1",
+    };
+
+    private sm = {
+      span: "22",
+      offset: "1",
+    };
 
     get pageSize() {
       return PAGE_SIZE;

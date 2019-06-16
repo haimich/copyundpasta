@@ -3,7 +3,13 @@
 
     <nav>
       <el-row>
-        <el-col :xl="xl" :lg="lg" :md="md">
+        <el-col
+          :xl="xl"
+          :lg="lg"
+          :md="md"
+          :sm="sm"
+          :xs="xs"
+        >
           <span class="header-social-icons">
             <ul>
               <li>
@@ -27,8 +33,14 @@
       </el-row>
 
       <el-row>
-        <el-col class="header-nav" :xl="xl" :lg="lg" :md="md">
-
+        <el-col
+          class="header-nav"
+          :xl="xl"
+          :lg="lg"
+          :md="md"
+          :sm="sm"
+          :xs="xs"
+        >
           <!-- Logo -->
           <nuxt-link to="/" title="HOME" @click="activeIndex='home'">
             <img class="logo" src="/images/logo.png" alt="Logo">
@@ -67,7 +79,13 @@
     
     <main>
       <el-row>
-        <el-col :xl="xl" :lg="lg" :md="md">
+        <el-col
+          :xl="xl"
+          :lg="lg"
+          :md="md"
+          :sm="sm"
+          :xs="xs"
+        >
           <!-- Main Container -->
           <nuxt />
         </el-col>
@@ -108,6 +126,16 @@
     };
 
     private md = {
+      span: 24,
+      offset: 0,
+    };
+
+    private sm = {
+      span: 24,
+      offset: 0,
+    };
+
+    private xs = {
       span: 24,
       offset: 0,
     };

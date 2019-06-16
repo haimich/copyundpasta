@@ -87,6 +87,7 @@ const config: NuxtConfiguration = {
   css: [
     "normalize.css",
     "@/scss/element-theme/index.css",
+    "@/scss/element-theme/display.css",
   ],
 
   /*
