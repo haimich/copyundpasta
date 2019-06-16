@@ -63,6 +63,19 @@
       </el-col>
     </el-row>
 
+    <el-row :gutter="20">
+      <el-col :span="8">
+        <el-tag
+          v-for="tag in getTags()"
+          :key="tag.id"
+          effect="plain"
+          style="text-transform: lowercase"
+        >
+          #{{ tag.name }}
+        </el-tag>
+      </el-col>
+    </el-row>
+
   </div>
 </template>
 
@@ -71,6 +84,7 @@
   import { Vue, Component, Prop, Watch } from "vue-property-decorator";
   import { Recipe, RecipeStep, RecipeServings, RecipeIngredient, RecipeIngredientGroup, RecipeStepGroup } from "@/interfaces/Recipe";
   import { RecipeUnit, RecipeServingsUnit } from "@/interfaces/RecipeIngredients";
+  import { Tag } from "@/interfaces/RecipeTags";
   import { $n } from "@/filters/formatNumber";
 
   @Component
@@ -237,6 +251,14 @@
       }
 
       return amount + " " + unit;
+    }
+
+    getTags(): Tag[] {
+      if (this.recipe == null || this.recipe.tags == null) {
+        return [];
+      }
+
+      return this.recipe.tags;
     }
 
     calculateRating() {
