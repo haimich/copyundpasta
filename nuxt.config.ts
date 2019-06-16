@@ -106,6 +106,7 @@ const config: NuxtConfiguration = {
   modules: [
     "@nuxtjs/axios",
     "@nuxtjs/google-analytics",
+    "@nuxtjs/sitemap",
   ],
 
   /*
@@ -117,8 +118,31 @@ const config: NuxtConfiguration = {
     baseUrl: process.env.AXIOS_BASE_URL || `http://${DEFAULT_HOST}:${DEFAULT_PORT}`,
   },
 
+  /*
+  ** Google Analytics module configuration
+  ** Doc: https://github.com/nuxt-community/analytics-module
+  */
   googleAnalytics: {
     id: "UA-142214214-1",
+  },
+
+  /*
+  ** Sitemapt module configuration
+  ** Doc: https://github.com/nuxt-community/sitemap-module
+  */
+  sitemap: {
+    hostname: "https://copyundpasta.de",
+    gzip: true,
+    // exclude: [],
+    // routes: [
+    //   "/page/1",
+    //   {
+    //     url: "/page/2",
+    //     changefreq: "daily",
+    //     priority: 1,
+    //     lastmodISO: "2017-06-30T13:30:00.000Z"
+    //   }
+    // ]
   },
 
   /*

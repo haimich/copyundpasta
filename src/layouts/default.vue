@@ -95,7 +95,10 @@
     <ArticleScrollToTopComponent />
     
     <footer>
-      © 2019 <nuxt-link to="/" title="HOME" style="color: white;">Copy & Pasta</nuxt-link> · Impressum · Datenschutz
+      © 2019 <nuxt-link to="/" title="HOME" style="color: white;">Copy & Pasta</nuxt-link>
+      · Impressum
+      · Datenschutz
+      · <a href="/sitemap.xml" target="_blank">Sitemap</a>
     </footer>
     
   </div>
@@ -279,10 +282,10 @@
   footer {
     padding: 34px 0;
     background-color: #363838;
-    color: white;
+    color: #ececec;
     text-align: center;
-    font-size: 14px;
-    font-weight: 100;
+    font-size: 16px;
+    font-weight: 300;
   }
 
 </style>
