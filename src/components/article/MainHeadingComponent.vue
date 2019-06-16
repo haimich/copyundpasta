@@ -2,13 +2,21 @@
 
   <div class="main-heading-container">
 
-    <el-page-header @back="goHome" title="Zurück" style="margin-top: -18px;"></el-page-header>
+    <el-page-header
+      @back="goHome"
+      title="Zurück"
+      style="margin-top: -18px; color: #313131"
+    ></el-page-header>
 
     <h1 class="article-heading" style="text-transform: uppercase">
       {{ text }}
     </h1>
 
     <hr class="blue-line">
+
+    <el-row type="flex" justify="center" class="main-heading-sub">
+      <font-awesome-icon :icon="['far', 'comment']" style="margin-right: 8px;" /> 8 Kommentare
+    </el-row>
 
     <img
       v-if="image != null && image !== ''"
@@ -50,6 +58,12 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
+  }
+
+  .main-heading-sub {
+    font-size: 15px;
+    color: #424242;
+    margin-top: 8px;
   }
 
 </style>
