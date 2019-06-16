@@ -80,4 +80,6 @@ dist
 # Service worker
 sw.*
 
+.DS_STORE
+
 knex_seeds/compiled

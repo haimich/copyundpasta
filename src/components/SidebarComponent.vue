@@ -148,7 +148,7 @@
     .divider::before {
       width: 100%;
       height: 14px;
-      background-image: url(/images/divider/curve.png);
+      background-image: url(/images/divider/curly.png);
       background-position: center center;
       background-repeat: repeat;
       position: absolute;
