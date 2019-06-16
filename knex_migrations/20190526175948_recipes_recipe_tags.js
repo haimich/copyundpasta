@@ -9,7 +9,7 @@ exports.up = async function(knex, Promise) {
             table.foreign("recipeSlug").references("recipes.slug");
             table.foreign("tagId").references("recipe_tags.id");
 
-            table.unique("recipeSlug", "tagId"); // prevent duplicate tags
+            table.unique(["recipeSlug", "tagId"]); // prevent duplicate tags
         });
 };
 

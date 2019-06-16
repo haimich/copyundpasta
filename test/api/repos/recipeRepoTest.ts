@@ -2,7 +2,9 @@ import {getRecipe} from "@/api/repos/recipeRepo";
 
 describe('getRecipes', () => {
     test('should return newest recipes', async () => {
-        let recipe = await getRecipe(1);
+        let recipe = await getRecipe("baileys-chocolate-cupcakes");
+
+        console.log(recipe);
 
         expect(recipe.slug).toBeDefined();
     });

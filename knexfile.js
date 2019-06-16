@@ -10,6 +10,7 @@ const defaultConfig = {
     host:      "localhost",
     port:      3306,
   },
+  debug: false,
   migrations: {
     tableName: "knex_migrations",
     directory: "knex_migrations",
@@ -21,11 +22,13 @@ const defaultConfig = {
 };
 
 let production = _.clone(defaultConfig);
+
 production.connection = {
   database: process.env.DB_DATABASE,
   user:     process.env.DB_USER,
   password: process.env.DB_PW,
-},
+};
+production.debug = false;
 
 module.exports = {
   development: defaultConfig,
