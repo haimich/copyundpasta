@@ -91,6 +91,8 @@
         </el-col>
       </el-row>
     </main>
+
+    <ArticleScrollToTopComponent />
     
     <footer>
       © 2019 <nuxt-link to="/" title="HOME" style="color: white;">Copy & Pasta</nuxt-link> · Impressum · Datenschutz
@@ -257,10 +259,15 @@
     word-spacing: 0px;
   }
 
-  article p {
+  article p, article h1, article h2, article h3 {
     margin-left: auto;
     margin-right: auto;
     width: 85%;
+  }
+
+  article h2, article h3 {
+    margin-top: 25px;
+    margin-bottom: 18px;
   }
 
   a, a:active, a:focus {

@@ -8,7 +8,6 @@
           :text="article.title"
           image="https://livforcake.com/wp-content/uploads/2015/02/IMG_5007-Version-21.jpg"
         />
-
         
         <ArticleJumpToRecipeComponent />
 
@@ -33,6 +32,12 @@
           Martha’s recipe makes 32 cupcakes. I didn’t need quite that many (read: if I make that many I’ll eat them all), so for the sake of our waistlines, I halved it. Her recipe says to fill the liners 3/4 full, which is a lot, but I thought maybe they wouldn’t bake up so high. The cupcakes came out a little larger than I expected – I should have gone with my gut! They were quite domed when they came out of the oven, and I actually used a tea towel to press them down a bit so they wouldn’t be so puffy. Next time I’ll only fill the liners 2/3 full as usual, and make a few more cupcakes instead.
         </p>
 
+        <h2>Wieso schmilzt der Käse nicht?</h2>
+
+        <p>
+          Das Gulasch klassisch kann nun mit der Beilage auf den Tisch. Das Fleisch dürfte butterzart sein und die Soße wird, insbesondere, wenn ihr getrocknete Waldpilze mit dabei habt, ihresgleichen suchen. Experimentiert ruhig ein wenig rum. Man kann dieses Rezept auch gut um weitere Gemüsesorten oder auch Champions erweitern. Erlaubt ist was schmeckt! Sollten Reste bleiben, könnt ihr diese gut einfrieren und bei Bedarf wieder warm machen.
+        </p>
+
         <ArticleImageComponent
           src="https://livforcake.com/wp-content/uploads/2015/02/IMG_50131.jpg"
           alt="Cupcake"
@@ -53,7 +58,6 @@
       </el-col>
     </el-row>
 
-    <ArticleScrollToTopComponent />
   </article>
   
 </template>
