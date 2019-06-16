@@ -1,6 +1,6 @@
 import { setupExpress } from "./utils/expressUtil";
 import { getRecipe } from "./repos/recipeRepo";
-import { validateId } from "./utils/validatorUtil";
+import { validateSlug } from "./utils/validatorUtil";
 
 let app = setupExpress();
 
@@ -9,19 +9,19 @@ let app = setupExpress();
  * - prefix is "/api/recipes/"
  */
 
-// app.post("/getRecipe", async (req, res) => {
-//     console.log("getRecipe");
+app.post("/getRecipe", async (req, res) => {
+    console.log("getRecipe");
 
-//     // validate params
-//     const id = validateId(req.body);
+    // validate params
+    const slug = validateSlug(req.body);
 
-//     const recipe = await getRecipe(id);
+    const recipe = await getRecipe(slug);
 
-//     if (recipe == null) {
-//         res.sendStatus(404);
-//     } else {
-//         return res.json(recipe);
-//     }
-// });
+    if (recipe == null) {
+        res.sendStatus(404);
+    } else {
+        return res.json(recipe);
+    }
+});
 
 export default app;

@@ -1,25 +1,36 @@
 <template>
 
-  <div v-if="recipe">
+  <div v-if="recipe" class="recipe">
 
-    <el-row>
-      <el-col :span="24">
+    <el-row style="margin-bottom: 20px;">
+      <el-col :span="16">
         <h2>{{ recipe.title }}</h2>
 
         <div style="margin-bottom: 10px;">
           {{ getServings() }}
         </div>
-      </el-col>
-    </el-row>
 
-    <el-row style="margin-bottom: 10px">
-      <el-col>
         <el-rate
           v-model="rating"
           show-score
           text-color="#ff9900"
           score-template="{value} Sterne"
         />
+
+        <el-button
+          style="margin-top: 20px;"
+          @click="printRecipe"
+          v-if="! isPrint"
+        >Rezept drucken
+        </el-button>
+      </el-col>
+
+      <el-col :span="8" style="display: flex; justify-content: flex-end;">
+        <img
+          :src="recipe.previewImageUrl"
+          alt="Rezeptfoto"
+          class="preview-image"
+        >
       </el-col>
     </el-row>
 
@@ -29,15 +40,20 @@
           <div slot="header" class="clearfix">
             <h3 style="margin-bottom: 20px;">Zutaten</h3>
 
-            <div style="margin-bottom: 8px;">Menge:</div>
-            <el-input-number
-              v-model="servingsMultiplier"
-              :min="0.5"
-              :max="5"
-              :step="0.5"
-              size="small"
-              placeholder="1"
-            ></el-input-number>
+            <div v-if="! isPrint">
+              <div style="margin-bottom: 8px;">
+                Menge:
+              </div>
+              
+              <el-input-number
+                v-model="servingsMultiplier"
+                :min="0.5"
+                :max="5"
+                :step="0.5"
+                size="small"
+                placeholder="1"
+              ></el-input-number>
+            </div>
           </div>
           <ul
             v-for="(ingredient, index) in getIngredientList()"
@@ -94,6 +110,9 @@
 
     @Prop()
     recipe: Recipe;
+
+    @Prop()
+    isPrint: boolean;
     
     private rating = 0;
 
@@ -277,6 +296,12 @@
       this.rating = ratingCount / this.recipe.ratings.length
     }
 
+    printRecipe() {
+      let newWindow = window.open("/rezept/" + this.recipe.slug + "?print=true", this.recipe.title, "height=900, width=800");
+      newWindow.moveTo(400, 0);
+
+    }
+
     isNumberDefined(n: number): boolean {
       return n !== null && n !== undefined;
     }
@@ -295,7 +320,18 @@
 
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+
+  .recipe {
+    padding: 22px;
+    border-radius: 4px;
+    border: 1px solid #EBEEF5;
+    overflow: hidden;
+  }
+
+  .preview-image {
+    max-width: 220px;
+  }
 
   .ingredients-list, .directions {
     list-style: none;

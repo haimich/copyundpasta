@@ -11,7 +11,7 @@
   import { Vue, Component, Prop } from "vue-property-decorator";
 
   @Component
-  export default class RecipePage extends Vue {
+  export default class RecipesPage extends Vue {
 
   }
 

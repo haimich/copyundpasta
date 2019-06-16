@@ -2,17 +2,17 @@ import { PagingParams } from "@/interfaces/Paging";
 
 const DEFAULT_PAGE_SIZE = 9;
 
-export function validateId(body: any): number {
-  if (body == null || body.id == null) {
-    throw new Error("Missing mandatory field 'id'");
+export function validateSlug(body: any): string {
+  if (body == null || body.slug == null) {
+    throw new Error("Missing mandatory field 'slug'");
   }
 
-  const id = parseInt(body.id, 10);
+  const slug = body.slug;
 
-  if (isNaN(id) || id < 0) {
-    throw new Error("Invalid value for field 'id'");
+  if (slug == "" || slug.length <= 0 || slug.length >= 1000) {
+    throw new Error("Invalid value for field 'slug'");
   } else {
-    return id;
+    return slug;
   }
 }
 

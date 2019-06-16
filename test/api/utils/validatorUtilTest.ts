@@ -1,24 +1,24 @@
-import { validateId, validatePagingParams } from "@/api/utils/validatorUtil";
+import { validateSlug, validatePagingParams } from "@/api/utils/validatorUtil";
 
-describe('validateId', () => {
-  test('should allow integer', () => {
-    validateId({
-      id: 123,
+describe('validateSlug', () => {
+  test('should allow string', () => {
+    validateSlug({
+      slug: "asdasadasd-asdas-asd",
     });
   });
 
-  test('should throw error on negative integer', () => {
+  test('should throw error on empty string', () => {
     expect(() => {
-      validateId({
-        id: -123,
+      validateSlug({
+        slug: "",
       });
     }).toThrow();
   });
 
-  test('should throw error on string', () => {
+  test('should throw error on too long string', () => {
     expect(() => {
-      validateId({
-        id: "abc",
+      validateSlug({
+        slug: "should throw error on too long stringshould throw error on too long stringshould throw error on too long stringshould throw error on too long stringshould throw error on too long stringshould throw error on too long stringshould throw error on too long stringshould throw error on too long stringshould throw error on too long stringshould throw error on too long stringshould throw error on too long stringshould throw error on too long stringshould throw error on too long stringshould throw error on too long stringshould throw error on too long stringshould throw error on too long stringshould throw error on too long stringshould throw error on too long stringshould throw error on too long string should throw error on too long stringshould throw error on too long stringshould throw error on too long stringshould throw error on too long stringshould throw error on too long stringshould throw error on too long stringshould throw error on too long stringshould throw error on too long stringshouldshould throw error on too long stringshould throw error on too long stringshould throw error on too long stringshould throw error on too long stringshould throw error on too long stringshould throw error on too long stringshould throw error on too long stringshould throw error on too long stringshould",
       });
     }).toThrow();
   });
@@ -43,14 +43,14 @@ describe('validatePagingParams', () => {
 
   test('should throw error if param is missing', () => {
     expect(() => {
-      validateId({
+      validatePagingParams({
         page: 0,
         pageSizzle: 21
       });
     }).toThrow();
 
     expect(() => {
-      validateId({
+      validatePagingParams({
         pageant: 0,
         pageSize: 21
       });

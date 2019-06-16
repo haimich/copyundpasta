@@ -1,6 +1,5 @@
 import { setupExpress } from "./utils/expressUtil";
 import { createRssFeed, createAtomFeed } from "./repos/feedRepo";
-import { validateId } from "./utils/validatorUtil";
 
 let app = setupExpress();
 
