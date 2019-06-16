@@ -2,7 +2,7 @@
 exports.up = async function(knex, Promise) {
     await knex.schema
         .createTable("recipe_tags", function (table) {
-            table.string("id", 400).primary();
+            table.string("id", 100).primary();
             table.string("name", 1000).notNullable().index();
         });
 };
