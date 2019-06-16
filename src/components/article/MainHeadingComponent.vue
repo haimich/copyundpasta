@@ -21,7 +21,7 @@
       v-if="commentCount >= 1"
     >
       <a href="#comments" title="Zu Kommentaren springen">
-        <font-awesome-icon :icon="['far', 'comment']" style="margin-right: 8px;" /> 8 Kommentare
+        <font-awesome-icon :icon="['far', 'comment']" style="margin-right: 5px;" /> 8 Kommentare
       </a>
     </el-row>
 
