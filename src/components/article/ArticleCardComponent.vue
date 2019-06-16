@@ -20,7 +20,16 @@
 
       <div class="article-card-body">
         <div class="article-card-category">
-          Süße Rezepte <i class="el-icon-caret-right"></i> Rührkuchen
+          <el-breadcrumb
+            separator-class="el-icon-arrow-right"
+          >
+            <el-breadcrumb-item
+              v-for="(category, index) in categories"
+              :key="index"
+            >
+              {{ category }}
+            </el-breadcrumb-item>
+          </el-breadcrumb>
         </div>
 
         <div class="article-card-heading">
@@ -39,13 +48,30 @@
 <script lang="ts">
 
   import { Vue, Component, Prop, Watch } from "vue-property-decorator";
-  import { Article } from "../../interfaces/Article";
+  import { Article } from "@/interfaces/Article";
+  import ArticleCategories from "@/interfaces/ArticleCategories";
 
   @Component
   export default class ArticleCardComponent extends Vue {
 
       @Prop()
       private article: Article;
+
+      get categories(): string[] {
+        let categories: string[] = [];
+
+        let categoryId = this.article.categoryId;
+
+        while (categoryId != null) {
+          let category = ArticleCategories[categoryId];
+
+          categories.unshift(category.name);
+
+          categoryId = category.parentCategory;
+        }
+
+        return categories;
+      }
 
   }
 
@@ -78,7 +104,7 @@
       display: block;
       width: 100%;
       height: auto;
-      transition: .7s ease;
+      transition: .6s ease;
       backface-visibility: hidden;
     }
 
@@ -130,7 +156,7 @@
     align-items: center;
     flex-direction: column;
 
-    .article-card-category {
+    .article-card-category .el-breadcrumb__inner, .article-card-category i {
       font-size: 11px;
       color: #DB5353;
     }

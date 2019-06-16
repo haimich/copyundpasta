@@ -11,13 +11,13 @@ export interface ArticleCategory {
 
 const categories: ArticleCategory = {
   rezept: {
-    id: "rezept",
-    name: "Rezept",
+    id: "rezepte",
+    name: "Rezepte",
   },
   herzhaft: {
     id: "herzhaft",
-    name: "herzhaft",
-    parentCategory: "rezept",
+    name: "Herzhaft",
+    parentCategory: "rezepte",
   },
 }
 

@@ -9,7 +9,7 @@ exports.up = async function(knex, Promise) {
             table.string("title", 1000).notNullable().index();
             table.text("shortDescription");
             table.text("previewImageUrl");
-            table.string("author", 1000);
+            table.string("author", 1000).defaultTo("Michael");
 
             table.timestamp("createdAt").defaultTo(knex.fn.now());
             table.timestamp("modifiedAt").defaultTo(knex.fn.now());
