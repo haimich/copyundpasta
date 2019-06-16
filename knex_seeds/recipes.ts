@@ -9,17 +9,17 @@ exports.seed = async function(knex, Promise) {
 };
 
 async function deleteAllEntries(knex) {
-  console.log("Deleting recipes");
-  await knex("recipes").del();
-
-  console.log("Deleting recipe_categories");
-  await knex("recipe_categories").del();
-
   console.log("Deleting recipes_recipe_tags");
   await knex("recipes_recipe_tags").del();
 
   console.log("Deleting recipe_tags");
   await knex("recipe_tags").del();
+  
+  console.log("Deleting recipes");
+  await knex("recipes").del();
+
+  console.log("Deleting recipe_categories");
+  await knex("recipe_categories").del();
 }
 
 async function createAllEntries(knex) {
