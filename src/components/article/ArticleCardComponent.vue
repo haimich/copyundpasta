@@ -20,9 +20,7 @@
 
       <div class="article-card-body">
         <div class="article-card-category">
-          <el-breadcrumb
-            separator-class="el-icon-arrow-right"
-          >
+          <el-breadcrumb separator-class="el-icon-arrow-right">
             <el-breadcrumb-item
               v-for="(category, index) in categories"
               :key="index"
@@ -86,7 +84,7 @@
   @import "~/scss/variables.scss";
 
   .article-card {
-    height: 390px;
+    height: 400px;
     margin-bottom: 27px;
   }
 
@@ -130,7 +128,7 @@
     .article-card-button {
       margin-top: 6px;
       display: inline-block;
-      padding: 15px 30px;
+      padding: 13px 27px;
       border: 2px solid white;
       border-radius: 2px;
       font-size: 16px;
@@ -161,14 +159,15 @@
     flex-direction: column;
 
     .article-card-category .el-breadcrumb__inner, .article-card-category i {
-      font-size: 11px;
+      font-size: 13px;
+      font-weight: 300;
       color: #DB5353;
     }
 
     .article-card-heading {
       margin-top: 10px;
       font-family: "Roboto Slab", "Helvetica Neue", Helvetica, Arial, serif;
-      font-size: 14.5px;
+      font-size: 16px;
       color: #000000cf;
       font-weight: 600;
       line-height: 21px;
@@ -178,8 +177,9 @@
       margin-top: 10px;
       display: block;
       font-size: 13px;
+      font-weight: 300;
+      color: $color-text-regular;
       font-style: italic;
-      color: $color-text-primary;
     }
   }
 

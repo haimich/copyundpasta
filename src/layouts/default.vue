@@ -249,7 +249,7 @@
   }
 
   p {
-    font-size: 23px;
+    font-size: 22px;
     line-height: 34px;
     color: $color-text-regular;
     font-weight: 300;
@@ -260,7 +260,7 @@
   article p {
     margin-left: auto;
     margin-right: auto;
-    width: 80%;
+    width: 85%;
   }
 
   a, a:active, a:focus {

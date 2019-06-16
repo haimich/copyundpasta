@@ -260,7 +260,7 @@
     margin-bottom: 15px;
     font-size: 15px;
     font-weight: 300;
-    color: #5d5d5d;
+    color: $color-text-regular;
     font-style: italic;
   }
 

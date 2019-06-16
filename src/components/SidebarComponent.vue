@@ -161,11 +161,13 @@
     .divider span {
       position: relative;
       z-index: 5;
-      font-size: 14px;
+      font-weight: 500;
+      font-size: 15px;
       text-transform: uppercase;
       letter-spacing: 1px;
       margin-bottom: 0;
       line-height: 1;
+      color: #212121;
       background-color: #ffffff;
       padding: 0 14px;
       display: inline-block;
@@ -180,7 +182,7 @@
     }
     
     p, a {
-      font-size: 13px;
+      font-size: 15px;
       line-height: 23px;
 
       strong {
