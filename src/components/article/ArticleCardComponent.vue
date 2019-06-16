@@ -65,13 +65,21 @@
     width: 100%;
     height: 100%;
 
-    img {
-      width: 100%;
-      transition: all .7s ease;
+    &:hover img {
+      filter: brightness(56%);
+    }
 
-      &:hover {
-        filter: brightness(50%);
-      }
+    &:hover .article-card-title {
+      opacity: 1;
+    }
+
+    img {
+      opacity: 1;
+      display: block;
+      width: 100%;
+      height: auto;
+      transition: .7s ease;
+      backface-visibility: hidden;
     }
 
     a:hover {
@@ -79,32 +87,32 @@
     }
 
     .article-card-title {
+      transition: .5s ease;
+      opacity: 0;
       position: absolute;
       top: 50%;
       left: 50%;
-      width: 70%;
       transform: translate(-50%, -50%);
-      
-      h1 {
-        font-size: 17px;
-        font-weight: 100;
-        color: white;
-        text-align: center;
-        text-transform: uppercase;
-        letter-spacing: 6px;
-      }
+      -ms-transform: translate(-50%, -50%);
+      text-align: center;
     }
 
     .article-card-button {
       margin-top: 6px;
       display: inline-block;
-      padding: 15px 20px;
+      padding: 15px 30px;
       border: 2px solid white;
       border-radius: 2px;
       font-size: 16px;
       text-transform: uppercase;
       color: white;
       font-style: italic;
+      transition: background-color 0.2s ease, color 0.2s ease;
+
+      &:hover {
+        background-color: white;
+        color: rgb(75, 75, 75);
+      }
     }
 
     .article-card-link {
@@ -112,9 +120,7 @@
       display: flex;
       justify-content: center;
     }
-
   }
-
   
   .article-card-body {
     text-align: center;
