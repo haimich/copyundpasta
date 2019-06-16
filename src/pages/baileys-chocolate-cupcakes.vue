@@ -7,11 +7,12 @@
         <MainHeadingComponent
           :text="article.title"
           image="https://livforcake.com/wp-content/uploads/2015/02/IMG_5007-Version-21.jpg"
+          commentCount="8"
         />
         
         <ArticleJumpToRecipeComponent />
 
-        <p>
+        <p class="entry-paragraph">
           I never really need an excuse to bake something, but it’s always nice to have a reason. A recent dinner invite to my good friend Dave’s was the perfect opportunity for me to try out something new. I stuck with cupcakes because they are fairly easy, and since I had my first cake order due the same day, I didn’t want to take on too big a project. Plus, let’s face it, who doesn’t like a good cupcake??
         </p>
 
@@ -55,6 +56,9 @@
 
         <RecipeComponent :recipe="recipe" style="margin-top: 40px;" />
 
+        <el-row id="comments" style="margin-top: 40px;">
+          Kommentare
+        </el-row>
       </el-col>
     </el-row>
 

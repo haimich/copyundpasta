@@ -14,8 +14,15 @@
 
     <hr class="blue-line">
 
-    <el-row type="flex" justify="center" class="main-heading-sub">
-      <font-awesome-icon :icon="['far', 'comment']" style="margin-right: 8px;" /> 8 Kommentare
+    <el-row
+      type="flex"
+      justify="center"
+      class="main-heading-sub"
+      v-if="commentCount >= 1"
+    >
+      <a href="#comments" title="Zu Kommentaren springen">
+        <font-awesome-icon :icon="['far', 'comment']" style="margin-right: 8px;" /> 8 Kommentare
+      </a>
     </el-row>
 
     <img
@@ -42,6 +49,9 @@
       @Prop()
       private image: string;
 
+      @Prop()
+      private commentCount: number;
+
       goHome() {
         this.$router.push({
           path: "/",
@@ -52,7 +62,7 @@
 
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 
   .main-heading-container {
     display: flex;
@@ -64,6 +74,10 @@
     font-size: 15px;
     color: #424242;
     margin-top: 8px;
+
+    a, a:visited {
+      color: #424242;
+    }
   }
 
 </style>
