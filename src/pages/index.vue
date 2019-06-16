@@ -26,7 +26,9 @@
               >
 
               <div class="hero-carousel-title">
-                <h1>{{ article.title }}</h1>
+                <nuxt-link :to="'/' + article.slug" class="hero-carousel-link">
+                  <h1>{{ article.title }}</h1>
+                </nuxt-link>
 
                 <nuxt-link :to="'/' + article.slug" class="hero-carousel-link">
                   <span class="hero-carousel-button">
