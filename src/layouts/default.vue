@@ -93,7 +93,7 @@
     </main>
     
     <footer>
-      © 2019 Copy & Pasta · Impressum · Datenschutz
+      © 2019 <nuxt-link to="/" title="HOME" style="color: white;">Copy & Pasta</nuxt-link> · Impressum · Datenschutz
     </footer>
     
   </div>

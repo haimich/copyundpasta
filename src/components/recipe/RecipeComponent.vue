@@ -35,6 +35,8 @@
               :min="0.5"
               :max="5"
               :step="0.5"
+              size="small"
+              placeholder="1"
             ></el-input-number>
           </div>
           <ul
