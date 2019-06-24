@@ -3,11 +3,11 @@
   <el-row>
     <el-col :span="18" :offset="3">
 
-      <img
+      <el-image
         :src="src"
         class="article-image-full"
         :alt="alt"
-      >
+      ></el-image>
 
     </el-col>
   </el-row>
@@ -33,7 +33,7 @@
 
 <style>
 
-  img.article-image-full {
+  .article-image-full img {
     width: 100%;
     margin-top: 40px;
     margin-bottom: 40px;

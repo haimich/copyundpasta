@@ -26,11 +26,11 @@
       </el-col>
 
       <el-col :span="8" style="display: flex; justify-content: flex-end;">
-        <img
+        <el-image
           :src="recipe.previewImageUrl"
           alt="Rezeptfoto"
-          class="preview-image"
-        >
+          style="max-width: 220px;"
+        ></el-image>
       </el-col>
     </el-row>
 
@@ -327,10 +327,6 @@
     border-radius: 4px;
     border: 1px solid #EBEEF5;
     overflow: hidden;
-  }
-
-  .preview-image {
-    max-width: 220px;
   }
 
   .ingredients-list, .directions {
