@@ -32,7 +32,7 @@ const config: NuxtConfiguration = {
     },
     {
       path: "/feed",
-      handler: "~/api/feeds.ts",
+      handler: "~/api/feed.ts",
     },
   ],
 
