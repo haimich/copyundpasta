@@ -25,12 +25,12 @@
       </a>
     </el-row>
 
-    <img
+    <el-image
       v-if="image != null && image !== ''"
       :src="image"
       style="margin-top: 16px; margin-bottom: 60px;"
       alt="Titelbild"
-    >
+    ></el-image>
 
   </div>
 
