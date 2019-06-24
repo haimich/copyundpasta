@@ -23,7 +23,7 @@
                 </a>
               </li>
               <li>
-                <a href="https://www.google.de" target="_blank" title="RSS-Feed abonnieren">
+                <a href="/feed/rss.xml" target="_blank" title="RSS-Feed abonnieren">
                   <font-awesome-icon :icon="['fas', 'rss']" />
                 </a>
               </li>
@@ -253,7 +253,7 @@
     flex-direction: column;
 
     .logo {
-      width: 285px;
+      width: 275px;
       margin-top: 8px;
       margin-bottom: 26px;
     }

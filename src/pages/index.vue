@@ -19,11 +19,11 @@
             :key="article.slug"
           >
             <div class="hero-carousel-container">
-              <img
+              <el-image
                 :src="article.previewImageUrl"
                 alt="hero image"
                 class="hero-carousel-image"
-              >
+              ></el-image>
 
               <div class="hero-carousel-title">
                 <nuxt-link :to="'/' + article.slug" class="hero-carousel-link">
