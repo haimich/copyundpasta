@@ -29,6 +29,7 @@
     "@nuxtjs/axios": "^5.5.4",
     "@nuxtjs/google-analytics": "^2.2.0",
     "@nuxtjs/sitemap": "^1.2.0",
+    "appbase-js": "^4.0.2-beta.6",
     "body-parser": "^1.19.0",
     "compression": "^1.7.4",
     "dotenv": "^8.0.0",
