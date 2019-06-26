@@ -40,6 +40,7 @@
           :md="md"
           :sm="sm"
           :xs="xs"
+          style="position: relative;"
         >
           <!-- Logo -->
           <nuxt-link to="/" title="HOME">
@@ -73,6 +74,11 @@
             </el-menu-item>
           </el-menu>
 
+          <!-- Search box -->
+          <TypeaheadComponent
+            :isVisible="showSearch"
+            @close="hideSearch()"
+          />
         </el-col>
       </el-row>
     </nav>
@@ -86,11 +92,6 @@
           :sm="sm"
           :xs="xs"
         >
-          <!-- Search box -->
-          <TypeaheadComponent
-            v-show="showSearch"
-          />
-
           <!-- Main Container -->
           <nuxt />
         </el-col>
