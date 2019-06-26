@@ -1,5 +1,5 @@
-import { Recipe } from "@/interfaces/Recipe";
 import { AxiosPromise } from "axios";
+import { Recipe } from "@/interfaces/Recipe";
 
 export default class RecipeService {
 
