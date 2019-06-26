@@ -123,10 +123,6 @@
 
 <style lang="scss">
 
-</style>
-
-<style lang="scss">
-
   @import "~/scss/variables.scss";
 
   .sidebar-container {

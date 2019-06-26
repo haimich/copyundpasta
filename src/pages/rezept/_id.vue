@@ -13,6 +13,7 @@
 
   import { Vue, Component, Prop } from "vue-property-decorator";
   import RecipeService from "@/services/RecipeService";
+  import { setTimeout } from "timers";
 
   @Component({
     layout: "print",
@@ -36,7 +37,10 @@
 
     mounted() {
       if (this.isPrint) {
-        window.print();
+        // make sure the page is loaded completely
+        setTimeout(() => {
+          window.print();
+        }, 400);
       }
     }
   }

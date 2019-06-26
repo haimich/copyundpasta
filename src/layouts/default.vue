@@ -42,8 +42,8 @@
           :xs="xs"
         >
           <!-- Logo -->
-          <nuxt-link to="/" title="HOME" @click="activeIndex='home'">
-            <img class="logo" src="/images/logo.png" alt="Logo">
+          <nuxt-link to="/" title="HOME">
+            <img class="logo" src="/images/logo.png" alt="Logo" @click="menuItemChanged('home')">
           </nuxt-link>
 
           <!-- Menu -->
@@ -86,6 +86,11 @@
           :sm="sm"
           :xs="xs"
         >
+          <!-- Search box -->
+          <TypeaheadComponent
+            v-show="showSearch"
+          />
+
           <!-- Main Container -->
           <nuxt />
         </el-col>
@@ -107,18 +112,26 @@
 <script lang="ts">
 
   import { Vue, Component, Prop, Watch } from "vue-property-decorator";
+  import TypeaheadComponent from "../components/TypeaheadComponent.vue";
 
   enum Pages {
     HOME = "home",
     REZEPTE = "rezepte",
     ABOUT = "about",
     KONTAKT = "kontakt",
+    SUCHE = "suche",
   }
 
-  @Component
+  @Component({
+    components: {
+      TypeaheadComponent: TypeaheadComponent
+    }
+  })
   export default class DefaultLayoutComponent extends Vue {
 
     private activeIndex = Pages.HOME;
+
+    private showSearch = false;
 
     private xl = {
       span: 20,
@@ -171,17 +184,26 @@
       }
     }
 
-    menuItemChanged(key) {
+    menuItemChanged(key: Pages) {
+      if (this.activeIndex === Pages.SUCHE && key === Pages.SUCHE) {
+        this.toggleSearch();
+        return;
+      }
+
       this.activeIndex = key;
       let routeToNavigate = "";
 
-      if (key === "suche") {
+      if (key === Pages.SUCHE) {
         this.openSearch()
-      } else if (key === Pages.HOME) {
-        routeToNavigate = "/";
       } else {
-        // make sure we navigate to the page even when the use clicked besides the nuxt link
-        routeToNavigate = "/" + key;
+        this.showSearch = false;
+
+        if (key === Pages.HOME) {
+          routeToNavigate = "/";
+        } else {
+          // make sure we navigate to the page even when the use clicked besides the nuxt link
+          routeToNavigate = "/" + key;
+        }
       }
 
       if (routeToNavigate !== this.$router.currentRoute.path) {
@@ -190,8 +212,16 @@
       }
     }
 
+    hideSearch() {
+      this.showSearch = false;
+    }
+
+    toggleSearch() {
+      this.showSearch = ! this.showSearch;
+    }
+
     openSearch() {
-      console.log("Search");
+      this.showSearch = true;
     }
 
     created() {

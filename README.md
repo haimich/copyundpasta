@@ -91,3 +91,11 @@ For performance reasons the theme has been prebuilt (instead of importing elemen
 The generated files are stored in src/scss/element-theme
 
 @see https://element.eleme.io/#/en-US/component/custom-theme
+
+* generate variables file: `et -i`
+* edit variables in element-variables.scss (eg. `$--color-primary: #1eb5da`)
+* generate the theme: `et`
+* `rm -rf src/scss/element-theme`
+* `mv theme src/scss/element-theme`
+* `rm -rf element-variables.scss`
+* the generated files are referenced in `nuxt.config.tx` in the `css` section

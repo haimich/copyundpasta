@@ -299,7 +299,6 @@
     printRecipe() {
       let newWindow = window.open("/rezept/" + this.recipe.slug + "?print=true", this.recipe.title, "height=900, width=800");
       newWindow.moveTo(400, 0);
-
     }
 
     isNumberDefined(n: number): boolean {
