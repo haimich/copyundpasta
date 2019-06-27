@@ -5,6 +5,6 @@ if (process.env.APPBASE_WRITE_KEY_ARTICLES == null || process.env.APPBASE_WRITE_
   throw new Error("Missing env variable 'APPBASE_WRITE_KEY_ARTICLES'");
 }
 
-const elasticArticles = new Client7({
+export const elasticArticles = new Client7({
   node: `https://${process.env.APPBASE_WRITE_KEY_ARTICLES}@scalr.api.appbase.io`,
 });

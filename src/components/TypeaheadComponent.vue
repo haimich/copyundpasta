@@ -7,8 +7,9 @@
   >
 
     <el-autocomplete
-      v-model="state"
-      :fetch-suggestions="querySearchAsync"
+      v-model="searchterm"
+      :fetch-suggestions="searchArticles"
+      :trigger-on-focus="false"
       placeholder="Suche"
       autofocus
       @select="handleSelect"
@@ -21,8 +22,8 @@
       ></el-button>
 
       <template slot-scope="{ item }">
-        <div class="value">{{ item.value }}</div>
-        <span class="link">{{ item.link }}</span>
+        <div class="match-title">{{ item._source.title }}</div>
+        <div class="match-description">{{ item._source.shortDescription }}</div>
       </template>
     </el-autocomplete>
 
@@ -33,6 +34,7 @@
 <script lang="ts">
 
   import { Vue, Component, Prop, Watch } from "vue-property-decorator";
+  import SearchService from "../services/SearchService";
 
   @Component
   export default class TypeaheadComponent extends Vue {
@@ -40,44 +42,30 @@
     @Prop()
     private isVisible: boolean;
 
-    private links = [];
-    private state = '';
     private timeout = null;
 
-    loadAll() {
-      return [
-        { "value": "vue", "link": "https://github.com/vuejs/vue" },
-        { "value": "element", "link": "https://github.com/ElemeFE/element" },
-        { "value": "cooking", "link": "https://github.com/ElemeFE/cooking" },
-        { "value": "mint-ui", "link": "https://github.com/ElemeFE/mint-ui" },
-        { "value": "vuex", "link": "https://github.com/vuejs/vuex" },
-        { "value": "vue-router", "link": "https://github.com/vuejs/vue-router" },
-        { "value": "babel", "link": "https://github.com/babel/babel" }
-        ];
-    }
+    private searchterm = "";
 
-    querySearchAsync(queryString, cb) {
-      let links = this.links;
-      let results = queryString ? links.filter(this.createFilter(queryString)) : links;
+    async searchArticles(searchterm: string, cb) {
+      if (searchterm == null || searchterm === "") {
+        return 
+      }
 
-      clearTimeout(this.timeout);
-      this.timeout = setTimeout(() => {
-        cb(results);
-      }, 3000 * Math.random());
-    }
-
-    createFilter(queryString) {
-      return (link) => {
-        return (link.value.toLowerCase().indexOf(queryString.toLowerCase()) === 0);
-      };
+      try {
+        let res = await SearchService.searchArticles(this.$axios, searchterm);
+        
+        cb(res.data);
+      } catch (error) {
+        return [];
+      }
     }
 
     handleSelect(item) {
-      console.log(item);
-    }
+      this.$router.push({
+        path: "/" + item._id
+      });
 
-    mounted() {
-      this.links = this.loadAll();
+      this.$emit("close");
     }
 
   }
@@ -113,6 +101,15 @@
       height: 100%;
       font-size: 18px;
     }
+  }
+
+  .match-title {
+    font-weight: bold;
+  }
+
+  .match-description {
+    font-size: 12px;
+    margin-top: -11px;
   }
 
 </style>

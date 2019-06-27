@@ -42,3 +42,17 @@ export function validatePagingParams(body: any): PagingParams {
     pageSize,
   };
 }
+
+export function validateSearchterm(body: any): string {
+  if (body == null || body.searchterm == null) {
+    throw new Error("Missing mandatory field 'searchterm'");
+  }
+
+  const searchterm = body.searchterm;
+
+  if (searchterm == "" || searchterm.length <= 0 || searchterm.length >= 10000) {
+    throw new Error("Invalid value for field 'searchterm'");
+  } else {
+    return searchterm;
+  }
+}

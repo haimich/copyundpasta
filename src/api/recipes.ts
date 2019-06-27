@@ -13,7 +13,15 @@ app.post("/getRecipe", async (req, res) => {
     console.log("getRecipe");
 
     // validate params
-    const slug = validateSlug(req.body);
+    let slug;
+
+    try {
+       slug = validateSlug(req.body);
+    } catch (err) {
+        console.error(err);
+
+        return res.status(406).send(err.message);
+    }
 
     const recipe = await getRecipe(slug);
 
