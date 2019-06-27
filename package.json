@@ -21,6 +21,7 @@
     "watch:test": "jest --watch"
   },
   "dependencies": {
+    "@elastic/elasticsearch": "^7.1.0",
     "@fortawesome/fontawesome-svg-core": "^1.2.19",
     "@fortawesome/free-brands-svg-icons": "^5.9.0",
     "@fortawesome/free-regular-svg-icons": "^5.9.0",

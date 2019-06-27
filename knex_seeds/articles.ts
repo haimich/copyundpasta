@@ -1,21 +1,14 @@
 import articles from "../src/content/articles/all";
-import Appbase from "appbase-js";
 
 import ArticleCategories, { Category, ArticleCategory } from "../src/interfaces/ArticleCategories";
 import { Article } from "@/interfaces/Article";
+import { elasticArticles } from "../scripts/initElasticsearch";
 
 exports.seed = async function(knex, Promise) {
   await deleteAllEntries(knex);
 
   await createAllEntries(knex);
 };
-
-let indexAppbase = Appbase({
-  url: "https://scalr.api.appbase.io",
-  app: "copyundpasta",
-  credentials: "AdminToken"
-})
-
 
 async function deleteAllEntries(knex) {
   console.log("Deleting articles");
@@ -35,32 +28,49 @@ async function createAllEntries(knex) {
   console.log("Inserting articles");
   await knex("articles").insert(articles);
 
-  console.log("INDEXING")
+  console.log("Indexing articles");
+
   try {
     await indexArticles(articles);
   } catch (err) {
     console.log(err);
+    process.exit(1);
   }
-  console.log("ENDEXING");
-
 }
 
-function indexArticles(articles) {
-  let article: Article = articles[0]
+async function indexArticles(articles: Article[]) {
+  const article = articles[0];
 
-  return indexAppbase.index({
-    type: "articles",
+  await elasticArticles.index({
+    index: "cup-articles",
+    refresh: true,
     id: article.slug,
     body: {
-      "title": article.title,
-      "categoryId": article.categoryId,
-      "isHeroArticle": article.isHeroArticle,
-      "shortDescription": article.shortDescription,
-      "previewImageUrl": article.previewImageUrl,
-      "createdAt": article.createdAt,
-      "modifiedAt": article.modifiedAt
-    }
+        "title": article.title,
+        "categoryId": article.categoryId,
+        "isHeroArticle": article.isHeroArticle,
+        "shortDescription": article.shortDescription,
+        "previewImageUrl": article.previewImageUrl,
+        "createdAt": article.createdAt,
+        "modifiedAt": article.modifiedAt
+    },
   })
+  
+  // for (let article of articles) {
+  //   await appbase.index({
+  //     type: "articles",
+  //     id: article.slug,
+  //     body: {
+  //       "title": article.title,
+  //       "categoryId": article.categoryId,
+  //       "isHeroArticle": article.isHeroArticle,
+  //       "shortDescription": article.shortDescription,
+  //       "previewImageUrl": article.previewImageUrl,
+  //       "createdAt": article.createdAt,
+  //       "modifiedAt": article.modifiedAt
+  //     }
+  //   });
+  // }
 }
 
 function getAllCategories(categories: ArticleCategory) {

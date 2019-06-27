@@ -1,22 +1,21 @@
-import Appbase from "appbase-js";
-import {Recipe} from "@/interfaces/Recipe";
+import { Client, ApiResponse } from "@elastic/elasticsearch";
 
-let searchAppbase = Appbase({
-    url: "https://scalr.api.appbase.io",
-    app: "copyundpasta",
-    credentials: "Read-only Token"
-})
+const u_articles = "7WYvqhnKd";
+const p_articles = "5cbcd002-203a-4532-905b-83af1abdbda5";
+
+const articles = new Client({
+    node: `https://${u_articles}:${p_articles}@scalr.api.appbase.io`,
+});
 
 export default class SearchService {
 
-    static search(searchTerm: string) {
-        return searchAppbase.search({
-            type: "movies",
-
+    static async searchArticles(searchTerm: string): Promise<ApiResponse> {
+        return articles.search({
+            index: "cup-articles",
             body: {
                 query: {
                     "match": {
-                        "original_title": searchTerm
+                        "title": searchTerm
                     }
 
                 }

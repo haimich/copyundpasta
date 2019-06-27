@@ -1,11 +1,15 @@
 import SearchService from "@/services/SearchService";
 
-describe('search', () => {
-    test('should return 0', async () => {
-        let res = await SearchService.search('beast')
-        console.log(res.hits.hits)
+describe('searchArticles', () => {
+    test('should return hits', async () => {
+        try {
+            let res = await SearchService.searchArticles('oma')
 
+            console.log(res.body.hits.hits);
+
+            expect(res.statusCode).toBe(200);
+        } catch (error) {
+            console.log(error);
+        }
     });
-
-
 });

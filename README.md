@@ -58,6 +58,7 @@ DEPLOY_HOST=xxx
 DEPLOY_USERNAME=xxx
 DEPLOY_PW=xxx
 DEPLOY_HOMEDIR=/home/haimich/copyundpasta.de
+APPBASE_WRITE_KEY_ARTICLES=xxx
 ```
 
 ```
