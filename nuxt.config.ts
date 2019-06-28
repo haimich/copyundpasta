@@ -46,12 +46,13 @@ const config: NuxtConfiguration = {
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { hid: "description", name: "description", content: "Copy & Pasta wurde 2019 von Michael Müller aus Karlsruhe ins Leben gerufen." },
       { name: "theme-color", content: "#ffffff" },
+      { name: "msapplication-TileColor", content: "#da532c" },
       { name: "p:domain_verify", content: "5f8e964f94d8de2f299a1e19f700c401" }, // Pinterest verify (delete after some time)
     ],
     link: [
       { rel: "icon", type: "image/png", sizes: "32x32", href: "/favicon-32x32.png" },
       { rel: "icon", type: "image/png", sizes: "16x16", href: "/favicon-16x16.png" },
-      { rel: "icon", type: "apple-touch-icon", sizes: "144x144", href: "/apple-touch-icon.png" },
+      { rel: "icon", type: "apple-touch-icon", sizes: "180x180", href: "/apple-touch-icon.png" },
       { rel: "manifest", href: "/site.webmanifest" },
       { rel: "mask-icon", href: "/safari-pinned-tab.sv", color: "#5bbad5" },
       { rel: "alternate", type: "application/rss+xml", title: "RSS Feed für copyundpasta.de", href: "/feed/rss.xml" },
