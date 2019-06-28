@@ -43,7 +43,6 @@ async function indexArticles(articles: Article[]) {
 
   await elasticArticles.index({
     index: "cup-articles",
-    refresh: true,
     id: article.slug,
     body: {
         "title": article.title,
