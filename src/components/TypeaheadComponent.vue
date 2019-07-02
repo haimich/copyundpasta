@@ -12,14 +12,19 @@
       :trigger-on-focus="false"
       placeholder="Suche"
       autofocus
+      ref="autocomplete"
       @select="handleSelect"
     >
       <el-button
-        slot="append"
-        icon="el-icon-close"
-        style="font-size: 18px;"
+        slot="suffix"
+        style="font-size: 20px; color: #adb5bd;"
+        type="text"
         @click="$emit('close')"
-      ></el-button>
+      >
+        <font-awesome-icon
+          :icon="['fas', 'times-circle']"
+        />
+      </el-button>
 
       <template slot-scope="{ item }">
         <div class="match-title">{{ item._source.title }}</div>
@@ -35,6 +40,7 @@
 
   import { Vue, Component, Prop, Watch } from "vue-property-decorator";
   import SearchService from "../services/SearchService";
+  import { setTimeout } from "timers";
 
   @Component
   export default class TypeaheadComponent extends Vue {
@@ -52,23 +58,39 @@
 
       if (this.isVisible) {
         body.classList.add("overlay");
-        body.addEventListener("click", this.bodyClicked)
+
+        setTimeout(() => {
+          let input = document.querySelector(".typeahead input") as HTMLElement
+          input.focus();
+
+          // we need to wait a bit, otherwise bodyClicked() doesn't work
+          body.addEventListener("click", this.bodyClicked)
+        }, 100);
       } else {
         body.classList.remove("overlay");
 
         body.removeEventListener("click", this.bodyClicked);
 
-        document.querySelector(".el-autocomplete-suggestion").remove();
+        //sometimes the suggestions stay visible after a search
+        let suggestBox = document.querySelector(".typeahead .el-autocomplete-suggestion");
+        
+        if (suggestBox != null) {
+          suggestBox.remove();
+        }
       }
     }
 
     bodyClicked(event) {
+      if (! this.isVisible) {
+        return;
+      }
+
       let targetElement = event.target || event.srcElement;
       
-      if (targetElement.tagName === "input") {
+      if (targetElement.tagName === "INPUT") {
         return;
       } else {
-        console.log("clicked", targetElement.tagName);
+        this.$emit("close");
       }
     }
 
@@ -126,6 +148,15 @@
       width: 100%;
       height: 100%;
       font-size: 18px;
+      border-right: none;
+    }
+
+    & /deep/ button {
+      padding: 17px 9px;
+
+      & svg:hover {
+        color: #f56c6c;
+      }
     }
   }
 
