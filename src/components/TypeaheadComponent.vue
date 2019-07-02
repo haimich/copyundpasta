@@ -148,7 +148,17 @@
       width: 100%;
       height: 100%;
       font-size: 18px;
-      border-right: none;
+    }
+
+    & /deep/ input {
+      padding-right: 43px;
+      border-width: 1.5px;
+
+      &:focus {
+        outline: none;
+        border-color: #9ecaed;
+        box-shadow: 0 0 2px #9ecaed;
+      }
     }
 
     & /deep/ button {
