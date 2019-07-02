@@ -63,6 +63,12 @@
           let input = document.querySelector(".typeahead input") as HTMLElement
           input.focus();
 
+          input.onkeydown = (event) => {
+            if (event.keyCode === 27) {
+                this.$emit("close");
+            }
+          }
+
           // we need to wait a bit, otherwise bodyClicked() doesn't work
           body.addEventListener("click", this.bodyClicked)
         }, 100);
