@@ -57,10 +57,6 @@
               <nuxt-link to="/">HOME</nuxt-link>
             </el-menu-item>
 
-            <el-menu-item index="rezepte">
-              <nuxt-link to="/rezepte">REZEPTE</nuxt-link>
-            </el-menu-item>
-
             <el-menu-item index="about">
               <nuxt-link to="/about">ÜBER MICH</nuxt-link>
             </el-menu-item>

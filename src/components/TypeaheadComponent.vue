@@ -46,9 +46,35 @@
 
     private searchterm = "";
 
+    @Watch("isVisible")
+    isVisibleChanged() {
+      let body = document.querySelector("body");
+
+      if (this.isVisible) {
+        body.classList.add("overlay");
+        body.addEventListener("click", this.bodyClicked)
+      } else {
+        body.classList.remove("overlay");
+
+        body.removeEventListener("click", this.bodyClicked);
+
+        document.querySelector(".el-autocomplete-suggestion").remove();
+      }
+    }
+
+    bodyClicked(event) {
+      let targetElement = event.target || event.srcElement;
+      
+      if (targetElement.tagName === "input") {
+        return;
+      } else {
+        console.log("clicked", targetElement.tagName);
+      }
+    }
+
     async searchArticles(searchterm: string, cb) {
       if (searchterm == null || searchterm === "") {
-        return 
+        return;
       }
 
       try {
@@ -56,7 +82,7 @@
         
         cb(res.data);
       } catch (error) {
-        return [];
+        cb(null);
       }
     }
 
@@ -86,7 +112,7 @@
     bottom: -30px;
     left: 50%;
     transform: translateX(-50%);
-    z-index: 10;
+    z-index: 3000;
     width: 72%;
     height: 55px;
     transition: all .1s ease 0s;
