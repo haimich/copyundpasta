@@ -1,6 +1,6 @@
 import { setupExpress } from "./utils/expressUtil";
-import { getRecipe } from "./repos/recipeRepo";
-import { validateSlug } from "./utils/validatorUtil";
+import { getRecipe, rateRecipe } from "./repos/recipeRepo";
+import { validateSlug, validateRating } from "./utils/validatorUtil";
 
 let app = setupExpress();
 
@@ -30,6 +30,23 @@ app.post("/getRecipe", async (req, res) => {
     } else {
         return res.json(recipe);
     }
+});
+
+app.post("/rateRecipe", async (req, res) => {
+    console.log("rateRecipe");
+
+    // validate params
+    let rating;
+
+    try {
+       rating = validateRating(req.body);
+    } catch (err) {
+        console.error(err);
+
+        return res.status(406).send(err.message);
+    }
+
+    await rateRecipe(rating);
 });
 
 export default app;

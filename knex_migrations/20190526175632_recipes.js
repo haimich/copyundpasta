@@ -12,7 +12,6 @@ exports.up = async function(knex, Promise) {
             table.text("ingredients");
             table.text("steps");
             table.text("notes");
-            table.text("ratings");
             
             table.timestamp("createdAt").defaultTo(knex.fn.now());
             table.timestamp("modifiedAt").defaultTo(knex.fn.now());

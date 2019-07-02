@@ -12,9 +12,6 @@ exports.up = async function(knex, Promise) {
             
             table.timestamp("createdAt").defaultTo(knex.fn.now());
             table.timestamp("modifiedAt").defaultTo(knex.fn.now());
-
-            table.foreign("articleId").references("articles.id");
-            table.foreign("parentCommentId").references("article_comments.id");
         });
 };
 

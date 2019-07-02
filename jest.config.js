@@ -17,5 +17,10 @@ module.exports = {
   "collectCoverageFrom": [
     "<rootDir>/src/components/**/*.vue",
     "<rootDir>/src/pages/**/*.vue"
-  ]
+  ],
+  globals: {
+    "ts-jest": {
+      diagnostics: false
+    }
+  }
 };

@@ -50,3 +50,13 @@ function parseJsonString(str: string, defaultValue: any): {} {
     return defaultValue;
   }
 }
+
+export function rateRecipe(rating: number): Promise<void> {
+  const knex = getConnection();
+
+  return knex
+    .select("*")
+    .table("articles")
+    .where("isHeroArticle", 1)
+    .orderBy("createdAt", "desc");
+}

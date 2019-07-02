@@ -16,6 +16,20 @@ export function validateSlug(body: any): string {
   }
 }
 
+export function validateRating(body: any): string {
+  if (body == null || body.rating === undefined || body.rating === null) {
+    throw new Error("Missing mandatory field 'rating'");
+  }
+
+  const rating = body.rating;
+
+  if (rating == "" || rating <= 0 || rating > 5) {
+    throw new Error("Invalid value for field 'rating'");
+  } else {
+    return rating;
+  }
+}
+
 export function validatePagingParams(body: any): PagingParams {
   if (body == null) {
     throw new Error("Missing mandatory field 'page' and 'pageSize'");

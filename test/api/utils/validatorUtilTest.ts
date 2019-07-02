@@ -1,4 +1,4 @@
-import { validateSlug, validatePagingParams } from "@/api/utils/validatorUtil";
+import { validateSlug, validatePagingParams, validateRating } from "@/api/utils/validatorUtil";
 
 describe('validateSlug', () => {
   test('should allow string', () => {
@@ -53,6 +53,46 @@ describe('validatePagingParams', () => {
       validatePagingParams({
         pageant: 0,
         pageSize: 21
+      });
+    }).toThrow();
+  });
+});
+
+describe('validateRating', () => {
+  test('should allow integer', () => {
+    validateRating({
+      rating: 4,
+    });
+  });
+
+  test('should throw error when param is missing', () => {
+    expect(() => {
+      validateRating({
+        rating2: "",
+      });
+    }).toThrow();
+  });
+
+  test('should throw error on empty value', () => {
+    expect(() => {
+      validateRating({
+        rating: "",
+      });
+    }).toThrow();
+  });
+
+  test('should throw error if value is too small', () => {
+    expect(() => {
+      validateRating({
+        rating: 0,
+      });
+    }).toThrow();
+  });
+
+  test('should throw error if value is too big', () => {
+    expect(() => {
+      validateRating({
+        rating: 5.5,
       });
     }).toThrow();
   });

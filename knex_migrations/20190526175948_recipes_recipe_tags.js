@@ -6,9 +6,6 @@ exports.up = async function(knex, Promise) {
             table.string("recipeSlug", 500);
             table.string("tagId", 100);
 
-            table.foreign("recipeSlug").references("recipes.slug");
-            table.foreign("tagId").references("recipe_tags.id");
-
             table.unique(["recipeSlug", "tagId"]); // prevent duplicate tags
         });
 };
