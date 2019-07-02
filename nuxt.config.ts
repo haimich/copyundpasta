@@ -89,6 +89,7 @@ const config: NuxtConfiguration = {
     "normalize.css",
     "@/scss/element-theme/index.css",
     "@/scss/element-theme/display.css",
+    "@fortawesome/fontawesome-svg-core/styles.css",
   ],
 
   /*
