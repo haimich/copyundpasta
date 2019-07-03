@@ -2,7 +2,7 @@ import articles from "../src/content/articles/all";
 
 import ArticleCategories, { Category, ArticleCategory } from "../src/interfaces/ArticleCategories";
 import { Article } from "@/interfaces/Article";
-import { elasticArticles } from "../scripts/initElasticsearch";
+import SearchService from "../scripts/searchService";
 
 exports.seed = async function(knex, Promise) {
   await deleteAllEntries(knex);
@@ -31,30 +31,11 @@ async function createAllEntries(knex) {
   console.log("Indexing articles");
 
   try {
-    await indexArticles(articles);
+    await SearchService.indexArticles(articles);
   } catch (err) {
     console.log(err);
     process.exit(1);
   }
-}
-
-async function indexArticles(articles: Article[]) {
-  return;
-  const article = articles[0];
-
-  await elasticArticles.index({
-    index: "cup-articles",
-    id: article.slug,
-    body: {
-        "title": article.title,
-        "categoryId": article.categoryId,
-        "isHeroArticle": article.isHeroArticle,
-        "shortDescription": article.shortDescription,
-        "previewImageUrl": article.previewImageUrl,
-        "createdAt": article.createdAt,
-        "modifiedAt": article.modifiedAt
-    },
-  });
 }
 
 function getAllCategories(categories: ArticleCategory) {
