@@ -39,6 +39,7 @@ async function createAllEntries(knex) {
 }
 
 async function indexArticles(articles: Article[]) {
+  return;
   const article = articles[0];
 
   await elasticArticles.index({
