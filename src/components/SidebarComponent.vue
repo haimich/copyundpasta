@@ -143,7 +143,7 @@
 
     .divider::before {
       width: 100%;
-      height: 14px;
+      height: 9px;
       background-image: url(/images/divider/curly.png);
       background-position: center center;
       background-repeat: repeat;
