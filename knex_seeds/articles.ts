@@ -53,23 +53,7 @@ async function indexArticles(articles: Article[]) {
         "createdAt": article.createdAt,
         "modifiedAt": article.modifiedAt
     },
-  })
-  
-  // for (let article of articles) {
-  //   await appbase.index({
-  //     type: "articles",
-  //     id: article.slug,
-  //     body: {
-  //       "title": article.title,
-  //       "categoryId": article.categoryId,
-  //       "isHeroArticle": article.isHeroArticle,
-  //       "shortDescription": article.shortDescription,
-  //       "previewImageUrl": article.previewImageUrl,
-  //       "createdAt": article.createdAt,
-  //       "modifiedAt": article.modifiedAt
-  //     }
-  //   });
-  // }
+  });
 }
 
 function getAllCategories(categories: ArticleCategory) {
