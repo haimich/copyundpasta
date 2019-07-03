@@ -11,6 +11,21 @@ const baseUrl = `https://${process.env.APPBASE_WRITE_KEY_ARTICLES}@scalr.api.app
 
 export default class SearchService {
 
+  public static deleteArticlesIndex() {
+    return axios({
+      method: "post",
+      url: `${baseUrl}/cup-articles/_doc/_delete_by_query`,
+      data: {
+        query: {
+          "match_all": {},
+        }
+      },
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+  }
+
   public static indexArticles(articles: Article[]) {
     let body = "";
 
@@ -20,8 +35,6 @@ export default class SearchService {
       body += `{"index": { "_index": "cup-articles", "_id": "${slug}" }}\n`;
       body += JSON.stringify(_.omit(article, ["slug"])) + "\n";
     }
-
-    console.log(body);
 
     return axios({
       method: "post",

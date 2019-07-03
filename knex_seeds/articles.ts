@@ -16,6 +16,14 @@ async function deleteAllEntries(knex) {
 
   console.log("Deleting article categories");
   await knex("article_categories").del();
+
+  try {
+    console.log("Deleting articles index");
+    await SearchService.deleteArticlesIndex();
+  } catch (err) {
+    console.log(err);
+    process.exit(1);
+  }
 }
 
 async function createAllEntries(knex) {
@@ -27,10 +35,9 @@ async function createAllEntries(knex) {
 
   console.log("Inserting articles");
   await knex("articles").insert(articles);
-
-  console.log("Indexing articles");
-
+  
   try {
+    console.log("Indexing articles");
     await SearchService.indexArticles(articles);
   } catch (err) {
     console.log(err);
