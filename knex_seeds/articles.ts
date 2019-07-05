@@ -2,7 +2,7 @@ import articles from "../src/content/articles/all";
 
 import ArticleCategories, { Category, ArticleCategory } from "../src/interfaces/ArticleCategories";
 import { Article } from "@/interfaces/Article";
-import SearchService from "../scripts/searchService";
+import SearchService from "./services/searchService";
 
 exports.seed = async function(knex, Promise) {
   await deleteAllEntries(knex);
