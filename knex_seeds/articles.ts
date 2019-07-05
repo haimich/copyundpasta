@@ -1,7 +1,6 @@
 import articles from "../src/content/articles/all";
 
 import ArticleCategories, { Category, ArticleCategory } from "../src/interfaces/ArticleCategories";
-import { Article } from "@/interfaces/Article";
 import SearchService from "./services/searchService";
 
 exports.seed = async function(knex, Promise) {
@@ -21,7 +20,12 @@ async function deleteAllEntries(knex) {
     console.log("Deleting articles index");
     await SearchService.deleteArticlesIndex();
   } catch (err) {
-    console.log(err);
+    if (err.response != null && err.response.data != null) {
+      console.log(err.response.data.error);
+    } else {
+      console.log(err);
+    }
+
     process.exit(1);
   }
 }
@@ -40,7 +44,12 @@ async function createAllEntries(knex) {
     console.log("Indexing articles");
     await SearchService.indexArticles(articles);
   } catch (err) {
-    console.log(err);
+    if (err.response != null && err.response.data != null) {
+      console.log(err.response.data.error);
+    } else {
+      console.log(err);
+    }
+
     process.exit(1);
   }
 }

@@ -1,9 +1,28 @@
 {
-  "copyundpasta": {
-    "mappings": {
-      "properties": {
-        
-      }
+  "properties": {
+    "title": {
+      "type": "text"
+    },
+    "categoryId": {
+      "type": "keyword"
+    },
+    "categoryFullName": {
+      "type": "text"
+    },
+    "isHeroArticle": {
+      "type": "boolean"
+    },
+    "shortDescription": {
+      "type": "text"
+    },
+    "previewImageUrl": {
+      "type": "text"
+    },
+    "createdAt": {
+      "type": "date"
+    },
+    "modifiedAt": {
+      "type": "date"
     }
   }
 }
