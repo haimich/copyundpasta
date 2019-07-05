@@ -27,7 +27,7 @@ export default class SearchService {
     });
   }
 
-  public static indexArticles(articles: Article[]) {
+  public static async indexArticles(articles: Article[]) {
     let body = "";
 
     for (let article of articles) {
@@ -37,7 +37,7 @@ export default class SearchService {
       body += JSON.stringify(_.omit(article, ["slug"])) + "\n";
     }
 
-    return axios({
+    let response = await axios({
       method: "post",
       url: `${baseUrl}/${index}/_doc/_bulk`,
       data: body,
@@ -45,6 +45,10 @@ export default class SearchService {
         "Content-Type": "application/x-ndjson",
       },
     });
+
+    if (response.data.errors === true) {
+      throw new Error(JSON.stringify(response.data.items, null, 2));
+    }
   }
 
 }

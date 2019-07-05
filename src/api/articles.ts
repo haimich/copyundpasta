@@ -60,7 +60,12 @@ app.post("/search", async (req, res): Promise<Article[]> => {
     return res.status(406).send(err.message);
   }
 
-  const searchRes = await search(searchterm);
+  let searchRes;
+  try {
+    searchRes = await search(searchterm);
+  } catch (error) {
+    return res.json([]);
+  }
 
   const hasHits = searchRes.body != null && searchRes.body.hits != null && searchRes.body.hits.hits != null && searchRes.body.hits.hits.length >= 1;
 

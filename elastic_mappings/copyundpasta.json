@@ -19,10 +19,12 @@
       "type": "text"
     },
     "createdAt": {
-      "type": "date"
+      "type": "date",
+      "format": "yyyy-MM-dd HH:mm:ss"
     },
     "modifiedAt": {
-      "type": "date"
+      "type": "date",
+      "format": "yyyy-MM-dd HH:mm:ss"
     }
   }
 }

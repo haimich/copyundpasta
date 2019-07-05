@@ -34,7 +34,7 @@ async function main() {
 
   console.log("Create mapping");
   try {
-    await axios({
+    let response = await axios({
       method: "put",
       url: `${baseUrl}/${index}/_mapping`,
       data: mapping,

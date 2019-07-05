@@ -9,6 +9,7 @@
     <el-autocomplete
       v-model="searchterm"
       :fetch-suggestions="searchArticles"
+      :highlight-first-item="true"
       :trigger-on-focus="false"
       placeholder="Suche"
       autofocus
@@ -84,7 +85,6 @@
       let suggestBox = document.querySelector(".el-autocomplete-suggestion");
       
       if (suggestBox != null) {
-        console.log("box remove")
         suggestBox.remove();
       }
       

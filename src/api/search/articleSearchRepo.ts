@@ -8,16 +8,12 @@ if (process.env.APPBASE_READ_KEY == null || process.env.APPBASE_READ_KEY === "")
 const articles = new Client({
     node: `https://${process.env.APPBASE_READ_KEY}@scalr.api.appbase.io`,
 });
+const index = "copyundpasta";
 
 export function search(searchTerm: string): Promise<ApiResponse> {
+  // @see https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#_search
   return articles.search({
-      index: "cup-articles",
-      body: {
-          query: {
-              "match": {
-                  "title": searchTerm
-              }
-          }
-      }
+      index,
+      q: `title:*${searchTerm}*`
   })
 };
