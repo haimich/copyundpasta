@@ -19,7 +19,7 @@
         slot="suffix"
         style="font-size: 20px; color: #adb5bd;"
         type="text"
-        @click="$emit('close')"
+        @click="close()"
       >
         <font-awesome-icon
           :icon="['fas', 'times-circle']"
@@ -64,8 +64,8 @@
           input.focus();
 
           input.onkeydown = (event) => {
-            if (event.keyCode === 27) {
-                this.$emit("close");
+            if (event.keyCode === 27) { // esc
+                this.close();
             }
           }
 
@@ -76,14 +76,19 @@
         body.classList.remove("overlay");
 
         body.removeEventListener("click", this.bodyClicked);
-
-        //sometimes the suggestions stay visible after a search
-        let suggestBox = document.querySelector(".typeahead .el-autocomplete-suggestion");
-        
-        if (suggestBox != null) {
-          suggestBox.remove();
-        }
       }
+    }
+
+    close() {
+      //sometimes the suggestions stay visible after a search
+      let suggestBox = document.querySelector(".el-autocomplete-suggestion");
+      
+      if (suggestBox != null) {
+        console.log("box remove")
+        suggestBox.remove();
+      }
+      
+      this.$emit("close");
     }
 
     bodyClicked(event) {
@@ -96,7 +101,7 @@
       if (targetElement.tagName === "INPUT") {
         return;
       } else {
-        this.$emit("close");
+        this.close();
       }
     }
 
@@ -119,7 +124,7 @@
         path: "/" + item._id
       });
 
-      this.$emit("close");
+      this.close();
     }
 
   }
