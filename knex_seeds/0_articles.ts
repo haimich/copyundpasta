@@ -32,7 +32,7 @@ async function deleteAllEntries(knex) {
 async function createAllEntries(knex) {
   console.log("Inserting article_cateories");
 
-  const categories = CategoryUtil.getAllCategories();
+  const categories = CategoryUtil.getAllArticleCategories();
   await knex("article_categories").insert(categories.parentCategories);
   await knex("article_categories").insert(categories.childCategories);
 

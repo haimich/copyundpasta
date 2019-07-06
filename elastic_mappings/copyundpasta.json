@@ -18,6 +18,9 @@
     "previewImageUrl": {
       "type": "text"
     },
+    "ingredients": {
+      "type": "text"
+    },
     "createdAt": {
       "type": "date",
       "format": "yyyy-MM-dd HH:mm:ss"

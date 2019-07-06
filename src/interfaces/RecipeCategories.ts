@@ -1,14 +1,21 @@
-export interface Category {
+
+export interface RecipeCategory {
   id: string;
   name: string;
   parentCategory?: string;
 }
 
-export interface RecipeCategory {
-  [key: string]: Category;
+export interface RecipeCategoriesById {
+  [key: string]: RecipeCategory;
 }
 
-const categories: RecipeCategory = {
+export interface AllRecipeCategories {
+  parentCategories: RecipeCategory[];
+  childCategories: RecipeCategory[];
+  categoriesById: RecipeCategoriesById;
+}
+
+const categories: RecipeCategoriesById = {
   desserts: {
     id: "desserts",
     name: "Desserts",

@@ -1,4 +1,3 @@
-import { Category } from "@/interfaces/ArticleCategories";
 
 export interface ArticleComment {
   id: number;

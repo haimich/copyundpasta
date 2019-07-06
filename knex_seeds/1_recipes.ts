@@ -1,6 +1,8 @@
 import recipes from "../src/content/recipes/all";
-import RecipeCategories, { Category, RecipeCategory } from "../src/interfaces/RecipeCategories";
+import RecipeCategories, {  } from "../src/interfaces/RecipeCategories";
 import RecipeTags, { Tag, RecipeTag } from "../src/interfaces/RecipeTags";
+import CategoryUtil from "@/utils/CategoryUtil";
+import SearchService from "./services/searchService";
 
 exports.seed = async function(knex, Promise) {
   await deleteAllEntries(knex);
@@ -25,7 +27,7 @@ async function deleteAllEntries(knex) {
 async function createAllEntries(knex) {
   console.log("Inserting recipe_categories");
 
-  const categories = getAllCategories(RecipeCategories);
+  const categories = CategoryUtil.getAllArticleCategories(RecipeCategories);
   await knex("recipe_categories").insert(categories.parentCategories);
   await knex("recipe_categories").insert(categories.childCategories);
 
@@ -57,24 +59,19 @@ async function createAllEntries(knex) {
 
   const recipesRecipeTags = getRecipeTagInserts(recipeTags);
   await knex("recipes_recipe_tags").insert(recipesRecipeTags);
-}
 
-function getAllCategories(categories: RecipeCategory) {
-  let parentCategories: Category[] = [];
-  let childCategories: Category[] = [];
-
-  for (let category of Object.values(categories)) {
-    if (category.parentCategory != null) {
-      childCategories.push(category);
+  try {
+    console.log("Indexing recipe fields");
+    await SearchService.indexRecipes(recipes, categories.categoriesById);
+  } catch (err) {
+    if (err.response != null && err.response.data != null) {
+      console.log(err.response.data.error);
     } else {
-      parentCategories.push(category);
+      console.log(err);
     }
-  }
 
-  return {
-    parentCategories,
-    childCategories
-  };
+    process.exit(1);
+  }
 }
 
 function getAllTags(tags: RecipeTag): Tag[] {

@@ -1,25 +1,21 @@
 
-export interface Category {
+export interface ArticleCategory {
   id: string;
   name: string;
   parentCategory?: string;
 }
 
-export interface ArticleCategory {
-  [key: string]: Category;
+export interface ArticleCategoriesById {
+  [key: string]: ArticleCategory;
 }
 
-export interface CategoriesById {
-  [key: string]: Category;
+export interface AllArticleCategories {
+  parentCategories: ArticleCategory[];
+  childCategories: ArticleCategory[];
+  categoriesById: ArticleCategoriesById;
 }
 
-export interface AllCategories {
-  parentCategories: Category[];
-  childCategories: Category[];
-  categoriesById: CategoriesById;
-}
-
-const categories: ArticleCategory = {
+const categories: ArticleCategoriesById = {
   rezept: {
     id: "rezepte",
     name: "Rezepte",
