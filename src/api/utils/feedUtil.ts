@@ -32,7 +32,7 @@ function createFeed(articles: Article[], type: "rss" | "atom") {
       description: article.shortDescription,
       content: "content",
       date: new Date(article.createdAt),
-      image: article.previewImageUrl,
+      image: `https://copyundpasta.de${article.previewImageUrl}`,
     });
   }
 
