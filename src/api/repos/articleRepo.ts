@@ -13,7 +13,7 @@ export function getHeroArticles(): Promise<Article[]> {
     .orderBy("createdAt", "desc");
 }
 
-export function getArticles(params: PagingParams = null): Promise<Article[]> {
+export function getNonHeroArticles(params: PagingParams = null): Promise<Article[]> {
   const knex = getConnection();
 
   const subselect = knex
@@ -35,4 +35,13 @@ export function getArticles(params: PagingParams = null): Promise<Article[]> {
   }
 
   return dbObj;
+}
+
+export function getAllArticles(): Promise<Article[]> {
+  const knex = getConnection();
+
+  return knex
+  .select("*")
+  .from("articles")
+  .orderBy("createdAt", "desc");
 }

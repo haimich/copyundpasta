@@ -1,6 +1,6 @@
 import { setupExpress } from "./utils/expressUtil";
 import { Article } from "../interfaces/Article";
-import { getHeroArticles, getArticles } from "./repos/articleRepo";
+import { getHeroArticles, getNonHeroArticles } from "./repos/articleRepo";
 import { search } from "./search/articleSearchRepo";
 import { validatePagingParams, validateSearchterm } from "./utils/validatorUtil";
 
@@ -37,7 +37,7 @@ app.post("/getArticles", async (req, res): Promise<Article[]> => {
     return res.status(406).send(err.message);
   }
 
-  const articles = await getArticles(pagingParams);
+  const articles = await getNonHeroArticles(pagingParams);
 
   if (articles == null) {
     return res.json([]);

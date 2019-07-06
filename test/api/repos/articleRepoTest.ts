@@ -1,4 +1,4 @@
-import { getArticles, getHeroArticles } from "@/api/repos/articleRepo";
+import { getNonHeroArticles, getHeroArticles } from "@/api/repos/articleRepo";
 
 describe('getHeroArticles', () => {
     test('should return newest getHeroArticles', async () => {
@@ -9,9 +9,9 @@ describe('getHeroArticles', () => {
     
 });
 
-describe('getArticles', () => {
-    test('should return newest getArticles', async () => {
-        let articles = await getArticles({
+describe('getNonHeroArticles', () => {
+    test('should return newest getNonHeroArticles', async () => {
+        let articles = await getNonHeroArticles({
             page: 0,
             pageSize: 10,
         });
