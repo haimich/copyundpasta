@@ -1,6 +1,6 @@
 import articles from "../src/content/articles/all";
 import recipes from "../src/content/recipes/all";
-import SearchService from "./services/SearchService";
+import SearchService from "./services/blaSearchService";
 import CategoryUtil from "../src/utils/CategoryUtil";
 
 exports.seed = async function(knex, Promise) {
