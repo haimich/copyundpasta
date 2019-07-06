@@ -87,6 +87,8 @@
       if (suggestBox != null) {
         suggestBox.remove();
       }
+
+      this.searchterm = "";
       
       this.$emit("close");
     }

@@ -1,8 +1,7 @@
 import recipes from "../src/content/recipes/all";
-import RecipeCategories, {  } from "../src/interfaces/RecipeCategories";
 import RecipeTags, { Tag, RecipeTag } from "../src/interfaces/RecipeTags";
-import CategoryUtil from "@/utils/CategoryUtil";
-import SearchService from "./services/searchService";
+import CategoryUtil from "../src/utils/CategoryUtil";
+import _ from "lodash";
 
 exports.seed = async function(knex, Promise) {
   await deleteAllEntries(knex);
@@ -27,7 +26,7 @@ async function deleteAllEntries(knex) {
 async function createAllEntries(knex) {
   console.log("Inserting recipe_categories");
 
-  const categories = CategoryUtil.getAllArticleCategories(RecipeCategories);
+  const categories = CategoryUtil.getAllRecipeCategories();
   await knex("recipe_categories").insert(categories.parentCategories);
   await knex("recipe_categories").insert(categories.childCategories);
 
@@ -36,7 +35,7 @@ async function createAllEntries(knex) {
 
   for (let recipe of recipes) {
     // transform json params to strings
-    let dbRecipe: any = recipe;
+    let dbRecipe: any = _.clone(recipe);
 
     dbRecipe.servings = JSON.stringify(recipe.servings);
     dbRecipe.ingredients = JSON.stringify(recipe.ingredients);
@@ -47,7 +46,7 @@ async function createAllEntries(knex) {
     recipeTags[dbRecipe.slug] = recipe.tags;
     delete dbRecipe.tags;
 
-    await knex("recipes").insert(recipe);
+    await knex("recipes").insert(dbRecipe);
   }
 
   console.log("Inserting recipe_tags");
@@ -59,19 +58,6 @@ async function createAllEntries(knex) {
 
   const recipesRecipeTags = getRecipeTagInserts(recipeTags);
   await knex("recipes_recipe_tags").insert(recipesRecipeTags);
-
-  try {
-    console.log("Indexing recipe fields");
-    await SearchService.indexRecipes(recipes, categories.categoriesById);
-  } catch (err) {
-    if (err.response != null && err.response.data != null) {
-      console.log(err.response.data.error);
-    } else {
-      console.log(err);
-    }
-
-    process.exit(1);
-  }
 }
 
 function getAllTags(tags: RecipeTag): Tag[] {

@@ -1,5 +1,6 @@
 import articles from "../src/content/articles/all";
-import SearchService from "./services/searchService";
+import recipes from "../src/content/recipes/all";
+import SearchService from "./services/SearchService";
 import CategoryUtil from "../src/utils/CategoryUtil";
 
 exports.seed = async function(knex, Promise) {
@@ -41,7 +42,7 @@ async function createAllEntries(knex) {
   
   try {
     console.log("Indexing articles");
-    await SearchService.indexArticles(articles, categories.categoriesById);
+    await SearchService.indexArticles(articles, recipes, categories.categoriesById);
   } catch (err) {
     if (err.response != null && err.response.data != null) {
       console.log(err.response.data.error);
