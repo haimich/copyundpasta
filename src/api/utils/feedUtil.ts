@@ -6,7 +6,7 @@ function createFeed(articles: Article[], type: "rss" | "atom") {
     title: "Copy & Pasta",
     link: `https://copyundpasta.de/feed/${type}.xml`,
     description: "Copy & Pasta Rezepte und Artikel",
-    id: "https://copyundpasta.de",
+    id: "https://copyundpasta.de/",
     copyright: "2019 Copy & Pasta",
     language: "de",
     image: "https://copyundpasta.de/images/logo.png",
@@ -23,13 +23,15 @@ function createFeed(articles: Article[], type: "rss" | "atom") {
   });
 
   for (let article of articles) {
+    let url = `https://copyundpasta.de/${article.slug}`;
+
     feed.addItem({
       title: article.title,
-      id: article.slug,
-      link: `https://copyundpasta.de/${article.slug}`,
+      id: url,
+      link: url,
       description: article.shortDescription,
       content: "content",
-      date: new Date(),
+      date: new Date(article.createdAt),
       image: article.previewImageUrl,
     });
   }
