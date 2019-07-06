@@ -9,6 +9,16 @@ export interface ArticleCategory {
   [key: string]: Category;
 }
 
+export interface CategoriesById {
+  [key: string]: Category;
+}
+
+export interface AllCategories {
+  parentCategories: Category[];
+  childCategories: Category[];
+  categoriesById: CategoriesById;
+}
+
 const categories: ArticleCategory = {
   rezept: {
     id: "rezepte",

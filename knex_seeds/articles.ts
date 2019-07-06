@@ -1,7 +1,6 @@
 import articles from "../src/content/articles/all";
-
-import ArticleCategories, { Category, ArticleCategory } from "../src/interfaces/ArticleCategories";
 import SearchService from "./services/searchService";
+import CategoryUtil from "../src/utils/CategoryUtil";
 
 exports.seed = async function(knex, Promise) {
   await deleteAllEntries(knex);
@@ -33,7 +32,7 @@ async function deleteAllEntries(knex) {
 async function createAllEntries(knex) {
   console.log("Inserting article_cateories");
 
-  const categories = getAllCategories(ArticleCategories);
+  const categories = CategoryUtil.getAllCategories();
   await knex("article_categories").insert(categories.parentCategories);
   await knex("article_categories").insert(categories.childCategories);
 
@@ -42,7 +41,7 @@ async function createAllEntries(knex) {
   
   try {
     console.log("Indexing articles");
-    await SearchService.indexArticles(articles);
+    await SearchService.indexArticles(articles, categories);
   } catch (err) {
     if (err.response != null && err.response.data != null) {
       console.log(err.response.data.error);
@@ -52,22 +51,4 @@ async function createAllEntries(knex) {
 
     process.exit(1);
   }
-}
-
-function getAllCategories(categories: ArticleCategory) {
-  let parentCategories: Category[] = [];
-  let childCategories: Category[] = [];
-
-  for (let category of Object.values(categories)) {
-    if (category.parentCategory != null) {
-      childCategories.push(category);
-    } else {
-      parentCategories.push(category);
-    }
-  }
-
-  return {
-    parentCategories,
-    childCategories
-  };
 }

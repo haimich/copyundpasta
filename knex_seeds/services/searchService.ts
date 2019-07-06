@@ -2,6 +2,7 @@ require("dotenv").config();
 import axios from "axios";
 import _ from "lodash";
 import { Article } from "@/interfaces/Article";
+import { AllCategories } from "@/interfaces/ArticleCategories";
 
 if (process.env.APPBASE_WRITE_KEY == null || process.env.APPBASE_WRITE_KEY === "") {
   throw new Error("Missing env variable 'APPBASE_WRITE_KEY'");
@@ -27,7 +28,7 @@ export default class SearchService {
     });
   }
 
-  public static async indexArticles(articles: Article[]) {
+  public static async indexArticles(articles: Article[], categories: AllCategories) {
     let body = "";
 
     for (let article of articles) {

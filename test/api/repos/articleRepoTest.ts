@@ -4,7 +4,7 @@ describe('getHeroArticles', () => {
     test('should return newest getHeroArticles', async () => {
         let articles = await getHeroArticles();
 
-        console.log(articles);
+        // console.log(articles);
     });
     
 });
@@ -16,7 +16,7 @@ describe('getArticles', () => {
             pageSize: 10,
         });
 
-        console.log(articles);
+        // console.log(articles);
     });
     
 });
