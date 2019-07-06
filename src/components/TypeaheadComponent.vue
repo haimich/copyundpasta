@@ -53,6 +53,8 @@
 
     private searchterm = "";
 
+    private suggestionsCallback = null;
+
     @Watch("isVisible")
     isVisibleChanged() {
       let body = document.querySelector("body");
@@ -89,6 +91,8 @@
       }
 
       this.searchterm = "";
+
+      this.suggestionsCallback([]); // clear suggestions or they will pop up on reopen
       
       this.$emit("close");
     }
@@ -108,6 +112,8 @@
     }
 
     async searchArticles(searchterm: string, cb) {
+      this.suggestionsCallback = cb;
+
       if (searchterm == null || searchterm === "") {
         return;
       }
