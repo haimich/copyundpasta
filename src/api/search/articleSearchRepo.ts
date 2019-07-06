@@ -14,6 +14,6 @@ export function search(searchTerm: string): Promise<ApiResponse> {
   // @see https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#_search
   return articles.search({
       index,
-      q: `title:*${searchTerm}*`
+      q: `title:*${searchTerm}* OR categoryFullName:*${searchTerm}`
   })
 };

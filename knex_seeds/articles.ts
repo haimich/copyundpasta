@@ -41,7 +41,7 @@ async function createAllEntries(knex) {
   
   try {
     console.log("Indexing articles");
-    await SearchService.indexArticles(articles, categories);
+    await SearchService.indexArticles(articles, categories.categoriesById);
   } catch (err) {
     if (err.response != null && err.response.data != null) {
       console.log(err.response.data.error);
