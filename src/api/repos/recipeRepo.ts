@@ -43,20 +43,22 @@ export async function getRecipe(slug: string): Promise<Recipe> {
   return recipe;
 }
 
+export function rateRecipe(recipeSlug: string, rating: number, uniqueIdentifier: string): Promise<void> {
+  const knex = getConnection();
+
+  return knex
+    .insert({
+      recipeSlug,
+      rating,
+      uniqueIdentifier,
+    })
+    .into("recipe_ratings");
+}
+
 function parseJsonString(str: string, defaultValue: any): {} {
   if (str !== null && str !== undefined && str !== "") {
     return JSON.parse(str);
   } else {
     return defaultValue;
   }
-}
-
-export function rateRecipe(rating: number): Promise<void> {
-  const knex = getConnection();
-
-  return knex
-    .select("*")
-    .table("articles")
-    .where("isHeroArticle", 1)
-    .orderBy("createdAt", "desc");
 }

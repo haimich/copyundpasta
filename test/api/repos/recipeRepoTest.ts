@@ -1,4 +1,5 @@
-import {getRecipe} from "@/api/repos/recipeRepo";
+import { getRecipe, rateRecipe } from "@/api/repos/recipeRepo";
+import uniqid from "uniqid";
 
 describe('getRecipes', () => {
     test('should return newest recipes', async () => {
@@ -6,5 +7,10 @@ describe('getRecipes', () => {
 
         expect(recipe.slug).toBeDefined();
     });
-    
+})
+
+describe('rateRecipe', () => {
+    test('should persist rating', async () => {
+        await rateRecipe("baileys-chocolate-cupcakes", 4, uniqid());
+    });
 })
