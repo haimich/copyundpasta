@@ -7,7 +7,7 @@ describe('search', () => {
 
             expect(res.statusCode).toBe(200);
             
-            console.log(res);
+            // console.log(res);
             // console.log(res.body.hits.hits);
         } catch (error) {
             console.log(error);

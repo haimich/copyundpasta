@@ -29,5 +29,10 @@
       "@types/jest",
       "./typings"
     ]
-  }
+  },
+  "exclude": [
+    "knex_seeds",
+    "scripts",
+    "test"
+  ]
 }
