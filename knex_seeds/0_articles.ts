@@ -21,9 +21,9 @@ async function deleteAllEntries(knex) {
     await SearchService.deleteArticlesIndex();
   } catch (err) {
     if (err.response != null && err.response.data != null) {
-      console.log(err.response.data.error);
+      console.log("index error", err.response.data.error);
     } else {
-      console.log(err);
+      console.log("index error", err);
     }
 
     process.exit(1);
@@ -45,9 +45,9 @@ async function createAllEntries(knex) {
     await SearchService.indexArticles(articles, recipes, categories.categoriesById);
   } catch (err) {
     if (err.response != null && err.response.data != null) {
-      console.log(err.response.data.error);
+      console.log("index error", err.response.data.error);
     } else {
-      console.log(err);
+      console.log("index error", err);
     }
 
     process.exit(1);

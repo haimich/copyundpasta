@@ -7,7 +7,7 @@ if (process.env.APPBASE_WRITE_KEY == null || process.env.APPBASE_WRITE_KEY === "
 }
 
 const baseUrl = `https://${process.env.APPBASE_WRITE_KEY}@scalr.api.appbase.io`;
-const index = "copyundpasta";
+const index = process.env.APPBASE_INDEX;
 
 async function main() {
   console.log("Deleting documents");
@@ -26,9 +26,9 @@ async function main() {
     });
   } catch (error) {
     if (error.response != null && error.response.data != null) {
-      console.log(error.response.data.error);
+      console.log("elastic error", error.response.data.error);
     } else {
-      console.log(error);
+      console.log("elastic error", error);
     }
   }
 
@@ -44,9 +44,9 @@ async function main() {
     });
   } catch (error) {
     if (error.response != null && error.response.data != null) {
-      console.log(error.response.data.error);
+      console.log("elastic error", error.response.data.error);
     } else {
-      console.log(error);
+      console.log("elastic error", error);
     }
   }
 }

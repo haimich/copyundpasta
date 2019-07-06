@@ -12,7 +12,7 @@ if (process.env.APPBASE_WRITE_KEY == null || process.env.APPBASE_WRITE_KEY === "
 }
 
 const baseUrl = `https://${process.env.APPBASE_WRITE_KEY}@scalr.api.appbase.io`;
-const index = "copyundpasta";
+const index = process.env.APPBASE_INDEX;
 
 export default class SearchService {
 
