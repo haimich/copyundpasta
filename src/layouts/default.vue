@@ -97,10 +97,18 @@
     <ArticleScrollToTopComponent />
     
     <footer>
-      © 2019 <nuxt-link to="/" title="HOME" style="color: white;">Copy & Pasta</nuxt-link>
-      · Impressum
-      · Datenschutz
-      · <a href="/sitemap.xml" target="_blank">Sitemap</a>
+      <el-row>
+        <img src="/images/untitled.svg" alt="Appbase" style="margin-bottom: 10px; width: 163px;">
+      </el-row>
+
+      <el-row>
+        <el-col>
+          © 2019 <nuxt-link to="/" title="HOME" style="color: white;">Copy & Pasta</nuxt-link>
+          · Impressum
+          · Datenschutz
+          · <a href="/sitemap.xml" target="_blank">Sitemap</a>
+        </el-col>
+      </el-row>
     </footer>
     
   </div>
