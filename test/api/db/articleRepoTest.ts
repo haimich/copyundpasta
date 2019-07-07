@@ -1,8 +1,8 @@
-import { getNonHeroArticles, getHeroArticles } from "@/api/db/articleRepo";
+import ArticleRepo from "@/api/db/articleRepo";
 
 describe('getHeroArticles', () => {
     test('should return newest getHeroArticles', async () => {
-        let articles = await getHeroArticles();
+        let articles = await ArticleRepo.getHeroArticles();
 
         // console.log(articles);
     });
@@ -11,7 +11,7 @@ describe('getHeroArticles', () => {
 
 describe('getNonHeroArticles', () => {
     test('should return newest getNonHeroArticles', async () => {
-        let articles = await getNonHeroArticles({
+        let articles = await ArticleRepo.getNonHeroArticles({
             page: 0,
             pageSize: 10,
         });

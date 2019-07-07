@@ -1,6 +1,6 @@
 import ExpressUtil from "./utils/ExpressUtil";
 import FeedUtil from "./utils/FeedUtil";
-import { getAllArticles } from "./db/articleRepo";
+import ArticleRepo from "./db/ArticleRepo";
 
 let app = ExpressUtil.setupExpress();
 
@@ -14,7 +14,7 @@ const maxAge = 60 * 60 * 12; // 12 hours
 app.get("/rss.xml", async (req, res) => {
   console.log("rss.xml");
 
-  const articles = await getAllArticles();
+  const articles = await ArticleRepo.getAllArticles();
   
   const feed = FeedUtil.createRssFeed(articles);
   
@@ -27,7 +27,7 @@ app.get("/rss.xml", async (req, res) => {
 app.get("/atom.xml", async (req, res) => {
   console.log("atom.xml");
 
-  const articles = await getAllArticles();
+  const articles = await ArticleRepo.getAllArticles();
 
   const feed = FeedUtil.createAtomFeed(articles);
 

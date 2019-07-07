@@ -1,6 +1,6 @@
 import ExpressUtil from "./utils/ExpressUtil";
 import { Article } from "../interfaces/Article";
-import { getHeroArticles, getNonHeroArticles } from "./db/articleRepo";
+import ArticleRepo from "./db/ArticleRepo";
 import { search } from "./search/articleSearchRepo";
 import ValidatorUtil from "./utils/ValidatorUtil";
 
@@ -14,7 +14,7 @@ let app = ExpressUtil.setupExpress();
 app.post("/getHeroArticles", async (req, res): Promise<Article[]> => {
   console.log("getHeroArticles");
 
-  const articles = await getHeroArticles();
+  const articles = await ArticleRepo.getHeroArticles();
 
   if (articles == null) {
     return res.json([]);
@@ -37,7 +37,7 @@ app.post("/getArticles", async (req, res): Promise<Article[]> => {
     return res.status(406).send(err.message);
   }
 
-  const articles = await getNonHeroArticles(pagingParams);
+  const articles = await ArticleRepo.getNonHeroArticles(pagingParams);
 
   if (articles == null) {
     return res.json([]);

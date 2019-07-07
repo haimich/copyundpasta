@@ -1,5 +1,5 @@
 import ExpressUtil from "./utils/ExpressUtil";
-import { getRecipe, rateRecipe } from "./db/recipeRepo";
+import RecipeRepo from "./db/RecipeRepo";
 import ValidatorUtil from "./utils/ValidatorUtil";
 import StringUtil from "./utils/StringUtil";
 import uniqid from "uniqid";
@@ -25,7 +25,7 @@ app.post("/getRecipe", async (req, res) => {
     return res.status(406).send(err.message);
   }
 
-  const recipe = await getRecipe(slug);
+  const recipe = await RecipeRepo.getRecipe(slug);
 
   if (recipe == null) {
     res.sendStatus(404);
@@ -62,7 +62,7 @@ app.post("/rateRecipe", async (req, res) => {
   let uniqueIdentifier = StringUtil.generateHashWithDate(ip);
 
   try {
-    await rateRecipe(slug, rating, uniqueIdentifier);
+    await RecipeRepo.rateRecipe(slug, rating, uniqueIdentifier);
   } catch (err) {
     // ignore
     console.error(err);
