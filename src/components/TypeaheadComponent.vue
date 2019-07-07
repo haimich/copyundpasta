@@ -11,6 +11,7 @@
       :fetch-suggestions="searchArticles"
       :highlight-first-item="true"
       :trigger-on-focus="false"
+      :hide-loading="true"
       placeholder="Suche"
       autofocus
       ref="autocomplete"

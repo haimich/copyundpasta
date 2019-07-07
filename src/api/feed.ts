@@ -12,29 +12,29 @@ const maxAge = 60 * 60 * 12; // 12 hours
  */
 
 app.get("/rss.xml", async (req, res) => {
-    console.log("rss.xml");
+  console.log("rss.xml");
 
-    const articles = await getAllArticles();
-    
-    const feed = createRssFeed(articles);
-    
-    res.setHeader("Cache-Control", "public, max-age=" + maxAge);
-    res.setHeader("Expires", new Date(Date.now() + maxAge * 1000).toUTCString());
+  const articles = await getAllArticles();
+  
+  const feed = createRssFeed(articles);
+  
+  res.setHeader("Cache-Control", "public, max-age=" + maxAge);
+  res.setHeader("Expires", new Date(Date.now() + maxAge * 1000).toUTCString());
 
-    return res.type("application/rss+xml").send(feed);
+  return res.type("application/rss+xml").send(feed);
 });
 
 app.get("/atom.xml", async (req, res) => {
-    console.log("atom.xml");
+  console.log("atom.xml");
 
-    const articles = await getAllArticles();
+  const articles = await getAllArticles();
 
-    const feed = createAtomFeed(articles);
+  const feed = createAtomFeed(articles);
 
-    res.setHeader("Cache-Control", "public, max-age=" + maxAge);
-    res.setHeader("Expires", new Date(Date.now() + maxAge * 1000).toUTCString());
-    
-    return res.type("application/atom+xml").send(feed);
+  res.setHeader("Cache-Control", "public, max-age=" + maxAge);
+  res.setHeader("Expires", new Date(Date.now() + maxAge * 1000).toUTCString());
+  
+  return res.type("application/atom+xml").send(feed);
 });
 
 export default app;

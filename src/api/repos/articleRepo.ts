@@ -41,7 +41,7 @@ export function getAllArticles(): Promise<Article[]> {
   const knex = getConnection();
 
   return knex
-  .select("*")
-  .from("articles")
-  .orderBy("createdAt", "desc");
+    .select("*")
+    .from("articles")
+    .orderBy("createdAt", "desc");
 }

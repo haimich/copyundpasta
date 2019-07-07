@@ -10,43 +10,54 @@ let app = setupExpress();
  */
 
 app.post("/getRecipe", async (req, res) => {
-    console.log("getRecipe");
+  console.log("getRecipe");
 
-    // validate params
-    let slug;
+  // validate params
+  let slug;
 
-    try {
-       slug = validateSlug(req.body);
-    } catch (err) {
-        console.error(err);
+  try {
+    slug = validateSlug(req.body);
+  } catch (err) {
+    console.error(err);
 
-        return res.status(406).send(err.message);
-    }
+    return res.status(406).send(err.message);
+  }
 
-    const recipe = await getRecipe(slug);
+  const recipe = await getRecipe(slug);
 
-    if (recipe == null) {
-        res.sendStatus(404);
-    } else {
-        return res.json(recipe);
-    }
+  if (recipe == null) {
+    res.sendStatus(404);
+  } else {
+    return res.json(recipe);
+  }
 });
 
 app.post("/rateRecipe", async (req, res) => {
-    console.log("rateRecipe");
+  console.log("rateRecipe", req.connection.remoteAddress);
+  console.log(req.headers);
 
-    // validate params
-    let rating;
+  // validate params
+  let rating, slug;
 
-    try {
-       rating = validateRating(req.body);
-    } catch (err) {
-        console.error(err);
+  try {
+    slug = validateSlug(req.body);
+    rating = validateRating(req.body);
+  } catch (err) {
+    console.error(err);
 
-        return res.status(406).send(err.message);
-    }
+    return res.status(406).send(err.message);
+  }
 
-    await rateRecipe(rating);
+  let uniqueIdentifier = "asd";
+
+  try {
+    await rateRecipe(slug, rating, uniqueIdentifier);
+  } catch (err) {
+    // ignore
+    console.error(err);
+  }
+
+  res.sendStatus(200);
 });
 
 export default app;
