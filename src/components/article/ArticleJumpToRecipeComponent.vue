@@ -1,15 +1,15 @@
 <template>
 
   <el-row class="jump-to-recipe-button">
-    <hr class="curly-line">
-
+    <div class="curly-divider"></div>
+    
     <div>
       <a href="#recipe">
         Zum Rezept springen
       </a>
     </div>
 
-    <hr class="curly-line">
+    <div class="curly-divider"></div>
   </el-row>
 
 </template>
@@ -39,15 +39,9 @@
 
     div {
       font-size: 15px;
-      padding: 18px 0;
+      padding: 10px 0 12px 0;
       font-size: 16px;
     }
-  }
-
-  .curly-line {
-    height: 6px;
-    background: url(/images/divider/curly-small.png) repeat-x 0 0;
-    border: 0;
   }
 
 </style>

@@ -2,7 +2,7 @@
 
   <aside>
     <section class="sidebar-container">
-      <div class="divider">
+      <div class="curly-divider">
         <span>Über Mich</span>
       </div>
 
@@ -42,7 +42,7 @@
     </section>
 
     <section class="sidebar-container" style="margin-top: 25px;">
-      <div class="divider">
+      <div class="curly-divider">
         <span>Newsletter</span>
       </div>
 
@@ -134,49 +134,6 @@
     flex-direction: column;
     text-align: center;
 
-    .divider {
-      width: 100%;
-      position: relative;
-      z-index: 2;
-      text-align: center;
-    }
-
-    .divider::before {
-      width: 100%;
-      height: 9px;
-      background-image: url(/images/divider/curly.png);
-      background-position: center center;
-      background-repeat: repeat;
-      position: absolute;
-      top: 4px;
-      left: 0;
-      z-index: 1;
-      content: '';
-    }
-
-    .divider span {
-      position: relative;
-      z-index: 5;
-      font-weight: 500;
-      font-size: 15px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 0;
-      line-height: 1;
-      color: #212121;
-      background-color: #ffffff;
-      padding: 0 14px;
-      display: inline-block;
-    }
-
-    .el-divider {
-      margin: 12px 0;
-    }
-
-    .el-divider__text {
-      font-size: 16px;
-    }
-    
     p, a {
       font-size: 15px;
       line-height: 23px;
