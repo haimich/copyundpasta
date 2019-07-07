@@ -1,7 +1,7 @@
 import ExpressUtil from "./utils/ExpressUtil";
 import { Article } from "../interfaces/Article";
 import ArticleRepo from "./db/ArticleRepo";
-import { search } from "./search/articleSearchRepo";
+import ArticleSearchRepo from "./search/ArticleSearchRepo";
 import ValidatorUtil from "./utils/ValidatorUtil";
 
 let app = ExpressUtil.setupExpress();
@@ -62,7 +62,7 @@ app.post("/search", async (req, res): Promise<Article[]> => {
 
   let searchRes;
   try {
-    searchRes = await search(searchterm);
+    searchRes = await ArticleSearchRepo.search(searchterm);
   } catch (error) {
     return res.json([]);
   }

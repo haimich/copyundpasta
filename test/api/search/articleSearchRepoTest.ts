@@ -1,9 +1,9 @@
-import { search } from "@/api/search/articleSearchRepo";
+import ArticleSearchRepo from "@/api/search/ArticleSearchRepo";
 
 describe('search', () => {
     test('should return hits', async () => {
         try {
-            let res = await search('oma')
+            let res = await ArticleSearchRepo.search('oma')
 
             expect(res.statusCode).toBe(200);
             
