@@ -54,7 +54,7 @@ export default class RecipeRepo {
       .where("recipe_ratings.recipeSlug", slug);
 
     if (entries == null || entries.length === 0) {
-      return null;
+      return 0;
     }
 
     let ratingSum = 0;

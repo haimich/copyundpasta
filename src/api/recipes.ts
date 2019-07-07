@@ -34,6 +34,25 @@ app.post("/getRecipe", async (req, res) => {
   }
 });
 
+app.post("/getRating", async (req, res) => {
+  console.log("getRating");
+
+  // validate params
+  let slug;
+
+  try {
+    slug = ValidatorUtil.validateSlug(req.body);
+  } catch (err) {
+    console.error(err);
+
+    return res.status(406).send(err.message);
+  }
+
+  let rating = await RecipeRepo.getRating(slug);
+
+  return res.status(200).send("" + rating);
+});
+
 app.post("/rateRecipe", async (req, res) => {
   console.log("rateRecipe");
 
@@ -68,7 +87,9 @@ app.post("/rateRecipe", async (req, res) => {
     console.error(err);
   }
 
-  res.sendStatus(200);
+  let newRating = await RecipeRepo.getRating(slug);
+
+  return res.status(200).send("" + newRating);
 });
 
 export default app;

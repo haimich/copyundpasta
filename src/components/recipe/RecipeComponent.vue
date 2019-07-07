@@ -116,13 +116,35 @@
 
     @Prop()
     isPrint: boolean;
-    
-    private rating = 0;
 
+    private rating = 0;
+    
     private servingsMultiplier = 1;
 
-    ratingChanged(newValue: number) {
-      RecipeService.rateRecipe(this.$axios, this.recipe.slug, newValue);
+    async fetchRating() {
+      let response;
+
+      try {
+        response = await RecipeService.getRating(this.$axios, this.recipe.slug);
+      } catch (error) {
+        console.log(error);
+        return;
+      }
+
+      this.rating = response.data;
+    }
+
+    async ratingChanged(newValue: number) {
+      let response;
+
+      try {
+        response = await RecipeService.rateRecipe(this.$axios, this.recipe.slug, newValue);
+      } catch (error) {
+        console.log(error);
+        return;
+      }
+
+      this.rating = response.data;
     }
 
     getIngredientList(): string[] {
@@ -289,12 +311,8 @@
       newWindow.moveTo(400, 0);
     }
 
-    reset() {
-      this.rating = 0;
-    }
-
     mounted() {
-      this.reset();
+      this.fetchRating();
     }
 
   }

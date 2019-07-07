@@ -9,7 +9,13 @@ export default class RecipeService {
     });
   }
 
-  static rateRecipe($axios, slug: string, rating: number): AxiosPromise<Recipe> {
+  static getRating($axios, slug: string): AxiosPromise<number> {
+    return $axios.post(`/api/recipes/getRating`, {
+      slug,
+    });
+  }
+
+  static rateRecipe($axios, slug: string, rating: number): AxiosPromise<number> {
     return $axios.post(`/api/recipes/rateRecipe`, {
       slug,
       rating,
