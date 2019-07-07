@@ -11,7 +11,6 @@ export default class RecipeRepo {
       .table("recipes")
       .select("recipes.*", "recipes_recipe_tags.tagId")
       .leftJoin("recipes_recipe_tags", "recipes.slug", "=", "recipes_recipe_tags.recipeSlug")
-      .leftJoin("recipe_ratings", "recipes.slug", "=", "recipe_ratings.recipeSlug")
       .where("recipes.slug", slug);
 
     if (entries == null || entries.length === 0) {
@@ -31,20 +30,42 @@ export default class RecipeRepo {
     recipe.ingredients = StringUtil.parseJsonString(entries[0].ingredients, []);
     recipe.steps = StringUtil.parseJsonString(entries[0].steps, []);
     recipe.notes = StringUtil.parseJsonString(entries[0].notes, []);
-    recipe.ratings = StringUtil.parseJsonString(entries[0].ratings, []);
 
     // gather tags
-    let tagIds = [];
+    let tagIds = {};
 
     for (let entry of entries) {
       if (entry.tagId != null && entry.tagId !== "") {
-        tagIds.push(entry.tagId)
+        tagIds[entry.tagId] = true;
       }
     }
 
-    recipe.tags = tagIds;
+    recipe.tags = Object.keys(tagIds);
 
     return recipe;
+  }
+
+  public static async getRating(slug: string): Promise<number> {
+    const knex = KnexUtil.getConnection();
+    
+    const entries = await knex
+      .table("recipe_ratings")
+      .select("*")
+      .where("recipe_ratings.recipeSlug", slug);
+
+    if (entries == null || entries.length === 0) {
+      return null;
+    }
+
+    let ratingSum = 0;
+
+    for (const entry of entries) {
+      ratingSum += entry.rating;
+    }
+
+    let avg = ratingSum / entries.length;
+
+    return Math.round(avg * 10) / 10;
   }
 
   public static rateRecipe(recipeSlug: string, rating: number, uniqueIdentifier: string): Promise<void> {
@@ -57,20 +78,6 @@ export default class RecipeRepo {
         uniqueIdentifier,
       })
       .into("recipe_ratings");
-  }
-
-  private static calculateRating() {
-    if (this.recipe == null) {
-      return;
-    } else if (this.recipe.ratings == null || this.recipe.ratings.length === 0) {
-      return;
-    }
-
-    let ratingCount = 0;
-    for (const rating of this.recipe.ratings) {
-      ratingCount += rating.value;
-    }
-    this.rating = ratingCount / this.recipe.ratings.length
   }
 
 }

@@ -288,20 +288,6 @@ import RecipeService from "../../services/RecipeService";
       return this.recipe.tags;
     }
 
-    calculateRating() {
-      if (this.recipe == null) {
-        return;
-      } else if (this.recipe.ratings == null || this.recipe.ratings.length === 0) {
-        return;
-      }
-
-      let ratingCount = 0;
-      for (const rating of this.recipe.ratings) {
-        ratingCount += rating.value;
-      }
-      this.rating = ratingCount / this.recipe.ratings.length
-    }
-
     printRecipe() {
       let newWindow = window.open("/rezept/" + this.recipe.slug + "?print=true", this.recipe.title, "height=900, width=800");
       newWindow.moveTo(400, 0);
@@ -317,8 +303,6 @@ import RecipeService from "../../services/RecipeService";
 
     mounted() {
       this.reset();
-
-      this.calculateRating()
     }
 
   }
