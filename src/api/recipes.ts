@@ -1,6 +1,8 @@
 import { setupExpress } from "./utils/expressUtil";
 import { getRecipe, rateRecipe } from "./repos/recipeRepo";
 import { validateSlug, validateRating } from "./utils/validatorUtil";
+import StringUtil from "./utils/StringUtil";
+import uniqid from "uniqid";
 
 let app = setupExpress();
 
@@ -33,8 +35,7 @@ app.post("/getRecipe", async (req, res) => {
 });
 
 app.post("/rateRecipe", async (req, res) => {
-  console.log("rateRecipe", req.connection.remoteAddress);
-  console.log(req.headers);
+  console.log("rateRecipe");
 
   // validate params
   let rating, slug;
@@ -48,7 +49,17 @@ app.post("/rateRecipe", async (req, res) => {
     return res.status(406).send(err.message);
   }
 
-  let uniqueIdentifier = "asd";
+  // create unique identifier to prevent duplicate ratings
+  let ip = "";
+
+  if (req.connection.remoteAddress != null && req.connection.remoteAddress !== "") {
+    ip = req.connection.remoteAddress;
+  } else if (req.headers["x-forwarded-for"] != null && req.headers["x-forwarded-for"] !== "") {
+    ip = req.headers["x-forwarded-for"];
+  } else {
+    ip = uniqid();
+  }
+  let uniqueIdentifier = StringUtil.generateHashWithDate(ip);
 
   try {
     await rateRecipe(slug, rating, uniqueIdentifier);
