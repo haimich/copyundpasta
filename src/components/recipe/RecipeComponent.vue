@@ -105,7 +105,8 @@
   import { RecipeUnit, RecipeServingsUnit } from "@/interfaces/RecipeIngredients";
   import { Tag } from "@/interfaces/RecipeTags";
   import { $n } from "@/filters/formatNumber";
-import RecipeService from "../../services/RecipeService";
+  import RecipeService from "../../services/RecipeService";
+  import NumberUtil from "../../utils/NumberUtil";
 
   @Component
   export default class RecipeComponent extends Vue {
@@ -119,11 +120,6 @@ import RecipeService from "../../services/RecipeService";
     private rating = 0;
 
     private servingsMultiplier = 1;
-
-    @Watch("recipe")
-    recipeUpdated() {
-        this.calculateRating()
-    }
 
     ratingChanged(newValue: number) {
       RecipeService.rateRecipe(this.$axios, this.recipe.slug, newValue);
@@ -189,7 +185,7 @@ import RecipeService from "../../services/RecipeService";
     }
 
     formatAmount(ingredient: RecipeIngredient): string {
-      if (this.isNumberDefined(ingredient.amount)) {
+      if (NumberUtil.isNumberDefined(ingredient.amount)) {
         let amount = ingredient.amount * this.servingsMultiplier;
 
         if (amount === 0.25) {
@@ -204,7 +200,7 @@ import RecipeService from "../../services/RecipeService";
           // just format the number nicely
           return $n(amount);
         }
-      } else if (this.isNumberDefined(ingredient.amountFrom) && this.isNumberDefined(ingredient.amountTo)) {
+      } else if (NumberUtil.isNumberDefined(ingredient.amountFrom) && NumberUtil.isNumberDefined(ingredient.amountTo)) {
         let amountFrom = ingredient.amountFrom * this.servingsMultiplier;
         let amountTo = ingredient.amountTo * this.servingsMultiplier;
 
@@ -216,8 +212,8 @@ import RecipeService from "../../services/RecipeService";
 
     formatIngredientName(ingredient: RecipeIngredient) {
       if (ingredient != null && ingredient.ingredient != null) {
-        if ((this.isNumberDefined(ingredient.amount) && ingredient.amount >= 2) ||
-            (this.isNumberDefined(ingredient.amountFrom) && this.isNumberDefined(ingredient.amountTo))) {
+        if ((NumberUtil.isNumberDefined(ingredient.amount) && ingredient.amount >= 2) ||
+            (NumberUtil.isNumberDefined(ingredient.amountFrom) && NumberUtil.isNumberDefined(ingredient.amountTo))) {
           if (ingredient.ingredient.namePlural != null) {
             return ingredient.ingredient.namePlural;
           } else {
@@ -291,10 +287,6 @@ import RecipeService from "../../services/RecipeService";
     printRecipe() {
       let newWindow = window.open("/rezept/" + this.recipe.slug + "?print=true", this.recipe.title, "height=900, width=800");
       newWindow.moveTo(400, 0);
-    }
-
-    isNumberDefined(n: number): boolean {
-      return n !== null && n !== undefined;
     }
 
     reset() {
