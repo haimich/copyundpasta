@@ -1,15 +1,15 @@
-import { validateSlug, validatePagingParams, validateRating } from "@/api/utils/validatorUtil";
+import ValidatorUtil from "@/api/utils/ValidatorUtil";
 
 describe('validateSlug', () => {
   test('should allow string', () => {
-    validateSlug({
+    ValidatorUtil.validateSlug({
       slug: "asdasadasd-asdas-asd",
     });
   });
 
   test('should throw error on empty string', () => {
     expect(() => {
-      validateSlug({
+      ValidatorUtil.validateSlug({
         slug: "",
       });
     }).toThrow();
@@ -17,7 +17,7 @@ describe('validateSlug', () => {
 
   test('should throw error on too long string', () => {
     expect(() => {
-      validateSlug({
+      ValidatorUtil.validateSlug({
         slug: "should throw error on too long stringshould throw error on too long stringshould throw error on too long stringshould throw error on too long stringshould throw error on too long stringshould throw error on too long stringshould throw error on too long stringshould throw error on too long stringshould throw error on too long stringshould throw error on too long stringshould throw error on too long stringshould throw error on too long stringshould throw error on too long stringshould throw error on too long stringshould throw error on too long stringshould throw error on too long stringshould throw error on too long stringshould throw error on too long stringshould throw error on too long string should throw error on too long stringshould throw error on too long stringshould throw error on too long stringshould throw error on too long stringshould throw error on too long stringshould throw error on too long stringshould throw error on too long stringshould throw error on too long stringshouldshould throw error on too long stringshould throw error on too long stringshould throw error on too long stringshould throw error on too long stringshould throw error on too long stringshould throw error on too long stringshould throw error on too long stringshould throw error on too long stringshould",
       });
     }).toThrow();
@@ -26,7 +26,7 @@ describe('validateSlug', () => {
 
 describe('validatePagingParams', () => {
   test('should validate', () => {
-    validatePagingParams({
+    ValidatorUtil.validatePagingParams({
       page: 5,
       pageSize: 10,
     });
@@ -34,7 +34,7 @@ describe('validatePagingParams', () => {
 
   test('should throw error on negative integer', () => {
     expect(() => {
-      validatePagingParams({
+      ValidatorUtil.validatePagingParams({
         page: 5,
         pageSize: -1,
       });
@@ -43,14 +43,14 @@ describe('validatePagingParams', () => {
 
   test('should throw error if param is missing', () => {
     expect(() => {
-      validatePagingParams({
+      ValidatorUtil.validatePagingParams({
         page: 0,
         pageSizzle: 21
       });
     }).toThrow();
 
     expect(() => {
-      validatePagingParams({
+      ValidatorUtil.validatePagingParams({
         pageant: 0,
         pageSize: 21
       });
@@ -60,14 +60,14 @@ describe('validatePagingParams', () => {
 
 describe('validateRating', () => {
   test('should allow integer', () => {
-    validateRating({
+    ValidatorUtil.validateRating({
       rating: 4,
     });
   });
 
   test('should throw error when param is missing', () => {
     expect(() => {
-      validateRating({
+      ValidatorUtil.validateRating({
         rating2: "",
       });
     }).toThrow();
@@ -75,7 +75,7 @@ describe('validateRating', () => {
 
   test('should throw error on empty value', () => {
     expect(() => {
-      validateRating({
+      ValidatorUtil.validateRating({
         rating: "",
       });
     }).toThrow();
@@ -83,7 +83,7 @@ describe('validateRating', () => {
 
   test('should throw error if value is too small', () => {
     expect(() => {
-      validateRating({
+      ValidatorUtil.validateRating({
         rating: 0,
       });
     }).toThrow();
@@ -91,7 +91,7 @@ describe('validateRating', () => {
 
   test('should throw error if value is too big', () => {
     expect(() => {
-      validateRating({
+      ValidatorUtil.validateRating({
         rating: 5.5,
       });
     }).toThrow();

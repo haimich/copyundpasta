@@ -1,10 +1,10 @@
-import { setupExpress } from "./utils/expressUtil";
+import ExpressUtil from "./utils/ExpressUtil";
 import { Article } from "../interfaces/Article";
 import { getHeroArticles, getNonHeroArticles } from "./repos/articleRepo";
 import { search } from "./search/articleSearchRepo";
-import { validatePagingParams, validateSearchterm } from "./utils/validatorUtil";
+import ValidatorUtil from "./utils/ValidatorUtil";
 
-let app = setupExpress();
+let app = ExpressUtil.setupExpress();
 
 /**
  * Configure routes
@@ -30,7 +30,7 @@ app.post("/getArticles", async (req, res): Promise<Article[]> => {
   let pagingParams;
 
   try {
-    pagingParams = validatePagingParams(req.body);
+    pagingParams = ValidatorUtil.validatePagingParams(req.body);
   } catch (err) {
     console.error(err);
 
@@ -53,7 +53,7 @@ app.post("/search", async (req, res): Promise<Article[]> => {
   let searchterm = "";
 
   try {
-    searchterm = validateSearchterm(req.body);
+    searchterm = ValidatorUtil.validateSearchterm(req.body);
   } catch (err) {
     console.error(err);
 

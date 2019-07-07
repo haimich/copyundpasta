@@ -1,10 +1,10 @@
-import { setupExpress } from "./utils/expressUtil";
+import ExpressUtil from "./utils/ExpressUtil";
 import { getRecipe, rateRecipe } from "./repos/recipeRepo";
-import { validateSlug, validateRating } from "./utils/validatorUtil";
+import ValidatorUtil from "./utils/ValidatorUtil";
 import StringUtil from "./utils/StringUtil";
 import uniqid from "uniqid";
 
-let app = setupExpress();
+let app = ExpressUtil.setupExpress();
 
 /**
  * Configure routes
@@ -18,7 +18,7 @@ app.post("/getRecipe", async (req, res) => {
   let slug;
 
   try {
-    slug = validateSlug(req.body);
+    slug = ValidatorUtil.validateSlug(req.body);
   } catch (err) {
     console.error(err);
 
@@ -41,8 +41,8 @@ app.post("/rateRecipe", async (req, res) => {
   let rating, slug;
 
   try {
-    slug = validateSlug(req.body);
-    rating = validateRating(req.body);
+    slug = ValidatorUtil.validateSlug(req.body);
+    rating = ValidatorUtil.validateRating(req.body);
   } catch (err) {
     console.error(err);
 

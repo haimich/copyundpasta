@@ -9,6 +9,10 @@ if (process.env.NODE_ENV != null && process.env.NODE_ENV !== "") {
 
 const knex = require('knex')(config[env]);
 
-export function getConnection() {
-  return knex;
+export default class KnexUtil {
+
+  public static getConnection() {
+    return knex;
+  }
+
 }

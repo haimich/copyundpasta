@@ -1,8 +1,8 @@
-import { setupExpress } from "./utils/expressUtil";
-import { createRssFeed, createAtomFeed } from "./utils/feedUtil";
+import ExpressUtil from "./utils/ExpressUtil";
+import FeedUtil from "./utils/FeedUtil";
 import { getAllArticles } from "./repos/articleRepo";
 
-let app = setupExpress();
+let app = ExpressUtil.setupExpress();
 
 const maxAge = 60 * 60 * 12; // 12 hours    
 
@@ -16,7 +16,7 @@ app.get("/rss.xml", async (req, res) => {
 
   const articles = await getAllArticles();
   
-  const feed = createRssFeed(articles);
+  const feed = FeedUtil.createRssFeed(articles);
   
   res.setHeader("Cache-Control", "public, max-age=" + maxAge);
   res.setHeader("Expires", new Date(Date.now() + maxAge * 1000).toUTCString());
@@ -29,7 +29,7 @@ app.get("/atom.xml", async (req, res) => {
 
   const articles = await getAllArticles();
 
-  const feed = createAtomFeed(articles);
+  const feed = FeedUtil.createAtomFeed(articles);
 
   res.setHeader("Cache-Control", "public, max-age=" + maxAge);
   res.setHeader("Expires", new Date(Date.now() + maxAge * 1000).toUTCString());

@@ -1,10 +1,10 @@
 import { Article } from "@/interfaces/Article";
-import { getConnection } from "../utils/knexUtil";
+import KnexUtil from "../utils/KnexUtil";
 import { PagingParams } from "@/interfaces/Paging";
-import { calculateOffset } from "../utils/pagingUtil";
+import PagingUtil from "../utils/PagingUtil";
 
 export function getHeroArticles(): Promise<Article[]> {
-  const knex = getConnection();
+  const knex = KnexUtil.getConnection();
 
   return knex
     .select("*")
@@ -14,7 +14,7 @@ export function getHeroArticles(): Promise<Article[]> {
 }
 
 export function getNonHeroArticles(params: PagingParams = null): Promise<Article[]> {
-  const knex = getConnection();
+  const knex = KnexUtil.getConnection();
 
   const subselect = knex
     .count("*")
@@ -31,14 +31,14 @@ export function getNonHeroArticles(params: PagingParams = null): Promise<Article
   if (params != null) {
     dbObj
       .limit(params.pageSize)
-      .offset(calculateOffset(params.page, params.pageSize));
+      .offset(PagingUtil.calculateOffset(params.page, params.pageSize));
   }
 
   return dbObj;
 }
 
 export function getAllArticles(): Promise<Article[]> {
-  const knex = getConnection();
+  const knex = KnexUtil.getConnection();
 
   return knex
     .select("*")

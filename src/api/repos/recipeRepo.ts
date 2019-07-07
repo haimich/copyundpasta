@@ -1,8 +1,8 @@
-import {Recipe} from "@/interfaces/Recipe";
-import { getConnection } from "../utils/knexUtil";
+import { Recipe } from "@/interfaces/Recipe";
+import KnexUtil from "../utils/KnexUtil";
 
 export async function getRecipe(slug: string): Promise<Recipe> {
-  const knex = getConnection();
+  const knex = KnexUtil.getConnection();
   
   const entries = await knex
     .table("recipes")
@@ -44,7 +44,7 @@ export async function getRecipe(slug: string): Promise<Recipe> {
 }
 
 export function rateRecipe(recipeSlug: string, rating: number, uniqueIdentifier: string): Promise<void> {
-  const knex = getConnection();
+  const knex = KnexUtil.getConnection();
 
   return knex
     .insert({
