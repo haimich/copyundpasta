@@ -1,4 +1,4 @@
-import { getRecipe, rateRecipe } from "@/api/repos/recipeRepo";
+import { getRecipe, rateRecipe } from "@/api/db/recipeRepo";
 import uniqid from "uniqid";
 
 describe('getRecipes', () => {

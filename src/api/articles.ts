@@ -1,6 +1,6 @@
 import ExpressUtil from "./utils/ExpressUtil";
 import { Article } from "../interfaces/Article";
-import { getHeroArticles, getNonHeroArticles } from "./repos/articleRepo";
+import { getHeroArticles, getNonHeroArticles } from "./db/articleRepo";
 import { search } from "./search/articleSearchRepo";
 import ValidatorUtil from "./utils/ValidatorUtil";
 

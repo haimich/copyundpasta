@@ -1,6 +1,6 @@
 import ExpressUtil from "./utils/ExpressUtil";
 import FeedUtil from "./utils/FeedUtil";
-import { getAllArticles } from "./repos/articleRepo";
+import { getAllArticles } from "./db/articleRepo";
 
 let app = ExpressUtil.setupExpress();
 

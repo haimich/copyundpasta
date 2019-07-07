@@ -1,5 +1,5 @@
 import FeedUtil from "@/api/utils/FeedUtil";
-import { getAllArticles } from "@/api/repos/articleRepo";
+import { getAllArticles } from "@/api/db/articleRepo";
 
 describe('createRssFeed', () => {
   test('should return feed as string', async () => {

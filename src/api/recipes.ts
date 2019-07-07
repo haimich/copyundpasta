@@ -1,5 +1,5 @@
 import ExpressUtil from "./utils/ExpressUtil";
-import { getRecipe, rateRecipe } from "./repos/recipeRepo";
+import { getRecipe, rateRecipe } from "./db/recipeRepo";
 import ValidatorUtil from "./utils/ValidatorUtil";
 import StringUtil from "./utils/StringUtil";
 import uniqid from "uniqid";

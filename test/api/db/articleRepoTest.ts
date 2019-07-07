@@ -1,4 +1,4 @@
-import { getNonHeroArticles, getHeroArticles } from "@/api/repos/articleRepo";
+import { getNonHeroArticles, getHeroArticles } from "@/api/db/articleRepo";
 
 describe('getHeroArticles', () => {
     test('should return newest getHeroArticles', async () => {
