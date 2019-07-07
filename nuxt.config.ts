@@ -1,6 +1,9 @@
 require("dotenv").config();
 import NuxtConfiguration from "@nuxt/config";
 
+// get rid of warning during development
+require("events").EventEmitter.defaultMaxListeners = 50;
+
 const DEFAULT_HOST = "localhost";
 const DEFAULT_PORT = "3000";
 const CWD = process.cwd();
