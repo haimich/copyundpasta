@@ -15,6 +15,7 @@
           show-score
           text-color="#ff9900"
           score-template="{value} Sterne"
+          @change="ratingChanged"
         />
 
         <el-button
@@ -104,6 +105,7 @@
   import { RecipeUnit, RecipeServingsUnit } from "@/interfaces/RecipeIngredients";
   import { Tag } from "@/interfaces/RecipeTags";
   import { $n } from "@/filters/formatNumber";
+import RecipeService from "../../services/RecipeService";
 
   @Component
   export default class RecipeComponent extends Vue {
@@ -121,6 +123,10 @@
     @Watch("recipe")
     recipeUpdated() {
         this.calculateRating()
+    }
+
+    ratingChanged(newValue: number) {
+      RecipeService.rateRecipe(this.$axios, this.recipe.slug, newValue);
     }
 
     getIngredientList(): string[] {

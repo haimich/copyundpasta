@@ -57,7 +57,7 @@ export interface Recipe {
   ingredients: (RecipeIngredientGroup|RecipeIngredient)[];
   steps: (RecipeStepGroup|RecipeStep)[];
   notes: string[];
-  ratings?: RecipeRating[];
+  rating?: number;
   tags?: Tag[];
   createdAt?: string;
   modifiedAt?: string;
