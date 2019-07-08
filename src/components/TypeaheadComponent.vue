@@ -93,7 +93,9 @@
 
       this.searchterm = "";
 
-      this.suggestionsCallback([]); // clear suggestions or they will pop up on reopen
+      if (this.suggestionsCallback != null) {
+        this.suggestionsCallback([]); // clear suggestions or they will pop up on reopen
+      }
       
       this.$emit("close");
     }
