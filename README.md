@@ -15,6 +15,9 @@
 # install dependencies
 $ npm install
 
+# create tables
+$ npm run db:rebuild
+
 # serve with hot reload at localhost:3000
 $ npm run dev
 
@@ -28,9 +31,6 @@ Custom hostname:
 HOST=hostname ./node_modules/.bin/nuxt --hostname hostname
 ```
 
-## debug api
-`npm run api`
-
 # Live setup
 * checkout project
 * add .env file with:
@@ -42,6 +42,7 @@ DB_PW=xxx
 SERVER_HOST=0.0.0.0
 SERVER_PORT=3000
 AXIOS_BASE_URL=https://copyundpasta.de/
+...
 ```
 
 # build for production and launch server
