@@ -98,7 +98,7 @@
     
     <footer>
       <el-row>
-        <img src="/images/untitled.svg" alt="Appbase" style="margin-bottom: 10px; width: 163px;">
+        <img src="/images/appbase.svg" alt="Appbase" style="margin-bottom: 10px; width: 163px;">
       </el-row>
 
       <el-row>
