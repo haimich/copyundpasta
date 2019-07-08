@@ -44,6 +44,9 @@ const config: NuxtConfiguration = {
   */
   head: {
     title: "Copy & Pasta - der Foodblog aus Karlsruhe",
+    htmlAttrs: {
+      lang: "de",
+    },
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
