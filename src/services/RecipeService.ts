@@ -1,5 +1,6 @@
 import { AxiosPromise } from "axios";
 import { Recipe } from "@/interfaces/Recipe";
+import { RatingResponse } from "@/interfaces/Rating";
 
 export default class RecipeService {
 
@@ -15,7 +16,7 @@ export default class RecipeService {
     });
   }
 
-  static rateRecipe($axios, slug: string, rating: number): AxiosPromise<number> {
+  static rateRecipe($axios, slug: string, rating: number): AxiosPromise<RatingResponse> {
     return $axios.post(`/api/recipes/rateRecipe`, {
       slug,
       rating,

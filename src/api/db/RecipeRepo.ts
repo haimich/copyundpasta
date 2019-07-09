@@ -1,6 +1,7 @@
 import { Recipe } from "@/interfaces/Recipe";
 import KnexUtil from "../utils/KnexUtil";
 import StringUtil from "../utils/StringUtil";
+import { RatingResponse } from "@/interfaces/Rating";
 
 export default class RecipeRepo {
 
@@ -45,16 +46,19 @@ export default class RecipeRepo {
     return recipe;
   }
 
-  public static async getRating(slug: string): Promise<number> {
+  public static async getRating(recipeSlug: string): Promise<RatingResponse> {
     const knex = KnexUtil.getConnection();
     
     const entries = await knex
       .table("recipe_ratings")
       .select("*")
-      .where("recipe_ratings.recipeSlug", slug);
+      .where("recipeSlug", recipeSlug);
 
     if (entries == null || entries.length === 0) {
-      return 0;
+      return {
+        average: 0,
+        numRatings: 0,
+      };
     }
 
     let ratingSum = 0;
@@ -65,19 +69,45 @@ export default class RecipeRepo {
 
     let avg = ratingSum / entries.length;
 
-    return Math.round(avg * 10) / 10;
+    // round to one decimal
+    avg = Math.round(avg * 10) / 10;
+
+    return {
+      average: avg,
+      numRatings: entries.length,
+    };
   }
 
-  public static rateRecipe(recipeSlug: string, rating: number, uniqueIdentifier: string): Promise<void> {
+  public static async rateRecipe(recipeSlug: string, rating: number, uniqueIdentifier: string): Promise<void> {
     const knex = KnexUtil.getConnection();
 
-    return knex
-      .insert({
-        recipeSlug,
-        rating,
-        uniqueIdentifier,
-      })
-      .into("recipe_ratings");
+    const entries = await knex
+      .table("recipe_ratings")
+      .select("*")
+      .where({
+        "recipeSlug": recipeSlug,
+        "uniqueIdentifier": uniqueIdentifier,
+      });
+
+    if (entries == null || entries.length === 0) {
+      // insert
+      await knex
+        .insert({
+          recipeSlug,
+          rating,
+          uniqueIdentifier,
+        })
+        .into("recipe_ratings");
+    } else {
+      await knex("recipe_ratings")
+        .update({
+          rating,
+        })
+        .where({
+          "recipeSlug": recipeSlug,
+          "uniqueIdentifier": uniqueIdentifier,
+        });
+    }
   }
 
 }

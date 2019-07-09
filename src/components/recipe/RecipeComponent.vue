@@ -11,12 +11,17 @@
         </div>
 
         <el-rate
-          v-model="rating"
+          v-model="ratingResponse.average"
           show-score
           text-color="#ff9900"
           score-template="{value} Sterne"
           @change="ratingChanged"
         />
+
+        <div v-if="ratingResponse != null" style="margin-top: 6px; font-size: 13px;">
+          {{ ratingResponse.numRatings }}
+          Stimme<span v-if="ratingResponse.numRatings === 0 || ratingResponse.numRatings >= 2">n</span>
+        </div>
 
         <el-button
           style="margin-top: 20px;"
@@ -107,6 +112,7 @@
   import { $n } from "@/filters/formatNumber";
   import RecipeService from "../../services/RecipeService";
   import NumberUtil from "../../utils/NumberUtil";
+import { RatingResponse } from "../../interfaces/Rating";
 
   @Component
   export default class RecipeComponent extends Vue {
@@ -117,7 +123,10 @@
     @Prop()
     isPrint: boolean;
 
-    private rating = 0;
+    private ratingResponse: RatingResponse = {
+      average: 0,
+      numRatings: 0,
+    };
     
     private servingsMultiplier = 1;
 
@@ -131,7 +140,7 @@
         return;
       }
 
-      this.rating = response.data;
+      this.ratingResponse = response.data;
     }
 
     async ratingChanged(newValue: number) {
@@ -144,7 +153,7 @@
         return;
       }
 
-      this.rating = response.data;
+      this.ratingResponse = response.data;
     }
 
     getIngredientList(): string[] {

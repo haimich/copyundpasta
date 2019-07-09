@@ -48,9 +48,9 @@ app.post("/getRating", async (req, res) => {
     return res.status(406).send(err.message);
   }
 
-  let rating = await RecipeRepo.getRating(slug);
+  let ratingResponse = await RecipeRepo.getRating(slug);
 
-  return res.status(200).send("" + rating);
+  return res.json(ratingResponse);
 });
 
 app.post("/rateRecipe", async (req, res) => {
@@ -87,9 +87,9 @@ app.post("/rateRecipe", async (req, res) => {
     console.error(err);
   }
 
-  let newRating = await RecipeRepo.getRating(slug);
+  let ratingResponse = await RecipeRepo.getRating(slug);
 
-  return res.status(200).send("" + newRating);
+  return res.json(ratingResponse);
 });
 
 export default app;

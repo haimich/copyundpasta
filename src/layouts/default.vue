@@ -30,10 +30,6 @@
             </ul>
           </span>
 
-          <HamburgerIconComponent
-            class="hamburger-icon hidden-sm-and-up"
-            @toggle="toggleMenu"
-          />
         </el-col>
       </el-row>
 
@@ -124,7 +120,6 @@
 
   import { Vue, Component, Prop, Watch } from "vue-property-decorator";
   import TypeaheadComponent from "../components/TypeaheadComponent.vue";
-  import HamburgerIconComponent from "../components/HamburgerIconComponent.vue";
 
   enum Pages {
     HOME = "home",
@@ -137,7 +132,6 @@
   @Component({
     components: {
       TypeaheadComponent,
-      HamburgerIconComponent
     }
   })
   export default class DefaultLayoutComponent extends Vue {
