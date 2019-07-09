@@ -50,7 +50,7 @@
           <!-- Menu -->
           <el-menu
             :default-active="activeIndex"
-            mode="horizontal"
+            :mode="menuMode"
             @select="menuItemChanged"
           >
             <el-menu-item index="home">
@@ -163,6 +163,8 @@
       offset: 0,
     };
 
+    private menuMode = "horizontal";
+
     @Watch("$route.path")
     routeChanged() {
       //select correct menu item
@@ -229,6 +231,18 @@
       this.showSearch = true;
     }
 
+    determineMenuMode() {
+      let currentWidth = window.innerWidth || document.body.clientWidth;
+
+      this.menuMode = currentWidth < 768 ? "vertical" : "horizontal";
+    }
+
+    mounted() {
+      this.determineMenuMode();
+
+      window.onresize = this.determineMenuMode;
+    }
+
     created() {
       this.routeChanged();
     }
@@ -293,17 +307,26 @@
       margin-bottom: 26px;
     }
 
-    .el-menu {
-      display: flex;
-      justify-content: center;
-      width: 72%;
-      border-top: solid 1px #e6e6e6;
+    @media all and (min-width: $breakpoint-xs) {
+      .el-menu {
+        display: flex;
+        justify-content: center;
+        width: 72%;
+        border-top: solid 1px #e6e6e6;
 
-      .el-menu-item {
-        font-size: 14.5px;
-        margin: 0 1.5rem 0 1.2rem;
-        height: 55px;
-        line-height: 55px;
+        .el-menu-item {
+          font-size: 14.5px;
+          margin: 0 1.5rem 0 1.2rem;
+          height: 55px;
+          line-height: 55px;
+        }
+      }
+    }
+
+    @media all and (max-width: $breakpoint-xs - 1) {
+      .el-menu {
+        width: 100%;
+        border: none;
       }
     }
   }
