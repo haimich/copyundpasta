@@ -124,6 +124,7 @@ const config: NuxtConfiguration = {
   axios: {
     browserBaseURL: process.env.AXIOS_BASE_URL || `http://${DEFAULT_HOST}:${DEFAULT_PORT}`,
     baseUrl: process.env.AXIOS_BASE_URL || `http://${DEFAULT_HOST}:${DEFAULT_PORT}`,
+    retry: false,
   },
 
   /*
