@@ -9,5 +9,5 @@ before_script:
   - sudo service mysql stop
   - docker pull mariadb:10.3.15
   - docker run --name mariadb -e MYSQL_ROOT_PASSWORD=password -e MYSQL_DATABASE=haimich -e MYSQL_USER=haimich -e MYSQL_PASSWORD=haimich -p 3306:3306 -d mariadb:10.3.15
-  - nc -v localhost 3306
+  - sleep 5
   - npm run db:rebuild
