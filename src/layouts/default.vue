@@ -29,6 +29,11 @@
               </li>
             </ul>
           </span>
+
+          <HamburgerIconComponent
+            class="hamburger-icon hidden-sm-and-up"
+            @toggle="toggleMenu"
+          />
         </el-col>
       </el-row>
 
@@ -51,6 +56,7 @@
           <el-menu
             :default-active="activeIndex"
             :mode="menuMode"
+            v-show="menuVisible"
             @select="menuItemChanged"
           >
             <el-menu-item index="home">
@@ -118,6 +124,7 @@
 
   import { Vue, Component, Prop, Watch } from "vue-property-decorator";
   import TypeaheadComponent from "../components/TypeaheadComponent.vue";
+  import HamburgerIconComponent from "../components/HamburgerIconComponent.vue";
 
   enum Pages {
     HOME = "home",
@@ -129,7 +136,8 @@
 
   @Component({
     components: {
-      TypeaheadComponent: TypeaheadComponent
+      TypeaheadComponent,
+      HamburgerIconComponent
     }
   })
   export default class DefaultLayoutComponent extends Vue {
@@ -162,6 +170,8 @@
       span: 24,
       offset: 0,
     };
+
+    private menuVisible = false;
 
     private menuMode = "horizontal";
 
@@ -230,11 +240,21 @@
     openSearch() {
       this.showSearch = true;
     }
+  
+    toggleMenu() {
+      this.menuVisible = ! this.menuVisible;
+    }
 
     determineMenuMode() {
       let currentWidth = window.innerWidth || document.body.clientWidth;
 
       this.menuMode = currentWidth < 768 ? "vertical" : "horizontal";
+
+      if (this.menuMode === "horizontal") {
+        this.menuVisible = true;
+      } else {
+        this.menuVisible = false;
+      }
     }
 
     mounted() {
@@ -295,6 +315,12 @@
     }
   }
 
+  .hamburger-icon {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 9px;
+  }
+
   .header-nav {
     display: flex;
     justify-content: center;
@@ -327,6 +353,7 @@
       .el-menu {
         width: 100%;
         border: none;
+        text-align: center;
       }
     }
   }
