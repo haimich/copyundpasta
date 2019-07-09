@@ -10,7 +10,7 @@
           :sm="sm"
           :xs="xs"
         >
-          <span class="header-social-icons">
+          <span class="header-social-icons hidden-xs-only">
             <ul>
               <li>
                 <a href="https://www.pinterest.de/copyundpasta" target="_blank" title="Copy & Pasta bei Pinterest">
