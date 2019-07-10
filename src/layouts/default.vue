@@ -75,7 +75,14 @@
             </el-menu-item>
 
             <el-menu-item index="suche">
-              <font-awesome-icon :icon="['fas', 'search']" style="font-size: 15px;" />
+              <div class="menu-item-search hidden-sm-and-up">
+                  SUCHE
+              </div>
+              <font-awesome-icon
+                :icon="['fas', 'search']"
+                class="hidden-xs-only"
+                style="font-size: 15px;"
+              />
             </el-menu-item>
           </el-menu>
 
@@ -205,6 +212,8 @@
     }
 
     menuItemChanged(key: Pages) {
+      this.menuVisible = false;
+
       if (this.activeIndex === Pages.SUCHE && key === Pages.SUCHE) {
         this.toggleSearch();
         return;
@@ -321,7 +330,7 @@
   .hamburger-icon {
     display: flex;
     justify-content: flex-end;
-    padding-top: 9px;
+    padding: 20px 25px;
   }
 
   .header-nav {
@@ -357,6 +366,10 @@
         width: 100%;
         border: none;
         text-align: center;
+      }
+
+      .menu-item-search {
+        color: $color-primary;
       }
     }
   }
