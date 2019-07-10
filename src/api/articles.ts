@@ -1,5 +1,5 @@
 import ExpressUtil from "./utils/ExpressUtil";
-import { Article } from "../interfaces/Article";
+import { Article, ArticleComment } from "../interfaces/Article";
 import ArticleRepo from "./db/ArticleRepo";
 import ArticleSearchRepo from "./search/ArticleSearchRepo";
 import ValidatorUtil from "./utils/ValidatorUtil";
@@ -44,6 +44,64 @@ app.post("/getArticles", async (req, res): Promise<Article[]> => {
   } else {
     return res.json(articles);
   }
+});
+
+app.post("/getComments", async (req, res): Promise<Article[]> => {
+  console.log("getComments");
+
+  // validate params
+  let slug;
+  
+  try {
+    slug = ValidatorUtil.validateSlug(req.body);
+  } catch (err) {
+    console.error(err);
+
+    return res.status(406).send(err.message);
+  }
+
+  const comments = await ArticleRepo.getArticleComments(slug);
+
+  if (comments == null) {
+    return res.json([]);
+  } else {
+    return res.json(comments);
+  }
+});
+
+app.post("/createComment", async (req, res): Promise<Article[]> => {
+  console.log("createComment");
+
+  // validate params
+  let slug;
+  let parentCommentId;
+  let content;
+  let author;
+  let email;
+
+  try {
+    slug = ValidatorUtil.validateSlug(req.body);
+    parentCommentId = ValidatorUtil.validateParentCommentId(req.body);
+    content = ValidatorUtil.validateContent(req.body);
+    author = ValidatorUtil.validateAuthor(req.body);
+    email = ValidatorUtil.validateEmail(req.body, false);
+  } catch (err) {
+    console.error(err);
+
+    return res.status(406).send(err.message);
+  }
+
+  let comment: ArticleComment = {
+    articleSlug: slug,
+    parentCommentId,
+    content,
+    author,
+    email,
+  }
+
+  await ArticleRepo.createComment(comment);
+
+  return res.sendStatus(200);
 });
 
 app.post("/search", async (req, res): Promise<Article[]> => {

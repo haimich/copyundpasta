@@ -1,4 +1,5 @@
 import { PagingParams } from "@/interfaces/Paging";
+import StringUtil from "./StringUtil";
 
 const DEFAULT_PAGE_SIZE = 9;
 
@@ -15,6 +16,76 @@ export default class ValidatorUtil {
       throw new Error("Invalid value for field 'slug'");
     } else {
       return slug;
+    }
+  }
+
+  public static validateParentCommentId(body: any): string {
+    if (body == null || body.parentCommentId === null || body.parentCommentId === undefined) {
+      return null;
+    }
+  
+    const parentCommentId = body.parentCommentId;
+  
+    if (parentCommentId < 0) {
+      throw new Error("Invalid value for field 'parentCommentId'");
+    } else {
+      return parentCommentId;
+    }
+  }
+
+  public static validateContent(body: any): string {
+    if (body == null || body.content == null) {
+      throw new Error("Missing mandatory field 'content'");
+    }
+  
+    const content = body.content;
+  
+    if (content == "" || content.length <= 0 || content.length >= 1000000) {
+      throw new Error("Invalid value for field 'content'");
+    } else {
+      return content;
+    }
+  }
+  
+  public static validateAuthor(body: any): string {
+    if (body == null || body.author == null) {
+      throw new Error("Missing mandatory field 'author'");
+    }
+  
+    const author = body.author;
+  
+    if (author == "" || author.length <= 0 || author.length >= 1000000) {
+      throw new Error("Invalid value for field 'author'");
+    } else {
+      return author;
+    }
+  }
+
+  public static validateEmail(body: any, isMandatory: boolean): string {
+    if (body == null || body.email == null) {
+      if (isMandatory) {
+        throw new Error("Missing mandatory field 'email'");
+      } else {
+        return "";
+      }
+    }
+  
+    const email = body.email;
+ 
+    let isValid = true;
+
+    if (email == "" || email.length <= 0 || email.length >= 1000000) {
+      isValid = false;
+    } else if (! StringUtil.validateEmail(email)) {
+      isValid = false;
+    }
+
+    if (! isValid && ! isMandatory) {
+      return "";
+    } else if (! isValid && isMandatory) {
+      throw new Error("Invalid value for field 'email'");
+    } else {
+      return email;
     }
   }
   

@@ -97,3 +97,25 @@ describe('validateRating', () => {
     }).toThrow();
   });
 });
+
+describe('validateEmail', () => {
+  test('should allow email', () => {
+    ValidatorUtil.validateEmail({
+      email: "foo@bla.de",
+    });
+  });
+
+  test('should throw error when email is mandatory', () => {
+    expect(() => {
+      ValidatorUtil.validateEmail({
+        email: "",
+      }, true);
+    }).toThrow();
+  });
+
+  test('should not throw error when email is not mandatory', () => {
+    expect(ValidatorUtil.validateEmail({
+        email: "",
+      }, false)).toEqual("");
+  });
+});

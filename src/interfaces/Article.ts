@@ -1,11 +1,14 @@
 
 export interface ArticleComment {
-  id: number;
-  parentCommentId: number;
+  id?: number;
+  articleSlug: string;
+  parentCommentId?: number;
   content: string;
-  email?: string;
   author: string;
-  avatarUrl?: string;
+  email?: string;
+  children?: ArticleComment[];
+  createdAt?: string;
+  modifiedAt?: string;
 }
 
 export interface Article {
