@@ -50,9 +50,10 @@
           :xs="xs"
           style="position: relative;"
         >
+        
           <!-- Logo -->
           <nuxt-link to="/" title="HOME">
-            <img class="logo" src="/images/logo.svg" alt="Logo" @click="menuItemChanged('home')">
+            <LogoComponent class="logo" @click="menuItemChanged('home')" />
           </nuxt-link>
 
           <!-- Menu -->
@@ -76,7 +77,7 @@
 
             <el-menu-item index="suche">
               <div class="menu-item-search hidden-sm-and-up">
-                  SUCHE
+                SUCHE
               </div>
               <font-awesome-icon
                 :icon="['fas', 'search']"
@@ -135,6 +136,7 @@
   import { Vue, Component, Prop, Watch } from "vue-property-decorator";
   import TypeaheadComponent from "../components/TypeaheadComponent.vue";
   import HamburgerIconComponent from "../components/HamburgerIconComponent.vue";
+  import LogoComponent from "../components/LogoComponent.vue";
 
   enum Pages {
     HOME = "home",
@@ -148,6 +150,7 @@
     components: {
       TypeaheadComponent,
       HamburgerIconComponent,
+      LogoComponent,
     }
   })
   export default class DefaultLayoutComponent extends Vue {
@@ -212,7 +215,9 @@
     }
 
     menuItemChanged(key: Pages) {
-      this.menuVisible = false;
+      if (this.menuMode === "vertical") {
+        this.menuVisible = false;
+      }
 
       if (this.activeIndex === Pages.SUCHE && key === Pages.SUCHE) {
         this.toggleSearch();
