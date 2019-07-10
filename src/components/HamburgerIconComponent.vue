@@ -1,10 +1,10 @@
 <template>
 
-  <div class="hamburger-container">
+  <div class="hamburger-container" @click="handleClick">
     <div class="navIcon">
-      <div class="naviconUpper"></div>
-      <div class="innerNavicon"></div>
-      <div class="naviconLower"></div>
+      <div class="naviconUpper" :class="{'on': isMenuVisible}"></div>
+      <div class="innerNavicon" :class="{'on': isMenuVisible}"></div>
+      <div class="naviconLower" :class="{'on': isMenuVisible}"></div>
     </div>
   </div>
 
@@ -17,7 +17,12 @@
   @Component
   export default class HamburgerIconComponent extends Vue {
 
-    
+    @Prop()
+    isMenuVisible = false;
+
+    handleClick() {
+      this.$emit("toggle");
+    }
 
   }
 
@@ -63,21 +68,17 @@
   }
 
   .naviconUpper.on {
-    transform:
-      rotate(360deg);
-    border-top: 3px solid white;
+    transform: rotate(360deg);
     
     opacity: 0;
   }
 
   .innerNavicon.on {
     transform: rotate(45deg);
-    border-top: 3px solid white;
   }
 
   .naviconLower.on {
     transform: translateY(-8px) rotate(-45deg);
-    border-bottom: 3px solid white;
   }
 
 </style>
