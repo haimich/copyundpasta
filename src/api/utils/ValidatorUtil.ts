@@ -19,7 +19,7 @@ export default class ValidatorUtil {
     }
   }
 
-  public static validateParentCommentId(body: any): string {
+  public static validateParentCommentId(body: any): number {
     if (body == null || body.parentCommentId === null || body.parentCommentId === undefined) {
       return null;
     }

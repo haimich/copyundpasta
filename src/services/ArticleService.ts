@@ -13,4 +13,14 @@ export default class ArticleService {
     });
   }
 
+  static getComments($axios, slug: string): AxiosPromise<Comment[]> {
+    return $axios.post(`/api/articles/getComments`, {
+      slug,
+    });
+  }
+
+  static createComment($axios, comment: Comment): AxiosPromise<void> {
+    return $axios.post(`/api/articles/createComment`, comment);
+  }
+
 }

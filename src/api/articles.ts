@@ -1,5 +1,6 @@
 import ExpressUtil from "./utils/ExpressUtil";
-import { Article, ArticleComment } from "../interfaces/Article";
+import { Article } from "../interfaces/Article";
+import { Comment } from "../interfaces/Comment";
 import ArticleRepo from "./db/ArticleRepo";
 import ArticleSearchRepo from "./search/ArticleSearchRepo";
 import ValidatorUtil from "./utils/ValidatorUtil";
@@ -11,7 +12,7 @@ let app = ExpressUtil.setupExpress();
  * - prefix is "/api/articles/"
  */
 
-app.post("/getHeroArticles", async (req, res): Promise<Article[]> => {
+app.post("/getHeroArticles", async (req, res) => {
   console.log("getHeroArticles");
 
   const articles = await ArticleRepo.getHeroArticles();
@@ -23,7 +24,7 @@ app.post("/getHeroArticles", async (req, res): Promise<Article[]> => {
   }
 });
 
-app.post("/getArticles", async (req, res): Promise<Article[]> => {
+app.post("/getArticles", async (req, res) => {
   console.log("getArticles");
 
   // validate params
@@ -46,7 +47,7 @@ app.post("/getArticles", async (req, res): Promise<Article[]> => {
   }
 });
 
-app.post("/getComments", async (req, res): Promise<Article[]> => {
+app.post("/getComments", async (req, res) => {
   console.log("getComments");
 
   // validate params
@@ -69,15 +70,15 @@ app.post("/getComments", async (req, res): Promise<Article[]> => {
   }
 });
 
-app.post("/createComment", async (req, res): Promise<Article[]> => {
+app.post("/createComment", async (req, res) => {
   console.log("createComment");
 
   // validate params
-  let slug;
-  let parentCommentId;
-  let content;
-  let author;
-  let email;
+  let slug: string;
+  let parentCommentId: number;
+  let content: string;
+  let author: string;
+  let email: string;
 
   try {
     slug = ValidatorUtil.validateSlug(req.body);
@@ -91,7 +92,7 @@ app.post("/createComment", async (req, res): Promise<Article[]> => {
     return res.status(406).send(err.message);
   }
 
-  let comment: ArticleComment = {
+  let comment: Comment = {
     articleSlug: slug,
     parentCommentId,
     content,
@@ -104,7 +105,7 @@ app.post("/createComment", async (req, res): Promise<Article[]> => {
   return res.sendStatus(200);
 });
 
-app.post("/search", async (req, res): Promise<Article[]> => {
+app.post("/search", async (req, res) => {
   console.log("search");
 
   // validate params

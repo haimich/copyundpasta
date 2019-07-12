@@ -23,7 +23,7 @@
         type="text"
         @click="close()"
       >
-        <font-awesome-icon
+        <FontAwesome
           :icon="['fas', 'times-circle']"
         />
       </el-button>

@@ -14,17 +14,17 @@
             <ul>
               <li>
                 <a href="https://www.pinterest.de/copyundpasta" target="_blank" title="Copy & Pasta bei Pinterest">
-                  <font-awesome-icon :icon="['fab', 'pinterest-p']" />
+                  <FontAwesome :icon="['fab', 'pinterest-p']" />
                 </a>
               </li>
               <li>
                 <a href="https://www.google.de" target="_blank" title="Newsletter abonnieren">
-                  <font-awesome-icon :icon="['far', 'envelope']" />
+                  <FontAwesome :icon="['far', 'envelope']" />
                 </a>
               </li>
               <li>
                 <a href="/feed/rss.xml" target="_blank" title="RSS-Feed abonnieren">
-                  <font-awesome-icon :icon="['fas', 'rss']" />
+                  <FontAwesome :icon="['fas', 'rss']" />
                 </a>
               </li>
             </ul>
@@ -79,7 +79,7 @@
               <div class="menu-item-search hidden-sm-and-up">
                 SUCHE
               </div>
-              <font-awesome-icon
+              <FontAwesome
                 :icon="['fas', 'search']"
                 class="hidden-xs-only"
                 style="font-size: 15px;"
@@ -345,7 +345,7 @@
     flex-direction: column;
 
     .logo {
-      width: 275px;
+      width: 290px;
       margin-top: 8px;
       margin-bottom: 26px;
     }

@@ -1,15 +1,4 @@
-
-export interface ArticleComment {
-  id?: number;
-  articleSlug: string;
-  parentCommentId?: number;
-  content: string;
-  author: string;
-  email?: string;
-  children?: ArticleComment[];
-  createdAt?: string;
-  modifiedAt?: string;
-}
+import { Comment } from "./Comment";
 
 export interface Article {
   slug: string;
@@ -18,7 +7,7 @@ export interface Article {
   isHeroArticle?: boolean;
   shortDescription: string;
   previewImageUrl: string;
-  comments?: ArticleComment[],
+  comments?: Comment[],
   createdAt: string;
   modifiedAt: string;
   totalCount?: number;

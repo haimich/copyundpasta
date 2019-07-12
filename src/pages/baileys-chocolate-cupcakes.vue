@@ -66,7 +66,7 @@
 
     <el-row id="comments" style="margin-top: 40px;">
       <el-col :span="16" :offset="4">
-        Kommentare
+        <CommentComponent :comments="comments" />
       </el-col>
     </el-row>
 
@@ -77,6 +77,9 @@
 <script lang="ts">
 
   import { Vue, Component, Prop } from "vue-property-decorator";
+  import CommentComponent from "@/components/comments/CommentComponent.vue";
+  import { Comment } from "@/interfaces/Comment";
+  import ArticleService from "@/services/ArticleService";
 
   import article from "@/content/articles/baileys-chocolate-cupcakes";
   import recipe from "@/content/recipes/baileys-chocolate-cupcakes";
@@ -84,9 +87,30 @@
   @Component({
     head: {
       title: article.title,
-    }
+    },
+    components: {
+      CommentComponent,
+    },
+    // @ts-ignore
+    async asyncData({ $axios, params, error }) {
+      let comments = [];
+
+      try {
+        const response = await ArticleService.getComments($axios, article.slug);
+        
+        comments = response.data;
+      } catch (error) {
+        console.log(error);
+      }
+
+      return {
+        comments,
+      }
+    },
   })
   export default class extends Vue {
+
+    private comments: Comment[] = [];
 
     get recipe() {
       return recipe;

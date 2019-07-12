@@ -1,4 +1,5 @@
-import { Article, ArticleComment } from "@/interfaces/Article";
+import { Article } from "@/interfaces/Article";
+import { Comment } from "@/interfaces/Comment";
 import KnexUtil from "../utils/KnexUtil";
 import { PagingParams } from "@/interfaces/Paging";
 import PagingUtil from "../utils/PagingUtil";
@@ -48,7 +49,7 @@ export default class ArticleRepo {
       .orderBy("createdAt", "desc");
   }
 
-  public static async getArticleComments(slug: string): Promise<ArticleComment[]> {
+  public static async getArticleComments(slug: string): Promise<Comment[]> {
     const knex = KnexUtil.getConnection();
   
     let comments = await knex
@@ -79,7 +80,7 @@ export default class ArticleRepo {
       parentCommentsById[comment.parentCommentId].children.push(comment);
     }
 
-    let parentComments: ArticleComment[] = Object.values(parentCommentsById);
+    let parentComments: Comment[] = Object.values(parentCommentsById);
 
     // sort children
     for (let comment of parentComments) {
@@ -90,14 +91,14 @@ export default class ArticleRepo {
     return parentComments.sort(ArticleRepo.sortComments);
   }
 
-  private static sortComments(a: ArticleComment, b: ArticleComment): number {
+  private static sortComments(a: Comment, b: Comment): number {
     let dateA: any = new Date(a.createdAt);
     let dateB: any = new Date(b.createdAt);
 
     return dateB - dateA;
   }
 
-  public static createComment(comment: ArticleComment): Promise<Article[]> {
+  public static createComment(comment: Comment): Promise<void> {
     const knex = KnexUtil.getConnection();
   
     return knex
