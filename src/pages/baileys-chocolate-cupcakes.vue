@@ -66,7 +66,7 @@
 
     <el-row id="comments" style="margin-top: 40px;">
       <el-col :span="16" :offset="4">
-        <CommentComponent :comments="comments" />
+        <CommentComponent :comments="comments" :slug="article.slug" />
       </el-col>
     </el-row>
 

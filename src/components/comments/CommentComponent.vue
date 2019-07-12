@@ -1,6 +1,15 @@
 <template>
 
   <div>
+
+    <h3 style="margin-bottom: 6px;">HINTERLASSE EINEN KOMMENTAR</h3>
+
+    <hr class="hr">
+
+    <CommentEditorComponent
+      @save="saveComment"
+      style="margin-top: 35px; margin-bottom: 0px;"
+    />
     
     <ul
       class="comments"
@@ -8,7 +17,9 @@
       :key="index"
     >
       <li>
-        <CommentEntryComponent :comment="comment" />
+        <CommentEntryComponent
+          :comment="comment"
+        />
       </li>
     </ul>
 
@@ -19,17 +30,47 @@
 <script lang="ts">
 
   import { Vue, Component, Prop, Watch } from "vue-property-decorator";
+  import CommentEditorComponent from "@/components/comments/CommentEditorComponent.vue";
   import CommentEntryComponent from "@/components/comments/CommentEntryComponent.vue";
+  import { Comment } from "@/interfaces/Comment";
+  import ArticleService from "@/services/ArticleService";
+  import ArticleSearchRepo from "../../api/search/ArticleSearchRepo";
 
   @Component({
     components: {
+      CommentEditorComponent,
       CommentEntryComponent,
     }
   })
   export default class CommentComponent extends Vue {
 
     @Prop()
+    slug: string;
+
+    @Prop()
     comments: Comment[];
+
+    async saveComment(comment: Comment) {
+      comment.slug = this.slug;
+
+      try {
+        await ArticleService.createComment(this.$axios, comment);
+
+        this.$notify({
+          title: "",
+          message: 'Vielen Dank für deinen Kommentar!',
+          type: "success"
+        });
+      } catch (error) {
+        console.log(error);
+
+        this.$notify({
+          title: "",
+          message: 'Beim Speichern ist ein Fehler aufgetreten',
+          type: "warning"
+        });
+      }
+    }
   }
 
 </script>
@@ -45,6 +86,11 @@
     li {
       padding: 18px 0;
     }
+  }
+
+  .hr {
+    border-top: 1.8px solid #353535;
+    margin-bottom: 10px;
   }
 
 </style>

@@ -1,5 +1,6 @@
 import { AxiosPromise } from "axios";
 import { Article } from "@/interfaces/Article";
+import { Comment } from "@/interfaces/Comment";
 
 export default class ArticleService {
 

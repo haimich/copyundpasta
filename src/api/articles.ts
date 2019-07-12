@@ -93,7 +93,7 @@ app.post("/createComment", async (req, res) => {
   }
 
   let comment: Comment = {
-    articleSlug: slug,
+    slug,
     parentCommentId,
     content,
     author,

@@ -5,13 +5,7 @@
     <!-- Single Comment -->
     <el-row>
       <el-col :span="3" style="display: flex; justify-content: center;">
-        <el-avatar
-          :size="45"
-          class="comment-avatar"
-          :src="avatarImage"
-        >
-          <FontAwesome :icon="['fas', 'user-circle']" />
-        </el-avatar>
+        <CommentAvatarComponent />
       </el-col>
 
       <el-col :span="21">
@@ -47,8 +41,13 @@
 
   import { Vue, Component, Prop, Watch } from "vue-property-decorator";
   import { Comment } from "@/interfaces/Comment";
+  import CommentAvatarComponent from "@/components/comments/CommentAvatarComponent.vue";
 
-  @Component
+  @Component({
+    components: {
+      CommentAvatarComponent,
+    }
+  })
   export default class CommentEntryComponent extends Vue {
 
     @Prop()
@@ -70,12 +69,6 @@
 <style lang="scss" scoped>
 
   @import "~/scss/variables.scss";
-
-  .comment-avatar {
-    background-color: white;
-    color: #c0c4cc;
-    font-size: 45px;
-  }
 
   .comment-author {
     font-size: 14px;

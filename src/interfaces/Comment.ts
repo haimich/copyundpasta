@@ -1,7 +1,7 @@
 
 export interface Comment {
   id?: number;
-  articleSlug: string;
+  slug?: string;
   parentCommentId?: number;
   content: string;
   author: string;

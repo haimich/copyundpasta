@@ -3,6 +3,7 @@ import { Comment } from "@/interfaces/Comment";
 import KnexUtil from "../utils/KnexUtil";
 import { PagingParams } from "@/interfaces/Paging";
 import PagingUtil from "../utils/PagingUtil";
+import _ from "lodash";
 
 export default class ArticleRepo {
 
@@ -100,9 +101,14 @@ export default class ArticleRepo {
 
   public static createComment(comment: Comment): Promise<void> {
     const knex = KnexUtil.getConnection();
+
+    let dbComment = _.clone(comment);
+
+    dbComment.articleSlug = dbComment.slug;
+    delete dbComment.slug;
   
     return knex
-      .insert(comment)
+      .insert(dbComment)
       .into("article_comments");
   }
   
