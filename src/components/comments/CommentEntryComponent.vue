@@ -1,30 +1,45 @@
 <template>
 
-  <el-row>
-    <el-col :span="3" style="display: flex; justify-content: center;">
-      <el-avatar
-        :size="45"
-        class="comment-avatar"
-        :src="avatarImage"
-      >
-        <FontAwesome :icon="['fas', 'user-circle']" />
-      </el-avatar>
-    </el-col>
+  <div>
 
-    <el-col :span="21">
-      <el-row class="comment-author">
-        {{ comment.author }}
-      </el-row>
+    <!-- Single Comment -->
+    <el-row>
+      <el-col :span="3" style="display: flex; justify-content: center;">
+        <el-avatar
+          :size="45"
+          class="comment-avatar"
+          :src="avatarImage"
+        >
+          <FontAwesome :icon="['fas', 'user-circle']" />
+        </el-avatar>
+      </el-col>
 
-      <el-row class="comment-created">
-        <FontAwesome :icon="['far', 'clock']" /> {{ comment.createdAt | formatAsDate }}
-      </el-row>
+      <el-col :span="21">
+        <el-row class="comment-author">
+          {{ comment.author }}
+        </el-row>
 
-      <el-row class="comment-content">
-        {{ comment.content }}
-      </el-row>
-    </el-col>
-  </el-row>
+        <el-row class="comment-created">
+          <FontAwesome :icon="['far', 'clock']" /> {{ comment.createdAt | formatAsDate }}
+        </el-row>
+
+        <el-row class="comment-content">
+          {{ comment.content }}
+        </el-row>
+      </el-col>
+    </el-row>
+
+    <!-- Children -->
+    <el-row v-if="hasChildren()" style="margin-top: 15px; margin-left: 30px;">
+      <CommentEntryComponent
+        v-for="(comment, index) in comment.children"
+        :key="index"
+        :comment="comment"
+        style="margin-bottom: 15px;"
+      />
+    </el-row>
+
+  </div>
 
 </template>
 
@@ -42,7 +57,12 @@
     @Prop({
       required: false,
     })
-    avatarImage = "";
+    avatarImage: string;
+
+    hasChildren(): boolean {
+      return this.comment.children != null && this.comment.children.length >= 1;
+    }
+
   }
 
 </script>
