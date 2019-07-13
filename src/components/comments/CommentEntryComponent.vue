@@ -8,7 +8,7 @@
         <CommentAvatarComponent />
       </el-col>
 
-      <el-col :span="21">
+      <el-col :span="21" class="comment-container">
         <el-row class="comment-author">
           {{ comment.author }}
         </el-row>
@@ -70,6 +70,12 @@
 <style lang="scss" scoped>
 
   @import "~/scss/variables.scss";
+
+  .comment-container {
+    border: 1px solid rgb(191, 191, 191);
+    border-radius: 4px;
+    padding: 12px 18px;
+  }
 
   .comment-author {
     font-size: 14px;
