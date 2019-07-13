@@ -66,7 +66,7 @@
 
     <el-row id="comments" style="margin-top: 40px;">
       <el-col :span="16" :offset="4">
-        <CommentComponent :comments="comments" :slug="article.slug" />
+        <CommentComponent :comments="comments" :slug="article.slug" @commentAdded="refreshComments" />
       </el-col>
     </el-row>
 
@@ -118,6 +118,18 @@
 
     get article() {
       return article;
+    }
+
+    async refreshComments($) {
+      let comments = [];
+
+      try {
+        const response = await ArticleService.getComments(this.$axios, article.slug);
+        
+        this.comments = response.data;
+      } catch (error) {
+        console.log(error);
+      }
     }
 
   }

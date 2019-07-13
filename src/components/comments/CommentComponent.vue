@@ -2,7 +2,9 @@
 
   <div>
 
-    <h3 style="margin-bottom: 6px;">HINTERLASSE EINEN KOMMENTAR</h3>
+    <h3 style="margin-bottom: 6px;">
+      HINTERLASSE EINEN KOMMENTAR
+    </h3>
 
     <hr class="hr">
 
@@ -59,8 +61,10 @@
         this.$notify({
           title: "",
           message: 'Vielen Dank für deinen Kommentar!',
-          type: "success"
+          type: "success",
         });
+
+        this.$emit("commentAdded");
       } catch (error) {
         console.log(error);
 

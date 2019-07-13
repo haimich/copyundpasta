@@ -14,7 +14,7 @@
         </el-row>
 
         <el-row class="comment-created">
-          <FontAwesome :icon="['far', 'clock']" /> {{ comment.createdAt | formatAsDate }}
+          <FontAwesome :icon="['far', 'clock']" /> {{ comment.createdAt | formatAsDateWithTime }}
         </el-row>
 
         <el-row class="comment-content">

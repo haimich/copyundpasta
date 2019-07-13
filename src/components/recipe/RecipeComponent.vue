@@ -109,7 +109,7 @@
   import { Recipe, RecipeStep, RecipeServings, RecipeIngredient, RecipeIngredientGroup, RecipeStepGroup } from "@/interfaces/Recipe";
   import { RecipeUnit, RecipeServingsUnit } from "@/interfaces/RecipeIngredients";
   import { Tag } from "@/interfaces/RecipeTags";
-  import { $n } from "@/filters/formatNumber";
+  import { $n } from "@/filters/numberFilter";
   import RecipeService from "../../services/RecipeService";
   import NumberUtil from "../../utils/NumberUtil";
 import { RatingResponse } from "../../interfaces/Rating";

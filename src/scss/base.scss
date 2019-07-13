@@ -123,6 +123,13 @@ a:hover {
 .el-notification {
   word-break: break-word;
   padding-right: 35px;
+
+  p {
+    font-size: 15px;
+    line-height: 15px;
+    line-height: 20px;
+    letter-spacing: 0.1px;
+  }
   
   .el-notification__content {
     text-align: left;    
