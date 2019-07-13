@@ -78,7 +78,7 @@
   }
 
   .comment-created {
-    margin-top: 8px;
+    margin-top: 10px;
     font-size: 13px;
     color: #757575;
   }

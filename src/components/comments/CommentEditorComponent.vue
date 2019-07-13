@@ -11,6 +11,7 @@
         <el-form
           :model="form"
           :rules="rules"
+          :validateOnRuleChange="false"
           ref="form"
         >
           <el-row>
@@ -87,13 +88,23 @@
 
     private showPreview = false;
 
-    private rules = {
-      author: [
-        { required: true, message: "Bitte gib einen Namen ein", trigger: "change" },
-      ],
-      content: [
-        { required: true, message: "Bitte gib einen Text ein", trigger: "change" },
-      ],
+    private formValidationEnabled = true;
+
+    get rules() {
+      let rules = {};
+
+      if (this.formValidationEnabled) {
+        rules = {
+          author: [
+            { required: true, message: "Bitte gib einen Namen ein", trigger: "change" },
+          ],
+          content: [
+            { required: true, message: "Bitte gib einen Text ein", trigger: "change" },
+          ],
+        };
+      }
+
+      return rules;
     };
 
     formIsEmpty(): boolean {
@@ -101,6 +112,7 @@
     }
 
     save() {
+      console.log(this.$refs.form)
       // @ts-ignore
       this.$refs.form.validate((valid) => {
         if (valid) {
@@ -110,6 +122,16 @@
           };
 
           this.$emit("save", comment);
+
+          // temporarily disable form validation or it shows an error after save
+          this.formValidationEnabled = false;
+
+          this.form.author = "";
+          this.form.content = "";
+
+          setTimeout(() => {
+            this.formValidationEnabled = true;
+          }, 1000);
         }
       });
     }
