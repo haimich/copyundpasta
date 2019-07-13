@@ -9,17 +9,29 @@
       </el-col>
 
       <el-col :span="21" class="comment-container">
-        <el-row class="comment-author">
-          {{ comment.author }}
+        <SingleCommentComponent :comment="comment" />
+
+        <el-row style="display: flex; justify-content: flex-end">
+          <el-button
+            v-if="! hasParent()"
+            size="small"
+            round
+            @click="showEditor = ! showEditor"
+          >
+            <span v-if="showEditor">
+              Antwort ausblenden
+            </span>
+            <span v-else>
+              Antworten
+            </span>
+          </el-button>
         </el-row>
 
-        <el-row class="comment-created">
-          <FontAwesome :icon="['far', 'clock']" />
-          <timeago :datetime="comment.createdAt"></timeago>
-        </el-row>
-
-        <el-row class="comment-content">
-          {{ comment.content }}
+        <el-row v-show="showEditor">
+          <CommentEditorComponent
+            @save="saveComment"
+            style="margin-top: 35px; margin-bottom: 10px;"
+          />
         </el-row>
       </el-col>
     </el-row>
@@ -43,10 +55,14 @@
   import { Vue, Component, Prop, Watch } from "vue-property-decorator";
   import { Comment } from "@/interfaces/Comment";
   import CommentAvatarComponent from "@/components/comments/CommentAvatarComponent.vue";
+  import CommentEditorComponent from "@/components/comments/CommentEditorComponent.vue";
+  import SingleCommentComponent from "@/components/comments/SingleCommentComponent.vue";
 
   @Component({
     components: {
       CommentAvatarComponent,
+      CommentEditorComponent,
+      SingleCommentComponent
     }
   })
   export default class CommentEntryComponent extends Vue {
@@ -59,8 +75,18 @@
     })
     avatarImage: string;
 
+    private showEditor = false;
+
     hasChildren(): boolean {
       return this.comment.children != null && this.comment.children.length >= 1;
+    }
+
+    hasParent(): boolean {
+      return this.comment.parentCommentId !== undefined && this.comment.parentCommentId !== null;
+    }
+
+    saveComment() {
+
     }
 
   }
@@ -75,27 +101,6 @@
     border: 1px solid rgb(191, 191, 191);
     border-radius: 4px;
     padding: 12px 18px;
-  }
-
-  .comment-author {
-    font-size: 14px;
-    color: #353535;
-    text-transform: uppercase;
-  }
-
-  .comment-created {
-    margin-top: 10px;
-    font-size: 13px;
-    color: #757575;
-  }
-
-  .comment-content {
-    margin-top: 10px;
-    line-height: 30px;
-    color: #101010;
-    font-weight: 300;
-    letter-spacing: 0.3px;
-    word-spacing: 0px;
   }
 
 </style>

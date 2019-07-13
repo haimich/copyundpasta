@@ -2,7 +2,7 @@
 
   <div class="comment-editor">
 
-    <el-row v-show="! showPreview">
+    <el-row>
       <el-col :span="3" style="display: flex; justify-content: center;">
         <CommentAvatarComponent />
       </el-col>
@@ -13,6 +13,7 @@
           :rules="rules"
           :validateOnRuleChange="false"
           ref="form"
+          v-show="! showPreview"
         >
           <el-row>
             <el-form-item prop="author">
@@ -37,17 +38,20 @@
             </el-form-item>
           </el-row>
         </el-form>
+
+        <SingleCommentComponent 
+          v-show="showPreview"
+          :comment="form"
+          style="min-height: 206px;"
+        />
       </el-col>
     </el-row>
 
-    <el-row v-show="showPreview" style="min-height: 206px;">
-      <CommentEntryComponent
-        :comment="form"
-      />
-    </el-row>
-
     <el-row style="display: flex; justify-content: flex-end;">
-      <el-button @click="showPreview = ! showPreview" :disabled="formIsEmpty()">
+      <el-button
+        @click="showPreview = ! showPreview"
+        :disabled="formIsEmpty()"
+      >
         <span v-if="showPreview">
           Vorschau ausblenden
         </span>
@@ -56,7 +60,10 @@
         </span>
       </el-button>
 
-      <el-button type="primary" @click="save">
+      <el-button
+        type="primary"
+        @click="save"
+      >
         Abschicken
       </el-button>
     </el-row>
@@ -70,12 +77,12 @@
   import { Vue, Component, Prop, Watch } from "vue-property-decorator";
   import CommentAvatarComponent from "@/components/comments/CommentAvatarComponent.vue";
   import { Comment } from "@/interfaces/Comment";
-  import CommentEntryComponent from "@/components/comments/CommentEntryComponent.vue";
+  import SingleCommentComponent from "@/components/comments/SingleCommentComponent.vue";
 
   @Component({
     components: {
       CommentAvatarComponent,
-      CommentEntryComponent,
+      SingleCommentComponent,
     }
   })
   export default class CommentEditorComponent extends Vue {

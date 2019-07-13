@@ -172,7 +172,7 @@ const config: NuxtConfiguration = {
           test: /\.(js|ts|vue)$/,
           loader: "eslint-loader",
           exclude: /(node_modules)/
-        })
+        });
       }
     }
   }
