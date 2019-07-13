@@ -1,4 +1,4 @@
-import Vue from "vue"
+import Vue from "vue";
 
 import { $n } from "@/filters/numberFilter";
 import { formatAsDate, formatAsDateWithTime } from "@/filters/dateFilter";

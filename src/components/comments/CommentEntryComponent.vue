@@ -14,7 +14,8 @@
         </el-row>
 
         <el-row class="comment-created">
-          <FontAwesome :icon="['far', 'clock']" /> {{ comment.createdAt | formatAsDateWithTime }}
+          <FontAwesome :icon="['far', 'clock']" />
+          <timeago :datetime="comment.createdAt"></timeago>
         </el-row>
 
         <el-row class="comment-content">
@@ -72,7 +73,7 @@
 
   .comment-author {
     font-size: 14px;
-    color: #2f2f2f;
+    color: #353535;
     text-transform: uppercase;
   }
 

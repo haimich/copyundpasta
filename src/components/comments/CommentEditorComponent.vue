@@ -46,7 +46,7 @@
     </el-row>
 
     <el-row style="display: flex; justify-content: flex-end;">
-      <el-button @click="showPreview = ! showPreview">
+      <el-button @click="showPreview = ! showPreview" :disabled="formIsEmpty()">
         <span v-if="showPreview">
           Vorschau ausblenden
         </span>
@@ -95,6 +95,10 @@
         { required: true, message: "Bitte gib einen Text ein", trigger: "change" },
       ],
     };
+
+    formIsEmpty(): boolean {
+      return (this.form.author == null || this.form.author === "") && (this.form.content == null || this.form.content === "");
+    }
 
     save() {
       // @ts-ignore

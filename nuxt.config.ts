@@ -106,6 +106,7 @@ const config: NuxtConfiguration = {
     "@/plugins/fontawesome",
     "@/plugins/filters",
     "@/plugins/globalComponents",
+    "@/plugins/timeago",
   ],
 
   /*
