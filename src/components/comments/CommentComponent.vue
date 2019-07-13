@@ -21,6 +21,7 @@
       <li>
         <CommentEntryComponent
           :comment="comment"
+          @saveComment="saveComment"
         />
       </li>
     </ul>

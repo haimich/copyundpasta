@@ -37,13 +37,15 @@
     </el-row>
 
     <!-- Children -->
-    <el-row v-if="hasChildren()" style="margin-top: 15px; margin-left: 30px;">
-      <CommentEntryComponent
-        v-for="(comment, index) in comment.children"
-        :key="index"
-        :comment="comment"
-        style="margin-bottom: 15px;"
-      />
+    <el-row v-if="hasChildren()" style="margin-top: 28px;">
+      <el-col :span="21" :offset="3">
+        <CommentEntryComponent
+          v-for="(comment, index) in comment.children"
+          :key="index"
+          :comment="comment"
+          style="margin-bottom: 28px;"
+        />
+      </el-col>
     </el-row>
 
   </div>
@@ -85,8 +87,12 @@
       return this.comment.parentCommentId !== undefined && this.comment.parentCommentId !== null;
     }
 
-    saveComment() {
+    saveComment(comment: Comment) {
+      comment.parentCommentId = this.comment.id;
 
+      this.$emit("saveComment", comment);
+
+      this.showEditor = false;
     }
 
   }

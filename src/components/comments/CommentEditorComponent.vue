@@ -119,7 +119,6 @@
     }
 
     save() {
-      console.log(this.$refs.form)
       // @ts-ignore
       this.$refs.form.validate((valid) => {
         if (valid) {

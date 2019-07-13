@@ -85,18 +85,25 @@ export default class ArticleRepo {
 
     // sort children
     for (let comment of parentComments) {
-      comment.children = comment.children.sort(ArticleRepo.sortComments);
+      comment.children = comment.children.sort(ArticleRepo.sortCommentsAsc);
     }
 
     // sort parents
-    return parentComments.sort(ArticleRepo.sortComments);
+    return parentComments.sort(ArticleRepo.sortCommentsDesc);
   }
 
-  private static sortComments(a: Comment, b: Comment): number {
+  private static sortCommentsDesc(a: Comment, b: Comment): number {
     let dateA: any = new Date(a.createdAt);
     let dateB: any = new Date(b.createdAt);
 
     return dateB - dateA;
+  }
+
+  private static sortCommentsAsc(a: Comment, b: Comment): number {
+    let dateA: any = new Date(a.createdAt);
+    let dateB: any = new Date(b.createdAt);
+
+    return dateA - dateB;
   }
 
   public static createComment(comment: Comment): Promise<void> {
