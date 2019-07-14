@@ -9,7 +9,9 @@
       </el-col>
 
       <el-col :span="21" class="comment-container">
-        <SingleCommentComponent :comment="comment" />
+        <SingleCommentComponent
+          :comment="comment"
+        />
 
         <el-row style="display: flex; justify-content: flex-end">
           <el-button
@@ -30,6 +32,7 @@
         <el-row v-show="showEditor">
           <CommentEditorComponent
             @save="saveComment"
+            size="small"
             style="margin-top: 35px; margin-bottom: 10px;"
           />
         </el-row>

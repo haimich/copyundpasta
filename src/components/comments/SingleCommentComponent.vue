@@ -7,7 +7,7 @@
 
     <el-row class="comment-created">
       <FontAwesome :icon="['far', 'clock']" />
-      <timeago :datetime="comment.createdAt"></timeago>
+      <timeago :datetime="dateTime"></timeago>
     </el-row>
 
     <el-row class="comment-content">
@@ -21,12 +21,17 @@
 
   import { Vue, Component, Prop, Watch } from "vue-property-decorator";
   import { Comment } from "@/interfaces/Comment";
+  import moment from "moment-timezone";
 
   @Component
   export default class SingleCommentComponent extends Vue {
 
     @Prop()
     comment: Comment;
+
+    get dateTime(): string {
+      return moment(this.comment.createdAt).tz("Europe/Berlin").format();
+    }
 
   }
 

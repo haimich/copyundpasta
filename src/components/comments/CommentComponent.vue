@@ -10,6 +10,7 @@
 
     <CommentEditorComponent
       @save="saveComment"
+      size="large"
       style="margin-top: 35px; margin-bottom: 10px;"
     />
     

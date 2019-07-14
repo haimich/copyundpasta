@@ -12,6 +12,7 @@
           :model="form"
           :rules="rules"
           :validateOnRuleChange="false"
+          :size="elementSize"
           ref="form"
           v-show="! showPreview"
         >
@@ -24,6 +25,8 @@
                 style="width: 40%"
               ></el-input>
             </el-form-item>
+
+            <div class="g-recaptcha" data-sitekey="6LfEoa0UAAAAAKePA_8uLzgBTI9LIoJKebCQFDOZ"></div>
           </el-row>
 
           <el-row>
@@ -32,7 +35,7 @@
                 type="textarea"
                 v-model="form.content"
                 prop="content"
-                :rows="5"
+                :rows="textareaRows"
                 placeholder="Kommentar"
                 style="position: relative;"
               ></el-input>
@@ -64,6 +67,7 @@
     <el-row style="display: flex; justify-content: flex-end;">
       <el-button
         @click="showPreview = ! showPreview"
+        :size="elementSize"
         :disabled="formIsEmpty()"
       >
         <span v-if="showPreview">
@@ -76,6 +80,7 @@
 
       <el-button
         type="primary"
+        :size="elementSize"
         @click="save"
       >
         Abschicken
@@ -109,10 +114,13 @@
   })
   export default class CommentEditorComponent extends Vue {
 
+    @Prop()
+    size: "small" | "large";
+
     private form = {
       author: "",
       content: "",
-      createdAt: new Date(),
+      createdAt: new Date(), // only used for preview
     }
 
     private showPreview = false;
@@ -120,6 +128,22 @@
     private formValidationEnabled = true;
 
     private emojiDialogVisible = false;
+
+    get elementSize() {
+      if (this.size === "small") {
+        return "medium";
+      } else {
+        return "";
+      }
+    }
+
+    get textareaRows() {
+      if (this.size === "small") {
+        return 4;
+      } else {
+        return 5;
+      }
+    }
 
     get rules() {
       let rules = {};
