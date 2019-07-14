@@ -1,5 +1,12 @@
+interface EmojiList {
+    [key: string]: string;
+}
 
-export default {
+interface EmojisByCategories {
+    [key: string]: EmojiList
+}
+
+const emojis: EmojisByCategories = {
     'Häufig verwendet': {
         'thumbs_up': '👍',
         '-1': '👎',
@@ -647,4 +654,22 @@ export default {
         'small_orange_diamond': '🔸',
         'small_blue_diamond': '🔹',
     },
+}
+
+let emojisByKey: EmojiList[] = [];
+let emojisByIcon: EmojiList[] = [];
+
+for (let emojisByCategory of Object.values(emojis)) {
+    for (let emojiKey of Object.keys(emojisByCategory)) {
+        emojisByKey[emojiKey] = emojisByCategory[emojiKey];
+        emojisByIcon[emojisByCategory[emojiKey]] = emojiKey;
+    }
+}
+
+export default class EmojiUtil {
+
+    static getEmojisByCategory(): EmojisByCategories {
+        return emojis;
+    }
+
 }

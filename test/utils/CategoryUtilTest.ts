@@ -1,4 +1,4 @@
-import CategoryUtil from "@/utils/categoryUtil";
+import CategoryUtil from "@/utils/CategoryUtil";
 import categories from "@/interfaces/RecipeCategories";
 
 describe("getAllArticleCategories", () => {

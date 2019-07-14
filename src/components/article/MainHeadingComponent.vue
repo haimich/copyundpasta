@@ -21,7 +21,15 @@
       v-if="commentCount >= 1"
     >
       <a href="#comments" title="Zu Kommentaren springen">
-        <FontAwesome :icon="['far', 'comment']" style="margin-right: 5px;" /> 8 Kommentare
+        <FontAwesome :icon="['far', 'comment']" style="margin-right: 4px;" />
+        {{ commentCount }}
+        
+        <span v-if="commentCount === 1">
+          Kommentar
+        </span>
+        <span v-else>
+          Kommentare
+        </span>
       </a>
     </el-row>
 

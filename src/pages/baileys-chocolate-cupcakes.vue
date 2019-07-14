@@ -8,7 +8,7 @@
           <MainHeadingComponent
             :text="article.title"
             image="https://livforcake.com/wp-content/uploads/2015/02/IMG_5007-Version-21.jpg"
-            commentCount="8"
+            :commentCount="commentCount"
           />
           
           <ArticleJumpToRecipeComponent />
@@ -118,6 +118,20 @@
 
     get article() {
       return article;
+    }
+
+    get commentCount() {
+      let count = 0;
+
+      for (let comment of this.comments) {
+        count += 1;
+
+        if (comment.children != null) {
+          count += comment.children.length;
+        }
+      }
+
+      return count;
     }
 
     async refreshComments($) {

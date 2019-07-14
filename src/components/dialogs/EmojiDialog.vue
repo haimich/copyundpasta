@@ -37,7 +37,7 @@
 <script lang="ts">
 
   import { Vue, Component, Prop, Watch } from "vue-property-decorator";
-  import emojis from "@/utils/emojiUtil";
+  import EmojiUtil from "@/utils/EmojiUtil";
 
   @Component
   export default class EmojiDialog extends Vue {
@@ -46,7 +46,7 @@
     visible: boolean;
 
     get emojiList() {
-      return emojis;
+      return EmojiUtil.getEmojisByCategory();
     }
 
     selectEmoji(emoji: string) {

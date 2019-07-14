@@ -30,8 +30,25 @@ production.connection = {
 };
 production.debug = false;
 
+let development = _.clone(defaultConfig);
+
+development.connection = {
+  database: "haimich",
+  user:     "root",
+  password: "password",
+  pool: {
+    afterCreate: function (conn, done) {
+      // this doesn't really work :(
+      conn.query("SET character_set_server = utf8mb4;", function (err) {
+        console.log("Error during knex setup", err);
+      });
+    }
+  }
+};
+development.debug = false;
+
 module.exports = {
-  development: defaultConfig,
+  development: development,
   test: defaultConfig,
   production,
 };

@@ -167,7 +167,7 @@
     }
 
     insertEmoji(emoji: string) {
-      this.form.content += " " + emoji;
+      this.form.content += emoji;
     }
 
   }
