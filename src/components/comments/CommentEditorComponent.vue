@@ -84,6 +84,7 @@
 
     <EmojiDialog
       :visible="emojiDialogVisible"
+      @selectEmoji="insertEmoji"
       @close="emojiDialogVisible = false"
     />
 
@@ -163,6 +164,10 @@
           }, 1000);
         }
       });
+    }
+
+    insertEmoji(emoji: string) {
+      this.form.content += " " + emoji;
     }
 
   }

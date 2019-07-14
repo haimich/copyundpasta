@@ -104,7 +104,7 @@
   @import "~/scss/variables.scss";
 
   .comment-container {
-    border: 1px solid rgb(191, 191, 191);
+    border: 1px solid #dcdee4;
     border-radius: 4px;
     padding: 12px 18px;
   }
