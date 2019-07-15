@@ -119,3 +119,20 @@ describe('validateEmail', () => {
       }, false)).toEqual("");
   });
 });
+
+describe('validateCaptcha', () => {
+  test('should validate', async () => {
+    let result = await ValidatorUtil.validateCaptcha("03AOLTBLToGDJSSD7seVnJImBXfN3Y_V8FP4vFijUyrYr42yGuf0npZSAhnVxbk5aIAxo0OfXpFg9mWwwB89Io2Sso2sIiUMpQOjDNLm8dRUoy_cQbeuF7JVy16Uw4ND_PKy1XERSeKOPfwHO6zHrcPXcYpddf3VSwE8tammKTRpbNpIIft5IlxDczI9djUL0xslM6rzv3VO2FrOumxVJgVtX1QagVJm21M9ehIZ8PpOljHAs4gVTQnFXx9M62cHx7yuKMX23w0l3Y8ZKHLNY7QTXw7cMMM9TH1UNAGg0sf9r5nGmhcXsHwATiaNc9gaMw3DwIYjDlEQxJ");
+
+    expect(result).toEqual(true);
+  });
+
+  test('should throw an error for invalid captcha', async () => {
+    try {
+      await ValidatorUtil.validateCaptcha("foo");
+      expect(true).toEqual(false);
+    } catch (error) {
+      expect(true).toEqual(true);
+    }
+  });
+});

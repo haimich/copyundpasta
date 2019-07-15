@@ -44,7 +44,6 @@
 .comment-author {
     font-size: 14px;
     color: #353535;
-    text-transform: uppercase;
   }
 
   .comment-created {

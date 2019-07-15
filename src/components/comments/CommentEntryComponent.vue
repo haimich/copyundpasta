@@ -58,7 +58,7 @@
 <script lang="ts">
 
   import { Vue, Component, Prop, Watch } from "vue-property-decorator";
-  import { Comment } from "@/interfaces/Comment";
+  import { Comment, CommentWithChallenge } from "@/interfaces/Comment";
   import CommentAvatarComponent from "@/components/comments/CommentAvatarComponent.vue";
   import CommentEditorComponent from "@/components/comments/CommentEditorComponent.vue";
   import SingleCommentComponent from "@/components/comments/SingleCommentComponent.vue";
@@ -90,10 +90,10 @@
       return this.comment.parentCommentId !== undefined && this.comment.parentCommentId !== null;
     }
 
-    saveComment(comment: Comment) {
-      comment.parentCommentId = this.comment.id;
+    saveComment(commentWithChallenge: CommentWithChallenge) {
+      commentWithChallenge.comment.parentCommentId = this.comment.id;
 
-      this.$emit("saveComment", comment);
+      this.$emit("saveComment", commentWithChallenge);
 
       this.showEditor = false;
     }

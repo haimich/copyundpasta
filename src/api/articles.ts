@@ -1,6 +1,6 @@
 import ExpressUtil from "./utils/ExpressUtil";
 import { Article } from "../interfaces/Article";
-import { Comment } from "../interfaces/Comment";
+import { Comment, CommentWithChallenge } from "../interfaces/Comment";
 import ArticleRepo from "./db/ArticleRepo";
 import ArticleSearchRepo from "./search/ArticleSearchRepo";
 import ValidatorUtil from "./utils/ValidatorUtil";
@@ -74,33 +74,19 @@ app.post("/createComment", async (req, res) => {
   console.log("createComment");
 
   // validate params
-  let slug: string;
-  let parentCommentId: number;
-  let content: string;
-  let author: string;
-  let email: string;
+  let commentWithChallenge: CommentWithChallenge;
 
   try {
-    slug = ValidatorUtil.validateSlug(req.body);
-    parentCommentId = ValidatorUtil.validateParentCommentId(req.body);
-    content = ValidatorUtil.validateContent(req.body);
-    author = ValidatorUtil.validateAuthor(req.body);
-    email = ValidatorUtil.validateEmail(req.body, false);
+    commentWithChallenge = ValidatorUtil.validateCommentWithChallenge(req.body);
+
+    await ValidatorUtil.validateCaptcha(commentWithChallenge.recaptchaChallenge);
   } catch (err) {
     console.error(err);
 
     return res.status(406).send(err.message);
   }
 
-  let comment: Comment = {
-    slug,
-    parentCommentId,
-    content,
-    author,
-    email,
-  }
-
-  await ArticleRepo.createComment(comment);
+  await ArticleRepo.createComment(commentWithChallenge.comment);
 
   return res.sendStatus(200);
 });

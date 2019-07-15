@@ -44,11 +44,7 @@
         :src="image"
         style="min-height: 300px; margin-top: 16px; margin-bottom: 60px;"
         alt="Titelbild"
-      >
-        <div slot="placeholder" class="image-slot">
-          Loading<span class="dot">...</span>
-        </div>
-      </el-image>
+      ></el-image>
     </el-row>
 
   </div>

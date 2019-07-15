@@ -1,6 +1,6 @@
 import { AxiosPromise } from "axios";
 import { Article } from "@/interfaces/Article";
-import { Comment } from "@/interfaces/Comment";
+import { Comment, CommentWithChallenge } from "@/interfaces/Comment";
 
 export default class ArticleService {
 
@@ -20,8 +20,8 @@ export default class ArticleService {
     });
   }
 
-  static createComment($axios, comment: Comment): AxiosPromise<void> {
-    return $axios.post(`/api/articles/createComment`, comment);
+  static createComment($axios, commentWithChallenge: CommentWithChallenge): AxiosPromise<void> {
+    return $axios.post(`/api/articles/createComment`, commentWithChallenge);
   }
 
 }

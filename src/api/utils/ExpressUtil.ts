@@ -1,7 +1,7 @@
 const express = require("express");
-const compression = require('compression');
+const compression = require("compression");
 const bodyParser = require("body-parser");
-require('express-async-errors');
+require("express-async-errors");
 
 export default class ExpresUtil {
 

@@ -36,7 +36,7 @@
   import { Vue, Component, Prop, Watch } from "vue-property-decorator";
   import CommentEditorComponent from "@/components/comments/CommentEditorComponent.vue";
   import CommentEntryComponent from "@/components/comments/CommentEntryComponent.vue";
-  import { Comment } from "@/interfaces/Comment";
+  import { Comment, CommentWithChallenge } from "@/interfaces/Comment";
   import ArticleService from "@/services/ArticleService";
   import ArticleSearchRepo from "../../api/search/ArticleSearchRepo";
 
@@ -54,15 +54,15 @@
     @Prop()
     comments: Comment[];
 
-    async saveComment(comment: Comment) {
-      comment.slug = this.slug;
+    async saveComment(commentWithChallenge: CommentWithChallenge) {
+      commentWithChallenge.comment.slug = this.slug;
 
       try {
-        await ArticleService.createComment(this.$axios, comment);
+        await ArticleService.createComment(this.$axios, commentWithChallenge);
 
         this.$notify({
           title: "",
-          message: 'Vielen Dank für deinen Kommentar!',
+          message: "Vielen Dank für deinen Kommentar!",
           type: "success",
         });
 
@@ -72,7 +72,7 @@
 
         this.$notify({
           title: "",
-          message: 'Beim Speichern ist ein Fehler aufgetreten',
+          message: "Beim Speichern ist ein Fehler aufgetreten",
           type: "warning"
         });
       }

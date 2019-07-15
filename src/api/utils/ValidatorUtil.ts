@@ -1,9 +1,67 @@
+require("dotenv").config();
 import { PagingParams } from "@/interfaces/Paging";
 import StringUtil from "./StringUtil";
+import { Comment, CommentWithChallenge } from "@/interfaces/Comment";
+import axios from "axios";
 
 const DEFAULT_PAGE_SIZE = 9;
 
+let recaptchaSecret;
+
+if (process.env.RECAPTCHA_SECRET_KEY == null || process.env.RECAPTCHA_SECRET_KEY === "") {
+  throw new Error("Missing recaptcha secret");
+} else {
+  recaptchaSecret = process.env.RECAPTCHA_SECRET_KEY;
+}
+
 export default class ValidatorUtil {
+
+  public static async validateCaptcha(recaptchaCallenge: string): Promise<boolean> {
+    try {
+      let response = await axios.post(
+        `https://www.google.com/recaptcha/api/siteverify?secret=${recaptchaSecret}&response=${recaptchaCallenge}`
+      );
+      
+      if (response.data.success === true) {
+        return true;
+      } else {
+        throw new Error("Invalid captcha");
+      }
+    } catch (err) {
+      throw new Error("Invalid captcha");
+    }
+  }
+
+  public static validateCommentWithChallenge(body: any): CommentWithChallenge {
+    return {
+      comment: ValidatorUtil.validateComment(body.comment),
+      recaptchaChallenge: ValidatorUtil.validateRecaptchaChallenge(body),
+    };
+  }
+
+  public static validateComment(body: any): Comment {
+    return {
+      slug: ValidatorUtil.validateSlug(body),
+      parentCommentId: ValidatorUtil.validateParentCommentId(body),
+      content: ValidatorUtil.validateContent(body),
+      author: ValidatorUtil.validateAuthor(body),
+      email: ValidatorUtil.validateEmail(body, false),
+    };
+  }
+
+  public static validateRecaptchaChallenge(body: any): string {
+    if (body == null || body.recaptchaChallenge == null) {
+      throw new Error("Missing mandatory field 'recaptchaChallenge'");
+    }
+  
+    const recaptchaChallenge = body.recaptchaChallenge;
+  
+    if (recaptchaChallenge == "" || recaptchaChallenge.length <= 0 || recaptchaChallenge.length >= 10000) {
+      throw new Error("Invalid value for field 'recaptchaChallenge'");
+    } else {
+      return recaptchaChallenge;
+    }
+  }
 
   public static validateSlug(body: any): string {
     if (body == null || body.slug == null) {

@@ -16,17 +16,33 @@
           ref="form"
           v-show="! showPreview"
         >
-          <el-row>
-            <el-form-item prop="author">
-              <el-input
-                v-model="form.author"
-                
-                placeholder="Name"
-                style="width: 40%"
-              ></el-input>
-            </el-form-item>
+          <el-row class="name-row">
+            <el-col
+              :lg="12"
+              :md="10"
+              :sm="24"
+              :xs="24"
+            >
+              <el-form-item prop="author">
+                <el-input
+                  v-model="form.author"
+                  placeholder="Name"
+                ></el-input>
+              </el-form-item>
+            </el-col>
 
-            <div class="g-recaptcha" data-sitekey="6LfEoa0UAAAAAKePA_8uLzgBTI9LIoJKebCQFDOZ"></div>
+            <el-col
+              :lg="12"
+              :md="14"
+              :sm="24"
+              :xs="24"
+              class="recaptcha-container"
+            >
+              <vue-recaptcha
+                :sitekey="recaptchaKey"
+                @verify="recaptchaVerified"
+              ></vue-recaptcha>
+            </el-col>
           </el-row>
 
           <el-row>
@@ -104,18 +120,24 @@
   import { Comment } from "@/interfaces/Comment";
   import SingleCommentComponent from "@/components/comments/SingleCommentComponent.vue";
   import EmojiDialog from "@/components/dialogs/EmojiDialog.vue";
+  import VueRecaptcha from "vue-recaptcha";
 
   @Component({
     components: {
       CommentAvatarComponent,
       SingleCommentComponent,
       EmojiDialog,
+      VueRecaptcha,
     }
   })
   export default class CommentEditorComponent extends Vue {
 
     @Prop()
     size: "small" | "large";
+
+    private recaptchaKey = "6LfEoa0UAAAAAKePA_8uLzgBTI9LIoJKebCQFDOZ";
+
+    private recaptchaChallenge = "";
 
     private form = {
       author: "",
@@ -166,22 +188,41 @@
       return (this.form.author == null || this.form.author === "") && (this.form.content == null || this.form.content === "");
     }
 
+    recaptchaVerified(challenge: string) {
+      this.recaptchaChallenge = challenge;
+    }
+
     save() {
       // @ts-ignore
       this.$refs.form.validate((valid) => {
         if (valid) {
+          if (this.recaptchaChallenge == null || this.recaptchaChallenge === "") {
+            this.$notify({
+              title: "",
+              message: "Bitte wähle die reCAPTCHA-Checkbox aus",
+              type: "warning"
+            });
+
+            return;
+          }
+
           let comment: Comment = {
             author: this.form.author,
             content: this.form.content,
           };
 
-          this.$emit("save", comment);
+          this.$emit("save", {
+            comment,
+            recaptchaChallenge: this.recaptchaChallenge
+          });
 
           // temporarily disable form validation or it shows an error after save
           this.formValidationEnabled = false;
 
           this.form.author = "";
           this.form.content = "";
+
+          this.recaptchaChallenge = "";
 
           setTimeout(() => {
             this.formValidationEnabled = true;
@@ -201,6 +242,26 @@
 <style lang="scss">
 
   @import "~/scss/variables.scss";
+
+  .recaptcha-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 17px;
+  }
+
+  @media all and (min-width: $breakpoint-md) {
+    .recaptcha-container {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+
+  @media all and (min-width: $breakpoint-lg) {
+    .name-row {
+      display: flex;
+      align-items: center;
+    }
+  }
 
   .comment-editor input, .comment-editor textarea {
     font-size: 15px;
