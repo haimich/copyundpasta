@@ -33,12 +33,23 @@
       </a>
     </el-row>
 
-    <el-image
-      v-if="image != null && image !== ''"
-      :src="image"
-      style="margin-top: 16px; margin-bottom: 60px;"
-      alt="Titelbild"
-    ></el-image>
+    <el-row
+      type="flex"
+      justify="center"
+      class="main-heading-sub"
+      v-if="commentCount >= 1"
+    >
+      <el-image
+        v-if="image != null && image !== ''"
+        :src="image"
+        style="min-height: 300px; margin-top: 16px; margin-bottom: 60px;"
+        alt="Titelbild"
+      >
+        <div slot="placeholder" class="image-slot">
+          Loading<span class="dot">...</span>
+        </div>
+      </el-image>
+    </el-row>
 
   </div>
 
