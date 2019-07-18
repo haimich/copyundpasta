@@ -26,7 +26,7 @@
       
       if (top != null && top.scrollIntoView != null) {
         top.scrollIntoView({ 
-          behavior: 'smooth' 
+          behavior: 'auto' 
         });
       }
     }

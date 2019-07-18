@@ -27,6 +27,8 @@
                 <el-input
                   v-model="form.author"
                   placeholder="Name"
+                  class="name-input"
+                  v-focus
                 ></el-input>
               </el-form-item>
             </el-col>
@@ -240,6 +242,16 @@
 
     insertEmoji(emoji: string) {
       this.form.content += emoji;
+    }
+
+    mounted() {
+      // focus first input
+      let input = document.querySelector(".name-input input");
+
+      if (input != null) {
+        // @ts-ignore
+        input.focus();
+      }
     }
 
   }

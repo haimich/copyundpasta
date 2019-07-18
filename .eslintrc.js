@@ -40,6 +40,7 @@ module.exports = {
     "vue/no-v-html": "off",
     "vue/attribute-hyphenation": "off",
     "import/order": "off",
-    "space-unary-ops": "off"
+    "space-unary-ops": "off",
+    "quote-props": "off"
   }
 }
