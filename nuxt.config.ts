@@ -53,7 +53,7 @@ const config: NuxtConfiguration = {
       { hid: "description", name: "description", content: "Copy & Pasta wurde 2019 von Michael Müller aus Karlsruhe ins Leben gerufen." },
       { name: "theme-color", content: "#ffffff" },
       { name: "msapplication-TileColor", content: "#da532c" },
-      { name: "p:domain_verify", content: "5f8e964f94d8de2f299a1e19f700c401" }, // Pinterest verify (delete after some time)
+      { name: "p:domain_verify", content: "5f8e964f94d8de2f299a1e19f700c401" }, // Pinterest verify
     ],
     link: [
       { rel: "icon", type: "image/png", sizes: "32x32", href: "/favicon-32x32.png" },
@@ -67,7 +67,7 @@ const config: NuxtConfiguration = {
       { rel: "stylesheet", href: "https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700&display=swap" },
     ],
     script: [
-      { src: "https://www.google.com/recaptcha/api.js", type: "application/javascript", async: true, defer: true },
+      { src: "https://www.google.com/recaptcha/api.js?onload=vueRecaptchaApiLoaded&render=explicit", type: "application/javascript", async: true, defer: true },
     ],
   },
 

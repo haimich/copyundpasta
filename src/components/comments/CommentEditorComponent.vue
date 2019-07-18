@@ -41,6 +41,7 @@
               <vue-recaptcha
                 :sitekey="recaptchaKey"
                 @verify="recaptchaVerified"
+                ref="recaptcha"
               ></vue-recaptcha>
             </el-col>
           </el-row>
@@ -222,7 +223,13 @@
           this.form.author = "";
           this.form.content = "";
 
+          // reset captcha
           this.recaptchaChallenge = "";
+          
+          if (this.$refs.recaptcha != null) {
+            // @ts-ignore
+            this.$refs.recaptcha.reset();
+          }
 
           setTimeout(() => {
             this.formValidationEnabled = true;
