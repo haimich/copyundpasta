@@ -29,7 +29,7 @@
           </el-button>
         </el-row>
 
-        <el-row v-show="showEditor">
+        <el-row v-if="showEditor">
           <CommentEditorComponent
             @save="saveComment"
             size="small"
