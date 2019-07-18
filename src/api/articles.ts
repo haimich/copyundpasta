@@ -1,8 +1,6 @@
 import ExpressUtil from "./utils/ExpressUtil";
-import { Article } from "../interfaces/Article";
-import { Comment, CommentWithChallenge } from "../interfaces/Comment";
+import { CommentWithChallenge } from "../interfaces/Comment";
 import ArticleRepo from "./db/ArticleRepo";
-import ArticleSearchRepo from "./search/ArticleSearchRepo";
 import ValidatorUtil from "./utils/ValidatorUtil";
 
 let app = ExpressUtil.setupExpress();
@@ -13,7 +11,7 @@ let app = ExpressUtil.setupExpress();
  */
 
 app.post("/getHeroArticles", async (req, res) => {
-  console.log("getHeroArticles");
+  console.log("articles.getHeroArticles()");
 
   const articles = await ArticleRepo.getHeroArticles();
 
@@ -25,7 +23,7 @@ app.post("/getHeroArticles", async (req, res) => {
 });
 
 app.post("/getArticles", async (req, res) => {
-  console.log("getArticles");
+  console.log("articles.getArticles()");
 
   // validate params
   let pagingParams;
@@ -48,7 +46,7 @@ app.post("/getArticles", async (req, res) => {
 });
 
 app.post("/getComments", async (req, res) => {
-  console.log("getComments");
+  console.log("articles.getComments()");
 
   // validate params
   let slug;
@@ -71,7 +69,7 @@ app.post("/getComments", async (req, res) => {
 });
 
 app.post("/createComment", async (req, res) => {
-  console.log("createComment");
+  console.log("articles.createComment()");
 
   // validate params
   let commentWithChallenge: CommentWithChallenge;
@@ -89,39 +87,6 @@ app.post("/createComment", async (req, res) => {
   await ArticleRepo.createComment(commentWithChallenge.comment);
 
   return res.sendStatus(200);
-});
-
-app.post("/search", async (req, res) => {
-  console.log("search");
-
-  // validate params
-  let searchterm = "";
-
-  try {
-    searchterm = ValidatorUtil.validateSearchterm(req.body);
-  } catch (err) {
-    console.error(err);
-
-    return res.status(406).send(err.message);
-  }
-
-  let searchRes;
-  try {
-    searchRes = await ArticleSearchRepo.search(searchterm);
-  } catch (error) {
-    return res.json([]);
-  }
-
-  const hasHits = searchRes.body != null && searchRes.body.hits != null && searchRes.body.hits.hits != null && searchRes.body.hits.hits.length >= 1;
-
-  if (searchRes.statusCode !== 200) {
-    console.log("Articles search error", searchRes);
-    return res.json([]);
-  } else if (hasHits) {
-    return res.json(searchRes.body.hits.hits);
-  } else {
-    return res.json([]);
-  }
 });
 
 export default app;

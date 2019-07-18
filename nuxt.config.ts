@@ -34,6 +34,14 @@ const config: NuxtConfiguration = {
       handler: "~/api/articles.ts",
     },
     {
+      path: "/api/search",
+      handler: "~/api/search.ts",
+    },
+    {
+      path: "/api/stats",
+      handler: "~/api/stats.ts",
+    },
+    {
       path: "/feed",
       handler: "~/api/feed.ts",
     },

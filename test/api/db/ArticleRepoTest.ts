@@ -1,4 +1,4 @@
-import ArticleRepo from "@/api/db/articleRepo";
+import ArticleRepo from "@/api/db/ArticleRepo";
 
 describe('getHeroArticles', () => {
     test('should return newest getHeroArticles', async () => {
@@ -31,7 +31,7 @@ describe('getArticleComments', () => {
 describe('createComment', () => {
     test('should persist comment', async () => {
         await ArticleRepo.createComment({
-            articleSlug: "baileys-chocolate-cupcakes",
+            slug: "baileys-chocolate-cupcakes",
             content: "a fancy comment",
             author: "me & myself",
             email: "me.myself@web.de", 
@@ -41,7 +41,7 @@ describe('createComment', () => {
     test('should persist child comment', async () => {
         await ArticleRepo.createComment({
             parentCommentId: 1,
-            articleSlug: "baileys-chocolate-cupcakes",
+            slug: "baileys-chocolate-cupcakes",
             content: "a fancy comment 2",
             author: "me & myself",
             email: "me.myself@web.de", 

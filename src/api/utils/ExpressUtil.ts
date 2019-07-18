@@ -4,6 +4,8 @@ const bodyParser = require("body-parser");
 const rateLimit = require("express-rate-limit");
 require("express-async-errors");
 
+import uniqid from "uniqid";
+
 export default class ExpressUtil {
 
   public static setupExpress() {
@@ -19,6 +21,18 @@ export default class ExpressUtil {
     ExpressUtil.initErrorHandling(app);
   
     return app;
+  }
+
+  public static getIp(req) {
+    let ip = "";
+
+    if (req.connection.remoteAddress != null && req.connection.remoteAddress !== "") {
+      ip = req.connection.remoteAddress;
+    } else if (req.headers["x-forwarded-for"] != null && req.headers["x-forwarded-for"] !== "") {
+      ip = req.headers["x-forwarded-for"];
+    } else {
+      ip = uniqid();
+    }
   }
 
   private static initRateLimiting(app) {

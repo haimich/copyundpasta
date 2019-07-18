@@ -2,7 +2,6 @@ import ExpressUtil from "./utils/ExpressUtil";
 import RecipeRepo from "./db/RecipeRepo";
 import ValidatorUtil from "./utils/ValidatorUtil";
 import StringUtil from "./utils/StringUtil";
-import uniqid from "uniqid";
 
 let app = ExpressUtil.setupExpress();
 
@@ -12,7 +11,7 @@ let app = ExpressUtil.setupExpress();
  */
 
 app.post("/getRecipe", async (req, res) => {
-  console.log("getRecipe");
+  console.log("articles.getRecipe()");
 
   // validate params
   let slug;
@@ -35,7 +34,7 @@ app.post("/getRecipe", async (req, res) => {
 });
 
 app.post("/getRating", async (req, res) => {
-  console.log("getRating");
+  console.log("articles.getRating()");
 
   // validate params
   let slug;
@@ -54,7 +53,7 @@ app.post("/getRating", async (req, res) => {
 });
 
 app.post("/rateRecipe", async (req, res) => {
-  console.log("rateRecipe");
+  console.log("articles.rateRecipe()");
 
   // validate params
   let rating, slug;
@@ -69,16 +68,8 @@ app.post("/rateRecipe", async (req, res) => {
   }
 
   // create unique identifier to prevent duplicate ratings
-  let ip = "";
-
-  if (req.connection.remoteAddress != null && req.connection.remoteAddress !== "") {
-    ip = req.connection.remoteAddress;
-  } else if (req.headers["x-forwarded-for"] != null && req.headers["x-forwarded-for"] !== "") {
-    ip = req.headers["x-forwarded-for"];
-  } else {
-    ip = uniqid();
-  }
-  let uniqueIdentifier = StringUtil.generateHashWithDate(ip);
+  const ip = ExpressUtil.getIp(req);
+  const uniqueIdentifier = StringUtil.generateHashWithDate(ip);
 
   try {
     await RecipeRepo.rateRecipe(slug, rating, uniqueIdentifier);

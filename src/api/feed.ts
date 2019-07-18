@@ -12,7 +12,7 @@ const maxAge = 60 * 60 * 12; // 12 hours
  */
 
 app.get("/rss.xml", async (req, res) => {
-  console.log("rss.xml");
+  console.log("articles.rss.xml()");
 
   const articles = await ArticleRepo.getAllArticles();
   
@@ -25,7 +25,7 @@ app.get("/rss.xml", async (req, res) => {
 });
 
 app.get("/atom.xml", async (req, res) => {
-  console.log("atom.xml");
+  console.log("articles.atom.xml()");
 
   const articles = await ArticleRepo.getAllArticles();
 

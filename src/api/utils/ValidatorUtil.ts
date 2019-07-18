@@ -160,6 +160,34 @@ export default class ValidatorUtil {
       return rating;
     }
   }
+
+  public static validateStatsType(body: any): string {
+    if (body == null || body.type == null) {
+      throw new Error("Missing mandatory field 'type'");
+    }
+  
+    const type = body.type;
+  
+    if (type !== "article") {
+      throw new Error("Invalid value for field 'type'");
+    } else {
+      return type;
+    }
+  }
+
+  public static validateStatsEntityId(body: any): string {
+    if (body == null || body.entityId == null) {
+      throw new Error("Missing mandatory field 'entityId'");
+    }
+  
+    const entityId = body.entityId;
+  
+    if (entityId == "" || entityId.length <= 0 || entityId.length >= 10000) {
+      throw new Error("Invalid value for field 'entityId'");
+    } else {
+      return entityId;
+    }
+  }
   
   public static validatePagingParams(body: any): PagingParams {
     if (body == null) {
