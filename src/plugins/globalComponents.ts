@@ -5,6 +5,7 @@ import ArticleLinkComponent from "@/components/article/ArticleLinkComponent.vue"
 import ArticleJumpToRecipeComponent from "@/components/article/ArticleJumpToRecipeComponent.vue";
 import ArticleScrollToTopComponent from "@/components/article/ArticleScrollToTopComponent.vue";
 import RecipeComponent from "@/components/recipe/RecipeComponent.vue";
+import CommentComponent from "@/components/comments/CommentComponent.vue";
 
 export default () => {
   Vue.component("MainHeadingComponent", MainHeadingComponent);
@@ -13,4 +14,5 @@ export default () => {
   Vue.component("ArticleJumpToRecipeComponent", ArticleJumpToRecipeComponent);
   Vue.component("ArticleScrollToTopComponent", ArticleScrollToTopComponent);
   Vue.component("RecipeComponent", RecipeComponent);
+  Vue.component("CommentComponent", CommentComponent);
 }

@@ -77,7 +77,7 @@
 <script lang="ts">
 
   import { Vue, Component, Prop } from "vue-property-decorator";
-  import CommentComponent from "@/components/comments/CommentComponent.vue";
+  import BaseArticle from "@/components/BaseArticle.vue";
   import { Comment } from "@/interfaces/Comment";
   import ArticleService from "@/services/ArticleService";
   import StatsService from "@/services/StatsService";
@@ -89,67 +89,20 @@
     head: {
       title: article.title,
     },
-    components: {
-      CommentComponent,
-    },
-    // @ts-ignore
-    async asyncData({ $axios, params, error }) {
-      let comments = [];
-
-      try {
-        const response = await ArticleService.getComments($axios, article.slug);
-        
-        comments = response.data;
-      } catch (error) {
-        console.log(error);
-      }
-
-      return {
-        comments,
-      }
-    },
   })
-  export default class extends Vue {
+  export default class extends BaseArticle {
 
-    private comments: Comment[] = [];
-
-    get recipe() {
-      return recipe;
+    constructor() {
+      super(article, recipe);
     }
 
-    get article() {
-      return article;
-    }
-
-    get commentCount() {
-      let count = 0;
-
-      for (let comment of this.comments) {
-        count += 1;
-
-        if (comment.children != null) {
-          count += comment.children.length;
-        }
-      }
-
-      return count;
-    }
-
-    async refreshComments($) {
-      let comments = [];
-
-      try {
-        const response = await ArticleService.getComments(this.$axios, article.slug);
-        
-        this.comments = response.data;
-      } catch (error) {
-        console.log(error);
-      }
+    async refreshComments() {
+      await super.refreshComments();
     }
 
     created() {
-      StatsService.count(this.$axios, "article", article.slug);
-    } 
+      super.created();
+    }
 
   }
 
