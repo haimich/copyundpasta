@@ -121,7 +121,7 @@
       <el-row>
         <el-col>
           © 2019 <nuxt-link to="/" title="HOME" style="color: white;">Copy & Pasta</nuxt-link>
-          · Impressum
+          · <nuxt-link to="/impressum">Impressum</nuxt-link>
           · Datenschutz
           · <a href="/sitemap.xml" target="_blank">Sitemap</a>
         </el-col>
