@@ -36,6 +36,7 @@
                 <el-form-item prop="website">
                   <el-input
                     v-model="form.website"
+                    type="url"
                     placeholder="Webseite (optional)"
                   ></el-input>
                 </el-form-item>
@@ -189,7 +190,7 @@
             { required: true, message: "Bitte gib einen Namen ein", trigger: "change" },
           ],
           website: [
-            { required: false },
+            { validator: this.validateUrl },
           ],
           content: [
             { required: true, message: "Bitte gib einen Text ein", trigger: "change" },
@@ -199,6 +200,19 @@
 
       return rules;
     };
+
+    validateUrl(rule, value, callback) {
+      let re = /(https?:\/\/)?(www\.)?[-a-zA-Z0-9@:%._+~#=]{2,256}\.[a-z]{2,4}\b([-a-zA-Z0-9@:%_+.~#?&//=]*)/;
+    
+      if (value == null || value === "") {
+        // the field is not required
+        callback();
+      } else if (re.test(value)) {
+        callback();
+      } else {
+        callback(new Error("Bitte gib eine gültige Webseite ein."));
+      }
+    }
 
     formIsEmpty(): boolean {
       return (this.form.author == null || this.form.author === "") && (this.form.content == null || this.form.content === "");
@@ -285,10 +299,6 @@
       display: flex;
       align-items: center;
     }
-  }
-
-  .comment-editor .el-form-item {
-    margin-bottom: 13px;
   }
 
   .comment-editor input, .comment-editor textarea {

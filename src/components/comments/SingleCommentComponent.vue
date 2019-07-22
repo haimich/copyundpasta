@@ -2,7 +2,16 @@
 
   <div>
     <el-row class="comment-author">
+      <a
+        v-if="comment.website != null && comment.website !== ''"
+        :href="comment.website"
+        target="_blank"
+      >
+        {{ comment.author }}
+      </a>
+      <span v-else>
       {{ comment.author }}
+      </span>
     </el-row>
 
     <el-row class="comment-created">
