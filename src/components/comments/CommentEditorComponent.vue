@@ -190,7 +190,7 @@
             { required: true, message: "Bitte gib einen Namen ein", trigger: "change" },
           ],
           website: [
-            { validator: this.validateUrl },
+            { validator: this.validateUrl, trigger: "blur" },
           ],
           content: [
             { required: true, message: "Bitte gib einen Text ein", trigger: "change" },
@@ -203,7 +203,7 @@
 
     validateUrl(rule, value, callback) {
       let re = /(https?:\/\/)?(www\.)?[-a-zA-Z0-9@:%._+~#=]{2,256}\.[a-z]{2,4}\b([-a-zA-Z0-9@:%_+.~#?&//=]*)/;
-    
+
       if (value == null || value === "") {
         // the field is not required
         callback();

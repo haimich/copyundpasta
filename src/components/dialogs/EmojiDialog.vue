@@ -92,6 +92,7 @@
     list-style: none;
     padding-left: 0;
     display: inline-block;
+    font-size: 20px;
 
     li {
       padding: 0;
