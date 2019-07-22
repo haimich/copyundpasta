@@ -47,6 +47,17 @@
           </el-row>
 
           <el-row>
+            <el-col :span="24">
+              <el-form-item prop="website">
+                <el-input
+                  v-model="form.website"
+                  placeholder="Webseite"
+                ></el-input>
+              </el-form-item>
+            </el-col>
+          </el-row>
+
+          <el-row>
             <el-form-item prop="content">
               <el-input
                 type="textarea"
@@ -142,6 +153,7 @@
 
     private form = {
       author: "",
+      website: "",
       content: "",
       createdAt: new Date(), // only used for preview
     }
@@ -176,6 +188,9 @@
           author: [
             { required: true, message: "Bitte gib einen Namen ein", trigger: "change" },
           ],
+          website: [
+            { required: false },
+          ],
           content: [
             { required: true, message: "Bitte gib einen Text ein", trigger: "change" },
           ],
@@ -209,6 +224,7 @@
 
           let comment: Comment = {
             author: this.form.author,
+            website: this.form.website,
             content: this.form.content,
           };
 
@@ -221,6 +237,7 @@
           this.formValidationEnabled = false;
 
           this.form.author = "";
+          this.form.website = "";
           this.form.content = "";
 
           // reset captcha
