@@ -10,7 +10,7 @@ export interface Comment {
   parentCommentId?: number;
   content: string;
   author: string;
-  email?: string;
+  website?: string;
   children?: Comment[];
   createdAt?: string;
   modifiedAt?: string;

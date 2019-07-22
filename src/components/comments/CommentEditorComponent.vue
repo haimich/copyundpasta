@@ -23,12 +23,23 @@
               :sm="24"
               :xs="24"
             >
-              <el-form-item prop="author">
-                <el-input
-                  v-model="form.author"
-                  placeholder="Name"
-                ></el-input>
-              </el-form-item>
+              <el-row>
+                <el-form-item prop="author">
+                  <el-input
+                    v-model="form.author"
+                    placeholder="Name"
+                  ></el-input>
+                </el-form-item>
+              </el-row>
+
+              <el-row>
+                <el-form-item prop="website">
+                  <el-input
+                    v-model="form.website"
+                    placeholder="Webseite (optional)"
+                  ></el-input>
+                </el-form-item>
+              </el-row>
             </el-col>
 
             <el-col
@@ -43,17 +54,6 @@
                 @verify="recaptchaVerified"
                 ref="recaptcha"
               ></vue-recaptcha>
-            </el-col>
-          </el-row>
-
-          <el-row>
-            <el-col :span="24">
-              <el-form-item prop="website">
-                <el-input
-                  v-model="form.website"
-                  placeholder="Webseite"
-                ></el-input>
-              </el-form-item>
             </el-col>
           </el-row>
 
@@ -285,6 +285,10 @@
       display: flex;
       align-items: center;
     }
+  }
+
+  .comment-editor .el-form-item {
+    margin-bottom: 13px;
   }
 
   .comment-editor input, .comment-editor textarea {

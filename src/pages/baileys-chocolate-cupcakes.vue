@@ -78,9 +78,6 @@
 
   import { Vue, Component, Prop } from "vue-property-decorator";
   import BaseArticle from "@/components/BaseArticle.vue";
-  import { Comment } from "@/interfaces/Comment";
-  import ArticleService from "@/services/ArticleService";
-  import StatsService from "@/services/StatsService";
 
   import article from "@/content/articles/baileys-chocolate-cupcakes";
   import recipe from "@/content/recipes/baileys-chocolate-cupcakes";

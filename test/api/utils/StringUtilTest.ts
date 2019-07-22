@@ -17,3 +17,17 @@ describe('validateEmail', () => {
     expect(StringUtil.validateEmail("bla@as")).toBe(false);
   });
 });
+
+describe('validateWebsite', () => {
+  test('should return true', () => {
+    expect(StringUtil.validateWebsite("www.copyundpasta.de")).toBe(true);
+    expect(StringUtil.validateWebsite("https://www.copyundpasta.de/")).toBe(true);
+    expect(StringUtil.validateWebsite("copyundpasta.de")).toBe(true);
+  });
+
+  test('should return false', () => {
+    expect(StringUtil.validateWebsite("www.")).toBe(false);
+    expect(StringUtil.validateWebsite("copyundpasta")).toBe(false);
+    expect(StringUtil.validateWebsite(".de")).toBe(false);
+  });
+});

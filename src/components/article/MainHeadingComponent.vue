@@ -36,8 +36,6 @@
     <el-row
       type="flex"
       justify="center"
-      class="main-heading-sub"
-      v-if="commentCount >= 1"
     >
       <el-image
         v-if="image != null && image !== ''"

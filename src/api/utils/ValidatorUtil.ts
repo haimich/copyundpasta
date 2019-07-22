@@ -45,7 +45,7 @@ export default class ValidatorUtil {
       parentCommentId: ValidatorUtil.validateParentCommentId(body),
       content: ValidatorUtil.validateContent(body),
       author: ValidatorUtil.validateAuthor(body),
-      email: ValidatorUtil.validateEmail(body, false),
+      website: ValidatorUtil.validateWebsite(body, false),
     };
   }
 
@@ -144,6 +144,34 @@ export default class ValidatorUtil {
       throw new Error("Invalid value for field 'email'");
     } else {
       return email;
+    }
+  }
+
+  public static validateWebsite(body: any, isMandatory: boolean): string {
+    if (body == null || body.website == null) {
+      if (isMandatory) {
+        throw new Error("Missing mandatory field 'website'");
+      } else {
+        return "";
+      }
+    }
+  
+    const website = body.website;
+ 
+    let isValid = true;
+
+    if (website == "" || website.length <= 0 || website.length >= 1000000) {
+      isValid = false;
+    } else if (! StringUtil.validateWebsite(website)) {
+      isValid = false;
+    }
+
+    if (! isValid && ! isMandatory) {
+      return "";
+    } else if (! isValid && isMandatory) {
+      throw new Error("Invalid value for field 'website'");
+    } else {
+      return website;
     }
   }
   

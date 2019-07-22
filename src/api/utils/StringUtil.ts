@@ -25,4 +25,10 @@ export default class StringUtil {
     return re.test(email);
   }
 
+  public static validateWebsite(website: string): boolean {
+    var re = /(https?:\/\/)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,4}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/;
+    
+    return re.test(website);
+  }
+
 }
