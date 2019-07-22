@@ -10,7 +10,7 @@
         {{ comment.author }}
       </a>
       <span v-else>
-      {{ comment.author }}
+        {{ comment.author }}
       </span>
     </el-row>
 
