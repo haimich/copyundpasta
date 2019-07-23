@@ -111,7 +111,7 @@
       </el-row>
     </main>
 
-    <ArticleScrollToTopComponent />
+    <ScrollToTopComponent />
     
     <FooterComponent />
     
@@ -125,6 +125,7 @@
   import HamburgerIconComponent from "../components/HamburgerIconComponent.vue";
   import LogoComponent from "../components/LogoComponent.vue";
   import FooterComponent from "../components/FooterComponent.vue";
+  import ScrollToTopComponent from "@/components/ScrollToTopComponent.vue";
 
   enum Pages {
     HOME = "home",
@@ -140,6 +141,7 @@
       HamburgerIconComponent,
       LogoComponent,
       FooterComponent,
+      ScrollToTopComponent,
     }
   })
   export default class DefaultLayoutComponent extends Vue {

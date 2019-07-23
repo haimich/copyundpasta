@@ -17,7 +17,7 @@
   import { Vue, Component, Prop, Watch } from "vue-property-decorator";
 
   @Component
-  export default class ArticleScrollToTopComponent extends Vue {
+  export default class ScrollToTopComponent extends Vue {
 
     private scrollPos = 0;
 
