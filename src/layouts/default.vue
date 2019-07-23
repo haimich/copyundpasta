@@ -113,20 +113,7 @@
 
     <ArticleScrollToTopComponent />
     
-    <footer>
-      <el-row>
-        <img src="/images/appbase.svg" alt="Appbase" style="margin-bottom: 10px; width: 163px;">
-      </el-row>
-
-      <el-row>
-        <el-col>
-          © 2019 <nuxt-link to="/" title="HOME" style="color: white;">Copy & Pasta</nuxt-link>
-          · <nuxt-link to="/impressum">Impressum</nuxt-link>
-          · Datenschutz
-          · <a href="/sitemap.xml" target="_blank">Sitemap</a>
-        </el-col>
-      </el-row>
-    </footer>
+    <FooterComponent />
     
   </div>
 </template>
@@ -137,6 +124,7 @@
   import TypeaheadComponent from "../components/TypeaheadComponent.vue";
   import HamburgerIconComponent from "../components/HamburgerIconComponent.vue";
   import LogoComponent from "../components/LogoComponent.vue";
+  import FooterComponent from "../components/FooterComponent.vue";
 
   enum Pages {
     HOME = "home",
@@ -151,6 +139,7 @@
       TypeaheadComponent,
       HamburgerIconComponent,
       LogoComponent,
+      FooterComponent,
     }
   })
   export default class DefaultLayoutComponent extends Vue {

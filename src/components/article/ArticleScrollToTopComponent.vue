@@ -22,7 +22,7 @@
     private scrollPos = 0;
 
     scrollToTop() {
-      let top = document.querySelector('.header-nav');
+      let top = document.querySelector('.container');
       
       if (top != null && top.scrollIntoView != null) {
         top.scrollIntoView({ 
