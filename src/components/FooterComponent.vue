@@ -9,7 +9,7 @@
       <el-col>
         © {{ getCopyrightYears() }} <nuxt-link to="/" title="HOME" style="color: white;">Copy & Pasta</nuxt-link>
         · <nuxt-link to="/impressum">Impressum</nuxt-link>
-        · Datenschutz
+        · <nuxt-link to="/datenschutz">Datenschutz</nuxt-link>
         · <a href="/sitemap.xml" target="_blank">Sitemap</a>
       </el-col>
     </el-row>
