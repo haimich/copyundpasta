@@ -39,7 +39,10 @@
       </el-col>
     </el-row>
 
-    <!-- Children -->
+    hasParent: {{ hasParent() }}<br />
+    hasChildren: {{ hasChildren() }}
+
+    <!-- Render children recursively -->
     <el-row v-if="hasChildren()" style="margin-top: 28px;">
       <el-col :span="21" :offset="3">
         <CommentEntryComponent
