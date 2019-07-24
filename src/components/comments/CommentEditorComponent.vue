@@ -94,42 +94,64 @@
     </el-row>
 
     <el-row>
-      <el-col :span="21" :offset="3" class="agb-text">
-        Mit der Abgabe meines Kommentars erkläre ich mich mit der Speicherung und Verarbeitung meiner Daten durch diese Website einverstanden.
+      <el-col
+        :xl="xlAgb"
+        :lg="lgAgb"
+        :md="mdAgb"
+        :sm="smAgb"
+        :xs="xsAgb"
+        class="agb-text"
+      >
+        Mit der Abgabe deines Kommentars erklärst du dich mit der Speicherung und Verarbeitung meiner Daten durch diese Website einverstanden.
 
         <el-popover
           placement="bottom"
           width="400"
           style="cursor: pointer"
           trigger="click"
-          content="Dein Name und die Webseite wird lediglich zur Anzeige bei deinem Kommentar benötigt. Diese Daten werden nur für diesen Zweck gespeichert und auf deinen Wunsch gelöscht. Eine ausführliche Erläuterungen zur Speicherung und Verarbeitung von personenbezogenen Daten kannst du in den <a href='/datenschutz'>Datenschutzbestimmungen</a> nachlesen."
         >
-            <FontAwesome slot="reference" :icon="['far', 'question-circle']"></FontAwesome>
+          <div slot="default">
+            Dein Name und die Webseite wird lediglich zur Anzeige bei deinem Kommentar benötigt und auf deinen Wunsch hin gelöscht.<br />
+            Eine ausführliche Erläuterungen zur Speicherung und Verarbeitung von personenbezogenen Daten kannst du in den <a href="/datenschutz">Datenschutzbestimmungen</a> nachlesen.
+          </div>
+
+          <FontAwesome
+            slot="reference"
+            :icon="['far', 'question-circle']"
+            title="Anklicken für weitere Informationen"
+          ></FontAwesome>
         </el-popover>
       </el-col>
-    </el-row>
 
-    <el-row style="display: flex; justify-content: flex-end;">
-      <el-button
-        @click="showPreview = ! showPreview"
-        :size="elementSize"
-        :disabled="formIsEmpty()"
+      <el-col 
+        :xl="xlButtons"
+        :lg="lgButtons"
+        :md="mdButtons"
+        :sm="smButtons"
+        :xs="xsButtons"
+        style="display: flex; justify-content: flex-end;"
       >
-        <span v-if="showPreview">
-          Vorschau ausblenden
-        </span>
-        <span v-else>
-          Vorschau anzeigen
-        </span>
-      </el-button>
+        <el-button
+          @click="showPreview = ! showPreview"
+          :size="elementSize"
+          :disabled="formIsEmpty()"
+        >
+          <span v-if="showPreview">
+            Vorschau ausblenden
+          </span>
+          <span v-else>
+            Vorschau anzeigen
+          </span>
+        </el-button>
 
-      <el-button
-        type="primary"
-        :size="elementSize"
-        @click="save"
-      >
-        Abschicken
-      </el-button>
+        <el-button
+          type="primary"
+          :size="elementSize"
+          @click="save"
+        >
+          Abschicken
+        </el-button>
+      </el-col>
     </el-row>
 
     <EmojiDialog
@@ -180,6 +202,56 @@
     private formValidationEnabled = true;
 
     private emojiDialogVisible = false;
+
+    private xlAgb = {
+      span: 12,
+      offset: 3,
+    };
+
+    private lgAgb = {
+      span: 12,
+      offset: 3,
+    };
+
+    private mdAgb = {
+      span: 21,
+      offset: 3,
+    };
+
+    private smAgb = {
+      span: 21,
+      offset: 3,
+    };
+
+    private xsAgb = {
+      span: 21,
+      offset: 3,
+    };
+
+    private xlButtons = {
+      span: 9,
+      offset: 0,
+    };
+
+    private lgButtons = {
+      span: 9,
+      offset: 0,
+    };
+
+    private mdButtons = {
+      span: 21,
+      offset: 3,
+    };
+
+    private smButtons = {
+      span: 21,
+      offset: 3,
+    };
+
+    private xsButtons = {
+      span: 21,
+      offset: 3,
+    };
 
     get elementSize() {
       if (this.size === "small") {
@@ -344,6 +416,7 @@
   .agb-text {
     color: #5d5d5d;
     font-size: 14px;
+    line-height: 17px;
   }
 
 </style>
