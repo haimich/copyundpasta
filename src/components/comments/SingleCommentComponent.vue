@@ -6,6 +6,7 @@
         v-if="comment.website != null && comment.website !== ''"
         :href="comment.website"
         target="_blank"
+        rel="noopener"
       >
         {{ comment.author }}
       </a>

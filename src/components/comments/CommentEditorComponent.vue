@@ -111,14 +111,13 @@
           trigger="click"
         >
           <div slot="default">
-            Dein Name und die Webseite wird lediglich zur Anzeige bei deinem Kommentar benötigt und auf deinen Wunsch hin gelöscht.<br />
+            Dein Name und die Webseite werden lediglich zur Anzeige bei deinem Kommentar gespeichert und auf deinen Wunsch hin gelöscht.<br />
             Eine ausführliche Erläuterungen zur Speicherung und Verarbeitung von personenbezogenen Daten kannst du in den <a href="/datenschutz">Datenschutzbestimmungen</a> nachlesen.
           </div>
 
           <FontAwesome
             slot="reference"
             :icon="['far', 'question-circle']"
-            title="Anklicken für weitere Informationen"
           ></FontAwesome>
         </el-popover>
       </el-col>

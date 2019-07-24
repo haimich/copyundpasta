@@ -17,6 +17,7 @@
     "clean": "npm run clean:build && npm run clean:seeds",
     "clean:build": "rm -rf .nuxt",
     "clean:seeds": "rm -rf knex_seeds/compiled",
+    "checkBrokenLinks": "blc https://www.copyundpasta.de -ro",
     "generate": "nuxt generate",
     "test": "jest",
     "watch:test": "jest --watch"
