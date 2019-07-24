@@ -40,7 +40,7 @@ async function deploy() {
     await executeCommand("npm run build");
 
     spinner.text = "Migrating db...";
-    await executeCommand("NODE_ENV=production npm run db:migrate");
+    await executeCommand("NODE_ENV=production npm run migrate");
 
     spinner.text = "Generating and inserting seed data db...";
     await executeCommand("NODE_ENV=production npm run db:seed");
