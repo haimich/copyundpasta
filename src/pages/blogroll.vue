@@ -56,6 +56,10 @@
         url: "https://www.ploetzblog.de/",
       },
       {
+        name: "Arthurs Tochter Kocht",
+        url: "https://www.arthurstochterkochtblog.com/",
+      },
+      {
         name: "Die Frau am Grill",
         url: "https://die-frau-am-grill.de/",
       },
