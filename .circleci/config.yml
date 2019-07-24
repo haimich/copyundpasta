@@ -29,6 +29,6 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
 
-      - run: npm db:migrate
+      - run: npm run db:migrate
 
       - run: npm test
