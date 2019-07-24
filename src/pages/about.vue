@@ -34,7 +34,7 @@
   import { Vue, Component, Prop } from "vue-property-decorator";
 
   @Component
-  export default class AboutPage extends Vue {
+  export default class extends Vue {
 
   }
 

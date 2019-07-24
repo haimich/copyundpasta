@@ -71,6 +71,10 @@
               <nuxt-link to="/about">ÜBER MICH</nuxt-link>
             </el-menu-item>
 
+            <el-menu-item index="blogroll">
+              <nuxt-link to="/blogroll">BLOGROLL</nuxt-link>
+            </el-menu-item>
+
             <el-menu-item index="kontakt">
               <nuxt-link to="/kontakt">KONTAKT</nuxt-link>
             </el-menu-item>
@@ -131,6 +135,7 @@
     HOME = "home",
     REZEPTE = "rezepte",
     ABOUT = "about",
+    BLOGROLL = "blogroll",
     KONTAKT = "kontakt",
     SUCHE = "suche",
   }
@@ -195,6 +200,11 @@
 
         case "/about": {
           this.activeIndex = Pages.ABOUT;
+          break;
+        }
+
+        case "/blogroll": {
+          this.activeIndex = Pages.BLOGROLL;
           break;
         }
 

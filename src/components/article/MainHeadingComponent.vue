@@ -18,9 +18,13 @@
       type="flex"
       justify="center"
       class="main-heading-sub"
-      v-if="commentCount >= 1"
+      v-if="hasComments() || hasSubtitle()"
     >
-      <a href="#comments" title="Zu Kommentaren springen">
+      <a
+        v-if="hasComments()"
+        href="#comments"
+        title="Zu Kommentaren springen"
+      >
         <FontAwesome :icon="['far', 'comment']" style="margin-right: 4px;" />
         {{ commentCount }}
         
@@ -31,6 +35,12 @@
           Kommentare
         </span>
       </a>
+
+      <span
+        v-if="hasSubtitle()"
+      >
+        {{ subtitle }}
+      </span>
     </el-row>
 
     <el-row
@@ -59,11 +69,24 @@
       @Prop()
       private text: string;
 
+      @Prop({
+        required: false,
+      })
+      private subtitle: string;
+
       @Prop()
       private image: string;
 
       @Prop()
       private commentCount: number;
+
+      hasComments() {
+        return this.commentCount >= 1;
+      }
+
+      hasSubtitle() {
+        return this.subtitle != null && this.subtitle !== "";
+      }
 
       goHome() {
         this.$router.push({
