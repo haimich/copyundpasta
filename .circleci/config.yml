@@ -28,11 +28,11 @@ jobs:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
-    
-      - run: node scripts/yesOrNo.js && npm run checkBrokenLinks
 
       - run: npm run db:migrate
 
       - run: npm run db:seed
 
       - run: npm test
+
+      - run: npm run checkBrokenLinks
