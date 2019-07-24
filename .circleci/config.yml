@@ -4,11 +4,6 @@ jobs:
     docker:
       - image: circleci/node:10.13.0
       - image: circleci/mariadb:10.3.15
-        environment:
-          MYSQL_ROOT_PASSWORD: password
-          MYSQL_DATABASE: haimich
-          MYSQL_USER: haimich
-          MYSQL_PASSWORD: haimich
 
     working_directory: ~/repo
 
