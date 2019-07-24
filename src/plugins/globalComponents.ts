@@ -5,6 +5,7 @@ import ArticleLinkComponent from "@/components/article/ArticleLinkComponent.vue"
 import ArticleJumpToRecipeComponent from "@/components/article/ArticleJumpToRecipeComponent.vue";
 import RecipeComponent from "@/components/recipe/RecipeComponent.vue";
 import CommentComponent from "@/components/comments/CommentComponent.vue";
+import CommentEntryComponent from "@/components/comments/CommentEntryComponent.vue";
 
 export default () => {
   Vue.component("MainHeadingComponent", MainHeadingComponent);
@@ -13,4 +14,5 @@ export default () => {
   Vue.component("ArticleJumpToRecipeComponent", ArticleJumpToRecipeComponent);
   Vue.component("RecipeComponent", RecipeComponent);
   Vue.component("CommentComponent", CommentComponent);
+  Vue.component("CommentEntryComponent", CommentEntryComponent);
 }
