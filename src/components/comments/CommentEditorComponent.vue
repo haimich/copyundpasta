@@ -93,6 +93,22 @@
       </el-col>
     </el-row>
 
+    <el-row>
+      <el-col :span="21" :offset="3" class="agb-text">
+        Mit der Abgabe meines Kommentars erkläre ich mich mit der Speicherung und Verarbeitung meiner Daten durch diese Website einverstanden.
+
+        <el-popover
+          placement="bottom"
+          width="400"
+          style="cursor: pointer"
+          trigger="click"
+          content="Dein Name und die Webseite wird lediglich zur Anzeige bei deinem Kommentar benötigt. Diese Daten werden nur für diesen Zweck gespeichert und auf deinen Wunsch gelöscht. Eine ausführliche Erläuterungen zur Speicherung und Verarbeitung von personenbezogenen Daten kannst du in den <a href='/datenschutz'>Datenschutzbestimmungen</a> nachlesen."
+        >
+            <FontAwesome slot="reference" :icon="['far', 'question-circle']"></FontAwesome>
+        </el-popover>
+      </el-col>
+    </el-row>
+
     <el-row style="display: flex; justify-content: flex-end;">
       <el-button
         @click="showPreview = ! showPreview"
@@ -323,6 +339,11 @@
     &:hover {
       transform: scale(1.1);
     }
+  }
+
+  .agb-text {
+    color: #5d5d5d;
+    font-size: 14px;
   }
 
 </style>
