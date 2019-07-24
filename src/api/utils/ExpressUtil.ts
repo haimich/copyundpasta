@@ -2,6 +2,7 @@ const express = require("express");
 const compression = require("compression");
 const bodyParser = require("body-parser");
 const rateLimit = require("express-rate-limit");
+const helmet = require("helmet");
 require("express-async-errors");
 
 import uniqid from "uniqid";
@@ -11,9 +12,10 @@ export default class ExpressUtil {
   public static setupExpress() {
     const app = express();
   
+    app.use(helmet());
     app.use(bodyParser.json());
     app.use(compression());
-
+    
     // get rid of nasty header
     app.disable("x-powered-by");
 
