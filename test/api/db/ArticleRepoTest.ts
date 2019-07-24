@@ -34,7 +34,7 @@ describe('createComment', () => {
             slug: "baileys-chocolate-cupcakes",
             content: "a fancy comment",
             author: "me & myself",
-            email: "me.myself@web.de", 
+            website: "www.me.de",
         });
     });
 
@@ -44,7 +44,7 @@ describe('createComment', () => {
             slug: "baileys-chocolate-cupcakes",
             content: "a fancy comment 2",
             author: "me & myself",
-            email: "me.myself@web.de", 
+            website: "www.me.de", 
         });
     });
 });
