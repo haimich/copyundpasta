@@ -10,7 +10,12 @@
     <el-row style="margin-top: 40px;">
       <el-col :span="12" :offset="6">
         <ul class="link-list">
-          <li v-for="(blog, index) in blogroll" :key="index">
+          <li
+            v-for="(blog, index) in blogroll"
+            :key="index"
+            @click="openLink(blog.url)"
+            title="Link öffnen"
+          >
             <a :href="blog.url" rel="noopener" target="_blank">
               {{ blog.name }}
             </a>
@@ -64,6 +69,10 @@
       },
     ];
 
+    openLink(url) {
+      window.open(url, "_blank");
+    }
+
   }
 
 </script>
@@ -83,6 +92,7 @@
       background-color: #f5f5f5;
       margin-bottom: 20px;
       transition: all .2s;
+      cursor: pointer;
 
       &:hover {
         font-size: 19px;

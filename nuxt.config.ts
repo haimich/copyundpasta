@@ -73,9 +73,11 @@ const config: NuxtConfiguration = {
       { rel: "alternate", type: "application/atom+xml", title: "Atom Feed für copyundpasta.de", href: "/feed/atom.xml" },
       { rel: "stylesheet", href: "https://fonts.googleapis.com/css?family=Roboto+Slab:400,700&display=swap" },
       { rel: "stylesheet", href: "https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700&display=swap" },
+      { rel: "stylesheet", href: "https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" },
     ],
     script: [
       { src: "https://www.google.com/recaptcha/api.js?onload=vueRecaptchaApiLoaded&render=explicit", type: "application/javascript", async: true, defer: true },
+      { src: "https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js", type: "application/javascript", async: true, defer: true },
     ],
   },
 

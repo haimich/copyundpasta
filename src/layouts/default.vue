@@ -275,7 +275,32 @@
       }
     }
 
+    initCookieConsent() {
+      // @ts-ignore
+      window.cookieconsent.initialise({
+        "palette": {
+          "popup": {
+            "background": "#edeff5",
+            "text": "#838391"
+          },
+          "button": {
+            "background": "#1eb5da",
+            "text": "#ffffff"
+          }
+        },
+        "theme": "classic",
+        "position": "bottom-right",
+        "content": {
+          "message": "Wir verwenden Cookies, um unsere Webseite möglichst benutzerfreundlich zu gestalten. Wenn Sie fortfahren, stimmen Sie der Verwendung von Cookies zu.",
+          "dismiss": "Schließen",
+          "link": "Weitere Informationen",
+          "href": "https://www.copyundpasta.de/datenschutz"
+        }
+      });
+    }
+
     mounted() {
+      this.initCookieConsent();
       this.determineMenuMode();
 
       window.onresize = this.determineMenuMode;
