@@ -2,6 +2,7 @@ import ExpressUtil from "./utils/ExpressUtil";
 import { CommentWithChallenge } from "../interfaces/Comment";
 import ArticleRepo from "./db/ArticleRepo";
 import ValidatorUtil from "./utils/ValidatorUtil";
+import MailUtil from "./utils/MailUtil";
 
 let app = ExpressUtil.setupExpress();
 
@@ -85,6 +86,20 @@ app.post("/createComment", async (req, res) => {
   }
 
   await ArticleRepo.createComment(commentWithChallenge.comment);
+
+  if (process.env.NODE_ENV !== "development") {
+    // send mail and don't wait for it
+    MailUtil.sendMail("Neuer Kommetar", `<h2>Hallo Webmaster,</h2>
+    
+    <br />
+    
+    <p>gerade kam ein neuer Kommentar zu dem Artikel <a href="https://www.copyundpasta.de/${commentWithChallenge.comment.slug}">${commentWithChallenge.comment.slug}</a> herein :-)</p>
+    
+    <br /><br />
+    
+    Viele Grüße<br />
+    Der Webserver`);
+  }
 
   return res.sendStatus(200);
 });

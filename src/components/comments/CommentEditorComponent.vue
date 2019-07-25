@@ -102,7 +102,7 @@
         :xs="xsAgb"
         class="agb-text"
       >
-        Mit der Abgabe deines Kommentars erklärst du dich mit der Speicherung und Verarbeitung meiner Daten durch diese Website einverstanden.
+        Mit der Abgabe deines Kommentars erklärst du dich mit der Speicherung und Verarbeitung deiner Daten durch diese Website einverstanden.
 
         <el-popover
           placement="bottom"
