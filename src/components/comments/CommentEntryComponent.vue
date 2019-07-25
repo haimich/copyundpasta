@@ -5,7 +5,9 @@
     <!-- Single Comment -->
     <el-row>
       <el-col :span="3" style="display: flex; justify-content: center;">
-        <CommentAvatarComponent />
+        <CommentAvatarComponent
+          :avatarUrl="comment.avatarUrl"
+        />
       </el-col>
 
       <el-col :span="21" class="comment-container">

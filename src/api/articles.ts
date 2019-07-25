@@ -1,3 +1,4 @@
+require("dotenv").config();
 import ExpressUtil from "./utils/ExpressUtil";
 import { CommentWithChallenge } from "../interfaces/Comment";
 import ArticleRepo from "./db/ArticleRepo";
@@ -5,6 +6,8 @@ import ValidatorUtil from "./utils/ValidatorUtil";
 import MailUtil from "./utils/MailUtil";
 
 let app = ExpressUtil.setupExpress();
+
+const WEBMASTER_KEY = process.env.WEBMASTER_KEY;
 
 /**
  * Configure routes
@@ -83,6 +86,13 @@ app.post("/createComment", async (req, res) => {
     console.error(err);
 
     return res.status(406).send(err.message);
+  }
+
+  // add avatar for webmaster
+  if (commentWithChallenge.comment.author === WEBMASTER_KEY) {
+    commentWithChallenge.comment.author = "Michael";
+    commentWithChallenge.comment.website = "https://www.copyundpasta.de";
+    commentWithChallenge.comment.avatarUrl = "/images/default-avatar.png";
   }
 
   await ArticleRepo.createComment(commentWithChallenge.comment);

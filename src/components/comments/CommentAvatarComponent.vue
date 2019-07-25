@@ -2,9 +2,9 @@
 
   <div>
     <el-avatar
-      :size="45"
+      :size="55"
       class="comment-avatar"
-      :src="avatarImage"
+      :src="avatarUrl"
     >
       <FontAwesome :icon="['fas', 'user-circle']" />
     </el-avatar>
@@ -22,7 +22,7 @@
     @Prop({
       required: false,
     })
-    avatarImage: string;
+    avatarUrl: string;
 
   }
 

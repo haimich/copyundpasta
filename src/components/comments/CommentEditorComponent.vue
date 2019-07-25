@@ -102,24 +102,29 @@
         :xs="xsAgb"
         class="agb-text"
       >
-        Mit der Abgabe deines Kommentars erklärst du dich mit der Speicherung und Verarbeitung deiner Daten durch diese Website einverstanden.
+        <span v-if="! showPreview">
+          Mit der Abgabe deines Kommentars erklärst du dich mit der Speicherung und Verarbeitung deiner Daten durch diese Website einverstanden.
 
-        <el-popover
-          placement="bottom"
-          width="400"
-          style="cursor: pointer"
-          trigger="click"
-        >
-          <div slot="default">
-            Dein Name und die Webseite werden lediglich zur Anzeige bei deinem Kommentar gespeichert und auf deinen Wunsch hin gelöscht.<br />
-            Eine ausführliche Erläuterungen zur Speicherung und Verarbeitung von personenbezogenen Daten kannst du in den <a href="/datenschutz">Datenschutzbestimmungen</a> nachlesen.
-          </div>
+          <el-popover
+            placement="bottom"
+            width="400"
+            style="cursor: pointer"
+            trigger="click"
+          >
+            <div slot="default">
+              Dein Name und die Webseite werden lediglich zur Anzeige bei deinem Kommentar gespeichert und auf deinen Wunsch hin gelöscht.<br />
+              Eine ausführliche Erläuterungen zur Speicherung und Verarbeitung von personenbezogenen Daten kannst du in den <a href="/datenschutz">Datenschutzbestimmungen</a> nachlesen.
+            </div>
 
-          <FontAwesome
-            slot="reference"
-            :icon="['far', 'question-circle']"
-          ></FontAwesome>
-        </el-popover>
+            <FontAwesome
+              slot="reference"
+              :icon="['far', 'question-circle']"
+            ></FontAwesome>
+          </el-popover>
+        </span>
+        <span v-else>
+          &nbsp;
+        </span>
       </el-col>
 
       <el-col 

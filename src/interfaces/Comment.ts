@@ -11,6 +11,7 @@ export interface Comment {
   content: string;
   author: string;
   website?: string;
+  avatarUrl?: string;
   children?: Comment[];
   createdAt?: string;
   modifiedAt?: string;
