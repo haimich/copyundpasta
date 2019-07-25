@@ -120,6 +120,42 @@ describe('validateEmail', () => {
   });
 });
 
+describe('validateWebsite', () => {
+  test('should allow website', () => {
+    ValidatorUtil.validateWebsite({
+      website: "https://www.foo.de",
+    });
+  });
+
+  test('should add two slashes if protocol is unknown', () => {
+    expect(ValidatorUtil.validateWebsite({
+      website: "www.foo.de",
+    })).toBe("//www.foo.de");
+  });
+
+  test('should throw error when website is invalid', () => {
+    expect(() => {
+      ValidatorUtil.validateWebsite({
+        website: "this is invalid",
+      }, true);
+    }).toThrow();
+  });
+
+  test('should throw error when website is mandatory', () => {
+    expect(() => {
+      ValidatorUtil.validateWebsite({
+        website: "",
+      }, true);
+    }).toThrow();
+  });
+
+  test('should not throw error when website is not mandatory', () => {
+    expect(ValidatorUtil.validateWebsite({
+        website: "",
+      }, false)).toEqual("");
+  });
+});
+
 describe('validateCaptcha', () => {
   test.skip('should validate', async () => {
     let result = await ValidatorUtil.validateCaptcha("03AOLTBLToGDJSSD7seVnJImBXfN3Y_V8FP4vFijUyrYr42yGuf0npZSAhnVxbk5aIAxo0OfXpFg9mWwwB89Io2Sso2sIiUMpQOjDNLm8dRUoy_cQbeuF7JVy16Uw4ND_PKy1XERSeKOPfwHO6zHrcPXcYpddf3VSwE8tammKTRpbNpIIft5IlxDczI9djUL0xslM6rzv3VO2FrOumxVJgVtX1QagVJm21M9ehIZ8PpOljHAs4gVTQnFXx9M62cHx7yuKMX23w0l3Y8ZKHLNY7QTXw7cMMM9TH1UNAGg0sf9r5nGmhcXsHwATiaNc9gaMw3DwIYjDlEQxJ");

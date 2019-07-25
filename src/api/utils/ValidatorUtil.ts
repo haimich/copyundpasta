@@ -156,7 +156,7 @@ export default class ValidatorUtil {
       }
     }
   
-    const website = body.website;
+    let website = body.website;
  
     let isValid = true;
 
@@ -171,6 +171,11 @@ export default class ValidatorUtil {
     } else if (! isValid && isMandatory) {
       throw new Error("Invalid value for field 'website'");
     } else {
+      // check if protocol is missing
+      if (website.indexOf("http") !== 0) {
+        website = "//" + website;
+      }
+
       return website;
     }
   }
