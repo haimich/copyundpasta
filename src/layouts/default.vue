@@ -13,17 +13,17 @@
           <span class="header-social-icons hidden-xs-only">
             <ul>
               <li>
-                <a href="https://www.pinterest.de/copyundpasta" target="_blank" title="Copy & Pasta bei Pinterest">
+                <a href="https://www.pinterest.de/copyundpasta" target="_blank" title="Copy & Pasta bei Pinterest" rel="noopener">
                   <FontAwesome :icon="['fab', 'pinterest-p']" />
                 </a>
               </li>
               <li>
-                <a href="https://gmx.us20.list-manage.com/subscribe/post?u=1c249484bbe9d6816f42135ee&id=8d55aeb1b7" target="_blank" title="Newsletter abonnieren">
+                <a href="https://gmx.us20.list-manage.com/subscribe/post?u=1c249484bbe9d6816f42135ee&id=8d55aeb1b7" target="_blank" title="Newsletter abonnieren" rel="noopener">
                   <FontAwesome :icon="['far', 'envelope']" />
                 </a>
               </li>
               <li>
-                <a href="/feed/rss.xml" target="_blank" title="RSS-Feed abonnieren">
+                <a href="/feed/rss.xml" target="_blank" title="RSS-Feed abonnieren" rel="noopener">
                   <FontAwesome :icon="['fas', 'rss']" />
                 </a>
               </li>

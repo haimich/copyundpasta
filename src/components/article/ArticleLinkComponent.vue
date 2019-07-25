@@ -1,6 +1,6 @@
 <template>
 
-  <a :href="href" target="_blank">{{ text }}</a>
+  <a :href="href" target="_blank" rel="noopener">{{ text }}</a>
 
 </template>
 
