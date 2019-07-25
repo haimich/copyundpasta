@@ -67,7 +67,9 @@
                 v-model="userEmail"
                 name="EMAIL"
                 id="mce-EMAIL"
+                autocomplete="on"
                 placeholder="E-Mail-Adresse"
+                @keyup.enter.native="submitEmail"
                 required
               ></el-input>
 

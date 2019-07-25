@@ -18,7 +18,7 @@
                 </a>
               </li>
               <li>
-                <a href="https://www.google.de" target="_blank" title="Newsletter abonnieren">
+                <a href="https://gmx.us20.list-manage.com/subscribe/post?u=1c249484bbe9d6816f42135ee&id=8d55aeb1b7" target="_blank" title="Newsletter abonnieren">
                   <FontAwesome :icon="['far', 'envelope']" />
                 </a>
               </li>
