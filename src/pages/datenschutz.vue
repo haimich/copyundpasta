@@ -697,13 +697,17 @@
           DS-GVO ergeben:</p>
           
         <ul>
-          <li><strong>Widerspruchsrecht: Sie haben das Recht, aus Gründen, die sich aus Ihrer besonderen Situation ergeben,
+          <li>
+            <strong>
+              Widerspruchsrecht: Sie haben das Recht, aus Gründen, die sich aus Ihrer besonderen Situation ergeben,
               jederzeit gegen die Verarbeitung der Sie betreffenden personenbezogenen Daten, die aufgrund von Art. 6 Abs. 1
               lit. e oder f DSGVO erfolgt, Widerspruch einzulegen; dies gilt auch für ein auf diese Bestimmungen gestütztes
               Profiling. Werden die Sie betreffenden personenbezogenen Daten verarbeitet, um Direktwerbung zu betreiben, haben
               Sie das Recht, jederzeit Widerspruch gegen die Verarbeitung der Sie betreffenden personenbezogenen Daten zum
               Zwecke derartiger Werbung einzulegen; dies gilt auch für das Profiling, soweit es mit solcher Direktwerbung in
-              Verbindung steht.</strong></li>
+              Verbindung steht.
+            </strong>
+          </li>
           <li><strong>Widerrufsrecht bei Einwilligungen:</strong> Sie haben das Recht, erteilte Einwilligungen jederzeit zu
             widerrufen.</li>
           <li><strong>Auskunftsrecht:</strong> Sie haben das Recht, eine Bestätigung darüber zu verlangen, ob betreffende
@@ -794,7 +798,9 @@
           <a
             href="https://datenschutz-generator.de/?l=de"
             title="Rechtstext von Dr. Schwenke - für weitere Informationen bitte anklicken."
-            target="_blank">Erstellt mit Datenschutz-Generator.de von Dr. jur. Thomas Schwenke
+            target="_blank"
+          >
+            Erstellt mit Datenschutz-Generator.de von Dr. jur. Thomas Schwenke
           </a>
         </p>
 
