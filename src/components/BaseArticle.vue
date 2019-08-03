@@ -50,7 +50,6 @@
     }
 
     created() {
-      this.refreshComments();
       StatsService.count(this.$axios, "article", this.article.slug);
     }
 

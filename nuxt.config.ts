@@ -76,7 +76,7 @@ const config: NuxtConfiguration = {
       { rel: "stylesheet", href: "https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" },
     ],
     script: [
-      { src: "https://www.google.com/recaptcha/api.js?onload=vueRecaptchaApiLoaded&render=explicit", type: "application/javascript", async: true, defer: true },
+      { src: "https://www.google.com/recaptcha/api.js?render=explicit", type: "application/javascript", async: true, defer: true },
       { src: "https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js", type: "application/javascript", async: true, defer: true },
     ],
   },

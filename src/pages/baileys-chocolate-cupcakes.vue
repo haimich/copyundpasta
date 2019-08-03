@@ -78,6 +78,7 @@
 
   import { Vue, Component, Prop } from "vue-property-decorator";
   import BaseArticle from "@/components/BaseArticle.vue";
+  import ArticleService from "@/services/ArticleService";
 
   import article from "@/content/articles/baileys-chocolate-cupcakes";
   import recipe from "@/content/recipes/baileys-chocolate-cupcakes";
@@ -86,6 +87,12 @@
     head: {
       title: article.title,
     },
+    // @ts-ignore
+    async asyncData({ $axios, params }) {
+      return {
+        comments: (await ArticleService.getComments($axios, article.slug)).data,
+      };
+    }
   })
   export default class extends BaseArticle {
 
