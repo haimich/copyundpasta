@@ -91,12 +91,35 @@
         <!-- Ingredients -->
         <ul
           class="ingredients-list"
+          v-if="recipe != null"
         >
           <li
-            v-for="(ingredient, index) in getIngredientList()"
+            v-for="(ingredient, index) in recipe.ingredients"
             :key="index"
-            v-html="ingredient"
-          ></li>
+            class="ingredient-main"
+          >
+            <span
+              v-if="isGroup(ingredient)"
+            >
+              <div class="category-heading">
+                {{ ingredient.title }}:
+              </div>
+
+              <ul
+                class="ingredients-list"
+              >
+                <li
+                  v-for="(groupIngredient, groupIndex) in ingredient.ingredients"
+                  :key="groupIndex"
+                  class="ingredient-group"
+                  v-html="formatIngredient(groupIngredient)"
+                ></li>
+              </ul>
+            </span>
+
+            <span v-else v-html="formatIngredient(ingredient)">
+            </span>
+          </li>
         </ul>
       </el-col>
 

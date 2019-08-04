@@ -51,6 +51,11 @@ const ingredients: (RecipeIngredientGroup|RecipeIngredient)[] = [
       },
     ],
   },
+  {
+    amount: 25,
+    unit: RecipeUnit.gram,
+    ingredient: Ingredients.butter,
+  }
 ];
 
 const steps: (RecipeStepGroup|RecipeStep)[] = [
