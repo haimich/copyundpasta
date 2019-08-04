@@ -4,29 +4,33 @@
 
     <el-row style="margin-bottom: 10px;">
       <el-col :span="16">
-        <h1 class="recipe-title">
-          {{ recipe.title }}
-        </h1>
+        <el-row>
+          <h1 class="recipe-title">
+            {{ recipe.title }}
+          </h1>
 
-        <el-rate
-          v-model="ratingResponse.average"
-          text-color="#ff9900"
-          score-template="{value}"
-          class="recipe-rating"
-          @change="ratingChanged"
-        />
+          <el-rate
+            v-model="ratingResponse.average"
+            text-color="#ff9900"
+            score-template="{value}"
+            class="recipe-rating"
+            @change="ratingChanged"
+          />
 
-        <div v-if="ratingResponse != null" style="margin-top: 6px; font-size: 13px;">
-          {{ ratingResponse.numRatings }}
-          Stimme<span v-if="ratingResponse.numRatings === 0 || ratingResponse.numRatings >= 2">n</span>
-        </div>
+          <div v-if="ratingResponse != null" style="margin-top: 6px; font-size: 13px;">
+            {{ ratingResponse.numRatings }}
+            Stimme<span v-if="ratingResponse.numRatings === 0 || ratingResponse.numRatings >= 2">n</span>
+          </div>
+        </el-row>
 
-        <el-button
-          style="margin-top: 20px;"
-          @click="printRecipe"
-          v-if="! isPrint"
-        ><FontAwesome :icon="['fas', 'print']" style="margin-right: 4px;" /> Rezept drucken
-        </el-button>
+        <el-row style="min-height: 91px; display: flex; align-items: flex-end;"> <!-- hack to align to image bottom -->
+          <el-button
+            style="margin-top: 20px;"
+            @click="printRecipe"
+            v-if="! isPrint"
+          ><FontAwesome :icon="['fas', 'print']" style="margin-right: 4px;" /> Rezept drucken
+          </el-button>
+        </el-row>
       </el-col>
 
       <el-col :span="8" style="display: flex; justify-content: flex-end;">
@@ -374,7 +378,11 @@ import { RatingResponse } from "../../interfaces/Rating";
     font-size: 39px;
     font-weight: 400;
     margin-top: 5px;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
+  }
+
+  .recipe-rating /deep/ i {
+    font-size: 20px;
   }
 
   .recipe-image {
@@ -445,8 +453,8 @@ import { RatingResponse } from "../../interfaces/Rating";
     margin: 0 0 4px 0;
   }
 
-  .recipe-rating /deep/ i {
-    font-size: 20px;
+  .recipe /deep/ .el-tag {
+    color: #404040;
   }
 
 </style>
