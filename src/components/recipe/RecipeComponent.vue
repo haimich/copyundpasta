@@ -44,8 +44,6 @@
       <el-col :span="8">
         <el-card shadow="never">
           <div slot="header" class="clearfix">
-            <h3 style="margin-bottom: 20px;">Zutaten</h3>
-
             <div v-if="! isPrint">
               <div style="margin-bottom: 8px;">
                 Menge:
@@ -61,12 +59,16 @@
               ></el-input-number>
             </div>
           </div>
+
+          <!-- Ingredients -->
           <ul
-            v-for="(ingredient, index) in getIngredientList()"
-            :key="index"
             class="ingredients-list"
           >
-            <li v-html="ingredient"></li>
+            <li
+              v-for="(ingredient, index) in getIngredientList()"
+              :key="index"
+              v-html="ingredient"
+            ></li>
           </ul>
         </el-card>
       </el-col>
@@ -76,6 +78,8 @@
           <div slot="header" class="clearfix">
             <h3>Zubereitung</h3>
           </div>
+
+          <!-- Directions -->
           <ul
             v-for="(step, index) in getStepList()"
             :key="index"
@@ -172,7 +176,7 @@ import { RatingResponse } from "../../interfaces/Rating";
             ingredientStrings.push(this.formatIngredient(ingredient));
           }
 
-          ingredientStrings.push("");
+          ingredientStrings.push(""); // empty line to control spacing
         } else {
           entry = entry as RecipeIngredient;
           ingredientStrings.push(this.formatIngredient(entry));
@@ -343,7 +347,7 @@ import { RatingResponse } from "../../interfaces/Rating";
   }
 
   .ingredients-list li, .directions li {
-    padding: 4px 0;
+    padding: 6px 0;
   }
 
   .directions li {
