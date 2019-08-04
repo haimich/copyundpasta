@@ -15,6 +15,7 @@
           show-score
           text-color="#ff9900"
           score-template="{value} Sterne"
+          class="recipe-rating"
           @change="ratingChanged"
         />
 
@@ -27,7 +28,7 @@
           style="margin-top: 20px;"
           @click="printRecipe"
           v-if="! isPrint"
-        >Rezept drucken
+        ><FontAwesome :icon="['fas', 'print']" style="margin-right: 4px;" /> Rezept drucken
         </el-button>
       </el-col>
 
@@ -346,12 +347,20 @@ import { RatingResponse } from "../../interfaces/Rating";
     padding-left: 0;
   }
 
-  .ingredients-list li, .directions li {
+  .ingredients-list li {
     padding: 6px 0;
   }
 
   .directions li {
+    padding: 4px 0;
+  }
+
+  .directions li {
     margin: 0 0 4px 0;
+  }
+
+  .recipe-rating /deep/ i {
+    font-size: 20px;
   }
 
 </style>
