@@ -4,15 +4,14 @@
 
     <el-row style="margin-bottom: 10px;">
       <el-col :span="16">
-        <h1 style="margin-top: 5px;">
+        <h1 class="recipe-title">
           {{ recipe.title }}
         </h1>
 
         <el-rate
           v-model="ratingResponse.average"
-          show-score
           text-color="#ff9900"
-          score-template="{value} Sterne"
+          score-template="{value}"
           class="recipe-rating"
           @change="ratingChanged"
         />
@@ -34,7 +33,7 @@
         <el-image
           :src="recipe.previewImageUrl"
           alt="Rezeptfoto"
-          style="max-width: 220px;"
+          class="recipe-image"
         ></el-image>
       </el-col>
     </el-row>
@@ -69,6 +68,20 @@
               <i class="el-icon-plus"></i>
             </el-button>
           </el-col>
+        </el-row>
+
+        <el-row
+          v-if="! isPrint && servingsMultiplier !== 1"
+          style="display: flex; justify-content: center;"
+        >
+          <a
+            href="#"
+            role="button"
+            class="servings-reset"
+            @click.prevent="servingsMultiplier = 1"
+          >
+            Menge zurücksetzen
+          </a>
         </el-row>
 
         <!-- Ingredients -->
@@ -357,6 +370,17 @@ import { RatingResponse } from "../../interfaces/Rating";
     overflow: hidden;
   }
 
+  .recipe-title {
+    font-size: 39px;
+    font-weight: 400;
+    margin-top: 5px;
+    margin-bottom: 15px;
+  }
+
+  .recipe-image {
+    max-width: 195px;
+  }
+
   .ingredients-list, .directions {
     list-style: none;
     padding-left: 0;
@@ -392,6 +416,11 @@ import { RatingResponse } from "../../interfaces/Rating";
     }
   }
 
+  .servings-reset {
+    margin-top: -2px;
+    font-size: 14px;
+  }
+
   .directions-heading {
     color: #1d1d1d;
     font-weight: 300;
@@ -408,7 +437,7 @@ import { RatingResponse } from "../../interfaces/Rating";
       margin: 0 auto; /* This will center the border. */
       width: 75%; /* Change this to whatever width you want. */
       padding-top: 40px; /* This creates some space between the element and the border. */
-      border-bottom: 1px solid#b9b9b9; /* This creates the border. Replace black with whatever color you want. */
+      border-bottom: 1px solid#e0e0e0; /* This creates the border. Replace black with whatever color you want. */
     }
   }
 
