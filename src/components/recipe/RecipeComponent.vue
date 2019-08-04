@@ -2,13 +2,11 @@
 
   <div v-if="recipe" class="recipe">
 
-    <el-row style="margin-bottom: 20px;">
+    <el-row style="margin-bottom: 10px;">
       <el-col :span="16">
-        <h2>{{ recipe.title }}</h2>
-
-        <div style="margin-bottom: 10px;">
-          {{ getServings() }}
-        </div>
+        <h1 style="margin-top: 5px;">
+          {{ recipe.title }}
+        </h1>
 
         <el-rate
           v-model="ratingResponse.average"
@@ -43,52 +41,63 @@
 
     <el-row :gutter="20">
       <el-col :span="8">
-        <el-card shadow="never">
-          <div slot="header" class="clearfix">
-            <div v-if="! isPrint">
-              <div style="margin-bottom: 8px;">
-                Menge:
-              </div>
-              
-              <el-input-number
-                v-model="servingsMultiplier"
-                :min="0.5"
-                :max="5"
-                :step="0.5"
-                size="small"
-                placeholder="1"
-              ></el-input-number>
-            </div>
-          </div>
+        <h2 class="directions-heading">
+          Zutaten
+        </h2>
 
-          <!-- Ingredients -->
-          <ul
-            class="ingredients-list"
-          >
-            <li
-              v-for="(ingredient, index) in getIngredientList()"
-              :key="index"
-              v-html="ingredient"
-            ></li>
-          </ul>
-        </el-card>
+        <el-row v-if="! isPrint" class="servings-container">
+          <el-col :span="3">
+            <el-button
+              size="small"
+              @click="servingsMultiplier -= servingsSteps"
+              :disabled="servingsMultiplier <= minServings"
+            >
+              <i class="el-icon-minus"></i>
+            </el-button>
+          </el-col>
+
+          <el-col :span="18" class="servings-text">
+            {{ servings }}
+          </el-col>
+
+          <el-col :span="3">
+            <el-button
+              size="small"
+              @click="servingsMultiplier += servingsSteps"
+              :disabled="servingsMultiplier >= maxServings"
+            >
+              <i class="el-icon-plus"></i>
+            </el-button>
+          </el-col>
+        </el-row>
+
+        <!-- Ingredients -->
+        <ul
+          class="ingredients-list"
+        >
+          <li
+            v-for="(ingredient, index) in getIngredientList()"
+            :key="index"
+            v-html="ingredient"
+          ></li>
+        </ul>
       </el-col>
 
       <el-col :span="16">
-        <el-card shadow="never">
-          <div slot="header" class="clearfix">
-            <h3>Zubereitung</h3>
-          </div>
+        <h2 class="directions-heading">
+          Zubereitung
+        </h2>
 
-          <!-- Directions -->
-          <ul
+        <!-- Directions -->
+        <ul
+          class="directions"
+        >
+          <li
             v-for="(step, index) in getStepList()"
             :key="index"
-            class="directions"
-          >
-            <li v-html="step"></li>
-          </ul>
-        </el-card>
+            v-html="step"
+          ></li>
+        </ul>
       </el-col>
     </el-row>
 
@@ -134,6 +143,31 @@ import { RatingResponse } from "../../interfaces/Rating";
     };
     
     private servingsMultiplier = 1;
+
+    private minServings = 0.5;
+
+    private maxServings = 5;
+
+    private servingsSteps = 0.5;
+
+    get servings(): string {
+      if (this.recipe == null || this.recipe.servings == null) {
+        return "";
+      }
+
+      let amount = this.recipe.servings.amount * this.servingsMultiplier;
+      let unit;
+    
+      switch (this.recipe.servings.unit) {
+        case RecipeServingsUnit.quantity:
+          unit = "Stück";
+          break;
+        default:
+          unit = "";
+      }
+
+      return amount + " " + unit;
+    }
 
     async fetchRating() {
       let response;
@@ -293,25 +327,6 @@ import { RatingResponse } from "../../interfaces/Rating";
       return step.content;
     }
 
-    getServings(): string {
-      if (this.recipe == null || this.recipe.servings == null) {
-        return "";
-      }
-
-      let amount = this.recipe.servings.amount * this.servingsMultiplier;
-      let unit;
-    
-      switch (this.recipe.servings.unit) {
-        case RecipeServingsUnit.quantity:
-          unit = "Stück";
-          break;
-        default:
-          unit = "";
-      }
-
-      return amount + " " + unit;
-    }
-
     getTags(): Tag[] {
       if (this.recipe == null || this.recipe.tags == null) {
         return [];
@@ -348,11 +363,53 @@ import { RatingResponse } from "../../interfaces/Rating";
   }
 
   .ingredients-list li {
-    padding: 6px 0;
+    padding: 5px 0;
+  }
+
+  .servings-container {
+    margin-bottom: 8px;
+    
+    .el-col {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 31px;
+    }
+
+    .servings-text {
+      font-size: 15px;
+      color: #58595a;
+      border: 1px solid #e0e0e0;
+      border-radius: 4px;
+    }
+
+    button {
+      background: #F5F7FA;
+      padding: 0;
+      height: 100%;
+      width: 34px;
+      z-index: 100;
+    }
+  }
+
+  .directions-heading {
+    color: #1d1d1d;
+    font-weight: 300;
+    border-bottom: 1px solid #1d1d1d;
+    padding-bottom: 5px;
   }
 
   .directions li {
-    padding: 4px 0;
+    padding: 20px 0;
+
+    &:after {
+      content: ""; /* This is necessary for the pseudo element to work. */ 
+      display: block; /* This will put the pseudo element on its own line. */
+      margin: 0 auto; /* This will center the border. */
+      width: 75%; /* Change this to whatever width you want. */
+      padding-top: 40px; /* This creates some space between the element and the border. */
+      border-bottom: 1px solid#b9b9b9; /* This creates the border. Replace black with whatever color you want. */
+    }
   }
 
   .directions li {

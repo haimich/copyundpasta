@@ -60,11 +60,7 @@ const steps: (RecipeStepGroup|RecipeStep)[] = [
     steps: [
       {
         type: "step",
-        content: "Preheat oven to 350F and line muffin tins with cupcake liners.",
-      },
-      {
-        type: "step",
-        content: "Whisk cocoa and hot water together until smooth, set aside.",
+        content: "Preheat oven to 350F and line muffin tins with cupcake liners. Whisk cocoa and hot water together until smooth, set aside.",
       },
       {
         type: "step",
