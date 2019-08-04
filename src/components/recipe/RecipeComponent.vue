@@ -17,13 +17,13 @@
             @change="ratingChanged"
           />
 
-          <div v-if="ratingResponse != null" style="margin-top: 6px; font-size: 13px;">
+          <div v-if="ratingResponse != null" style="margin-top: 7px; font-size: 14px;">
             {{ ratingResponse.numRatings }}
-            Stimme<span v-if="ratingResponse.numRatings === 0 || ratingResponse.numRatings >= 2">n</span>
+            Bewertunge<span v-if="ratingResponse.numRatings === 0 || ratingResponse.numRatings >= 2">n</span>
           </div>
         </el-row>
 
-        <el-row style="min-height: 91px; display: flex; align-items: flex-end;"> <!-- hack to align to image bottom -->
+        <el-row style="min-height: 89px; display: flex; align-items: flex-end;"> <!-- hack to align to image bottom -->
           <el-button
             style="margin-top: 20px;"
             @click="printRecipe"
@@ -44,7 +44,7 @@
 
     <el-row :gutter="20">
       <el-col :span="8">
-        <h2 class="directions-heading">
+        <h2 class="category-main-heading">
           Zutaten
         </h2>
 
@@ -101,19 +101,42 @@
       </el-col>
 
       <el-col :span="16">
-        <h2 class="directions-heading">
+        <h2 class="category-main-heading">
           Zubereitung
         </h2>
 
         <!-- Directions -->
         <ul
           class="directions"
+          v-if="recipe != null"
         >
           <li
-            v-for="(step, index) in getStepList()"
+            v-for="(step, index) in recipe.steps"
             :key="index"
-            v-html="step"
-          ></li>
+            class="step-main"
+          >
+            <span
+              v-if="isGroup(step)"
+            >
+              <div class="category-heading">
+                {{ step.title }}:
+              </div>
+
+              <ul
+                class="directions"
+              >
+                <li
+                  v-for="(groupStep, groupIndex) in step.steps"
+                  :key="groupIndex"
+                  class="step-group"
+                >{{ groupStep.content }}</li>
+              </ul>
+            </span>
+
+            <span v-else>
+              {{ step.content }}
+            </span>
+          </li>
         </ul>
       </el-col>
     </el-row>
@@ -222,7 +245,7 @@ import { RatingResponse } from "../../interfaces/Rating";
       for (let entry of this.recipe.ingredients) {
         if ('isGroup' in entry) {
           entry = entry as RecipeIngredientGroup;
-          ingredientStrings.push("<strong>" + entry.title + ":</strong>");
+          ingredientStrings.push("<strong style='text-transform: uppercase;'>" + entry.title + ":</strong>");
 
           for (let ingredient of entry.ingredients) {
             ingredientStrings.push(this.formatIngredient(ingredient));
@@ -314,34 +337,8 @@ import { RatingResponse } from "../../interfaces/Rating";
       }
     }
 
-    getStepList(): string[] {
-      if (this.recipe == null) {
-        return [];
-      }
-
-      let stepStrings = [];
-
-      for (let entry of this.recipe.steps) {
-        if ('isGroup' in entry) {
-          entry = entry as RecipeStepGroup;
-          stepStrings.push("<strong>" + entry.title + ":</strong>");
-
-          for (let step of entry.steps) {
-            stepStrings.push(this.formatStep(step));
-          }
-
-          stepStrings.push("");
-        } else {
-          entry = entry as RecipeStep;
-          stepStrings.push(this.formatStep(entry));
-        }
-      }
-
-      return stepStrings;
-    }
-
-    formatStep(step: RecipeStep): string {
-      return step.content;
+    isGroup(entry) {
+      return 'isGroup' in entry;
     }
 
     getTags(): Tag[] {
@@ -396,6 +393,7 @@ import { RatingResponse } from "../../interfaces/Rating";
 
   .ingredients-list li {
     padding: 5px 0;
+    font-size: 17px;
   }
 
   .servings-container {
@@ -429,28 +427,26 @@ import { RatingResponse } from "../../interfaces/Rating";
     font-size: 14px;
   }
 
-  .directions-heading {
+  .category-main-heading {
     color: #1d1d1d;
     font-weight: 300;
+    font-size: 24px;
     border-bottom: 1px solid #1d1d1d;
     padding-bottom: 5px;
   }
 
-  .directions li {
-    padding: 20px 0;
-
-    &:after {
-      content: ""; /* This is necessary for the pseudo element to work. */ 
-      display: block; /* This will put the pseudo element on its own line. */
-      margin: 0 auto; /* This will center the border. */
-      width: 75%; /* Change this to whatever width you want. */
-      padding-top: 40px; /* This creates some space between the element and the border. */
-      border-bottom: 1px solid#e0e0e0; /* This creates the border. Replace black with whatever color you want. */
-    }
+  .category-heading {
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 10px;
   }
 
   .directions li {
-    margin: 0 0 4px 0;
+    padding: 15px 0;
+
+    &.step-main:first-child {
+      padding: 0;
+    }
   }
 
   .recipe /deep/ .el-tag {

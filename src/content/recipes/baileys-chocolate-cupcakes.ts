@@ -74,7 +74,21 @@ const steps: (RecipeStepGroup|RecipeStep)[] = [
         type: "step",
         content: "Add eggs one at a time, beating until fully incorporated after each addition. Scrape sides of bowl as needed. Add vanilla and cocoa mixture, beat until combined. Reduce speed to low and alternate adding flour mixture and sour cream in 2 additions. Beat until just combined.",
       },
-    ]
+    ],
+  },
+  {
+    isGroup: true,
+    title: "Baileys Buttercreme",
+    steps: [
+      {
+        type: "step",
+        content: "Die Creme anrühren und so.",
+      },
+    ],
+  },
+  {
+    content: "Einfacher Schritt",
+    type: "step",
   },
 ];
 
