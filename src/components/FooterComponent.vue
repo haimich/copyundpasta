@@ -2,13 +2,22 @@
 
   <footer>
 
-    <el-row class="footer-newsletter">
-      <el-col>
-        asdas
-      </el-col>
+    <el-row class="footer-newsletter" v-if="showNewsletterForm()">
+      <el-row>
+        <h3 class="footer-newsletter-heading">
+          Lass dir neue Rezepte bequem per E-Mail zuschicken.
+        </h3>
+      </el-row>
+
+      <el-row style="display: flex; justify-content: center;">
+        <NewsletterComponent
+          :wideButton="true"
+          style="width: 20%;"
+        />
+      </el-row>
     </el-row>
 
-    <el-row style="margin-top: 30px; margin-bottom: 30px; text-align: center;">
+    <el-row style="padding-top: 30px; margin-bottom: 30px; text-align: center;">
       <el-col>
         <a href="https://appbase.io/" target="_blank">
           <img src="/images/appbase.svg" alt="Appbase" style="width: 163px;">
@@ -24,9 +33,7 @@
 
         <nuxt-link to="/" title="HOME">Copy & Pasta</nuxt-link>
 
-        <nuxt-link to="/" title="HOME">
-          <img src="/favicon-32x32.png" style="width: 24px;"> 
-        </nuxt-link>
+        <img src="/favicon-32x32.png" style="width: 24px;"> 
       </el-col>
 
       <el-col :span="12" style="text-align: center;">
@@ -47,8 +54,13 @@
 <script lang="ts">
 
   import { Vue, Component, Prop, Watch } from "vue-property-decorator";
+  import NewsletterComponent from "@/components/NewsletterComponent.vue";
 
-  @Component
+  @Component({
+    components: {
+      NewsletterComponent,
+    }
+  })
   export default class FooterComponent extends Vue {
 
     getCopyrightYears() {
@@ -60,6 +72,10 @@
       } else {
         return `${foundingYear} - ${currentYear}`;
       }
+    }
+
+    showNewsletterForm() {
+      return this.$route.path !== "/";
     }
 
   }
@@ -88,7 +104,18 @@
   }
 
   .footer-newsletter {
-    background-color: $color-primary;
+    background-image: url("/images/food-background.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 50px 0;
+    text-align: center;
+
+    .footer-newsletter-heading {
+      color: white;
+      font-size: 24px;
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
   }
 
 </style>

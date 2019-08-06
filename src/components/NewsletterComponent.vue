@@ -30,6 +30,21 @@
 
           <div class="clear">
             <el-button
+              v-if="wideButton"
+              type="info"
+              size="large"
+              value="Subscribe"
+              name="subscribe"
+              id="mc-embedded-subscribe"
+              class="wide-button"
+              :disabled="userEmail == null || userEmail === ''"
+              @click="submitEmail"
+            >
+              Anmelden
+            </el-button>
+
+            <el-button
+              v-else
               title="Abonnieren"
               type="info"
               plain
@@ -37,6 +52,7 @@
               value="Subscribe"
               name="subscribe"
               id="mc-embedded-subscribe"
+              class="small-button"
               :disabled="userEmail == null || userEmail === ''"
               @click="submitEmail"
             ></el-button>
@@ -54,6 +70,11 @@
 
   @Component
   export default class NewsletterComponent extends Vue {
+
+    @Prop({
+      default: false,
+    })
+    wideButton: boolean;
     
     private userEmail = "";
 
@@ -62,6 +83,8 @@
 
       if (form != null) {
         form.submit();
+
+        this.userEmail = "";
       } else {
         this.$notify.warning("Die Newsletteranmeldung ist derzeit leider nicht möglich");
       }
@@ -82,12 +105,20 @@
       margin-right: 10px;
     }
 
-    .el-button {
-      padding: 8px 12px;
-      color: white;
+    .wide-button {
+      background-color: #363838;
+      font-size: 16px;
+    }
+
+    .small-button {
       background-color: $color-primary;
-      border: none;
       font-size: 23px;
+      padding: 8px 12px;
+    }
+
+    .el-button {
+      color: white;
+      border: none;
     }
   }
 
