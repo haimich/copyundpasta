@@ -40,6 +40,8 @@
         <nuxt-link to="/impressum">Impressum</nuxt-link> ·
 
         <nuxt-link to="/datenschutz">Datenschutz</nuxt-link> ·
+   
+        <nuxt-link to="/bildnachweise">Bildnachweise</nuxt-link> ·
         
         <a href="/sitemap.xml" target="_blank">Sitemap</a>
       </el-col>
