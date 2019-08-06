@@ -12,7 +12,8 @@
           <el-rate
             v-model="ratingResponse.average"
             text-color="#ff9900"
-            score-template="{value}"
+            show-score
+            score-template="({value})"
             class="recipe-rating"
             @change="ratingChanged"
           />
@@ -402,7 +403,11 @@
   }
 
   .recipe-rating /deep/ i {
-    font-size: 20px;
+    font-size: 20px;  
+  }
+
+  .recipe-rating /deep/ .el-rate__text {
+    color: #424242 !important;
   }
 
   .recipe-image {

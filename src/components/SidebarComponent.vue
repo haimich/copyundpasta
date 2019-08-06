@@ -47,7 +47,7 @@
       </div>
 
       <p style="margin-top: 20px; width: 75%">
-        Du möchtest über neue Rezepte informiert werden? Dann abonniere einfach meinen Newsletter.
+        Du möchtest über neue Rezepte informiert werden? Dann abonniere einfach meinen Newsletter:
       </p>
 
       <div class="newsletter-subscribe">

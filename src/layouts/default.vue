@@ -399,15 +399,6 @@
     margin-bottom: 40px;
   }
 
-  footer {
-    padding: 34px 0;
-    background-color: #363838;
-    color: #ececec;
-    text-align: center;
-    font-size: 16px;
-    font-weight: 300;
-  }
-
   .curly-divider {
     width: 100%;
     position: relative;
