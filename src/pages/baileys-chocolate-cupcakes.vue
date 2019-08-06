@@ -58,13 +58,13 @@
       </el-row>
     </article>
 
-    <el-row id="recipe" style="margin-top: 20px;">
+    <el-row style="margin-top: 20px;">
       <el-col :span="16" :offset="4">
         <RecipeComponent :recipe="recipe" style="margin-top: 40px;" />
       </el-col>
     </el-row>
 
-    <el-row id="comments" style="margin-top: 40px;">
+    <el-row style="margin-top: 40px;">
       <el-col :span="16" :offset="4">
         <CommentComponent :comments="comments" :slug="article.slug" @commentAdded="refreshComments" />
       </el-col>

@@ -5,7 +5,7 @@
     <el-row style="margin-bottom: 10px;">
       <el-col :span="16">
         <el-row>
-          <h1 class="recipe-title">
+          <h1 id="recipe" class="recipe-title">
             {{ recipe.title }}
           </h1>
 
@@ -189,7 +189,7 @@
   import { $n } from "@/filters/numberFilter";
   import RecipeService from "../../services/RecipeService";
   import NumberUtil from "../../utils/NumberUtil";
-import { RatingResponse } from "../../interfaces/Rating";
+  import { RatingResponse } from "../../interfaces/Rating";
 
   @Component
   export default class RecipeComponent extends Vue {
