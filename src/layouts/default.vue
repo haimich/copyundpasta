@@ -18,7 +18,7 @@
                 </a>
               </li>
               <li>
-                <a href="https://gmx.us20.list-manage.com/subscribe/post?u=1c249484bbe9d6816f42135ee&id=8d55aeb1b7" target="_blank" title="Newsletter abonnieren" rel="noopener">
+                <a href="mailto:hello@copyundpasta.de" title="Schreib mir eine Mail!" rel="noopener">
                   <FontAwesome :icon="['far', 'envelope']" />
                 </a>
               </li>
@@ -74,11 +74,7 @@
             <el-menu-item index="blogroll">
               <nuxt-link to="/blogroll">BLOGROLL</nuxt-link>
             </el-menu-item>
-
-            <el-menu-item index="kontakt">
-              <nuxt-link to="/kontakt">KONTAKT</nuxt-link>
-            </el-menu-item>
-
+            
             <el-menu-item index="suche">
               <div class="menu-item-search hidden-sm-and-up">
                 SUCHE
@@ -136,7 +132,6 @@
     REZEPTE = "rezepte",
     ABOUT = "about",
     BLOGROLL = "blogroll",
-    KONTAKT = "kontakt",
     SUCHE = "suche",
   }
 
@@ -205,11 +200,6 @@
 
         case "/blogroll": {
           this.activeIndex = Pages.BLOGROLL;
-          break;
-        }
-
-        case "/kontakt": {
-          this.activeIndex = Pages.KONTAKT;
           break;
         }
       }

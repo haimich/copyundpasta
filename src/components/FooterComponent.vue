@@ -33,7 +33,7 @@
 
         <nuxt-link to="/" title="HOME">Copy & Pasta</nuxt-link>
 
-        <img src="/favicon-32x32.png" style="width: 24px;"> 
+        <img src="/favicon-32x32.png" style="width: 24px;">
       </el-col>
 
       <el-col :span="12" style="text-align: center;">
@@ -46,7 +46,11 @@
         <a href="/sitemap.xml" target="_blank">Sitemap</a>
       </el-col>
 
-      <el-col :span="6">
+      <el-col :span="6" style="display: flex; justify-content: flex-end;">
+        <a href="mailto:hello@copyundpasta.de" title="Schreib mir eine Mail!">
+          <FontAwesome :icon="['far', 'envelope']" style="margin-right: 3px; font-size: 17px;" />
+          hello@copyundpasta.de
+        </a>
       </el-col>
     </el-row>
   </footer>
@@ -97,7 +101,7 @@
 
     .link-row {
       padding-left: 10px;
-      padding-right: 10px;
+      padding-right: 20px;
     }
 
     a {

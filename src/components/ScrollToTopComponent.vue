@@ -48,7 +48,7 @@
   .backtop-button {
     position: fixed;
     right: 40px;
-    bottom: 40px;
+    bottom: 75px;
     cursor: pointer;
     background-color: #fff;
     width: 40px;
