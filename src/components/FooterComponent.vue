@@ -102,6 +102,11 @@
 
     a {
       color: #ececec;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 

@@ -100,6 +100,7 @@
 
   .newsletter-subscribe {
     margin-top: 20px;
+    width: 80%;
 
     .el-input {
       margin-right: 10px;

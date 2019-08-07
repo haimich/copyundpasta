@@ -1,7 +1,16 @@
 <template>
 
   <div>
-    Kontakt
+
+    <el-row>
+      <el-col :span="16" :offset="4">
+        <MainHeadingComponent
+          text="Kontakt"
+          subtitle="Ich freue mich über eure Nachrichten!"
+        />
+      </el-col>
+    </el-row>
+
   </div>
 
 </template>

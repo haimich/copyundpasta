@@ -1,14 +1,13 @@
 <template>
 
   <div>
-
-    <MainHeadingComponent
-      text="Blogroll"
-      subtitle="Meine liebsten Foodblogs :)"
-    />
-
-    <el-row style="margin-top: 40px;">
-      <el-col :span="12" :offset="6">
+    <el-row>
+      <el-col :span="16" :offset="4">
+        <MainHeadingComponent
+          text="Blogroll"
+          subtitle="Meine liebsten Foodblogs :)"
+        />
+        
         <ul class="link-list">
           <li
             v-for="(blog, index) in blogroll"
@@ -100,6 +99,7 @@
 
       &:hover {
         font-size: 19px;
+        border-left: 13px solid $color-primary;
       }
     }
   }

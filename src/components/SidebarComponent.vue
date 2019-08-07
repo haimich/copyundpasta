@@ -46,7 +46,7 @@
         <span>Newsletter</span>
       </div>
 
-      <p style="margin-top: 20px; width: 75%">
+      <p style="margin-top: 20px; width: 84%">
         Du möchtest über neue Rezepte informiert werden? Dann abonniere einfach meinen Newsletter:
       </p>
 

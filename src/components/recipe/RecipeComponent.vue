@@ -20,7 +20,7 @@
 
           <div v-if="ratingResponse != null" style="margin-top: 7px; font-size: 14px;">
             {{ ratingResponse.numRatings }}
-            Bewertunge<span v-if="ratingResponse.numRatings === 0 || ratingResponse.numRatings >= 2">n</span>
+            Bewertung<span v-if="ratingResponse.numRatings === 0 || ratingResponse.numRatings >= 2">en</span>
           </div>
         </el-row>
 
