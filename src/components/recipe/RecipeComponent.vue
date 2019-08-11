@@ -164,7 +164,7 @@
       </el-col>
     </el-row>
 
-    <el-row :gutter="20" style="margin-top: 15px;">
+    <el-row v-if="! isPrint" :gutter="20" style="margin-top: 15px;">
       <el-col :span="8">
         <el-tag
           v-for="tag in getTags()"

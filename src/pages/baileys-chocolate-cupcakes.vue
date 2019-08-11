@@ -85,9 +85,7 @@
   import recipe from "@/content/recipes/baileys-chocolate-cupcakes";
 
   @Component({
-    head: {
-      title: article.title,
-    },
+    head: ArticleUtil.defaultHead(article),
     asyncData: ArticleUtil.defaultAsyncData(article, recipe),
   })
   export default class extends BaseArticle {
