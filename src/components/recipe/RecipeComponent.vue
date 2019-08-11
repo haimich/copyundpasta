@@ -95,31 +95,30 @@
           v-if="recipe != null"
         >
           <li
-            v-for="(ingredient, index) in recipe.ingredients"
+            v-for="(entry, index) in recipe.ingredients"
             :key="index"
             class="ingredient-main"
           >
             <span
-              v-if="ingredient.isGroup"
+              v-if="entry.isGroup"
             >
               <div class="category-heading">
-                {{ ingredient.title }}:
+                {{ entry.title }}:
               </div>
 
               <ul
                 class="ingredients-list"
               >
                 <li
-                  v-for="(groupIngredient, groupIndex) in ingredient.ingredients"
+                  v-for="(groupIngredient, groupIndex) in entry.ingredients"
                   :key="groupIndex"
                   class="ingredient-group"
-                  v-html="formatIngredient(groupIngredient)"
+                  v-html="formatIngredient(groupIngredient, servingsMultiplier)"
                 ></li>
               </ul>
             </span>
 
-            <span v-else v-html="formatIngredient(ingredient)">
-            </span>
+            <span v-else v-html="formatIngredient(entry, servingsMultiplier)"></span>
           </li>
         </ul>
       </el-col>
@@ -191,9 +190,9 @@
   import { Tag } from "@/interfaces/RecipeTags";
   import { $n } from "@/filters/numberFilter";
   import RecipeService from "../../services/RecipeService";
-  import NumberUtil from "../../utils/NumberUtil";
   import { RatingResponse } from "../../interfaces/Rating";
   import RecipeAnnotationComponent from "@/components/recipe/RecipeAnnotationComponent.vue"
+  import RecipeUtil from "@/utils/RecipeUtil";
 
   @Component({
     components: {
@@ -222,22 +221,7 @@
     private servingsSteps = 0.5;
 
     get servings(): string {
-      if (this.recipe == null || this.recipe.servings == null) {
-        return "";
-      }
-
-      let amount = this.recipe.servings.amount * this.servingsMultiplier;
-      let unit;
-    
-      switch (this.recipe.servings.unit) {
-        case RecipeServingsUnit.quantity:
-          unit = "Stück";
-          break;
-        default:
-          unit = "";
-      }
-
-      return amount + " " + unit;
+      return RecipeUtil.formatServings(this.recipe, this.servingsMultiplier);
     }
 
     async fetchRating() {
@@ -265,107 +249,9 @@
 
       this.ratingResponse = response.data;
     }
-
-    getIngredientList(): string[] {
-      if (this.recipe == null) {
-        return [];
-      }
-
-      let ingredientStrings = [];
-
-      for (let entry of this.recipe.ingredients) {
-        if (entry.isGroup) {
-          entry = entry as RecipeIngredientGroup;
-          ingredientStrings.push("<strong style='text-transform: uppercase;'>" + entry.title + ":</strong>");
-
-          for (let ingredient of entry.ingredients) {
-            ingredientStrings.push(this.formatIngredient(ingredient));
-          }
-
-          ingredientStrings.push(""); // empty line to control spacing
-        } else {
-          entry = entry as RecipeIngredient;
-          ingredientStrings.push(this.formatIngredient(entry));
-        }
-      }
-
-      return ingredientStrings;
-    }
     
     formatIngredient(ingredient: RecipeIngredient): string {
-      let amount = this.formatAmount(ingredient);
-      let preparation = ingredient.preparation != null ? ", " + ingredient.preparation : "";
-      let ingredientName = this.formatIngredientName(ingredient)
-      let unit;
-    
-      switch (ingredient.unit) {
-        case RecipeUnit.gram:
-          unit = "g";
-          break;
-        case RecipeUnit.liter:
-          unit = "l";
-          break;
-        case RecipeUnit.el:
-          unit = "EL";
-          break;
-        case RecipeUnit.tl:
-          unit = "TL";
-          break;
-        case RecipeUnit.einige:
-          unit = "einige";
-          break;
-        default:
-          unit = "";
-      }
-
-      if (amount != null && amount !== "") {
-        amount += " "; // we need a space here
-      }
-
-      return `${amount}${unit} ${ingredientName}${preparation}`
-    }
-
-    formatAmount(ingredient: RecipeIngredient): string {
-      if (NumberUtil.isNumberDefined(ingredient.amount)) {
-        let amount = ingredient.amount * this.servingsMultiplier;
-
-        if (amount === 0.25) {
-          return "&frac14;";
-        } else if (amount === 0.5) {
-          return "&frac12;";
-        } else if (amount === 0.75) {
-          return "&frac34;";
-        } else if (amount === 1.5) {
-          return "1 &frac12;";
-        } else {
-          // just format the number nicely
-          return $n(amount);
-        }
-      } else if (NumberUtil.isNumberDefined(ingredient.amountFrom) && NumberUtil.isNumberDefined(ingredient.amountTo)) {
-        let amountFrom = ingredient.amountFrom * this.servingsMultiplier;
-        let amountTo = ingredient.amountTo * this.servingsMultiplier;
-
-        return $n(amountFrom) + "-" + $n(amountTo);
-      } else {
-        return "";
-      }
-    }
-
-    formatIngredientName(ingredient: RecipeIngredient) {
-      if (ingredient != null && ingredient.ingredient != null) {
-        if ((NumberUtil.isNumberDefined(ingredient.amount) && ingredient.amount >= 2) ||
-            (NumberUtil.isNumberDefined(ingredient.amountFrom) && NumberUtil.isNumberDefined(ingredient.amountTo))) {
-          if (ingredient.ingredient.namePlural != null) {
-            return ingredient.ingredient.namePlural;
-          } else {
-            return ingredient.ingredient.name;
-          }
-        } else {
-          return ingredient.ingredient.name;
-        }
-      } else {
-        return "";
-      }
+      return RecipeUtil.formatIngredient(ingredient);
     }
 
     getTags(): Tag[] {

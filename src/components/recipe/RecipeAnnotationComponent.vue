@@ -10,7 +10,7 @@
   import { RatingResponse } from "@/interfaces/Rating";
 
   @Component
-  export default class RecipeAnnotatinoComponent extends Vue {
+  export default class RecipeAnnotationComponent extends Vue {
 
     @Prop()
     recipe: Recipe;
