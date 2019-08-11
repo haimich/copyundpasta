@@ -118,7 +118,7 @@
     background-image: url("/images/food-background.svg");
     background-repeat: no-repeat;
     background-size: cover;
-    padding: 50px 0;
+    padding: 92px 0;
     text-align: center;
 
     .footer-newsletter-heading {

@@ -13,19 +13,27 @@
           <span class="header-social-icons hidden-xs-only">
             <ul>
               <li>
-                <a href="https://www.pinterest.de/copyundpasta" target="_blank" title="Copy & Pasta bei Pinterest" rel="noopener">
-                  <FontAwesome :icon="['fab', 'pinterest-p']" />
-                </a>
+                <el-tooltip content="Copy & Pasta bei Pinterest" placement="bottom">
+                  <a href="https://www.pinterest.de/copyundpasta" target="_blank" rel="noopener">
+                    <FontAwesome :icon="['fab', 'pinterest-p']" />
+                  </a>
+                </el-tooltip>
               </li>
+
               <li>
-                <a href="mailto:hello@copyundpasta.de" title="Schreib mir eine Mail!" rel="noopener">
-                  <FontAwesome :icon="['far', 'envelope']" />
-                </a>
+                <el-tooltip content="Schreib mir eine Mail :)" placement="bottom">
+                  <a href="mailto:hello@copyundpasta.de" rel="noopener">
+                    <FontAwesome :icon="['far', 'envelope']" />
+                  </a>
+                </el-tooltip>
               </li>
+
               <li>
-                <a href="/feed/rss.xml" target="_blank" title="RSS-Feed abonnieren" rel="noopener">
-                  <FontAwesome :icon="['fas', 'rss']" />
-                </a>
+                <el-tooltip content="RSS-Feed abonnieren" placement="bottom">
+                  <a href="/feed/rss.xml" target="_blank" rel="noopener">
+                    <FontAwesome :icon="['fas', 'rss']" />
+                  </a>
+                </el-tooltip>
               </li>
             </ul>
           </span>
@@ -79,11 +87,14 @@
               <div class="menu-item-search hidden-sm-and-up">
                 SUCHE
               </div>
-              <FontAwesome
-                :icon="['fas', 'search']"
-                class="hidden-xs-only"
-                style="font-size: 15px;"
-              />
+
+              <el-tooltip content="Copy & Pasta durchsuchen" placement="bottom">
+                <FontAwesome
+                  :icon="['fas', 'search']"
+                  class="hidden-xs-only"
+                  style="font-size: 15px;"
+                />
+              </el-tooltip>
             </el-menu-item>
           </el-menu>
 

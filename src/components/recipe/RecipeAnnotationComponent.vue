@@ -5,7 +5,8 @@
 <script lang="ts">
 
   import { Vue, Component, Prop, Watch } from "vue-property-decorator";
-  import { Recipe, RecipeServingsUnit } from "@/interfaces/Recipe";
+  import { Recipe, RecipeServings, RecipeIngredient, RecipeIngredientGroup, RecipeStep, RecipeStepGroup } from "@/interfaces/Recipe";
+  import { RecipeServingsUnit } from "@/interfaces/RecipeIngredients";
   import { RatingResponse } from "@/interfaces/Rating";
 
   @Component
@@ -24,30 +25,38 @@
 
       let ingredients = [];
 
-      for (let ingredient of this.recipe.ingredients) {
-        if (ingredient.isGroup) {
-          for (let groupIngredient of ingredient.ingredients) {
+      for (let entry of this.recipe.ingredients) {
+        if (entry.isGroup) {
+          entry = entry as RecipeIngredientGroup;
+
+          for (let groupIngredient of entry.ingredients) {
             ingredients.push(groupIngredient.amount + " " + groupIngredient.ingredient.name);
           }
         } else {
-          ingredients.push(ingredient.amount + " " + ingredient.ingredient.name);
+          entry = entry as RecipeIngredient;
+
+          ingredients.push(entry.amount + " " + entry.ingredient.name);
         }
       }
       
       let steps = [];
 
-      for (let step of this.recipe.steps) {
-        if (step.isGroup) {
-          for (let groupStep of step.steps) {
+      for (let entry of this.recipe.steps) {
+        if (entry.isGroup) {
+          entry = entry as RecipeStepGroup;
+
+          for (let groupStep of entry.steps) {
             steps.push({
               "@type": "HowToStep",
               "text": groupStep.content,
             });
           }
         } else {
+          entry = entry as RecipeStep;
+
           steps.push({
             "@type": "HowToStep",
-            "text": step.content,
+            "text": entry.content,
           });
         }
       }

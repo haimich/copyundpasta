@@ -13,35 +13,42 @@ const ingredients: (RecipeIngredientGroup|RecipeIngredient)[] = [
     title: "Teig",
     ingredients: [
       {
+        isGroup: false,
         amount: 500,
         unit: RecipeUnit.gram,
         ingredient: Ingredients.mehl,
       },
       {
+        isGroup: false,
         amount: 30,
         unit: RecipeUnit.gram,
         ingredient: Ingredients.hefe,
       },
       {
+        isGroup: false,
         amount: 30,
         unit: RecipeUnit.gram,
         ingredient: Ingredients.zucker,
       },
       {
+        isGroup: false,
         amountFrom: 2,
         unit: RecipeUnit.quantity,
         amountTo: 3,
         ingredient: Ingredients.ei,
       },
       {
+        isGroup: false,
         amount: 0.25,
         unit: RecipeUnit.liter,
         ingredient: Ingredients.milch,
       },
       {
+        isGroup: false,
         ingredient: Ingredients.salz,
       },
       {
+        isGroup: false,
         amount: 80,
         unit: RecipeUnit.gram,
         ingredient: Ingredients.butter,
@@ -49,6 +56,7 @@ const ingredients: (RecipeIngredientGroup|RecipeIngredient)[] = [
     ],
   },
   {
+    isGroup: false,
     unit: RecipeUnit.quantity,
     amount: 2,
     ingredient: Ingredients.zwiebel,
@@ -62,32 +70,39 @@ const steps: (RecipeStepGroup|RecipeStep)[] = [
     title: "Teig",
     steps: [
       {
+        isGroup: false,
         type: "step",
         content: "Hefeteig zubereiten und gehen lassen.",
       },
       {
+        isGroup: false,
         type: "step",
         content: "Dampfnudeln mit Mamas Bäckerknettechnik formen.",
       },
       {
+        isGroup: false,
         type: "step",
         content: "auf einem bemehlten Blech abermals gehen lassen.",
       },
     ]
   },
   {
+    isGroup: false,
     type: "step",
     content: "Schmalz (oder Margarine) in einer gut verschließbaren Pfanne erhitzen.",
   },
   {
+    isGroup: false,
     type: "step",
     content: "Nicht zu wenig Salz auf dem Pfannenboden verteilen.",
   },
   {
+    isGroup: false,
     type: "step",
     content: "Dampfnudeln hineinsetzen, eine Tasse heißes Wasser vorsichtig seitlich reinlaufen lassen.",
   },
   {
+    isGroup: false,
     type: "step",
     content: "Ca. 10 min. auf kleiner Flamme garen lassen."
   },

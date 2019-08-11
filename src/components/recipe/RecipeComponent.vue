@@ -100,7 +100,7 @@
             class="ingredient-main"
           >
             <span
-              v-if="isGroup(ingredient)"
+              v-if="ingredient.isGroup"
             >
               <div class="category-heading">
                 {{ ingredient.title }}:
@@ -140,7 +140,7 @@
             class="step-main"
           >
             <span
-              v-if="isGroup(step)"
+              v-if="step.isGroup"
             >
               <div class="category-heading">
                 {{ step.title }}:
@@ -274,7 +274,7 @@
       let ingredientStrings = [];
 
       for (let entry of this.recipe.ingredients) {
-        if ('isGroup' in entry) {
+        if (entry.isGroup) {
           entry = entry as RecipeIngredientGroup;
           ingredientStrings.push("<strong style='text-transform: uppercase;'>" + entry.title + ":</strong>");
 
@@ -366,10 +366,6 @@
       } else {
         return "";
       }
-    }
-
-    isGroup(entry) {
-      return 'isGroup' in entry;
     }
 
     getTags(): Tag[] {

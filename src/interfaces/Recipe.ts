@@ -8,7 +8,6 @@ export interface Ingredient {
 }
 
 export interface RecipeIngredientGroup extends RecipeIngredientEntry {
-  isGroup: true;
   title: string;
   ingredients: RecipeIngredient[];
 }
@@ -22,10 +21,11 @@ export interface RecipeIngredient extends RecipeIngredientEntry {
   preparation?: IngredientPreparation;
 }
 
-export interface RecipeIngredientEntry { }
+export interface RecipeIngredientEntry {
+  isGroup: boolean;
+}
 
 export interface RecipeStepGroup extends RecipeStepEntry {
-  isGroup: true;
   title: string;
   steps: RecipeStep[];
 }
@@ -35,7 +35,9 @@ export interface RecipeStep extends RecipeStepEntry {
   content: string;
 }
 
-export interface RecipeStepEntry { }
+export interface RecipeStepEntry {
+  isGroup: boolean;
+}
 
 export interface RecipeRating {
   date: number;
