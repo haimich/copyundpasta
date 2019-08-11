@@ -70,9 +70,12 @@ export default class SearchService {
     }
   }
 
+  /**
+   * Converts all ingredients of a recipe into one searchable string
+   */
   private static extractIngredientString(recipe: Recipe): string {
     let str = recipe.ingredients.reduce((ingredientStr: string, entry: RecipeIngredientGroup | RecipeIngredient) => {
-      if ('isGroup' in entry) {
+      if (entry.isGroup) {
         entry = entry as RecipeIngredientGroup;
         return ingredientStr += " " + entry.ingredients.reduce((groupIngredientStr: string, entry: RecipeIngredient) => {
           return groupIngredientStr += " " + entry.ingredient.name;

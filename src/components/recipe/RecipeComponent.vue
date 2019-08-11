@@ -10,7 +10,7 @@
           </h1>
 
           <el-rate
-            v-model="ratings.average"
+            v-model="ratingsInternal.average"
             text-color="#ff9900"
             show-score
             score-template="({value})"
@@ -18,9 +18,9 @@
             @change="ratingChanged"
           />
 
-          <div v-if="ratings != null" style="margin-top: 7px; font-size: 14px;">
-            {{ ratings.numRatings }}
-            Bewertung<span v-if="ratings.numRatings === 0 || ratings.numRatings >= 2">en</span>
+          <div v-if="ratingsInternal != null" style="margin-top: 7px; font-size: 14px;">
+            {{ ratingsInternal.numRatings }}
+            Bewertung<span v-if="ratingsInternal.numRatings === 0 || ratingsInternal.numRatings >= 2">en</span>
           </div>
         </el-row>
 
@@ -177,7 +177,7 @@
       </el-col>
     </el-row>
 
-    <RecipeAnnotationComponent :recipe="recipe" :ratings="ratings" />
+    <RecipeAnnotationComponent :recipe="recipe" :ratings="ratingsInternal" />
 
   </div>
 </template>
@@ -209,6 +209,11 @@
 
     @Prop()
     isPrint: boolean;
+
+    private ratingsInternal: RatingResponse = {
+      average: 0,
+      numRatings: 0,
+    };
     
     private servingsMultiplier = 1;
 
@@ -222,6 +227,11 @@
       return RecipeUtil.formatServings(this.recipe, this.servingsMultiplier);
     }
 
+    @Watch("ratings")
+    ratingsChanged() {
+      this.ratingsInternal = this.ratings;
+    }
+
     async ratingChanged(newValue: number) {
       let response;
 
@@ -232,7 +242,7 @@
         return;
       }
 
-      // this.ratings = response.data;
+      this.ratingsInternal = response.data;
     }
     
     formatIngredient(ingredient: RecipeIngredient): string {
@@ -253,7 +263,7 @@
     }
 
     mounted() {
-      // this.fetchRating();
+      this.ratingsInternal = this.ratings;
     }
 
   }

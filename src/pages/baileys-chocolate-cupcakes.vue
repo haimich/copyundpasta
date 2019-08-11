@@ -78,7 +78,7 @@
 
   import { Vue, Component, Prop } from "vue-property-decorator";
   import BaseArticle from "@/components/BaseArticle.vue";
-  import ArticleService from "@/services/ArticleService";
+  import ArticleUtil from "@/utils/ArticleUtil";
   import { RatingResponse } from "@/interfaces/Rating";
 
   import article from "@/content/articles/baileys-chocolate-cupcakes";
@@ -88,7 +88,7 @@
     head: {
       title: article.title,
     },
-    asyncData: ArticleService.defaultAsyncData(article, recipe),
+    asyncData: ArticleUtil.defaultAsyncData(article, recipe),
   })
   export default class extends BaseArticle {
 

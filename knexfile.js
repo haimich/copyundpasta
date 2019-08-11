@@ -16,7 +16,6 @@ const defaultConfig = {
     directory: "knex_migrations",
   },
   seeds: {
-    // directory: "knex_seeds",
     directory: "knex_seeds/compiled/knex_seeds",
   },
 };
