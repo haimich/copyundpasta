@@ -83,7 +83,7 @@ export default class RecipeUtil {
     }
   }
 
-  public static formatIngredientName(entry: RecipeIngredient) {
+  public static formatIngredientName(entry: RecipeIngredient): string {
     if (entry == null || entry.ingredient == null) {
       return "";
     }

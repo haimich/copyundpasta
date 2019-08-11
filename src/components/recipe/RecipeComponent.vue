@@ -113,12 +113,12 @@
                   v-for="(groupIngredient, groupIndex) in entry.ingredients"
                   :key="groupIndex"
                   class="ingredient-group"
-                  v-html="formatIngredient(groupIngredient, servingsMultiplier)"
+                  v-html="formatIngredient(groupIngredient)"
                 ></li>
               </ul>
             </span>
 
-            <span v-else v-html="formatIngredient(entry, servingsMultiplier)"></span>
+            <span v-else v-html="formatIngredient(entry)"></span>
           </li>
         </ul>
       </el-col>
@@ -251,7 +251,7 @@
     }
     
     formatIngredient(ingredient: RecipeIngredient): string {
-      return RecipeUtil.formatIngredient(ingredient);
+      return RecipeUtil.formatIngredient(ingredient, this.servingsMultiplier);
     }
 
     getTags(): Tag[] {
