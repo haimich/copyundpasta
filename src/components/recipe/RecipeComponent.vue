@@ -178,6 +178,8 @@
       </el-col>
     </el-row>
 
+    <RecipeAnnotationComponent :recipe="recipe" :rating="ratingResponse" />
+
   </div>
 </template>
 
@@ -191,8 +193,13 @@
   import RecipeService from "../../services/RecipeService";
   import NumberUtil from "../../utils/NumberUtil";
   import { RatingResponse } from "../../interfaces/Rating";
+  import RecipeAnnotationComponent from "@/components/recipe/RecipeAnnotationComponent.vue"
 
-  @Component
+  @Component({
+    components: {
+      RecipeAnnotationComponent,
+    }
+  })
   export default class RecipeComponent extends Vue {
 
     @Prop()
