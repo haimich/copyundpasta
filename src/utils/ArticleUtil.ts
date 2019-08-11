@@ -3,6 +3,8 @@ import RecipeService from "@/services/RecipeService";
 import { Article } from "@/interfaces/Article";
 import { Recipe } from "@/interfaces/Recipe";
 
+const BASE_URL = "https://www.copyundpasta.de";
+
 export default class ArticleUtil {
 
   public static defaultHead(article: Article): any {
@@ -11,8 +13,10 @@ export default class ArticleUtil {
       meta: [
         { property: "og:title", content: article.title },
         { property: "og:description", content: article.shortDescription },
-        { property: "og:url", content: `https://www.copyundpasta.de/${article.slug}` },
-        { property: "og:image", content: `https://www.copyundpasta.de` + article.previewImageUrl },
+        { property: "og:url", content: `${BASE_URL}/${article.slug}` },
+        { property: "og:image", content: `${BASE_URL}${article.previewImageUrl}` },
+        { property: "og:type", content: "article" },
+        { property: "og:site_name", content: "Copy & Pasta" },
       ],
     };
   }
