@@ -10,7 +10,7 @@
           </h1>
 
           <el-rate
-            v-model="ratingResponse.average"
+            v-model="ratings.average"
             text-color="#ff9900"
             show-score
             score-template="({value})"
@@ -18,9 +18,9 @@
             @change="ratingChanged"
           />
 
-          <div v-if="ratingResponse != null" style="margin-top: 7px; font-size: 14px;">
-            {{ ratingResponse.numRatings }}
-            Bewertung<span v-if="ratingResponse.numRatings === 0 || ratingResponse.numRatings >= 2">en</span>
+          <div v-if="ratings != null" style="margin-top: 7px; font-size: 14px;">
+            {{ ratings.numRatings }}
+            Bewertung<span v-if="ratings.numRatings === 0 || ratings.numRatings >= 2">en</span>
           </div>
         </el-row>
 
@@ -177,7 +177,7 @@
       </el-col>
     </el-row>
 
-    <RecipeAnnotationComponent :recipe="recipe" :rating="ratingResponse" />
+    <RecipeAnnotationComponent :recipe="recipe" :ratings="ratings" />
 
   </div>
 </template>
@@ -190,7 +190,7 @@
   import { Tag } from "@/interfaces/RecipeTags";
   import { $n } from "@/filters/numberFilter";
   import RecipeService from "../../services/RecipeService";
-  import { RatingResponse } from "../../interfaces/Rating";
+  import { RatingResponse } from "@/interfaces/Rating";
   import RecipeAnnotationComponent from "@/components/recipe/RecipeAnnotationComponent.vue"
   import RecipeUtil from "@/utils/RecipeUtil";
 
@@ -205,12 +205,10 @@
     recipe: Recipe;
 
     @Prop()
-    isPrint: boolean;
+    ratings: RatingResponse;
 
-    private ratingResponse: RatingResponse = {
-      average: 0,
-      numRatings: 0,
-    };
+    @Prop()
+    isPrint: boolean;
     
     private servingsMultiplier = 1;
 
@@ -224,19 +222,6 @@
       return RecipeUtil.formatServings(this.recipe, this.servingsMultiplier);
     }
 
-    async fetchRating() {
-      let response;
-
-      try {
-        response = await RecipeService.getRating(this.$axios, this.recipe.slug);
-      } catch (error) {
-        console.log(error);
-        return;
-      }
-
-      this.ratingResponse = response.data;
-    }
-
     async ratingChanged(newValue: number) {
       let response;
 
@@ -247,7 +232,7 @@
         return;
       }
 
-      this.ratingResponse = response.data;
+      // this.ratings = response.data;
     }
     
     formatIngredient(ingredient: RecipeIngredient): string {
@@ -268,7 +253,7 @@
     }
 
     mounted() {
-      this.fetchRating();
+      // this.fetchRating();
     }
 
   }

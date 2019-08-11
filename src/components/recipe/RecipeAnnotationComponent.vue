@@ -8,6 +8,7 @@
   import { Recipe, RecipeServings, RecipeIngredient, RecipeIngredientGroup, RecipeStep, RecipeStepGroup } from "@/interfaces/Recipe";
   import { RecipeServingsUnit } from "@/interfaces/RecipeIngredients";
   import { RatingResponse } from "@/interfaces/Rating";
+  import RecipeUtil from "@/utils/RecipeUtil";
 
   @Component
   export default class RecipeAnnotationComponent extends Vue {
@@ -16,8 +17,11 @@
     recipe: Recipe;
 
     @Prop()
-    recipeRating: RatingResponse;
+    ratings: RatingResponse;
 
+    /**
+     * @see https://developers.google.com/search/docs/data-types/recipe
+     */
     get jsonld(): string {
       if (this.recipe == null) {
         return "{}";
@@ -30,12 +34,12 @@
           entry = entry as RecipeIngredientGroup;
 
           for (let groupIngredient of entry.ingredients) {
-            ingredients.push(groupIngredient.amount + " " + groupIngredient.ingredient.name);
+            ingredients.push(RecipeUtil.formatIngredient(groupIngredient));
           }
         } else {
           entry = entry as RecipeIngredient;
 
-          ingredients.push(entry.amount + " " + entry.ingredient.name);
+          ingredients.push(RecipeUtil.formatIngredient(entry));
         }
       }
       
@@ -87,11 +91,11 @@
         "recipeInstructions": steps,
       };
 
-      if (this.recipeRating != null) {
+      if (this.ratings != null) {
         jsonld.aggregateRating = {
           "@type": "AggregateRating",
-          "ratingValue": "" + this.recipeRating.average,
-          "ratingCount": "" + this.recipeRating.numRatings,
+          "ratingValue": "" + this.ratings.average,
+          "ratingCount": "" + this.ratings.numRatings,
         };
       }
 

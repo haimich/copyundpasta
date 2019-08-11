@@ -60,7 +60,7 @@
 
     <el-row style="margin-top: 20px;">
       <el-col :span="16" :offset="4">
-        <RecipeComponent :recipe="recipe" style="margin-top: 40px;" />
+        <RecipeComponent :recipe="recipe" :ratings="ratings" style="margin-top: 40px;" />
       </el-col>
     </el-row>
 
@@ -79,6 +79,7 @@
   import { Vue, Component, Prop } from "vue-property-decorator";
   import BaseArticle from "@/components/BaseArticle.vue";
   import ArticleService from "@/services/ArticleService";
+  import { RatingResponse } from "@/interfaces/Rating";
 
   import article from "@/content/articles/baileys-chocolate-cupcakes";
   import recipe from "@/content/recipes/baileys-chocolate-cupcakes";
@@ -87,14 +88,11 @@
     head: {
       title: article.title,
     },
-    // @ts-ignore
-    async asyncData({ $axios, params }) {
-      return {
-        comments: (await ArticleService.getComments($axios, article.slug)).data,
-      };
-    }
+    asyncData: ArticleService.defaultAsyncData(article, recipe),
   })
   export default class extends BaseArticle {
+
+    private ratings: RatingResponse;
 
     constructor() {
       super(article, recipe);
