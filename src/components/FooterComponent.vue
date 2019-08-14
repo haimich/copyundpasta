@@ -51,7 +51,7 @@
 
       <el-col :span="6" style="display: flex; justify-content: flex-end;">
         <a href="mailto:hello@copyundpasta.de" title="Schreib mir eine Mail!">
-          <FontAwesome :icon="['far', 'envelope']" style="margin-right: 3px; font-size: 17px;" />
+          <FontAwesome :icon="['far', 'envelope']" style="margin-right: 1px; font-size: 17px;" />
           hello@copyundpasta.de
         </a>
       </el-col>
