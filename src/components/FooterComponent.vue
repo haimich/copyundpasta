@@ -20,7 +20,7 @@
     <el-row style="padding-top: 30px; margin-bottom: 30px; text-align: center;">
       <el-col>
         <a href="https://appbase.io/" target="_blank">
-          <img src="/images/appbase.svg" alt="Appbase" style="width: 163px;">
+          <img src="/images/appbase.svg" alt="Appbase Search Technology" style="width: 163px;">
         </a>
       </el-col>
     </el-row>
@@ -33,7 +33,10 @@
 
         <nuxt-link to="/" title="HOME">Copy & Pasta</nuxt-link>
 
-        <img src="/favicon-32x32.png" style="width: 24px;">
+        <img
+          src="/favicon-32x32.png"
+          class="mouse-icon"
+        >
       </el-col>
 
       <el-col :span="12" style="text-align: center;">
@@ -96,8 +99,17 @@
     padding: 0 0 34px 0;
     background-color: #363838;
     color: #ececec;
-    font-size: 18px;
+    font-size: 17.5px;
     font-weight: 300;
+
+    .mouse-icon {
+      width: 24px;
+      transition: all .1s ease-in;
+
+      &:hover {
+        transform: rotate(-15deg);
+      }
+    }
 
     .link-row {
       padding-left: 10px;

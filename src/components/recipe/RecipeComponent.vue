@@ -1,6 +1,10 @@
 <template>
 
-  <div v-if="recipe" class="recipe">
+  <div
+    v-if="recipe"
+    class="recipe"
+    :class="{border: ! isPrint}"
+  >
 
     <el-row style="margin-bottom: 10px;">
       <el-col :span="16">
@@ -275,8 +279,11 @@
   .recipe {
     padding: 22px;
     border-radius: 4px;
-    border: 1px solid #EBEEF5;
     overflow: hidden;
+
+    &.border {
+      border: 1px solid #EBEEF5;
+    }
   }
 
   .recipe-title {
