@@ -2,7 +2,7 @@
 
   <div>
     <el-row>
-      <el-col :span="12" :offset="6">
+      <el-col :span="14" :offset="5">
         <MainHeadingComponent
           text="Blogroll"
           subtitle="Hier findet ihr meine liebsten Foodblogs :)"
@@ -16,7 +16,7 @@
             title="Link öffnen"
           >
             <el-row :gutter="20">
-              <el-col :span="8">
+              <el-col :span="7">
                 <el-image
                   :src="blog.image"
                   :title="blog.name"
@@ -24,7 +24,7 @@
                 ></el-image>
               </el-col>
               
-              <el-col :span="16">
+              <el-col :span="17">
                 <a
                   :href="blog.url"
                   style="font-size: 19px;"
