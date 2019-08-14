@@ -5,7 +5,7 @@ describe('getRecipes', () => {
     test('should return newest recipes', async () => {
         let recipe = await RecipeRepo.getRecipe("baileys-chocolate-cupcakes");
 
-        // console.log(recipe);
+        console.log(recipe);
 
         expect(recipe.slug).toBeDefined();
     });
