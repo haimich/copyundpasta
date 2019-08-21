@@ -122,7 +122,7 @@
       },
       {
         name: "Petit Appetit",
-        description: "Petit Appetit",
+        description: "Den Blog von Nicole habe ich erst kürzlich entdeckt und war sofort Feuer und Flamme, was sich darin geäußert hat, dass ich sämtliche der fast 300 Rezepte durchgesehen und etliche davon in meiner Nachkochliste aufgenommen habe. Viel besser kann man ein Rezept finde ich nicht präsentieren!",
         image: "/images/blogroll/petitappetit.jpg",
         url: "https://www.petitappetit.de",
       },
