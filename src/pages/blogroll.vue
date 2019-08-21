@@ -12,7 +12,6 @@
           <li
             v-for="(blog, index) in blogroll"
             :key="index"
-            title="Link öffnen"
           >
             <el-row :gutter="20">
               <el-col :span="7">
@@ -30,6 +29,7 @@
                   style="font-size: 19px;"
                   rel="noopener"
                   target="_blank"
+                  title="Link öffnen"
                 >
                   {{ blog.name }}
                 </a>
@@ -75,44 +75,48 @@
       },
       {
         name: "Eat this",
-        description: `Wer auf vegane Küche steht, wird sicher im Blog &bdquo;Eat this&ldquo; fündig. Beim Anblick der perfekt abgelichteten Rezeptfotos läuft einem das Wasser im Mund zusammen.
+        description: `Wer auf vegane Küche steht, wird im Blog &bdquo;Eat this&ldquo; sicherlich fündig. Beim Anblick der perfekt abgelichteten Rezeptfotos läuft einem förmlich das Wasser im Mund zusammen.
 <br/>Hier kommen auch Nichtveganer im wahrsten Sinne des Wortes auf ihren Geschmack!`,
         image: "/images/blogroll/eatthis.jpg",
         url: "https://www.eat-this.org/",
       },
       {
         name: "Sallys Welt",
-        description: "Über Sally muss man glaube ich nicht mehr viel sagen, da ihre Produkte es mittlerweile sogar in viele Supermarktregale geschafft haben. Sie ist die mit Abstand (und zurecht) Deutschlands erfolgreichste Foodbloggerin.",
+        description: `Sally muss man glaube ich mittlerweile nicht mehr vorstellen, da ihre Produkte mittlerweile sogar im Supermarktregal zu finden sind. Sie betreibt mit Abstand Deutschlands größten Foodchannel auf YouTube und hat auch das Fernsehen mittlerweile für sich erobert.
+<br/>Ich liebe Sally's Backbücher und kann auch ihren <a href="https://sallys-shop.de/" rel="noopener">Onlineshop</a> sehr empfehlen.`,
         image: "/images/blogroll/sallysblog.jpg",
         url: "https://sallys-blog.de/",
       },
       {
         name: "Plötzblog",
-        description: "Selbst gutes Brot backen",
+        description: `Wer zu Hause Brot backen will, kommt heutzutage an Lutz Geissler nicht mehr vorbei. Seine Bücher kann ich uneingeschränkt weiterempfehlen und ich würde nur zu gerne mal an einem seiner Brotbackkurse teilnehmen.
+<br/>Seine Geschichte ist erstaunlich, denn er hat als gelernter Geologe mehr zufällig die Liebe fürs Brotbacken entdeckt. Nachdem er viele Bäckereien besucht und sich dort weitergebildet hat, berät er sie mittlerweile selbst und bietet sogar im fernen Japan Kurse an.`,
         image: "/images/blogroll/ploetzblog.jpg",
         url: "https://www.ploetzblog.de/",
       },
       {
         name: "Arthurs Tochter Kocht",
-        description: "",
+        description: `Ich muss gestehen, dass ich diesen Blog erst recht spät entdeckt habe, obwohl &bdquo;Arthurs Tochter&ldquo; schon seit 2004 die Blogosphäre mit Ihren Rezepten und persönlich geschriebenen Artikeln bereichert.
+<br/>Wem es genauso geht, empfehle ich ihr Buch &bdquo;Arthurs Tochter Kocht - Mein B_Logbuch&ldquo;, das ich mit großer Freude gelesen habe. Hier erzählt Sie sehr offen aus ihrem Leben und lässt unterhaltsame Episoden aus ihrer Erfahrung als Bloggerin Revue passieren.`,
         image: "/images/blogroll/arthurstochter.jpg",
         url: "https://www.arthurstochterkochtblog.com/",
       },
       {
         name: "Die Frau am Grill",
-        description: "Das BBQ & FOOD Magazin",
+        description: `Der Name ist Programm, denn Anja präsentiert zusammen mit ihrer Redaktion jede Woche neue Rezepte rund um das Grillen. Besonders gut gefällt mir, dass in den Artikel nicht zur Rezepte präsentiert werden sondern auch zahlreiche Tipps & Tricks vermittelt werden.`,
         image: "/images/blogroll/frauamgrill.jpg",
         url: "https://die-frau-am-grill.de/",
       },
       {
         name: "Sizzle Brothers",
-        description: "BBQ- und Grillrezepte - Grillblog der Sizzle Brothers",
+        description: "Auf die &bdquo;Sizzle Brothers&ldquo; bin ich nicht etwa durch ihren erfolgreichen YouTube-Kanal aufmerksam geworden, sondern durch ihren Podcast NICE.TO.MEAT.YOU. Hier liefern sie einen Blick hinter die Kulissen und machen richtig Lust darauf, sich die neuesten Grillvideos anzuschauen.",
         image: "/images/blogroll/sizzlers.jpg",
         url: "https://sizzlebrothers.de/",
       },
       {
         name: "Französisch kochen",
-        description: "Rezepte aus Frankreich - Online Shop - Bücher - Kurse - by Aurélie Bastian",
+        description: `Auf den Blog von Aurélie Bastian bin ich erst gestoßen, nachdem ich in ihrem Onlineshop einige Zutaten für Macarons bestellt habe. Ihr Konzept ist, dass sie in Frankreich übliche Lebensmittel auch in Deutschland verfügbar macht. Sehr gerne bestelle ich bei z. B. ihr Kuvertüre und Mandelmehl.
+<br/>Aber sie geht noch weiter: neben einer regelmäßigen Fernsehsendung hat sie bereits mehrere Bücher geschrieben und gibt ihr Wissen über französisches Gebäck in ihrem eigenen Podcast weiter.`,
         image: "/images/blogroll/franzoesischkochen.jpg",
         url: "https://www.franzoesischkochen.de/",
       },
