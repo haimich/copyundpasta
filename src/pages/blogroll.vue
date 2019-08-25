@@ -82,7 +82,7 @@
       },
       {
         name: "Sallys Welt",
-        description: `Sally muss man glaube ich mittlerweile nicht mehr vorstellen, da ihre Produkte mittlerweile sogar im Supermarktregal zu finden sind. Sie betreibt mit Abstand Deutschlands größten Foodchannel auf YouTube und hat auch das Fernsehen mittlerweile für sich erobert.
+        description: `Sally muss man, glaube ich, nicht mehr vorstellen, da ihre Produkte mittlerweile sogar im Supermarktregal zu finden sind. Sie betreibt mit Abstand Deutschlands größten Foodchannel auf YouTube und hat auch das Fernsehen für sich erobert.
 <br/>Ich liebe Sally's Backbücher und kann auch ihren <a href="https://sallys-shop.de/" rel="noopener">Onlineshop</a> sehr empfehlen.`,
         image: "/images/blogroll/sallysblog.jpg",
         url: "https://sallys-blog.de/",
@@ -90,39 +90,39 @@
       {
         name: "Plötzblog",
         description: `Wer zu Hause Brot backen will, kommt heutzutage an Lutz Geissler nicht mehr vorbei. Seine Bücher kann ich uneingeschränkt weiterempfehlen und ich würde nur zu gerne mal an einem seiner Brotbackkurse teilnehmen.
-<br/>Seine Geschichte ist erstaunlich, denn er hat als gelernter Geologe mehr zufällig die Liebe fürs Brotbacken entdeckt. Nachdem er viele Bäckereien besucht und sich dort weitergebildet hat, berät er sie mittlerweile selbst und bietet sogar im fernen Japan Kurse an.`,
+<br/>Seine Geschichte ist erstaunlich, denn er hat als gelernter Geologe eher zufällig die Liebe fürs Brotbacken entdeckt. Nachdem er viele Bäckereien besucht und sich dort weitergebildet hat, berät er sie mittlerweile selbst und bietet sogar im fernen Japan Kurse an.`,
         image: "/images/blogroll/ploetzblog.jpg",
         url: "https://www.ploetzblog.de/",
       },
       {
         name: "Arthurs Tochter Kocht",
         description: `Ich muss gestehen, dass ich diesen Blog erst recht spät entdeckt habe, obwohl &bdquo;Arthurs Tochter&ldquo; schon seit 2004 die Blogosphäre mit Ihren Rezepten und persönlich geschriebenen Artikeln bereichert.
-<br/>Wem es genauso geht, empfehle ich ihr Buch &bdquo;Arthurs Tochter Kocht - Mein B_Logbuch&ldquo;, das ich mit großer Freude gelesen habe. Hier erzählt Sie sehr offen aus ihrem Leben und lässt unterhaltsame Episoden aus ihrer Erfahrung als Bloggerin Revue passieren.`,
+<br/>Wem es genauso geht, empfehle ich ihr Buch &bdquo;Arthurs Tochter Kocht - Mein B_Logbuch&ldquo;, das ich mit großer Freude gelesen habe. Hier erzählt sie sehr offen aus ihrem Leben und lässt unterhaltsame Episoden aus ihrer Erfahrung als Bloggerin Revue passieren.`,
         image: "/images/blogroll/arthurstochter.jpg",
         url: "https://www.arthurstochterkochtblog.com/",
       },
       {
         name: "Die Frau am Grill",
-        description: `Der Name ist Programm, denn Anja präsentiert zusammen mit ihrer Redaktion jede Woche neue Rezepte rund um das Grillen. Besonders gut gefällt mir, dass in den Artikel nicht zur Rezepte präsentiert werden sondern auch zahlreiche Tipps & Tricks vermittelt werden.`,
+        description: `Der Name ist Programm, denn Anja präsentiert zusammen mit ihrer Redaktion jede Woche neue Rezepte rund um das Grillen. Besonders gut gefällt mir, dass in den Artikel nicht zur Rezepte präsentiert, sondern auch zahlreiche Tipps & Tricks vermittelt werden.`,
         image: "/images/blogroll/frauamgrill.jpg",
         url: "https://die-frau-am-grill.de/",
       },
       {
         name: "Sizzle Brothers",
-        description: "Auf die &bdquo;Sizzle Brothers&ldquo; bin ich nicht etwa durch ihren erfolgreichen YouTube-Kanal aufmerksam geworden, sondern durch ihren Podcast NICE.TO.MEAT.YOU. Hier liefern sie einen Blick hinter die Kulissen und machen richtig Lust darauf, sich die neuesten Grillvideos anzuschauen.",
+        description: "Auf die &bdquo;Sizzle Brothers&ldquo; bin ich nicht etwa durch ihren erfolgreichen YouTube-Kanal, sondern durch ihren Podcast NICE.TO.MEAT.YOU aufmerksam geworden. Hier liefern sie einen Blick hinter die Kulissen und machen richtig Lust darauf, sich die neuesten Grillvideos anzuschauen.",
         image: "/images/blogroll/sizzlers.jpg",
         url: "https://sizzlebrothers.de/",
       },
       {
         name: "Französisch kochen",
-        description: `Auf den Blog von Aurélie Bastian bin ich erst gestoßen, nachdem ich in ihrem Onlineshop einige Zutaten für Macarons bestellt habe. Ihr Konzept ist, dass sie in Frankreich übliche Lebensmittel auch in Deutschland verfügbar macht. Sehr gerne bestelle ich bei z. B. ihr Kuvertüre und Mandelmehl.
-<br/>Aber sie geht noch weiter: neben einer regelmäßigen Fernsehsendung hat sie bereits mehrere Bücher geschrieben und gibt ihr Wissen über französisches Gebäck in ihrem eigenen Podcast weiter.`,
+        description: `Auf den Blog von Aurélie Bastian bin ich erst gestoßen, nachdem ich in ihrem Onlineshop einige Zutaten für Macarons bestellt habe. Ihr Konzept ist, dass sie in Frankreich übliche Lebensmittel auch in Deutschland verfügbar macht. Sehr gerne bestelle ich bei z. B. Kuvertüre und Mandelmehl.
+<br/>Aber sie geht noch weiter: Neben einer regelmäßigen Fernsehsendung hat sie bereits mehrere Bücher geschrieben und gibt ihr Wissen über französisches Gebäck in ihrem eigenen Podcast weiter.`,
         image: "/images/blogroll/franzoesischkochen.jpg",
         url: "https://www.franzoesischkochen.de/",
       },
       {
         name: "Petit Appetit",
-        description: "Den Blog von Nicole habe ich erst kürzlich entdeckt und war sofort Feuer und Flamme, was sich darin geäußert hat, dass ich sämtliche der fast 300 Rezepte durchgesehen und etliche davon in meiner Nachkochliste aufgenommen habe. Viel besser kann man ein Rezept finde ich nicht präsentieren!",
+        description: "Den Blog von Nicole habe ich kürzlich entdeckt und war sofort Feuer und Flamme, was sich darin geäußert hat, dass ich sämtliche der fast 300 Rezepte durchgesehen und etliche davon in meiner Nachkochliste aufgenommen habe. Viel besser kann man ein Rezept kaum präsentieren, finde ich!",
         image: "/images/blogroll/petitappetit.jpg",
         url: "https://www.petitappetit.de",
       },
