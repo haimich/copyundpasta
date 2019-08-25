@@ -82,7 +82,7 @@
       },
       {
         name: "Sallys Welt",
-        description: `Sally muss man, glaube ich, nicht mehr vorstellen, da ihre Produkte mittlerweile sogar im Supermarktregal zu finden sind. Sie betreibt mit Abstand Deutschlands größten Foodchannel auf YouTube und hat auch das Fernsehen für sich erobert.
+        description: `Sally muss ich glaube ich nicht mehr vorstellen, da ihre Produkte mittlerweile sogar im Supermarktregal zu finden sind. Sie betreibt Deutschlands mit Abstand größten Foodchannel auf YouTube und ist gerade dabei, auch das Fernsehen für sich zu erobern.
 <br/>Ich liebe Sally's Backbücher und kann auch ihren <a href="https://sallys-shop.de/" rel="noopener">Onlineshop</a> sehr empfehlen.`,
         image: "/images/blogroll/sallysblog.jpg",
         url: "https://sallys-blog.de/",
