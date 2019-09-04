@@ -19,10 +19,8 @@
       <hr class="blue-line" style="width: 20%; margin-top: 12px; height: 2px;">
 
       <p>
-        Als Softwareentwickler und begeisterter Hobbykoch bin ich vielseitig interessiert und tauche gern tief in Themen ein. Mir macht es Freude, Rezepte auszuprobieren, zu variieren und zu optimieren, um den perfekten Geschmack zu treffen. Dabei habe ich den Anspruch, aus wenigen Zutaten leckere Gerichte zu zaubern, die man auch leicht nachkochen kann. 
+        Als Softwareentwickler und begeisterter Hobbykoch bin ich vielseitig interessiert und tauche gerne tief in Themen ein. Mir macht es Freude, Rezepte auszuprobieren, zu variieren und zu optimieren, um den perfekten Geschmack zu treffen. Dabei habe ich den Anspruch, aus wenigen Zutaten leckere Gerichte zu zaubern, die man auch leicht nachkochen kann. 
       </p>
-
-      <br>
 
       <p>
         Ich möchte euch inspirieren und mit meiner Leidenschaft fürs Kochen und Backen anstecken. 
