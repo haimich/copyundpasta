@@ -152,7 +152,7 @@
       color: #121212;
       background-color: #f5f5f5;
       margin-bottom: 20px;
-      transition: all .2s;
+      transition: all .15s;
 
       .blog-image {
         min-height: 155px;

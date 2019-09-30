@@ -1,5 +1,4 @@
 require("dotenv").config();
-import NuxtConfiguration from "@nuxt/config";
 
 // get rid of warning during development
 require("events").EventEmitter.defaultMaxListeners = 50;
@@ -8,12 +7,12 @@ const DEFAULT_HOST = "localhost";
 const DEFAULT_PORT = "3000";
 const CWD = process.cwd();
 
-const config: NuxtConfiguration = {
+const config = {
 
   mode: "universal",
 
-  srcDir: "src/",
-
+  srcDir: "./src",
+  
   debug: false,
 
   server: {
@@ -132,6 +131,11 @@ const config: NuxtConfiguration = {
     "@nuxtjs/sitemap",
   ],
 
+  typescript: {
+    typeCheck: true,
+    ignoreNotFoundWarnings: true
+  },
+
   /*
   ** Axios module configuration
   ** Doc: https://axios.nuxtjs.org/usage
@@ -189,7 +193,9 @@ const config: NuxtConfiguration = {
         });
       }
     }
-  }
+  },
+
+  buildModules: ['@nuxt/typescript-build'],
 
 }
 
