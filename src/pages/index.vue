@@ -4,10 +4,106 @@
 
     <el-row>
       <el-col
-        :span="12"
-        :offset="6"
+        :span="24"
+        v-if="heroArticles != null && heroArticles.length >= 1"
+        class="hero-carousel"
+        style="margin-bottom: 40px;"
       >
-        <h2 style="text-align: center; font-size: 4.5rem;">{{ eta }}</h2>
+        <el-carousel
+          height="650px"
+          indicator-position="none"
+          arrow="always"
+        >
+          <el-carousel-item
+            v-for="article in heroArticles"
+            :key="article.slug"
+          >
+            <div class="hero-carousel-container">
+              <el-image
+                :src="article.previewImageUrl"
+                alt="hero image"
+                class="hero-carousel-image"
+              ></el-image>
+
+              <div class="hero-carousel-title">
+                <nuxt-link :to="'/' + article.slug" class="hero-carousel-link">
+                  <h1>{{ article.title }}</h1>
+                </nuxt-link>
+
+                <nuxt-link :to="'/' + article.slug" class="hero-carousel-link">
+                  <span class="hero-carousel-button">
+                    Rezept ansehen
+                  </span>
+                </nuxt-link>
+              </div>
+            </div>
+          </el-carousel-item>
+        </el-carousel>
+      </el-col>
+    </el-row>
+
+    <el-row style="margin-top: 20px;" :gutter="50">
+      <el-col class="newest-article" :lg="lg" :md="md" :sm="sm">
+
+        <!-- Newest article -->
+        <div v-if="newestArticle != null">
+          <h2 class="article-heading" style="padding: 0 20px; margin-bottom: 10px;">
+            {{ newestArticle.title }}
+          </h2>
+          <h5 class="newest-subtitle">
+            {{ newestArticle.createdAt | formatAsDate }}
+          </h5>
+
+          <img :src="newestArticle.previewImageUrl" alt="Artikelfoto">
+
+          <p style="margin-top: 20px;">
+            {{ newestArticle.shortDescription }}
+          </p>
+
+          <div class="readmore-link" style="margin-top: 10px;">
+            <nuxt-link :to="'/' + newestArticle.slug" style="font-size: 15px;">
+              Weiterlesen <i class="el-icon-caret-right"></i>
+            </nuxt-link>
+          </div>
+        </div>
+
+        <el-row>
+          <img src="/images/divider/pasta.svg" alt="Trennlinie" style="margin-top: 35px;">
+        </el-row>
+            
+        <!-- Recent articles -->
+        <div
+          v-if="recentArticles != null && recentArticles.length >= 1"
+          style="margin-top: 45px;"
+        >
+          <el-row :gutter="15">
+            <el-col :span="8" v-for="article in recentArticles" :key="article.slug">
+              <ArticleCardComponent
+                :article="article"
+              />
+            </el-col>
+          </el-row>
+
+          <!-- Pagination -->
+          <el-row
+            v-if="totalArticles > pageSize"
+            type="flex"
+            justify="center"
+          >
+            <el-pagination
+              background
+              layout="prev, pager, next"
+              :page-size="pageSize"
+              :total="totalArticles"
+            ></el-pagination>
+          </el-row>
+        </div>
+
+      </el-col>
+
+      <!-- Sidebar -->
+      <el-col :lg="6" :md="6" class="hidden-sm-and-down">
+        <SidebarComponent />
       </el-col>
     </el-row>
 
@@ -63,8 +159,6 @@
 
     private totalArticles = 0;
 
-    private eta = "";
-
     private lg = {
       span: "14",
       offset: "2",
@@ -82,37 +176,6 @@
 
     get pageSize() {
       return PAGE_SIZE;
-    }
-
-    startCountdown() {
-      let countDownDate = new Date("Oct 12, 2019 21:00:00").getTime();
-
-      let x = setInterval(() => {
-        // Get today's date and time
-        let now = new Date().getTime();
-
-        // Find the distance between now and the count down date
-        let distance = countDownDate - now;
-
-        // Time calculations for days, hours, minutes and seconds
-        let days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        let seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-        // Display the result in the element with id="demo"
-        this.eta = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
-
-        // If the count down is finished, write some text
-        if (distance < 0) {
-          clearInterval(x);
-          this.eta = "Stay tuned!";
-        }
-      }, 1000);
-    }
-
-    mounted() {
-      this.startCountdown();
     }
 
   }
