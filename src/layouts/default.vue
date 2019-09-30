@@ -361,8 +361,8 @@
 
     .logo {
       width: 290px;
-      margin-top: 8px;
-      margin-bottom: 32px;
+      margin-top: -26px;
+      margin-bottom: 34px;
     }
 
     @media all and (min-width: $breakpoint-xs) {
