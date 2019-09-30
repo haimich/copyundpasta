@@ -4,52 +4,6 @@
     <nav>
       <el-row>
         <el-col
-          :xl="xl"
-          :lg="lg"
-          :md="md"
-          :sm="sm"
-          :xs="xs"
-        >
-          <span class="header-social-icons hidden-xs-only">
-            <ul>
-              <li>
-                <el-tooltip content="Copy & Pasta bei Pinterest" placement="bottom">
-                  <a href="https://www.pinterest.de/copyundpasta" target="_blank" rel="noopener">
-                    <FontAwesome :icon="['fab', 'pinterest-p']" />
-                  </a>
-                </el-tooltip>
-              </li>
-
-              <li>
-                <el-tooltip content="Schreib mir eine Mail :)" placement="bottom">
-                  <a href="mailto:hello@copyundpasta.de" rel="noopener">
-                    <FontAwesome :icon="['far', 'envelope']" />
-                  </a>
-                </el-tooltip>
-              </li>
-
-              <li>
-                <el-tooltip content="RSS-Feed abonnieren" placement="bottom">
-                  <a href="/feed/rss.xml" target="_blank" rel="noopener">
-                    <FontAwesome :icon="['fas', 'rss']" />
-                  </a>
-                </el-tooltip>
-              </li>
-            </ul>
-          </span>
-          
-          <span class="hamburger-icon hidden-sm-and-up">
-            <HamburgerIconComponent
-              :isMenuVisible="menuVisible"
-              @toggle="menuVisible = ! menuVisible"
-            />
-          </span>
-
-        </el-col>
-      </el-row>
-
-      <el-row>
-        <el-col
           class="header-nav"
           :xl="xl"
           :lg="lg"
@@ -63,46 +17,6 @@
           <nuxt-link to="/" title="HOME">
             <LogoComponent class="logo" @click="menuItemChanged('home')" />
           </nuxt-link>
-
-          <!-- Menu -->
-          <el-menu
-            :default-active="activeIndex"
-            :mode="menuMode"
-            v-show="menuVisible"
-            @select="menuItemChanged"
-          >
-            <el-menu-item index="home">
-              <nuxt-link to="/">HOME</nuxt-link>
-            </el-menu-item>
-
-            <el-menu-item index="about">
-              <nuxt-link to="/about">ÜBER MICH</nuxt-link>
-            </el-menu-item>
-
-            <el-menu-item index="blogroll">
-              <nuxt-link to="/blogroll">BLOGROLL</nuxt-link>
-            </el-menu-item>
-            
-            <el-menu-item index="suche">
-              <div class="menu-item-search hidden-sm-and-up">
-                SUCHE
-              </div>
-
-              <el-tooltip content="Copy & Pasta durchsuchen" placement="bottom">
-                <FontAwesome
-                  :icon="['fas', 'search']"
-                  class="hidden-xs-only"
-                  style="font-size: 15px;"
-                />
-              </el-tooltip>
-            </el-menu-item>
-          </el-menu>
-
-          <!-- Search box -->
-          <TypeaheadComponent
-            :isVisible="showSearch"
-            @close="hideSearch()"
-          />
         </el-col>
       </el-row>
     </nav>
@@ -361,7 +275,7 @@
 
     .logo {
       width: 290px;
-      margin-top: -26px;
+      margin-top: 34px;
       margin-bottom: 34px;
     }
 
