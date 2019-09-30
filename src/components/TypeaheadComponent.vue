@@ -157,7 +157,7 @@
     left: 50%;
     transform: translateX(-50%);
     z-index: 3000;
-    width: 72%;
+    width: 50%;
     height: 55px;
     transition: all .1s ease 0s;
 

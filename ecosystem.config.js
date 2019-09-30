@@ -3,7 +3,7 @@ module.exports = {
     apps : [{
       name: "cup",
       script: "./node_modules/.bin/nuxt-ts",
-      args: "start -i 5",
+      args: "start",
       exec_mode: "fork",
       autorestart: true,
       exp_backoff_restart_delay: 100,
