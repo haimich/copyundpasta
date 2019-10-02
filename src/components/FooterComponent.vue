@@ -12,7 +12,7 @@
       <el-row style="display: flex; justify-content: center;">
         <NewsletterComponent
           :wideButton="true"
-          style="width: 20%;"
+          class="footer-newsletter-component"
         />
       </el-row>
     </el-row>
@@ -138,6 +138,34 @@
       font-size: 24px;
       font-weight: 500;
       margin-bottom: 10px;
+    }
+  }
+
+  .footer-newsletter-component {
+    width: 25%;
+  }
+
+  @media all and (max-width: $breakpoint-lg) {
+    .footer-newsletter-component {
+      width: 35%;
+    }
+  }
+
+  @media all and (max-width: $breakpoint-md) {
+    .footer-newsletter-component {
+      width: 50%;
+    }
+  }
+
+  @media all and (max-width: $breakpoint-xs) {
+    .footer-newsletter-component {
+      width: 70%;
+    }
+  }
+
+  @media all and (max-width: 420px) {
+    .footer-newsletter-component {
+      width: 90%;
     }
   }
 
