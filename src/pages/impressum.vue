@@ -62,34 +62,10 @@
 <script lang="ts">
 
   import { Vue, Component, Prop } from "vue-property-decorator";
+  import StaticPage from "@/components/StaticPage.vue";
 
   @Component
-  export default class extends Vue {
-    
-    private xl = {
-      span: 12,
-      offset: 6,
-    };
-
-    private lg = {
-      span: 14,
-      offset: 5,
-    };
-
-    private md = {
-      span: 22,
-      offset: 1,
-    };
-
-    private sm = {
-      span: 22,
-      offset: 1,
-    };
-
-    private xs = {
-      span: 22,
-      offset: 1,
-    };
+  export default class extends StaticPage {
     
   }
 

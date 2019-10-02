@@ -192,6 +192,18 @@
     }
   }
 
+  @media all and (max-width: $breakpoint-md) {
+    .typeahead {
+      width: 65%;
+    }
+  }
+
+  @media all and (max-width: $breakpoint-xs) {
+    .typeahead {
+      width: 85%;
+    }
+  }
+
   .match-title {
     font-weight: bold;
   }

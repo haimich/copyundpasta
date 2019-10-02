@@ -8,7 +8,13 @@
 
     <!-- Quelle: https://datenschutz-generator.de/ -->
     <el-row style="margin-top: 20px;">
-      <el-col :span="12" :offset="6">
+      <el-col
+        :xl="xl"
+        :lg="lg"
+        :md="md"
+        :sm="sm"
+        :xs="xs"
+      >
         <h2 id="m14">Einleitung</h2>
 
         <p>Mit der folgenden Datenschutzerklärung möchten wir Sie darüber aufklären, welche Arten Ihrer personenbezogenen Daten
@@ -810,6 +816,18 @@
   </div>
 
 </template>
+
+<script lang="ts">
+
+  import { Vue, Component, Prop } from "vue-property-decorator";
+  import StaticPage from "@/components/StaticPage.vue";
+
+  @Component
+  export default class extends StaticPage {
+    
+  }
+
+</script>
 
 <style lang="scss" scoped>
 

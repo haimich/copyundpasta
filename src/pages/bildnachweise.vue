@@ -7,7 +7,13 @@
     />
 
     <el-row style="margin-top: 20px;">
-      <el-col :span="14" :offset="5">
+      <el-col
+        :xl="xl"
+        :lg="lg"
+        :md="md"
+        :sm="sm"
+        :xs="xs"
+      >
         
         <el-table
           :data="images"
@@ -55,9 +61,10 @@
 <script lang="ts">
   
   import { Vue, Component, Prop } from "vue-property-decorator";
+  import StaticPage from "@/components/StaticPage.vue";
 
   @Component
-  export default class BildnachweisPage extends Vue {
+  export default class BildnachweisPage extends StaticPage {
 
     private images = [
       {
