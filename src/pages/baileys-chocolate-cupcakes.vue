@@ -3,7 +3,13 @@
   <div>
     <article>
       <el-row>
-        <el-col :span="16" :offset="4">
+        <el-col
+          :xl="xl"
+          :lg="lg"
+          :md="md"
+          :sm="sm"
+          :xs="xs"
+        >
 
           <MainHeadingComponent
             :text="article.title"

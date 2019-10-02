@@ -12,7 +12,13 @@
     />
     
     <el-row style="margin-top: 20px;">
-      <el-col :span="12" :offset="6">
+      <el-col
+        :xl="xl"
+        :lg="lg"
+        :md="md"
+        :sm="sm"
+        :xs="xs"
+      >
         <p class="entry-paragraph">
           Mein Name ist Michael, und ja, ich trage eine Brille. Als Softwareentwickler sitze ich tagsüber am Rechner und tausche abends die Tastatur gegen den Herd ein. Dann gehe ich meinem liebsten Hobby, dem Kochen und Backen, nach.
         </p>
@@ -54,6 +60,31 @@
 
   @Component
   export default class extends Vue {
+    
+    private xl = {
+      span: 12,
+      offset: 6,
+    };
+
+    private lg = {
+      span: 12,
+      offset: 6,
+    };
+
+    private md = {
+      span: 22,
+      offset: 1,
+    };
+
+    private sm = {
+      span: 22,
+      offset: 1,
+    };
+
+    private xs = {
+      span: 22,
+      offset: 1,
+    };
 
   }
 

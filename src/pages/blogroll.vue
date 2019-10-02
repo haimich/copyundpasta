@@ -2,7 +2,13 @@
 
   <div>
     <el-row>
-      <el-col :span="14" :offset="5">
+      <el-col
+        :xl="xl"
+        :lg="lg"
+        :md="md"
+        :sm="sm"
+        :xs="xs"
+      >
         <MainHeadingComponent
           text="Blogroll"
           subtitle="Hier findet ihr meine liebsten Foodblogs :-)"
@@ -14,7 +20,7 @@
             :key="index"
           >
             <el-row :gutter="20">
-              <el-col :span="7">
+              <el-col :span="7" class="hidden-xs-only">
                 <el-image
                   :src="blog.image"
                   :title="blog.name"
@@ -23,7 +29,7 @@
                 ></el-image>
               </el-col>
               
-              <el-col :span="17">
+              <el-col :xs="24" :span="17">
                 <a
                   :href="blog.url"
                   style="font-size: 19px;"
@@ -51,6 +57,31 @@
 
   @Component
   export default class extends Vue {
+
+    private xl = {
+      span: 14,
+      offset: 5,
+    };
+
+    private lg = {
+      span: 15,
+      offset: 5,
+    };
+
+    private md = {
+      span: 22,
+      offset: 1,
+    };
+
+    private sm = {
+      span: 22,
+      offset: 1,
+    };
+
+    private xs = {
+      span: 22,
+      offset: 1,
+    };
 
     private blogroll = [
       {

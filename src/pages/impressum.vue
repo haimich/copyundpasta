@@ -7,7 +7,13 @@
     />
 
     <el-row style="margin-top: 20px;">
-      <el-col :span="12" :offset="6">
+      <el-col
+        :xl="xl"
+        :lg="lg"
+        :md="md"
+        :sm="sm"
+        :xs="xs"
+      >
         <h2>Angaben gem&auml;&szlig; &sect; 5 TMG</h2>
 
         <p>
@@ -52,6 +58,42 @@
   </div>
 
 </template>
+
+<script lang="ts">
+
+  import { Vue, Component, Prop } from "vue-property-decorator";
+
+  @Component
+  export default class extends Vue {
+    
+    private xl = {
+      span: 12,
+      offset: 6,
+    };
+
+    private lg = {
+      span: 14,
+      offset: 5,
+    };
+
+    private md = {
+      span: 22,
+      offset: 1,
+    };
+
+    private sm = {
+      span: 22,
+      offset: 1,
+    };
+
+    private xs = {
+      span: 22,
+      offset: 1,
+    };
+    
+  }
+
+</script>
 
 <style lang="scss" scoped>
 
