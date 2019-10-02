@@ -360,9 +360,27 @@
     flex-direction: column;
 
     .logo {
-      width: 290px;
+      width: 285px;
       margin-top: -26px;
       margin-bottom: 34px;
+    }
+
+    @media all and (max-width: $breakpoint-lg) {
+      .logo {
+        width: 260px;
+      }
+    }
+
+    @media all and (max-width: $breakpoint-md) {
+      .logo {
+        width: 250px;
+      }
+    }
+
+    @media all and (max-width: $breakpoint-xs) {
+      .logo {
+        width: 230px;
+      }
     }
 
     @media all and (min-width: $breakpoint-xs) {
