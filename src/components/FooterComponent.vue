@@ -26,7 +26,7 @@
     </el-row>
 
     <el-row class="link-row">
-      <el-col :span="6" style="display: flex; align-items: center;">
+      <el-col :xs="24" :sm="24" :md="6" :lg="6" class="link-row-copyright">
         <span style="margin-right: 5px;">
           © {{ getCopyrightYears() }}
         </span>
@@ -39,17 +39,21 @@
         >
       </el-col>
 
-      <el-col :span="12" style="text-align: center;">
+      <el-col :xs="24" :sm="24" :md="12" :lg="12" style="text-align: center;">
         <nuxt-link to="/impressum">Impressum</nuxt-link> ·
 
-        <nuxt-link to="/datenschutz">Datenschutz</nuxt-link> ·
-   
-        <nuxt-link to="/bildnachweise">Bildnachweise</nuxt-link> ·
+        <nuxt-link to="/datenschutz">Datenschutz</nuxt-link>
         
-        <a href="/sitemap.xml" target="_blank">Sitemap</a>
+        <span class="hidden-md-and-down">
+          ·&nbsp;<nuxt-link to="/bildnachweise">Bildnachweise</nuxt-link>
+        </span>
+
+        <span class="hidden-sm-and-down">
+          ·&nbsp;<a href="/sitemap.xml" target="_blank">Sitemap</a>
+        </span>
       </el-col>
 
-      <el-col :span="6" style="display: flex; justify-content: flex-end;">
+      <el-col :span="6" class="hidden-sm-and-down" style="display: flex; justify-content: flex-end;">
         <a href="mailto:hello@copyundpasta.de" title="Schreib mir eine Mail!">
           <FontAwesome :icon="['far', 'envelope']" style="margin-right: 1px; font-size: 17px;" />
           hello@copyundpasta.de
@@ -116,12 +120,31 @@
       padding-right: 20px;
     }
 
+    .link-row-copyright {
+      display: flex;
+      align-items: center;
+    }
+
     a {
       color: #ececec;
       text-decoration: none;
 
       &:hover {
         text-decoration: underline;
+      }
+    }
+  }
+
+  @media all and (max-width: $breakpoint-md) {
+    footer {
+      .link-row {
+        display: flex;
+        flex-direction: column-reverse; // switch Copyright and imprint links
+      }
+
+      .link-row-copyright {
+        justify-content: center;
+        margin-top: 23px;
       }
     }
   }

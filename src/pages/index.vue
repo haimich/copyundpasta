@@ -236,6 +236,30 @@
     }
   }
 
+  @media all and (max-width: $breakpoint-lg) {
+    .hero-carousel-title h1 {
+      font-size: 65px;
+    }
+  }
+
+  @media all and (max-width: $breakpoint-md) {
+    .hero-carousel-title h1 {
+      font-size: 60px;
+    }
+  }
+
+  @media all and (max-width: $breakpoint-xs) {
+    .hero-carousel-title h1 {
+      font-size: 52px;
+    }
+  }
+
+  @media all and (max-width: 440px) {
+    .hero-carousel-title h1 {
+      font-size: 45px;
+    }
+  }
+
   .hero-carousel-button {
     margin-top: 6px;
     display: inline-block;
