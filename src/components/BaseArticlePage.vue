@@ -8,7 +8,7 @@
   import ArticleService from "@/services/ArticleService";
   import StatsService from "@/services/StatsService";
 
-  export default class BaseArticle extends Vue {
+  export default class BaseArticlePage extends Vue {
 
     protected article: Article;
 

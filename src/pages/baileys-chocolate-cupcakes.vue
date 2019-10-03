@@ -65,13 +65,25 @@
     </article>
 
     <el-row style="margin-top: 20px;">
-      <el-col :span="16" :offset="4">
+        <el-col
+          :xl="xl"
+          :lg="lg"
+          :md="md"
+          :sm="sm"
+          :xs="xs"
+        >
         <RecipeComponent :recipe="recipe" :ratings="ratings" style="margin-top: 40px;" />
       </el-col>
     </el-row>
 
     <el-row style="margin-top: 40px;">
-      <el-col :span="16" :offset="4">
+        <el-col
+          :xl="xl"
+          :lg="lg"
+          :md="md"
+          :sm="sm"
+          :xs="xs"
+        >
         <CommentComponent :comments="comments" :slug="article.slug" @commentAdded="refreshComments" />
       </el-col>
     </el-row>
@@ -83,7 +95,7 @@
 <script lang="ts">
 
   import { Vue, Component, Prop } from "vue-property-decorator";
-  import BaseArticle from "@/components/BaseArticle.vue";
+  import BaseArticlePage from "@/components/BaseArticlePage.vue";
   import ArticleUtil from "@/utils/ArticleUtil";
   import { RatingResponse } from "@/interfaces/Rating";
 
@@ -94,7 +106,7 @@
     head: ArticleUtil.defaultHead(article),
     asyncData: ArticleUtil.defaultAsyncData(article, recipe),
   })
-  export default class extends BaseArticle {
+  export default class extends BaseArticlePage {
 
     private ratings: RatingResponse;
 
