@@ -267,7 +267,7 @@
     determineMenuMode() {
       let currentWidth = window.innerWidth || document.body.clientWidth;
 
-      this.menuMode = currentWidth < 768 ? "vertical" : "horizontal";
+      this.menuMode = currentWidth < 794 ? "vertical" : "horizontal"; // this should be 768 but it had to be corrected to work
 
       if (this.menuMode === "horizontal") {
         this.menuVisible = true;
