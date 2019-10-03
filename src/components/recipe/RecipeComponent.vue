@@ -7,6 +7,7 @@
   >
 
     <el-row style="margin-bottom: 10px;">
+      <!-- Header -->
       <el-col :span="16">
         <el-row>
           <h1 id="recipe" class="recipe-title">
@@ -48,7 +49,8 @@
     </el-row>
 
     <el-row :gutter="20">
-      <el-col :span="8">
+      <el-col :span="8" :xs="24">
+        <!-- Ingredients -->
         <h2 class="category-main-heading">
           Zutaten
         </h2>
@@ -93,7 +95,6 @@
           </a>
         </el-row>
 
-        <!-- Ingredients -->
         <ul
           class="ingredients-list"
           v-if="recipe != null"
@@ -127,12 +128,12 @@
         </ul>
       </el-col>
 
-      <el-col :span="16">
+      <el-col :span="16" :xs="24">
+        <!-- Directions -->
         <h2 class="category-main-heading">
           Zubereitung
         </h2>
 
-        <!-- Directions -->
         <ul
           class="directions"
           v-if="recipe != null"
