@@ -5,7 +5,7 @@
     <el-page-header
       @back="goHome"
       title="Zurück"
-      style="margin-top: -18px; color: #313131"
+      class="global-back-button hidden-xs-only"
     ></el-page-header>
 
     <h1 class="article-heading" style="text-transform: uppercase">
@@ -100,10 +100,23 @@
 
 <style lang="scss" scoped>
 
+  @import "~/scss/base.scss";
+
+  .global-back-button {
+    margin-top: -18px;
+    color: #313131;
+  }
+
   .main-heading-container {
     display: flex;
     justify-content: center;
     flex-direction: column;
+  }
+
+  @media all and (max-width: $breakpoint-xs) {
+      .article-heading {
+        margin-top: 0;
+      }
   }
 
   .main-heading-sub {
