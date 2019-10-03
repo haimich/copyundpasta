@@ -65,25 +65,25 @@
     </article>
 
     <el-row style="margin-top: 20px;">
-        <el-col
-          :xl="xl"
-          :lg="lg"
-          :md="md"
-          :sm="sm"
-          :xs="xs"
-        >
+      <el-col
+        :xl="xl"
+        :lg="lg"
+        :md="md"
+        :sm="sm"
+        :xs="xs"
+      >
         <RecipeComponent :recipe="recipe" :ratings="ratings" style="margin-top: 40px;" />
       </el-col>
     </el-row>
 
     <el-row style="margin-top: 40px;">
-        <el-col
-          :xl="xl"
-          :lg="lg"
-          :md="md"
-          :sm="sm"
-          :xs="xs"
-        >
+      <el-col
+        :xl="xl"
+        :lg="lg"
+        :md="md"
+        :sm="sm"
+        :xs="xs"
+      >
         <CommentComponent :comments="comments" :slug="article.slug" @commentAdded="refreshComments" />
       </el-col>
     </el-row>

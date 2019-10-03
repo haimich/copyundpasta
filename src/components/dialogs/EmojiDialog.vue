@@ -4,7 +4,6 @@
     title=""
     :visible="visible"
     @close="close" 
-    width="30%"
     class="emoji-dialog"
   >
     <ul
@@ -70,6 +69,22 @@
     padding-top: 8px;
     max-height: 350px;
     overflow-x: scroll; 
+  }
+
+  .emoji-dialog /deep/ .el-dialog {
+    width: 40%;
+  }
+
+  @media all and (max-width: $breakpoint-lg) {
+    .emoji-dialog /deep/ .el-dialog {
+      width: 60%;
+    }
+  }
+
+  @media all and (max-width: $breakpoint-xs) {
+    .emoji-dialog /deep/ .el-dialog {
+      width: 80%;
+    }
   }
 
   .emojiCategories {
