@@ -3,7 +3,7 @@
 
   import { Vue } from "vue-property-decorator";
 
-  export default class StaticPage extends Vue {
+  export default class BaseStaticPage extends Vue {
 
     private xl = {
       span: 12,
@@ -11,8 +11,8 @@
     };
 
     private lg = {
-      span: 14,
-      offset: 5,
+      span: 18,
+      offset: 3,
     };
 
     private md = {

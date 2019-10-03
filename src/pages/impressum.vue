@@ -62,10 +62,10 @@
 <script lang="ts">
 
   import { Vue, Component, Prop } from "vue-property-decorator";
-  import StaticPage from "@/components/StaticPage.vue";
+  import BaseStaticPage from "@/components/BaseStaticPage.vue";
 
   @Component
-  export default class extends StaticPage {
+  export default class extends BaseStaticPage {
     
   }
 
