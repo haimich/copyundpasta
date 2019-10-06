@@ -31,7 +31,9 @@
           © {{ getCopyrightYears() }}
         </span>
 
-        <nuxt-link to="/" title="HOME">Copy & Pasta</nuxt-link>
+        <nuxt-link to="/" title="HOME">
+          Copy & Pasta
+        </nuxt-link>
 
         <img
           src="/favicon-32x32.png"

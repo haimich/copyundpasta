@@ -277,6 +277,8 @@
 
 <style lang="scss" scoped>
 
+  @import "~/scss/base.scss";
+
   .recipe {
     padding: 22px;
     border-radius: 4px;
@@ -288,11 +290,17 @@
   }
 
   .recipe-title {
-    font-size: 39px;
+    font-size: 2.35rem;
     font-weight: 400;
     margin-top: 5px;
     margin-bottom: 12px;
   }
+
+  @media all and (max-width: $breakpoint-md) {
+      .recipe-title {
+        font-size: 1.7rem;
+      }
+    }
 
   .recipe-rating /deep/ i {
     font-size: 20px;  
@@ -362,7 +370,7 @@
   }
 
   .directions li {
-    padding: 15px 0;
+    padding: 9px 0;
 
     &.step-main:first-child {
       padding: 0;

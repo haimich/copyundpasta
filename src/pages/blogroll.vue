@@ -32,12 +32,12 @@
               <el-col :xs="24" :span="17">
                 <a
                   :href="blog.url"
-                  style="font-size: 19px;"
+                  style="font-size: 19px; display: flex; align-items: baseline;"
                   rel="noopener"
                   target="_blank"
                   title="Link öffnen"
                 >
-                  {{ blog.name }}
+                  {{ blog.name }} <FontAwesome :icon="['fas', 'external-link-alt']" style="font-size: 14px; margin-left: 5px;" />
                 </a>
 
                 <div class="blog-description" v-html="blog.description"></div>

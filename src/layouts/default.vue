@@ -379,7 +379,7 @@
 
     @media all and (max-width: $breakpoint-xs) {
       .logo {
-        width: 210px;
+        width: 225px;
         margin-bottom: 0;
       }
     }
