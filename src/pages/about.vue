@@ -10,7 +10,6 @@
           :sm="sm"
           :xs="xs"
         >
-
           <MainHeadingComponent
             text="Der Nerd am Herd: Das bin ich."
           />
@@ -59,33 +58,10 @@
 <script lang="ts">
 
   import { Vue, Component, Prop } from "vue-property-decorator";
+  import BaseStaticPage from "@/components/BaseStaticPage.vue";
 
   @Component
-  export default class Acout extends Vue {
-    private xl = {
-      span: 16,
-      offset: 4,
-    };
-
-    private lg = {
-      span: 16,
-      offset: 4,
-    };
-
-    private md = {
-      span: 22,
-      offset: 1,
-    };
-
-    private sm = {
-      span: 22,
-      offset: 1,
-    };
-
-    private xs = {
-      span: 22,
-      offset: 1,
-    };
+  export default class extends BaseStaticPage {
   }
 
 </script>

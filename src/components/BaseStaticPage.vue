@@ -6,13 +6,13 @@
   export default class BaseStaticPage extends Vue {
 
     private xl = {
-      span: 12,
-      offset: 6,
+      span: 16,
+      offset: 4,
     };
 
     private lg = {
-      span: 18,
-      offset: 3,
+      span: 16,
+      offset: 4,
     };
 
     private md = {

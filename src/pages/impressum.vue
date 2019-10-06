@@ -1,12 +1,7 @@
 <template>
 
   <div>
-
-    <MainHeadingComponent
-      text="Impressum"
-    />
-
-    <el-row style="margin-top: 20px;">
+    <el-row>
       <el-col
         :xl="xl"
         :lg="lg"
@@ -14,6 +9,10 @@
         :sm="sm"
         :xs="xs"
       >
+        <MainHeadingComponent
+          text="Impressum"
+        />
+
         <h2>Angaben gem&auml;&szlig; &sect; 5 TMG</h2>
 
         <p>
@@ -54,7 +53,6 @@
         </p>
       </el-col>
     </el-row>
-
   </div>
 
 </template>

@@ -1,12 +1,7 @@
 <template>
 
   <div>
-
-    <MainHeadingComponent
-      text="Bildnachweise"
-    />
-
-    <el-row style="margin-top: 20px;">
+    <el-row>
       <el-col
         :xl="xl"
         :lg="lg"
@@ -14,6 +9,9 @@
         :sm="sm"
         :xs="xs"
       >
+        <MainHeadingComponent
+          text="Bildnachweise"
+        />
         
         <el-table
           :data="images"
@@ -22,10 +20,14 @@
         >
           <el-table-column
             label="Bild"
-            width="220"
           >
             <template slot-scope="scope">
-              <a :href="scope.row.intLink" target="_blank" rel="noopener" title="Bild anzeigen">
+              <a
+                :href="scope.row.imageLink"
+                target="_blank"
+                rel="noopener"
+                title="Bild anzeigen"
+              >
                 <el-image
                   :src="scope.row.imageLink"
                   fit="scale-down"
@@ -50,10 +52,8 @@
             </template>
           </el-table-column>
         </el-table>
-
       </el-col>
     </el-row>
-
   </div>
 
 </template>
@@ -72,21 +72,18 @@
         author: "David Perez",
         extLinkTitle: "kreativdesign-karlsruhe.de",
         extLink: "https://kreativdesign-karlsruhe.de/",
-        intLink: "/",
       },
       {
         imageLink: "/images/about/presenting-cake.jpg",
         author: "Sarah Winter",
         extLinkTitle: "meinlichtspiel.com",
         extLink: "https://www.meinlichtspiel.com/",
-        intLink: "/",
       },
       {
         imageLink: "/images/food-background.svg",
         author: "pikisuperstar",
         extLinkTitle: "de.freepik.com/pikisuperstar",
         extLink: "https://de.freepik.com/pikisuperstar",
-        intLink: "/",
       },
     ]
 

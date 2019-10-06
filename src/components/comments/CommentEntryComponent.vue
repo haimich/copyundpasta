@@ -4,13 +4,13 @@
 
     <!-- Single Comment -->
     <el-row>
-      <el-col :span="3" style="display: flex; justify-content: center;">
+      <el-col :span="3" class="hidden-xs-only" style="display: flex; justify-content: center;">
         <CommentAvatarComponent
           :avatarUrl="comment.avatarUrl"
         />
       </el-col>
 
-      <el-col :span="21" class="comment-container">
+      <el-col :span="21" :xs="24" class="comment-container">
         <SingleCommentComponent
           :comment="comment"
         />

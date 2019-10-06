@@ -50,7 +50,7 @@
   .backtop-button {
     position: fixed;
     right: 40px;
-    bottom: 75px;
+    bottom: 75px; // optimized for footer readability
     cursor: pointer;
     background-color: #fff;
     width: 40px;

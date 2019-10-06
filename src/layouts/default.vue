@@ -347,6 +347,20 @@
     }
   }
 
+  @media all and (max-width: $breakpoint-lg) {
+    .header-social-icons {
+      padding-top: 0;
+      margin-right: 10px;
+    }
+  }
+
+  @media all and (max-width: $breakpoint-md) {
+    .header-social-icons {
+      padding-top: 0;
+      margin-right: 10px;
+    }
+  }
+
   .hamburger-icon {
     display: flex;
     justify-content: flex-end;

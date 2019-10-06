@@ -1,13 +1,8 @@
 <template>
 
   <div>
-
-    <MainHeadingComponent
-      text="Datenschutzerklärung"
-    />
-
     <!-- Quelle: https://datenschutz-generator.de/ -->
-    <el-row style="margin-top: 20px;">
+    <el-row>
       <el-col
         :xl="xl"
         :lg="lg"
@@ -15,6 +10,10 @@
         :sm="sm"
         :xs="xs"
       >
+        <MainHeadingComponent
+          text="Datenschutzerklärung"
+        />
+
         <h2 id="m14">Einleitung</h2>
 
         <p>Mit der folgenden Datenschutzerklärung möchten wir Sie darüber aufklären, welche Arten Ihrer personenbezogenen Daten
@@ -809,10 +808,8 @@
             Erstellt mit Datenschutz-Generator.de von Dr. jur. Thomas Schwenke
           </a>
         </p>
-
       </el-col>
     </el-row>
-
   </div>
 
 </template>
