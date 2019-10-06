@@ -163,6 +163,7 @@
       font-size: 24px;
       font-weight: 500;
       margin-bottom: 10px;
+      text-shadow: 1px 1px 4px #8c8c8c;
     }
   }
 

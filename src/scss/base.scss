@@ -60,18 +60,12 @@ h5 {
 }
 
 p {
-  font-size: 19px;
+  font-size: 1.25rem;
   line-height: 27.5px;
   color: $color-text-regular;
   font-weight: 300;
   letter-spacing: 0.3px;
   word-spacing: 0px;
-}
-
-@media all and (max-width: $breakpoint-xs) {
-  p {
-    font-size: 18px;
-  }
 }
 
 li {

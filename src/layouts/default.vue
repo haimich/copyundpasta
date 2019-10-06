@@ -61,7 +61,7 @@
         
           <!-- Logo -->
           <nuxt-link to="/" title="HOME">
-            <LogoComponent class="logo" @click="menuItemChanged('home')" />
+            <img class="logo" src="/images/logo.svg">
           </nuxt-link>
 
           <!-- Menu -->
@@ -373,7 +373,7 @@
 
     @media all and (max-width: $breakpoint-md) {
       .logo {
-        width: 250px;
+        width: 260px;
       }
     }
 
