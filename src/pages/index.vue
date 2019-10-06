@@ -2,6 +2,7 @@
 
   <div>
 
+    <!-- Carousel -->
     <el-row>
       <el-col
         :span="24"
@@ -42,8 +43,9 @@
       </el-col>
     </el-row>
 
-    <el-row style="margin-top: 20px;" :gutter="50">
-      <el-col class="newest-article" :lg="lg" :md="md" :sm="sm">
+    <!-- Articles & Sidebar -->
+    <el-row :gutter="50" class="main-container">
+      <el-col class="newest-article" :lg="lg" :md="md" :sm="sm" :xs="xs">
 
         <!-- Newest article -->
         <div v-if="newestArticle != null">
@@ -160,18 +162,23 @@
     private totalArticles = 0;
 
     private lg = {
-      span: "14",
-      offset: "2",
+      span: 14,
+      offset: 2,
     };
 
     private md = {
-      span: "16",
-      offset: "1",
+      span: 16,
+      offset: 1,
     };
 
     private sm = {
-      span: "22",
-      offset: "1",
+      span: 22,
+      offset: 1,
+    };
+
+    private xs = {
+      span: 22,
+      offset: 1,
     };
 
     get pageSize() {
@@ -274,6 +281,16 @@
     &:hover {
       background-color: white;
       color: rgb(75, 75, 75);
+    }
+  }
+
+  .main-container {
+    margin-top: 20px;
+  }
+
+  @media all and (max-width: $breakpoint-md) {
+    .main-container {
+      margin-top: 10px;
     }
   }
 

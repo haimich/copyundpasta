@@ -68,6 +68,12 @@ p {
   word-spacing: 0px;
 }
 
+@media all and (max-width: $breakpoint-xs) {
+  p {
+    font-size: 18px;
+  }
+}
+
 li {
   font-size: 18px;
   line-height: 25px;

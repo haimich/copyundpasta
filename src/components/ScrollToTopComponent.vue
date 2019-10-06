@@ -45,6 +45,8 @@
 
 <style lang="scss" scoped>
 
+  @import "~/scss/base.scss";
+
   .backtop-button {
     position: fixed;
     right: 40px;
@@ -61,6 +63,13 @@
     font-size: 20px;
     box-shadow: 0 0 6px rgba(0,0,0,.12);
     z-index: 1000;
+  }
+  
+  @media all and (max-width: $breakpoint-md) {
+    .backtop-button {
+      right: 30px;
+      bottom: 35px;
+    }
   }
 
 </style>
