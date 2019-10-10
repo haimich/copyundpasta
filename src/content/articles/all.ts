@@ -1,6 +1,5 @@
-import a1 from "./oma-hildas-dampfnudeln";
-import a2 from "./baileys-chocolate-cupcakes";
+import a1 from "./zimtschnecken-aka-cinnamon-rolls";
 
 export default [
-  a1, a2,
+  a1,
 ];

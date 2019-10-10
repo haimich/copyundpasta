@@ -20,11 +20,6 @@ const categories: ArticleCategoriesById = {
     id: "rezepte",
     name: "Rezepte",
   },
-  herzhaft: {
-    id: "herzhaft",
-    name: "Herzhaft",
-    parentCategory: "rezepte",
-  },
 }
 
 export default categories;

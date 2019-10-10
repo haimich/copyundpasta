@@ -22,7 +22,7 @@ describe('getNonHeroArticles', () => {
 
 describe('getArticleComments', () => {
     test('should return all comments', async () => {
-        let comments = await ArticleRepo.getArticleComments("baileys-chocolate-cupcakes");
+        let comments = await ArticleRepo.getArticleComments("zimtschnecken-aka-cinnamon-rolls");
 
         // console.log(comments);
     });
@@ -31,7 +31,7 @@ describe('getArticleComments', () => {
 describe('createComment', () => {
     test('should persist comment', async () => {
         await ArticleRepo.createComment({
-            slug: "baileys-chocolate-cupcakes",
+            slug: "zimtschnecken-aka-cinnamon-rolls",
             content: "a fancy comment",
             author: "me & myself",
             website: "www.me.de",
@@ -41,7 +41,7 @@ describe('createComment', () => {
     test('should persist child comment', async () => {
         await ArticleRepo.createComment({
             parentCommentId: 1,
-            slug: "baileys-chocolate-cupcakes",
+            slug: "zimtschnecken-aka-cinnamon-rolls",
             content: "a fancy comment 2",
             author: "me & myself",
             website: "www.me.de", 

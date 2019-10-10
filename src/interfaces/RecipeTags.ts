@@ -12,7 +12,11 @@ const tags: RecipeTag = {
   resteverwertung: {
     id: "resteverwertung",
     name: "Resteverwertung",
-  }
+  },
+  hefeteig: {
+    id: "hefeteig",
+    name: "Hefeteig",
+  },
 }
 
 export default tags;

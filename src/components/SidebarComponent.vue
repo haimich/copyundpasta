@@ -83,6 +83,11 @@
     flex-direction: column;
     text-align: center;
 
+    p {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
     p, a {
       font-size: 15px;
       line-height: 23px;

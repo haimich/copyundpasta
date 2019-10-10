@@ -11,7 +11,7 @@ const servings: RecipeServings = {
 const ingredients: (RecipeIngredientGroup|RecipeIngredient)[] = [
   {
     isGroup: true,
-    title: "Cupcakes",
+    title: "Zimtschnecken aka Cinnamon Rolls",
     ingredients: [
       {
         isGroup: false,
@@ -113,17 +113,17 @@ const steps: (RecipeStepGroup|RecipeStep)[] = [
 const notes = [];
 
 const tags = [
-  RecipeTags.resteverwertung,
+  RecipeTags.hefeteig,
 ];
 
-const createdAt = "2019-06-14 14:06:00";
+const createdAt = "2019-10-12 21:00:00";
 
 const recipe: Recipe = {
-  slug: "baileys-chocolate-cupcakes",
-  title: "Baileys Chocolate Cupcakes",
+  slug: "zimtschnecken-aka-cinnamon-rolls",
+  title: "Zimtschnecken aka Cinnamon Rolls",
   categoryId: RecipeCategories.frostings.id,
-  previewImageUrl: "/images/recipes/baileys-chocolate-cupcakes/cover.jpg",
-  description: "Delicious chocolate cupcakes with a whipped chocolate Baileys buttercream.",
+  previewImageUrl: "/images/recipes/zimtschnecken-aka-cinnamon-rolls/cover.jpg",
+  description: "TODO.",
   servings,
   ingredients,
   steps,

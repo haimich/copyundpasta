@@ -3,7 +3,7 @@ import uniqid from "uniqid";
 
 describe('getRecipes', () => {
     test('should return newest recipes', async () => {
-        let recipe = await RecipeRepo.getRecipe("baileys-chocolate-cupcakes");
+        let recipe = await RecipeRepo.getRecipe("zimtschnecken-aka-cinnamon-rolls");
 
         console.log(recipe);
 
@@ -13,7 +13,7 @@ describe('getRecipes', () => {
 
 describe('getRating', () => {
     test('should return average', async () => {
-        let rating = await RecipeRepo.getRating("baileys-chocolate-cupcakes");
+        let rating = await RecipeRepo.getRating("zimtschnecken-aka-cinnamon-rolls");
 
         // console.log(rating);
 
@@ -26,6 +26,6 @@ describe('getRating', () => {
 
 describe('rateRecipe', () => {
     test('should persist rating', async () => {
-        await RecipeRepo.rateRecipe("baileys-chocolate-cupcakes", 4, uniqid());
+        await RecipeRepo.rateRecipe("zimtschnecken-aka-cinnamon-rolls", 4, uniqid());
     });
 });
