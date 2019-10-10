@@ -45,9 +45,9 @@
             Und natürlich dürfen neue Entwicklungen und Trends nicht fehlen. Ob Nicecream, Mini-Guglhupf oder leckere Smoothies – ich halte euch auf dem Laufenden und freue mich auf Eure Anregungen und Ideen.
           </p>
 
-          <p>
-            <strong>Euer Michael</strong>
-          </p>
+          <div style="display: flex; justify-content: center; margin-top: 10px;">
+            <img src="/images/about/unterschrift.jpg" alt="Euer Michael" style="width: 180px;">
+          </div>
         </el-col>
       </el-row>
     </article>

@@ -1,12 +1,12 @@
 <template>
 
   <el-row>
-    <el-col :span="18" :offset="3" class="article-image-container">
+    <el-col :span="18" :offset="3" class="article-img-container">
 
       <el-image
         :src="src"
         :alt="alt"
-        class="article-image"
+        class="article-img"
       ></el-image>
 
     </el-col>
@@ -33,14 +33,14 @@
 
 <style>
 
-  .article-image-container {
+  .article-img-container {
     display: flex;
     justify-content: center;
     margin-top: 20px;
     margin-bottom: 20px;
   }
 
-  .article-image img {
+  .article-img img {
     width: 100%;
   }
 
