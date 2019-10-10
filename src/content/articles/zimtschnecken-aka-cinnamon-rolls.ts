@@ -9,7 +9,8 @@ const article: Article = {
   categoryId: ArticleCategories.rezepte.id,
   isHeroArticle: false,
   shortDescription: "TODO",
-  previewImageUrl: "/images/articles/zimtschnecken-aka-cinnamon-rolls/cover.jpg",
+  previewImageUrl: "/images/articles/zimtschnecken-aka-cinnamon-rolls/main.jpg",
+  mainImageUrl: "/images/articles/zimtschnecken-aka-cinnamon-rolls/main.jpg",
   createdAt,
   modifiedAt: createdAt,
 };

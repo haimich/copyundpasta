@@ -7,6 +7,7 @@ export interface Article {
   isHeroArticle?: boolean;
   shortDescription: string;
   previewImageUrl: string;
+  mainImageUrl: string;
   comments?: Comment[],
   createdAt: string;
   modifiedAt: string;

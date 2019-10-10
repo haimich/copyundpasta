@@ -8,7 +8,7 @@
 
           <MainHeadingComponent
             :text="article.title"
-            :image="article.previewImageUrl"
+            :image="article.mainImageUrl"
             :commentCount="commentCount"
           />
           

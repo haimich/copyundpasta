@@ -122,7 +122,7 @@ const recipe: Recipe = {
   slug: "zimtschnecken-aka-cinnamon-rolls",
   title: "Zimtschnecken aka Cinnamon Rolls",
   categoryId: RecipeCategories.frostings.id,
-  previewImageUrl: "/images/recipes/zimtschnecken-aka-cinnamon-rolls/cover.jpg",
+  previewImageUrl: "/images/recipes/zimtschnecken-aka-cinnamon-rolls/main.jpg",
   description: "TODO.",
   servings,
   ingredients,

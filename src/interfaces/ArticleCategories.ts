@@ -20,9 +20,9 @@ const categories: ArticleCategoriesById = {
     id: "rezepte",
     name: "Rezepte",
   },
-  artikel: {
-    id: "artikel",
-    name: "artikel",
+  allgemeines: {
+    id: "allgemeines",
+    name: "Allgemeines",
   },
 }
 

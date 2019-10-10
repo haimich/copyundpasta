@@ -67,6 +67,7 @@
             break;
           }
 
+          // add category at start of array
           categories.unshift(category.name);
 
           categoryId = category.parentCategory;
@@ -106,7 +107,7 @@
       display: block;
       width: 100%;
       height: auto;
-      transition: .6s ease;
+      transition: .4s ease;
       backface-visibility: hidden;
     }
 

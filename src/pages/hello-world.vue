@@ -8,7 +8,7 @@
 
           <MainHeadingComponent
             :text="article.title"
-            :image="article.previewImageUrl"
+            :image="article.mainImageUrl"
             :commentCount="commentCount"
           />
           
@@ -52,7 +52,7 @@
 
           <p>
             Nachdem der Name gefunden war, konnte ich endlich mit der Umsetzung starten. Bei einem Treffen mit der erfahrenen Foodbloggerin Juliane von schoenertagnoch.de wurden viele meiner Fragen beantwortet - vielen Dank dafür! <br />
-            Das Logo hat David Perez von <ArticleLinkComponent href="https://kreativdesign-karlsruhe.de/" text="Kreativdesign KA">kreativdesign-karlsruhe.de</ArticleLinkComponent> für mich gestaltet. So sah übrigens ein erster Entwurf aus:
+            Das Logo hat David Perez von <ArticleLinkComponent href="https://kreativdesign-karlsruhe.de/" text="kreativdesign-karlsruhe.de" /> für mich gestaltet. So sah übrigens ein erster Entwurf aus:
           </p>
 
           <ArticleImageComponent
@@ -61,7 +61,7 @@
           />
 
           <p>
-            Blieb nur noch die technische Umsetzung: hier war mir sehr schnell klar, dass ich den Blog von Grund auf selbst programmieren würde. Ich bin sehr glücklich mit dieser Entscheidung, denn es gibt mir größtmögliche Freiheit bei der Umsetzung und es macht auch noch Spaß :-) Der Code ist übrigens <ArticleLinkComponent href="https://github.com/haimich/copyundpasta" text="Source Code von Copy & Pasta">öffentlich verfügbar</ArticleLinkComponent>!
+            Blieb nur noch die technische Umsetzung: hier war mir sehr schnell klar, dass ich den Blog von Grund auf selbst programmieren würde. Ich bin sehr glücklich mit dieser Entscheidung, denn es gibt mir größtmögliche Freiheit bei der Umsetzung und es macht auch noch Spaß :-) Der Code ist übrigens <ArticleLinkComponent href="https://github.com/haimich/copyundpasta" text="öffentlich verfügbar" />!
           </p>
 
           <h2>Geht es hier nur um Pasta?</h2>
@@ -77,20 +77,20 @@
           </p>
 
           <ul>
-            <li>trage dich in den <ArticleLinkComponent href="https://gmx.us20.list-manage.com/subscribe/post?u=1c249484bbe9d6816f42135ee&id=8d55aeb1b7" text="Newsletter"> Newsletter ein</ArticleLinkComponent></li>
-            <li>abonniere den <ArticleLinkComponent href="/feed/rss.xml" text="RSS Feed">RSS-Link</ArticleLinkComponent> mit einem geeigneten Programm (z. B. Feedly)</li>
-            <li>folge mir auf <ArticleLinkComponent href="https://www.pinterest.de/copyundpasta" text="Copy & Pasta bei Pinterest">Pinterest</ArticleLinkComponent></li>
+            <li>trage dich in den <ArticleLinkComponent href="https://gmx.us20.list-manage.com/subscribe/post?u=1c249484bbe9d6816f42135ee&id=8d55aeb1b7" text="Newsletter ein" /></li>
+            <li>abonniere den <ArticleLinkComponent href="/feed/rss.xml" text="RSS-Link" /> mit einem geeigneten Programm (z. B. Feedly)</li>
+            <li>folge mir auf <ArticleLinkComponent href="https://www.pinterest.de/copyundpasta" text="Pinterest" /></li>
           </ul>
 
           <p>
-            Ich plane derzeit, den Newsletter zwei mal pro Monat zu verschicken. Wenn ihr den Blog über RSS abonniert, hat das den Vorteil, dass neue Artikel sofort in eurem Reader auftauchen.<br />
+            Ich plane derzeit, den Newsletter 2 mal pro Monat zu verschicken. Wenn ihr den Blog über RSS abonniert, hat das den Vorteil, dass neue Artikel sofort in eurem Reader auftauchen.<br />
             Eine dritte Möglichkeit gibt es natürlich auch noch: Schaut einfach gelegentlich mal auf der Seite vorbei, um zu sehen, ob es etwas Neues gibt. 
           </p>
 
           <p>
             Ich würde mich freuen, wenn ihr das ein oder andere Rezept nachkocht und einen Kommentar oder eine Bewertung hinterlasst!
-
-            <strong>Bis dahin, viel Spaß beim Lesen :)</strong>
+            <br /><br />
+            <strong style="font-size: 16px;">Bis dahin, viel Spaß beim Lesen :)</strong>
           </p>
 
           <p>
@@ -105,18 +105,6 @@ Zwischen den Abschnitt “Hello World” und “Softwareentwickler haben doch ke
         </el-col>
       </el-row>
     </article>
-
-    <el-row style="margin-top: 20px;">
-      <el-col
-        :xl="xl"
-        :lg="lg"
-        :md="md"
-        :sm="sm"
-        :xs="xs"
-      >
-        <RecipeComponent :recipe="recipe" :ratings="ratings" style="margin-top: 40px;" />
-      </el-col>
-    </el-row>
 
     <el-row style="margin-top: 40px;">
       <el-col
@@ -141,19 +129,18 @@ Zwischen den Abschnitt “Hello World” und “Softwareentwickler haben doch ke
   import ArticleUtil from "@/utils/ArticleUtil";
   import { RatingResponse } from "@/interfaces/Rating";
 
-  import article from "@/content/articles/zimtschnecken-aka-cinnamon-rolls";
-  import recipe from "@/content/recipes/zimtschnecken-aka-cinnamon-rolls";
+  import article from "@/content/articles/hello-world";
 
   @Component({
     head: ArticleUtil.defaultHead(article),
-    asyncData: ArticleUtil.defaultAsyncData(article, recipe),
+    asyncData: ArticleUtil.defaultAsyncData(article),
   })
   export default class extends BaseArticlePage {
 
     private ratings: RatingResponse;
 
     constructor() {
-      super(article, recipe);
+      super(article);
     }
 
     async refreshComments() {
