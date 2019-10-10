@@ -16,9 +16,13 @@ export interface AllArticleCategories {
 }
 
 const categories: ArticleCategoriesById = {
-  rezept: {
+  rezepte: {
     id: "rezepte",
     name: "Rezepte",
+  },
+  artikel: {
+    id: "artikel",
+    name: "artikel",
   },
 }
 
