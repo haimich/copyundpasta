@@ -24,11 +24,12 @@ describe("getUniqueArticleCategoryId", () => {
     expect(CategoryUtil.getUniqueArticleCategoryId("blablupp", categories.categoriesById)).toEqual("");
   });
 
-  test("should return concatenated id", () => {
-    let categories = CategoryUtil.getAllArticleCategories();
+  // TODO comment in when category with parent is introduced
+  // test("should return concatenated id", () => {
+  //   let categories = CategoryUtil.getAllArticleCategories();
 
-    expect(CategoryUtil.getUniqueArticleCategoryId("herzhaft", categories.categoriesById)).toEqual("rezepte_herzhaft");
-  });
+  //   expect(CategoryUtil.getUniqueArticleCategoryId("rezepte", categories.categoriesById)).toEqual("rezepte_herzhaft");
+  // });
 
   test("should return category id when no parent is present", () => {
     let categories = CategoryUtil.getAllArticleCategories();
@@ -64,11 +65,12 @@ describe("getFullArticleCategoryName", () => {
     expect(CategoryUtil.getFullArticleCategoryName("blablupp", categories.categoriesById)).toEqual("");
   });
 
-  test("should return category and parent name", () => {
-    let categories = CategoryUtil.getAllArticleCategories();
+  // TODO comment in when category with parent is introduced
+  // test("should return category and parent name", () => {
+  //   let categories = CategoryUtil.getAllArticleCategories();
 
-    expect(CategoryUtil.getFullArticleCategoryName("herzhaft", categories.categoriesById)).toEqual("Rezepte Herzhaft");
-  });
+  //   expect(CategoryUtil.getFullArticleCategoryName("herzhaft", categories.categoriesById)).toEqual("Rezepte Herzhaft");
+  // });
 
   test("should return category name when no parent is present", () => {
     let categories = CategoryUtil.getAllArticleCategories();

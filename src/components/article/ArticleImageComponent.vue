@@ -1,12 +1,12 @@
 <template>
 
   <el-row>
-    <el-col :span="18" :offset="3">
+    <el-col :span="18" :offset="3" class="article-image-container">
 
       <el-image
         :src="src"
-        class="article-image-full"
         :alt="alt"
+        class="article-image"
       ></el-image>
 
     </el-col>
@@ -19,7 +19,7 @@
   import { Vue, Component, Prop, Watch } from "vue-property-decorator";
 
   @Component
-  export default class ArticleIArticleImageComponentmage extends Vue {
+  export default class ArticleImageComponent extends Vue {
 
       @Prop()
       private src: string;
@@ -33,10 +33,15 @@
 
 <style>
 
-  .article-image-full img {
+  .article-image-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .article-image img {
     width: 100%;
-    margin-top: 40px;
-    margin-bottom: 40px;
   }
 
 </style>

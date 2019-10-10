@@ -72,6 +72,17 @@ p strong {
   font-weight: 600;
 }
 
+article ul {
+  padding-left: 11%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+
+  li {
+    font-size: 1.25rem;
+    font-weight: 300;
+  }
+}
+
 li {
   font-size: 18px;
   line-height: 25px;
