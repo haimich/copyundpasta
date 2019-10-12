@@ -1,6 +1,6 @@
 <template>
 
-  <a :href="href" target="_blank" rel="noopener">{{ text }}</a>
+  <span>&bdquo;{{ text }}&ldquo;</span>
 
 </template>
 
@@ -9,10 +9,7 @@
   import { Vue, Component, Prop, Watch } from "vue-property-decorator";
 
   @Component
-  export default class ArticleLinkComponent extends Vue {
-
-      @Prop()
-      private href: string;
+  export default class ArticleQuoteComponent extends Vue {
 
       @Prop()
       private text: string;
