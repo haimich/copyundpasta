@@ -28,13 +28,14 @@ export default class RecipeUtil {
     let amount = RecipeUtil.formatAmount(ingredient, servingsMultiplier);
     let preparation = ingredient.preparation != null ? ", " + ingredient.preparation : "";
     let ingredientName = RecipeUtil.formatIngredientName(ingredient)
+    let description = "";
     let unit;
   
     switch (ingredient.unit) {
-      case RecipeUnit.gram:
+      case RecipeUnit.g:
         unit = "g";
         break;
-      case RecipeUnit.liter:
+      case RecipeUnit.l:
         unit = "l";
         break;
       case RecipeUnit.el:
@@ -54,7 +55,11 @@ export default class RecipeUtil {
       amount += " "; // we need a space here
     }
 
-    return `${amount}${unit} ${ingredientName}${preparation}`
+    if (ingredient.description != null && ingredient.description !== "") {
+      description = " " + ingredient.description;
+    }
+
+    return `${amount}${unit} ${ingredientName}${description}${preparation}`
   }
 
   public static formatAmount(ingredient: RecipeIngredient, servingsMultiplier = 1): string {

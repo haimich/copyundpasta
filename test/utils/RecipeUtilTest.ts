@@ -16,19 +16,19 @@ const ingredients: (RecipeIngredientGroup|RecipeIngredient)[] = [
       {
         isGroup: false,
         amount: 500,
-        unit: RecipeUnit.gram,
+        unit: RecipeUnit.g,
         ingredient: Ingredients.mehl,
       },
       {
         isGroup: false,
         amount: 30,
-        unit: RecipeUnit.gram,
+        unit: RecipeUnit.g,
         ingredient: Ingredients.hefe,
       },
       {
         isGroup: false,
         amount: 30,
-        unit: RecipeUnit.gram,
+        unit: RecipeUnit.g,
         ingredient: Ingredients.zucker,
       },
       {
@@ -41,7 +41,7 @@ const ingredients: (RecipeIngredientGroup|RecipeIngredient)[] = [
       {
         isGroup: false,
         amount: 0.25,
-        unit: RecipeUnit.liter,
+        unit: RecipeUnit.l,
         ingredient: Ingredients.milch,
       },
       {
@@ -51,7 +51,7 @@ const ingredients: (RecipeIngredientGroup|RecipeIngredient)[] = [
       {
         isGroup: false,
         amount: 80,
-        unit: RecipeUnit.gram,
+        unit: RecipeUnit.g,
         ingredient: Ingredients.butter,
       },
     ],

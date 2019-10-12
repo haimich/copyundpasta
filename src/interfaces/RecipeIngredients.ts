@@ -5,8 +5,8 @@ export interface Ingredients {
 }
 
 export enum RecipeUnit {
-  gram = "gram",
-  liter = "liter",
+  g = "gram",
+  l = "liter",
   quantity = "quantity",
   el = "el",
   tl = "tl",
@@ -55,13 +55,27 @@ export const Ingredients: Ingredients = {
     name: "Ei",
     namePlural: "Eier",
   },
+  eigelb: {
+    id: "eigelb",
+    name: "Eigelb",
+    namePlural: "Eigelbe",
+  },
   kakaopulver: {
     id: "kakaopulver",
     name: "Kakaopulver",
   },
+  vanillearoma: {
+    id: "vanillearoma",
+    name: "Vanillearoma",
+  },
   butter: {
     id: "butter",
     name: "Butter",
+  },
+  zitronenabrieb: {
+    id: "zitronenabrieb",
+    name: "Abrieb einer unbehandelten Zitrone",
+    namePlural: "Abrieb von unbehandelten Zitronen",
   },
   zwiebel: {
     id: "zwiebel",

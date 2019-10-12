@@ -18,6 +18,7 @@ export interface RecipeIngredient extends RecipeIngredientEntry {
   amountFrom?: number;
   amountTo?: number;
   ingredient: Ingredient;
+  description?: string;
   preparation?: IngredientPreparation;
 }
 

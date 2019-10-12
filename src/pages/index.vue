@@ -94,8 +94,7 @@
             </el-col>
 
             <el-col :xl="16" :lg="16" :md="12" :sm="12" :xs="0">
-              &nbsp;
-              <!-- TODO remove when more articles come -->
+              &nbsp; <!-- TODO remove when more articles come -->
             </el-col>
           </el-row>
 
