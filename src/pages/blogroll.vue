@@ -141,13 +141,13 @@
       {
         name: "Französisch kochen",
         description: `Auf den Blog von Aurélie Bastian bin ich erst gestoßen, nachdem ich in ihrem Onlineshop einige Zutaten für Macarons bestellt habe. Ihr Konzept ist, dass sie in Frankreich übliche Lebensmittel auch in Deutschland verfügbar macht. Sehr gerne bestelle ich bei z. B. Kuvertüre und Mandelmehl.
-<br/>Aber sie geht noch weiter: Neben einer regelmäßigen Fernsehsendung hat sie bereits mehrere Bücher geschrieben und gibt ihr Wissen über französisches Gebäck in ihrem eigenen Podcast weiter.`,
+<br/>Aber sie geht noch weiter: Neben ihrer eigenen Kochsendung im Fernsehen hat sie bereits mehrere Bücher geschrieben und gibt ihr Wissen über französisches Gebäck in ihrem eigenen Podcast weiter.`,
         image: "/images/blogroll/franzoesischkochen.jpg",
         url: "https://www.franzoesischkochen.de/",
       },
       {
         name: "Petit Appetit",
-        description: "Den Blog von Nicole habe ich kürzlich entdeckt und war sofort Feuer und Flamme, was sich darin geäußert hat, dass ich sämtliche der fast 300 Rezepte durchgesehen und etliche davon in meiner Nachkochliste aufgenommen habe. Viel besser kann man ein Rezept kaum präsentieren, finde ich!",
+        description: "Nicoles Blog habe ich kürzlich entdeckt und war sofort Feuer und Flamme, was sich darin geäußert hat, dass ich sämtliche der fast 300 Rezepte durchgesehen und etliche davon in meiner Nachkochliste aufgenommen habe. Viel besser kann man ein Rezept kaum präsentieren, finde ich!",
         image: "/images/blogroll/petitappetit.jpg",
         url: "https://www.petitappetit.de",
       },

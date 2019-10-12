@@ -23,7 +23,7 @@
           <h2>Softwareentwickler haben doch keine Hobbys?!</h2>
 
           <p>
-            Entwickler genießen ja nicht unbedingt den besten Ruf: Den typischen Nerd stellt man sich gerne übergewichtig, langhaarig und mit dicken Brillengläsern vor. Er sitzt in einem dunklen Keller vor drei extrabreiten Monitoren, über die permanent seltsame Hieroglyphen rattern, während er in einem Affenzahn auf seiner Tastatur rumhämmert. In der Freizeit geht er nicht viel aus dem Haus, lässt sich dafür umso lieber Pizza liefern und zockt den ganzen Tag Computerspiele.
+            Entwickler genießen ja nicht unbedingt den besten Ruf: Den typischen Nerd stellt man sich gerne übergewichtig, langhaarig und mit dicken Brillengläsern vor &hellip; oder aber so wie den hier unten abgebildeten Herrn. Er sitzt in einem dunklen Keller vor drei extrabreiten Monitoren, über die permanent seltsame Hieroglyphen rattern, während er in einem Affenzahn auf seiner Tastatur rumhämmert. In der Freizeit geht er nicht viel aus dem Haus, lässt sich dafür umso lieber Pizza liefern und zockt den ganzen Tag Computerspiele.
           </p>
 
           <ArticleImageComponent
@@ -73,11 +73,11 @@
           />
 
           <p>
-            Desweiteren möchte ich mich bei Sarah von <ArticleLinkComponent href="https://www.meinlichtspiel.com/" text="www.meinlichtspiel.com" /> bedanken, die unter anderem das Coverfoto von diesem Artikel und die Fotos im Bereich "Über Mich" gemacht hat.
+            Des Weiteren möchte ich mich bei Sarah von <ArticleLinkComponent href="https://www.meinlichtspiel.com/" text="www.meinlichtspiel.com" /> bedanken, die unter anderem das Coverfoto von diesem Artikel und die Fotos im Bereich "Über Mich" gemacht hat. Sprachlich unterstützte mich <ArticleLinkComponent href="https://marketing.triacom.com/" text="Thea Döhler" />, damit meine Texte sich leichter lesen lassen und ansprechend klingen. Auch Dir ein herzliches Dankeschön!
           </p>
 
           <p>
-            Da nun auch das Design feststanden blieb nur noch die technische Umsetzung: hier war mir sehr schnell klar, dass ich den Blog von Grund auf selbst programmieren würde. Ich bin sehr glücklich mit dieser Entscheidung, denn es gibt mir größtmögliche Freiheit bei der Umsetzung und es macht auch noch Spaß :-) Der Code ist übrigens <ArticleLinkComponent href="https://github.com/haimich/copyundpasta" text="öffentlich verfügbar" />.
+            Da nun auch das Design feststand blieb nur noch die technische Umsetzung: Hier war mir sehr schnell klar, dass ich den Blog von Grund auf selbst programmieren würde. Ich bin sehr glücklich mit dieser Entscheidung, denn es gibt mir größtmögliche Freiheit bei der Gestaltung und es macht auch noch Spaß :-) Der Code ist übrigens <ArticleLinkComponent href="https://github.com/haimich/copyundpasta" text="öffentlich verfügbar" />.
           </p>
 
           <h2>Geht es hier nur um Pasta?</h2>
@@ -89,7 +89,7 @@
           <h2>Wie kann ich den Blog abonnieren?</h2>
 
           <p>
-            Wenn du über neue Artikel automatisch informiert werden möchtest, hast du zwei Möglichkeiten:
+            Wenn du über neue Artikel automatisch informiert werden möchtest, hast du drei Möglichkeiten:
           </p>
 
           <ul>
@@ -100,7 +100,7 @@
 
           <p>
             Ich plane derzeit, den Newsletter 2 mal pro Monat zu verschicken. Wenn ihr den Blog über RSS abonniert, hat das den Vorteil, dass neue Artikel sofort in eurem Reader auftauchen.<br />
-            Eine dritte Möglichkeit gibt es natürlich auch noch: Schaut einfach gelegentlich mal auf der Seite vorbei, um zu sehen, welche kulinarischen Erlebnisse ich in letzter Zeit für mich entdeckt habe. 
+            Eine vierte Möglichkeit gibt es natürlich auch noch: Schaut einfach gelegentlich mal auf der Seite vorbei, um zu sehen, welche kulinarischen Erlebnisse ich in letzter Zeit für mich entdeckt habe. 
           </p>
 
           <p>
