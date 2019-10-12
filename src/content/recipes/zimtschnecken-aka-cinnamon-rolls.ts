@@ -9,105 +9,11 @@ const servings: RecipeServings = {
 };
 
 const ingredients: (RecipeIngredientGroup|RecipeIngredient)[] = [
-  {
-    isGroup: true,
-    title: "Zimtschnecken aka Cinnamon Rolls",
-    ingredients: [
-      {
-        isGroup: false,
-        amount: 6,
-        unit: RecipeUnit.tl,
-        ingredient: Ingredients.kakaopulver,
-      },
-      {
-        isGroup: false,
-        amount: 6,
-        unit: RecipeUnit.tl,
-        ingredient: Ingredients.wasser,
-      },
-      {
-        isGroup: false,
-        amount: 1.5,
-        unit: RecipeUnit.el,
-        ingredient: Ingredients.mehl,
-      },
-      {
-        isGroup: false,
-        amount: 0.5,
-        unit: RecipeUnit.tl,
-        ingredient: Ingredients.backpulver,
-      },
-    ],
-  },
-  {
-    isGroup: true,
-    title: "Baileys Buttercreme",
-    ingredients: [
-      {
-        isGroup: false,
-        amount: 300,
-        unit: RecipeUnit.gram,
-        ingredient: Ingredients.zucker,
-      },
-      {
-        isGroup: false,
-        amount: 50,
-        unit: RecipeUnit.gram,
-        ingredient: Ingredients.butter,
-      },
-    ],
-  },
-  {
-    isGroup: false,
-    amount: 25,
-    unit: RecipeUnit.gram,
-    ingredient: Ingredients.butter,
-  }
+  
 ];
 
 const steps: (RecipeStepGroup|RecipeStep)[] = [
-  {
-    isGroup: true,
-    title: "Cupcakes",
-    steps: [
-      {
-        isGroup: false,
-        type: "step",
-        content: "Preheat oven to 350F and line muffin tins with cupcake liners. Whisk cocoa and hot water together until smooth, set aside.",
-      },
-      {
-        isGroup: false,
-        type: "step",
-        content: "In a separate bowl, whisk together flour, baking powder, baking soda, and salt. Melt butter and sugar in a small saucepan over medium heat. Stir to combine.",
-      },
-      {
-        isGroup: false,
-        type: "step",
-        content: "Transfer butter to the bowl of a mixer fitted with the paddle attachment. Beat until mixture has cooled, approx 4mins.",
-      },
-      {
-        isGroup: false,
-        type: "step",
-        content: "Add eggs one at a time, beating until fully incorporated after each addition. Scrape sides of bowl as needed. Add vanilla and cocoa mixture, beat until combined. Reduce speed to low and alternate adding flour mixture and sour cream in 2 additions. Beat until just combined.",
-      },
-    ],
-  },
-  {
-    isGroup: true,
-    title: "Baileys Buttercreme",
-    steps: [
-      {
-        isGroup: false,
-        type: "step",
-        content: "Die Creme anrühren und so.",
-      },
-    ],
-  },
-  {
-    isGroup: false,
-    content: "Einfacher Schritt",
-    type: "step",
-  },
+  
 ];
 
 const notes = [];
@@ -123,7 +29,6 @@ const recipe: Recipe = {
   title: "Zimtschnecken aka Cinnamon Rolls",
   categoryId: RecipeCategories.frostings.id,
   previewImageUrl: "/images/recipes/zimtschnecken-aka-cinnamon-rolls/main.jpg",
-  description: "TODO.",
   servings,
   ingredients,
   steps,

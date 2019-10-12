@@ -55,7 +55,7 @@ export interface Recipe {
   categoryId: string;
   previewImageUrl: string;
   servings: RecipeServings;
-  description: string;
+  description?: string;
   ingredients: (RecipeIngredientGroup|RecipeIngredient)[];
   steps: (RecipeStepGroup|RecipeStep)[];
   notes: string[];

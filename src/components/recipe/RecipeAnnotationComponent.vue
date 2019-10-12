@@ -83,7 +83,7 @@
           "name": "Michael Müller"
         },
         "datePublished": this.recipe.createdAt,
-        "description": this.recipe.description,
+        // "description": this.recipe.description, only articles have description
         "keywords": "",
         "recipeYield": servings,
         "recipeCategory": this.recipe.categoryId,
