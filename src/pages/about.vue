@@ -9,7 +9,7 @@
           />
 
           <ArticleImageComponent
-            src="/images/about/presenting-cake.jpg"
+            src="/images/about/gugelhupf-kuchen.jpg"
             alt="Gugelhupfkuchen"
           />
     
@@ -24,6 +24,11 @@
           <p>
             Ich optimiere gerne Zubereitungsschritte, Techniken und Zutaten. Dabei macht mir das grammgenaue Abwiegen beim Backen genau so viel Spaß wie das kreative Kombinieren beim Kochen. Mir geht es darum, aus wenigen Zutaten leckere Gerichte zu zaubern, die sich leicht nachkochen lassen. Gleichzeitig will ich so viel wie möglich frische Lebensmittel einsetzen und so wenig Abfälle wie möglich hinterlassen.
           </p>
+
+          <ArticleImageComponent
+            src="/images/about/michael-kochbuecher.jpg"
+            alt="Michael mit Kochbüchern"
+          />
 
           <h3>Geschmacksabenteuer: Dazu lade ich euch ein</h3>
 
