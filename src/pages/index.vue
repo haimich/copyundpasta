@@ -79,10 +79,23 @@
           style="margin-top: 45px;"
         >
           <el-row :gutter="15">
-            <el-col :span="8" v-for="article in recentArticles" :key="article.slug">
+            <el-col
+              :xl="8"
+              :lg="8"
+              :md="12"
+              :sm="12"
+              :xs="24"
+              v-for="article in recentArticles"
+              :key="article.slug"
+            >
               <ArticleCardComponent
                 :article="article"
               />
+            </el-col>
+
+            <el-col :xl="16" :lg="16" :md="12" :sm="12" :xs="0">
+              &nbsp;
+              <!-- TODO remove when more articles come -->
             </el-col>
           </el-row>
 

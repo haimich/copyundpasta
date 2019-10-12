@@ -37,6 +37,10 @@
         <time class="article-card-date">
           {{ article.createdAt | formatAsDate }}
         </time>
+
+        <p class="article-card-body-text">
+          {{ article.shortDescription }}
+        </p>
       </div>
     </el-card>
   </div>
@@ -85,7 +89,7 @@
   @import "~/scss/variables.scss";
 
   .article-card {
-    height: 400px;
+    min-height: 400px;
     margin-bottom: 27px;
   }
 
@@ -172,6 +176,12 @@
       color: #000000cf;
       font-weight: 600;
       line-height: 21px;
+    }
+
+    .article-card-body-text {
+      text-align: left;
+      font-size: 14.5px;
+      line-height: 17px;
     }
 
     .article-card-date {

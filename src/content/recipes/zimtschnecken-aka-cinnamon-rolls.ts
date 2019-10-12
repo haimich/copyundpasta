@@ -9,7 +9,18 @@ const servings: RecipeServings = {
 };
 
 const ingredients: (RecipeIngredientGroup|RecipeIngredient)[] = [
-  
+  {
+    isGroup: true,
+    title: "Hefeteig",
+    ingredients: [
+      {
+        isGroup: false,
+        amount: 500,
+        unit: RecipeUnit.gram,
+        ingredient: Ingredients.mehl,
+      },
+    ],
+  },
 ];
 
 const steps: (RecipeStepGroup|RecipeStep)[] = [
