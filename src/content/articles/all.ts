@@ -1,7 +1,7 @@
-import a1 from "./zimtschnecken-aka-cinnamon-rolls";
-import a2 from "./hello-world";
+import a1 from "./hello-world";
+import a2 from "./zimtschnecken-aka-cinnamon-rolls";
 
 export default [
   a1,
-  a2,
+  // a2,
 ];
