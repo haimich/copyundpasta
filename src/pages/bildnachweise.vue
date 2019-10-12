@@ -2,13 +2,7 @@
 
   <div>
     <el-row>
-      <el-col
-        :xl="xl"
-        :lg="lg"
-        :md="md"
-        :sm="sm"
-        :xs="xs"
-      >
+      <el-col :xl="xl" :lg="lg" :md="md" :sm="sm" :xs="xs">
         <MainHeadingComponent
           text="Bildnachweise"
         />
@@ -31,6 +25,7 @@
                 <el-image
                   :src="scope.row.imageLink"
                   fit="scale-down"
+                  style="max-width: 70%;"
                 ></el-image>
               </a>
             </template>

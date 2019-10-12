@@ -8,7 +8,7 @@
       class="global-back-button hidden-xs-only"
     ></el-page-header>
 
-    <h1 class="article-heading" style="text-transform: uppercase">
+    <h1 class="article-heading " style="text-transform: uppercase">
       {{ text }}
     </h1>
 
@@ -100,6 +100,7 @@
 
 <style lang="scss" scoped>
 
+  @import "~/scss/variables.scss";
   @import "~/scss/base.scss";
 
   .global-back-button {

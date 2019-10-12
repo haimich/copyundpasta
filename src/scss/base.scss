@@ -50,9 +50,49 @@ h1 {
   font-size: 28px;
 }
 
+@media all and (max-width: $breakpoint-md) {
+  h1 {
+    font-size: 26px;
+  }
+}
+
+@media all and (max-width: $breakpoint-xs) {
+  h1 {
+    font-size: 23px;
+  }
+}
+
 h2 {
   font-size: 25px;
   margin-bottom: 22px;
+}
+
+@media all and (max-width: $breakpoint-md) {
+  h2 {
+    font-size: 23px;
+  }
+}
+
+@media all and (max-width: $breakpoint-xs) {
+  h2 {
+    font-size: 21px;
+  }
+}
+
+h3 {
+  font-size: 22px;
+}
+
+@media all and (max-width: $breakpoint-md) {
+  h3 {
+    font-size: 20px;
+  }
+}
+
+@media all and (max-width: $breakpoint-xs) {
+  h3 {
+    font-size: 19px;
+  }
 }
 
 h5 {
@@ -150,6 +190,24 @@ a:hover {
   height: 3px;
   border: none;
   margin-bottom: 10px;
+}
+
+@media all and (max-width: $breakpoint-xl) {
+  .blue-line {
+    width: 9%;
+  }
+}
+
+@media all and (max-width: $breakpoint-lg) {
+  .blue-line {
+    width: 12%;
+  }
+}
+
+@media all and (max-width: $breakpoint-md) {
+  .blue-line {
+    width: 16%;
+  }
 }
 
 .el-notification {

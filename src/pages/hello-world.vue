@@ -51,14 +51,18 @@
           <h2>Die Umsetzung</h2>
 
           <p>
-            Nachdem der Name gefunden war, konnte ich endlich mit der Umsetzung starten. Bei einem Treffen mit der erfahrenen Foodbloggerin Juliane von schoenertagnoch.de wurden viele meiner Fragen beantwortet - vielen Dank dafür! <br />
-            Das Logo hat David Perez von <ArticleLinkComponent href="https://kreativdesign-karlsruhe.de/" text="kreativdesign-karlsruhe.de" /> für mich gestaltet. So sah übrigens ein erster Entwurf aus:
+            Nachdem der Name gefunden war, konnte ich endlich mit der Umsetzung starten. Bei einem Treffen mit der erfahrenen Foodbloggerin Juliane von <ArticleLinkComponent href="https://schoenertagnoch.de/" text="schoenertagnoch.de" /> wurden viele meiner Fragen beantwortet - vielen Dank dafür! <br />
+            Das Logo hat David Perez von <ArticleLinkComponent href="https://kreativdesign-karlsruhe.de/" text="kreativdesign-karlsruhe.de" /> für mich gestaltet - TODO bedanken! So sah übrigens ein erster Entwurf aus:
           </p>
 
           <ArticleImageComponent
             src="/images/articles/hello-world/logo-entwurf.jpg"
             alt="Cupcake"
           />
+
+          <p>
+            Desweiteren möchte ich mich bei Sarah von <ArticleLinkComponent href="https://www.meinlichtspiel.com/" text="www.meinlichtspiel.com" /> bedanken, die mich zu Hause besucht hat und unter anderem das Coverfoto von diesem Artikel und die Fotos im Bereich "Über Mich" gemacht hat.
+          </p>
 
           <p>
             Blieb nur noch die technische Umsetzung: hier war mir sehr schnell klar, dass ich den Blog von Grund auf selbst programmieren würde. Ich bin sehr glücklich mit dieser Entscheidung, denn es gibt mir größtmögliche Freiheit bei der Umsetzung und es macht auch noch Spaß :-) Der Code ist übrigens <ArticleLinkComponent href="https://github.com/haimich/copyundpasta" text="öffentlich verfügbar" />!
@@ -90,7 +94,7 @@
           <p>
             Ich würde mich freuen, wenn ihr das ein oder andere Rezept nachkocht und einen Kommentar oder eine Bewertung hinterlasst!
             <br /><br />
-            <strong style="font-size: 16px;">Bis dahin, viel Spaß beim Lesen :)</strong>
+            <strong style="font-size: 19px;">Bis dahin, viel Spaß beim Lesen :)</strong>
           </p>
 
           <p>

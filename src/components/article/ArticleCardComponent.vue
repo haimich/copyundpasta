@@ -6,17 +6,17 @@
       :body-style="{ padding: '0px' }"
       shadow="hover"
     >
-      <div class="article-image-container">
-        <img :src="article.previewImageUrl" alt="Artikelbild">
+      <nuxt-link :to="'/' + article.slug" class="article-card-link">
+        <div class="article-image-container">
+          <img :src="article.previewImageUrl" alt="Artikelbild">
 
-        <div class="article-card-title">
-          <nuxt-link :to="'/' + article.slug" class="article-card-link">
+          <div class="article-card-title">
             <span class="article-card-button">
               Ansehen
             </span>
-          </nuxt-link>
+          </div>
         </div>
-      </div>
+      </nuxt-link>
 
       <div class="article-card-body">
         <div class="article-card-category">
