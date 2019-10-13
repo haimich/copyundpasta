@@ -211,28 +211,28 @@ const config = {
   csp: {
     policies: {
       'default-src': [
-        'self',
+        "'self'",
       ],
       'script-src': [
-        'self',
+        "'self'",
         'https://www.google.com',
         'https://cdn.jsdelivr.net',
         'https://*.gstatic.com',
         'https://www.google-analytics.com',
       ],
       'image-src': [
-        'self',
+        "'self'",
       ],
       'manifest-src': [
-        'self',
+        "'self'",
       ],
       'style-src': [
-        'self',
+        "'self'",
         'https://cdn.jsdelivr.net',
         'https://fonts.googleapis.com',
       ],
       'object-src': [
-        'none',
+        "'none'",
       ],
     }
   },
