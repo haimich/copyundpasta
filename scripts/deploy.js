@@ -37,7 +37,6 @@ async function deploy() {
     await executeCommand("git checkout package-lock.json");
 
     spinner.text = "Rebuilding app...";
-    await executeCommand("npm run clean:build");
     await executeCommand("npm run build");
 
     spinner.text = "Migrating db...";
