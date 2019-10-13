@@ -217,8 +217,14 @@ const config = {
         'self',
         'https://www.google.com',
         'https://cdn.jsdelivr.net',
-        'https://www.gstatic.com',
+        'https://*.gstatic.com',
         'https://www.google-analytics.com',
+      ],
+      'image-src': [
+        'self',
+      ],
+      'manifest-src': [
+        'self',
       ],
       'style-src': [
         'self',
