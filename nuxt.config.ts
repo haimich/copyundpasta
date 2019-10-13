@@ -220,7 +220,7 @@ const config = {
         'https://*.gstatic.com',
         'https://www.google-analytics.com',
       ],
-      'image-src': [
+      'img-src': [
         "'self'",
       ],
       'manifest-src': [
@@ -228,6 +228,7 @@ const config = {
       ],
       'style-src': [
         "'self'",
+        "'unsafe-inline'",
         'https://cdn.jsdelivr.net',
         'https://fonts.googleapis.com',
       ],
