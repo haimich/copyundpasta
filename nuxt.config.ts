@@ -223,9 +223,6 @@ const config = {
       'img-src': [
         "'self'",
       ],
-      'manifest-src': [
-        "'self'",
-      ],
       'style-src': [
         "'self'",
         "'unsafe-inline'",
@@ -237,6 +234,13 @@ const config = {
         'https://cdn.jsdelivr.net',
         'https://*.gstatic.com',
         'https://fonts.googleapis.com',
+      ],
+      'frame-src': [
+        "'self'",
+        "https://www.google.com/",
+      ],
+      'manifest-src': [
+        "'self'",
       ],
       'object-src': [
         "'none'",
