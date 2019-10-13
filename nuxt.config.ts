@@ -229,6 +229,7 @@ const config = {
       'style-src': [
         "'self'",
         "'unsafe-inline'",
+        'https://fonts.googleapis.com',
         'https://cdn.jsdelivr.net',
       ],
       'font-src': [
