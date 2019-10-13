@@ -20,13 +20,14 @@ describe('getNonHeroArticles', () => {
     });
 });
 
-describe('getArticleComments', () => {
-    test('should return all comments', async () => {
-        let comments = await ArticleRepo.getArticleComments("zimtschnecken-aka-cinnamon-rolls");
+//TODO comment in
+// describe('getArticleComments', () => {
+//     test('should return all comments', async () => {
+//         let comments = await ArticleRepo.getArticleComments("zimtschnecken-aka-cinnamon-rolls");
 
-        // console.log(comments);
-    });
-});
+//         // console.log(comments);
+//     });
+// });
 
 describe('createComment', () => {
     test('should persist comment', async () => {
