@@ -1,3 +1,5 @@
+import { faLessThanEqual } from "@fortawesome/free-solid-svg-icons";
+
 require("dotenv").config();
 
 // get rid of warning during development
@@ -179,6 +181,10 @@ const config = {
   */
   build: {
     transpile: [/^element-ui/],
+
+    terser: {
+      parallel: false,
+    },
 
     /*
     ** You can extend webpack config here
