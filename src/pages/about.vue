@@ -5,7 +5,7 @@
       <el-row>
         <el-col :xl="xl" :lg="lg" :md="md" :sm="sm" :xs="xs">
           <MainHeadingComponent
-            text="Der Nerd am Herd: Das bin ich."
+            text="Der Nerd am Herd stellt sich vor"
           />
 
           <ArticleImageComponent
