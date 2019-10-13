@@ -11,7 +11,7 @@ if (process.env.DEPLOY_HOST == null) {
 
 async function deploy() {
   try {
-    const spinner = ora('Checking for local modifications').start();
+    const spinner = ora('Checking for local modifications...').start();
 
     if (shell.exec("git status | grep 'nothing to commit'").code !== 0) {
       console.error("Check your local repo for modifications!");
