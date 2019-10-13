@@ -12,7 +12,7 @@ export default class ExpressUtil {
   public static setupExpress() {
     const app = express();
   
-    app.use(helmet());
+    // app.use(helmet()); test if csp problems come from helmet
     app.use(bodyParser.json());
     app.use(compression());
     
