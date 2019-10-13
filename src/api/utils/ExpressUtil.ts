@@ -13,6 +13,13 @@ export default class ExpressUtil {
     const app = express();
   
     app.use(helmet());
+    app.use(helmet.contentSecurityPolicy({
+      directives: {
+        defaultSrc: ["'self'", "copyundpasta.de"],
+        scriptSrc: ["'self'", "copyundpasta.de", "https://www.google.com/", "https://cdn.jsdelivr.net", "https://www.gstatic.com", "https://www.google-analytics.com"],
+        styleSrc: ["'self'", "copyundpasta.de", "https://cdn.jsdelivr.net", "https://fonts.googleapis.com"],
+      },
+    }));
     app.use(bodyParser.json());
     app.use(compression());
     
