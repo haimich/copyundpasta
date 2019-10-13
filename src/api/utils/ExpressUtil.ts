@@ -15,9 +15,10 @@ export default class ExpressUtil {
     app.use(helmet());
     app.use(helmet.contentSecurityPolicy({
       directives: {
-        defaultSrc: ["'self'", "copyundpasta.de"],
-        scriptSrc: ["'self'", "copyundpasta.de", "https://www.google.com/", "https://cdn.jsdelivr.net", "https://www.gstatic.com", "https://www.google-analytics.com"],
-        styleSrc: ["'self'", "copyundpasta.de", "https://cdn.jsdelivr.net", "https://fonts.googleapis.com"],
+        defaultSrc: ["'self'"],
+        scriptSrc: ["'self'", "https://www.google.com", "https://cdn.jsdelivr.net", "https://www.gstatic.com", "https://www.google-analytics.com"],
+        styleSrc: ["'self'", "https://cdn.jsdelivr.net", "https://fonts.googleapis.com"],
+        objectSrc: ["'none'"],
       },
     }));
     app.use(bodyParser.json());

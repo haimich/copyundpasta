@@ -204,6 +204,34 @@ const config = {
 
   buildModules: ['@nuxt/typescript-build'],
 
+  /*
+  ** Render configuration
+  */
+ render: {
+  csp: {
+    policies: {
+      'default-src': [
+        'self',
+      ],
+      'script-src': [
+        'self',
+        'https://www.google.com',
+        'https://cdn.jsdelivr.net',
+        'https://www.gstatic.com',
+        'https://www.google-analytics.com',
+      ],
+      'style-src': [
+        'self',
+        'https://cdn.jsdelivr.net',
+        'https://fonts.googleapis.com',
+      ],
+      'object-src': [
+        'none',
+      ],
+    }
+  },
+ }
+
 }
 
 export default config;
