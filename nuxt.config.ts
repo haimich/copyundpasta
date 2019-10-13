@@ -230,6 +230,11 @@ const config = {
         "'self'",
         "'unsafe-inline'",
         'https://cdn.jsdelivr.net',
+      ],
+      'font-src': [
+        "'self'",
+        'https://cdn.jsdelivr.net',
+        'https://*.gstatic.com',
         'https://fonts.googleapis.com',
       ],
       'object-src': [
