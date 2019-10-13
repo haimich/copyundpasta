@@ -37,7 +37,8 @@ async function deploy() {
     await executeCommand("git checkout package-lock.json");
 
     spinner.text = "Rebuilding app...";
-    await executeCommand("npm run build");
+    // await executeCommand("npm run build");
+    shell.exec("ssh haimich@hartley.uberspace.de cd copyundpasta.de && npm run build"); // there is a bug with terser plugin when using shelljs for this step!
 
     spinner.text = "Migrating db...";
     await executeCommand("NODE_ENV=production npm run migrate");
