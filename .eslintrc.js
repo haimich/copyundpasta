@@ -41,6 +41,8 @@ module.exports = {
     "vue/attribute-hyphenation": "off",
     "import/order": "off",
     "space-unary-ops": "off",
-    "quote-props": "off"
+    "quote-props": "off",
+    "space-before-function-paren": "off",
+    "arrow-parens": "off"
   }
 }

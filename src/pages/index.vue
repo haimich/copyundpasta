@@ -156,7 +156,7 @@
       return {
         heroArticles: responses[0].data,
         newestArticle: recentArticles.shift(),
-        recentArticles: recentArticles,
+        recentArticles,
         totalArticles: totalRecentCount,
       };
     }
