@@ -208,6 +208,7 @@ const config = {
   ** Render configuration
   */
  render: {
+  // define CSP for application (api endpoint CSP is defined in ExpressUtil)
   csp: {
     policies: {
       'default-src': [

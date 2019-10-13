@@ -13,11 +13,11 @@ export default class ExpressUtil {
     const app = express();
   
     app.use(helmet());
+
+    // define CSP for api endpoints (the general CSP is defined in the nuxt config)
     app.use(helmet.contentSecurityPolicy({
       directives: {
         defaultSrc: ["'self'"],
-        scriptSrc: ["'self'", "https://www.google.com", "https://cdn.jsdelivr.net", "https://www.gstatic.com", "https://www.google-analytics.com"],
-        styleSrc: ["'self'", "https://cdn.jsdelivr.net", "https://fonts.googleapis.com"],
         objectSrc: ["'none'"],
       },
     }));
