@@ -33,7 +33,7 @@ async function deploy() {
     await executeCommand("git pull --rebase");
 
     spinner.text = "Installing npm dependencies...";
-    await executeCommand("npm ci"); // don't use --production because we need dev dependencies fo build
+    await executeCommand("npm install"); // don't use --production because we need dev dependencies fo build
     await executeCommand("git checkout package-lock.json");
 
     spinner.text = "Rebuilding app...";
