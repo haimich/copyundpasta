@@ -167,32 +167,35 @@
     }
   }
 
-  .footer-newsletter-component {
-    width: 25%;
-  }
-
-  @media all and (max-width: $breakpoint-lg) {
+  footer {
     .footer-newsletter-component {
-      width: 35%;
+      width: 25%;
+    }
+
+    @media all and (max-width: $breakpoint-lg) {
+      .footer-newsletter-component {
+        width: 35%;
+      }
+    }
+
+    @media all and (max-width: $breakpoint-md) {
+      .footer-newsletter-component {
+        width: 50%;
+      }
+    }
+
+    @media all and (max-width: $breakpoint-xs) {
+      .footer-newsletter-component {
+        width: 70%;
+      }
+    }
+
+    @media all and (max-width: 420px) {
+      .footer-newsletter-component {
+        width: 90%;
+      }
     }
   }
 
-  @media all and (max-width: $breakpoint-md) {
-    .footer-newsletter-component {
-      width: 50%;
-    }
-  }
-
-  @media all and (max-width: $breakpoint-xs) {
-    .footer-newsletter-component {
-      width: 70%;
-    }
-  }
-
-  @media all and (max-width: 420px) {
-    .footer-newsletter-component {
-      width: 90%;
-    }
-  }
 
 </style>
