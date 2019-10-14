@@ -145,6 +145,7 @@ const config = {
   */
   axios: {
     browserBaseURL: process.env.AXIOS_BASE_URL || `http://${DEFAULT_HOST}:${DEFAULT_PORT}`,
+    //TODO can't this be http://SERVER_HOST:SERVER_PORT ?
     baseUrl: process.env.AXIOS_BASE_URL || `http://${DEFAULT_HOST}:${DEFAULT_PORT}`,
     retry: false,
   },
@@ -183,7 +184,7 @@ const config = {
     transpile: [/^element-ui/],
 
     terser: {
-      parallel: false,
+      parallel: false, // this prevents a bug that prevents npm run build from completing
     },
 
     /*
@@ -230,6 +231,7 @@ const config = {
       'img-src': [
         "'self'",
         "https://*.copyundpasta.de",
+        "*.google-analytics.com'",
       ],
       'style-src': [
         "'self'",
@@ -250,13 +252,23 @@ const config = {
         "https://*.copyundpasta.de",
         "https://www.google.com/",
       ],
+      'worker-src': [
+        "'self'",
+        "https://*.copyundpasta.de",
+      ],
+      'form-action': [
+        "'self'",
+        "https://*.copyundpasta.de",
+      ],
       'manifest-src': [
         "'self'",
         "https://*.copyundpasta.de",
       ],
       'object-src': [
         "'none'",
-        "https://*.copyundpasta.de",
+      ],
+      'frame-ancestors': [
+        "'none'"
       ],
     }
   },
