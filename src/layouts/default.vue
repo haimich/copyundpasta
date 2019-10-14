@@ -35,7 +35,7 @@
           <span class="hamburger-icon hidden-sm-and-up">
             <HamburgerIconComponent
               :isMenuVisible="menuVisible"
-              @toggle="menuVisible = ! menuVisible"
+              @toggle="toggleMenu()"
             />
           </span>
 
@@ -61,7 +61,7 @@
           <el-menu
             :default-active="activeIndex"
             :mode="menuMode"
-            v-show="menuVisible"
+            :collapse="menuVisible"
             @select="menuItemChanged"
           >
             <el-menu-item index="home">
@@ -102,13 +102,7 @@
     
     <main>
       <el-row>
-        <el-col
-          :xl="xl"
-          :lg="lg"
-          :md="md"
-          :sm="sm"
-          :xs="xs"
-        >
+        <el-col :xl="xl" :lg="lg" :md="md" :sm="sm" :xs="xs">
           <!-- Main Container -->
           <nuxt />
         </el-col>
@@ -137,6 +131,7 @@
     ABOUT = "about",
     BLOGROLL = "blogroll",
     SUCHE = "suche",
+    OTHER = "other",
   }
 
   @Component({
@@ -206,6 +201,8 @@
           this.activeIndex = Pages.BLOGROLL;
           break;
         }
+
+        default: this.activeIndex = Pages.OTHER;
       }
     }
 
