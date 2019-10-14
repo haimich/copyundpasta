@@ -50,7 +50,6 @@
           :md="md"
           :sm="sm"
           :xs="xs"
-          style="position: relative;"
         >
         
           <!-- Logo -->
@@ -373,6 +372,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    position: relative;
 
     .logo {
       width: 280px;
