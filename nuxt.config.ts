@@ -213,6 +213,7 @@ const config = {
     policies: {
       'default-src': [
         "'self'",
+        "https://*.copyundpasta.de",
       ],
       'script-src': [
         "'self'",
