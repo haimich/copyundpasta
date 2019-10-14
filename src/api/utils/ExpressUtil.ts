@@ -24,6 +24,13 @@ export default class ExpressUtil {
     }));
     app.use(bodyParser.json());
     app.use(compression());
+
+    // allow CORS (needed by iOS)
+    app.use((req, res, next) => {
+      res.header("Access-Control-Allow-Origin", "copyundpasta.de");
+      res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+      next();
+    });
     
     // get rid of nasty header
     app.disable("x-powered-by");
