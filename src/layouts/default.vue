@@ -306,10 +306,12 @@
     }
 
     mounted() {
-      this.initCookieConsent();
-      this.determineMenuMode();
-
-      window.onresize = this.determineMenuMode;
+      if (process.client) {
+        this.initCookieConsent();
+        this.determineMenuMode();
+        
+        window.onresize = this.determineMenuMode;
+      }
     }
 
     created() {
