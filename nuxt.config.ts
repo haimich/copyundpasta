@@ -217,6 +217,7 @@ const config = {
       ],
       'script-src': [
         "'self'",
+        "https://*.copyundpasta.de",
         'https://www.google.com',
         'https://cdn.jsdelivr.net',
         'https://*.gstatic.com',
@@ -224,31 +225,38 @@ const config = {
       ],
       'connect-src': [
         "'self'",
+        "https://*.copyundpasta.de",
       ],
       'img-src': [
         "'self'",
+        "https://*.copyundpasta.de",
       ],
       'style-src': [
         "'self'",
+        "https://*.copyundpasta.de",
         "'unsafe-inline'",
         'https://fonts.googleapis.com',
         'https://cdn.jsdelivr.net',
       ],
       'font-src': [
         "'self'",
+        "https://*.copyundpasta.de",
         'https://cdn.jsdelivr.net',
         'https://*.gstatic.com',
         'https://fonts.googleapis.com',
       ],
       'frame-src': [
         "'self'",
+        "https://*.copyundpasta.de",
         "https://www.google.com/",
       ],
       'manifest-src': [
         "'self'",
+        "https://*.copyundpasta.de",
       ],
       'object-src': [
         "'none'",
+        "https://*.copyundpasta.de",
       ],
     }
   },
