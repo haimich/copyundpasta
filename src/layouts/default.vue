@@ -3,13 +3,7 @@
 
     <nav>
       <el-row>
-        <el-col
-          :xl="xl"
-          :lg="lg"
-          :md="md"
-          :sm="sm"
-          :xs="xs"
-        >
+        <el-col :xl="xl" :lg="lg" :md="md" :sm="sm" :xs="xs">
           <span class="header-social-icons hidden-xs-only">
             <ul>
               <li>
