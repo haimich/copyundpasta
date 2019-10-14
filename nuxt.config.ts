@@ -208,7 +208,7 @@ const config = {
   ** Render configuration
   */
  render: {
-  // define CSP for application (api endpoint CSP is defined in ExpressUtil)
+  // define Content Security Policy for application (api endpoint CSP is defined in ExpressUtil)
   csp: {
     policies: {
       'default-src': [
@@ -220,6 +220,9 @@ const config = {
         'https://cdn.jsdelivr.net',
         'https://*.gstatic.com',
         'https://www.google-analytics.com',
+      ],
+      'connect-src': [
+        "'self'",
       ],
       'img-src': [
         "'self'",

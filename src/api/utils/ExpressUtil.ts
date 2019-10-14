@@ -18,6 +18,7 @@ export default class ExpressUtil {
     app.use(helmet.contentSecurityPolicy({
       directives: {
         defaultSrc: ["'self'"],
+        connectSrc: ["'self'"],
         objectSrc: ["'none'"],
       },
     }));
