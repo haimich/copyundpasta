@@ -75,6 +75,12 @@
             <el-menu-item index="blogroll">
               <nuxt-link to="/blogroll">BLOGROLL</nuxt-link>
             </el-menu-item>
+
+            <el-menu-item index="home" class="hidden-sm-and-up">
+              <a href="mailto:hello@copyundpasta.de" title="Schreib mir eine Mail!">
+                KONTAKT
+              </a>
+            </el-menu-item>
             
             <el-menu-item index="suche">
               <div class="menu-item-search hidden-sm-and-up">
