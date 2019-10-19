@@ -3,5 +3,5 @@ import a2 from "./zimtschnecken-aka-cinnamon-rolls";
 
 export default [
   a1,
-  a2,
+  // a2,
 ];
