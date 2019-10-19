@@ -50,6 +50,7 @@
       <el-image
         v-if="image != null && image !== ''"
         :src="image"
+        fit="cover"
         style="min-height: 300px; margin-top: 16px; margin-bottom: 60px;"
         alt="Titelbild"
       ></el-image>
