@@ -45,7 +45,9 @@
           </p>
 
           <div style="display: flex; justify-content: center; margin-top: 10px;">
-            <img src="/images/about/unterschrift.jpg" alt="Euer Michael" style="width: 180px;">
+            <span class="signature">
+              Euer Michael
+            </span>
           </div>
         </el-col>
       </el-row>
@@ -66,5 +68,13 @@
 </script>
 
 <style lang="scss" scoped>
+
+  .signature {
+    font-family: "Happy Fox", "Roboto", serif;
+    font-size: 35px;
+    font-weight: 100;
+    letter-spacing: 2px;
+    color: #383838;
+  }
 
 </style>

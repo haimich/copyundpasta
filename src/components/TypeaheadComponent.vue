@@ -12,7 +12,7 @@
       :highlight-first-item="true"
       :trigger-on-focus="false"
       :hide-loading="true"
-      placeholder="Suche"
+      placeholder="Rezeptname oder Zutat eingeben"
       autofocus
       ref="autocomplete"
       @select="handleSelect"
