@@ -144,8 +144,9 @@ const config = {
   ** Doc: https://axios.nuxtjs.org/usage
   */
   axios: {
-    browserBaseURL: process.env.AXIOS_BASE_URL || `http://${DEFAULT_HOST}:${DEFAULT_PORT}`,
-    //TODO can't this be http://SERVER_HOST:SERVER_PORT ?
+    // url for xhr request
+    browserBaseURL: "/",
+    // url for server side requests
     baseUrl: process.env.AXIOS_BASE_URL || `http://${DEFAULT_HOST}:${DEFAULT_PORT}`,
     retry: false,
   },
@@ -231,7 +232,7 @@ const config = {
       'img-src': [
         "'self'",
         "https://*.copyundpasta.de",
-        "*.google-analytics.com'",
+        "*.google-analytics.com",
       ],
       'style-src': [
         "'self'",
