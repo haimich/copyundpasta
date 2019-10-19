@@ -54,7 +54,7 @@
         
           <!-- Logo -->
           <nuxt-link to="/" title="HOME">
-            <img class="logo" src="/images/logo.svg">
+            <img class="logo" src="/images/logo.svg" alt="Logo">
           </nuxt-link>
 
           <!-- Menu -->
@@ -121,7 +121,6 @@
   import { Vue, Component, Prop, Watch } from "vue-property-decorator";
   import TypeaheadComponent from "../components/TypeaheadComponent.vue";
   import HamburgerIconComponent from "../components/HamburgerIconComponent.vue";
-  import LogoComponent from "../components/LogoComponent.vue";
   import FooterComponent from "../components/FooterComponent.vue";
   import ScrollToTopComponent from "@/components/ScrollToTopComponent.vue";
 
@@ -138,7 +137,6 @@
     components: {
       TypeaheadComponent,
       HamburgerIconComponent,
-      LogoComponent,
       FooterComponent,
       ScrollToTopComponent,
     }
@@ -207,6 +205,8 @@
     }
 
     menuItemChanged(key: Pages) {
+      console.log("menu item changed")
+      
       if (this.menuMode === "vertical") {
         this.menuVisible = false;
       }
@@ -251,6 +251,7 @@
     }
   
     toggleMenu() {
+      console.log("toggle menu");
       this.menuVisible = ! this.menuVisible;
     }
 
@@ -267,11 +268,6 @@
     }
 
     initCookieConsent() {
-      // @ts-ignore
-      if (window.cookieconsent == null) {
-        return;
-      }
-
       // @ts-ignore
       window.cookieconsent.initialise({
         "palette": {

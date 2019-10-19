@@ -19,7 +19,7 @@
 
     <el-row style="padding-top: 30px; margin-bottom: 30px; text-align: center;">
       <el-col>
-        <a href="https://appbase.io/" target="_blank">
+        <a href="https://appbase.io/" target="_blank" rel="noopener">
           <img src="/images/appbase.svg" alt="Appbase Search Technology" style="width: 163px;">
         </a>
       </el-col>
@@ -38,6 +38,7 @@
         <img
           src="/favicon-32x32.png"
           class="mouse-icon"
+          alt="Maus-Icon"
         >
       </el-col>
 
