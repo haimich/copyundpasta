@@ -260,6 +260,7 @@ const config = {
       'form-action': [
         "'self'",
         "https://*.copyundpasta.de",
+        "https://*list-manage.com",
       ],
       'manifest-src': [
         "'self'",
