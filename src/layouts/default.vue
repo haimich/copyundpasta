@@ -184,6 +184,8 @@
 
     private menuMode = "horizontal";
 
+    private previousWindowWidth = null;
+
     @Watch("$route.path")
     routeChanged() {
       //select correct menu item
@@ -213,8 +215,6 @@
     }
 
     menuItemChanged(key: Pages) {
-      console.log("menu item changed")
-      
       if (this.menuMode === "vertical") {
         this.menuVisible = false;
       }
@@ -259,16 +259,20 @@
     }
   
     toggleMenu() {
-      console.log("toggle menu");
       this.menuVisible = ! this.menuVisible;
     }
 
     determineMenuMode() {
       let currentWidth = window.innerWidth || document.body.clientWidth;
 
-      this.menuMode = currentWidth < 794 ? "vertical" : "horizontal"; // this should be 768 but I had to correct it manually to work
+      if (this.previousWindowWidth !== null && this.previousWindowWidth === currentWidth) {
+        // nothing changed
+        return;
+      } else {
+        this.previousWindowWidth = currentWidth;
+      }
 
-      console.log("determine menu mode", this.menuMode)
+      this.menuMode = currentWidth < 794 ? "vertical" : "horizontal"; // this should be 768 but I had to correct it manually to work
 
       if (this.menuMode === "horizontal") {
         this.menuVisible = true;
@@ -302,8 +306,6 @@
     }
 
     mounted() {
-      console.log("mounted", process.client)
-
       if (process.client) {
         this.initCookieConsent();
         this.determineMenuMode();
@@ -314,7 +316,6 @@
     }
 
     created() {
-      console.log("created", process.client)
       this.routeChanged();
     }
 
