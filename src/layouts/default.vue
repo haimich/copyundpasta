@@ -58,44 +58,46 @@
           </nuxt-link>
 
           <!-- Menu -->
-          <el-menu
-            :default-active="activeIndex"
-            :mode="menuMode"
-            :collapse="menuVisible"
-            @select="menuItemChanged"
-          >
-            <el-menu-item index="home">
-              <nuxt-link to="/">HOME</nuxt-link>
-            </el-menu-item>
+          <transition name="slide-fade">
+            <el-menu
+              :default-active="activeIndex"
+              :mode="menuMode"
+              v-show="menuVisible"
+              @select="menuItemChanged"
+            >
+              <el-menu-item index="home">
+                <nuxt-link to="/">HOME</nuxt-link>
+              </el-menu-item>
 
-            <el-menu-item index="about">
-              <nuxt-link to="/about">ÜBER MICH</nuxt-link>
-            </el-menu-item>
+              <el-menu-item index="about">
+                <nuxt-link to="/about">ÜBER MICH</nuxt-link>
+              </el-menu-item>
 
-            <el-menu-item index="blogroll">
-              <nuxt-link to="/blogroll">BLOGROLL</nuxt-link>
-            </el-menu-item>
+              <el-menu-item index="blogroll">
+                <nuxt-link to="/blogroll">BLOGROLL</nuxt-link>
+              </el-menu-item>
 
-            <el-menu-item index="home" class="hidden-sm-and-up">
-              <a href="mailto:hello@copyundpasta.de" title="Schreib mir eine Mail!">
-                KONTAKT
-              </a>
-            </el-menu-item>
-            
-            <el-menu-item index="suche">
-              <div class="menu-item-search hidden-sm-and-up">
-                SUCHE
-              </div>
+              <el-menu-item index="home" class="hidden-sm-and-up">
+                <a href="mailto:hello@copyundpasta.de" title="Schreib mir eine Mail!">
+                  KONTAKT
+                </a>
+              </el-menu-item>
+              
+              <el-menu-item index="suche">
+                <div class="menu-item-search hidden-sm-and-up">
+                  SUCHE
+                </div>
 
-              <el-tooltip content="Copy & Pasta durchsuchen" placement="bottom">
-                <FontAwesome
-                  :icon="['fas', 'search']"
-                  class="hidden-xs-only"
-                  style="font-size: 15px;"
-                />
-              </el-tooltip>
-            </el-menu-item>
-          </el-menu>
+                <el-tooltip content="Copy & Pasta durchsuchen" placement="bottom">
+                  <FontAwesome
+                    :icon="['fas', 'search']"
+                    class="hidden-xs-only"
+                    style="font-size: 15px;"
+                  />
+                </el-tooltip>
+              </el-menu-item>
+            </el-menu>
+          </transition>
 
           <!-- Search box -->
           <TypeaheadComponent
@@ -264,7 +266,9 @@
     determineMenuMode() {
       let currentWidth = window.innerWidth || document.body.clientWidth;
 
-      this.menuMode = currentWidth < 794 ? "vertical" : "horizontal"; // this should be 768 but it had to be corrected to work
+      this.menuMode = currentWidth < 794 ? "vertical" : "horizontal"; // this should be 768 but I had to correct it manually to work
+
+      console.log("determine menu mode", this.menuMode)
 
       if (this.menuMode === "horizontal") {
         this.menuVisible = true;
@@ -298,15 +302,19 @@
     }
 
     mounted() {
+      console.log("mounted", process.client)
+
       if (process.client) {
         this.initCookieConsent();
         this.determineMenuMode();
         
+        // watch for resolution changes
         window.onresize = this.determineMenuMode;
       }
     }
 
     created() {
+      console.log("created", process.client)
       this.routeChanged();
     }
 
@@ -394,7 +402,7 @@
     @media all and (max-width: $breakpoint-xs) {
       .logo {
         width: 225px;
-        margin-bottom: 0;
+        margin-bottom: 10px;
       }
     }
 
@@ -427,10 +435,30 @@
     }
   }
 
+  /* Enter and leave animations can use different */
+  /* durations and timing functions.              */
+  .slide-fade-enter-active {
+    transition: all .3s ease;
+  }
+  .slide-fade-leave-active {
+    transition: all .2s ease;
+  }
+  .slide-fade-enter, .slide-fade-leave-to
+  /* .slide-fade-leave-active below version 2.1.8 */ {
+    transform: translateX(10px);
+    opacity: 0;
+  }
+
   main {
     min-height: 600px;
     margin-top: 40px;
     margin-bottom: 40px;
+  }
+
+  @media all and (max-width: $breakpoint-xs) {
+    main {
+      margin-top: 10px;
+    }
   }
 
   .curly-divider {

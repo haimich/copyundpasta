@@ -49,7 +49,7 @@
 
         <!-- Newest article -->
         <div v-if="newestArticle != null">
-          <h2 class="article-heading" style="padding: 0 20px; margin-bottom: 10px;">
+          <h2 class="article-heading" style="padding: 0 20px; margin-bottom: 10px; margin-top: 0;">
             {{ newestArticle.title }}
           </h2>
           <h5 class="newest-subtitle">
@@ -298,12 +298,6 @@
 
   .main-container {
     margin-top: 20px;
-  }
-
-  @media all and (max-width: $breakpoint-md) {
-    .main-container {
-      margin-top: 10px;
-    }
   }
 
   .newest-article img {
