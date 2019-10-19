@@ -53,6 +53,7 @@
               <vue-recaptcha
                 :sitekey="recaptchaKey"
                 @verify="recaptchaVerified"
+                :loadRecaptchaScript="true"
                 ref="recaptcha"
               ></vue-recaptcha>
             </el-col>
