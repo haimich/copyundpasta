@@ -31,34 +31,32 @@
             but the frosting is my own creation.
           </p>
 
-          <p>
-            Martha’s recipe makes 32 cupcakes. I didn’t need quite that many (read: if I make that many I’ll eat them all), so for the sake of our waistlines, I halved it. Her recipe says to fill the liners 3/4 full, which is a lot, but I thought maybe they wouldn’t bake up so high. The cupcakes came out a little larger than I expected – I should have gone with my gut! They were quite domed when they came out of the oven, and I actually used a tea towel to press them down a bit so they wouldn’t be so puffy. Next time I’ll only fill the liners 2/3 full as usual, and make a few more cupcakes instead.
-          </p>
+          <el-carousel height="718px">
+            <el-carousel-item
+              v-for="(url, index) in stepPhotos"
+              :key="index"
+              :autoplay="false"
+            >
+              <el-image
+                :src="url"
+                fit="contain"
+                alt="Rezeptschritte"
+              ></el-image>
+            </el-carousel-item>
+          </el-carousel>
 
         </el-col>
       </el-row>
     </article>
 
-    <el-row style="margin-top: 20px;">
-      <el-col
-        :xl="xl"
-        :lg="lg"
-        :md="md"
-        :sm="sm"
-        :xs="xs"
-      >
-        <RecipeComponent :recipe="recipe" :ratings="ratings" style="margin-top: 40px;" />
+    <el-row>
+      <el-col :xl="xl" :lg="lg" :md="md" :sm="sm" :xs="xs">
+        <RecipeComponent :recipe="recipe" :ratings="ratings" style="margin-top: 60px;" />
       </el-col>
     </el-row>
 
-    <el-row style="margin-top: 40px;">
-      <el-col
-        :xl="xl"
-        :lg="lg"
-        :md="md"
-        :sm="sm"
-        :xs="xs"
-      >
+    <el-row>
+      <el-col :xl="xl" :lg="lg" :md="md" :sm="sm" :xs="xs">
         <CommentComponent :comments="comments" :slug="article.slug" @commentAdded="refreshComments" />
       </el-col>
     </el-row>
@@ -84,6 +82,16 @@
   export default class extends BaseArticlePage {
 
     private ratings: RatingResponse;
+
+    private stepPhotos = [
+      "/images/articles/zimtschnecken-aka-cinnamon-rolls/steps/1.jpeg",
+      "/images/articles/zimtschnecken-aka-cinnamon-rolls/steps/2.jpeg",
+      "/images/articles/zimtschnecken-aka-cinnamon-rolls/steps/3.jpeg",
+      "/images/articles/zimtschnecken-aka-cinnamon-rolls/steps/4.jpeg",
+      "/images/articles/zimtschnecken-aka-cinnamon-rolls/steps/5.jpeg",
+      "/images/articles/zimtschnecken-aka-cinnamon-rolls/steps/6.jpeg",
+      "/images/articles/zimtschnecken-aka-cinnamon-rolls/steps/7.jpeg",
+    ];
 
     constructor() {
       super(article, recipe);

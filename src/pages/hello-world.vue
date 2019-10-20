@@ -113,14 +113,8 @@
       </el-row>
     </article>
 
-    <el-row style="margin-top: 40px;">
-      <el-col
-        :xl="xl"
-        :lg="lg"
-        :md="md"
-        :sm="sm"
-        :xs="xs"
-      >
+    <el-row>
+      <el-col :xl="xl" :lg="lg" :md="md" :sm="sm" :xs="xs">
         <CommentComponent :comments="comments" :slug="article.slug" @commentAdded="refreshComments" />
       </el-col>
     </el-row>

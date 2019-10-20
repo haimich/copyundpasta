@@ -1,6 +1,6 @@
 <template>
 
-  <div>
+  <div style="margin-top: 40px;">
 
     <h3 id="comments" style="margin-bottom: 6px;">
       HINTERLASSE EINEN KOMMENTAR
