@@ -269,7 +269,11 @@ const steps: (RecipeStepGroup|RecipeStep)[] = [
 // - man kann die Rechtecke so zuschneiden, dass die Ränder gerade sind (Optik)
 // - wenn die Schnecke nicht gut aussieht, kann man sie rumdrehen
 // - man kann die Schnecken vor dem Backen noch etwas platt drücken in der Auflaufform
-// - am Besten am gleichen Tag verzehren, über Nacht trock
+
+// Variationen:
+// - Apfelstücke
+// - Rosinen
+// - im Winter kann man statt Zimt auch Lebkuchengewürz verwenden
 
 const notes = [];
 
