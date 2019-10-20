@@ -29,6 +29,7 @@ export default class RecipeUtil {
     let preparation = ingredient.preparation != null ? ", " + ingredient.preparation : "";
     let ingredientName = RecipeUtil.formatIngredientName(ingredient)
     let description = "";
+    let unitBeforeIngredient = false;
     let unit;
   
     switch (ingredient.unit) {
@@ -46,20 +47,24 @@ export default class RecipeUtil {
         break;
       case RecipeUnit.einige:
         unit = "einige";
+        unitBeforeIngredient = true;
+        break;
+      case RecipeUnit.pinch:
+        unit = "Prise";
         break;
       default:
         unit = "";
-    }
-
-    if (amount != null && amount !== "") {
-      amount += " "; // we need a space here
     }
 
     if (ingredient.description != null && ingredient.description !== "") {
       description = " " + ingredient.description;
     }
 
-    return `${amount}${unit} ${ingredientName}${description}${preparation}`
+    if (unitBeforeIngredient) {
+      return `${unit} ${amount} ${ingredientName}${description}${preparation}`
+    } else {
+      return `${amount} ${unit} ${ingredientName}${description}${preparation}`
+    }
   }
 
   public static formatAmount(ingredient: RecipeIngredient, servingsMultiplier = 1): string {

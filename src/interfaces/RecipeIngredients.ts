@@ -11,6 +11,7 @@ export enum RecipeUnit {
   el = "el",
   tl = "tl",
   einige = "einige",
+  pinch = "pinch",
 }
 
 export enum RecipeServingsUnit {
@@ -46,6 +47,18 @@ export const Ingredients: Ingredients = {
     id: "zucker",
     name: "Zucker",
   },
+  puderzucker: {
+    id: "puderzucker",
+    name: "Puderzucker",
+  },
+  braunerzucker: {
+    id: "braunerzucker",
+    name: "brauner Zucker",
+  },
+  hagelzucker: {
+    id: "hagelzucker",
+    name: "Hagelzucker",
+  },
   milch: {
     id: "milch",
     name: "Milch",
@@ -71,6 +84,10 @@ export const Ingredients: Ingredients = {
   butter: {
     id: "butter",
     name: "Butter",
+  },
+  zimt: {
+    id: "zimt",
+    name: "Zimt",
   },
   zitronenabrieb: {
     id: "zitronenabrieb",

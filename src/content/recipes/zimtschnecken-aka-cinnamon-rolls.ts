@@ -2,6 +2,7 @@ import RecipeCategories from "../../interfaces/RecipeCategories";
 import RecipeTags from "../../interfaces/RecipeTags";
 import { Recipe, RecipeStep, RecipeServings, RecipeIngredient, RecipeIngredientEntry, RecipeIngredientGroup, RecipeStepGroup } from "../../interfaces/Recipe";
 import { Ingredients, IngredientPreparation, RecipeUnit, RecipeServingsUnit } from "../../interfaces/RecipeIngredients";
+import article from "../articles/zimtschnecken-aka-cinnamon-rolls";
 
 const servings: RecipeServings = {
   amount: 16,
@@ -21,13 +22,13 @@ const ingredients: (RecipeIngredientGroup|RecipeIngredient)[] = [
       },
       {
         isGroup: false,
-        amount: 225,
+        amount: 240,
         unit: RecipeUnit.g,
         ingredient: Ingredients.milch,
       },
       {
         isGroup: false,
-        amount: 25,
+        amount: 30,
         unit: RecipeUnit.g,
         ingredient: Ingredients.hefe,
       },
@@ -40,13 +41,7 @@ const ingredients: (RecipeIngredientGroup|RecipeIngredient)[] = [
       },
       {
         isGroup: false,
-        amount: 0.5,
-        unit: RecipeUnit.tl,
-        ingredient: Ingredients.salz,
-      },
-      {
-        isGroup: false,
-        amount: 80,
+        amount: 60,
         unit: RecipeUnit.g,
         ingredient: Ingredients.zucker,
       },
@@ -59,9 +54,15 @@ const ingredients: (RecipeIngredientGroup|RecipeIngredient)[] = [
       },
       {
         isGroup: false,
-        amount: 1,
+        amount: 2,
         unit: RecipeUnit.tl,
         ingredient: Ingredients.zitronenabrieb,
+      },
+      {
+        isGroup: false,
+        amount: 1,
+        unit: RecipeUnit.pinch,
+        ingredient: Ingredients.salz,
       },
       {
         isGroup: false,
@@ -69,6 +70,59 @@ const ingredients: (RecipeIngredientGroup|RecipeIngredient)[] = [
         unit: RecipeUnit.tl,
         ingredient: Ingredients.vanillearoma,
         description: "(oder Vanillezucker)",
+      },
+    ],
+  },
+
+  {
+    isGroup: true,
+    title: "Füllung",
+    ingredients: [
+      {
+        isGroup: false,
+        amount: 220,
+        unit: RecipeUnit.g,
+        ingredient: Ingredients.braunerzucker,
+      },
+      {
+        isGroup: false,
+        amount: 150,
+        unit: RecipeUnit.g,
+        ingredient: Ingredients.butter,
+        description: "(kalt)"
+      },
+      {
+        isGroup: false,
+        amountFrom: 2,
+        amountTo: 3,
+        unit: RecipeUnit.tl,
+        ingredient: Ingredients.zimt,
+      },
+    ],
+  },
+
+  {
+    isGroup: true,
+    title: "Glasur",
+    ingredients: [
+      {
+        isGroup: false,
+        amount: 60,
+        unit: RecipeUnit.g,
+        ingredient: Ingredients.puderzucker,
+      },
+      {
+        isGroup: false,
+        amount: 30,
+        unit: RecipeUnit.g,
+        ingredient: Ingredients.wasser,
+      },
+      {
+        isGroup: false,
+        amount: 3,
+        unit: RecipeUnit.el,
+        ingredient: Ingredients.hagelzucker,
+        description: "(optional)",
       },
     ],
   },
@@ -82,15 +136,16 @@ const notes = [];
 
 const tags = [
   RecipeTags.hefeteig,
+  RecipeTags.party,
 ];
 
-const createdAt = "2019-10-12 21:00:00";
+const createdAt = article.createdAt;
 
 const recipe: Recipe = {
-  slug: "zimtschnecken-aka-cinnamon-rolls",
-  title: "Zimtschnecken aka Cinnamon Rolls",
-  categoryId: RecipeCategories.frostings.id,
-  previewImageUrl: "/images/recipes/zimtschnecken-aka-cinnamon-rolls/main.jpg",
+  slug: article.slug,
+  title: article.title,
+  categoryId: RecipeCategories.hefekuchen.id,
+  previewImageUrl: article.previewImageUrl,
   servings,
   ingredients,
   steps,

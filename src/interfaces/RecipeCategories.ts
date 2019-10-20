@@ -16,17 +16,13 @@ export interface AllRecipeCategories {
 }
 
 const categories: RecipeCategoriesById = {
-  desserts: {
-    id: "desserts",
-    name: "Desserts",
-  },
   kuchen: {
     id: "kuchen",
     name: "Kuchen",
   },
-  frostings: {
-    id: "frostings",
-    name: "Frostings & Fillings",
+  hefekuchen: {
+    id: "hefekuchen",
+    name: "Hefekuchen",
     parentCategory: "kuchen",
   },
 }

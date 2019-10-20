@@ -193,6 +193,7 @@
   import { Recipe, RecipeStep, RecipeServings, RecipeIngredient, RecipeIngredientGroup, RecipeStepGroup } from "@/interfaces/Recipe";
   import { RecipeUnit, RecipeServingsUnit } from "@/interfaces/RecipeIngredients";
   import { Tag } from "@/interfaces/RecipeTags";
+  import TAGS from "@/interfaces/RecipeTags";
   import { $n } from "@/filters/numberFilter";
   import RecipeService from "../../services/RecipeService";
   import { RatingResponse } from "@/interfaces/Rating";
@@ -259,7 +260,10 @@
         return [];
       }
 
-      return this.recipe.tags;
+      let tags = this.recipe.tags.map(tagId => {
+        // @ts-ignore
+        return TAGS[tagId];
+      });
     }
 
     printRecipe() {

@@ -8,7 +8,7 @@ export interface RecipeTag {
   [key: string]: Tag;
 }
 
-const tags: RecipeTag = {
+const TAGS: RecipeTag = {
   resteverwertung: {
     id: "resteverwertung",
     name: "Resteverwertung",
@@ -17,6 +17,10 @@ const tags: RecipeTag = {
     id: "hefeteig",
     name: "Hefeteig",
   },
+  party: {
+    id: "party",
+    name: "Party",
+  },
 }
 
-export default tags;
+export default TAGS;
