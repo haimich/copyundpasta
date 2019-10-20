@@ -251,6 +251,7 @@ const config = {
         "'self'",
         "https://*.copyundpasta.de",
         "https://www.google.com/",
+        "https://www.youtube.com/",
       ],
       'worker-src': [
         "'self'",

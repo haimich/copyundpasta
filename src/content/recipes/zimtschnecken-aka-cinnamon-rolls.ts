@@ -130,6 +130,12 @@ const ingredients: (RecipeIngredientGroup|RecipeIngredient)[] = [
 
 const steps: (RecipeStepGroup|RecipeStep)[] = [
   {
+    isGroup: false,
+    type: "step",
+    content: "Eine rechteckige Form (40cm x 26cm) mit Backpapier auslegen. Das kann eine Auflaufform aus Keramik oder eine klassische Backform sein. Alternativ kann man den Teig auch in einer runden Form backen.",
+  },
+
+  {
     isGroup: true,
     title: "Hefeteig",
     steps: [
@@ -179,11 +185,6 @@ const steps: (RecipeStepGroup|RecipeStep)[] = [
         isGroup: false,
         type: "step",
         content: "Hierzu einfach alle Zutaten mit einer Küchenmaschine (normaler Rühraufsatz) verühren.",
-      },
-      {
-        isGroup: false,
-        type: "step",
-        content: "Eine rechteckige Form (40cm x 26cm) mit Backpapier auslegen. Das kann eine Auflaufform aus Keramik oder eine klassische Backform sein. Alternativ kann man den Teig auch in einer runden Form backen.",
       },
     ],
   },
@@ -265,11 +266,6 @@ const steps: (RecipeStepGroup|RecipeStep)[] = [
 // - man kann die Rechtecke so zuschneiden, dass die Ränder gerade sind (Optik)
 // - wenn die Schnecke nicht gut aussieht, kann man sie rumdrehen
 // - man kann die Schnecken vor dem Backen noch etwas platt drücken in der Auflaufform
-
-// Variationen:
-// - Apfelstücke
-// - Rosinen
-// - im Winter kann man statt Zimt auch Lebkuchengewürz verwenden
 
 const notes = [];
 

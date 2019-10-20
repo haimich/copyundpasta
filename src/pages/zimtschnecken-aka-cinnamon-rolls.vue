@@ -31,6 +31,17 @@
             ></vueper-slide>
           </vueper-slides>
 
+          <el-row style="display: flex; justify-content: center; margin-top: 20px;">
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/9NFkn3rqffA"
+              frameborder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </el-row>
+
         </el-col>
       </el-row>
     </article>
@@ -38,6 +49,18 @@
     <el-row>
       <el-col :xl="xl" :lg="lg" :md="md" :sm="sm" :xs="xs">
         <RecipeComponent :recipe="recipe" :ratings="ratings" style="margin-top: 60px;" />
+      </el-col>
+    </el-row>
+
+    <el-row>
+      <el-col :xl="xl" :lg="lg" :md="md" :sm="sm" :xs="xs">
+        <h3>Variationen</h3>
+
+        <ul>
+          <li>Apfelstücke oder Rosinen zur Füllung geben</li>
+          <li>im Winter kann man statt Zimt auch Lebkuchengewürz verwenden</li>
+          <li>in Amerika werden Cinnamon Rolls gerne mit einem <ArticleLinkComponent href="https://thestayathomechef.com/best-homemade-cinnamon-rolls-ever/" text="Frischkäsefrosting" /> serviert</li>
+        </ul>
       </el-col>
     </el-row>
 
