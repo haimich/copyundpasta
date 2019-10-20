@@ -31,11 +31,14 @@
             but the frosting is my own creation.
           </p>
 
-          <el-carousel height="718px">
+          <el-carousel
+            :autoplay="false"
+            trigger="click"
+            height="718px"
+          >
             <el-carousel-item
               v-for="(url, index) in stepPhotos"
               :key="index"
-              :autoplay="false"
             >
               <el-image
                 :src="url"
@@ -91,6 +94,8 @@
       "/images/articles/zimtschnecken-aka-cinnamon-rolls/steps/5.jpeg",
       "/images/articles/zimtschnecken-aka-cinnamon-rolls/steps/6.jpeg",
       "/images/articles/zimtschnecken-aka-cinnamon-rolls/steps/7.jpeg",
+      "/images/articles/zimtschnecken-aka-cinnamon-rolls/steps/8.jpeg",
+      "/images/articles/zimtschnecken-aka-cinnamon-rolls/steps/9.jpeg",
     ];
 
     constructor() {
