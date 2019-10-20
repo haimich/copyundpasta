@@ -53,7 +53,7 @@
             {{ newestArticle.title }}
           </h2>
           <h5 class="newest-subtitle">
-            {{ newestArticle.createdAt | formatAsDate }}
+            <i>{{ newestArticle.createdAt | formatAsDate }}</i>
           </h5>
 
           <img :src="newestArticle.previewImageUrl" alt="Artikelfoto">
