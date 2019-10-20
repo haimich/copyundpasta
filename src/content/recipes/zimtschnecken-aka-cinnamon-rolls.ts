@@ -5,7 +5,7 @@ import { Ingredients, IngredientPreparation, RecipeUnit, RecipeServingsUnit } fr
 import article from "../articles/zimtschnecken-aka-cinnamon-rolls";
 
 const servings: RecipeServings = {
-  amount: 16,
+  amount: 40,
   unit: RecipeServingsUnit.quantity,
 };
 

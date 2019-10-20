@@ -92,7 +92,6 @@ export const Ingredients: Ingredients = {
   zitronenabrieb: {
     id: "zitronenabrieb",
     name: "Abrieb einer unbehandelten Zitrone",
-    namePlural: "Abrieb von unbehandelten Zitronen",
   },
   zwiebel: {
     id: "zwiebel",

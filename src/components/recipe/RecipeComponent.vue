@@ -170,12 +170,12 @@
     </el-row>
 
     <el-row v-if="! isPrint" :gutter="20" style="margin-top: 15px;">
-      <el-col :span="8">
+      <el-col :span="24">
         <el-tag
           v-for="tag in getTags()"
           :key="tag.id"
           effect="plain"
-          style="text-transform: lowercase"
+          style="text-transform: lowercase; margin-right: 10px;"
         >
           #{{ tag.name }}
         </el-tag>
@@ -260,10 +260,7 @@
         return [];
       }
 
-      let tags = this.recipe.tags.map(tagId => {
-        // @ts-ignore
-        return TAGS[tagId];
-      });
+      return this.recipe.tags;
     }
 
     printRecipe() {
