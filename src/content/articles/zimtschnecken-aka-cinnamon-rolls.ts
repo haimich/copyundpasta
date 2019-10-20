@@ -8,7 +8,7 @@ const article: Article = {
   title: "Zimtschnecken aka Cinnamon Rolls",
   categoryId: ArticleCategories.rezepte.id,
   isHeroArticle: false,
-  shortDescription: `Mit diesen Zimtschnecken werden Kindheitserinnerungen wahr`,
+  shortDescription: `Bei diesen Zimtschnecken werden Kindheitserinnerungen wahr`,
   mainImageUrl: "/images/articles/zimtschnecken-aka-cinnamon-rolls/main.jpg",
   previewImageUrl: "/images/articles/zimtschnecken-aka-cinnamon-rolls/preview.jpg",
   createdAt,

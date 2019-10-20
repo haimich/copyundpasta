@@ -132,6 +132,8 @@ const steps: (RecipeStepGroup|RecipeStep)[] = [
   
 ];
 
+// 40 x 26 
+
 const notes = [];
 
 const tags = [

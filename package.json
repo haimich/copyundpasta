@@ -53,7 +53,8 @@
     "uniqid": "^5.0.3",
     "vue-property-decorator": "^8.2.2",
     "vue-recaptcha": "^1.2.0",
-    "vue-timeago": "^5.1.2"
+    "vue-timeago": "^5.1.2",
+    "vueperslides": "^1.20.3"
   },
   "devDependencies": {
     "@nuxt/typescript-build": "^0.3.1",

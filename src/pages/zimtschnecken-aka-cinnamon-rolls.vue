@@ -19,34 +19,17 @@
           </p>
 
           <ArticleImageComponent
-            src="https://livforcake.com/wp-content/uploads/2015/02/IMG_49822.jpg"
-            alt="Cupcake"
+            src="/images/articles/zimtschnecken-aka-cinnamon-rolls/cinnamon-rolls.jpg"
+            alt="Cinnamon Rolls von oben"
           />
 
-          <p>
-            The cupcake recipe is straight up from my 
-
-            <ArticleLinkComponent href="https://www.marthastewart.com/355559/devils-food-cupcakes" text="Martha Stewart’s Cupcakes book" />,
-
-            but the frosting is my own creation.
-          </p>
-
-          <el-carousel
-            :autoplay="false"
-            trigger="click"
-            height="718px"
-          >
-            <el-carousel-item
+          <vueper-slides :slide-ratio="0.8">
+            <vueper-slide
               v-for="(url, index) in stepPhotos"
               :key="index"
-            >
-              <el-image
-                :src="url"
-                fit="contain"
-                alt="Rezeptschritte"
-              ></el-image>
-            </el-carousel-item>
-          </el-carousel>
+              :image="url"
+            ></vueper-slide>
+          </vueper-slides>
 
         </el-col>
       </el-row>
@@ -78,9 +61,13 @@
   import article from "@/content/articles/zimtschnecken-aka-cinnamon-rolls";
   import recipe from "@/content/recipes/zimtschnecken-aka-cinnamon-rolls";
 
+  import { VueperSlides, VueperSlide } from "vueperslides";
+  import "vueperslides/dist/vueperslides.css";
+
   @Component({
     head: ArticleUtil.defaultHead(article),
     asyncData: ArticleUtil.defaultAsyncData(article, recipe),
+    components: { VueperSlides, VueperSlide },
   })
   export default class extends BaseArticlePage {
 
