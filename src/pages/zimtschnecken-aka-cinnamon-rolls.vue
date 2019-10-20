@@ -26,7 +26,7 @@
           />
 
           <p>
-            Zimtschnecken aus Hefeteig sind in vielen Ländern der Erde beliebt, aber erfunden wurden sie mit großer Wahrscheinlichkeit in Schweden. Hier nennt man das Zimtgebäck <i>Kanelbulle</i> und ist so stolz darauf, dass man ihm sogar einen eigenen Feiertag gewidmet hat: am 4. Oktober wird hier jedes Jahr der <ArticleQuoteComponent text="Kanelbullens Dag" /> gefeiert. <br /><br />
+            Zimtschnecken aus Hefeteig sind in vielen Ländern der Erde beliebt, aber erfunden wurden sie mit großer Wahrscheinlichkeit in Schweden. Hier nennt man das Zimtgebäck <i>Kanelbulle</i> und ist so stolz darauf, dass man ihm sogar einen eigenen Feiertag gewidmet hat: Am 4. Oktober wird hier jedes Jahr der <ArticleQuoteComponent text="Kanelbullens Dag" /> gefeiert. <br /><br />
 
             Neben Schweden hat sich aber noch ein weiteres Land in die süßen Schnecken verliebt: in den USA werden sie <ArticleQuoteComponent text="Cinnamon Rolls" /> oder auch <ArticleQuoteComponent text="Cinnamon Buns" /> genannt. Die amerikanischen Rezepte tun sich besonders durch das großzügige Frosting hervor, das die Kalorienzahl der kleinen Kuchen allerdings ganz schön in die Höhe schnellen lässt. 
             
