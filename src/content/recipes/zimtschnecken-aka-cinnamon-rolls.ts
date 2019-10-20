@@ -141,12 +141,7 @@ const steps: (RecipeStepGroup|RecipeStep)[] = [
       {
         isGroup: false,
         type: "step",
-        content: "Die Milch in einem Topf lauwarm erwärmen (optimal ist 38 °C, ab 45 Grad beginnt die Hefe abzusterben).",
-      },
-      {
-        isGroup: false,
-        type: "step",
-        content: "Den Topf vom Herd nehmen, die Hefe in die Milch bröckeln und unter Rühren auflösen.",
+        content: "Die Milch in einem Topf lauwarm erwärmen (optimal ist 38 °C, ab 45 Grad beginnt die Hefe abzusterben). Den Topf vom Herd nehmen, die Hefe in die Milch bröckeln und unter Rühren auflösen.",
       },
       {
         isGroup: false,
@@ -156,7 +151,7 @@ const steps: (RecipeStepGroup|RecipeStep)[] = [
       {
         isGroup: false,
         type: "step",
-        content: "Das Mehl in die Rührschüssel der Küchenmaschine geben und in die Mitte eine Mulde drücken (man kann den Teig natürlich auch mit der Hand oder einem Rührgerät kneten). Die Milch in die Mulde gießen und etwas Mehl vom Rand darübergeben.",
+        content: "Das Mehl in die Rührschüssel der Küchenmaschine geben und in die Mitte eine Mulde drücken (man kann den Teig natürlich auch mit der Hand oder einem Rührgerät kneten). Die Milch in die Mulde gießen und mit etwas Mehl vom Rand bedecken.",
       },
       {
         isGroup: false,
@@ -183,7 +178,7 @@ const steps: (RecipeStepGroup|RecipeStep)[] = [
       {
         isGroup: false,
         type: "step",
-        content: "Hierzu einfach alle Zutaten mit einer Küchenmaschine verühren (normaler Rühraufsatz).",
+        content: "Hierzu einfach alle Zutaten mit einer Küchenmaschine (normaler Rühraufsatz) verühren.",
       },
       {
         isGroup: false,
@@ -205,17 +200,17 @@ const steps: (RecipeStepGroup|RecipeStep)[] = [
       {
         isGroup: false,
         type: "step",
-        content: "Jedes Rechteck sollte ca. 35 cm breit und 25 cm tief sein. &frac14; der Füllung gleichmäßig auf dem Teig verteilen. Nun den Teig von vorne nach hinten aufrollen, so dass eine Rolle entsteht.",
+        content: "Jedes Rechteck sollte ca. 35 cm breit und 25 cm tief sein. 1/4 der Füllung gleichmäßig auf dem Teig verteilen. Nun den Teig von vorne nach hinten aufrollen, so dass eine Rolle entsteht.",
       },
       {
         isGroup: false,
         type: "step",
-        content: "Wer exakt gleichgroße Stücke haben möchte, legt nun ein Lineal an und schneidet den Teig alle 3 cm durch. Man kann den Teig aber auch nach Gefühl zerteilen, so dass pro &frac14; ca. 10 Stück entstehen.",
+        content: "Wer exakt gleichgroße Stücke haben möchte, legt nun ein Lineal an und schneidet den Teig alle 3 cm durch. Man kann den Teig aber auch nach Gefühl zerteilen, so dass pro Viertel ca. 10 Stück entstehen.",
       },
       {
         isGroup: false,
         type: "step",
-        content: "Die Zimtschnecken mit der flachen Seite nach unten in die Backform legen. Dabei ca. 0,5 cm Platz zwischen den Schnecken lassen, da der Teig noch aufgeht.",
+        content: "Die Zimtschnecken mit der flachen Seite nach unten in die Backform legen. Dabei ca. 1 cm Platz zwischen den Schnecken lassen, da der Teig noch aufgeht.",
       },
       {
         isGroup: false,
@@ -225,11 +220,12 @@ const steps: (RecipeStepGroup|RecipeStep)[] = [
       {
         isGroup: false,
         type: "step",
-        content: "Die Zimtschnecken sollten jetzt noch mal 20 Minuten gehen, damit sie schön aufgehen. Wer es eilig hat, kann diesen Schritt auch überspringen und die Zimtschnecken in den kalten Backofen stellen. Während des Aufheizvorgangs haben sie so noch etwas Zeit zum Aufgehen.",
-      },{
+        content: "Die Zimtschnecken sollten jetzt noch mal 20 Minuten gehen, damit sie schön aufgehen. Wer es eilig hat, kann diesen Schritt auch überspringen und sie in den kalten Backofen stellen. Während des Aufheizvorgangs haben sie so noch etwas Zeit zum Aufgehen.",
+      },
+      {
         isGroup: false,
         type: "step",
-        content: "Die Schnecken 25 Minuten backen. Falls die Oberfläche zu dunkel wird, sollte man sie mit Alufolie abdecken.",
+        content: "Die Zimtschnecken 25 Minuten backen. Falls die Oberfläche zu dunkel wird, solltet ihr sie mit Alufolie abdecken.",
       },
     ],
   },
@@ -241,12 +237,12 @@ const steps: (RecipeStepGroup|RecipeStep)[] = [
       {
         isGroup: false,
         type: "step",
-        content: "Während dem Backen die Glasur zubereiten. Hierfür einfach alle Zutaten mit einem Schneebesen verrühren.",
+        content: "Während dem Backen könnt ihr die Glasur zubereiten. Hierfür einfach alle Zutaten mit einem Schneebesen verrühren.",
       },
       {
         isGroup: false,
         type: "step",
-        content: "Die Glasur mit einem Pinsel auf die noch warmen Zimtschnecken auftragen. Wer möchte, kann noch etwas Hagelzucker darüber streuen.",
+        content: "Die Glasur mit einem Pinsel auf die noch warmen Zimtschnecken auftragen. Wer möchte, kann nun noch etwas Hagelzucker darüber streuen.",
       },
     ],
   },
