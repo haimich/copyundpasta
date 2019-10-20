@@ -184,7 +184,7 @@ const steps: (RecipeStepGroup|RecipeStep)[] = [
       {
         isGroup: false,
         type: "step",
-        content: "Hierzu einfach alle Zutaten mit einer Küchenmaschine (normaler Rühraufsatz) verühren.",
+        content: "Hierzu einfach alle Zutaten mit einer Küchenmaschine (normaler Rühraufsatz) verrühren.",
       },
     ],
   },
@@ -206,7 +206,7 @@ const steps: (RecipeStepGroup|RecipeStep)[] = [
       {
         isGroup: false,
         type: "step",
-        content: "Wer exakt gleichgroße Stücke haben möchte, legt nun ein Lineal an und schneidet den Teig alle 3 cm durch. Man kann den Teig aber auch nach Gefühl zerteilen, so dass pro Viertel ca. 10 Stück entstehen.",
+        content: "Wer exakt gleich große Stücke haben möchte, legt nun ein Lineal an und schneidet den Teig alle 3 cm durch. Man kann den Teig aber auch nach Gefühl zerteilen, so dass pro Viertel ca. 10 Stück entstehen.",
       },
       {
         isGroup: false,

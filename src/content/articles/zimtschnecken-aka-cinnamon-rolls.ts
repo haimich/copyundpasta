@@ -9,7 +9,7 @@ const article: Article = {
   categoryId: ArticleCategories.rezepte.id,
   isHeroArticle: false,
   mainImageUrl: "/images/articles/zimtschnecken-aka-cinnamon-rolls/main.jpg",
-  shortDescription: `Bei diesen Zimtschnecken werden Kindheitserinnerungen wach: ein feiner Zimtgeruch durchströmt beim Backen eure Wohnung und der Geschmack ist unwiderstehlich. Das Beste an diesem Rezept ist aber die Größe: Die Zimtschnecken passen perfekt in Muffinförmchen rein und bringen so Abwechslung an eurem nächsten Kaffeeklatsch.`,
+  shortDescription: `Bei diesen Zimtschnecken werden Kindheitserinnerungen wach: ein feiner Zimtgeruch durchströmt beim Backen eure Wohnung und der Geschmack ist unwiderstehlich. Das Beste an diesem Rezept ist aber die Größe: Die Zimtschnecken passen perfekt in Muffinförmchen rein und bringen so Abwechslung bei eurem nächsten Kaffeeklatsch.`,
   previewImageUrl: "/images/articles/zimtschnecken-aka-cinnamon-rolls/preview.jpg",
   createdAt,
   modifiedAt: createdAt,
