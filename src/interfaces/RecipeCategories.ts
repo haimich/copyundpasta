@@ -25,6 +25,11 @@ const categories: RecipeCategoriesById = {
     name: "Hefekuchen",
     parentCategory: "kuchen",
   },
+  frostings: {
+    id: "frostings",
+    name: "Frostings",
+    parentCategory: "kuchen",
+  },
 }
 
 export default categories;

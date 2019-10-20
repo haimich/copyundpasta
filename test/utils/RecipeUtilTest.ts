@@ -118,7 +118,7 @@ const createdAt = "2019-06-10 10:10:28";
 const recipe: Recipe = {
   slug: "oma-hildas-dampfnudeln",
   title: "Oma Hilda's Dampfnudeln",
-  categoryId: RecipeCategories.desserts.id,
+  categoryId: RecipeCategories.kuchen.id,
   previewImageUrl: "/images/recipes/oma-hildas-dampfnudeln/cover.jpg",
   description: "Das Originalrezept meiner Uroma Hilda, das definitiv Eindruck bei euren Gästen macht!",
   servings,
