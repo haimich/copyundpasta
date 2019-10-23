@@ -32,7 +32,7 @@ export default class FeedUtil {
         id: url,
         link: url,
         description: article.shortDescription,
-        content: "content",
+        content: article.shortDescription,
         date: new Date(article.createdAt),
         image: `https://copyundpasta.de${article.previewImageUrl}`,
       });
