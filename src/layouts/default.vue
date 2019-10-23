@@ -54,7 +54,7 @@
         
           <!-- Logo -->
           <nuxt-link to="/" title="HOME">
-            <img class="logo" src="/images/logo.svg" alt="Logo" @click="menuVisible = false">
+            <img class="logo" src="/images/logo.svg" alt="Logo" @click="determineMenuMode()">
           </nuxt-link>
 
           <!-- Menu -->
