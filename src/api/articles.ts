@@ -106,6 +106,10 @@ app.post("/createComment", async (req, res) => {
     <p>gerade kam ein neuer Kommentar zu dem Artikel <a href="https://www.copyundpasta.de/${commentWithChallenge.comment.slug}">${commentWithChallenge.comment.slug}</a> herein :-)</p>
     
     <br /><br />
+
+    ${commentWithChallenge.comment.author}: ${commentWithChallenge.comment.content}
+
+    <br /><br />
     
     Viele Grüße<br />
     Der Webserver`);

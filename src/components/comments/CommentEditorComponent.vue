@@ -173,10 +173,11 @@
 
   import { Vue, Component, Prop, Watch } from "vue-property-decorator";
   import CommentAvatarComponent from "@/components/comments/CommentAvatarComponent.vue";
-  import { Comment } from "@/interfaces/Comment";
+  import { Comment, CommentWithChallenge } from "@/interfaces/Comment";
   import SingleCommentComponent from "@/components/comments/SingleCommentComponent.vue";
   import EmojiDialog from "@/components/dialogs/EmojiDialog.vue";
   import VueRecaptcha from "vue-recaptcha";
+  import ArticleService from "@/services/ArticleService";
 
   @Component({
     components: {
@@ -187,6 +188,14 @@
     }
   })
   export default class CommentEditorComponent extends Vue {
+
+    @Prop()
+    slug: string;
+
+    @Prop({
+      required: false
+    })
+    parentCommentId: number;
 
     @Prop()
     size: "small" | "large";
@@ -317,7 +326,7 @@
 
     save() {
       // @ts-ignore
-      this.$refs.form.validate((valid) => {
+      this.$refs.form.validate(async (valid) => {
         if (valid) {
           if (this.recaptchaChallenge == null || this.recaptchaChallenge === "") {
             this.$notify({
@@ -333,19 +342,47 @@
             author: this.form.author,
             website: this.form.website,
             content: this.form.content,
+            slug: this.slug,
+            parentCommentId: this.parentCommentId,
           };
 
-          this.$emit("save", {
+          let commentWithChallenge: CommentWithChallenge = {
             comment,
-            recaptchaChallenge: this.recaptchaChallenge
-          });
+            recaptchaChallenge: this.recaptchaChallenge,
+          };
 
-          // temporarily disable form validation or it shows an error after save
-          this.formValidationEnabled = false;
+          try {
+            await ArticleService.createComment(this.$axios, commentWithChallenge);
 
-          this.form.author = "";
-          this.form.website = "";
-          this.form.content = "";
+            this.$notify({
+              title: "",
+              message: "Vielen Dank für deinen Kommentar!",
+              type: "success",
+            });
+
+            this.$emit("commentAdded");
+
+            // temporarily disable form validation or it shows an error after save
+            this.formValidationEnabled = false;
+
+            this.form.author = "";
+            this.form.website = "";
+            this.form.content = "";
+
+            this.showPreview = false;
+
+            setTimeout(() => {
+              this.formValidationEnabled = true;
+            }, 1000);
+          } catch (err) {
+            console.log(err);
+
+            this.$notify({
+              title: "",
+              message: "Beim Speichern ist ein Fehler aufgetreten. Bitte versuche es erneut.",
+              type: "warning"
+            });
+          }
 
           // reset captcha
           this.recaptchaChallenge = "";
@@ -354,10 +391,6 @@
             // @ts-ignore
             this.$refs.recaptcha.reset();
           }
-
-          setTimeout(() => {
-            this.formValidationEnabled = true;
-          }, 1000);
         }
       });
     }

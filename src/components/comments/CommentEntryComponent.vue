@@ -33,7 +33,9 @@
 
         <el-row v-if="showEditor">
           <CommentEditorComponent
-            @save="saveComment"
+            :slug="slug"
+            :parentCommentId="comment.id"
+            @commentAdded="commentAdded"
             size="small"
             style="margin-top: 35px; margin-bottom: 10px;"
           />
@@ -77,6 +79,9 @@
     @Prop()
     comment: Comment;
 
+    @Prop()
+    slug: string;
+
     @Prop({
       required: false,
     })
@@ -92,12 +97,10 @@
       return this.comment.parentCommentId !== undefined && this.comment.parentCommentId !== null;
     }
 
-    saveComment(commentWithChallenge: CommentWithChallenge) {
-      commentWithChallenge.comment.parentCommentId = this.comment.id;
-
-      this.$emit("saveComment", commentWithChallenge);
-
+    commentAdded() {
       this.showEditor = false;
+
+      this.$emit("commentAdded");
     }
 
   }

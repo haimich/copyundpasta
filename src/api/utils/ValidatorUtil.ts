@@ -28,6 +28,7 @@ export default class ValidatorUtil {
         throw new Error("Invalid captcha");
       }
     } catch (err) {
+      console.error(err);
       throw new Error("Invalid captcha");
     }
   }

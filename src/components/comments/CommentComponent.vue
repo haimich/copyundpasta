@@ -9,9 +9,10 @@
     <hr class="hr">
 
     <CommentEditorComponent
-      @save="saveComment"
       size="large"
       style="margin-top: 35px; margin-bottom: 10px;"
+      :slug="slug"
+      @commentAdded="$emit('commentAdded')"
     />
     
     <ul
@@ -22,7 +23,8 @@
       <li>
         <CommentEntryComponent
           :comment="comment"
-          @saveComment="saveComment"
+          :slug="slug"
+          @commentAdded="$emit('commentAdded')"
         />
       </li>
     </ul>
@@ -54,29 +56,6 @@
     @Prop()
     comments: Comment[];
 
-    async saveComment(commentWithChallenge: CommentWithChallenge) {
-      commentWithChallenge.comment.slug = this.slug;
-
-      try {
-        await ArticleService.createComment(this.$axios, commentWithChallenge);
-
-        this.$notify({
-          title: "",
-          message: "Vielen Dank für deinen Kommentar!",
-          type: "success",
-        });
-
-        this.$emit("commentAdded");
-      } catch (error) {
-        console.log(error);
-
-        this.$notify({
-          title: "",
-          message: "Beim Speichern ist ein Fehler aufgetreten",
-          type: "warning"
-        });
-      }
-    }
   }
 
 </script>
