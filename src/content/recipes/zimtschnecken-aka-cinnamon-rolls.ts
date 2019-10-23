@@ -41,7 +41,7 @@ const ingredients: (RecipeIngredientGroup|RecipeIngredient)[] = [
       },
       {
         isGroup: false,
-        amount: 80,
+        amount: 70,
         unit: RecipeUnit.g,
         ingredient: Ingredients.zucker,
       },
@@ -80,7 +80,7 @@ const ingredients: (RecipeIngredientGroup|RecipeIngredient)[] = [
     ingredients: [
       {
         isGroup: false,
-        amount: 220,
+        amount: 200,
         unit: RecipeUnit.g,
         ingredient: Ingredients.braunerzucker,
       },
