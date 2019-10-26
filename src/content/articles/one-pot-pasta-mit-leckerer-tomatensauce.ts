@@ -1,7 +1,7 @@
 import ArticleCategories from "../../interfaces/ArticleCategories";
 import { Article } from "../../interfaces/Article";
 
-const createdAt = "2019-10-20 23:25:01";
+const createdAt = "2019-10-27 21:00:00";
 
 const article: Article = {
   slug: "one-pot-pasta-mit-leckerer-tomatensauce",

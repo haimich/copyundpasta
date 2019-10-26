@@ -1,7 +1,7 @@
-import RecipeCategories from "../../interfaces/RecipeCategories";
 import RecipeTags from "../../interfaces/RecipeTags";
 import { Recipe, RecipeStep, RecipeServing, RecipeIngredient, RecipeIngredientEntry, RecipeIngredientGroup, RecipeStepGroup } from "../../interfaces/Recipe";
 import { RECIPE_SERVINGS, INGREDIENT_UNITS, INGREDIENTS, INGREDIENT_PREPARATIONS } from "../../interfaces/RecipeIngredients";
+import { RECIPE_CATEGORIES } from "../categories/RecipeCategories";
 import article from "../articles/zimtschnecken-aka-cinnamon-rolls";
 
 const servings: RecipeServing = {
@@ -279,7 +279,7 @@ const createdAt = article.createdAt;
 const recipe: Recipe = {
   slug: article.slug,
   title: article.title,
-  categoryId: RecipeCategories.hefekuchen.id,
+  categoryId: RECIPE_CATEGORIES.hefekuchen.id,
   previewImageUrl: article.previewImageUrl,
   servings,
   ingredients,

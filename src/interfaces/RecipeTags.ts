@@ -21,6 +21,18 @@ const TAGS: RecipeTag = {
     id: "party",
     name: "Party",
   },
+  feierabendgericht: {
+    id: "feierabendgericht",
+    name: "Feierabendgericht",
+  },
+  vegetarisch: {
+    id: "vegetarisch",
+    name: "Vegetarisch",
+  },
+  vegan: {
+    id: "vegan",
+    name: "Vegan",
+  },
 }
 
 export default TAGS;

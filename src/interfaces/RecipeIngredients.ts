@@ -25,6 +25,10 @@ export const INGREDIENT_UNITS: IngredientUnits = {
     id: "liter",
     name: "l",
   },
+  milliliter: {
+    id: "milliliter",
+    name: "ml",
+  },
   stueck: {
     id: "stueck",
     name: "",
@@ -45,13 +49,21 @@ export const INGREDIENT_UNITS: IngredientUnits = {
     id: "prise",
     name: "Prise",
   },
+  dose: {
+    id: "dose",
+    name: "Dose",
+  },
 }
 
 export const INGREDIENT_PREPARATIONS: IngredientPreparations = {
   gewuerfelt: {
     id: "gewuerfelt",
     name: "gewürfelt",
-  }
+  },
+  halbiert: {
+    id: "halbiert",
+    name: "halbiert",
+  },
 }
 
 export const INGREDIENTS: Ingredients = {
@@ -129,5 +141,22 @@ export const INGREDIENTS: Ingredients = {
     id: "zwiebel",
     name: "Zwiebel",
     namePlural: "Zwiebeln",
+  },
+  knoblauchzehe: {
+    id: "knoblauchzehe",
+    name: "Knoblauchzehe",
+    namePlural: "Knoblauchzehen",
+  },
+  spaghetti: {
+    id: "spaghetti",
+    name: "Spaghetti",
+  },
+  kirschtomaten: {
+    id: "kirschtomaten",
+    name: "Kirschtomaten",
+  },
+  tomatenkonserve_stueckig: {
+    id: "tomatenkonserve_stueckig",
+    name: "stückige Tomaten",
   },
 }

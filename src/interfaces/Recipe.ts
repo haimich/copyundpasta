@@ -96,6 +96,24 @@ export interface RecipeRating {
   value: number;
 }
 
+/* Recipe Categories */
+
+export interface RecipeCategory {
+  id: string;
+  name: string;
+  parentCategory?: string;
+}
+
+export interface RecipeCategories {
+  [key: string]: RecipeCategory;
+}
+
+export interface AllRecipeCategories {
+  parentCategories: RecipeCategory[];
+  childCategories: RecipeCategory[];
+  categoriesById: RecipeCategories;
+}
+
 /* Recipe */
 
 export interface Recipe {
