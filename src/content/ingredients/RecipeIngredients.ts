@@ -1,4 +1,4 @@
-import { Ingredients, IngredientPreparations, IngredientUnits, ServingUnits } from "./Recipe";
+import { Ingredients, IngredientPreparations, IngredientUnits, ServingUnits } from "../../interfaces/Recipe";
 
 /**
  * This file contains a list of all available ingredients,

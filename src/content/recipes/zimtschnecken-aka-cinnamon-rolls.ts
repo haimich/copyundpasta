@@ -1,5 +1,5 @@
 import { Recipe, RecipeStep, RecipeServing, RecipeIngredient, RecipeIngredientEntry, RecipeIngredientGroup, RecipeStepGroup } from "../../interfaces/Recipe";
-import { RECIPE_SERVINGS, INGREDIENT_UNITS, INGREDIENTS, INGREDIENT_PREPARATIONS } from "../../interfaces/RecipeIngredients";
+import { RECIPE_SERVINGS, INGREDIENT_UNITS, INGREDIENTS, INGREDIENT_PREPARATIONS } from "../ingredients/RecipeIngredients";
 import { RECIPE_CATEGORIES } from "../categories/RecipeCategories";
 import { RECIPE_TAGS } from "../categories/RecipeTags";
 import article from "../articles/zimtschnecken-aka-cinnamon-rolls";

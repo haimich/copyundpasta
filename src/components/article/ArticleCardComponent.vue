@@ -57,7 +57,7 @@
 
   import { Vue, Component, Prop, Watch } from "vue-property-decorator";
   import { Article } from "@/interfaces/Article";
-  import ArticleCategories from "@/interfaces/ArticleCategories";
+  import { ARTICLE_CATEGORIES } from "@/content/categories/ArticleCategories";
 
   @Component
   export default class ArticleCardComponent extends Vue {
@@ -71,7 +71,7 @@
         let categoryId = this.article.categoryId;
 
         while (categoryId != null) {
-          let category = ArticleCategories[categoryId];
+          let category = ARTICLE_CATEGORIES[categoryId];
           
           if (category == null) {
             break;
