@@ -1,5 +1,3 @@
-import { Tag } from "@/interfaces/RecipeTags";
-
 /* Ingredients (eg. mehl) */
 
 export interface Ingredient {
@@ -96,6 +94,17 @@ export interface RecipeRating {
   value: number;
 }
 
+/* Recipe Tags */
+
+export interface RecipeTag {
+  id: string;
+  name: string;
+}
+
+export interface RecipeTags {
+  [key: string]: RecipeTag;
+}
+
 /* Recipe Categories */
 
 export interface RecipeCategory {
@@ -127,7 +136,7 @@ export interface Recipe {
   steps: (RecipeStepGroup|RecipeStep)[];
   notes: string[];
   rating?: number;
-  tags?: Tag[];
+  tags?: RecipeTag[];
   createdAt?: string;
   modifiedAt?: string;
 };

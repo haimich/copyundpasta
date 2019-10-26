@@ -1,7 +1,7 @@
-import RecipeTags from "../../interfaces/RecipeTags";
 import { Recipe, RecipeStep, RecipeServing, RecipeIngredient, RecipeIngredientEntry, RecipeIngredientGroup, RecipeStepGroup } from "../../interfaces/Recipe";
 import { RECIPE_SERVINGS, INGREDIENT_UNITS, INGREDIENTS, INGREDIENT_PREPARATIONS } from "../../interfaces/RecipeIngredients";
 import { RECIPE_CATEGORIES } from "../categories/RecipeCategories";
+import { RECIPE_TAGS } from "../categories/RecipeTags";
 import article from "../articles/one-pot-pasta-mit-leckerer-tomatensauce";
 
 const servings: RecipeServing = {
@@ -60,10 +60,10 @@ const steps: (RecipeStepGroup|RecipeStep)[] = [
 const notes = [];
 
 const tags = [
-  RecipeTags.feierabendgericht,
-  RecipeTags.resteverwertung,
-  RecipeTags.vegetarisch,
-  RecipeTags.vegan,
+  RECIPE_TAGS.feierabendgericht,
+  RECIPE_TAGS.resteverwertung,
+  RECIPE_TAGS.vegetarisch,
+  RECIPE_TAGS.vegan,
 ];
 
 const createdAt = article.createdAt;

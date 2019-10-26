@@ -1,14 +1,6 @@
+import { RecipeTags } from "../../interfaces/Recipe";
 
-export interface Tag {
-  id: string;
-  name: string;
-}
-
-export interface RecipeTag {
-  [key: string]: Tag;
-}
-
-const TAGS: RecipeTag = {
+export const RECIPE_TAGS: RecipeTags = {
   resteverwertung: {
     id: "resteverwertung",
     name: "Resteverwertung",
@@ -34,5 +26,3 @@ const TAGS: RecipeTag = {
     name: "Vegan",
   },
 }
-
-export default TAGS;

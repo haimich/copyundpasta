@@ -3,7 +3,7 @@ import axios from "axios";
 import _ from "lodash";
 import { Article } from "@/interfaces/Article";
 import { Recipe, RecipeIngredientGroup, RecipeIngredient } from "@/interfaces/Recipe";
-import { ArticleCategoriesById } from "@/interfaces/ArticleCategories";
+import { ArticleCategories } from "@/interfaces/Article";
 import CategoryUtil from "../../src/utils/CategoryUtil";
 import { EsArticle } from "../interfaces/Elasticsearch";
 
@@ -31,7 +31,7 @@ export default class SearchService {
     });
   }
 
-  public static async indexArticles(articles: Article[], recipes: Recipe[], categoriesById: ArticleCategoriesById) {
+  public static async indexArticles(articles: Article[], recipes: Recipe[], categoriesById: ArticleCategories) {
     let body = "";
 
     let ingredientsBySlug = {};

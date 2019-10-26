@@ -1,6 +1,7 @@
 import recipes from "../src/content/recipes/all";
-import RecipeTags, { Tag, RecipeTag } from "../src/interfaces/RecipeTags";
+import { RecipeTag, RecipeTags } from "../src/interfaces/Recipe";
 import CategoryUtil from "../src/utils/CategoryUtil";
+import { RECIPE_TAGS } from "../src/content/categories/RecipeTags";
 import _ from "lodash";
 
 exports.seed = async function(knex, Promise) {
@@ -51,7 +52,7 @@ async function createAllEntries(knex) {
 
   console.log("Inserting recipe_tags");
 
-  const tags = getAllTags(RecipeTags);
+  const tags = getAllTags(RECIPE_TAGS);
   await knex("recipe_tags").insert(tags);
   
   console.log("Inserting recipes_recipe_tags");
@@ -60,7 +61,7 @@ async function createAllEntries(knex) {
   await knex("recipes_recipe_tags").insert(recipesRecipeTags);
 }
 
-function getAllTags(tags: RecipeTag): Tag[] {
+function getAllTags(tags: RecipeTags): RecipeTag[] {
   return Object.values(tags);
 }
 

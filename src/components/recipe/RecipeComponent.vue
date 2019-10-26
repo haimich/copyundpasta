@@ -191,8 +191,7 @@
 
   import { Vue, Component, Prop, Watch } from "vue-property-decorator";
   import { Recipe, RecipeStep, RecipeIngredient, RecipeIngredientGroup, RecipeStepGroup } from "@/interfaces/Recipe";
-  import { Tag } from "@/interfaces/RecipeTags";
-  import TAGS from "@/interfaces/RecipeTags";
+  import { RecipeTag } from "@/interfaces/Recipe";
   import { $n } from "@/filters/numberFilter";
   import RecipeService from "../../services/RecipeService";
   import { RatingResponse } from "@/interfaces/Rating";
@@ -254,7 +253,7 @@
       return RecipeUtil.formatIngredient(ingredient, this.servingsMultiplier);
     }
 
-    getTags(): Tag[] {
+    getTags(): RecipeTag[] {
       if (this.recipe == null || this.recipe.tags == null) {
         return [];
       }

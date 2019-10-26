@@ -94,13 +94,14 @@ const config = {
     color: "#1eb5da",
   },
 
-  watch: [
-    CWD + "/src/api",
-    CWD + "/src/interfaces",
-    CWD + "/src/content",
-    CWD + "/src/filters",
-    CWD + "/src/scss",
-  ],
+  // commented out due to segfaults
+  // watch: [
+  //   CWD + "/src/api",
+  //   CWD + "/src/interfaces",
+  //   CWD + "/src/content",
+  //   CWD + "/src/filters",
+  //   CWD + "/src/scss",
+  // ],
 
   /*
   ** Global CSS

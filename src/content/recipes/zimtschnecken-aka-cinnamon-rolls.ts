@@ -1,7 +1,7 @@
-import RecipeTags from "../../interfaces/RecipeTags";
 import { Recipe, RecipeStep, RecipeServing, RecipeIngredient, RecipeIngredientEntry, RecipeIngredientGroup, RecipeStepGroup } from "../../interfaces/Recipe";
 import { RECIPE_SERVINGS, INGREDIENT_UNITS, INGREDIENTS, INGREDIENT_PREPARATIONS } from "../../interfaces/RecipeIngredients";
 import { RECIPE_CATEGORIES } from "../categories/RecipeCategories";
+import { RECIPE_TAGS } from "../categories/RecipeTags";
 import article from "../articles/zimtschnecken-aka-cinnamon-rolls";
 
 const servings: RecipeServing = {
@@ -270,8 +270,8 @@ const steps: (RecipeStepGroup|RecipeStep)[] = [
 const notes = [];
 
 const tags = [
-  RecipeTags.hefeteig,
-  RecipeTags.party,
+  RECIPE_TAGS.hefeteig,
+  RECIPE_TAGS.party,
 ];
 
 const createdAt = article.createdAt;
