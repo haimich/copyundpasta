@@ -41,6 +41,12 @@
         <p class="article-card-body-text">
           {{ article.shortDescription }}
         </p>
+
+        <div class="readmore-link" style="font-size: 13px;">
+          <nuxt-link :to="'/' + article.slug">
+            Weiterlesen <i class="el-icon-caret-right"></i>
+          </nuxt-link>
+        </div>
       </div>
     </el-card>
   </div>

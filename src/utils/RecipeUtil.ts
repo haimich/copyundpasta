@@ -1,5 +1,4 @@
-import { Recipe, RecipeStep, RecipeServings, RecipeIngredient, RecipeIngredientGroup, RecipeStepGroup } from "@/interfaces/Recipe";
-import { RecipeUnit, RecipeServingsUnit } from "@/interfaces/RecipeIngredients";
+import { Recipe, RecipeStep, RecipeServing, RecipeIngredient, RecipeIngredientGroup, RecipeStepGroup } from "@/interfaces/Recipe";
 import NumberUtil from "@/utils/NumberUtil";
 import { $n } from "@/filters/numberFilter";
 
@@ -11,15 +10,7 @@ export default class RecipeUtil {
     }
 
     let amount = recipe.servings.amount * servingsMultiplier;
-    let unit;
-  
-    switch (recipe.servings.unit) {
-      case RecipeServingsUnit.quantity:
-        unit = "Stück";
-        break;
-      default:
-        unit = "";
-    }
+    let unit = recipe.servings.unit.name;
 
     return amount + " " + unit;
   }
@@ -29,31 +20,11 @@ export default class RecipeUtil {
     let preparation = ingredient.preparation != null ? ", " + ingredient.preparation : "";
     let ingredientName = RecipeUtil.formatIngredientName(ingredient)
     let description = "";
+    let unit = ingredient.unit != null ? ingredient.unit.name : "";
     let unitBeforeIngredient = false;
-    let unit;
-  
-    switch (ingredient.unit) {
-      case RecipeUnit.g:
-        unit = "g";
-        break;
-      case RecipeUnit.l:
-        unit = "l";
-        break;
-      case RecipeUnit.el:
-        unit = "EL";
-        break;
-      case RecipeUnit.tl:
-        unit = "TL";
-        break;
-      case RecipeUnit.einige:
-        unit = "einige";
-        unitBeforeIngredient = true;
-        break;
-      case RecipeUnit.pinch:
-        unit = "Prise";
-        break;
-      default:
-        unit = "";
+
+    if (ingredient.unit != null && ingredient.unit.id === "einige") {
+      unitBeforeIngredient = true;
     }
 
     if (ingredient.description != null && ingredient.description !== "") {
@@ -87,7 +58,7 @@ export default class RecipeUtil {
       let amountFrom = ingredient.amountFrom * servingsMultiplier;
       let amountTo = ingredient.amountTo * servingsMultiplier;
 
-      return $n(amountFrom) + "-" + $n(amountTo);
+      return $n(amountFrom) + "‐" + $n(amountTo);
     } else {
       return "";
     }

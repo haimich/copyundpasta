@@ -1,5 +1,6 @@
-import { IngredientPreparation, RecipeUnit, RecipeServingsUnit } from "@/interfaces/RecipeIngredients";
 import { Tag } from "@/interfaces/RecipeTags";
+
+/* Ingredients (eg. mehl) */
 
 export interface Ingredient {
   id: string;
@@ -7,13 +8,58 @@ export interface Ingredient {
   namePlural?: string;
 }
 
-export interface RecipeIngredientGroup extends RecipeIngredientEntry {
-  title: string;
-  ingredients: RecipeIngredient[];
+export interface Ingredients {
+  [key: string]: Ingredient;
+}
+
+/* Ingredient preparations (eg. gewuerfelt) */
+
+export interface IngredientPreparation {
+  id: string;
+  name: string;
+}
+
+export interface IngredientPreparations {
+  [key: string]: IngredientPreparation;
+}
+
+/* Ingredient units (eg. gramm) */
+
+export interface IngredientUnit {
+  id: string;
+  name: string;
+}
+
+export interface IngredientUnits {
+  [key: string]: IngredientUnit;
+}
+
+/* Serving Units (eg. stueck)) */
+
+export interface ServingUnit {
+  id: string;
+  name: string;
+}
+
+export interface ServingUnits {
+  [key: string]: ServingUnit;
+}
+
+/* Recipe Servings (eg. 12 Stück) */
+
+export interface RecipeServing {
+  amount: number;
+  unit: ServingUnit;
+}
+
+/* Recipe Ingredients */
+
+export interface RecipeIngredientEntry {
+  isGroup: boolean;
 }
 
 export interface RecipeIngredient extends RecipeIngredientEntry {
-  unit?: RecipeUnit;
+  unit?: IngredientUnit;
   amount?: number;
   amountFrom?: number;
   amountTo?: number;
@@ -22,7 +68,14 @@ export interface RecipeIngredient extends RecipeIngredientEntry {
   preparation?: IngredientPreparation;
 }
 
-export interface RecipeIngredientEntry {
+export interface RecipeIngredientGroup extends RecipeIngredientEntry {
+  title: string;
+  ingredients: RecipeIngredient[];
+}
+
+/* Recipe Steps */
+
+export interface RecipeStepEntry {
   isGroup: boolean;
 }
 
@@ -36,26 +89,21 @@ export interface RecipeStep extends RecipeStepEntry {
   content: string;
 }
 
-export interface RecipeStepEntry {
-  isGroup: boolean;
-}
+/* Recipe Rating */
 
 export interface RecipeRating {
   date: number;
   value: number;
 }
 
-export interface RecipeServings {
-  amount: number;
-  unit: RecipeServingsUnit;
-}
+/* Recipe */
 
 export interface Recipe {
   slug: string;
   title: string;
   categoryId: string;
   previewImageUrl: string;
-  servings: RecipeServings;
+  servings: RecipeServing;
   description?: string;
   ingredients: (RecipeIngredientGroup|RecipeIngredient)[];
   steps: (RecipeStepGroup|RecipeStep)[];

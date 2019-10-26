@@ -5,8 +5,7 @@
 <script lang="ts">
 
   import { Vue, Component, Prop, Watch } from "vue-property-decorator";
-  import { Recipe, RecipeServings, RecipeIngredient, RecipeIngredientGroup, RecipeStep, RecipeStepGroup } from "@/interfaces/Recipe";
-  import { RecipeServingsUnit } from "@/interfaces/RecipeIngredients";
+  import { Recipe, RecipeIngredient, RecipeIngredientGroup, RecipeStep, RecipeStepGroup } from "@/interfaces/Recipe";
   import { RatingResponse } from "@/interfaces/Rating";
   import RecipeUtil from "@/utils/RecipeUtil";
 
@@ -65,11 +64,7 @@
         }
       }
 
-      let servings = this.recipe.servings.amount + " ";
-      
-      if (this.recipe.servings.unit === RecipeServingsUnit.quantity) {
-        servings += "Stück";
-      }
+      let servings = this.recipe.servings.amount + " " + this.recipe.servings.unit.name;
       
       let jsonld: any = {
         "@context": "https://schema.org/",

@@ -1,12 +1,12 @@
 import RecipeCategories from "../../interfaces/RecipeCategories";
 import RecipeTags from "../../interfaces/RecipeTags";
-import { Recipe, RecipeStep, RecipeServings, RecipeIngredient, RecipeIngredientEntry, RecipeIngredientGroup, RecipeStepGroup } from "../../interfaces/Recipe";
-import { Ingredients, IngredientPreparation, RecipeUnit, RecipeServingsUnit } from "../../interfaces/RecipeIngredients";
+import { Recipe, RecipeStep, RecipeServing, RecipeIngredient, RecipeIngredientEntry, RecipeIngredientGroup, RecipeStepGroup } from "../../interfaces/Recipe";
+import { RECIPE_SERVINGS, INGREDIENT_UNITS, INGREDIENTS, INGREDIENT_PREPARATIONS } from "../../interfaces/RecipeIngredients";
 import article from "../articles/zimtschnecken-aka-cinnamon-rolls";
 
-const servings: RecipeServings = {
+const servings: RecipeServing = {
   amount: 40,
-  unit: RecipeServingsUnit.quantity,
+  unit: RECIPE_SERVINGS.stueck,
 };
 
 const ingredients: (RecipeIngredientGroup|RecipeIngredient)[] = [
@@ -17,58 +17,58 @@ const ingredients: (RecipeIngredientGroup|RecipeIngredient)[] = [
       {
         isGroup: false,
         amount: 500,
-        unit: RecipeUnit.g,
-        ingredient: Ingredients.mehl,
+        unit: INGREDIENT_UNITS.gramm,
+        ingredient: INGREDIENTS.mehl,
       },
       {
         isGroup: false,
         amount: 240,
-        unit: RecipeUnit.g,
-        ingredient: Ingredients.milch,
+        unit: INGREDIENT_UNITS.gramm,
+        ingredient: INGREDIENTS.milch,
       },
       {
         isGroup: false,
         amount: 30,
-        unit: RecipeUnit.g,
-        ingredient: Ingredients.hefe,
+        unit: INGREDIENT_UNITS.gramm,
+        ingredient: INGREDIENTS.hefe,
       },
       {
         isGroup: false,
         amount: 2,
-        unit: RecipeUnit.quantity,
-        ingredient: Ingredients.eigelb,
+        unit: INGREDIENT_UNITS.stueck,
+        ingredient: INGREDIENTS.eigelb,
         description: "(Zimmertemperatur)",
       },
       {
         isGroup: false,
         amount: 70,
-        unit: RecipeUnit.g,
-        ingredient: Ingredients.zucker,
+        unit: INGREDIENT_UNITS.gramm,
+        ingredient: INGREDIENTS.zucker,
       },
       {
         isGroup: false,
         amount: 60,
-        unit: RecipeUnit.g,
-        ingredient: Ingredients.butter,
+        unit: INGREDIENT_UNITS.gramm,
+        ingredient: INGREDIENTS.butter,
         description: "(Zimmertemperatur)",
       },
       {
         isGroup: false,
         amount: 2,
-        unit: RecipeUnit.tl,
-        ingredient: Ingredients.zitronenabrieb,
+        unit: INGREDIENT_UNITS.tl,
+        ingredient: INGREDIENTS.zitronenabrieb,
       },
       {
         isGroup: false,
         amount: 1,
-        unit: RecipeUnit.pinch,
-        ingredient: Ingredients.salz,
+        unit: INGREDIENT_UNITS.prise,
+        ingredient: INGREDIENTS.salz,
       },
       {
         isGroup: false,
         amount: 1,
-        unit: RecipeUnit.tl,
-        ingredient: Ingredients.vanillearoma,
+        unit: INGREDIENT_UNITS.tl,
+        ingredient: INGREDIENTS.vanillearoma,
         description: "(oder Vanillezucker)",
       },
     ],
@@ -81,22 +81,22 @@ const ingredients: (RecipeIngredientGroup|RecipeIngredient)[] = [
       {
         isGroup: false,
         amount: 200,
-        unit: RecipeUnit.g,
-        ingredient: Ingredients.braunerzucker,
+        unit: INGREDIENT_UNITS.gramm,
+        ingredient: INGREDIENTS.braunerzucker,
       },
       {
         isGroup: false,
         amount: 150,
-        unit: RecipeUnit.g,
-        ingredient: Ingredients.butter,
+        unit: INGREDIENT_UNITS.gramm,
+        ingredient: INGREDIENTS.butter,
         description: "(kalt)"
       },
       {
         isGroup: false,
         amountFrom: 2,
         amountTo: 3,
-        unit: RecipeUnit.tl,
-        ingredient: Ingredients.zimt,
+        unit: INGREDIENT_UNITS.tl,
+        ingredient: INGREDIENTS.zimt,
       },
     ],
   },
@@ -108,20 +108,20 @@ const ingredients: (RecipeIngredientGroup|RecipeIngredient)[] = [
       {
         isGroup: false,
         amount: 60,
-        unit: RecipeUnit.g,
-        ingredient: Ingredients.puderzucker,
+        unit: INGREDIENT_UNITS.gramm,
+        ingredient: INGREDIENTS.puderzucker,
       },
       {
         isGroup: false,
         amount: 30,
-        unit: RecipeUnit.g,
-        ingredient: Ingredients.wasser,
+        unit: INGREDIENT_UNITS.gramm,
+        ingredient: INGREDIENTS.wasser,
       },
       {
         isGroup: false,
         amount: 3,
-        unit: RecipeUnit.el,
-        ingredient: Ingredients.hagelzucker,
+        unit: INGREDIENT_UNITS.el,
+        ingredient: INGREDIENTS.hagelzucker,
         description: "(optional)",
       },
     ],
@@ -238,7 +238,7 @@ const steps: (RecipeStepGroup|RecipeStep)[] = [
       {
         isGroup: false,
         type: "step",
-        content: "Während dem Backen könnt ihr die Glasur zubereiten. Hierfür einfach alle Zutaten mit einem Schneebesen verrühren.",
+        content: "Während dem Backen könnt ihr die Glasur zubereiten. Hierfür den Puderzucker und das Wasser mit einem Schneebesen verrühren.",
       },
       {
         isGroup: false,

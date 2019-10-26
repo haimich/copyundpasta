@@ -190,8 +190,7 @@
 <script lang="ts">
 
   import { Vue, Component, Prop, Watch } from "vue-property-decorator";
-  import { Recipe, RecipeStep, RecipeServings, RecipeIngredient, RecipeIngredientGroup, RecipeStepGroup } from "@/interfaces/Recipe";
-  import { RecipeUnit, RecipeServingsUnit } from "@/interfaces/RecipeIngredients";
+  import { Recipe, RecipeStep, RecipeIngredient, RecipeIngredientGroup, RecipeStepGroup } from "@/interfaces/Recipe";
   import { Tag } from "@/interfaces/RecipeTags";
   import TAGS from "@/interfaces/RecipeTags";
   import { $n } from "@/filters/numberFilter";

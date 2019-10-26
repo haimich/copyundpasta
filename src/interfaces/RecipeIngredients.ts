@@ -1,28 +1,60 @@
-import { Ingredient } from "./Recipe";
+import { Ingredients, IngredientPreparations, IngredientUnits, ServingUnits } from "./Recipe";
 
-export interface Ingredients {
-  [key: string]: Ingredient;
+/**
+ * This file contains a list of all available ingredients,
+ * preparations, servings etc.
+ */
+
+export const RECIPE_SERVINGS: ServingUnits = {
+  stueck: {
+    id: "stueck",
+    name: "Stück",
+  },
+  portionen: {
+    id: "portionen",
+    name: "Portionen",
+  }
 }
 
-export enum RecipeUnit {
-  g = "gram",
-  l = "liter",
-  quantity = "quantity",
-  el = "el",
-  tl = "tl",
-  einige = "einige",
-  pinch = "pinch",
+export const INGREDIENT_UNITS: IngredientUnits = {
+  gramm: {
+    id: "gramm",
+    name: "g",
+  },
+  liter: {
+    id: "liter",
+    name: "l",
+  },
+  stueck: {
+    id: "stueck",
+    name: "",
+  },
+  el: {
+    id: "el",
+    name: "EL",
+  },
+  tl: {
+    id: "tl",
+    name: "TL",
+  },
+  einige: {
+    id: "einige",
+    name: "einige",
+  },
+  prise: {
+    id: "prise",
+    name: "Prise",
+  },
 }
 
-export enum RecipeServingsUnit {
-  quantity = "quantity",
+export const INGREDIENT_PREPARATIONS: IngredientPreparations = {
+  gewuerfelt: {
+    id: "gewuerfelt",
+    name: "gewürfelt",
+  }
 }
 
-export enum IngredientPreparation {
-  gewuerfelt = "gewürfelt",
-}
-
-export const Ingredients: Ingredients = {
+export const INGREDIENTS: Ingredients = {
   salz: {
     id: "salz",
     name: "Salz",
