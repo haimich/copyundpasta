@@ -17,7 +17,7 @@ export default class RecipeUtil {
 
   public static formatIngredient(ingredient: RecipeIngredient, servingsMultiplier = 1): string {
     let amount = RecipeUtil.formatAmount(ingredient, servingsMultiplier);
-    let preparation = ingredient.preparation != null ? ", " + ingredient.preparation : "";
+    let preparation = ingredient.preparation != null ? ", " + ingredient.preparation.name : "";
     let ingredientName = RecipeUtil.formatIngredientName(ingredient)
     let description = "";
     let unit = ingredient.unit != null ? ingredient.unit.name : "";

@@ -1,19 +1,22 @@
 import { Recipe, RecipeStep, RecipeServing, RecipeIngredient, RecipeIngredientEntry, RecipeIngredientGroup, RecipeStepGroup } from "../../interfaces/Recipe";
-import { RECIPE_SERVINGS, INGREDIENT_UNITS, INGREDIENTS, INGREDIENT_PREPARATIONS } from "../ingredients/RecipeIngredients";
+import { INGREDIENTS } from "../ingredients/Ingredients";
+import { INGREDIENT_PREPARATIONS } from "../ingredients/IngredientPreparations";
+import { INGREDIENT_UNITS } from "../ingredients/IngredientUnits";
+import { RECIPE_SERVINGS } from "../ingredients/RecipeServings";
 import { RECIPE_CATEGORIES } from "../categories/RecipeCategories";
 import { RECIPE_TAGS } from "../categories/RecipeTags";
 import article from "../articles/one-pot-pasta-mit-leckerer-tomatensauce";
 
 const servings: RecipeServing = {
   amount: 4,
-  unit: RECIPE_SERVINGS.servings,
+  unit: RECIPE_SERVINGS.portionen,
 };
 
 const ingredients: (RecipeIngredientGroup|RecipeIngredient)[] = [
   {
     isGroup: false,
     amount: 400,
-    unit: INGREDIENT_UNITS.gram,
+    unit: INGREDIENT_UNITS.gramm,
     ingredient: INGREDIENTS.spaghetti,
   },
   {
@@ -43,8 +46,8 @@ const ingredients: (RecipeIngredientGroup|RecipeIngredient)[] = [
   },
   {
     isGroup: false,
-    amount: 1500,
-    unit: INGREDIENT_UNITS.milliliter,
+    amount: 1.5,
+    unit: INGREDIENT_UNITS.liter,
     ingredient: INGREDIENTS.wasser,
   },
 ];
