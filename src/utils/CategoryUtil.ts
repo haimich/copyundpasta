@@ -1,15 +1,16 @@
-import ArticleCategories, { AllArticleCategories, ArticleCategoriesById, ArticleCategory } from "../interfaces/ArticleCategories";
+import { AllArticleCategories, ArticleCategories, ArticleCategory } from "../interfaces/Article";
 import { AllRecipeCategories, RecipeCategories, RecipeCategory } from "../interfaces/Recipe";
 import { RECIPE_CATEGORIES } from "../content/categories/RecipeCategories";
+import { ARTICLE_CATEGORIES } from "../content/categories/ArticleCategories";
 
 export default class CategoryUtil {
 
   static getAllArticleCategories(): AllArticleCategories {
     let parentCategories: ArticleCategory[] = [];
     let childCategories: ArticleCategory[] = [];
-    let categoriesById: ArticleCategoriesById = {};
+    let categoriesById: ArticleCategories = {};
 
-    for (let category of Object.values(ArticleCategories)) {
+    for (let category of Object.values(ARTICLE_CATEGORIES)) {
       categoriesById[category.id] = category;
 
       if (category.parentCategory != null) {
@@ -51,7 +52,7 @@ export default class CategoryUtil {
   /**
    * Concatenates child with parent category ids
    */
-  static getUniqueArticleCategoryId(categoryId: string, categories: ArticleCategoriesById) {
+  static getUniqueArticleCategoryId(categoryId: string, categories: ArticleCategories) {
     return CategoryUtil.getUniqueCategoryId(categoryId, categories);
   }
 
@@ -62,7 +63,7 @@ export default class CategoryUtil {
     return CategoryUtil.getUniqueCategoryId(categoryId, categories);
   }
 
-  private static getUniqueCategoryId(categoryId: string, categories: ArticleCategoriesById | RecipeCategories) {
+  private static getUniqueCategoryId(categoryId: string, categories: ArticleCategories | RecipeCategories) {
     let uniqueId = categoryId;
 
     if (categories[categoryId] == null) {
@@ -75,7 +76,7 @@ export default class CategoryUtil {
     return uniqueId;
   }
 
-  static getFullArticleCategoryName(categoryId: string, categories: ArticleCategoriesById) {
+  static getFullArticleCategoryName(categoryId: string, categories: ArticleCategories) {
     return CategoryUtil.getFullCategoryName(categoryId, categories);
   }
 
@@ -83,7 +84,7 @@ export default class CategoryUtil {
     return CategoryUtil.getFullCategoryName(categoryId, categories);
   }
 
-  private static getFullCategoryName(categoryId: string, categories: ArticleCategoriesById | RecipeCategories) {
+  private static getFullCategoryName(categoryId: string, categories: ArticleCategories | RecipeCategories) {
     if (categories[categoryId] == null) {
       // invalid category
       return "";

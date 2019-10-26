@@ -1,12 +1,12 @@
-import ArticleCategories from "../../interfaces/ArticleCategories";
 import { Article } from "../../interfaces/Article";
+import { ARTICLE_CATEGORIES } from "../categories/ArticleCategories";
 
 const createdAt = "2019-10-12 21:00:00";
 
 const article: Article = {
   slug: "hello-world",
   title: "Hello World :)",
-  categoryId: ArticleCategories.allgemeines.id,
+  categoryId: ARTICLE_CATEGORIES.allgemeines.id,
   isHeroArticle: false,
   shortDescription: `“Hello World” - das sind typischerweise die ersten Worte, die man von einer selbst geschriebenen Software ausgeben lässt, wenn man eine neue Programmiersprache lernt. 
 
