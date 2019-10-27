@@ -62,6 +62,7 @@ const ingredients: (RecipeIngredientGroup|RecipeIngredient)[] = [
     amount: 400,
     unit: INGREDIENT_UNITS.gramm,
     ingredient: INGREDIENTS.spaghetti,
+    description: "(oder eine andere Pastasorte)",
   },
   {
     isGroup: false,

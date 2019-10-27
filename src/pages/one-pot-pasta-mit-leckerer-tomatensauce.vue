@@ -56,7 +56,11 @@
         <h3>Variationen</h3>
 
         <ul>
-          <li>...</li>
+          <li>für eine fleischhaltige Variante wahlweise 400 g Hackfleisch oder 150 g Speck kurz nach den Zwiebeln anbraten</li>
+          <li>getrocknete Tomaten</li>
+          <li>Frühlingszwiebeln</li>
+          <li>Karotten</li>
+          <li>Pinienkerne (trocken anrösten, dann aus dem Topf nehmen und beim Servieren auf die Teller streuen)</li>
         </ul>
       </el-col>
     </el-row>
