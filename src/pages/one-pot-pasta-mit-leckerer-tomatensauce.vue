@@ -87,7 +87,14 @@
     private ratings: RatingResponse;
 
     private stepPhotos = [
-      "/images/articles/zimtschnecken-aka-cinnamon-rolls/steps/1.jpeg",
+      "/images/articles/one-pot-pasta-mit-leckerer-tomatensauce/schritte/1.jpeg",
+      "/images/articles/one-pot-pasta-mit-leckerer-tomatensauce/schritte/2.jpeg",
+      "/images/articles/one-pot-pasta-mit-leckerer-tomatensauce/schritte/3.jpeg",
+      "/images/articles/one-pot-pasta-mit-leckerer-tomatensauce/schritte/4.jpeg",
+      "/images/articles/one-pot-pasta-mit-leckerer-tomatensauce/schritte/5.jpeg",
+      "/images/articles/one-pot-pasta-mit-leckerer-tomatensauce/schritte/6.jpeg",
+      "/images/articles/one-pot-pasta-mit-leckerer-tomatensauce/schritte/7.jpeg",
+      "/images/articles/one-pot-pasta-mit-leckerer-tomatensauce/schritte/8.jpeg",
     ];
 
     constructor() {
