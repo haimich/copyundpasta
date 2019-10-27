@@ -99,7 +99,7 @@ app.post("/createComment", async (req, res) => {
 
   if (process.env.NODE_ENV !== "development") {
     // send mail and don't wait for it
-    MailUtil.sendMail("Neuer Kommetar", `<h2>Hallo Webmaster,</h2>
+    MailUtil.sendMail("Neuer Kommentar", `<h2>Hallo Webmaster,</h2>
     
     <br />
     
