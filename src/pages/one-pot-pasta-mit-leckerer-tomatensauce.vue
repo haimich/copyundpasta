@@ -42,11 +42,11 @@
           <h2></h2>
 
           <p>
-            Allen Kritikern zum Trotz war nach dem ersten gescheiterten Versuch mein kulinarischer Ehrgeiz geweckt! Ich wollte sowohl diese wunderbar sämige Konsistenz der Sauce erreichen als auch das Geschmackserlebnis intensivieren. Die erste Änderung, die ich an dem Rezept gemacht habe war, dass ich die Zwiebeln in Olivenöl angebraten habe und sie mit Weißwein abgelöscht habe. Das war ein kleiner aber wichtiger Schritt, um dem Geschmack auf die Sprünge zu helfen. Als nächstes habe ich zuerst mit angebratenem Speck und dann mit Hackfleisch experimentiert, da Fleisch ja bekanntlich ein guter Geschmacksgeber ist. Auch diese Veränderung hat sich ausgezahlt, wobei ich Fleisch bei diesem Gericht trotzdem nicht als notwendig erachte.
+            Allen Kritikern zum Trotz war nach dem ersten gescheiterten Versuch mein kulinarischer Ehrgeiz geweckt! Ich wollte sowohl diese wunderbar sämige Konsistenz der Sauce erreichen als auch das Geschmackserlebnis intensivieren. Als erste Änderung an dem Rezept habe ich die Zwiebeln in Olivenöl angebraten und sie mit Weißwein abgelöscht. Das war ein kleiner aber wichtiger Schritt, um dem Geschmack auf die Sprünge zu helfen. Als nächstes habe ich zuerst mit angebratenem Speck und dann mit Hackfleisch experimentiert, da Fleisch ja bekanntlich ein guter Geschmacksgeber ist. Auch diese Veränderung hat sich ausgezahlt, wobei ich Fleisch bei diesem Gericht trotzdem nicht als notwendig erachte.
           </p>
 
           <p>
-            Den Durchbruch hatte ich erst, als ich die Sauce zusätzlich mit Tomatenmark angereichert und einen Teil des Wassers durch Dosentomaten ersetzt habe. Das war endlich der Geschmack, den ich mir vorgestellt habe. Die Nudeln saugen sich so richtig schön mit der Tomatensauce voll und geben ihrerseits Stärke an die Kochflüssigkeit ab. Das Ergebnis ist ein geschmackvolles Gericht, dass schnell zubereitet ist und darüber hinaus auch noch den Abwasch erleichtert, weil man nur einen Topf spülen muss. Das würde sicherlich auch der italienischen Nonna gefallen 😎
+            Der Durchbruch kam erst, als ich die Sauce zusätzlich mit Tomatenmark angereichert und einen Teil des Wassers durch Dosentomaten ersetzt habe. Das war endlich der Geschmack, den ich mir vorgestellt habe. Die Nudeln saugen sich so richtig schön mit der Tomatensauce voll und geben ihrerseits Stärke an die Kochflüssigkeit ab. Das Ergebnis ist ein geschmackvolles Gericht, dass schnell zubereitet ist und darüber hinaus auch noch den Abwasch erleichtert, weil man nur einen Topf spülen muss. Das würde sicherlich auch der italienischen Nonna gefallen 😎
           </p>
 
           <ArticleImageComponent
@@ -57,9 +57,9 @@
           <h2>Worauf kommt es an?</h2>
 
           <ul>
-            <li>wichtig ist die richtige Menge an Flüssigkeit (lieber am Anfang etwas zu wenig nehmen, man kann immer noch etwas nachschütten)</li>
+            <li>wichtig ist die richtige Menge an Flüssigkeit: nehmt lieber am Anfang etwas weniger, man kann immer noch etwas nachschütten</li>
             <li>man braucht mehr Flüssigkeit als bei einer getrennten Zubereitung der Sauce, da die Nudeln viel Flüssigkeit aufsaugen, die sie normalerweise aus dem Kochwasser bekommen würden</li>
-            <li>da die Nudeln nicht in Salzwasser gegart werden benötigt das Gericht mehr Salz als eine klassische Nudelsauce</li>
+            <li>da die Nudeln nicht in Salzwasser gegart werden, benötigt das Gericht mehr Salz als eine klassische Nudelsauce</li>
           </ul>
 
           <h2>Die einzelnen Schritte im Überblick</h2>
@@ -94,7 +94,6 @@
           <li>für eine fleischhaltige Variante wahlweise 400 g Hackfleisch oder 150 g Speck kurz nach den Zwiebeln anbraten</li>
           <li>getrocknete Tomaten</li>
           <li>Frühlingszwiebeln</li>
-          <li>Karotten</li>
           <li>Chilischote</li>
           <li>Pinienkerne (trocken anrösten, dann aus dem Topf nehmen und beim Servieren auf die Teller streuen)</li>
         </ul>

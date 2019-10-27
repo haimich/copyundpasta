@@ -29,6 +29,10 @@ export const INGREDIENTS: Ingredients = {
     id: "mehl",
     name: "Mehl",
   },
+  milderessig: {
+    id: "milderessig",
+    name: "milder Essig",
+  },
   essig: {
     id: "essig",
     name: "Essig",

@@ -125,7 +125,7 @@ const ingredients: (RecipeIngredientGroup|RecipeIngredient)[] = [
     amountFrom: 1,
     amountTo: 2,
     unit: INGREDIENT_UNITS.el,
-    ingredient: INGREDIENTS.essig,
+    ingredient: INGREDIENTS.milderessig,
     description: "(z. B. weißer Balsamico)",
   },
   {

@@ -1,5 +1,4 @@
 import CategoryUtil from "@/utils/CategoryUtil";
-import categories from "@/interfaces/RecipeCategories";
 
 describe("getAllArticleCategories", () => {
   test("should return parent and child categories", () => {
@@ -89,7 +88,7 @@ describe("getFullRecipeCategoryName", () => {
   test("should return category and parent name", () => {
     let categories = CategoryUtil.getAllRecipeCategories();
 
-    expect(CategoryUtil.getFullRecipeCategoryName("frostings", categories.categoriesById)).toEqual("Kuchen Frostings & Fillings");
+    expect(CategoryUtil.getFullRecipeCategoryName("frostings", categories.categoriesById)).toEqual("Kuchen Frostings");
   });
 
   test("should return category name when no parent is present", () => {

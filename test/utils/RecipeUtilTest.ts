@@ -1,11 +1,15 @@
 import RecipeUtil from "@/utils/RecipeUtil";
-import RecipeCategories from "@/interfaces/RecipeCategories";
-import { Recipe, RecipeStep, RecipeServings, RecipeIngredient, RecipeIngredientEntry, RecipeIngredientGroup, RecipeStepGroup } from "@/interfaces/Recipe";
-import { Ingredients, IngredientPreparation, RecipeUnit, RecipeServingsUnit } from "@/interfaces/RecipeIngredients";
+import { Recipe, RecipeStep, RecipeServings, RecipeIngredient, RecipeIngredientGroup, RecipeStepGroup } from "@/interfaces/Recipe";
+import { RECIPE_CATEGORIES } from "@/content/categories/RecipeCategories";
+import { INGREDIENTS } from "@/content/ingredients/Ingredients";
+import { INGREDIENT_PREPARATIONS } from "@/content/ingredients/IngredientPreparations";
+import { INGREDIENT_UNITS } from "@/content/ingredients/IngredientUnits";
+import { RECIPE_SERVINGS } from "@/content/ingredients/RecipeServings";
+
 
 const servings: RecipeServings = {
   amount: 10,
-  unit: RecipeServingsUnit.quantity,
+  unit: RECIPE_SERVINGS.quantity,
 };
 
 const ingredients: (RecipeIngredientGroup|RecipeIngredient)[] = [
@@ -16,52 +20,52 @@ const ingredients: (RecipeIngredientGroup|RecipeIngredient)[] = [
       {
         isGroup: false,
         amount: 500,
-        unit: RecipeUnit.g,
-        ingredient: Ingredients.mehl,
+        unit: INGREDIENT_UNITS.g,
+        ingredient: INGREDIENTS.mehl,
       },
       {
         isGroup: false,
         amount: 30,
-        unit: RecipeUnit.g,
-        ingredient: Ingredients.hefe,
+        unit: INGREDIENT_UNITS.g,
+        ingredient: INGREDIENTS.hefe,
       },
       {
         isGroup: false,
         amount: 30,
-        unit: RecipeUnit.g,
-        ingredient: Ingredients.zucker,
+        unit: INGREDIENT_UNITS.g,
+        ingredient: INGREDIENTS.zucker,
       },
       {
         isGroup: false,
         amountFrom: 2,
-        unit: RecipeUnit.quantity,
+        unit: INGREDIENT_UNITS.quantity,
         amountTo: 3,
-        ingredient: Ingredients.ei,
+        ingredient: INGREDIENTS.ei,
       },
       {
         isGroup: false,
         amount: 0.25,
-        unit: RecipeUnit.l,
-        ingredient: Ingredients.milch,
+        unit: INGREDIENT_UNITS.l,
+        ingredient: INGREDIENTS.milch,
       },
       {
         isGroup: false,
-        ingredient: Ingredients.salz,
+        ingredient: INGREDIENTS.salz,
       },
       {
         isGroup: false,
         amount: 80,
-        unit: RecipeUnit.g,
-        ingredient: Ingredients.butter,
+        unit: INGREDIENT_UNITS.g,
+        ingredient: INGREDIENTS.butter,
       },
     ],
   },
   {
     isGroup: false,
-    unit: RecipeUnit.quantity,
+    unit: INGREDIENT_UNITS.quantity,
     amount: 2,
-    ingredient: Ingredients.zwiebel,
-    preparation: IngredientPreparation.gewuerfelt,
+    ingredient: INGREDIENTS.zwiebel,
+    preparation: INGREDIENT_PREPARATIONS.gewuerfelt,
   },
 ];
 
@@ -118,7 +122,7 @@ const createdAt = "2019-06-10 10:10:28";
 const recipe: Recipe = {
   slug: "oma-hildas-dampfnudeln",
   title: "Oma Hilda's Dampfnudeln",
-  categoryId: RecipeCategories.kuchen.id,
+  categoryId: RECIPE_CATEGORIES.kuchen.id,
   previewImageUrl: "/images/recipes/oma-hildas-dampfnudeln/cover.jpg",
   description: "Das Originalrezept meiner Uroma Hilda, das definitiv Eindruck bei euren Gästen macht!",
   servings,
