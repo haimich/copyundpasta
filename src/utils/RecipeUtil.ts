@@ -67,6 +67,7 @@ export default class RecipeUtil {
   }
 
   public static formatUnit(unit: IngredientUnit) {
+    console.log(unit)
     if (unit == null || unit.id == null) {
       return "";
     } else if (unit.namePlural != null) {

@@ -5,9 +5,25 @@ export const INGREDIENTS: Ingredients = {
     id: "salz",
     name: "Salz",
   },
+  pfeffer: {
+    id: "pfeffer",
+    name: "Pfeffer",
+  },
+  oregano: {
+    id: "oregano",
+    name: "Oregano",
+  },
   wasser: {
     id: "wasser",
     name: "Wasser",
+  },
+  parmesan: {
+    id: "parmesan",
+    name: "Parmesan",
+  },
+  basilikumblaetter: {
+    id: "basilikumblaetter",
+    name: "Basilikumblätter",
   },
   mehl: {
     id: "mehl",
@@ -63,6 +79,10 @@ export const INGREDIENTS: Ingredients = {
     id: "butter",
     name: "Butter",
   },
+  olivenoel: {
+    id: "olivenoel",
+    name: "Olivenöl",
+  },
   zimt: {
     id: "zimt",
     name: "Zimt",
@@ -71,10 +91,27 @@ export const INGREDIENTS: Ingredients = {
     id: "zitronenabrieb",
     name: "Abrieb einer unbehandelten Zitrone",
   },
+  weisswein: {
+    id: "weisswein",
+    name: "Weißwein",
+  },
+  gemuesebruehenpulver: {
+    id: "gemuesebruehenpulver",
+    name: "Gemüsebrühenpulver",
+  },
+  paprikapulver: {
+    id: "paprikapulver",
+    name: "Paprikapulver",
+  },
   zwiebel: {
     id: "zwiebel",
     name: "Zwiebel",
     namePlural: "Zwiebeln",
+  },
+  paprika: {
+    id: "paprika",
+    name: "Paprika",
+    namePlural: "Paprikas",
   },
   knoblauchzehe: {
     id: "knoblauchzehe",
@@ -88,6 +125,14 @@ export const INGREDIENTS: Ingredients = {
   kirschtomaten: {
     id: "kirschtomaten",
     name: "Kirschtomaten",
+  },
+  champignons: {
+    id: "champignons",
+    name: "Champignons",
+  },
+  zucchini: {
+    id: "zucchini",
+    name: "Zucchini",
   },
   tomatenkonserve_stueckig: {
     id: "tomatenkonserve_stueckig",
