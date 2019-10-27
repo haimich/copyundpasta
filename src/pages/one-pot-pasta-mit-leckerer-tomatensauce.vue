@@ -15,7 +15,7 @@
           <ArticleJumpToRecipeComponent />
 
           <p class="entry-paragraph">
-            Es ist schon ein paar Jahre her, als die amerikanische TV-Köchin Martha Stewart mit ihrer Eigenkreation namens <ArticleQuoteComponent text="One Pot Pasta" /> einen riesigen Trend ausgelöst hat. Dabei ist die Idee so simpel: man schichtet alle Zutaten in einem Topf, füllt ihn mit Wasser auf und bekommt am Schluss eine perfekt gegarte Pasta mit einer wunderbar sämigen Sauce.
+            Es ist schon ein paar Jahre her, als die amerikanische TV-Köchin Martha Stewart mit ihrer Eigenkreation namens <ArticleQuoteComponent text="One Pot Pasta" /> einen riesen Trend ausgelöst hat. Dabei ist die Idee so einfach: man schichtet alle Zutaten in einen Topf, füllt diesen mit Wasser auf und bekommt am Schluss eine perfekt gegarte Pasta mit einer wunderbar sämigen Sauce.
           </p>
 
           <p>
@@ -36,17 +36,17 @@
           <h2>Ist es wirklich so simpel?</h2>
 
           <p>
-            Ich muss zugeben ich war skeptisch, als ich das Rezept zum ersten Mal ausprobiert habe: konnte es wirklich so einfach sein, ein Pastagericht zu zaubern das auch noch geschmacklich überzeugt? Ich muss sagen, dass mich das Originalrezept in dieser Hinsicht ziemlich enttäuscht hat. Die Sauce wird zwar tatsächlich schön sämig bei diese Kochmethode, aber es entwickelt sich kaum ein nennenswerter Eigengeschmack. Dies hat sicher dazu beigetragen, dass Italiener dem Gericht wenig abgewinnen können. Das lassen jedenfalls die Kommentare unter diesem <ArticleLinkComponent href="https://youtu.be/0VQEJARHJ44" text="YouTube-Video" /> vermuten. Hier liest man so Sätze wie „wrong title, it should be named <i>how to trigger Italians in under 6 minutes</i>“ oder <ArticleQuoteComponent text="Every view this video gets a nonna dies" />.
+            Ich muss zugeben ich war skeptisch, als ich das Rezept zum ersten Mal ausprobiert habe: konnte es wirklich so einfach sein, ein Pastagericht zu zaubern, das am Ende auch noch geschmacklich überzeugt? Ich muss sagen, dass mich das Originalrezept in dieser Hinsicht ziemlich enttäuscht hat. Die Sauce wird zwar tatsächlich schön sämig bei diese Kochmethode, aber es entwickelt sich kaum ein nennenswerter Eigengeschmack. Dies hat womöglich auch dazu beigetragen, dass Italiener dem Gericht wenig abgewinnen können. Das lassen jedenfalls die Kommentare unter diesem <ArticleLinkComponent href="https://youtu.be/0VQEJARHJ44" text="YouTube-Video" /> vermuten. Hier liest man so Sätze wie „wrong title, it should be named <i>how to trigger Italians in under 6 minutes</i>“ oder <ArticleQuoteComponent text="Every view this video gets a nonna dies" />.
           </p>
 
           <h2></h2>
 
           <p>
-            Allen Kritikern zum Trotz war nach dem ersten gescheiterten Versuch mein Ergeiz geweckt! Ich wollte sowohl diese wunderbar sämige Konsistenz der Sauce erreichen als auch das Geschmackserlebnis intensivieren. Die erste Änderung, die ich an dem Rezept gemacht habe, war dass ich die Zwiebeln in Olivenöl angebraten habe und sie mit Weißwein abgelöscht habe. Das war ein erster wichtiger Schritt, um dem Geschmack auf die Sprünge zu helfen. Als nächstes habe ich zuerst mit angebratenem Speck und dann mit Hackfleisch experimentiert, da Fleisch ja bekanntlich ein guter Geschmacksgeber ist. Auch diese Veränderung hat sich ausgezahlt, wobei ich Fleisch bei diesem Gericht trotzdem für optional halte.
+            Allen Kritikern zum Trotz war nach dem ersten gescheiterten Versuch mein kulinarischer Ehrgeiz geweckt! Ich wollte sowohl diese wunderbar sämige Konsistenz der Sauce erreichen als auch das Geschmackserlebnis intensivieren. Die erste Änderung, die ich an dem Rezept gemacht habe war, dass ich die Zwiebeln in Olivenöl angebraten habe und sie mit Weißwein abgelöscht habe. Das war ein kleiner aber wichtiger Schritt, um dem Geschmack auf die Sprünge zu helfen. Als nächstes habe ich zuerst mit angebratenem Speck und dann mit Hackfleisch experimentiert, da Fleisch ja bekanntlich ein guter Geschmacksgeber ist. Auch diese Veränderung hat sich ausgezahlt, wobei ich Fleisch bei diesem Gericht trotzdem nicht als notwendig erachte.
           </p>
 
           <p>
-            Den Durchbruch hatte ich erst, als ich die Sauce zusätzlich mit Tomatenmark angereichert und einen Teil des Wassers durch Dosentomaten ersetzt habe. Das war der Geschmack, den ich mir vorgestellt hatte. Die Nudeln saugen sich so richtig schön mit der Tomatensauce voll und geben ihrerseits Stärke an sie ab. Das Ergebnis ist ein geschmackvolles Gericht, dass schnell zubereitet ist und darüber hinaus auch noch den Abwasch erleichtert, weil man nur einen Topf spülen muss. Das würde sicherlich auch der italienischen Nonna gefallen 😎
+            Den Durchbruch hatte ich erst, als ich die Sauce zusätzlich mit Tomatenmark angereichert und einen Teil des Wassers durch Dosentomaten ersetzt habe. Das war endlich der Geschmack, den ich mir vorgestellt habe. Die Nudeln saugen sich so richtig schön mit der Tomatensauce voll und geben ihrerseits Stärke an die Kochflüssigkeit ab. Das Ergebnis ist ein geschmackvolles Gericht, dass schnell zubereitet ist und darüber hinaus auch noch den Abwasch erleichtert, weil man nur einen Topf spülen muss. Das würde sicherlich auch der italienischen Nonna gefallen 😎
           </p>
 
           <ArticleImageComponent
@@ -57,8 +57,8 @@
           <h2>Worauf kommt es an?</h2>
 
           <ul>
-            <li>die richtige Menge an Flüssigkeit (lieber am Anfang etwas zu wenig nehmen, man kann immer noch etwas nachschütten)</li>
-            <li>man braucht mehr Flüssigkeit als bei einer getrennten Zubereitung der Sauce, da die Nudeln viel Flüssigkeit aufsaugen, die sie normalerweise aus dem Kochwasser bekommen</li>
+            <li>wichtig ist die richtige Menge an Flüssigkeit (lieber am Anfang etwas zu wenig nehmen, man kann immer noch etwas nachschütten)</li>
+            <li>man braucht mehr Flüssigkeit als bei einer getrennten Zubereitung der Sauce, da die Nudeln viel Flüssigkeit aufsaugen, die sie normalerweise aus dem Kochwasser bekommen würden</li>
             <li>da die Nudeln nicht in Salzwasser gegart werden benötigt das Gericht mehr Salz als eine klassische Nudelsauce</li>
           </ul>
 
