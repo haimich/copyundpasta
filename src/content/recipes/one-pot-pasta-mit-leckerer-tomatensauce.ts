@@ -15,12 +15,6 @@ const servings: RecipeServing = {
 const ingredients: (RecipeIngredientGroup|RecipeIngredient)[] = [
   {
     isGroup: false,
-    amount: 400,
-    unit: INGREDIENT_UNITS.gramm,
-    ingredient: INGREDIENTS.spaghetti,
-  },
-  {
-    isGroup: false,
     amount: 1,
     unit: INGREDIENT_UNITS.stueck,
     ingredient: INGREDIENTS.zwiebel,
@@ -33,12 +27,6 @@ const ingredients: (RecipeIngredientGroup|RecipeIngredient)[] = [
     ingredient: INGREDIENTS.knoblauchzehe,
     preparation: INGREDIENT_PREPARATIONS.gewuerfelt,
     description: "(optional)",
-  },
-  {
-    isGroup: false,
-    amount: 2,
-    unit: INGREDIENT_UNITS.dose,
-    ingredient: INGREDIENTS.tomatenkonserve_stueckig,
   },
   {
     isGroup: false,
@@ -71,6 +59,18 @@ const ingredients: (RecipeIngredientGroup|RecipeIngredient)[] = [
   },
   {
     isGroup: false,
+    amount: 400,
+    unit: INGREDIENT_UNITS.gramm,
+    ingredient: INGREDIENTS.spaghetti,
+  },
+  {
+    isGroup: false,
+    amount: 2,
+    unit: INGREDIENT_UNITS.dose,
+    ingredient: INGREDIENTS.tomatenkonserve_stueckig,
+  },
+  {
+    isGroup: false,
     amount: 2,
     unit: INGREDIENT_UNITS.el,
     ingredient: INGREDIENTS.olivenoel,
@@ -79,7 +79,7 @@ const ingredients: (RecipeIngredientGroup|RecipeIngredient)[] = [
   {
     isGroup: false,
     amount: 50,
-    unit: INGREDIENT_UNITS.ml,
+    unit: INGREDIENT_UNITS.milliliter,
     ingredient: INGREDIENTS.weisswein,
     description: "(optional)",
   },
@@ -121,12 +121,6 @@ const ingredients: (RecipeIngredientGroup|RecipeIngredient)[] = [
   },
   {
     isGroup: false,
-    amount: 80,
-    unit: INGREDIENT_UNITS.gramm,
-    ingredient: INGREDIENTS.parmesan,
-  },
-  {
-    isGroup: false,
     amountFrom: 1,
     amountTo: 2,
     unit: INGREDIENT_UNITS.el,
@@ -141,8 +135,14 @@ const ingredients: (RecipeIngredientGroup|RecipeIngredient)[] = [
   },
   {
     isGroup: false,
-    amount: 1,
-    unit: INGREDIENT_UNITS.el,
+    amount: 80,
+    unit: INGREDIENT_UNITS.gramm,
+    ingredient: INGREDIENTS.parmesan,
+  },
+  {
+    isGroup: false,
+    amount: 2,
+    unit: INGREDIENT_UNITS.tl,
     ingredient: INGREDIENTS.oregano,
     description: "(optional)",
   },
@@ -165,7 +165,52 @@ const steps: (RecipeStepGroup|RecipeStep)[] = [
   {
     isGroup: false,
     type: "step",
-    content: "",
+    content: "Die Zwiebeln, den Knoblauch und das Gemüse wie in den Zutaten angegeben kleinschneiden. Den Parmesan reiben.",
+  },
+  {
+    isGroup: false,
+    type: "step",
+    content: "Einen breiten Topf (ein Wok eignet sich auch sehr gut) heiß werden lassen, dann das Olivenöl hinzufügen und die Zwiebeln anbraten.",
+  },
+  {
+    isGroup: false,
+    type: "step",
+    content: "Nach einer Weile den Knoblauch hinzugeben und kurz mitdünsten, währenddessen als Vorbereitung das Wasser in einem Wasserkocher zum Kochen bringen.",
+  },
+  {
+    isGroup: false,
+    type: "step",
+    content: "Die Zwiebeln und den Knoblauch mit Weißwein ablöschen, danach das Tomatenmark hinzufügen und gut umrühren.",
+  },
+  {
+    isGroup: false,
+    type: "step",
+    content: "Nun das gesamte Gemüse sowie die ungekochten Nudeln in den Topf geben und mit den stückigen Tomaten und dem heißen Wasser auffüllen.",
+  },
+  {
+    isGroup: false,
+    type: "step",
+    content: "Einen Timer auf 15 Minuten stellen. Mit 1 EL Zucker, 3 TL Salz und dem Gemüsebrühenpulver würzen. Außerdem 1 EL Paprikapulver hinzufügen.",
+  },
+  {
+    isGroup: false,
+    type: "step",
+    content: "Zwischendurch immer wieder umrühren, damit nichts anbrennt und die Spaghetti nicht aneinanderkleben.",
+  },
+  {
+    isGroup: false,
+    type: "step",
+    content: "Die genaue Kochzeit hängt von den Spaghetti ab, daher nach 15 Minuten immer mal wieder probieren, ob sie den gewünschten Gargrad erreicht haben.",
+  },
+  {
+    isGroup: false,
+    type: "step",
+    content: "Am Ende der Kochzeit mit Pfeffer und etwas Essig würzen. Nach Belieben noch getrockneten Oregano dazugeben.",
+  },
+  {
+    isGroup: false,
+    type: "step",
+    content: "Den Herd abstellen und den geriebenen Parmesan einrühren. Mit gezupften Basilikumblättern servieren.",
   },
 ];
 
