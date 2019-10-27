@@ -33,7 +33,7 @@ const ingredients: (RecipeIngredientGroup|RecipeIngredient)[] = [
   },
   {
     isGroup: false,
-    amount: 1,
+    amount: 2,
     unit: INGREDIENT_UNITS.dose,
     ingredient: INGREDIENTS.tomatenkonserve_stueckig,
   },

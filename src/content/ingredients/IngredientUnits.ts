@@ -36,5 +36,6 @@ export const INGREDIENT_UNITS: IngredientUnits = {
   dose: {
     id: "dose",
     name: "Dose",
+    namePlural: "Dosen",
   },
 }

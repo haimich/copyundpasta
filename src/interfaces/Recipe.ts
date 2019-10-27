@@ -26,6 +26,7 @@ export interface IngredientPreparations {
 export interface IngredientUnit {
   id: string;
   name: string;
+  namePlural?: string;
 }
 
 export interface IngredientUnits {

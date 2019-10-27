@@ -118,15 +118,15 @@
     private ratings: RatingResponse;
 
     private stepPhotos = [
-      "/images/articles/zimtschnecken-aka-cinnamon-rolls/steps/1.jpeg",
-      "/images/articles/zimtschnecken-aka-cinnamon-rolls/steps/2.jpeg",
-      "/images/articles/zimtschnecken-aka-cinnamon-rolls/steps/3.jpeg",
-      "/images/articles/zimtschnecken-aka-cinnamon-rolls/steps/4.jpeg",
-      "/images/articles/zimtschnecken-aka-cinnamon-rolls/steps/5.jpeg",
-      "/images/articles/zimtschnecken-aka-cinnamon-rolls/steps/6.jpeg",
-      "/images/articles/zimtschnecken-aka-cinnamon-rolls/steps/7.jpeg",
-      "/images/articles/zimtschnecken-aka-cinnamon-rolls/steps/8.jpeg",
-      "/images/articles/zimtschnecken-aka-cinnamon-rolls/steps/9.jpeg",
+      "/images/articles/zimtschnecken-aka-cinnamon-rolls/schritte/1.jpeg",
+      "/images/articles/zimtschnecken-aka-cinnamon-rolls/schritte/2.jpeg",
+      "/images/articles/zimtschnecken-aka-cinnamon-rolls/schritte/3.jpeg",
+      "/images/articles/zimtschnecken-aka-cinnamon-rolls/schritte/4.jpeg",
+      "/images/articles/zimtschnecken-aka-cinnamon-rolls/schritte/5.jpeg",
+      "/images/articles/zimtschnecken-aka-cinnamon-rolls/schritte/6.jpeg",
+      "/images/articles/zimtschnecken-aka-cinnamon-rolls/schritte/7.jpeg",
+      "/images/articles/zimtschnecken-aka-cinnamon-rolls/schritte/8.jpeg",
+      "/images/articles/zimtschnecken-aka-cinnamon-rolls/schritte/9.jpeg",
     ];
 
     constructor() {

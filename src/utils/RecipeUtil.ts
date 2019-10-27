@@ -1,4 +1,4 @@
-import { Recipe, RecipeStep, RecipeServing, RecipeIngredient, RecipeIngredientGroup, RecipeStepGroup } from "@/interfaces/Recipe";
+import { Recipe, RecipeIngredient, IngredientUnit } from "@/interfaces/Recipe";
 import NumberUtil from "@/utils/NumberUtil";
 import { $n } from "@/filters/numberFilter";
 
@@ -16,11 +16,13 @@ export default class RecipeUtil {
   }
 
   public static formatIngredient(ingredient: RecipeIngredient, servingsMultiplier = 1): string {
+    let actualAmount = ingredient.amount * servingsMultiplier;
+
     let amount = RecipeUtil.formatAmount(ingredient, servingsMultiplier);
     let preparation = ingredient.preparation != null ? ", " + ingredient.preparation.name : "";
     let ingredientName = RecipeUtil.formatIngredientName(ingredient)
     let description = "";
-    let unit = ingredient.unit != null ? ingredient.unit.name : "";
+    let unit = RecipeUtil.formatUnit(ingredient.unit);
     let unitBeforeIngredient = false;
 
     if (ingredient.unit != null && ingredient.unit.id === "einige") {
@@ -61,6 +63,16 @@ export default class RecipeUtil {
       return $n(amountFrom) + "‐" + $n(amountTo);
     } else {
       return "";
+    }
+  }
+
+  public static formatUnit(unit: IngredientUnit) {
+    if (unit == null || unit.id == null) {
+      return "";
+    } else if (unit.namePlural != null) {
+      return unit.namePlural;
+    } else {
+      return unit.name
     }
   }
 
