@@ -29,6 +29,10 @@ export const INGREDIENTS: Ingredients = {
     id: "mehl",
     name: "Mehl",
   },
+  essig: {
+    id: "essig",
+    name: "Essig",
+  },
   hefe: {
     id: "hefe",
     name: "Hefe",
@@ -113,6 +117,10 @@ export const INGREDIENTS: Ingredients = {
     name: "Paprika",
     namePlural: "Paprikas",
   },
+  tomatenmark: {
+    id: "tomatenmark",
+    name: "Tomatenmark",
+  },
   knoblauchzehe: {
     id: "knoblauchzehe",
     name: "Knoblauchzehe",
@@ -124,11 +132,13 @@ export const INGREDIENTS: Ingredients = {
   },
   kirschtomaten: {
     id: "kirschtomaten",
-    name: "Kirschtomaten",
+    name: "Kirschtomate",
+    namePlural: "Kirschtomaten",
   },
   champignons: {
     id: "champignons",
-    name: "Champignons",
+    name: "Champignon",
+    namePlural: "Champignons",
   },
   zucchini: {
     id: "zucchini",

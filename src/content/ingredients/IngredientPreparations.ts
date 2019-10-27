@@ -15,6 +15,6 @@ export const INGREDIENT_PREPARATIONS: IngredientPreparations = {
   },
   gezupft: {
     id: "gezupft",
-    name: "Gezupft",
+    name: "gezupft",
   },
 }

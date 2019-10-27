@@ -16,11 +16,9 @@ export default class RecipeUtil {
   }
 
   public static formatIngredient(ingredient: RecipeIngredient, servingsMultiplier = 1): string {
-    let actualAmount = ingredient.amount * servingsMultiplier;
-
     let amount = RecipeUtil.formatAmount(ingredient, servingsMultiplier);
     let preparation = ingredient.preparation != null ? ", " + ingredient.preparation.name : "";
-    let ingredientName = RecipeUtil.formatIngredientName(ingredient)
+    let ingredientName = RecipeUtil.formatIngredientName(ingredient, servingsMultiplier)
     let description = "";
     let unit = RecipeUtil.formatUnit(ingredient.unit);
     let unitBeforeIngredient = false;
@@ -40,7 +38,7 @@ export default class RecipeUtil {
     }
   }
 
-  public static formatAmount(ingredient: RecipeIngredient, servingsMultiplier = 1): string {
+  public static formatAmount(ingredient: RecipeIngredient, servingsMultiplier): string {
     if (NumberUtil.isNumberDefined(ingredient.amount)) {
       let amount = ingredient.amount * servingsMultiplier;
 
@@ -67,7 +65,6 @@ export default class RecipeUtil {
   }
 
   public static formatUnit(unit: IngredientUnit) {
-    console.log(unit)
     if (unit == null || unit.id == null) {
       return "";
     } else if (unit.namePlural != null) {
@@ -77,21 +74,26 @@ export default class RecipeUtil {
     }
   }
 
-  public static formatIngredientName(entry: RecipeIngredient): string {
+  public static formatIngredientName(entry: RecipeIngredient, servingsMultiplier): string {
     if (entry == null || entry.ingredient == null) {
       return "";
     }
 
-    if ((NumberUtil.isNumberDefined(entry.amount) && entry.amount >= 2) ||
-        (NumberUtil.isNumberDefined(entry.amountFrom) && NumberUtil.isNumberDefined(entry.amountTo))) {
-      if (entry.ingredient.namePlural != null) {
+    if (NumberUtil.isNumberDefined(entry.amount)) {
+      let amount = entry.amount * servingsMultiplier;
+
+      if (amount >= 2 && entry.ingredient.namePlural != null) {
         return entry.ingredient.namePlural;
-      } else {
-        return entry.ingredient.name;
       }
-    } else {
-      return entry.ingredient.name;
+    } else if (NumberUtil.isNumberDefined(entry.amountFrom) && NumberUtil.isNumberDefined(entry.amountTo)) {
+      let amount = entry.amountFrom * servingsMultiplier;
+
+      if (amount >= 0 && entry.ingredient.namePlural != null) {
+        return entry.ingredient.namePlural;
+      }
     }
+
+    return entry.ingredient.name;
   }
 
 }
