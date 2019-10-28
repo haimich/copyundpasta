@@ -281,6 +281,31 @@
       }
     }
 
+    initMatomo() {
+      // @ts-ignore
+      let _paq = window._paq || [];
+      /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+
+      (function() {
+        let u = "https://copyundpasta.de/matomo/";
+        
+        _paq.push(['setTrackerUrl', u + 'matomo.php']);
+        _paq.push(['setSiteId', '1']);
+        
+        let d = document
+        let g = d.createElement('script');
+        let s = d.getElementsByTagName('script')[0];
+        
+        g.type = 'text/javascript';
+        g.async = true;
+        g.defer = true;
+        g.src = u + 'matomo.js';
+        s.parentNode.insertBefore(g, s);
+      })();
+    }
+
     initCookieConsent() {
       // @ts-ignore
       window.cookieconsent.initialise({
@@ -296,9 +321,15 @@
         },
         "theme": "classic",
         "position": "bottom-right",
+        "type": "opt-out",
+        onStatusChange: function(status) {
+          console.log(this.hasConsented());
+        },
         "content": {
           "message": "Wir verwenden Cookies, um unsere Webseite möglichst benutzerfreundlich zu gestalten. Wenn Sie fortfahren, stimmen Sie der Verwendung von Cookies zu.",
           "dismiss": "Schließen",
+          "allow": "Cookies erlauben",
+          "deny": "Ablehnen",
           "link": "Weitere Informationen",
           "href": "https://www.copyundpasta.de/datenschutz"
         }
@@ -307,6 +338,7 @@
 
     mounted() {
       if (process.client) {
+        this.initMatomo();
         this.initCookieConsent();
         this.determineMenuMode();
         

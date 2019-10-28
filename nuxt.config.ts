@@ -87,21 +87,12 @@ const config = {
     server_error: "Fehler",
     server_error_details: "Bei der Verarbeitung ist ein Fehler aufgetreten.",
     client_error: "Fehler",
-    client_error_details: "Bei dere Generierung der Seite ist ein Fehler aufgetreten."
+    client_error_details: "Bei der Generierung der Seite ist ein Fehler aufgetreten."
   },
 
   loading: {
     color: "#1eb5da",
   },
-
-  // commented out due to segfaults
-  // watch: [
-  //   CWD + "/src/api",
-  //   CWD + "/src/interfaces",
-  //   CWD + "/src/content",
-  //   CWD + "/src/filters",
-  //   CWD + "/src/scss",
-  // ],
 
   /*
   ** Global CSS
@@ -220,6 +211,8 @@ const config = {
       'script-src': [
         "'self'",
         "https://*.copyundpasta.de",
+        "https://copyundpasta.de/matomo/matomo.js",
+        "https://*.copyundpasta.de/matomo/matomo.js",
         'https://www.google.com',
         'https://cdn.jsdelivr.net',
         'https://*.gstatic.com',

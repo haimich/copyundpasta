@@ -27,6 +27,7 @@ module.exports = {
     "vue/html-self-closing": "off",
     "indent": "off",
     "@typescript-eslint/no-unused-vars": "off",
+    "object-shorthand": "off",
     "no-unused-vars": "off",
     "padded-blocks": "off",
     "no-multiple-empty-lines": "off",
