@@ -36,6 +36,11 @@
             Ich möchte euch mit auf eine kulinarische Entdeckungsreise nehmen und mein Wissen und meine Leidenschaft fürs Kochen und Backen mit euch teilen. Begleitet mich auf der Suche nach unvergesslichen Geschmackserlebnissen: dem perfekten Risotto, dem saftigsten Steak oder dem leckersten Auflauf. Auf unserer Reise schauen wir hinter die Kulissen und erkunden, wie man ein richtig gutes Brot backt und welche chemischen Vorgänge bei der Teigherstellung eine Rolle spielen, wie man Eischnee am besten aufschlägt und welche speziellen Zutaten sich bei asiatischen Gerichten problemlos austauschen lassen. Ich führe euch Schritt für Schritt durch die Rezepte und beantworte eure Fragen. Ich gebe euch Tipps und Empfehlungen zu Küchenutensilien und -geräten sowie zu Zeitschriften, Büchern und anderen Blogs rund ums Kochen und Backen.
           </p>
 
+          <ArticleImageComponent
+            src="/images/about/kamera-auf-kuchen-gerichtet.jpg"
+            alt="Michael mit Kochbüchern"
+          />
+
           <p>
             Für euch öffne ich meine Rezeptdatenbank und bringe Abwechslung in euren Speiseplan. Ich zeige euch, wie man aus Resten vom Vortag leckere Gerichte zaubert, wie sich der beste Geschmack aus Zutaten herauskitzeln lässt und wie auch aufwändige Gerichte gelingen. Der <ArticleQuoteComponent text="Wow" />-Effekt bei euren Gästen ist garantiert! Selbst wenn wir ein einfaches Gericht nur minimal variieren. 
           </p>

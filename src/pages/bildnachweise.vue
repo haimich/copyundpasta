@@ -75,6 +75,12 @@
         extLink: "https://www.meinlichtspiel.com/",
       },
       {
+        imageLink: "/images/about/kamera-auf-kuchen-gerichtet.jpg",
+        author: "Sarah Winter",
+        extLinkTitle: "meinlichtspiel.com",
+        extLink: "https://www.meinlichtspiel.com/",
+      },
+      {
         imageLink: "/images/about/michael-kochbuecher.jpg",
         author: "Sarah Winter",
         extLinkTitle: "meinlichtspiel.com",
