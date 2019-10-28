@@ -12,10 +12,10 @@
 
 <script lang="ts">
 
+  import { Vue, Component, Prop, Watch } from "vue-property-decorator";
+
   import { VueperSlides, VueperSlide } from "vueperslides";
   import "vueperslides/dist/vueperslides.css";
-
-  import { Vue, Component, Prop, Watch } from "vue-property-decorator";
 
   @Component({
     components: { VueperSlides, VueperSlide },

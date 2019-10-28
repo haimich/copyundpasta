@@ -33,16 +33,7 @@
             Die schwedische A Capella Band <strong>The Real Group</strong> hat hierzu den passenden Song geschrieben: <ArticleQuoteComponent text="A minute on your lips, a lifetime on your hips..." />
           </p>
 
-          <el-row style="display: flex; justify-content: center; margin-top: 20px;">
-            <iframe
-              width="560"
-              height="315"
-              src="https://www.youtube.com/embed/9NFkn3rqffA"
-              frameborder="0"
-              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-            ></iframe>
-          </el-row>
+          <YouTubeVideoComponent url="https://www.youtube.com/embed/9NFkn3rqffA" />
 
           <h2>Wie forme ich die Zimtschnecken?</h2>
 
