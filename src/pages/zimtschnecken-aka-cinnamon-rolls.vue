@@ -52,13 +52,7 @@
 
           <el-row>
             <el-col :xl="xl" :lg="lg" :md="md" :sm="sm" :xs="xs">
-              <vueper-slides :slide-ratio="0.8">
-                <vueper-slide
-                  v-for="(url, index) in stepPhotos"
-                  :key="index"
-                  :image="url"
-                ></vueper-slide>
-              </vueper-slides>
+              <SlideshowComponent :images="stepPhotos" />
             </el-col>
           </el-row>
 
@@ -99,19 +93,17 @@
 
   import { Vue, Component, Prop } from "vue-property-decorator";
   import BaseArticlePage from "@/components/BaseArticlePage.vue";
+  import SlideshowComponent from "@/components/article/SlideshowComponent.vue";
   import ArticleUtil from "@/utils/ArticleUtil";
   import { RatingResponse } from "@/interfaces/Rating";
 
   import article from "@/content/articles/zimtschnecken-aka-cinnamon-rolls";
   import recipe from "@/content/recipes/zimtschnecken-aka-cinnamon-rolls";
 
-  import { VueperSlides, VueperSlide } from "vueperslides";
-  import "vueperslides/dist/vueperslides.css";
-
   @Component({
     head: ArticleUtil.defaultHead(article),
     asyncData: ArticleUtil.defaultAsyncData(article, recipe),
-    components: { VueperSlides, VueperSlide },
+    components: { SlideshowComponent },
   })
   export default class extends BaseArticlePage {
 

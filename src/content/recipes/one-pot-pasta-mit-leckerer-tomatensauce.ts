@@ -56,6 +56,7 @@ const ingredients: (RecipeIngredientGroup|RecipeIngredient)[] = [
     unit: INGREDIENT_UNITS.stueck,
     ingredient: INGREDIENTS.zucchini,
     preparation: INGREDIENT_PREPARATIONS.gewuerfelt,
+    description: "(optional)",
   },
   {
     isGroup: false,
@@ -206,7 +207,7 @@ const steps: (RecipeStepGroup|RecipeStep)[] = [
   {
     isGroup: false,
     type: "step",
-    content: "Am Ende der Kochzeit mit Pfeffer und etwas Essig würzen. Nach Belieben noch getrockneten Oregano dazugeben.",
+    content: "Am Ende der Kochzeit mit Pfeffer und etwas Essig abschmecken. Nach Belieben noch getrockneten Oregano dazugeben.",
   },
   {
     isGroup: false,
