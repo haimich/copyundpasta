@@ -211,8 +211,6 @@ const config = {
       'script-src': [
         "'self'",
         "https://*.copyundpasta.de",
-        "https://copyundpasta.de/matomo/matomo.js",
-        "https://*.copyundpasta.de/matomo/matomo.js",
         'https://www.google.com',
         'https://cdn.jsdelivr.net',
         'https://*.gstatic.com',

@@ -5,6 +5,10 @@ export const INGREDIENT_PREPARATIONS: IngredientPreparations = {
     id: "gewuerfelt",
     name: "gewürfelt",
   },
+  feingewuerfelt: {
+    id: "feingewuerfelt",
+    name: "fein gewürfelt",
+  },
   halbiert: {
     id: "halbiert",
     name: "halbiert",

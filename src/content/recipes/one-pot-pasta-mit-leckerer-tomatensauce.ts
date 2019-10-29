@@ -55,7 +55,7 @@ const ingredients: (RecipeIngredientGroup|RecipeIngredient)[] = [
     amount: 0.5,
     unit: INGREDIENT_UNITS.stueck,
     ingredient: INGREDIENTS.zucchini,
-    preparation: INGREDIENT_PREPARATIONS.gewuerfelt,
+    preparation: INGREDIENT_PREPARATIONS.feingewuerfelt,
     description: "(optional)",
   },
   {
