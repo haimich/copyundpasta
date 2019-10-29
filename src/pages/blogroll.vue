@@ -5,7 +5,7 @@
       <el-col :xl="xl" :lg="lg" :md="md" :sm="sm" :xs="xs">
         <MainHeadingComponent
           text="Blogroll"
-          subtitle="Hier findet ihr meine liebsten Foodblogs :-)"
+          subtitle="Hier findet ihr meine Lieblings-Foodblogs 😀"
         />
         
         <ul class="link-list">
@@ -90,6 +90,12 @@
         description: `Dieser Blog stellt sowohl inhaltlich als auch designtechnisch ein großes Vorbild für mich dar. Die Gerichte sind äußerst ansprechend fotografiert und die Rezepte der &bdquo;Schlaraffenwelt&ldquo; beleuchten ein Thema oft sehr detailreich, wie zum Beispiel der Beitrag <a href="https://schlaraffenwelt.de/perfektes-wiener-schnitzel-rezept/">Das Perfekte Schnitzel</a> zeigt.`,
         image: "/images/blogroll/schlaraffenwelt.jpg",
         url: "https://schlaraffenwelt.de/",
+      },
+      {
+        name: "Delispot",
+        description: `Das selbsternannte &bdquo;Kompendium der entspannten Küche&ldquo; wird seinem Namen mehr als gerecht: Ralf Schmid hat hier ganze Arbeit geleistet und eine unüberschaubare Menge an sehr lesenswerten Wissensbeiträgen und Rezepten zum Thema Kochen verfasst. <br />Die Seite könnte man wie ich finde so wie sie ist als Buch drucken, nur dass sie dann sehr viel Platz im Regal wegnehmen würde und man auf die tolle Suchfunktion verzichten müsste :-)`,
+        image: "/images/blogroll/delispot.jpg",
+        url: "https://www.delispot.net/",
       },
       {
         name: "Küchenchaotin",
