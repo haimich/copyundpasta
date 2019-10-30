@@ -16,7 +16,9 @@ const config = {
 
   srcDir: "./src",
   
-  debug: false,
+  debug: {
+    enabled: false,
+  },
 
   server: {
     host: process.env.SERVER_HOST || DEFAULT_HOST,
@@ -121,7 +123,6 @@ const config = {
   */
   modules: [
     "@nuxtjs/axios",
-    "@nuxtjs/google-analytics",
     "@nuxtjs/sitemap",
   ],
 
@@ -148,6 +149,7 @@ const config = {
   */
   googleAnalytics: {
     id: "UA-142214214-1",
+    dev: false,
   },
 
   /*
@@ -195,7 +197,10 @@ const config = {
     }
   },
 
-  buildModules: ['@nuxt/typescript-build'],
+  buildModules: [
+    '@nuxt/typescript-build',
+    '@nuxtjs/google-analytics',
+  ],
 
   /*
   ** Render configuration
