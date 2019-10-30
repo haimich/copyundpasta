@@ -126,6 +126,11 @@ const config = {
     "@nuxtjs/sitemap",
   ],
 
+  buildModules: [
+    '@nuxt/typescript-build',
+    // '@nuxtjs/google-analytics',
+  ],
+
   typescript: {
     typeCheck: true,
     ignoreNotFoundWarnings: true
@@ -196,11 +201,6 @@ const config = {
       }
     }
   },
-
-  buildModules: [
-    '@nuxt/typescript-build',
-    '@nuxtjs/google-analytics',
-  ],
 
   /*
   ** Render configuration
