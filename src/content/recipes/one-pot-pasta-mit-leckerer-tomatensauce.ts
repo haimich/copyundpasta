@@ -137,16 +137,17 @@ const ingredients: (RecipeIngredientGroup|RecipeIngredient)[] = [
   },
   {
     isGroup: false,
-    amount: 80,
-    unit: INGREDIENT_UNITS.gramm,
-    ingredient: INGREDIENTS.parmesan,
-  },
-  {
-    isGroup: false,
     amount: 2,
     unit: INGREDIENT_UNITS.tl,
     ingredient: INGREDIENTS.oregano,
     description: "(optional)",
+  },
+  {
+    isGroup: false,
+    amount: 80,
+    unit: INGREDIENT_UNITS.gramm,
+    preparation: INGREDIENT_PREPARATIONS.gerieben,
+    ingredient: INGREDIENTS.parmesan,
   },
 
   {
@@ -207,12 +208,17 @@ const steps: (RecipeStepGroup|RecipeStep)[] = [
   {
     isGroup: false,
     type: "step",
-    content: "Am Ende der Kochzeit mit Pfeffer und etwas Essig abschmecken. Nach Belieben noch getrockneten Oregano dazugeben.",
+    content: "Am Ende der Kochzeit mit Pfeffer und mildem Essig abschmecken (optional). Nach Belieben noch getrockneten Oregano dazugeben.",
   },
   {
     isGroup: false,
     type: "step",
-    content: "Den Herd abstellen und den geriebenen Parmesan einrühren. Mit gezupften Basilikumblättern servieren.",
+    content: "Den geriebenen Parmesan wahlweise in die Sauce einrühren oder über die angerichteten Teller geben. Die Basilikumblätter zupfen und auf den Tellern verteilen.",
+  },
+  {
+    isGroup: false,
+    type: "step",
+    content: "Lasst es euch schmecken :-)",
   },
 ];
 

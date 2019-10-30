@@ -17,6 +17,10 @@ export const INGREDIENT_PREPARATIONS: IngredientPreparations = {
     id: "geviertelt",
     name: "geviertelt",
   },
+  gerieben: {
+    id: "gerieben",
+    name: "gerieben",
+  },
   gezupft: {
     id: "gezupft",
     name: "gezupft",
