@@ -283,6 +283,11 @@
 
     initCookieConsent() {
       // @ts-ignore
+      if (window == null || window.cookieconsent == null) {
+        return;
+      }
+      
+      // @ts-ignore
       window.cookieconsent.initialise({
         "palette": {
           "popup": {

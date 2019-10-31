@@ -16,9 +16,7 @@ const config = {
 
   srcDir: "./src",
   
-  debug: {
-    enabled: false,
-  },
+  debug: false,
 
   server: {
     host: process.env.SERVER_HOST || DEFAULT_HOST,
@@ -128,7 +126,7 @@ const config = {
 
   buildModules: [
     '@nuxt/typescript-build',
-    // '@nuxtjs/google-analytics',
+    '@nuxtjs/google-analytics',
   ],
 
   typescript: {
@@ -182,6 +180,10 @@ const config = {
   build: {
     transpile: [/^element-ui/],
 
+    optimization: {
+      minimize: true,
+    },
+
     terser: {
       parallel: false, // this prevents a bug that prevents npm run build from completing
     },
@@ -224,6 +226,7 @@ const config = {
       'connect-src': [
         "'self'",
         "https://*.copyundpasta.de",
+        "https://www.google-analytics.com",
       ],
       'img-src': [
         "'self'",
