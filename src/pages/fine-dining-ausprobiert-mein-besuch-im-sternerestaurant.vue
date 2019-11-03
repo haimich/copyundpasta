@@ -25,7 +25,7 @@
           </ul>
 
           <p>
-            Mit den hohen Kosten konnte ich mich recht schnell arrangieren, da der Besuch in einem <ArticleLinkComponent href="https://www.viamichelin.de/web/Suchen_Restaurants" text="Michelin" />-Restaurant ja nichts Alltägliches ist. Die gleiche Begründung lässt auch das Argument mit dem Dresscode in den Hintergrund treten, da man sich für einen besonderen Abend ja auch gerne mal etwas in Schale schmeißt. Außerdem kam mir hier der Trend des <ArticleQuoteComponent text="Casual Fine Dinings" /> entgegen, der das Elitäre aus der Sterneküche verbannen will und dieses Erlebnis für einen größeren Kreis an Menschen zugänglich machen will. Ein gutes Beispiel hierfür ist das mit einem Stern ausgezeichnete Restaurant <ArticleLinkComponent href="https://www.emmawolf1920.com/" text="Emma Wolf" />, das ihre Kunden in ungezwungener Atmosphäre in einem Mannheimer Einkaufszentrum begrüßt.
+            Mit den hohen Kosten konnte ich mich recht schnell arrangieren, da der Besuch in einem Michelin-Restaurant ja nichts Alltägliches ist. Die gleiche Begründung lässt auch das Argument mit dem Dresscode in den Hintergrund treten, da man sich für einen besonderen Abend ja auch gerne mal etwas in Schale schmeißt. Außerdem kam mir hier der Trend des <ArticleQuoteComponent text="Casual Fine Dinings" /> entgegen, der das Elitäre aus der Sterneküche verbannen will und dieses Erlebnis für einen größeren Kreis an Menschen zugänglich machen will. Ein gutes Beispiel hierfür ist das mit einem Stern ausgezeichnete Restaurant <ArticleLinkComponent href="https://www.emmawolf1920.com/" text="Emma Wolf" />, das ihre Kunden in ungezwungener Atmosphäre in einem Mannheimer Einkaufszentrum begrüßt.
           </p>
 
           <h2>Mit wem gehe ich hin?</h2>
@@ -103,13 +103,23 @@
 
           <h2>War es das Geld wert?</h2>
 
-          Das Essen war wirklich vorzüglich und 
+          <p>Der Preis ist meiner Ansicht nach gerechtfertigt, da sehr hochwertige Zutaten verarbeitet werden und die Zubereitung sehr aufwändig ist. Bei dem Niveau ist in der Vorbereitung gerne mal eine Person zwei oder mehr Stunden lang mit einem Gang beschäftigt. Das Servicepersonal ist in so einem Haus auch sehr gut ausgebildet und muss entsprechend bezahlt werden.</p>
 
-          // hochwertige Lebensmittel
-          // viel Personal (gut ausgebildet): Köche und Service; außerdem Wein
-          // Zubereitung sehr aufwändig
-          // zu viele Gänge / zu viel Wein
-          // intransparent Gin-Preis
+          <p>
+            Der einzigen Kritikpunkt bezüglich der Preise im Showroom war für mich die Intransparenz bei der Bestellung des Gin Tonics. Die 15,50 € haben mich am Schluss dann doch kurz aus den Socken gehauen, wenn auch die Flasche Wasser im Vergleich zu anderen Sternerestaurants recht günstig daherkam.
+          </p>
+
+          <h2>Fine Dining: mein Fazit</h2>
+
+          <p>
+            Das Essen war wirklich hervorragend und ich kann jedem empfehlen, den Besuch in einem Fine Dining Restaurant auf die persönliche Bucketliste aufzunehmen. Für mich selbst habe ich aber festgestellt, dass mir das Sterneessen nicht so viel gibt, wie ich erwartet hatte. Der hohe Preis schwingt hier natürlich auch mit, aber ich bin insgesamt einfach auch mit einem 15 € Burger zufriedenzustellen, wenn er geschmacklich überzeugt. Was mich auch abgeschreckt hat waren die vielen Gänge, bei denen man zwangsläufig den Überblick verlieren muss. Auch hier reichen sind mir ein oder zwei Gänge am Abend lieber, denn so kann ich mich später viel besser daran erinnern. Ich habe hierzu ein passendes Zitat von dem amerikanischen Sternekoch Grant Achatz gefunden, der vor allem wegen seiner Vorliebe zur molekularen Küche bekannt ist:
+          </p>
+
+          <BlockquoteComponent quote="I don't care if you're doing haute cuisine or burgers or pizza, just do it right." author="Grant Achatz" />
+
+          <p>
+            Wer jetzt Apettit auf die gehobene Gastronomie bekommen hat, dem möchte ich zum einen den <ArticleLinkComponent href="https://www.viamichelin.de/web/Suchen_Restaurants" text="Guide Michelin" /> ans Herz legen, mit dem man ganz einfach den nächstgelegenen Tempel der Kulinarik finden kann. Auch aus der Blogosphäre möchte ich euch eine Seite empfehlen: die <ArticleLinkComponent href="http://www.sternefresser.de/" text="Sternefresser" /> besuchen regelmäßig die besten Restaurants der Welt und schreiben detaillierte Erlebnisberichte darüber.
+          </p>
 
         </el-col>
       </el-row>
