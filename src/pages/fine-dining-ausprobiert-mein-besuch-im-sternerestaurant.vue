@@ -122,7 +122,7 @@
           <BlockquoteComponent quote="I don't care if you're doing haute cuisine or burgers or pizza, just do it right." author="Grant Achatz" />
 
           <p>
-            Wer jetzt Appetit auf die gehobene Gastronomie bekommen hat, dem möchte ich den Webauftritt des <ArticleLinkComponent href="https://www.viamichelin.de/web/Suchen_Restaurants" text="Guide Michelins" /> ans Herz legen, mit dem man ganz einfach den nächstgelegenen Tempel der Kulinarik finden kann. <br/>Ich möchte euch außerdem eine Seite aus der Blogosphäre empfehlen: die <ArticleLinkComponent href="http://www.sternefresser.de/" text="Sternefresser" /> besuchen regelmäßig die besten Restaurants der Welt und schreiben detaillierte Erlebnisberichte darüber. 
+            Wer jetzt Appetit auf die gehobene Gastronomie bekommen hat, dem möchte ich den Webauftritt des <ArticleLinkComponent href="https://www.viamichelin.de/web/Suchen_Restaurants" text="Guide Michelins" /> ans Herz legen, mit dem man ganz einfach den nächstgelegenen Tempel der Kulinarik finden kann. <br>Ich möchte euch außerdem eine Seite aus der Blogosphäre empfehlen: die <ArticleLinkComponent href="http://www.sternefresser.de/" text="Sternefresser" /> besuchen regelmäßig die besten Restaurants der Welt und schreiben detaillierte Erlebnisberichte darüber. 
           </p>
 
           <p>
