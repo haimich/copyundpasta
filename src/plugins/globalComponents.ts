@@ -8,6 +8,7 @@ import ArticleJumpToRecipeComponent from "@/components/article/ArticleJumpToReci
 import RecipeComponent from "@/components/recipe/RecipeComponent.vue";
 import CommentComponent from "@/components/comments/CommentComponent.vue";
 import CommentEntryComponent from "@/components/comments/CommentEntryComponent.vue";
+import SlideshowComponent from "@/components/article/SlideshowComponent.vue";
 
 export default () => {
   Vue.component("MainHeadingComponent", MainHeadingComponent);
@@ -19,4 +20,5 @@ export default () => {
   Vue.component("RecipeComponent", RecipeComponent);
   Vue.component("CommentComponent", CommentComponent);
   Vue.component("CommentEntryComponent", CommentEntryComponent);
+  Vue.component("SlideshowComponent", SlideshowComponent);
 }

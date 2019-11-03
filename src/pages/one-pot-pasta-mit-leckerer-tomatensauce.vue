@@ -100,19 +100,14 @@
   import { Vue, Component, Prop } from "vue-property-decorator";
   import BaseArticlePage from "@/components/BaseArticlePage.vue";
   import ArticleUtil from "@/utils/ArticleUtil";
-  import SlideshowComponent from "@/components/article/SlideshowComponent.vue";
   import { RatingResponse } from "@/interfaces/Rating";
 
   import article from "@/content/articles/one-pot-pasta-mit-leckerer-tomatensauce";
   import recipe from "@/content/recipes/one-pot-pasta-mit-leckerer-tomatensauce";
 
-  import { VueperSlides, VueperSlide } from "vueperslides";
-  import "vueperslides/dist/vueperslides.css";
-
   @Component({
     head: ArticleUtil.defaultHead(article),
     asyncData: ArticleUtil.defaultAsyncData(article, recipe),
-    components: { SlideshowComponent },
   })
   export default class extends BaseArticlePage {
 
