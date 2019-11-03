@@ -1,0 +1,33 @@
+{
+	"Link component": {
+		"prefix": "link-component",
+		"body": [
+			"<ArticleLinkComponent href=\"$1\" text=\"$2\" />"
+		],
+		"description": "Copy & Pasta LinkComponent"
+	 },
+	 "Image component": {
+		"prefix": "image-component",
+		"body": [
+			"<ArticleImageComponent",
+			"  src=\"/images/articles/$1\"",
+			"  alt=\"$2\"",
+			"/>",
+		],
+		"description": "Copy & Pasta ImageComponent"
+	 },
+	 "Quote component": {
+		"prefix": "quote-component",
+		"body": [
+			"<ArticleQuoteComponent text=\"$1\" />"
+		],
+		"description": "Copy & Pasta QuoteComponent"
+	 },
+	 "YouTube video component": {
+		"prefix": "youtube-component",
+		"body": [
+			"<YouTubeVideoComponent url=\"$1\" />"
+		],
+		"description": "Copy & Pasta YouTube video component"
+	 },
+}
