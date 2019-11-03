@@ -18,7 +18,7 @@
 
           <ul>
             <li>die hohen Kosten</li>
-            <li>den erwarteten Dresscode</li>
+            <li>der Dresscode</li>
             <li>wenn man nicht alleine hingehen möchte, muss man jemanden finden, der genauso von gutem Essen begeistert ist, wie man selbst</li>
           </ul>
 
@@ -29,15 +29,15 @@
           <h2>Mit wem gehe ich hin?</h2>
 
           <p>
-            Blieb also nur noch das letzte Hindernis: Mit wem sollte ich meine kulinarischen Erfahrungen teilen? Anfang letzten Jahres bot sich eine günstige Gelegenheit, meine ansonsten nicht so food-begeisterte bessere Hälfte bei einem Hamburgbesuch auf eine neue kulinarische Ebene zu heben. Hierzu hatte ich das <ArticleLinkComponent href="https://thetable-hamburg.de/" text="The Table" /> von Kevin Fehling ins Auge gefasst, das gleich mit 3 Sternen aufwarten kann. Das spannende ist, dass das Restaurant nur über einen einzigen Tisch verfügt, an dem 20 Personen Platz finden. Leider war die Warteliste länger als bei einem Konzertbesuch in der Elbphilharmonie und mein Vorschlag stieß zu Hause auch nicht auf besonders große Gegenliebe (siehe Kapitel <ArticleQuoteComponent text="hohe Kosten" />).
+            Blieb also nur noch das letzte Hindernis: Mit wem sollte ich meine kulinarischen Erfahrungen teilen? Anfang letzten Jahres bot sich eine günstige Gelegenheit, meine ansonsten nicht so food-begeisterte bessere Hälfte bei einem Hamburgbesuch auf eine neue kulinarische Ebene zu heben. Hierzu hatte ich <ArticleLinkComponent href="https://thetable-hamburg.de/" text="The Table" /> von Kevin Fehling ins Auge gefasst, das mit gleich 3 Sternen aufwarten kann. Das spannende ist, dass das Restaurant nur über einen einzigen Tisch mit 20 Sitzplätzen verfügt. Leider war die Warteliste länger als für einen Konzertbesuch in der Elbphilharmonie und mein Vorschlag stieß zu Hause auch nicht auf besonders große Gegenliebe (siehe Kapitel <ArticleQuoteComponent text="hohe Kosten" />).
           </p>
 
           <p>
-            Wie der Zufall es so wollte, ergab sich im gleichen Jahr erneut die Gelegenheit, einen Ausflug in die gehobene Gastronomie zu unternehmen, da ich - diesmal ohne bessere Hälfte - ein verlängertes Wochenende in München verbringen wollte. Schnell hatte ich mir einen passendes Sterneladen herausgesucht, der preislich noch bezahlbar schien und meine Reservierung <i>ohne</i> Hinweis auf eine Warteliste freundlich entgegennahm: das <ArticleLinkComponent href="https://www.showroom-restaurant.de/" text="Restaurant Showroom" />.
+            Wie der Zufall es so wollte, ergab sich im gleichen Jahr aber erneut die Gelegenheit, einen Ausflug in die gehobene Gastronomie zu unternehmen, da ich - diesmal ohne bessere Hälfte - ein verlängertes Wochenende in München verbringen wollte. Schnell hatte ich mir einen passendes Sterneladen herausgesucht, der preislich noch im Rahmen war und meine Reservierung <i>ohne</i> Hinweis auf eine Warteliste freundlich entgegennahm: das <ArticleLinkComponent href="https://www.showroom-restaurant.de/" text="Restaurant Showroom" />.
           </p>
 
           <p>
-            Dominik Käppeler hat das Restaurant samt Stern Anfang 2017 von Andreas Schweiger übernommen, der einigen sicherlich von der TV-Serie <ArticleQuoteComponent text="Die Kochprofis" /> bekannt ist. Hier könnt ihr euch dreiminütige Biografie über den Koch anschauen:
+            Dominik Käppeler hat das Restaurant samt Stern Anfang 2017 von Andreas Schweiger übernommen, der einigen sicherlich von der TV-Serie <ArticleQuoteComponent text="Die Kochprofis" /> bekannt ist. Hier könnt ihr euch eine dreiminütige Biografie über den Koch anschauen:
           </p>
 
           <YouTubeVideoComponent url="https://www.youtube.com/embed/qEM-BkKDBpM" />
@@ -69,15 +69,15 @@
           />
 
           <p>
-            Zu jedem Gang wurde ein passender Wein inklusive einer kurzen Beschreibung wie zum Beispiel <ArticleQuoteComponent text="Der Wein ist aus dem 17er Baujahr..." /> serviert. Das fand ich sehr angenehm, allerdings war mir die Schlagzahl dann irgendwann doch zu hoch, weil zwischen zwei Gängen selten mehr als 10 Minuten vergingen. Gegen Ende hin wurde es dadurch wirklich nicht leichter, den Schilderungen des Sommeliers aufmerksam zu folgen.
+            Zu jedem Gang wurde ein passender Wein inklusive einer kurzen Beschreibung serviert. Das fand ich sehr angenehm, allerdings war mir die Schlagzahl dann irgendwann doch zu hoch, weil zwischen zwei Gängen selten mehr als 10 Minuten vergingen. Gegen Ende hin wurde es dadurch wirklich nicht leichter, den Schilderungen des Sommeliers aufmerksam zu folgen.
           </p>
 
           <p>
-            Als nach 4 Gängen immer noch gähnende Leere in dem Restaurant herrschte, beklagte sich eine Servicekraft darüber, dass sie dort sehr unter nicht abgesagten Reservierungen leiden würden. Andere Sternerestaurants sind teilweise sogar schon dazu übergegangen, eine Reservierungsgebühr zu verlangen, die im Falle des Nichterscheinens einbehalten wird. Immerhin betrat zu späterer Stunde dann doch noch ein Pärchen den Gastraum, so dass ich mich nicht ganz so einsam gefühlt habe. 
+            Als nach 4 Gängen immer noch gähnende Leere in dem Restaurant herrschte, beklagte sich eine Servicekraft darüber, dass sie dort häufig unter nicht abgesagten Reservierungen leiden würden. Andere Sternerestaurants sind teilweise sogar schon dazu übergegangen, eine Reservierungsgebühr zu verlangen, die im Falle des Nichterscheinens einbehalten wird. Immerhin betrat zu späterer Stunde dann doch noch ein Pärchen den Gastraum, so dass ich mich nicht ganz so einsam gefühlt habe. 
           </p>
 
           <p>
-            Hier seht ihr, welche Köstlichkeiten mir an dem Abend alle serviert wurden:
+            Hier seht ihr, welche Köstlichkeiten mir an dem Abend serviert wurden:
           </p>
 
           <el-row>
@@ -87,7 +87,7 @@
           </el-row>
 
           <p>
-            Leider habe ich recht schnell den Überblick über die Gerichte verloren, was nicht nur (aber auch) an dem hohen Weinkonsum lag. Die Teller wurden zwar hochtrabend angekündigt (<ArticleQuoteComponent text="Hier haben wir konfierte rote Bete mit Bioeigelb und Parmesanspähnen" />), aber ich hatte keine Zeit, um mich wirklich auf das jeweilige Gericht einzulassen, denn schon kam der nächste Teller. An den Fleischgang kann ich mich aber noch gut erinnern: Hier wurde ein vorzügliches Ibericoschwein mit einer Haselnusscreme serviert.
+            Leider habe ich recht schnell den Überblick über die Gerichte verloren, was nicht nur (aber auch) an dem hohen Weinkonsum lag. Die Teller wurden zwar hochtrabend angekündigt (<ArticleQuoteComponent text="Hier haben wir konfierte rote Bete mit Bioeigelb und Parmesanspähnen" />), aber ich hatte keine Zeit, mich wirklich auf das jeweilige Gericht einzulassen, denn schon kam der nächste Teller. An den Fleischgang kann ich mich aber noch gut erinnern: Hier wurde ein vorzügliches Ibericoschwein mit einer Haselnusscreme serviert.
           </p>
 
           <h2>Die Rechnung</h2>
@@ -112,7 +112,7 @@
           <h2>Fine Dining: mein Fazit</h2>
 
           <p>
-            Das Essen war wirklich hervorragend und ich kann jedem empfehlen, den Besuch in einem Fine Dining Restaurant auf die persönliche Bucketliste aufzunehmen. Für mich selbst habe ich aber festgestellt, dass mir das Sterneessen nicht so viel gibt, wie ich erwartet hatte. Der hohe Preis schwingt hier natürlich auch mit, aber ich bin insgesamt einfach auch mit einem 15 € Burger zufrieden, wenn er mich geschmacklich überzeugt. Was mich auch abgeschreckt hat waren die vielen Gänge, bei denen man zwangsläufig früher oder später den Überblick verliert. Auch hier sind mir ein oder zwei Gänge am Abend lieber, denn so kann man sich später viel besser daran erinnern.
+            Das Essen war wirklich hervorragend und ich kann jedem empfehlen, den Besuch in einem Fine Dining Restaurant auf die persönliche Bucketliste aufzunehmen. Für mich selbst habe ich aber festgestellt, dass mir das Sterneessen nicht so viel gibt, wie ich erwartet hatte. Der hohe Preis schwingt hier natürlich auch mit, aber ich bin insgesamt einfach auch mit einem 15 € Burger zufrieden, wenn er mich geschmacklich überzeugt. Was mich auch abgeschreckt hat waren die vielen Gänge, bei denen man zwangsläufig früher oder später den Überblick verliert. Auch hier sind mir ein oder zwei Gänge am Abend lieber, denn so kann man sich später auch besser daran erinnern.
           </p>
 
           <p>
@@ -126,7 +126,8 @@
           </p>
 
           <p>
-            <strong>Have fun :)</strong>
+            Abschließend würde ich mich freuen, wenn ihr in den Kommentaren eure Erfahrungen mit Sternerestaurants teilt. Das geht ganz einfach und ihr müsst keine Mailadresse angeben.<br><br>
+            <strong>Vielen Dank fürs Lesen :)</strong>
           </p>
 
         </el-col>
