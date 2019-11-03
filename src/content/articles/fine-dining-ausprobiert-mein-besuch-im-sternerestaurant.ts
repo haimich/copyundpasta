@@ -1,7 +1,7 @@
 import { Article } from "../../interfaces/Article";
 import { ARTICLE_CATEGORIES } from "../categories/ArticleCategories";
 
-const createdAt = "2019-11-01 20:00:00";
+const createdAt = "2019-11-03 23:12:00";
 const slug = "fine-dining-ausprobiert-mein-besuch-im-sternerestaurant";
 
 const article: Article = {
