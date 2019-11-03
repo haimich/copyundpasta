@@ -181,7 +181,7 @@ const config = {
     transpile: [/^element-ui/],
 
     optimization: {
-      minimize: true,
+      // minimize: false,
     },
 
     terser: {
