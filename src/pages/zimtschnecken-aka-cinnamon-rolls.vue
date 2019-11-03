@@ -84,7 +84,6 @@
 
   import { Vue, Component, Prop } from "vue-property-decorator";
   import BaseArticlePage from "@/components/BaseArticlePage.vue";
-  import SlideshowComponent from "@/components/article/SlideshowComponent.vue";
   import ArticleUtil from "@/utils/ArticleUtil";
   import { RatingResponse } from "@/interfaces/Rating";
 
@@ -94,7 +93,6 @@
   @Component({
     head: ArticleUtil.defaultHead(article),
     asyncData: ArticleUtil.defaultAsyncData(article, recipe),
-    components: { SlideshowComponent },
   })
   export default class extends BaseArticlePage {
 
