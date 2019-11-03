@@ -5,7 +5,7 @@
     <el-row class="footer-newsletter" v-if="showNewsletterForm()">
       <el-row>
         <h3 class="footer-newsletter-heading">
-          Lass dir neue Rezepte bequem per E-Mail zuschicken.
+          Lass dir neue Rezepte bequem per E-Mail zuschicken
         </h3>
       </el-row>
 

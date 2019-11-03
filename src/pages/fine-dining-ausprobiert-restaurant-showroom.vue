@@ -15,7 +15,7 @@
           <ArticleJumpToRecipeComponent />
 
           <p class="entry-paragraph">
-            Wart ihr schon mal in einem Sternerestaurant essen? Mich hat das Thema schon immer gereizt, weil ich einfach neugierig darauf war, ob der Geschmack der Speisen auf diesem hohen Niveau wirklich so viel besser ist als bei <ArticleQuoteComponent text="normalen" /> Restaurantbesuchen. Aber es gab einige Gründe, warum ich mir diesen Wunsch lange Zeit nicht erfüllt habe:
+            Wart ihr schon mal in einem Sternerestaurant essen? Mich hat das Thema schon immer gereizt, weil ich einfach neugierig darauf war, ob der Geschmack der Speisen auf diesem hohen Niveau wirklich so viel besser ist als bei <ArticleQuoteComponent text="normalen" /> Restaurantbesuchen. Aber es gab einige Gründe, warum ich mir diesen Wunsch lange Zeit nicht erfüllt habe: 
           </p>
 
           <ul>
@@ -25,13 +25,13 @@
           </ul>
 
           <p>
-            Mit den hohen Kosten konnte ich mich recht schnell arrangieren, da der Besuch in einem <ArticleLinkComponent href="https://www.viamichelin.de/web/Suchen_Restaurants" text="Michelin" />-Restaurant ja nichts Alltägliches ist. Die gleiche Begründung lässt auch das Argument mit dem Dresscode in den Hintergrund treten, da man sich für einen besonderen Abend ja auch gerne mal etwas in Schale schmeißt. Außerdem kam mir hier der Trend des <ArticleQuoteComponent text="Casual Fine Dinings" /> entgegen, der das Elitäre aus der Sterneküche verbannen will und dieses Erlebnis für einen größeren Kreis an Menschen zugänglich machen will. Ein gutes Beispiel hierfür ist das mit einem Stern ausgezeichnete Restaurant <ArticleLinkComponent href="https://www.emmawolf1920.com/" text="Emma Wolf" />, das Ihre Kunden in lockerer Athmosphäre in einem Mannheimer Einkaufszentrum begrüßt.
+            Mit den hohen Kosten konnte ich mich recht schnell arrangieren, da der Besuch in einem <ArticleLinkComponent href="https://www.viamichelin.de/web/Suchen_Restaurants" text="Michelin" />-Restaurant ja nichts Alltägliches ist. Die gleiche Begründung lässt auch das Argument mit dem Dresscode in den Hintergrund treten, da man sich für einen besonderen Abend ja auch gerne mal etwas in Schale schmeißt. Außerdem kam mir hier der Trend des <ArticleQuoteComponent text="Casual Fine Dinings" /> entgegen, der das Elitäre aus der Sterneküche verbannen will und dieses Erlebnis für einen größeren Kreis an Menschen zugänglich machen will. Ein gutes Beispiel hierfür ist das mit einem Stern ausgezeichnete Restaurant <ArticleLinkComponent href="https://www.emmawolf1920.com/" text="Emma Wolf" />, das ihre Kunden in ungezwungener Atmosphäre in einem Mannheimer Einkaufszentrum begrüßt.
           </p>
 
           <h2>Mit wem gehe ich hin?</h2>
 
           <p>
-            Blieb also nur noch das letzte Hindernis: mit wem sollte ich meine kulinarischen Erfahrungen teilen? Anfang letzten Jahres bot sich eine günstige Gelegenheit, meine ansonsten nicht so food-begeisterte bessere Hälfte bei einem Hamburgbesuch auf eine neue kulinarische Ebene zu transportieren. Hierzu hatte ich das <ArticleLinkComponent href="https://thetable-hamburg.de/" text="The Table" /> von Kevin Fehling ins Auge gefasst, das gleich mit 3 Sternen aufwarten kann. Das spannende ist, dass das Restaurant nur über einen einzigen Tisch verfübt, an dem 20 Personen Platz finden. Leider war die Warteliste länger als bei einem Konzertbesuch in der Elbphilharmonie und mein Vorschlag stieß zu Hause auch nicht auf große Gegenliebe (siehe Kapitel <ArticleQuoteComponent text="hohe Kosten" />).
+            Blieb also nur noch das letzte Hindernis: Mit wem sollte ich meine kulinarischen Erfahrungen teilen? Anfang letzten Jahres bot sich eine günstige Gelegenheit, meine ansonsten nicht so food-begeisterte bessere Hälfte bei einem Hamburgbesuch auf eine neue kulinarische Ebene zu transportieren. Hierzu hatte ich das <ArticleLinkComponent href="https://thetable-hamburg.de/" text="The Table" /> von Kevin Fehling ins Auge gefasst, das gleich mit 3 Sternen aufwarten kann. Das spannende ist, dass das Restaurant nur über einen einzigen Tisch verfügt, an dem 20 Personen Platz finden. Leider war die Warteliste länger als bei einem Konzertbesuch in der Elbphilharmonie und mein Vorschlag stieß zu Hause auch nicht auf große Gegenliebe (siehe Kapitel <ArticleQuoteComponent text="hohe Kosten" />).
           </p>
 
           <p>
@@ -39,7 +39,7 @@
           </p>
 
           <p>
-            Dominik Käppeler hat das Restaurant samt Stern Anfang 2017 von Andreas Schweiger übernommen, der einigen sicherlich von der TV-Serie <ArticleQuoteComponent text='Die Kochprofis' /> bekannt ist. Hier könnt ihr euch dreiminütige Biografie über den Koch anschauen:
+            Dominik Käppeler hat das Restaurant samt Stern Anfang 2017 von Andreas Schweiger übernommen, der einigen sicherlich von der TV-Serie <ArticleQuoteComponent text="Die Kochprofis" /> bekannt ist. Hier könnt ihr euch dreiminütige Biografie über den Koch anschauen:
           </p>
 
           <YouTubeVideoComponent url="https://www.youtube.com/embed/qEM-BkKDBpM" />
@@ -47,11 +47,11 @@
           <h2>Der große Abend</h2>
 
           <p>
-            Der Tag der Reservierung war gekommen und meine Vorfreude war groß. Ich hatte mir vorsichtshalber doch etwas feineres angezogen - man will ja nicht auffallen!
+            Der Tag der Reservierung war gekommen und meine Vorfreude war groß. Ich hatte mir vorsichtshalber doch etwas Feineres angezogen - man will ja nicht auffallen!
           </p>
 
           <p>
-            Als ich das Restaurant betrat, wurde ich sofort freundlich empfangen und zu meinem Tisch begleitet. Ich wunderte mich ein wenig, dass außer meinem nur ein weiterer Tisch besetzt war, aber das verflog sehr schnell da ich direkt gefragt wurde, ob ich einen Aperitif möchte. Da ich ziemlich überrascht war, bejahte ich dies, ohne weiter nach dem Preis zu fragen. Die Frage des Kellners, ob ich eher in die Richtung <ArticleQuoteComponent text="Sekt" /> oder <ArticleQuoteComponent text="Gin Tonic" /> gehen möchte, beantwortete ich mit Zweiterem. Was mich aber dann doch überforderte, war die Frage nach der genauen Gin- und Tonicsorte 😀
+            Als ich das Restaurant betrat, wurde ich sofort freundlich empfangen und zu meinem Tisch begleitet. Ich wunderte mich ein wenig, dass außer meinem nur ein weiterer Tisch besetzt war, aber das verflog sehr schnell da ich direkt gefragt wurde, ob ich einen Aperitif möchte. Da ich ziemlich überrascht war, bejahte ich dies, ohne weiter nach dem Preis zu fragen. Die Frage des Kellners, ob ich eher in die Richtung <ArticleQuoteComponent text="Sekt" /> oder <ArticleQuoteComponent text="Gin Tonic" /> gehen möchte, beantwortete ich mit Zweiterem. Was mich aber dann doch überforderte, war die Frage nach der genauen Gin- und Tonicsorte. Ich sagte dem Kellner, dass es mir egal ist, woraufhin er erwiderte <ArticleQuoteComponent text="Dann hole ich den Gin aus der Flasche, in der noch am meisten drin ist!" /> 😀
           </p>
 
           <ArticleImageComponent
@@ -60,7 +60,24 @@
           />
 
           <p>
-            Man wird hier vom Personal geduzt, was zwar anfangs ungewohnt ist aber auch sehr dabei hilft, die Hürden zu dieser extravaganten Küche abzubauen.
+            Als nächstes musste ich mich entscheiden, ob ich 5, 6 der 7 Gänge essen wollte. Ich entschied mich für die goldene Mitte und bestellte gleich auch die passende Weinbegleitung dazu. Ab dann ging es Schlag auf Schlag: Bevor der erste Gang überhaupt serviert wurde, kamen kurz hintereinander drei <ArticleQuoteComponent text="Grüße aus der Küche" /> an meinem Tisch an. Außerdem wurde ein Brotkorb samt leckerem Butterschaum serviert mit den Worten <ArticleQuoteComponent text="Damit du auch satt wirst" />. Ihr merkt schon, dass hier ein recht lockerer Umgangston gepflegt wird. Das äußert sich auch darin, dass man von jedem geduzt wird, was zwar anfangs ungewohnt ist aber auch sehr dabei hilft, die Hürden zu dieser extravaganten Welt weiter abzubauen.
+          </p>
+
+          <ArticleImageComponent
+            src="/images/articles/fine-dining-ausprobiert-mein-besuch-im-sternerestaurant/brot-mit-butterschaum.jpg"
+            alt="Brot mit Butterschaum"
+          />
+
+          <p>
+            Zu jedem Gang wurde ein passender Wein inklusive einer kurzen Beschreibung à la <ArticleQuoteComponent text="Der Wein ist aus dem 17er Baujahr" /> serviert. Das fand ich sehr angenehm, allerdings war mir die Schlagzahl dann irgendwann doch zu hoch, weil zwischen zwei Gängen selten mehr als 10 Minuten vergingen. Gegen Ende hin wurde es dadurch nicht leichter, den Schilderungen des Sommeliers aufmerksam zu folgen.
+          </p>
+
+          <p>
+            Als nach 4 Gängen immer noch gähnende Leere in dem Restaurant herrschte, beklagte sich eine Servicekraft darüber, dass sie dort sehr unter nicht abgesagten Reservierungen leiden würden. Andere Sternerestaurants sind teilweise sogar schon dazu übergegangen, eine Reservierungsgebühr zu verlangen, die im Falle des Nichterscheinens einbehalten wird. Immerhin betrat zu späterer Stunde dann doch noch ein Pärchen den Gastraum, so dass ich mich nicht ganz so einsam gefühlt habe. 
+          </p>
+
+          <p>
+            Hier seht ihr, welche Köstlichkeiten mir an dem Abend alle serviert wurden:
           </p>
 
           <el-row>
@@ -69,18 +86,30 @@
             </el-col>
           </el-row>
 
+          <p>
+            Leider habe ich recht schnell den Überblick über die Gerichte verloren, was nicht nur an dem hohen Weinkonsum lag. Die Teller wurden zwar hochtrabend angekündigt (<ArticleQuoteComponent text="Hier haben wir konfierte rote Bete mit Bioeigelb und Parmesanspähnen" />), aber ich hatte keine Zeit um mich wirklich auf das Gericht einzulassen, denn schon kam der nächste Teller. An den Fleischgang kann ich mich noch gut erinnern: Hier wurde ein Ibericoschwein mit einer Haselnusscreme serviert, das ich sehr genossen habe.
+          </p>
+
           <h2>Die Rechnung</h2>
+
+          <p>
+            Auch das längste 5-Gänge-Menü geht irgendwann zu Ende, im Fall vom <ArticleQuoteComponent text="Showroom" /> mit einem fantastisch angerichteten Dessert, gefolgt von einem finalen süßen Gruß aus der Küche. Nun war die Stunde der Wahrheit gekommen: Ich ließ die Rechnung kommen! Ich wusste zwar, wieviel das Menü samt Weinbegleitung kosten sollte, aber ob der vielen Speisen und Getränke blieb trotzdem eine gewisse Unsicherheit, was der Abend wohl kosten würde.
+          </p>
 
           <ArticleImageComponent
             src="/images/articles/fine-dining-ausprobiert-mein-besuch-im-sternerestaurant/rechnung.jpg"
             alt="Die Rechnung"
           />
 
-          <h2>War es seinen Preis wert?</h2>
+          <h2>War es das Geld wert?</h2>
+
+          Das Essen war wirklich vorzüglich und 
 
           // hochwertige Lebensmittel
           // viel Personal (gut ausgebildet): Köche und Service; außerdem Wein
           // Zubereitung sehr aufwändig
+          // zu viele Gänge / zu viel Wein
+          // intransparent Gin-Preis
 
         </el-col>
       </el-row>
@@ -114,7 +143,15 @@
     private ratings: RatingResponse;
 
     private stepPhotos = [
-      "/images/articles/one-pot-pasta-mit-leckerer-tomatensauce/schritte/0.jpeg",
+      "/images/articles/fine-dining-ausprobiert-mein-besuch-im-sternerestaurant/schritte/1.jpg",
+      "/images/articles/fine-dining-ausprobiert-mein-besuch-im-sternerestaurant/schritte/2.jpg",
+      "/images/articles/fine-dining-ausprobiert-mein-besuch-im-sternerestaurant/schritte/3.jpg",
+      "/images/articles/fine-dining-ausprobiert-mein-besuch-im-sternerestaurant/schritte/4.jpg",
+      "/images/articles/fine-dining-ausprobiert-mein-besuch-im-sternerestaurant/schritte/5.jpg",
+      "/images/articles/fine-dining-ausprobiert-mein-besuch-im-sternerestaurant/schritte/6.jpg",
+      "/images/articles/fine-dining-ausprobiert-mein-besuch-im-sternerestaurant/schritte/7.jpg",
+      "/images/articles/fine-dining-ausprobiert-mein-besuch-im-sternerestaurant/schritte/8.jpg",
+      "/images/articles/fine-dining-ausprobiert-mein-besuch-im-sternerestaurant/schritte/9.jpg",
     ];
 
     constructor() {
