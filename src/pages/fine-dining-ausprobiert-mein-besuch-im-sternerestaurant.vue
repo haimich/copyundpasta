@@ -60,7 +60,7 @@
           <h2>Die Gänge</h2>
 
           <p>
-            Als nächstes musste ich mich entscheiden, ob ich 5, 6 der 7 Gänge essen wollte. Ich entschied mich für die goldene Mitte und bestellte gleich auch die passende Weinbegleitung dazu. Ab dann ging es Schlag auf Schlag: Bevor der erste Gang überhaupt serviert wurde, kamen kurz hintereinander drei <ArticleQuoteComponent text="Grüße aus der Küche" /> an meinem Tisch an. Außerdem wurde ein Brotkorb samt leckerem Butterschaum mit den Worten <ArticleQuoteComponent text="Damit du auch satt wirst" /> serviert. Ihr merkt schon, dass hier ein recht lockerer Umgangston gepflegt wird. Das äußert sich auch darin, dass man von jedem geduzt wird, was zwar anfangs ungewohnt ist aber auch sehr dabei hilft, die Hürden zu dieser extravaganten Welt weiter abzubauen.
+            Als nächstes musste ich mich entscheiden, ob ich 5, 6 oder 7 Gänge essen wollte. Ich entschied mich für die goldene Mitte und bestellte gleich auch die passende Weinbegleitung dazu. Ab dann ging es Schlag auf Schlag: Bevor der erste Gang überhaupt serviert wurde, kamen kurz hintereinander drei <ArticleQuoteComponent text="Grüße aus der Küche" /> an meinem Tisch an. Außerdem wurde ein Brotkorb samt leckerem Butterschaum mit den Worten <ArticleQuoteComponent text="Damit du auch satt wirst" /> serviert. Ihr merkt schon, dass hier ein recht lockerer Umgangston gepflegt wird. Das äußert sich auch darin, dass man von jedem geduzt wird, was zwar anfangs ungewohnt ist aber auch sehr dabei hilft, die Hürden zu dieser extravaganten Welt weiter abzubauen.
           </p>
 
           <ArticleImageComponent
