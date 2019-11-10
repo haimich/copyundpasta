@@ -235,6 +235,7 @@
     text-decoration: none;
     display: flex;
     justify-content: center;
+    text-shadow: 3px 3px 5px rgb(87, 87, 87);
   }
 
   .hero-carousel-title {

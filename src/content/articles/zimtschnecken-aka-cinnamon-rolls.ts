@@ -8,7 +8,7 @@ const article: Article = {
   slug,
   title: "Zimtschnecken aka Cinnamon Rolls",
   categoryId: ARTICLE_CATEGORIES.rezepte.id,
-  isHeroArticle: true,
+  isHeroArticle: false,
   shortDescription: `Bei diesen Zimtschnecken werden Kindheitserinnerungen wach: ein feiner Zimtgeruch durchströmt beim Backen eure Wohnung und der Geschmack ist unwiderstehlich. Das Beste an diesem Rezept ist aber die Größe: Die Zimtschnecken passen perfekt in Muffinförmchen rein und bringen so Abwechslung bei eurem nächsten Kaffeeklatsch.`,
   mainImageUrl: `/images/articles/${slug}/main.jpg`,
   previewImageUrl: `/images/articles/${slug}/preview.jpg`,
