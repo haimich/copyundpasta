@@ -162,15 +162,15 @@
     private ratings: RatingResponse;
 
     private stepPhotos = [
-      "/images/articles/fine-dining-ausprobiert-mein-besuch-im-sternerestaurant/schritte/1.jpg",
-      "/images/articles/fine-dining-ausprobiert-mein-besuch-im-sternerestaurant/schritte/2.jpg",
-      "/images/articles/fine-dining-ausprobiert-mein-besuch-im-sternerestaurant/schritte/3.jpg",
-      "/images/articles/fine-dining-ausprobiert-mein-besuch-im-sternerestaurant/schritte/4.jpg",
-      "/images/articles/fine-dining-ausprobiert-mein-besuch-im-sternerestaurant/schritte/5.jpg",
-      "/images/articles/fine-dining-ausprobiert-mein-besuch-im-sternerestaurant/schritte/6.jpg",
-      "/images/articles/fine-dining-ausprobiert-mein-besuch-im-sternerestaurant/schritte/7.jpg",
-      "/images/articles/fine-dining-ausprobiert-mein-besuch-im-sternerestaurant/schritte/8.jpg",
-      "/images/articles/fine-dining-ausprobiert-mein-besuch-im-sternerestaurant/schritte/9.jpg",
+      `/images/articles/${article.slug}/schritte/1.jpg`,
+      `/images/articles/${article.slug}/schritte/2.jpg`,
+      `/images/articles/${article.slug}/schritte/3.jpg`,
+      `/images/articles/${article.slug}/schritte/4.jpg`,
+      `/images/articles/${article.slug}/schritte/5.jpg`,
+      `/images/articles/${article.slug}/schritte/6.jpg`,
+      `/images/articles/${article.slug}/schritte/7.jpg`,
+      `/images/articles/${article.slug}/schritte/8.jpg`,
+      `/images/articles/${article.slug}/schritte/9.jpg`,
     ];
 
     constructor() {

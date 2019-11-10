@@ -57,7 +57,7 @@
     }
 
     .blockquote-quote {
-      font-size: 25px;
+      font-size: 27px;
     }
 
     .blockquote-author {
