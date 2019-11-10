@@ -81,6 +81,12 @@
         extLink: "https://www.meinlichtspiel.com/",
       },
       {
+        imageLink: "/images/articles/moehren-quiche-mit-bergkaese/main.jpg",
+        author: "Sarah Winter",
+        extLinkTitle: "meinlichtspiel.com",
+        extLink: "https://www.meinlichtspiel.com/",
+      },
+      {
         imageLink: "/images/about/michael-kochbuecher.jpg",
         author: "Sarah Winter",
         extLinkTitle: "meinlichtspiel.com",

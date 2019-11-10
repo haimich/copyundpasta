@@ -266,7 +266,7 @@ const steps: (RecipeStepGroup|RecipeStep)[] = [
 // Size: 40 x 26 
 
 // Tipps:
-// - man kann die Rechtecke so zuschneiden, dass die Ränder gerade sind (Optik)
+// - man kann die Teigrechtecke so zuschneiden, dass die Ränder gerade sind (Optik)
 // - wenn die Schnecke nicht gut aussieht, kann man sie rumdrehen
 // - man kann die Schnecken vor dem Backen noch etwas platt drücken in der Auflaufform
 

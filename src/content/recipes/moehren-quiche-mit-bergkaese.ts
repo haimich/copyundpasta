@@ -127,10 +127,17 @@ const ingredients: (RecipeIngredientGroup|RecipeIngredient)[] = [
 
 const steps: (RecipeStepGroup|RecipeStep)[] = [
   {
-    isGroup: false,
-    type: "step",
-    content: "Die Butter in kleine Flocken schneiden",
+    isGroup: true,
+    title: "Teig",
+    steps: [
+      {
+        isGroup: false,
+        type: "step",
+        content: "Die Butter in kleine Flocken schneiden",
+      },
+    ],
   },
+
 ];
 
 const notes = [];

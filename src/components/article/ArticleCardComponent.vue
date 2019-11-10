@@ -8,7 +8,7 @@
     >
       <nuxt-link :to="'/' + article.slug" class="article-card-link">
         <div class="article-image-container">
-          <img :src="article.previewImageUrl" alt="Artikelbild">
+          <img :src="article.previewImageUrl" alt="Artikelbild" style="height: 218px;">
 
           <div class="article-card-title">
             <span class="article-card-button">
@@ -95,7 +95,7 @@
   @import "~/scss/variables.scss";
 
   .article-card {
-    min-height: 400px;
+    min-height: 522px;
     margin-bottom: 27px;
   }
 

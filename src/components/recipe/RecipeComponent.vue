@@ -369,8 +369,8 @@
   .category-heading {
     font-weight: bold;
     text-transform: uppercase;
-    margin-bottom: 10px;
-    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-top: 6px;
   }
 
   .directions li {

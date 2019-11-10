@@ -11,7 +11,7 @@ export const INGREDIENT_PREPARATIONS: IngredientPreparations = {
   },
   kleingeschnitten: {
     id: "kleingeschnitten",
-    name: "gewürfelt",
+    name: "klein geschnitten",
   },
   halbiert: {
     id: "halbiert",
