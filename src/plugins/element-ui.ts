@@ -3,7 +3,8 @@ import {
   Select, Row, Col, Image, Menu, MenuItem, MenuItemGroup,
   Form, FormItem, Button, Input, Tooltip, Autocomplete,
   Breadcrumb, BreadcrumbItem, Card, Dialog, Popover, Avatar,
-  PageHeader, Notification, Loading, Tag, Rate, Table, TableColumn
+  PageHeader, Notification, Loading, Tag, Rate, Table, TableColumn,
+  Carousel, CarouselItem
 } from "element-ui";
 import locale from "element-ui/lib/locale/lang/de";
 
@@ -32,6 +33,8 @@ export default () => {
   Vue.use(Rate, { locale });
   Vue.use(Table, { locale });
   Vue.use(TableColumn, { locale });
+  Vue.use(Carousel, { locale });
+  Vue.use(CarouselItem, { locale });
 
   Vue.prototype.$loading = Loading.service;
   Vue.prototype.$notify = Notification;

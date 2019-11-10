@@ -26,8 +26,9 @@ export interface Article {
   categoryId: string;
   isHeroArticle?: boolean;
   shortDescription: string;
-  previewImageUrl: string;
   mainImageUrl: string;
+  previewImageUrl: string;
+  wideImageUrl?: string;
   comments?: Comment[],
   createdAt: string;
   modifiedAt: string;

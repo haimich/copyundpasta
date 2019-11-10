@@ -21,7 +21,7 @@
           >
             <div class="hero-carousel-container">
               <el-image
-                :src="article.previewImageUrl"
+                :src="article.wideImageUrl"
                 alt="hero image"
                 class="hero-carousel-image"
               ></el-image>

@@ -8,7 +8,7 @@ const article: Article = {
   slug,
   title: "Möhren-Quiche mit Bergkäse",
   categoryId: ARTICLE_CATEGORIES.rezepte.id,
-  isHeroArticle: false,
+  isHeroArticle: true,
   shortDescription: `...`,
   mainImageUrl: `/images/articles/${slug}/main.jpg`,
   previewImageUrl: `/images/articles/${slug}/preview.jpg`,
