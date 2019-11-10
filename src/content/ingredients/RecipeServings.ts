@@ -8,5 +8,9 @@ export const RECIPE_SERVINGS: ServingUnits = {
   portionen: {
     id: "portionen",
     name: "Portionen",
+  },
+  cm_quicheform: {
+    id: "cm_quicheform",
+    name: "cm Quicheform",
   }
 }

@@ -1,0 +1,102 @@
+<template>
+
+  <div>
+    
+    <article>
+      <el-row>
+        <el-col :xl="xl" :lg="lg" :md="md" :sm="sm" :xs="xs">
+
+          <MainHeadingComponent
+            :text="article.title"
+            :image="article.mainImageUrl"
+            :commentCount="commentCount"
+          />
+          
+          <ArticleJumpToRecipeComponent />
+
+          <p class="entry-paragraph">
+            Es...
+          </p>
+
+
+          <h2>Die einzelnen Schritte im Überblick</h2>
+
+          <el-row>
+            <el-col :xl="xl" :lg="lg" :md="md" :sm="sm" :xs="xs">
+              <SlideshowComponent :images="stepPhotos" />
+            </el-col>
+          </el-row>
+
+        </el-col>
+      </el-row>
+    </article>
+
+    <el-row>
+      <el-col :xl="xl" :lg="lg" :md="md" :sm="sm" :xs="xs">
+        <RecipeComponent :recipe="recipe" :ratings="ratings" style="margin-top: 60px;" />
+      </el-col>
+    </el-row>
+
+    <el-row>
+      <el-col :xl="xl" :lg="lg" :md="md" :sm="sm" :xs="xs">
+        <h3>Variationen</h3>
+
+        <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </el-col>
+    </el-row>
+
+    <el-row>
+      <el-col :xl="xl" :lg="lg" :md="md" :sm="sm" :xs="xs">
+        <CommentComponent :comments="comments" :slug="article.slug" @commentAdded="refreshComments" />
+      </el-col>
+    </el-row>
+
+  </div>
+  
+</template>
+
+<script lang="ts">
+
+  import { Vue, Component, Prop } from "vue-property-decorator";
+  import BaseArticlePage from "@/components/BaseArticlePage.vue";
+  import ArticleUtil from "@/utils/ArticleUtil";
+  import { RatingResponse } from "@/interfaces/Rating";
+
+  import article from "@/content/articles/moehren-quiche-mit-bergkaese";
+  import recipe from "@/content/recipes/moehren-quiche-mit-bergkaese";
+
+  @Component({
+    head: ArticleUtil.defaultHead(article),
+    asyncData: ArticleUtil.defaultAsyncData(article, recipe),
+  })
+  export default class extends BaseArticlePage {
+
+    private ratings: RatingResponse;
+
+    private stepPhotos = [
+      `/images/articles/${article.slug}/schritte/1.jpeg`,
+      `/images/articles/${article.slug}/schritte/2.jpeg`,
+      `/images/articles/${article.slug}/schritte/3.jpeg`,
+      `/images/articles/${article.slug}/schritte/4.jpeg`,
+      `/images/articles/${article.slug}/schritte/5.jpeg`,
+    ];
+
+    constructor() {
+      super(article, recipe);
+    }
+
+    async refreshComments() {
+      await super.refreshComments();
+    }
+
+    created() {
+      super.created();
+    }
+
+  }
+
+</script>

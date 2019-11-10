@@ -131,7 +131,7 @@ export interface Recipe {
   title: string;
   categoryId: string;
   previewImageUrl: string;
-  servings: RecipeServing;
+  servings?: RecipeServing;
   description?: string;
   ingredients: (RecipeIngredientGroup|RecipeIngredient)[];
   steps: (RecipeStepGroup|RecipeStep)[];

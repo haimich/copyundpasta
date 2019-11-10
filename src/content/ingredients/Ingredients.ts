@@ -9,13 +9,25 @@ export const INGREDIENTS: Ingredients = {
     id: "pfeffer",
     name: "Pfeffer",
   },
+  muskatnuss: {
+    id: "muskatnuss",
+    name: "Muskatnuss",
+  },
   oregano: {
     id: "oregano",
     name: "Oregano",
   },
+  speck: {
+    id: "speck",
+    name: "Speck",
+  },
   wasser: {
     id: "wasser",
     name: "Wasser",
+  },
+  eiswasser: {
+    id: "eiswasser",
+    name: "Eiswasser",
   },
   parmesan: {
     id: "parmesan",
@@ -28,6 +40,10 @@ export const INGREDIENTS: Ingredients = {
   mehl: {
     id: "mehl",
     name: "Mehl",
+  },
+  schlagsahne: {
+    id: "schlagsahne",
+    name: "Schlagsahne",
   },
   milderessig: {
     id: "milderessig",
@@ -87,6 +103,24 @@ export const INGREDIENTS: Ingredients = {
     id: "butter",
     name: "Butter",
   },
+  kaltebutter: {
+    id: "kaltebutter",
+    name: "kalte Butter",
+  },
+  moehren: {
+    id: "moehren",
+    name: "Möhre",
+    namePlural: "Möhren",
+  },
+  kartoffel: {
+    id: "kartoffel",
+    name: "Kartoffel",
+    namePlural: "Kartoffeln",
+  },
+  oel: {
+    id: "oel",
+    name: "Öl",
+  },
   olivenoel: {
     id: "olivenoel",
     name: "Olivenöl",
@@ -106,6 +140,10 @@ export const INGREDIENTS: Ingredients = {
   gemuesebruehenpulver: {
     id: "gemuesebruehenpulver",
     name: "Gemüsebrühenpulver",
+  },
+  bergkaese: {
+    id: "bergkaese",
+    name: "Bergkäse",
   },
   paprikapulver: {
     id: "paprikapulver",

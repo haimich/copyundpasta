@@ -55,7 +55,7 @@
           Zutaten
         </h2>
 
-        <el-row v-if="! isPrint" class="servings-container">
+        <el-row v-if="! isPrint && servings != null" class="servings-container">
           <el-col :span="3">
             <el-button
               size="small"
@@ -228,7 +228,11 @@
     private servingsSteps = 0.5;
 
     get servings(): string {
-      return RecipeUtil.formatServings(this.recipe, this.servingsMultiplier);
+      if (this.recipe.servings == null) {
+        return null;
+      } else {
+        return RecipeUtil.formatServings(this.recipe, this.servingsMultiplier);
+      }
     }
 
     @Watch("ratings")
