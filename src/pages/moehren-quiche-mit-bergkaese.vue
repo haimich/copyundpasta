@@ -83,6 +83,10 @@
       `/images/articles/${article.slug}/schritte/3.jpeg`,
       `/images/articles/${article.slug}/schritte/4.jpeg`,
       `/images/articles/${article.slug}/schritte/5.jpeg`,
+      `/images/articles/${article.slug}/schritte/6.jpeg`,
+      `/images/articles/${article.slug}/schritte/7.jpeg`,
+      `/images/articles/${article.slug}/schritte/8.jpeg`,
+      `/images/articles/${article.slug}/schritte/9.jpeg`,
     ];
 
     constructor() {

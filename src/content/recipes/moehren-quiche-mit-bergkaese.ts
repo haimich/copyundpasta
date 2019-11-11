@@ -133,7 +133,7 @@ const steps: (RecipeStepGroup|RecipeStep)[] = [
       {
         isGroup: false,
         type: "step",
-        content: "Das Mehl, Butterstückchen, Ei, Eiswasser und Salz in eine Schüssel geben. Mit einer Küchenmaschine (Knethaken) oder per Hand zu einem glatten Teig verkneten. Den Teig komplett in Frischhaltefolie einwickeln und für 30 Minuten in den Kühlschrank legen. Diese Phase ist wichtig, damit die Butter im Teig abkühlt und er sich leichter ausrollen lässt.",
+        content: "Mehl, Butterstückchen, Ei, Eiswasser und Salz in eine Schüssel geben. Mit einer Küchenmaschine (Knethaken) oder per Hand zu einem glatten Teig verkneten. Den Teig komplett in Frischhaltefolie einwickeln und für 30 Minuten in den Kühlschrank legen. Diese Phase ist wichtig, damit die Butter im Teig abkühlt und er sich danach besser ausrollen lässt.",
       },
     ],
   },
