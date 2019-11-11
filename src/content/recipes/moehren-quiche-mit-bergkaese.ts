@@ -88,6 +88,7 @@ const ingredients: (RecipeIngredientGroup|RecipeIngredient)[] = [
         unit: INGREDIENT_UNITS.gramm,
         ingredient: INGREDIENTS.bergkaese,
         preparation: INGREDIENT_PREPARATIONS.gerieben,
+        description: "(alternativ Gruyère oder Appenzeller)",
       },
 
       {
@@ -133,7 +134,12 @@ const steps: (RecipeStepGroup|RecipeStep)[] = [
       {
         isGroup: false,
         type: "step",
-        content: "Mehl, Butterstückchen, Ei, Eiswasser und Salz in eine Schüssel geben. Mit einer Küchenmaschine (Knethaken) oder per Hand zu einem glatten Teig verkneten. Den Teig komplett in Frischhaltefolie einwickeln und für 30 Minuten in den Kühlschrank legen. Diese Phase ist wichtig, damit die Butter im Teig abkühlt und er sich danach besser ausrollen lässt.",
+        content: "Mehl, Butterstückchen, Ei, Eiswasser und Salz in eine Schüssel geben. Mit einer Küchenmaschine (Knethaken) oder per Hand zu einem glatten Teig verkneten. Sollte der Teig zu klebrig sein, noch etwas Mehl hinzugeben – umgekehrt etwas Wasser angießen, wenn er zu trocken ist.",
+      },
+      {
+        isGroup: false,
+        type: "step",
+        content: "Den Teig zu einer Kugel formen, in Frischhaltefolie einwickeln und für 30 Minuten in den Kühlschrank legen. Diese Zeit ist notwendig, damit die Butter im Teig abkühlt und er sich aschließend besser ausrollen lässt.",
       },
     ],
   },
@@ -145,35 +151,83 @@ const steps: (RecipeStepGroup|RecipeStep)[] = [
       {
         isGroup: false,
         type: "step",
-        content: "Da das Gemüse in der Quiche nicht schnell genug garen würde, muss es soweit vorgekocht werden, dass es fast gar ist.",
+        content: "Da das Gemüse im Backofen nicht schnell genug garen würde, muss es vorgekocht werden, bis es fast weich ist.",
       },
       {
         isGroup: false,
         type: "step",
-        content: "Die Kartoffeln bei mittlerer Hitze ca. 20 Minuten garen. Wenn sie etwas abgekühlt sind, die Kartoffeln schälen und in Würfel schneiden. Die Möhren schälen und 3 Minuten in kochendes Salzwasser geben. Danach längs halbieren und in Scheiben von ca. 0,5 cm schneiden.",
+        content: "Die Kartoffeln waschen und mit Schale bei mittlerer Hitze ca. 20 Minuten garen. Wenn sie etwas abgekühlt sind, die Kartoffeln schälen und in kleine Würfel schneiden. Die Möhren schälen und 3 Minuten in kochendes Salzwasser geben. Danach längs halbieren und in Scheiben von ca. 0,5 cm schneiden.",
       },
       {
         isGroup: false,
         type: "step",
-        content: "Die Zwiebeln schälen und fein würfeln. Eine Pfanne erhitzen, 1 EL Öl hinzugeben und die Zwiebeln mit dem gewürfelten Speck anbraten.",
+        content: "Den Backofen auf 190° C Ober-/Unterhitze vorheizen.",
+      },
+      {
+        isGroup: false,
+        type: "step",
+        content: "Die Zwiebeln schälen und fein würfeln. Eine Pfanne erhitzen, 1 EL Öl hinzugeben und die Zwiebeln mit dem gewürfelten Speck darinanbraten.",
+      },
+    ],
+  },
+
+  {
+    isGroup: true,
+    title: "Teig formen",
+    steps: [
+      {
+        isGroup: false,
+        type: "step",
+        content: "Die Form mit Butter bestreichen, damit sich die Quiche nach dem Backen besser löst.",
+      },
+      {
+        isGroup: false,
+        type: "step",
+        content: "Den Teig auf einer bemehlten Arbeitsfläche mit einem Nudelholz kreisrund ausrollen. In die Form legen, so dass rundherum ein Rand entsteht. Den Teig mit den Fingern andrücken und den überstehenden Rand mit einem Messer abschneiden. Nun den Boden mit einer Gabel mehrfach einstechen, da sich sonst durch aufsteigenden Dampf Blasen bilden.",
+      },
+    ],
+  },
+
+  {
+    isGroup: true,
+    title: "Blindbacken",
+    steps: [
+      {
+        isGroup: false,
+        type: "step",
+        content: "Dieser Schritt ist wichtig, damit der Boden nicht so stark durchweicht. Man kann ihn auch überspringen, wenn man diese Tatsache in Kauf nimmt :)",
+      },
+      {
+        isGroup: false,
+        type: "step",
+        content: "Ein Backpapier auf den Boden der Quiche legen und die Hülsenfrüchte darauf verteilen. Für ca. 20 Minuten blindbacken, bis der Rand anfängt, braun zu werden. Nach dem Backen auskühlen lassen und die Hülsenfrüchte entfernen.",
+      },
+    ],
+  },
+
+  {
+    isGroup: true,
+    title: "Backen",
+    steps: [
+      {
+        isGroup: false,
+        type: "step",
+        content: "Die Möhren, Kartoffeln, Zwiebeln, Speck und die Hälfte des geriebenen Käses in einer großen Schüssel vermischen und auf dem Boden der Quiche verteilen.",
+      },
+      {
+        isGroup: false,
+        type: "step",
+        content: "Eier, Sahne, Salz, Pfeffer und Muskatnuss mit einem Schneebesen verquirlen (noch besser geht es mit einem Zauberstab), über die Füllung gießen und mit dem restlichen Käse bestreuen.",
+      },
+      {
+        isGroup: false,
+        type: "step",
+        content: "Die Quiche im Backofen auf der mittleren Schiene bei 190°C Ober-/Unterhitze ca. 40 min. backen, bis der Käse schön braun ist.",
       },
     ],
   },
 
 ];
-
-// Zwiebeln schälen, in kleine Würfe schneiden und mit dem gewürfelten Speck in einer Pfanne in Olivenöl 2 Minuten anbraten.
-
-// Backofen auf 200° C Ober-/Unterhitze vorheizen.
-
-// Teig auf einer bemehlten Arbeitsfläche zu einem Kreis (34 cm Ø) ausrollen und in die gebutterte Springform (20 cm Ø) auslegen, den Rand (7 cm hoch) andrücken und den Teigboden mit einer Gabel mehrmals einstechen (den Rand mit einem Messer abschneiden).
-
-// Möhren, Kartoffeln, Zwiebeln und Speck aus der Pfanne, 150 g geriebener Bergkäse und gehackter Blattpetersilie vorsichtig mischen und auf dem Boden verteilen, leicht andrücken.
-// Eier, Sahne, Salz und Pfeffer verquirlen, über die Füllung gießen und mit dem restlichen Bergkäse bestreuen.
-
-// Die Möhren Quiche im vorgeheizten Backofen auf mittlerer Schiene bei 200° C Ober-/Unterhitze für ca. 40 – 50 Minuten goldbraun backen.
-
-// Nach dem backen die Quiche für 20 Minuten im Backofen ruhen lassen (optional).
 
 const notes = [];
 
