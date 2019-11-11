@@ -7,7 +7,7 @@ export default class FeedUtil {
     let feed = new Feed({
       title: "Copy & Pasta",
       link: `https://copyundpasta.de/feed/${type}.xml`,
-      description: "Copy & Pasta Rezepte und Artikel",
+      description: "Rezepte und Artikel von Copy & Pasta",
       id: "https://copyundpasta.de/",
       copyright: "2019 Copy & Pasta",
       language: "de",
@@ -26,15 +26,16 @@ export default class FeedUtil {
   
     for (let article of articles) {
       let url = `https://copyundpasta.de/${article.slug}`;
-  
+      let image = `https://copyundpasta.de${article.previewImageUrl}`;
+      
       feed.addItem({
         title: article.title,
         id: url,
         link: url,
         description: article.shortDescription,
-        content: article.shortDescription,
+        content: `<img src="${image}">` + article.shortDescription,
         date: new Date(article.createdAt),
-        image: `https://copyundpasta.de${article.previewImageUrl}`,
+        image,
       });
     }
   
