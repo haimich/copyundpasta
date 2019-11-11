@@ -224,6 +224,11 @@ const steps: (RecipeStepGroup|RecipeStep)[] = [
         type: "step",
         content: "Die Quiche im Backofen auf der mittleren Schiene bei 190°C Ober-/Unterhitze ca. 40 min. backen, bis der Käse schön braun ist.",
       },
+      {
+        isGroup: false,
+        type: "step",
+        content: "Nach dem Backen sollte die Quiche noch etwas abkühlen. Als Beilage passt sehr gut ein grüner Salat.",
+      },
     ],
   },
 

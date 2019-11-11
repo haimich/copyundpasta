@@ -15,9 +15,13 @@
           <ArticleJumpToRecipeComponent />
 
           <p class="entry-paragraph">
-            Es...
+            Ich müsste lügen, wenn ich behaupten würde, dass Quiche schon immer zu meinen Lieblingsrezepten gezählt hat. Selbst als mir meine Mutter vor einigen Jahren eine original elsässiche Backform geschenkt hat, wollte das Quichefieber nicht so recht bei mir ausbrechen. Die Wende kam erst, als ich vor einiger Zeit einen Cakepopkurs besucht habe, bei dem nebst einem Glas Sekt zwei verschiedene Quiches serviert wurden.
+          </p>
 
-            Habe es lange nicht gekannt, dann mal eine original Quicheform aus dem Elsaß geschenkt bekommen - immer noch nicht
+          <p>
+            Ich kramte die alte Form aus dem Küchenschrank
+
+            Erst jetzt wurde mir richtig klar, wie vielseitig diese französische Speise ist. Der Teig besteht in der Regel aus Mürbeteig, wobei auch eine Variante mit Blätterteig sehr lecker sein kann. Bei der Füllung kann man kreativ beliebige Gemüsesorten kombinieren und nach Belieben z. B. mit Speck kombinieren. Hier bietet sich auch ein großes Potenzial in Sachen Resteverwertung auf, da man für eine Quiche nicht unbedingt spezielle Zutaten einkaufen muss, sondern einfach verschiedene Reste aufbrauchen kann. Für die Bindung wird die Gemüsemischung mit einer Mischung aus Sahne und Ei übergossen, wobei hier auch andere Milchprodukte wie Creme Fraîche in Frage kommen.
           </p>
 
           <h2>Welches Zubehör brauche ich?</h2>
