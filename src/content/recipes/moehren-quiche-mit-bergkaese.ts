@@ -64,6 +64,12 @@ const ingredients: (RecipeIngredientGroup|RecipeIngredient)[] = [
       },
       {
         isGroup: false,
+        amount: 10,
+        unit: INGREDIENT_UNITS.stueck,
+        ingredient: INGREDIENTS.champignons,
+      },
+      {
+        isGroup: false,
         amount: 2,
         unit: INGREDIENT_UNITS.stueck,
         ingredient: INGREDIENTS.zwiebel,

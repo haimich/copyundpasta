@@ -15,31 +15,46 @@
           <ArticleJumpToRecipeComponent />
 
           <p class="entry-paragraph">
-            Ich müsste lügen, wenn ich behaupten würde, dass Quiche schon immer zu meinen Lieblingsrezepten gezählt hat. Selbst als mir meine Mutter vor einigen Jahren eine original elsässiche Backform geschenkt hat, wollte das Quichefieber nicht so recht bei mir ausbrechen. Die Wende kam erst, als ich vor einiger Zeit einen Cakepopkurs besucht habe, bei dem nebst einem Glas Sekt zwei verschiedene Quiches serviert wurden.
+            Ich müsste lügen, wenn ich sagen würde, dass Quiche schon immer zu meinen Lieblingsrezepten gezählt hat. Selbst als mir meine Mutter vor einigen Jahren eine original elsässiche Backform geschenkt hat, wollte das Quichefieber nicht so recht bei mir ausbrechen. Die Wende kam erst, als ich im letzten Jahr einen Cakepopkurs besucht habe, bei dem neben einem Glas Sekt zur Stärkung gleich zwei leckere Quichesorten serviert wurden.
           </p>
 
           <p>
-            Ich kramte die alte Form aus dem Küchenschrank
+            Zu Hause kramte ich dann die alte Form aus dem Küchenschrank und wenig später stand meine erste Quiche mit Frühlingszwiebeln und Speck dampfend auf dem Küchentisch. Erst jetzt wurde mir richtig klar, wie vielseitig dieses französische Gericht ist.
+          </p>
 
-            Erst jetzt wurde mir richtig klar, wie vielseitig diese französische Speise ist. Der Teig besteht in der Regel aus Mürbeteig, wobei auch eine Variante mit Blätterteig sehr lecker sein kann. Bei der Füllung kann man kreativ beliebige Gemüsesorten kombinieren und nach Belieben z. B. mit Speck kombinieren. Hier bietet sich auch ein großes Potenzial in Sachen Resteverwertung auf, da man für eine Quiche nicht unbedingt spezielle Zutaten einkaufen muss, sondern einfach verschiedene Reste aufbrauchen kann. Für die Bindung wird die Gemüsemischung mit einer Mischung aus Sahne und Ei übergossen, wobei hier auch andere Milchprodukte wie Creme Fraîche in Frage kommen.
+          <p>
+            Der Teig besteht traditionell aus Mürbeteig, wobei auch eine Variante mit Blätterteig sehr lecker ist. Für die Füllung gibt es unzählige Möglichkeiten wie z. B. Spargel und Schinken, Lachs und Spinat oder Oliven und Feta. Hier zeigt sich auch das große Potenzial in Sachen Resteverwertung, da man für eine Quiche nicht unbedingt spezielle Zutaten einkaufen muss, sondern einfach verschiedene Reste verwenden kann. Für die Bindung wird die Füllung mit einer Mischung aus Sahne und Ei übergossen, wobei hier je nach Rezept auch andere Milchprodukte wie Creme Fraîche verwendet werden.
+          </p>
+
+          <p>
+            Mit dem Rezept für die Möhren-Quiche habe ich euch eine Variante mit einer leckeren Gemüsefüllung zusammengestellt, die ihr vegetarisch genießen oder nach Belieben noch mit Speck anreichern könnt. 
           </p>
 
           <h2>Welches Zubehör brauche ich?</h2>
 
-          <ul>
-            <li>am Authentischsten ist eine Quicheform, man kann aber auch eine Backform oder Auflaufform nehmen</li>
-            <li>Nudelholz</li>
-            <li>Hülsenfrüchte zum Blindbacken (optional)</li>
-          </ul>
+          <p>
+            Am Authentischsten ist eine Quicheform aus Keramik oder Metall, man kann aber auch genauso gut eine normale Back- oder Auflaufform verwenden. Daneben braucht ihr ein Nudelholz und getrocknete Hülsenfrüchte wie z. B. Kichererbsen zum Blindbacken (siehe unten).
+          </p>
 
           <h2>Blindbacken</h2>
 
-          <ul>
-            <li>In einigen Rezepten wird der Teigboden, ohne Füllung oder Belag, Blind vorgebacken. Er wird mit Backpapier ausgekleidet und mit getrockneten Hülsenfrüchten belegt. Dies verhindert, dass der Teig durchweicht. Bei meinem Rezept ist das Blindbacken nicht nötig. Denn ausschlaggebend für ein knuspriges äußeres, ist die Höhe der Backtemperatur von 200° C. (https://lissis-passion.de/herzhafte-moehren-quiche)</li>
-            <li>man kan auch weiße Bohnen nehmen</li>
-            <li>Blind vorbacken: Backpapier auf den Boden legen und auf das Backpapier Hülsenfrüchte (trockenen Linsen, Erbsen oder auch Reis) verteilen – so wird der Boden beschwert und kann nicht hochgehen</li>
-            <li>Kugeln aus Keramik</li>
-          </ul>
+          <p>
+            Wenn ihr bei YouTube <ArticleQuoteComponent text="Blindbacken" /> eingebt, werden zahlreiche Suchergebnissen angezeigt, bei denen der Begriff allzu wörtlich genommen wird und diverse YouTube-Stars mit verbundenen Augen einen Kuchen backen. Das könnt ihr zu Hause natürlich auch gerne mal probieren, aber an dieser Stelle ist mit dem Begriff gemeint, dass der Mürbeteig vor dem eigentlichen Backprozess vorgebacken ist.
+          </p>
+
+          <p>
+            Dazu wird Backpapier auf den Teig gelegt, welches mit getrockneten Hülsenfrüchten oder speziellen Blindbackkugeln aus Kermaik beschwert wird. Nach ca. 20 Minuten im Ofen ist der Teig soweit gefestigt, dass er beim späteren Backprozess nicht durchweicht.
+          </p>
+
+          <p>
+            Aus meiner Sicht kann man diesen Schritt auch mal überspringen, wenn man wenig Zeit hat. Hierfür könnt ihr die Temperatur einfach auf 200°C erhöhen, dann wird der Boden von außen trotzdem knusprig und weicht nur wenig durch.
+          </p>
+
+          <h2>Muss ich den Teig selberbacken?</h2>
+
+          <p>
+
+          </p>
 
           <h2>Was kann schon schiefgehen?</h2>
 
