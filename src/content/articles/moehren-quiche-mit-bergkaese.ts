@@ -9,7 +9,7 @@ const article: Article = {
   title: "Möhren-Quiche mit Bergkäse",
   categoryId: ARTICLE_CATEGORIES.rezepte.id,
   isHeroArticle: false,
-  shortDescription: `...`,
+  shortDescription: `Quiches zählen zu meinen absoluten Lieblingsgerichten, weil sie so wunderbar vielseitig und dabei auch noch richtig lecker sind. In diesem Artikel stelle ich euch eine tolle Möhren-Quiche vor, die ihr nach Belieben vegetarisch oder mit Speck zubereiten könnt. Das Gericht nimmt zwar etwas Zeit in Anspruch, aber der Aufwand lohnt sich!`,
   mainImageUrl: `/images/articles/${slug}/main.jpg`,
   previewImageUrl: `/images/articles/${slug}/preview.jpg`,
   wideImageUrl: `/images/articles/${slug}/wide.jpg`,

@@ -37,7 +37,7 @@
           <h2>Welches Zubehör brauche ich?</h2>
 
           <p>
-            Am Authentischsten ist eine Quicheform aus Keramik oder Metall, man kann aber auch genauso gut eine normale Back- oder Auflaufform verwenden. Daneben braucht ihr ein Nudelholz und getrocknete Hülsenfrüchte wie z. B. Kichererbsen zum Blindbacken (siehe unten).
+            Am Authentischsten ist natürlich eine Quicheform aus Keramik oder Metall, man kann aber auch genauso gut eine normale Back- oder Auflaufform verwenden. Daneben braucht ihr ein Nudelholz und getrocknete Hülsenfrüchte wie z. B. Kichererbsen zum Blindbacken (siehe unten).
           </p>
 
           <h2>Blindbacken</h2>
