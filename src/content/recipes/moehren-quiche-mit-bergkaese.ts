@@ -38,6 +38,12 @@ const ingredients: (RecipeIngredientGroup|RecipeIngredient)[] = [
       },
       {
         isGroup: false,
+        amount: 0.5,
+        unit: INGREDIENT_UNITS.tl,
+        ingredient: INGREDIENTS.salz,
+      },
+      {
+        isGroup: false,
         amount: 3,
         unit: INGREDIENT_UNITS.el,
         ingredient: INGREDIENTS.eiswasser,
@@ -64,7 +70,7 @@ const ingredients: (RecipeIngredientGroup|RecipeIngredient)[] = [
       },
       {
         isGroup: false,
-        amount: 10,
+        amount: 8,
         unit: INGREDIENT_UNITS.stueck,
         ingredient: INGREDIENTS.champignons,
       },
@@ -96,6 +102,13 @@ const ingredients: (RecipeIngredientGroup|RecipeIngredient)[] = [
         preparation: INGREDIENT_PREPARATIONS.gerieben,
         description: "(alternativ Gruyère oder Appenzeller)",
       },
+      {
+        isGroup: false,
+        amount: 0,
+        unit: INGREDIENT_UNITS.ohneeinheit,
+        ingredient: INGREDIENTS.huelsenfruechte,
+        description: "(zum Blindbacken)",
+      },
 
       {
         isGroup: false,
@@ -105,7 +118,7 @@ const ingredients: (RecipeIngredientGroup|RecipeIngredient)[] = [
       },
       {
         isGroup: false,
-        amount: 100,
+        amount: 150,
         unit: INGREDIENT_UNITS.milliliter,
         ingredient: INGREDIENTS.schlagsahne,
       },
@@ -140,12 +153,17 @@ const steps: (RecipeStepGroup|RecipeStep)[] = [
       {
         isGroup: false,
         type: "step",
-        content: "Mehl, Butterstückchen, Ei, Eiswasser und Salz in eine Schüssel geben. Mit einer Küchenmaschine (Knethaken) oder per Hand zu einem glatten Teig verkneten. Sollte der Teig zu klebrig sein, noch etwas Mehl hinzugeben – umgekehrt etwas Wasser angießen, wenn er zu trocken ist.",
+        content: "Das Wasser mit Hilfe von Eiswürfeln etwas herunterkühlen.",
       },
       {
         isGroup: false,
         type: "step",
-        content: "Den Teig zu einer Kugel formen, in Frischhaltefolie einwickeln und für 30 Minuten in den Kühlschrank legen. Diese Zeit ist notwendig, damit die Butter im Teig abkühlt und er sich aschließend besser ausrollen lässt.",
+        content: "Mehl, Butterstückchen, Ei, Eiswasser und Salz in eine Schüssel geben. Mit einer Küchenmaschine (Knethaken) oder per Hand in etwa 5 min. zu einem glatten Teig verkneten. Sollte der Teig zu klebrig sein, noch etwas Mehl hinzugeben – umgekehrt etwas Wasser angießen, wenn er zu trocken ist.",
+      },
+      {
+        isGroup: false,
+        type: "step",
+        content: "Den Teig zu einer Kugel formen, in Frischhaltefolie einwickeln und für 30 Minuten in den Kühlschrank legen. Diese Zeit ist notwendig, damit die Butter im Teig abkühlt und er sich anschließend besser ausrollen lässt. Man kann den Teig ruhig auch länger im Kühlschrank lassen. Wenn man die Zeit etwas verkürzen will, kann man den Teig platt drücken, so dass er schneller abkühlt.",
       },
     ],
   },
@@ -162,7 +180,12 @@ const steps: (RecipeStepGroup|RecipeStep)[] = [
       {
         isGroup: false,
         type: "step",
-        content: "Die Kartoffeln waschen und mit Schale bei mittlerer Hitze ca. 20 Minuten garen. Wenn sie etwas abgekühlt sind, die Kartoffeln schälen und in kleine Würfel schneiden. Die Möhren schälen und 3 Minuten in kochendes Salzwasser geben. Danach längs halbieren und in Scheiben von ca. 0,5 cm schneiden.",
+        content: "Die Möhren schälen und waschen, danach längs halbieren und in Scheiben von ca. 0,5 cm schneiden. Die Kartoffeln ebenfalls schälen und waschen, sie werden in feine Würfel geschnitten. Einen Topf mit Wasser (ca. 3/4 gefüllt) und 1 TL Salz aufstellen. Sobald das Wasser kocht, die Karotten und Kartoffelwürfel vorsichtig hineingeben und bei mittlerer Hitze und leicht geöffnetem Deckel 7 Minuten garen. Danach das Gemüse in einem Sieb gut abtropfen lassen, damit die Quiche nachher nicht durchweicht.",
+      },
+      {
+        isGroup: false,
+        type: "step",
+        content: "Den Käse grob reiben.",
       },
       {
         isGroup: false,
@@ -172,7 +195,7 @@ const steps: (RecipeStepGroup|RecipeStep)[] = [
       {
         isGroup: false,
         type: "step",
-        content: "Die Zwiebeln schälen und fein würfeln. Eine Pfanne erhitzen, 1 EL Öl hinzugeben und die Zwiebeln mit dem gewürfelten Speck darinanbraten.",
+        content: "Die Zwiebeln schälen und fein würfeln, den Speck ebenfalls würfeln. Eine Pfanne erhitzen, 1 EL Öl hinzugeben und die Zwiebeln mit dem Speck darin anbraten. Nach einigen Minuten die Champignons dazugeben und noch etwas mit garen.",
       },
     ],
   },
@@ -184,7 +207,7 @@ const steps: (RecipeStepGroup|RecipeStep)[] = [
       {
         isGroup: false,
         type: "step",
-        content: "Die Form mit Butter bestreichen, damit sich die Quiche nach dem Backen besser löst.",
+        content: "Die Form mit Butter einfetten, damit sich die Quiche nach dem Backen besser löst.",
       },
       {
         isGroup: false,
@@ -201,12 +224,12 @@ const steps: (RecipeStepGroup|RecipeStep)[] = [
       {
         isGroup: false,
         type: "step",
-        content: "Dieser Schritt ist wichtig, damit der Boden nicht so stark durchweicht. Man kann ihn auch überspringen, wenn man diese Tatsache in Kauf nimmt :)",
+        content: "Das Blindbacken ist wichtig, damit der Boden nicht durchweicht. Man kann diesen Schritt auch überspringen, wenn man diese Tatsache in Kauf nimmt :)",
       },
       {
         isGroup: false,
         type: "step",
-        content: "Ein Backpapier auf den Boden der Quiche legen und die Hülsenfrüchte darauf verteilen. Für ca. 20 Minuten blindbacken, bis der Rand anfängt, braun zu werden. Nach dem Backen auskühlen lassen und die Hülsenfrüchte entfernen.",
+        content: "Ein Backpapier auf den Boden der Quiche legen und die Hülsenfrüchte darauf verteilen. Für ca. 20 Minuten bei 190°C blindbacken, bis der Rand anfängt, leicht braun zu werden. Nach dem Backen kurz auskühlen lassen und die Hülsenfrüchte entfernen.",
       },
     ],
   },
@@ -218,12 +241,12 @@ const steps: (RecipeStepGroup|RecipeStep)[] = [
       {
         isGroup: false,
         type: "step",
-        content: "Die Möhren, Kartoffeln, Zwiebeln, Speck und die Hälfte des geriebenen Käses in einer großen Schüssel vermischen und auf dem Boden der Quiche verteilen.",
+        content: "Die Möhren, Kartoffeln, Champignons, Zwiebeln und Speck in einer großen Schüssel vermischen und auf dem Boden der Quiche verteilen.",
       },
       {
         isGroup: false,
         type: "step",
-        content: "Eier, Sahne, Salz, Pfeffer und Muskatnuss mit einem Schneebesen verquirlen (noch besser geht es mit einem Zauberstab), über die Füllung gießen und mit dem restlichen Käse bestreuen.",
+        content: "Eier, Sahne, Salz, Pfeffer und Muskatnuss mit einem Schneebesen verquirlen (noch besser geht es mit einem Zauberstab), über die Füllung gießen und mit dem geriebenen Käse bestreuen.",
       },
       {
         isGroup: false,

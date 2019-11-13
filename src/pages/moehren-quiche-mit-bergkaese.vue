@@ -47,7 +47,7 @@
           </p>
 
           <p>
-            Aus meiner Sicht kann man diesen Schritt auch mal überspringen, wenn man wenig Zeit hat. Hierfür könnt ihr die Temperatur einfach auf 200°C erhöhen, dann wird der Boden von außen trotzdem knusprig und weicht nur wenig durch.
+            Aus meiner Sicht kann man diesen Schritt auch mal überspringen, wenn man wenig Zeit hat. Hierfür könnt ihr die Temperatur einfach auf 200°C Ober-/Unterhitze erhöhen (Gesamtbackzeit: 40 min.), dann wird der Boden von außen trotzdem knusprig und weicht nur wenig durch.
           </p>
 
           <h2>Muss ich den Teig selberbacken?</h2>
@@ -132,6 +132,10 @@
       `/images/articles/${article.slug}/schritte/6.jpeg`,
       `/images/articles/${article.slug}/schritte/7.jpeg`,
       `/images/articles/${article.slug}/schritte/8.jpeg`,
+      `/images/articles/${article.slug}/schritte/9.jpeg`,
+      `/images/articles/${article.slug}/schritte/10.jpeg`,
+      `/images/articles/${article.slug}/schritte/11.jpeg`,
+      `/images/articles/${article.slug}/schritte/12.jpeg`,
     ];
 
     constructor() {

@@ -40,6 +40,10 @@ export default class RecipeUtil {
 
   public static formatAmount(ingredient: RecipeIngredient, servingsMultiplier): string {
     if (NumberUtil.isNumberDefined(ingredient.amount)) {
+      if (ingredient.amount === 0) {
+        return "";
+      }
+
       let amount = ingredient.amount * servingsMultiplier;
 
       if (amount === 0.25) {

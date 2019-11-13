@@ -29,6 +29,10 @@ export const INGREDIENT_UNITS: IngredientUnits = {
     id: "einige",
     name: "einige",
   },
+  ohneeinheit: {
+    id: "ohneeinheit",
+    name: "",
+  },
   prise: {
     id: "prise",
     name: "Prise",

@@ -29,6 +29,10 @@ export const INGREDIENTS: Ingredients = {
     id: "eiswasser",
     name: "Eiswasser",
   },
+  huelsenfruechte: {
+    id: "huelsenfruechte",
+    name: "Hülsenfrüchte",
+  },
   parmesan: {
     id: "parmesan",
     name: "Parmesan",
