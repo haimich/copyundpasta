@@ -54,7 +54,7 @@ const ingredients: (RecipeIngredientGroup|RecipeIngredient)[] = [
         amount: 170,
         unit: INGREDIENT_UNITS.gramm,
         ingredient: INGREDIENTS.pflanzenoel,
-        description: "(z. B. Rapsöl oder Sonnenblumenöl)",
+        description: "(z. B. Raps- oder Sonnenblumenöl)",
       },
       {
         isGroup: false,
@@ -160,7 +160,7 @@ const steps: (RecipeStepGroup|RecipeStep)[] = [
       {
         isGroup: false,
         type: "step",
-        content: "Die Eier und die Butter für das Frosting aus dem Kühlschrank nehmen, damit sie Raumtemperatur annehmen können.",
+        content: "Die Eier und die Butter für das Frosting mind. 1 Stunde vorher aus dem Kühlschrank nehmen, damit sie Raumtemperatur annehmen können.",
       },
       {
         isGroup: false,
@@ -197,7 +197,7 @@ const steps: (RecipeStepGroup|RecipeStep)[] = [
       {
         isGroup: false,
         type: "step",
-        content: "Das Mehl nach und nach in den flüssigen Teig sieben und mit einem Teigschaber unterheben, bis sich das Mehl gut verbunden hat. Nun die Karotten ebenfalls unter den Teig heben, anschließend folgen die gehackten Walnüssen.",
+        content: "Das Mehl nach und nach in den flüssigen Teig sieben und mit einem Teigschaber unterheben, bis sich das Mehl gut verbunden hat. Nun die Karotten ebenfalls unter den Teig heben, anschließend folgen die gehackten Walnüsse.",
       },
       {
         isGroup: false,
@@ -207,7 +207,7 @@ const steps: (RecipeStepGroup|RecipeStep)[] = [
       {
         isGroup: false,
         type: "step",
-        content: "Den Teig in die Form füllen und den Kuchen bei 175°C Ober-/Unterhitze 40-45 min. backen. Um zu sehen, ob der Kuchen fertig ist, könnt ihr ein Holz- oder Metallstäbchen hineinstecken: wenn kein Teig daran haftet, könnt ihr ihn aus dem Ofen nehmen. Oft ist die Stäbchenprobe alleine nicht eindeutig, deswegen schaue ich mir immer auch die Oberfläche an und versuche über den Geruch zu beurteilen, ob er schon zu lange drin ist und evt. verbrennt.",
+        content: "Den Teig in die Form füllen und den Kuchen bei 175°C Ober-/Unterhitze 40-45 min. backen. Um zu sehen, ob der Kuchen fertig ist, könnt ihr ein Holz- oder Metallstäbchen hineinstecken: wenn kein Teig daran haftet, könnt ihr ihn aus dem Ofen nehmen. Oft ist die Stäbchenprobe alleine nicht eindeutig, deswegen schaue ich mir immer auch die Oberfläche an und versuche über den Geruch zu beurteilen, ob er schon zu lange drin ist und evtl. gerade verbrennt.",
       },
     ],
   },
@@ -219,7 +219,7 @@ const steps: (RecipeStepGroup|RecipeStep)[] = [
       {
         isGroup: false,
         type: "step",
-        content: "Das Frosting könnt ihr bereits zubereiten, wenn der Kuchen gerade im Ofen ist. Dazu zunächst die Vanilleschote aufschneiden und das Mark herauskratzen.",
+        content: "Das Frosting könnt ihr bereits zubereiten, wenn der Kuchen noch im Ofen ist. Dazu zunächst die Vanilleschote aufschneiden und das Mark herauskratzen.",
       },
       {
         isGroup: false,
@@ -246,19 +246,16 @@ const steps: (RecipeStepGroup|RecipeStep)[] = [
       {
         isGroup: false,
         type: "step",
-        content: "Bei der Dekoration des Kuchens könnt ihr eurer Kreativität freien Lauf lassen. Was z. B. gut aussieht, ist wenn ihr auf jedes Kuchenstück an den Rand eine halbe Walnuss oder eine Marzipanmöhre platziert.",
+        content: "Die Pistazien zerkleinern und in einer Pfanne bei mittlerer Hitze trocken anrösten. Aus der Pfanne nehmen und auf dem Frosting verteilen.",
       },
       {
         isGroup: false,
         type: "step",
-        content: "Geschmacklich sehr gut passen auch Pistazien. Diese zerkleinern und in einer Pfanne bei mittlerer Hitze trocken anrösten. Die Pistazien aus der Pfanne nehmen und auf dem Frosting verteilen.",
+        content: "Ihr könnt den Kuchen natürlich sofort verzehren, aber er profitiert auch davon, wenn ihr ihn über Nacht noch im Kühlschrank lasst.",
       },
     ],
   },
 ];
-
-// Tipps:
-// - bei der Backzeit nicht nur auf die Zeit schauen, auch Geruch und Optik; außerdem Stäbchentest
 
 const notes = [];
 

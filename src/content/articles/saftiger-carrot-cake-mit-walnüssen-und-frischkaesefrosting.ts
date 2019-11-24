@@ -9,10 +9,9 @@ const article: Article = {
   title: "Saftiger Carrot Cake mit Walnüssen und Frischkäsefrosting",
   categoryId: ARTICLE_CATEGORIES.rezepte.id,
   isHeroArticle: false,
-  shortDescription: `...`,
+  shortDescription: `Beim Thema Carrot Cake denken viele an Starbucks, denn die amerikanische Kaffeehauskette hat hier echt einen Standard in Sachen Geschmack geschaffen. Dieses Rezept kommt sehr nah an das Original heran und ist gar nicht schwer nachzubacken Spart euch den Weg in die City und holt die Backform aus dem Schrank!`,
   mainImageUrl: `/images/articles/${slug}/main.jpg`,
   previewImageUrl: `/images/articles/${slug}/preview.jpg`,
-  wideImageUrl: `/images/articles/${slug}/wide.jpg`,
   createdAt,
   modifiedAt: createdAt,
 };
