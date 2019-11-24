@@ -21,9 +21,22 @@ export const INGREDIENTS: Ingredients = {
     id: "speck",
     name: "Speck",
   },
+  joghurt: {
+    id: "joghurt",
+    name: "Joghurt",
+  },
+  frischkaese: {
+    id: "frischkaese",
+    name: "Frischkäse",
+  },
   wasser: {
     id: "wasser",
     name: "Wasser",
+  },
+  walnuesse: {
+    id: "walnuesse",
+    name: "Walnuss",
+    namePlural: "Walnüsse",
   },
   eiswasser: {
     id: "eiswasser",
@@ -103,6 +116,16 @@ export const INGREDIENTS: Ingredients = {
     id: "vanillearoma",
     name: "Vanillearoma",
   },
+  pistazien: {
+    id: "pistazien",
+    name: "Pistazie",
+    namePlural: "Pistazien",
+  },
+  vanilleschote: {
+    id: "vanilleschote",
+    name: "Vanilleschote",
+    namePlural: "Vanilleschoten",
+  },
   butter: {
     id: "butter",
     name: "Butter",
@@ -116,6 +139,11 @@ export const INGREDIENTS: Ingredients = {
     name: "Möhre",
     namePlural: "Möhren",
   },
+  karotten: {
+    id: "karotten",
+    name: "Karotten",
+    namePlural: "Karotten",
+  },
   kartoffel: {
     id: "kartoffel",
     name: "Kartoffel",
@@ -124,6 +152,10 @@ export const INGREDIENTS: Ingredients = {
   oel: {
     id: "oel",
     name: "Öl",
+  },
+  pflanzenoel: {
+    id: "pflanzenoel",
+    name: "Pflanzenöl",
   },
   olivenoel: {
     id: "olivenoel",

@@ -17,6 +17,10 @@ export const RECIPE_TAGS: RecipeTags = {
     id: "muerbeteig",
     name: "Mürbeteig",
   },
+  ruehrkuchen: {
+    id: "ruehrkuchen",
+    name: "Rührkuchen",
+  },
   party: {
     id: "party",
     name: "Party",

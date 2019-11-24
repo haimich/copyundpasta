@@ -35,7 +35,7 @@
 			"{",
 			"  isGroup: false,",
 			"  type: \"step\",",
-			"  content: $1,",
+			"  content: \"$1\",",
 			"},",
 		],
 		"description": "Copy & Pasta Step"
@@ -50,7 +50,7 @@
 			"		{",
 			"			isGroup: false,",
 			"			type: \"step\",",
-			"			content: $2,",
+			"			content: \"$2\",",
 			"		},",
 			"  ],",
 			"},",

@@ -41,7 +41,7 @@ const ingredients: (RecipeIngredientGroup|RecipeIngredient)[] = [
         amount: 2,
         unit: INGREDIENT_UNITS.stueck,
         ingredient: INGREDIENTS.eigelb,
-        description: "(Zimmertemperatur)",
+        description: "(Raumtemperatur)",
       },
       {
         isGroup: false,
@@ -54,7 +54,7 @@ const ingredients: (RecipeIngredientGroup|RecipeIngredient)[] = [
         amount: 60,
         unit: INGREDIENT_UNITS.gramm,
         ingredient: INGREDIENTS.butter,
-        description: "(Zimmertemperatur)",
+        description: "(Raumtemperatur)",
       },
       {
         isGroup: false,

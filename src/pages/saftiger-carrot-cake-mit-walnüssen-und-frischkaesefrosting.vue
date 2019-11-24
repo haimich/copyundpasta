@@ -57,7 +57,7 @@
 
         <ul>
           <li>statt Walnuss geht auch Pecan</li>
-          <li></li>
+          <li>Marzipanmöhren, Walnüsse</li>
         </ul>
       </el-col>
     </el-row>
