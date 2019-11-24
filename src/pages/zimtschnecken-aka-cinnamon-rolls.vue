@@ -41,6 +41,8 @@
             Der Teig wird zunächst ausgerollt und dann mit einer Mischung aus Butter und braunem Zucker bestrichen. Danach wird er zusammengerollt und in kleine Stücke aufgeteilt. <br /><br />Die genaue Beschreibung findest du weiter unten im Rezept.
           </p>
 
+          <h2>Die einzelnen Schritte im Überblick</h2>
+
           <el-row>
             <el-col :xl="xl" :lg="lg" :md="md" :sm="sm" :xs="xs">
               <SlideshowComponent :images="stepPhotos" />

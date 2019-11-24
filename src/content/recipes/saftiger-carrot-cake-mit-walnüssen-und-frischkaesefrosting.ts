@@ -6,7 +6,7 @@ import { RECIPE_SERVINGS } from "../ingredients/RecipeServings";
 import { RECIPE_CATEGORIES } from "../categories/RecipeCategories";
 import { RECIPE_TAGS } from "../categories/RecipeTags";
 
-import article from "../articles/zimtschnecken-aka-cinnamon-rolls";
+import article from "../articles/saftiger-carrot-cake-mit-walnüssen-und-frischkaesefrosting";
 
 const servings: RecipeServing = {
   amount: 40,
@@ -264,12 +264,9 @@ const steps: (RecipeStepGroup|RecipeStep)[] = [
   },
 ];
 
-// Size: 40 x 26 
-
 // Tipps:
-// - man kann die Teigrechtecke so zuschneiden, dass die Ränder gerade sind (Optik)
-// - wenn die Schnecke nicht gut aussieht, kann man sie rumdrehen
-// - man kann die Schnecken vor dem Backen noch etwas platt drücken in der Auflaufform
+// - bei der Backzeit nicht nur auf die Zeit schauen, auch Geruch und Optik; außerdem Stäbchentest
+// - Deko: Zimt, Pistazien (geröstet), Walnuss, Marzipanmöhren
 
 const notes = [];
 
