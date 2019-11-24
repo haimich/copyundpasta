@@ -56,7 +56,7 @@
         <h3>Variationen</h3>
 
         <ul>
-          <li>statt Walnuss geht auch Pecan</li>
+          <li>statt Walnüssen könnt ihr für den Teig auch Pecannüsse verwenden</li>
           <li>Marzipanmöhren, Walnüsse</li>
         </ul>
       </el-col>

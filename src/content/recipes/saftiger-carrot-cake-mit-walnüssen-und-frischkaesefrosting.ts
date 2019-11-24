@@ -20,6 +20,18 @@ const ingredients: (RecipeIngredientGroup|RecipeIngredient)[] = [
     ingredients: [
       {
         isGroup: false,
+        amount: 250,
+        unit: INGREDIENT_UNITS.gramm,
+        ingredient: INGREDIENTS.mehl,
+      },
+      {
+        isGroup: false,
+        amount: 1,
+        unit: INGREDIENT_UNITS.tl,
+        ingredient: INGREDIENTS.backpulver,
+      },
+      {
+        isGroup: false,
         amount: 270,
         unit: INGREDIENT_UNITS.gramm,
         ingredient: INGREDIENTS.karotten,
@@ -67,18 +79,6 @@ const ingredients: (RecipeIngredientGroup|RecipeIngredient)[] = [
       },
       {
         isGroup: false,
-        amount: 250,
-        unit: INGREDIENT_UNITS.gramm,
-        ingredient: INGREDIENTS.mehl,
-      },
-      {
-        isGroup: false,
-        amount: 1,
-        unit: INGREDIENT_UNITS.tl,
-        ingredient: INGREDIENTS.backpulver,
-      },
-      {
-        isGroup: false,
         amount: 2,
         unit: INGREDIENT_UNITS.tl,
         ingredient: INGREDIENTS.zimt,
@@ -88,6 +88,7 @@ const ingredients: (RecipeIngredientGroup|RecipeIngredient)[] = [
         amount: 0.5,
         unit: INGREDIENT_UNITS.tl,
         ingredient: INGREDIENTS.muskatnuss,
+        preparation: INGREDIENT_PREPARATIONS.gerieben,
       },
       {
         isGroup: false,
@@ -142,7 +143,7 @@ const ingredients: (RecipeIngredientGroup|RecipeIngredient)[] = [
      ingredients: [
        {
          isGroup: false,
-         amount: 100,
+         amount: 80,
          unit: INGREDIENT_UNITS.gramm,
          ingredient: INGREDIENTS.pistazien,
          description: "(optional)",
@@ -164,7 +165,7 @@ const steps: (RecipeStepGroup|RecipeStep)[] = [
       {
         isGroup: false,
         type: "step",
-        content: "Eine Springform mit ca. 25 cm Durchmesser mit Butter ausreiben.",
+        content: "Eine Springform von ca. 25 cm Durchmesser mit Butter einfetten.",
       },
       {
         isGroup: false,
@@ -191,7 +192,7 @@ const steps: (RecipeStepGroup|RecipeStep)[] = [
       {
         isGroup: false,
         type: "step",
-        content: "In einer separaten Schüssel Braunen Zucker, Salz, Öl, Eier, Vanille, Zimt, Muskat und Joghurt verquirlen, bis eine homogene Masse entstanden ist.",
+        content: "In einer separaten Schüssel braunen Zucker, Salz, Öl, Eier, Vanillearoma, Zimt, Muskat und Joghurt verquirlen, bis eine homogene Masse entstanden ist.",
       },
       {
         isGroup: false,
@@ -201,12 +202,12 @@ const steps: (RecipeStepGroup|RecipeStep)[] = [
       {
         isGroup: false,
         type: "step",
-        content: "Den Boden und Rand der gefetteten Backform mit braunem Zucker bestreuen. Dieser karamellisiert wunderbar beim Backen und sorgt für noch mehr Geschmack.",
+        content: "Den Boden der gefetteten Backform mit braunem Zucker bestreuen. Dieser karamellisiert wunderbar beim Backen und sorgt für noch mehr Geschmack.",
       },
       {
         isGroup: false,
         type: "step",
-        content: "Den Teig in die Form füllen und den Kuchen bei 175°C Ober-/Unterhitze 40-45 min. backen. Um zu sehen, ob der Kuchen fertig ist, könnt ihr ein Holz- oder Metallstäbchen hineinstecken (Stäbchenprobe): wenn kein Teig daran haftet, könnt ihr ihn aus dem Ofen nehmen.",
+        content: "Den Teig in die Form füllen und den Kuchen bei 175°C Ober-/Unterhitze 40-45 min. backen. Um zu sehen, ob der Kuchen fertig ist, könnt ihr ein Holz- oder Metallstäbchen hineinstecken: wenn kein Teig daran haftet, könnt ihr ihn aus dem Ofen nehmen. Oft ist die Stäbchenprobe alleine nicht eindeutig, deswegen schaue ich mir immer auch die Oberfläche an und versuche über den Geruch zu beurteilen, ob er schon zu lange drin ist und evt. verbrennt.",
       },
     ],
   },
@@ -224,6 +225,33 @@ const steps: (RecipeStepGroup|RecipeStep)[] = [
         isGroup: false,
         type: "step",
         content: "Den Frischkäse mit der Butter cremig aufschlagen und danach den Puderzucker hineinsieben. Gut verrühren, bis eine glatte Creme entstanden ist. Mit dem Mark der Vanilleschote und etwas Salz abschmecken. Das Frosting für ca. 30 Minuten in den Kühlschrank stellen, damit es sich besser verarbeiten lässt.",
+      },
+      {
+        isGroup: false,
+        type: "step",
+        content: "Wenn der Kuchen abgekühlt ist, könnt ihr in aus der Form nehmen und mit Hilfe eines Tortenretters auf eine Tortenunterlage aus Pappe befördern.",
+      },
+      {
+        isGroup: false,
+        type: "step",
+        content: "Nun das Frosting nochmal kurz durchrühren und mit einer Winkelpalette oder einem Teigschaber auf dem Kuchen verteilen. Dabei darauf achten, dass am Rand nichts herunterläuft",
+      },
+    ],
+  },
+
+  {
+   isGroup: true,
+    title: "Dekoration",
+    steps: [
+      {
+        isGroup: false,
+        type: "step",
+        content: "Bei der Dekoration des Kuchens könnt ihr eurer Kreativität freien Lauf lassen. Was z. B. gut aussieht, ist wenn ihr auf jedes Kuchenstück an den Rand eine halbe Walnuss oder eine Marzipanmöhre platziert.",
+      },
+      {
+        isGroup: false,
+        type: "step",
+        content: "Geschmacklich sehr gut passen auch Pistazien. Diese zerkleinern und in einer Pfanne bei mittlerer Hitze trocken anrösten. Die Pistazien aus der Pfanne nehmen und auf dem Frosting verteilen.",
       },
     ],
   },
