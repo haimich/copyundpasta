@@ -2,7 +2,7 @@ import { Article } from "../../interfaces/Article";
 import { ARTICLE_CATEGORIES } from "../categories/ArticleCategories";
 
 const createdAt = "2019-11-24 22:00:01";
-const slug = "saftiger-carrot-cake-mit-walnüssen-und-frischkaesefrosting";
+const slug = "saftiger-carrot-cake-mit-walnuessen-und-frischkaesefrosting";
 
 const article: Article = {
   slug,

@@ -41,7 +41,7 @@
           </p>
 
           <ArticleImageComponent
-            src="/images/articles/saftiger-carrot-cake-mit-walnüssen-und-frischkaesefrosting/carrot-cake-mit-pistazien-und-zimt.jpg"
+            src="/images/articles/saftiger-carrot-cake-mit-walnuessen-und-frischkaesefrosting/carrot-cake-mit-pistazien-und-zimt.jpg"
             alt="Carrot Cake mit Pistazien und Zimt"
           />
 
@@ -91,8 +91,8 @@
   import ArticleUtil from "@/utils/ArticleUtil";
   import { RatingResponse } from "@/interfaces/Rating";
 
-  import article from "@/content/articles/saftiger-carrot-cake-mit-walnüssen-und-frischkaesefrosting";
-  import recipe from "@/content/recipes/saftiger-carrot-cake-mit-walnüssen-und-frischkaesefrosting";
+  import article from "@/content/articles/saftiger-carrot-cake-mit-walnuessen-und-frischkaesefrosting";
+  import recipe from "@/content/recipes/saftiger-carrot-cake-mit-walnuessen-und-frischkaesefrosting";
 
   @Component({
     head: ArticleUtil.defaultHead(article),

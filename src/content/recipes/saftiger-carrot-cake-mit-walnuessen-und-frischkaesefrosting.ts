@@ -6,7 +6,7 @@ import { RECIPE_SERVINGS } from "../ingredients/RecipeServings";
 import { RECIPE_CATEGORIES } from "../categories/RecipeCategories";
 import { RECIPE_TAGS } from "../categories/RecipeTags";
 
-import article from "../articles/saftiger-carrot-cake-mit-walnüssen-und-frischkaesefrosting";
+import article from "../articles/saftiger-carrot-cake-mit-walnuessen-und-frischkaesefrosting";
 
 const servings: RecipeServing = {
   amount: 25,
