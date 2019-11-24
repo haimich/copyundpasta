@@ -1,0 +1,60 @@
+{
+	"Ingredient": {
+		"prefix": "ingredient",
+		"body": [
+			"{",
+			"  isGroup: false,",
+			"  amount: $1,",
+			"  unit: INGREDIENT_UNITS.$2,",
+			"  ingredient: INGREDIENTS.$3,",
+			"},",
+		],
+		"description": "Copy & Pasta Ingredient"
+	},
+	"Ingredient group": {
+		"prefix": "ingredient-group",
+		"body": [
+			"{",
+			" isGroup: true,",
+			"	title: \"$1\",",
+			"	ingredients: [",
+			"		{",
+			"			isGroup: false,",
+			"			amount: $2,",
+			"			unit: INGREDIENT_UNITS.$3,",
+			"			ingredient: INGREDIENTS.$4,",
+			"		},",
+			"  ],",
+			"},",
+		],
+		"description": "Copy & Pasta Ingredient group"
+	},
+	"Step": {
+		"prefix": "step",
+		"body": [
+			"{",
+			"  isGroup: false,",
+			"  type: \"step\",",
+			"  content: $1,",
+			"},",
+		],
+		"description": "Copy & Pasta Step"
+	},
+	"Step group": {
+		"prefix": "step-group",
+		"body": [
+			"{",
+			" isGroup: true,",
+			"	title: \"$1\",",
+			"	steps: [",
+			"		{",
+			"			isGroup: false,",
+			"			type: \"step\",",
+			"			content: $2,",
+			"		},",
+			"  ],",
+			"},",
+		],
+		"description": "Copy & Pasta Step group"
+	},
+}

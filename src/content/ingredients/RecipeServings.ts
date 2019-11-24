@@ -12,5 +12,9 @@ export const RECIPE_SERVINGS: ServingUnits = {
   cm_quicheform: {
     id: "cm_quicheform",
     name: "cm Quicheform",
-  }
+  },
+  cm_backform_rund: {
+    id: "cm_backform_rund",
+    name: "cm runde Backform",
+  },
 }
