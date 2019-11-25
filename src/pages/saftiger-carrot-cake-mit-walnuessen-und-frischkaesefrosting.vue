@@ -25,7 +25,7 @@
           <h2>Warum ist der Carrot Cake so saftig?</h2>
 
           <p>
-            Die Karotten bringen natürlich für sich schon sehr viel Feuchtigkeit mit in den Teig. Daneben sorgt aber auch das Pflanzenöl dafür, dass der Teig länger feucht bleibt. In klassischen Rezepten mit Butter wird diese beim Abkühlen des Kuchens wieder fest wird, Öl bleibt aber auch bei Raumtemperatur flüssig. <br/>Der Nachteil von Öl in Kuchenrezepten ist, dass man es nicht wie Butter aufschlagen kann, wodurch der Kuchenteig weniger luftig wird. Außerdem fehlt solchen Kuchen der typische Buttergeschmack, was aber in diesem Rezept durch andere Gewürze und Aromen mehr als ausgeglichen wird.
+            Die Karotten bringen natürlich für sich schon sehr viel Feuchtigkeit mit in den Teig. Daneben sorgt aber auch das Pflanzenöl dafür, dass der Teig länger feucht bleibt. In klassischen Rezepten mit Butter wird diese beim Abkühlen des Kuchens wieder fest wird, Öl bleibt aber auch bei Raumtemperatur flüssig. <br />Der Nachteil von Öl in Kuchenrezepten ist, dass man es nicht wie Butter aufschlagen kann, wodurch der Kuchenteig weniger luftig wird. Außerdem fehlt solchen Kuchen der typische Buttergeschmack, was aber in diesem Rezept durch andere Gewürze und Aromen mehr als ausgeglichen wird.
           </p>
 
           <h2>Muss ich die Nüsse anrösten?</h2>
