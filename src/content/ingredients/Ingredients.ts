@@ -9,6 +9,10 @@ export const INGREDIENTS: Ingredients = {
     id: "pfeffer",
     name: "Pfeffer",
   },
+  salzpfeffer: {
+    id: "salzpfeffer",
+    name: "Salz/Pfeffer",
+  },
   muskatnuss: {
     id: "muskatnuss",
     name: "Muskatnuss",
@@ -20,6 +24,10 @@ export const INGREDIENTS: Ingredients = {
   speck: {
     id: "speck",
     name: "Speck",
+  },
+  speckwuerfel: {
+    id: "speckwuerfel",
+    name: "Speckwürfel",
   },
   stueckingwer: {
     id: "stueckingwer",
@@ -136,8 +144,8 @@ export const INGREDIENTS: Ingredients = {
   },
   hokkaidokuerbis: {
     id: "hokkaidokuerbis",
-    name: "Hokkaidokürbis",
-    namePlural: "Hokkaidokürbisse",
+    name: "Hokkaido-Kürbis",
+    namePlural: "Hokkaido-Kürbisse",
   },
   kuerbiskerne: {
     id: "kuerbiskerne",

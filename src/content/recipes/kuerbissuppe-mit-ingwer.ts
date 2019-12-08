@@ -78,15 +78,9 @@ const ingredients: (RecipeIngredientGroup|RecipeIngredient)[] = [
       },
       {
         isGroup: false,
-        amount: 4,
-        unit: INGREDIENT_UNITS.tl,
-        ingredient: INGREDIENTS.salz,
-      },
-      {
-        isGroup: false,
-        amount: 1,
-        unit: INGREDIENT_UNITS.prise,
-        ingredient: INGREDIENTS.pfeffer,
+        amount: 0,
+        unit: INGREDIENT_UNITS.ohneeinheit,
+        ingredient: INGREDIENTS.salzpfeffer,
       },
       {
         isGroup: false,
@@ -125,7 +119,7 @@ const ingredients: (RecipeIngredientGroup|RecipeIngredient)[] = [
         isGroup: false,
         amount: 120,
         unit: INGREDIENT_UNITS.gramm,
-        ingredient: INGREDIENTS.speck,
+        ingredient: INGREDIENTS.speckwuerfel,
       },
       {
         isGroup: false,
@@ -138,16 +132,92 @@ const ingredients: (RecipeIngredientGroup|RecipeIngredient)[] = [
 ];
 
 const steps: (RecipeStepGroup|RecipeStep)[] = [
+  {
+   isGroup: true,
+    title: "Vorbereiten",
+    steps: [
+      {
+        isGroup: false,
+        type: "step",
+        content: "Den Hokkaido-Kürbis waschen, halbieren und in grobe Würfel schneiden. Die Schale kann mitgegessen werden.",
+      },
+      {
+        isGroup: false,
+        type: "step",
+        content: "Die Karotten und die Kartoffeln jeweils schälen, waschen und fein würfeln.",
+      },
+      {
+        isGroup: false,
+        type: "step",
+        content: "Die halbe Knollensellerie schälen, waschen und fein würfeln. Die beiden Zwiebeln schälen, halbieren und grob schneiden.",
+      },
+      {
+        isGroup: false,
+        type: "step",
+        content: "Die Knoblauchzehen und den Ingwer jeweils schälen und grob schneiden. Im Mörser zu einer feinen Masse zerstampfen (wer keinen Mörser hat, kann die Zutaten auch einfach sehr fein schneiden).",
+      },
+      {
+        isGroup: false,
+        type: "step",
+        content: "Die Orange halbieren und den Saft auspressen.",
+      },
+    ],
+  },
 
+  {
+   isGroup: true,
+    title: "Kochen",
+    steps: [
+      {
+        isGroup: false,
+        type: "step",
+        content: "1,5 Liter Wasser in einem Wasserkocher zum Kochen bringen.",
+      },
+      {
+        isGroup: false,
+        type: "step",
+        content: "Einen Topf mit 3l Fassungsvermögen erhitzen und 1 EL Pflanzenöl hineingeben. Sobald das Fett heiß ist die Zwiebeln anbraten und die Hitze etwas reduzieren.",
+      },
+      {
+        isGroup: false,
+        type: "step",
+        content: "Wenn die Zwiebeln gebräunt sind die Knoblauch-/Ingwermischung hinzufügen und gut verrühren.",
+      },
+      {
+        isGroup: false,
+        type: "step",
+        content: "Nun das kochende Wasser angießen und sämtliches Gemüse hinzugeben. Jetzt bereits 1-2 TL Salz dazugeben, um dem Gemüse Wasser zu entziehen. Die Suppe ca. 25 Minuten auf mittlerer Stufe kochen lassen, dabei gelegentlich umrühren.",
+      },
+      {
+        isGroup: false,
+        type: "step",
+        content: "Kurz vor Ende der Garzeit die Kürbiskerne in einer heißen Pfanne trocken rösten, bis sie anfangen zu \"springen\". Die Kürbiskerne in eine Schüssel umfüllen und 1 EL Butter in der Pfanne erhitzen. Wenn das Fett heiß ist, die Speckwürfel hinzugeben und bei mittlerer Hitze auslassen.",
+      },
+      {
+        isGroup: false,
+        type: "step",
+        content: "Vor dem Servieren die Suppe pürieren. Ich verwende hierzu gerne einen Mixer (am Besten aus Glas), aber mit einem Pürierstab funktioniert es genauso gut. Die pürierte Suppe fülle ich dabei in einen neuen Topf um. Mit Salz und Pfeffer abschmecken und nach Geschmack noch 1-2 EL Weißwein hinzugeben.",
+      },
+    ],
+  },
+
+  {
+   isGroup: true,
+    title: "Servieren",
+    steps: [
+      {
+        isGroup: false,
+        type: "step",
+        content: "Die Suppe in Teller oder Schälchen füllen und mit Kürbiskernen, Speckwürfeln und einem Sprenkler Kürbiskernöl servieren.",
+      },
+    ],
+  },
 ];
 
 const notes = [];
 
 const tags = [
   RECIPE_TAGS.resteverwertung,
-  RECIPE_TAGS.universell,
-  RECIPE_TAGS.muerbeteig,
-  RECIPE_TAGS.vegetarisch,
 ];
 
 const createdAt = article.createdAt;

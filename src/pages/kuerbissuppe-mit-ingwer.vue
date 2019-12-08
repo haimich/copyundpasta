@@ -41,9 +41,10 @@
         <h3>Variationen</h3>
 
         <ul>
-          <li></li>
-          <li></li>
-          <li></li>
+          <li>200 ml Sahne oder Kokosmilch</li>
+          <li>Currygewürz</li>
+          <li>mit Weißwein ablöschen</li>
+          <li>Hackfleisch</li>
         </ul>
       </el-col>
     </el-row>
