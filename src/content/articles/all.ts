@@ -4,6 +4,7 @@ import a3 from "./one-pot-pasta-mit-leckerer-tomatensauce";
 import a4 from "./fine-dining-ausprobiert-mein-besuch-im-sternerestaurant";
 import a5 from "./moehren-quiche-mit-bergkaese";
 import a6 from "./saftiger-carrot-cake-mit-walnuessen-und-frischkaesefrosting";
+import a7 from "./kuerbissuppe-mit-ingwer";
 
 export default [
   a1,
@@ -12,4 +13,5 @@ export default [
   a4,
   a5,
   a6,
+  a7,
 ];

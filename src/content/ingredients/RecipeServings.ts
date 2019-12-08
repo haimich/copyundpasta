@@ -5,6 +5,10 @@ export const RECIPE_SERVINGS: ServingUnits = {
     id: "stueck",
     name: "Stück",
   },
+  liter: {
+    id: "liter",
+    name: "Liter",
+  },
   portionen: {
     id: "portionen",
     name: "Portionen",

@@ -21,6 +21,10 @@ export const INGREDIENTS: Ingredients = {
     id: "speck",
     name: "Speck",
   },
+  stueckingwer: {
+    id: "stueckingwer",
+    name: "Stück Ingwer",
+  },
   joghurt: {
     id: "joghurt",
     name: "Joghurt",
@@ -28,6 +32,11 @@ export const INGREDIENTS: Ingredients = {
   frischkaese: {
     id: "frischkaese",
     name: "Frischkäse",
+  },
+  orange: {
+    id: "orange",
+    name: "Orange",
+    namePlural: "Orangen",
   },
   wasser: {
     id: "wasser",
@@ -69,6 +78,10 @@ export const INGREDIENTS: Ingredients = {
   essig: {
     id: "essig",
     name: "Essig",
+  },
+  weissweinessig: {
+    id: "weissweinessig",
+    name: "Weißweinessig",
   },
   hefe: {
     id: "hefe",
@@ -121,6 +134,15 @@ export const INGREDIENTS: Ingredients = {
     name: "Pistazie",
     namePlural: "Pistazien",
   },
+  hokkaidokuerbis: {
+    id: "hokkaidokuerbis",
+    name: "Hokkaidokürbis",
+    namePlural: "Hokkaidokürbisse",
+  },
+  kuerbiskerne: {
+    id: "kuerbiskerne",
+    name: "Kürbiskerne",
+  },
   vanilleschote: {
     id: "vanilleschote",
     name: "Vanilleschote",
@@ -157,6 +179,10 @@ export const INGREDIENTS: Ingredients = {
     id: "pflanzenoel",
     name: "Pflanzenöl",
   },
+  kuerbiskernoel: {
+    id: "kuerbiskernoel",
+    name: "Kürbiskernöl",
+  },
   olivenoel: {
     id: "olivenoel",
     name: "Olivenöl",
@@ -172,6 +198,10 @@ export const INGREDIENTS: Ingredients = {
   weisswein: {
     id: "weisswein",
     name: "Weißwein",
+  },
+  knollensellerie: {
+    id: "knollensellerie",
+    name: "Knollensellerie",
   },
   gemuesebruehenpulver: {
     id: "gemuesebruehenpulver",

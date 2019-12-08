@@ -17,6 +17,10 @@ export const INGREDIENT_UNITS: IngredientUnits = {
     id: "stueck",
     name: "",
   },
+  schluck: {
+    id: "schluck",
+    name: "Schluck",
+  },
   el: {
     id: "el",
     name: "EL",
@@ -32,6 +36,10 @@ export const INGREDIENT_UNITS: IngredientUnits = {
   ohneeinheit: {
     id: "ohneeinheit",
     name: "",
+  },
+  handvoll: {
+    id: "handvoll",
+    name: "Handvoll",
   },
   prise: {
     id: "prise",
