@@ -41,7 +41,7 @@ const ingredients: (RecipeIngredientGroup|RecipeIngredient)[] = [
         amount: 2,
         unit: INGREDIENT_UNITS.stueck,
         ingredient: INGREDIENTS.kartoffel,
-        description: "(am Besten vorwiegend festkochend)",
+        description: "(die Sorte ist zweitrangig)",
       },
       {
         isGroup: false,
@@ -78,12 +78,6 @@ const ingredients: (RecipeIngredientGroup|RecipeIngredient)[] = [
       },
       {
         isGroup: false,
-        amount: 0,
-        unit: INGREDIENT_UNITS.ohneeinheit,
-        ingredient: INGREDIENTS.salzpfeffer,
-      },
-      {
-        isGroup: false,
         amount: 1.5,
         unit: INGREDIENT_UNITS.liter,
         ingredient: INGREDIENTS.wasser,
@@ -94,6 +88,12 @@ const ingredients: (RecipeIngredientGroup|RecipeIngredient)[] = [
         amountTo: 2,
         unit: INGREDIENT_UNITS.el,
         ingredient: INGREDIENTS.weissweinessig,
+      },
+      {
+        isGroup: false,
+        amount: 0,
+        unit: INGREDIENT_UNITS.ohneeinheit,
+        ingredient: INGREDIENTS.salzpfeffer,
       },
     ],
   },
@@ -176,17 +176,12 @@ const steps: (RecipeStepGroup|RecipeStep)[] = [
       {
         isGroup: false,
         type: "step",
-        content: "Einen Topf mit 3l Fassungsvermögen erhitzen und 1 EL Pflanzenöl hineingeben. Sobald das Fett heiß ist die Zwiebeln anbraten und die Hitze etwas reduzieren.",
+        content: "Einen Topf mit 3l Fassungsvermögen erhitzen und 1 EL Pflanzenöl hineingeben. Sobald das Fett heiß ist, die Zwiebeln anbraten und die Hitze etwas reduzieren. Wenn die Zwiebeln gebräunt sind, die Knoblauch-/Ingwermischung hinzufügen und gut verrühren.",
       },
       {
         isGroup: false,
         type: "step",
-        content: "Wenn die Zwiebeln gebräunt sind die Knoblauch-/Ingwermischung hinzufügen und gut verrühren.",
-      },
-      {
-        isGroup: false,
-        type: "step",
-        content: "Nun das kochende Wasser angießen und sämtliches Gemüse hinzugeben. Jetzt bereits 1-2 TL Salz dazugeben, um dem Gemüse Wasser zu entziehen. Die Suppe ca. 25 Minuten auf mittlerer Stufe kochen lassen, dabei gelegentlich umrühren.",
+        content: "Nun das kochende Wasser angießen und sämtliches Gemüse hinzugeben. Den gepressten Saft der Orange ebenfalls angießen. 1-2 TL Salz dazugeben, um dem Gemüse frühzeitig Wasser zu entziehen. Die Suppe ca. 25 Minuten auf mittlerer Stufe köcheln lassen, dabei gelegentlich umrühren.",
       },
       {
         isGroup: false,
@@ -196,7 +191,7 @@ const steps: (RecipeStepGroup|RecipeStep)[] = [
       {
         isGroup: false,
         type: "step",
-        content: "Vor dem Servieren die Suppe pürieren. Ich verwende hierzu gerne einen Mixer (am Besten aus Glas), aber mit einem Pürierstab funktioniert es genauso gut. Die pürierte Suppe fülle ich dabei in einen neuen Topf um. Mit Salz und Pfeffer abschmecken und nach Geschmack noch 1-2 EL Weißwein hinzugeben.",
+        content: "Vor dem Servieren die Suppe pürieren. Hierzu verwende ich gerne einen Mixer (am Besten aus Glas), aber mit einem Pürierstab funktioniert es auch sehr gut. Die pürierte Suppe fülle ich dabei in einen neuen Topf um. Zum Schluss mit Salz und Pfeffer abschmecken und nach Geschmack noch 1-2 EL Weißwein hinzugeben.",
       },
     ],
   },
@@ -208,7 +203,7 @@ const steps: (RecipeStepGroup|RecipeStep)[] = [
       {
         isGroup: false,
         type: "step",
-        content: "Die Suppe in Teller oder Schälchen füllen und mit Kürbiskernen, Speckwürfeln und einem Sprenkler Kürbiskernöl servieren.",
+        content: "Die Suppe in Teller oder Schälchen füllen und mit Kürbiskernen, Speckwürfeln und einem Schuss Kürbiskernöl servieren.",
       },
     ],
   },

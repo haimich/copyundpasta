@@ -39,7 +39,7 @@ export const INGREDIENT_UNITS: IngredientUnits = {
   },
   handvoll: {
     id: "handvoll",
-    name: "Handvoll",
+    name: "handvoll",
   },
   prise: {
     id: "prise",
