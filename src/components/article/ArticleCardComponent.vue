@@ -95,7 +95,7 @@
   @import "~/scss/variables.scss";
 
   .article-card {
-    min-height: 522px;
+    min-height: 572px;
     margin-bottom: 27px;
   }
 

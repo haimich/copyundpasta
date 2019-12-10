@@ -20,4 +20,9 @@ export const RECIPE_CATEGORIES: RecipeCategories = {
     id: "quiches",
     name: "Quiches",
   },
+  
+  suppen: {
+    id: "suppen",
+    name: "Suppen",
+  },
 }

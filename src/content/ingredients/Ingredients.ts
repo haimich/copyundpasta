@@ -147,6 +147,11 @@ export const INGREDIENTS: Ingredients = {
     name: "Hokkaido-Kürbis",
     namePlural: "Hokkaido-Kürbisse",
   },
+  brot: {
+    id: "brot",
+    name: "Brot",
+    namePlural: "Brote",
+  },
   kuerbiskerne: {
     id: "kuerbiskerne",
     name: "Kürbiskerne",

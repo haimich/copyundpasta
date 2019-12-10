@@ -9,7 +9,7 @@ const article: Article = {
   title: "Kürbissuppe mit Ingwer",
   categoryId: ARTICLE_CATEGORIES.rezepte.id,
   isHeroArticle: false,
-  shortDescription: ``,
+  shortDescription: `Diese Suppe passt wunderbar in die kalte Jahreszeit und spendet euch nicht nur Wärme, sondern auch ein leckeres und gesundes Feierabendgericht, das schnell zubereitet ist. Die Kombination von Ingwer, Knoblauch und einem Schuss Orangensaft ist dabei ein Fest für die Geschmacksnerven!`,
   mainImageUrl: `/images/articles/${slug}/main.jpg`,
   previewImageUrl: `/images/articles/${slug}/preview.jpg`,
   wideImageUrl: `/images/articles/${slug}/wide.jpg`,

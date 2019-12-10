@@ -15,7 +15,21 @@
           <ArticleJumpToRecipeComponent />
 
           <p class="entry-paragraph">
-            Ich 
+            Als ich zum ersten Mal einen Hokkaido-Kürbis zubereitet habe, war ich zunächst skeptisch, ob man die Schale wirklich mitessen kann. Mittlerweile ist dieser Kürbis fester Bestandteil meines kulinarischen Repertoires geworden, weil er sich sehr einfach verarbeiten lässt und eine perfekte Größe hat, wodurch in der Regel keine Reste übrig bleiben. Der Hokkaido überzeugt aber auch auf der geschmacklichen Ebene und lässt sich wunderbar füllen oder wie in diesem Rezept zu einer Suppe verarbeiten.
+          <p>
+
+          <p>
+            Der Hokkaido hat seinen Namen der gleichnamigen japanischen Insel zu verdanken, auf der Saichirō Matsumoto diese besondere Züchtung im Jahr 1933 unter dem Namen "Uchiki Kuri" vorstellte. Es gibt übrigens auch eine <ArticleLinkComponent href="https://en.wikipedia.org/wiki/Hokkaido_(dog)" text="Hunderasse" /> mit dem gleichen Namen :-)
+          </p>
+
+          <p>
+            Hokkaido-Kürbisse werden zwischen September und Dezember geerntet, was sie zu einem wunderbaren Begleiter in der kalten Jahreszeit macht. Sie halten sich bei intaktem Stielansatz mehrere Monate, was aber in der Praxis selten nötig ist, da sie mittlerweile ganzjährig in unseren Supermärkten erhältlich sind. Seit den 1990er Jahren werden Hokkaidokürbisse auch in Europa angebaut.
+          </p>
+
+          <h2>Warum benötigt das Rezept keine Gemüsebrühe?</h2>
+
+          <p>
+            Ich verwende in meiner Küche selbst häufig Gemüsebrühe, um Suppen oder Saucen schmackhafter zu machen. Bei diesem Rezept ist das aber nicht nötig, weil schon alle typischen Zutaten wie z. B. Karotten und Sellerie enthalten sind.
           </p>
 
           <h2>Die einzelnen Schritte im Überblick</h2>
@@ -41,10 +55,9 @@
         <h3>Variationen</h3>
 
         <ul>
-          <li>200 ml Sahne oder Kokosmilch</li>
-          <li>Currygewürz</li>
-          <li>mit Weißwein ablöschen</li>
-          <li>Hackfleisch</li>
+          <li>wer es cremiger möchte, kann nach dem Pürieren noch 200 ml Sahne oder Kokosmilch hinzugeben</li>
+          <li>statt Speckwürfeln könnt ihr auch angebratenes Hackfleisch verwenden</li>
+          <li>sehr gut als Beilage eignen sich auch Garnelen, die ihr zum Beispiel auf einem Spieß servieren könnt</li>
         </ul>
       </el-col>
     </el-row>

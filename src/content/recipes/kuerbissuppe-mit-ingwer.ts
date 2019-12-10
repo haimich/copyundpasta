@@ -9,7 +9,7 @@ import { RECIPE_TAGS } from "../categories/RecipeTags";
 import article from "../articles/kuerbissuppe-mit-ingwer";
 
 const servings: RecipeServing = {
-  amount: 1.5,
+  amount: 3,
   unit: RECIPE_SERVINGS.liter,
 };
 
@@ -91,7 +91,6 @@ const ingredients: (RecipeIngredientGroup|RecipeIngredient)[] = [
       },
       {
         isGroup: false,
-        amount: 0,
         unit: INGREDIENT_UNITS.ohneeinheit,
         ingredient: INGREDIENTS.salzpfeffer,
       },
@@ -126,6 +125,11 @@ const ingredients: (RecipeIngredientGroup|RecipeIngredient)[] = [
         amount: 2,
         unit: INGREDIENT_UNITS.el,
         ingredient: INGREDIENTS.kuerbiskernoel,
+      },
+      {
+        isGroup: false,
+        unit: INGREDIENT_UNITS.ohneeinheit,
+        ingredient: INGREDIENTS.brot,
       },
     ],
   },
@@ -171,12 +175,12 @@ const steps: (RecipeStepGroup|RecipeStep)[] = [
       {
         isGroup: false,
         type: "step",
-        content: "1,5 Liter Wasser in einem Wasserkocher zum Kochen bringen.",
+        content: "1 ½ Liter Wasser in einem Wasserkocher zum Kochen bringen.",
       },
       {
         isGroup: false,
         type: "step",
-        content: "Einen Topf mit 3l Fassungsvermögen erhitzen und 1 EL Pflanzenöl hineingeben. Sobald das Fett heiß ist, die Zwiebeln anbraten und die Hitze etwas reduzieren. Wenn die Zwiebeln gebräunt sind, die Knoblauch-/Ingwermischung hinzufügen und gut verrühren.",
+        content: "Einen Topf mit ca. 3 Liter Fassungsvermögen erhitzen und 1 EL Pflanzenöl hineingeben. Sobald das Fett heiß ist, die Zwiebeln anbraten und die Hitze etwas reduzieren. Wenn die Zwiebeln gebräunt sind, die Knoblauch-/Ingwermischung hinzufügen und gut verrühren.",
       },
       {
         isGroup: false,
@@ -191,7 +195,7 @@ const steps: (RecipeStepGroup|RecipeStep)[] = [
       {
         isGroup: false,
         type: "step",
-        content: "Vor dem Servieren die Suppe pürieren. Hierzu verwende ich gerne einen Mixer (am Besten aus Glas), aber mit einem Pürierstab funktioniert es auch sehr gut. Die pürierte Suppe fülle ich dabei in einen neuen Topf um. Zum Schluss mit Salz und Pfeffer abschmecken und nach Geschmack noch 1-2 EL Weißwein hinzugeben.",
+        content: "Vor dem Servieren die Suppe pürieren. Hierzu verwende ich gerne einen Mixer (am besten aus Glas), aber mit einem Pürierstab funktioniert es auch sehr gut. Die pürierte Suppe fülle ich dabei in einen neuen Topf um. Zum Schluss mit Salz und Pfeffer abschmecken und nach Geschmack noch 1-2 EL Weißwein hinzugeben.",
       },
     ],
   },
@@ -203,7 +207,7 @@ const steps: (RecipeStepGroup|RecipeStep)[] = [
       {
         isGroup: false,
         type: "step",
-        content: "Die Suppe in Teller oder Schälchen füllen und mit Kürbiskernen, Speckwürfeln und einem Schuss Kürbiskernöl servieren.",
+        content: "Die Suppe in Teller oder Schälchen füllen und mit Kürbiskernen, Speckwürfeln und einem Schuss Kürbiskernöl anrichten. Mit Brot servieren.",
       },
     ],
   },
@@ -212,7 +216,7 @@ const steps: (RecipeStepGroup|RecipeStep)[] = [
 const notes = [];
 
 const tags = [
-  RECIPE_TAGS.resteverwertung,
+  RECIPE_TAGS.feierabendgericht,
 ];
 
 const createdAt = article.createdAt;
@@ -220,7 +224,7 @@ const createdAt = article.createdAt;
 const recipe: Recipe = {
   slug: article.slug,
   title: article.title,
-  categoryId: RECIPE_CATEGORIES.quiches.id,
+  categoryId: RECIPE_CATEGORIES.suppen.id,
   previewImageUrl: article.previewImageUrl,
   servings,
   ingredients,
