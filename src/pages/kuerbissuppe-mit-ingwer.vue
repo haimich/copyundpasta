@@ -16,7 +16,7 @@
 
           <p class="entry-paragraph">
             Als ich zum ersten Mal einen Hokkaido-Kürbis zubereitet habe, war ich zunächst skeptisch, ob man die Schale wirklich mitessen kann. Mittlerweile ist dieser Kürbis fester Bestandteil meines kulinarischen Repertoires geworden, weil er sich sehr einfach verarbeiten lässt und eine perfekte Größe hat, wodurch in der Regel keine Reste übrig bleiben. Der Hokkaido überzeugt aber auch auf der geschmacklichen Ebene und lässt sich wunderbar füllen oder wie in diesem Rezept zu einer Suppe verarbeiten.
-          <p>
+          </p>
 
           <p>
             Der Hokkaido hat seinen Namen der gleichnamigen japanischen Insel zu verdanken, auf der Saichirō Matsumoto diese besondere Züchtung im Jahr 1933 unter dem Namen "Uchiki Kuri" vorstellte. Es gibt übrigens auch eine <ArticleLinkComponent href="https://en.wikipedia.org/wiki/Hokkaido_(dog)" text="Hunderasse" /> mit dem gleichen Namen :-)
