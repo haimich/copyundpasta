@@ -8,7 +8,7 @@
     >
       <nuxt-link :to="'/' + article.slug" class="article-card-link">
         <div class="article-image-container">
-          <img :src="article.previewImageUrl" alt="Artikelbild" style="height: 218px;">
+          <img :src="article.previewImageUrl" alt="Artikelbild">
 
           <div class="article-card-title">
             <span class="article-card-button">
@@ -95,8 +95,14 @@
   @import "~/scss/variables.scss";
 
   .article-card {
-    min-height: 572px;
+    min-height: 589px;
     margin-bottom: 27px;
+  }
+
+  @media all and (max-width: $breakpoint-xs) {
+    .article-card {
+      min-height: 200px;
+    }
   }
 
   .article-image-container {
@@ -116,9 +122,15 @@
       opacity: 1;
       display: block;
       width: 100%;
-      height: auto;
+      max-height: 218px;
       transition: .4s ease;
       backface-visibility: hidden;
+    }
+
+    @media all and (max-width: $breakpoint-xs) {
+      img {
+        max-height: 400px;
+      }
     }
 
     a:hover {
