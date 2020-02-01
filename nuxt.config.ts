@@ -1,23 +1,14 @@
+import { faLessThanEqual } from "@fortawesome/free-solid-svg-icons";
+
 require("dotenv").config();
 
 // get rid of warning during development
 require("events").EventEmitter.defaultMaxListeners = 50;
 
 const DEFAULT_HOST = "localhost";
+// const DEFAULT_HOST = "192.168.0.178";
 const DEFAULT_PORT = "3000";
-
-let cspScript = [
-  "'self'",
-  "https://*.copyundpasta.de",
-  'https://www.google.com',
-  'https://cdn.jsdelivr.net',
-  'https://*.gstatic.com',
-  'https://www.google-analytics.com',
-];
-
-if (process.env.NODE_ENV === "development") {
-  cspScript.push("'unsafe-eval'");
-}
+const CWD = process.cwd();
 
 const config = {
 
@@ -224,7 +215,14 @@ const config = {
         "'self'",
         "https://*.copyundpasta.de",
       ],
-      'script-src': cspScript,
+      'script-src': [
+        "'self'",
+        "https://*.copyundpasta.de",
+        'https://www.google.com',
+        'https://cdn.jsdelivr.net',
+        'https://*.gstatic.com',
+        'https://www.google-analytics.com',
+      ],
       'connect-src': [
         "'self'",
         "https://*.copyundpasta.de",
