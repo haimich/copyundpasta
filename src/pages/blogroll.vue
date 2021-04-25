@@ -151,12 +151,6 @@
         image: "/images/blogroll/franzoesischkochen.jpg",
         url: "https://www.franzoesischkochen.de/",
       },
-      {
-        name: "Petit Appetit",
-        description: "Nicoles Blog habe ich kürzlich entdeckt und war sofort Feuer und Flamme, was sich darin geäußert hat, dass ich sämtliche der fast 300 Rezepte durchgesehen und etliche davon in meiner Nachkochliste aufgenommen habe. Viel besser kann man ein Rezept kaum präsentieren, finde ich!",
-        image: "/images/blogroll/petitappetit.jpg",
-        url: "https://www.petitappetit.de",
-      },
     ];
 
     openLink(url) {

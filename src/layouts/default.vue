@@ -281,44 +281,8 @@
       }
     }
 
-    initCookieConsent() {
-      // @ts-ignore
-      if (window == null || window.cookieconsent == null) {
-        return;
-      }
-      
-      // @ts-ignore
-      window.cookieconsent.initialise({
-        "palette": {
-          "popup": {
-            "background": "#edeff5",
-            "text": "#838391"
-          },
-          "button": {
-            "background": "#1eb5da",
-            "text": "#ffffff"
-          }
-        },
-        "theme": "classic",
-        "position": "bottom-right",
-        "type": "opt-out",
-        onStatusChange: function(status) {
-          console.log(status, this.hasConsented());
-        },
-        "content": {
-          "message": "Wir verwenden Cookies, um unsere Webseite möglichst benutzerfreundlich zu gestalten. Wenn Sie fortfahren, stimmen Sie der Verwendung von Cookies zu.",
-          "dismiss": "Schließen",
-          "allow": "Cookies erlauben",
-          "deny": "Ablehnen",
-          "link": "Weitere Informationen",
-          "href": "https://www.copyundpasta.de/datenschutz"
-        }
-      });
-    }
-
     mounted() {
       if (process.client) {
-        this.initCookieConsent();
         this.determineMenuMode();
         
         // watch for resolution changes

@@ -77,9 +77,6 @@ const config = {
       { rel: "stylesheet", href: "https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700&display=swap" },
       { rel: "stylesheet", href: "https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" },
     ],
-    script: [
-      { src: "https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js", type: "application/javascript", async: true, defer: true },
-    ],
   },
 
   messages: {
@@ -126,7 +123,6 @@ const config = {
 
   buildModules: [
     '@nuxt/typescript-build',
-    '@nuxtjs/google-analytics',
   ],
 
   typescript: {
@@ -144,15 +140,6 @@ const config = {
     // url for server side requests
     baseUrl: process.env.AXIOS_BASE_URL || `http://${DEFAULT_HOST}:${DEFAULT_PORT}`,
     retry: false,
-  },
-
-  /*
-  ** Google Analytics module configuration
-  ** Doc: https://github.com/nuxt-community/analytics-module
-  */
-  googleAnalytics: {
-    id: "UA-142214214-1",
-    dev: false,
   },
 
   /*
@@ -221,17 +208,14 @@ const config = {
         'https://www.google.com',
         'https://cdn.jsdelivr.net',
         'https://*.gstatic.com',
-        'https://www.google-analytics.com',
       ],
       'connect-src': [
         "'self'",
         "https://*.copyundpasta.de",
-        "https://www.google-analytics.com",
       ],
       'img-src': [
         "'self'",
         "https://*.copyundpasta.de",
-        "*.google-analytics.com",
       ],
       'style-src': [
         "'self'",
