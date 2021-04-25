@@ -10,8 +10,20 @@
 * element ui css framework
 
 ## Build Setup
+* make sure you have a MySQL db running on port 3306, eg.:
 
-``` bash
+```bash
+docker run --name mariadb --restart always -e MYSQL_ROOT_PASSWORD=password -e MYSQL_DATABASE=haimich -e MYSQL_USER=haimich -e MYSQL_PASSWORD=haimich -p 3306:3306 -d mariadb:10.3.15
+```
+
+Afterwards to start or stop it just use 
+
+`docker start mariadb` and 
+
+`docker stop mariadb`
+```
+
+```bash
 # install dependencies
 $ npm install
 
@@ -73,19 +85,6 @@ $ npm run generate
 
 ## pm2
 pm2 start npm --name "cup" -- start
-
-## Local database
-If you have never started the docker container execute this:
-
-```bash
-docker run --name mariadb --restart always -e MYSQL_ROOT_PASSWORD=password -e MYSQL_DATABASE=haimich -e MYSQL_USER=haimich -e MYSQL_PASSWORD=haimich -p 3306:3306 -d mariadb:10.3.15
-```
-
-Afterwards to start or stop it just use 
-
-`docker start mariadb` and 
-
-`docker stop mariadb`
 
 # Element UI theme
 For performance reasons the theme has been prebuilt (instead of importing element ui via scss). 
